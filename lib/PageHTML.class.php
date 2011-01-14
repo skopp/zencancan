@@ -37,6 +37,9 @@ class PageHTML {
 			<p class='temps'> 
 			Page générée par zenCancan en <?php echo round((microtime(true) - $this->debut) * 10000) / 10 ?>ms
 			</p>
+			<p>
+				<a href='logout.php'>M'oubliez</a>
+			</p>
 		</div>
 	</body>
 </html>	

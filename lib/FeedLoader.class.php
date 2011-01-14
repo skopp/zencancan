@@ -4,17 +4,49 @@ class FeedLoader {
 	
 	private $timeout;	
 	private $lastError;
+	private $lastHeader;
 	
 	public function __construct($timeout = 5){
 		$this->timeout = $timeout;
 		libxml_use_internal_errors(true);
+		$this->lastHeader = array('etag' =>'','last-modified' => '' );
+		
 	}
 	
 	public function getLastError(){
 		return $this->lastError;
 	}
 	
-	public function get($url){
+	public function getInfo($url,$oldInfo = array()){
+		
+		if (! $oldInfo){
+			$oldInfo = array('etag'=>'','last-modified' => '');
+		}
+		
+		$feedInfo = $this->get($url,$oldInfo['etag'],$oldInfo['last-modified']);
+				
+		if (! $feedInfo){
+			return $oldInfo;
+		}
+		$feedInfo['etag'] = $this->lastHeader['etag'];
+		$feedInfo['last-modified'] = $this->lastHeader['last-modified'];
+		
+		if (count($feedInfo['item'])){
+			$feedInfo['pubDate'] = $feedInfo['item'][0]['pubDate'];
+			$feedInfo['id_item'] = $feedInfo['item'][0]['id_item'];
+			$feedInfo['item_title'] =  $feedInfo['item'][0]['title'];
+			$feedInfo['item_link'] =  $feedInfo['item'][0]['link'];		
+		} else {
+			$feedInfo['id_item'] = "";
+			$feedInfo['item_title'] = "";
+			$feedInfo['item_link'] =  "";			
+			$feedInfo['pubDate'] = $feedInfo['lastBuildDate'];
+		}
+		unset($feedInfo['item']);
+		return $feedInfo;
+	}
+	
+	public function get($url,$etag = false,$lastModified = false){
 				
 		if (!$url){
 			return false;
@@ -24,7 +56,7 @@ class FeedLoader {
 			$this->lastError = "L'url spécifié n'est pas valide";
 		}
 		
-		$content = $this->getContent($url);
+		$content = $this->getContent($url,$etag,$lastModified);
 		if (! $content ){
 			return false;
 		}
@@ -40,16 +72,36 @@ class FeedLoader {
 			$this->lastError = "L'adresse n'est pas un flux RSS";
 			return false; 
 		}
+		$feed['url'] = $url;
 		return $feed;
-		
 	}
 
-	private function getContent($url){
+	private function readHeader($curl,$headerLine){
+		if (preg_match("#([^:]+):(.*)#",$headerLine,$matches)){
+			$this->lastHeader[strtolower($matches[1])] = $matches[2]; 
+		}
+		return strlen($headerLine);
+	}
+	
+	private function getContent($url,$eTag,$lastModified){
 		
 		$curl = curl_init($url);
 		curl_setopt( $curl, CURLOPT_RETURNTRANSFER, true );
 		curl_setopt($curl,CURLOPT_TIMEOUT,$this->timeout);
-		curl_setopt( $curl, CURLOPT_FOLLOWLOCATION, 1 );		
+		curl_setopt( $curl, CURLOPT_FOLLOWLOCATION, 1 );	
+
+		$option = array();
+		if ($eTag){
+			$option[] = "If-None-Match: $eTag";
+		}
+		if ($lastModified){
+			$option[] = "If-Modified-Since: $lastModified";
+		}
+		if ($option){
+			curl_setopt( $curl, CURLOPT_HTTPHEADER, $option);
+		}
+		curl_setopt($curl, CURLOPT_HEADER, false);
+		curl_setopt($curl, CURLOPT_HEADERFUNCTION, array($this,"readHeader"));
 		
 		$result =  curl_exec($curl);
 		
@@ -58,8 +110,12 @@ class FeedLoader {
 			return false;
 		}
 		
-		$response = curl_getinfo($curl);				
-					
+		$response = curl_getinfo($curl);			
+		
+		if ($response['http_code'] == 304){
+			return false;
+		}
+		
 		if ($response['http_code'] != 200){
 			$this->lastError = "Erreur " . $response['http_code'];
 			return false;
@@ -91,6 +147,7 @@ class FeedLoader {
 		$result['title'] = strval($xml->channel->title);
 		$result['link'] = $this->getRSSLink($xml->channel->link);
 		$result['item'] = $this->getRSSItem($itemElement,$xml->getNamespaces(true));
+		$result['lastBuildDate'] = strval(date("Y-m-d H:i:s",strtotime($xml->channel->lastBuildDate)));
 		return $result;
 	}
 	
@@ -146,6 +203,7 @@ class FeedLoader {
 		$result['title'] = strval($xml->title);
 		$result['link'] = $this->getOneLink($xml->link);
 		$result['item'] = $this->getAtomItem($xml->entry);
+		$result['lastBuildDate'] = strval(date("Y-m-d H:i:s",$xml->lastBuildDate));
 		return $result;
 	}
 	
