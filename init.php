@@ -4,7 +4,7 @@ $debut = microtime(true);
 
 set_include_path( __DIR__ . "/lib/" );
 
-require_once(  __DIR__  . "/LocalSettings.class.php");
+require_once(  __DIR__  . "/LocalSettings.php");
 
 require_once("Recuperateur.class.php");
 require_once("LastMessage.class.php");
