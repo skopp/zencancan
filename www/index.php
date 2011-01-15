@@ -52,35 +52,34 @@ Votre identifiant : <?php hecho($id) ?>
 </p>
 
 <form action='add-flux.php' method='post'>
-<input type='hidden' name='id' value='<?php hecho($id) ?>' />
-URL du site à suivre: <br/>
+<input type='hidden' name='id'  value='<?php hecho($id) ?>' />
+Site à suivre: <br/>
 <?php if ($lastMessage->getLastMessage()) : ?>
 <p>
 <?php echo $lastMessage->getLastMessage(); ?>
 </p>
 <?php endif;?>
-<input type='text' name='url' />
-
-<input type='submit' value='Aggréger' />
-
+<input type='text' size='50' name='url' />
+<input type='submit' value='Suivre' />
 </form>
+<p class='petit'>Exemple: L'Equipe, Le Monde, Morandini, ...</p>
 
 <?php if ($allFlux) : ?>
-<br/><br/>
 <h2>Dernières mises à jour : </h2>
 <table>
 <?php foreach($allFlux as $flux) : ?>
 	<tr>
-		<td><?php echo $fancyDate->get($flux['last_maj'])?></td>
-		<td><a href='<?php hecho($flux['link'])?>' target='_blank'><?php hecho($flux['title'])?></a>
-			<a href='<?php hecho($flux['item_link'])?>' target='_blank'><?php hecho($flux['item_title']) ?></a>
-		</td>
-		<td><form method='post' action='del.php'>
-				<input type='submit' value='X'/>
+		<td class='date'><a name='' title='Dernier passage : <?php echo $fancyDate->get($flux['last_recup'])?>'><?php echo $fancyDate->get($flux['last_maj'])?></a></td>
+			<td><form method='post' action='del.php'>
+				<input class='bouton' type='submit' value='X'/>
 				<input type='hidden' name='id' value='<?php echo $id ?>'/>
 				<input type='hidden' name='id_f' value='<?php echo $flux['id_f']?>'/>
 			</form>
 		</td>
+		<td class='site'><a href='<?php hecho($flux['link'])?>' target='_blank'><?php hecho($flux['title'])?></a></td>
+	
+		<td class='lien'><a href='<?php hecho($flux['item_link'])?>' target='_blank'><?php hecho($flux['item_title']) ?></a></td>
+		
 	</tr>
 <?php endforeach;?>
 </table>
