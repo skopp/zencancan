@@ -1,21 +1,10 @@
 <?php
 require_once( __DIR__ ."/../init.php");
 require_once("FeedSQL.class.php");
-require_once("FeedLoader.class.php");
+require_once("FeedUpdater.class.php");
 
-$feedLoader = new FeedLoader();
 $feedSQL = new FeedSQL($sqlQuery);
+$feedUpdater = new FeedUpdater($feedSQL);
 
-$url = $argv[1];
+echo $feedUpdater->add($argv[1])?:$feedUpdater->getLastError() ."\n";
 
-$feedInfo = $feedLoader->getInfo($url);
-
-if (! $feedInfo) {
-	echo $feedLoader->getLastError();
-	exit;
-}
-
-
-$feedSQL->add($feedInfo);
-
-print_r($feedInfo);

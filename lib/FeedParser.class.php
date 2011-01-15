@@ -1,35 +1,25 @@
 <?php
 
-class FeedLoader {
+
+class FeedParser {
 	
 	private $timeout;	
 	private $lastError;
 	private $lastHeader;
 	
-	public function __construct($timeout = 5){
-		$this->timeout = $timeout;
+	public function __construct(){
 		libxml_use_internal_errors(true);
-		$this->lastHeader = array('etag' =>'','last-modified' => '' );
-		
 	}
 	
 	public function getLastError(){
 		return $this->lastError;
 	}
 	
-	public function getInfo($url,$oldInfo = array()){
-		
-		if (! $oldInfo){
-			$oldInfo = array('etag'=>'','last-modified' => '');
+	public function getInfo($content){
+		$feedInfo = $this->parseXMLContent($content);
+		if (! $feedInfo ){
+			return false;
 		}
-		
-		$feedInfo = $this->get($url,$oldInfo['etag'],$oldInfo['last-modified']);
-				
-		if (! $feedInfo){
-			return $oldInfo;
-		}
-		$feedInfo['etag'] = $this->lastHeader['etag'];
-		$feedInfo['last-modified'] = $this->lastHeader['last-modified'];
 		
 		if (count($feedInfo['item'])){
 			$feedInfo['pubDate'] = $feedInfo['item'][0]['pubDate'];
@@ -46,83 +36,25 @@ class FeedLoader {
 		return $feedInfo;
 	}
 	
-	public function get($url,$etag = false,$lastModified = false){
-				
-		if (!$url){
-			return false;
-		}
 	
-		if (! filter_var($url,FILTER_VALIDATE_URL) ){
-			$this->lastError = "L'url spécifié n'est pas valide";
-		}
-		
-		$content = $this->getContent($url,$etag,$lastModified);
-		if (! $content ){
-			return false;
-		}
+	public function parseXMLContent($content){
 		
 		$xml = simplexml_load_string($content);
 		if (! $xml ){
-			$this->lastError = "L'adresse n'est pas un flux RSS";
+			echo $content;
+			$this->lastError = "L'adresse n'est pas un flux RSS (load)";
 			return false;
 		}
 		
 		$feed = $this->parse($xml);
 		if (! $feed ){
-			$this->lastError = "L'adresse n'est pas un flux RSS";
+			$this->lastError = "L'adresse n'est pas un flux RSS (parse)";
 			return false; 
 		}
-		$feed['url'] = $url;
+		
 		return $feed;
 	}
 
-	private function readHeader($curl,$headerLine){
-		if (preg_match("#([^:]+):(.*)#",$headerLine,$matches)){
-			$this->lastHeader[strtolower($matches[1])] = $matches[2]; 
-		}
-		return strlen($headerLine);
-	}
-	
-	private function getContent($url,$eTag,$lastModified){
-		
-		$curl = curl_init($url);
-		curl_setopt( $curl, CURLOPT_RETURNTRANSFER, true );
-		curl_setopt($curl,CURLOPT_TIMEOUT,$this->timeout);
-		curl_setopt( $curl, CURLOPT_FOLLOWLOCATION, 1 );	
-
-		$option = array();
-		if ($eTag){
-			$option[] = "If-None-Match: $eTag";
-		}
-		if ($lastModified){
-			$option[] = "If-Modified-Since: $lastModified";
-		}
-		if ($option){
-			curl_setopt( $curl, CURLOPT_HTTPHEADER, $option);
-		}
-		curl_setopt($curl, CURLOPT_HEADER, false);
-		curl_setopt($curl, CURLOPT_HEADERFUNCTION, array($this,"readHeader"));
-		
-		$result =  curl_exec($curl);
-		
-		if ($result === false){
-			$this->lastError = curl_error($curl);		
-			return false;
-		}
-		
-		$response = curl_getinfo($curl);			
-		
-		if ($response['http_code'] == 304){
-			return false;
-		}
-		
-		if ($response['http_code'] != 200){
-			$this->lastError = "Erreur " . $response['http_code'];
-			return false;
-		}
-		return $result; 				
-	}
-	
 	private function parse(SimpleXMLElement $xml){		
 		$documentType = strtolower($xml->getName());
 		
@@ -203,7 +135,7 @@ class FeedLoader {
 		$result['title'] = strval($xml->title);
 		$result['link'] = $this->getOneLink($xml->link);
 		$result['item'] = $this->getAtomItem($xml->entry);
-		$result['lastBuildDate'] = strval(date("Y-m-d H:i:s",$xml->lastBuildDate));
+		$result['lastBuildDate'] = date("Y-m-d H:i:s",strtotime(strval($xml->lastBuildDate)));
 		return $result;
 	}
 	
