@@ -26,6 +26,29 @@ class FeedUpdater {
 		return $this->lastError;
 	}
 	
+	
+	public function addWithoutFetch($url){
+		$info = $this->feedSQL->getInfo($url);
+		if ($info){
+			return $info['id_f'];
+		}
+		$feedInfo = array();
+		$feedInfo['lasterror'] = "";
+		$feedInfo['url'] = $url;
+		$feedInfo['etag'] = "";
+		$feedInfo['last-modified'] = "";
+		$feedInfo['id_item'] = "";
+		$feedInfo['title'] = "En cours de récupération";
+		$feedInfo['link'] = $url;
+		$feedInfo['item_title'] = $url;
+		$feedInfo['item_link'] =  $url;		
+		$feedInfo['item_content'] = "";	
+		$feedInfo['pubDate'] = "";
+		$id_f= $this->feedSQL->insert($feedInfo);
+		$this->feedSQL->forceLastRecup($url);
+		return $id_f;
+	}
+	
 	//On ajoute une URL
 	public function add($url){
 		

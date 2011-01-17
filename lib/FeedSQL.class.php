@@ -49,6 +49,11 @@ class FeedSQL {
 			);
 	}
 	
+	public function forceLastRecup($url){
+		$sql = "UPDATE feed SET last_recup='1970-01-01' WHERE url=?";
+		$this->sqlQuery->query($sql,$url);
+	}
+	
 	public function udpateLastRecup($url,$error = ''){
 		$sql = "UPDATE feed SET last_recup=now(),lasterror=? WHERE url=?";
 		$this->sqlQuery->query($sql,$error,$url);

@@ -2,6 +2,8 @@
 
 class AbonnementSQL {
 	
+	const NB_DISPLAY = 30;
+	
 	private $sqlQuery;
 	
 	public function __construct($sqlQuery){
@@ -26,11 +28,12 @@ class AbonnementSQL {
 		$this->sqlQuery->query($sql,$id,$id_f);
 	}
 	
-	public function getAll($id){
+	public function getAll($id,$offset){
 		$sql = "SELECT * FROM abonnement " . 
 				" JOIN feed ON abonnement.id_f = feed.id_f " . 
 				" WHERE id=?" . 
-				" ORDER BY last_maj DESC";
+				" ORDER BY last_maj DESC".
+				" LIMIT $offset,".self::NB_DISPLAY;
 		
 		return $this->sqlQuery->query($sql,$id);
 	}
@@ -38,6 +41,11 @@ class AbonnementSQL {
 	public function getNbAbonner($id_f){
 		$sql = "SELECT count( * ) FROM `abonnement` WHERE id_f =?";
 		return $this->sqlQuery->queryOne($sql,$id_f);
+	}
+	
+	public function getNbFlux($id){
+		$sql = "SELECT count( * ) FROM abonnement WHERE id =?";
+		return $this->sqlQuery->queryOne($sql,$id);
 	}
 	
 }

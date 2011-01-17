@@ -32,7 +32,7 @@ class FeedParser {
 			$feedInfo['item_title'] = "";
 			$feedInfo['item_link'] =  "";		
 			$feedInfo['item_content'] = "";	
-			$feedInfo['pubDate'] = $feedInfo['lastBuildDate'];
+			$feedInfo['pubDate'] = date();
 		}
 		unset($feedInfo['item']);
 		return $feedInfo;

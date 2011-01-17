@@ -6,12 +6,14 @@ require_once("PageHTML.class.php");
 require_once("AbonnementSQL.class.php");
 require_once("FancyDate.class.php");
 require_once("util.php");
+require_once("Paginator.class.php");
 
 $recuperateur = new Recuperateur($_GET);
 $abonnementSQL = new AbonnementSQL($sqlQuery);
 $fancyDate = new FancyDate();
 
 $id = $recuperateur->get('id');
+$offset = $recuperateur->getInt('offset',0);
 
 if (strlen($id) > 16 ){
 	setcookie("id","");
@@ -31,7 +33,6 @@ if (isset($_COOKIE['id'])){
 }
 
 if (! $id ){
-	
 	$passwordGenerator = new PasswordGenerator();
 	$id = $passwordGenerator->getPassword();
 	setcookie("id",$id);
@@ -39,17 +40,16 @@ if (! $id ){
 	exit;
 }
 
-$allFlux = $abonnementSQL->getAll($id);
+$allFlux = $abonnementSQL->getAll($id,$offset);
 
+$nbFlux = $abonnementSQL->getNbFlux($id);
 
-$pageHTML = new PageHTML($debut);
+$paginator = new Paginator($nbFlux,AbonnementSQL::NB_DISPLAY,$offset);
+$paginator->setLink("index.php?id=$id");
 
-$pageHTML->haut($id);
-
+$pageHTML = new PageHTML($id,$debut);
+$pageHTML->haut();
 ?>
-<p>
-Votre identifiant : <?php hecho($id) ?>
-</p>
 
 <form action='add-flux.php' method='post'>
 <input type='hidden' name='id'  value='<?php hecho($id) ?>' />
@@ -66,6 +66,7 @@ Site à suivre: <br/>
 
 <?php if ($allFlux) : ?>
 <h2>Dernières mises à jour : </h2>
+<?php $paginator->displayNext("« Sites mises à jour plus récemment"); ?>
 <table>
 <?php foreach($allFlux as $flux) : ?>
 	<tr>
@@ -85,6 +86,13 @@ Site à suivre: <br/>
 </table>
 <?php endif;?>
 <?php 
+$paginator->displayPrevious("Sites mises à jour il y a plus longtemps »");
+?>
+		<p class='petit'>
+				<a href='param.php?id=<?php hecho($id)?>'>Configurer mon compte</a>
+			</p>
+<?php 
+
 $pageHTML->bas();
 
 

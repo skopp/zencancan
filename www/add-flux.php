@@ -13,7 +13,6 @@ $feedUpdater = new FeedUpdater($feedSQL);
 $id = $recuperateur->get('id');
 $url = $recuperateur->get('url');
 
-
 $sortie = function () use ($id) {
 	header("Location: index.php?id=$id");
 	exit;
