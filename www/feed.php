@@ -37,9 +37,8 @@ $pageHTML->haut();
 	<tr>
 		<td class='date'><a name='' title='Dernier passage : <?php echo $fancyDate->get($flux['pubDate'])?>'><?php echo $fancyDate->get($flux['pubDate'])?></a></td>
 			
-	
-		<td class='lien'><a href='<?php hecho($flux['link'])?>' target='_blank'><?php hecho($flux['title']) ?></a></td>
-		
+		<td class='lien'><a href='<?php hecho($flux['link'])?>' target='_blank' title='<?php  hecho(wrap(strip_tags($flux['description']),200,1)) ?>'><?php hecho($flux['title']) ?></a><br/>
+	</td>
 	</tr>
 <?php endforeach;?>
 </table>
