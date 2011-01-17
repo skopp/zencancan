@@ -76,7 +76,7 @@ Site à suivre: <br/>
 				<input type='hidden' name='id_f' value='<?php echo $flux['id_f']?>'/>
 			</form>
 		</td>
-		<td class='site'><a href='<?php hecho($flux['link'])?>' target='_blank'><?php hecho($flux['title'])?></a></td>
+		<td class='site'><a href='<?php hecho($flux['link'])?>' target='_blank' title='<?php hecho($flux['title'])?>'><?php hecho(wrap($flux['title'],25,2))?></a></td>
 	
 		<td class='lien'><a href='<?php hecho($flux['item_link'])?>' target='_blank'><?php hecho($flux['item_title']) ?></a></td>
 		

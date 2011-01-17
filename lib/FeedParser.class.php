@@ -26,10 +26,12 @@ class FeedParser {
 			$feedInfo['id_item'] = $feedInfo['item'][0]['id_item'];
 			$feedInfo['item_title'] =  $feedInfo['item'][0]['title'];
 			$feedInfo['item_link'] =  $feedInfo['item'][0]['link'];		
+			$feedInfo['item_content'] =  $feedInfo['item'][0]['content'];	
 		} else {
 			$feedInfo['id_item'] = "";
 			$feedInfo['item_title'] = "";
-			$feedInfo['item_link'] =  "";			
+			$feedInfo['item_link'] =  "";		
+			$feedInfo['item_content'] = "";	
 			$feedInfo['pubDate'] = $feedInfo['lastBuildDate'];
 		}
 		unset($feedInfo['item']);

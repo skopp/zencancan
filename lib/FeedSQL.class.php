@@ -33,19 +33,19 @@ class FeedSQL {
 	}
 	
 	public function insert($feedInfo){
-		$sql = "INSERT INTO feed(url,title,link,last_id,last_maj,last_recup,etag,`last-modified`,item_title,item_link) VALUES (?,?,?,?,?,now(),?,?,?,?)";
+		$sql = "INSERT INTO feed(url,title,link,last_id,last_maj,last_recup,etag,`last-modified`,item_title,item_link,item_content) VALUES (?,?,?,?,?,now(),?,?,?,?,?)";
 		$this->sqlQuery->query($sql, $feedInfo['url'],$feedInfo['title'],$feedInfo['link'],$feedInfo['id_item'],$feedInfo['pubDate'],$feedInfo['etag'],$feedInfo['last-modified']
-			,$feedInfo['item_title'],$feedInfo['item_link']
+			,$feedInfo['item_title'],$feedInfo['item_link'],$feedInfo['item_content']
 		);
 		$sql = "SELECT id_f FROM feed WHERE url=?";
 		return $this->sqlQuery->queryOne($sql,$feedInfo['url']);
 	}
 	
 	private function update($feedInfo){
-		$sql = "UPDATE feed SET title=?, link= ?, last_id=?, last_maj=?, etag = ? ,`last-modified` = ?, last_recup=now(),lasterror='', item_title=?, item_link=? WHERE url=?";
+		$sql = "UPDATE feed SET title=?, link= ?, last_id=?, last_maj=?, etag = ? ,`last-modified` = ?, last_recup=now(),lasterror='', item_title=?, item_link=?,item_content=? WHERE url=?";
 		$this->sqlQuery->query($sql,$feedInfo['title'],$feedInfo['link'],$feedInfo['id_item'],
 			$feedInfo['pubDate'],$feedInfo['etag'],$feedInfo['last-modified'],
-			$feedInfo['item_title'],$feedInfo['item_link'],$feedInfo['url']
+			$feedInfo['item_title'],$feedInfo['item_link'],$feedInfo['item_content'],$feedInfo['url']
 			);
 	}
 	
