@@ -60,26 +60,19 @@ class AbonnementSQL {
 		if ($tag){
 			return $this->getByTag($id,$tag,$offset);
 		}
-		$sql = "(SELECT a.id_f,tag,last_maj,last_recup,title,item_link,item_title
-  FROM abonnement as a JOIN feed On a.id_f=feed.id_f
- WHERE last_maj =
-       ( SELECT MAX(last_maj)
-           FROM abonnement JOIN feed On abonnement.id_f=feed.id_f
-          WHERE tag = a.tag and id=? ) AND id=?  and tag!='' 
-)
-UNION 
-(SELECT abonnement.id_f,tag,last_maj,last_recup,title,item_link,item_title
-  FROM abonnement  JOIN feed On abonnement.id_f=feed.id_f
-WHERE tag='' AND id=? )
-
-ORDER BY last_maj DESC LIMIT $offset,".self::NB_DISPLAY;
-		/*$sql = "SELECT abonnement.id_f,tag,last_maj,last_recup,title,item_link,item_title FROM abonnement " . 
-				" JOIN feed ON abonnement.id_f = feed.id_f " . 
-				" WHERE id=?" .
-				" GROUP BY tag ".
-				" ORDER BY last_maj DESC".
-				" LIMIT $offset,".self::NB_DISPLAY;*/
-		
+		$sql = "(SELECT a.id_f,tag,last_maj,last_recup,title,item_link,item_title" .
+  					" FROM abonnement as a JOIN feed On a.id_f=feed.id_f " .
+ 					" WHERE last_maj = " . 
+ 					" ( SELECT MAX(last_maj) "." FROM abonnement " . 
+ 					" JOIN feed ON abonnement.id_f=feed.id_f" . 
+ 					" WHERE tag = a.tag and id=? ) AND id=?  and tag!='' ". 
+				" ) ".
+				" UNION " . 
+					"(SELECT abonnement.id_f,tag,last_maj,last_recup,title,item_link,item_title" .
+  					" FROM abonnement  JOIN feed On abonnement.id_f=feed.id_f " . 
+					" WHERE tag='' AND id=? ) " .
+				" ORDER BY last_maj DESC " . 
+				" LIMIT $offset,".self::NB_DISPLAY;
 		return $this->sqlQuery->query($sql,$id,$id,$id);
 	}
 	
