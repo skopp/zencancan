@@ -20,3 +20,4 @@ setlocale(LC_ALL,"fr_FR.UTF-8");
 session_start();
 $lastMessage = new LastMessage();
 
+define("DATABASE_FILE",dirname(__FILE__)."/script/zencancan.bin");
