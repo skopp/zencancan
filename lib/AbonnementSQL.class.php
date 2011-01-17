@@ -28,7 +28,15 @@ class AbonnementSQL {
 		$this->sqlQuery->query($sql,$id,$id_f);
 	}
 	
-	public function getAll($id,$offset){
+	public function getAll($id){
+		$sql = "SELECT * FROM abonnement " . 
+				" JOIN feed ON abonnement.id_f = feed.id_f " . 
+				" WHERE id=?" . 
+				" ORDER BY last_maj DESC";
+		return $this->sqlQuery->query($sql,$id);
+	}
+	
+	public function get($id,$offset){
 		$sql = "SELECT * FROM abonnement " . 
 				" JOIN feed ON abonnement.id_f = feed.id_f " . 
 				" WHERE id=?" . 

@@ -9,14 +9,14 @@ class FeedUpdater {
 	
 	const MIN_TIME_BEETWEEN_LOAD = 360;
 	
-	
 	private $feedSQL;
+	private $staticPath;
 	
-	public function __construct(FeedSQL $feedSQL){
+	public function __construct(FeedSQL $feedSQL,$staticPath){
 		$this->feedSQL = $feedSQL;
 		$this->urlLoader = new URLLoader();
 		$this->feedParser = new FeedParser();
-		
+		$this->staticPath = $staticPath;
 		
 	}
 	
@@ -133,6 +133,7 @@ class FeedUpdater {
 		$feedInfo['last-modified'] = $this->urlLoader->getHeader('last-modified');
 	
 		$id_f = $this->feedSQL->insert($feedInfo);
+		$this->updateFile($id_f,$content);
 		return $id_f;
 	}
 	
@@ -153,6 +154,7 @@ class FeedUpdater {
 		$feedInfo['last-modified'] = $this->urlLoader->getHeader('last-modified');
 	
 		$this->feedSQL->doUpdate($info['id_f'] , $feedInfo);
+		$this->updateFile($info['id_f'] ,$content);
 		return $feedInfo['lasterror'];
 	}
 	
@@ -220,6 +222,10 @@ class FeedUpdater {
 		$url = $parse["scheme"]."://".$parse['host'].$url;
 		return $url;
 		
+	}
+	
+	private function updateFile($id_f,$content){
+		file_put_contents($this->staticPath."/".$id_f,$content);
 	}
 	
 }

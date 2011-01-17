@@ -1,0 +1,362 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+	>
+
+<channel>
+	<title>AbriCoCotier.fr</title>
+	<atom:link href="http://www.abricocotier.fr/feed" rel="self" type="application/rss+xml" />
+	<link>http://www.abricocotier.fr</link>
+	<description>Analyses et anticipations sur le web et les nouvelles technologies de demain.</description>
+	<lastBuildDate>Mon, 17 Jan 2011 10:59:20 +0000</lastBuildDate>
+	<generator>http://wordpress.org/?v=2.9.2</generator>
+	<language>en</language>
+	<sy:updatePeriod>hourly</sy:updatePeriod>
+	<sy:updateFrequency>1</sy:updateFrequency>
+			<item>
+		<title>iPad 2 : une résolution 2048×1536 pixels semble possible, mais pas de Retina Display</title>
+		<link>http://www.abricocotier.fr/14112-ipad2-resolution-2048%c3%971536pixels-retina-display</link>
+		<comments>http://www.abricocotier.fr/14112-ipad2-resolution-2048%c3%971536pixels-retina-display#comments</comments>
+		<pubDate>Mon, 17 Jan 2011 08:08:57 +0000</pubDate>
+		<dc:creator>Louis</dc:creator>
+				<category><![CDATA[Web]]></category>
+		<category><![CDATA[Apple]]></category>
+
+		<guid isPermaLink="false">http://www.abricocotier.fr/?p=14112</guid>
+		<description><![CDATA[Contrairement aux calculs que je faisais dans un précédent billet, et à la suite d&#8217;un article de Engadget et d&#8217;un autre de MacRumors, je dois reconnaitre que j&#8217;ai tord, car il s&#8217;avère que l&#8217;iPad 2 pourrait bien, en fait, recevoir une résolution beaucoup plus élevée que pour la version actuelle. MacRumors rapport que la prochaine [...]]]></description>
+			<content:encoded><![CDATA[<p>Contrairement aux calculs que je faisais dans un précédent billet, et à la suite d&#8217;un article de <a href="http://www.engadget.com/2011/01/14/exclusive-the-future-of-the-ipad-2-iphone-5-and-apple-tv-and/">Engadget</a> et d&#8217;un autre de <a href="http://www.macrumors.com/2011/01/15/ipad-2-screen-likely-to-have-2048x1536-resolution/">MacRumors</a>, je dois reconnaitre que j&#8217;ai tord, car il s&#8217;avère que l&#8217;iPad 2 pourrait bien, en fait, recevoir une résolution beaucoup plus élevée que pour la version actuelle. MacRumors rapport que la prochaine génération d&#8217;iPad aurait une résolution de 2048×1536 pixels, ce qui ferait (je refais les calculs, voire en bas de l&#8217;article si vous voulez la formule) un PPI de 263 (ce qui reste beaucoup mieux que le PPI à 163 des iPhone 2/3G/3GS et le PPI à 132 de l&#8217;iPad 1), sans toutefois atteindre le PPI requis pour parler de Retina Display (et donc sans atteindre celui de l&#8217;iPhone 4, qui est au dessus de ce PPI).    <span id="more-14112"></span></p>
+<p style="text-align: center;"><img title="ipad2_ilounge" src="http://www.abricocotier.fr/wp-content/uploads/2011/01/ipad2_ilounge.jpg" alt="" width="580" /></p>
+<p>Pour autant, le résolution de 2048&#215;1536 doublerait la résolution actuelle en nombre de pixels, et donc correspondrait à une &laquo;&nbsp;très très haute résolution&nbsp;&raquo; (sans être un Retina Display comme expliqué plus haut). MacRumors en arrive à cette conclusion sur la nouvelle résolution, en voyant des images ayant le double de pixels au sein même des applications d&#8217;Apple pour iOS, et avec exactement le double de la résolution actuelle pour les icones. Ces images à la résolution doublée sont appelée &laquo;&nbsp;iPad X2&#8243;, de la même façon que les icones de haute résolution pour l&#8217;iPhone !</p>
+<p>Du coup, même si l&#8217;iPad 2 pourrait ne pas s&#8217;appeler iPad 2X (l&#8217;iPhone 4 ne s&#8217;est pas appelé iPhone 2X, donc il y a des chances que la future génération de l&#8217;iPad suive la même route de naming que celle de l&#8217;iPhone), mais il est fort probable qu&#8217;il y ait en vue une augmentation drastique de la résolution.</p>
+<p>Avec cette augmentation de la résolution, les rumeurs sur un changement de processeur pourraient être relancées, dans la mesure où la gestion d&#8217;une résolution supérieure nécessitera plus de puissance processeur !</p>
+<h3><strong>Un processeur double-coeur pour soutenir la charge ?</strong></h3>
+<p>Je pense notamment au processeur double-coeur Samsung A9, <a href="http://www.abricocotier.fr/11190-apple-developpe-2-iphones-4g-hd">dont on parlait, justement avant la sortie de l&#8217;iPhone 4, en mai dernier</a> :</p>
+<blockquote><p>Bien qu’Apple a expliqué que les processeurs A4 étaient  développés en interne, c’est en fait un partenariat entre Apple, Samsung  et Intrinsity, qui a depuis été racheté par Apple. Nos sources  indiquent que la majorité de la technologie venait de Samsung.</p>
+<p>Samsung a le processeur multi-coeur Cortex A9 en développement  actuellement également, mais il nécessite un OS qui prenne en charge le  multi-coeur pour bénéficier de sa puissance accrue. Mais comme la sortie  du Cortex A9 n’est estimée que pour la fin de l’année et que l’iPhone  4.0 n’est pas encore pre^t pour utiliser complètement le processeur  multi-coeur, le A4 est le candidat le plus probable.</p></blockquote>
+<p>Du coup, je me demande si le <em>one-more-thing</em> de Apple ne va pas être un iPad 2 survitaminé avec un nouvel écran, un nouveau processeur double-coeur, et le reste que l&#8217;on a déjà vu.</p>
+<p>D&#8217;habitude, Apple n&#8217;opère pas de changement aussi profonds sur deux version successives, me direz-vous. Oui, sauf que là, Apple n&#8217;était pas sûr de la réussite de l&#8217;iPad (souvenez-vous que beaucoup d&#8217;entre nous -dont moi- étions sceptiques), quand il est sorti. Là, un an après (les premiers modèles sont sortis en avril 2010), Apple en a vendu plus de 3 millions d&#8217;exemplaires, donc il n&#8217;est plus besoin d&#8217;aller chercher des retours sur investissements, ceux-ci sont là : on pourrait donc comprendre qu&#8217;Apple ne laisse pas une seconde à la concurrence pour reprendre de l&#8217;avance et ressorte un modèle de tablette <em>futuriste</em> dès maintenant.</p>
+<h3>Formule de calcul du PPI</h3>
+<p>La formule est celle-ci :</p>
+<p>PPI = sqrt((largeur^2+hauteur^2)/(pouces^2))<br />
+Par exemple avec l&#8217;iPhone 4 : PPI = sqrt((640^2+960^2)/(3.5)^2)</p>
+<hr />
+<p><small><a href="http://www.abricocotier.fr">AbriCoCotier.fr</a>, 2011. |
+<a href="http://www.abricocotier.fr/14112-ipad2-resolution-2048%c3%971536pixels-retina-display">Permalien</a> |
+<a href="http://www.abricocotier.fr/14112-ipad2-resolution-2048%c3%971536pixels-retina-display#comments">1 commentaire</a> | Plugin <a href="http://planetozh.com/blog/my-projects/wordpress-plugin-better-feed-rss/">Better Feed</a>, par <a href="http://planetozh.com/">Ozh</a>
+<br/>
+Rangé dans : Apple<br/>
+</small></p>]]></content:encoded>
+			<wfw:commentRss>http://www.abricocotier.fr/14112-ipad2-resolution-2048%c3%971536pixels-retina-display/feed</wfw:commentRss>
+		<slash:comments>1</slash:comments>
+		</item>
+		<item>
+		<title>Blackberry Playbook : test complet</title>
+		<link>http://www.abricocotier.fr/14089-blackberry-playbook-test-complet</link>
+		<comments>http://www.abricocotier.fr/14089-blackberry-playbook-test-complet#comments</comments>
+		<pubDate>Fri, 14 Jan 2011 16:55:16 +0000</pubDate>
+		<dc:creator>Caroline</dc:creator>
+				<category><![CDATA[Web]]></category>
+		<category><![CDATA[Blackberry]]></category>
+
+		<guid isPermaLink="false">http://www.abricocotier.fr/?p=14089</guid>
+		<description><![CDATA[RIM a profité du CES pour mettre en démonstration leur Playbook. Les gars de BGR ont donc pu passer un petit quart d’heure avec l’appareil tant attendu en main. Il faut savoir avant toute chose que l’OS n’est pas encore terminé, l’appareil était équipé de la version pré-beta (donc Alpha..).  Ceci dit, ça n’a [...]]]></description>
+			<content:encoded><![CDATA[<p>RIM a profité du CES pour mettre en démonstration leur Playbook. Les gars de BGR <a href="http://feedproxy.google.com/~r/TheBoyGeniusReport/~3/7yAnjHgxVyw/">ont donc pu</a> passer un petit quart d’heure avec l’appareil tant attendu en main. Il faut savoir avant toute chose que l’OS n’est pas encore terminé, l’appareil était équipé de la version pré-beta (donc Alpha..).  Ceci dit, ça n’a pas eu l’air de trop gêner les gars de BGR, et pour la deuxième fois, le Playbook leur a fait bonne impression.    <span id="more-14089"></span></p>
+<p style="text-align: center;"><img src="http://www.abricocotier.fr/wp-content/uploads/2011/01/blackberry-playbook-1.jpg" alt="" title="blackberry-playbook-1" width="580" /></p>
+<p>Chaque chose en son temps, commençons par parler du Hardware. Le Playbook donne la sensation d’être très bien conçu. Il semble solide et résistant. Il se prend bien en main et son poids est parfait, ni trop lourd, ni trop léger. Malgré l’écran de 7 pouces, le reporter de BGR trouve que le Playbook n’est pas forcément très pratique pour ce qui est de la saisie texte. Cependant il conclut tout de même que la tablette de BlackBerry surpasse la Galaxy Tab de Samsung, actuellement en vente.</p>
+<p style="text-align: center;"><img src="http://www.abricocotier.fr/wp-content/uploads/2011/01/blackberry-playbook-2.jpg" alt="" title="blackberry-playbook-2" width="580" /></p>
+<p>Son écran est très brillant et riche en couleurs, ce qui lui permet d’être très clairement lisible en plein jour. On n’en est pas encore au Rétina Display, mais cela reste supérieur à l’écran de l’iPad. La réponse du tactile lors des sollicitations est très bonne. BlackBerry a fait pas mal de chemin depuis le Storm ou le Torch. L’écran réagit très bien, et sachant que la tablette testée ne disposait que d’un OS encore en phase de développement, on peut se dire que le Playbook donnera pleine satisfaction, au niveau de la performance.</p>
+<p style="text-align: center;"><img src="http://www.abricocotier.fr/wp-content/uploads/2011/01/blackberry-playbook-3.jpg" alt="" title="blackberry-playbook-3" width="580" /></p>
+<p>L’appareil en pré production que le BGR a pu tester ne disposait pas de beaucoup d’applications installées, du coup ils n’ont pas pu faire un test trop poussé. Et puis ils n’ont pas pu tester le lecteur multimédia (mais bon ils l’avaient déjà testé lors de leur première prise en main de l’appareil). Ceci dit ils ont pu vérifier que le Playbook était équipé d’un navigateur gérant parfaitement le flash (YouTube fonctionne à merveille). D’ailleurs le navigateur est plutôt rapide et a un très bon rendu des sites.</p>
+<p style="text-align: center;"><img src="http://www.abricocotier.fr/wp-content/uploads/2011/01/blackberry-playbook-4.jpg" alt="" title="blackberry-playbook-4" width="580" /></p>
+<p>En ce qui concerne la stratégie générale de RIM, il apparait clairement qu’ils souhaitent un environnement très riche. Bon évidemment l’appareil qu’a pu tester BGR était assez pauvre en applications installées, mais ils ont reçu l’assurance que d’ici le lancement du Playbook, l’App World se serait bien étoffé en applis spécifiques Playbook. J’espère franchement que BlackBerry se tiendra à cet engagement, car ce serait vraiment un atout de leur côté pour bien positionner leur tablette.</p>
+<p style="text-align: center;"><img src="http://www.abricocotier.fr/wp-content/uploads/2011/01/blackberry-playbook-5.jpg" alt="" title="blackberry-playbook-5" width="580" /></p>
+<p>Comme beaucoup de gens l&#8217;ont déjà dit, aucune applications relative à la messagerie (emails, calendrier, contacts, BBM) ne fonctionneront sans faire de tethering entre le Playbook et un vrai smartphone Blackberry. RIM a expliqué que c&#8217;était une décision qu&#8217;ils avaient pris en toute conscience, pensant que le Playbook seul serait plus orienté vers les médias et le web&#8230; En gros, le Playbook seul est une tablette pour les particuliers, et se transforme en super-Blackberry quand vous en avez un à proximité. Or, pas sûr que les particuliers n&#8217;aient pas envie d&#8217;utiliser les mails/BBM&#8230; Et oui, il n&#8217;y a pas que les pros qui s&#8217;envoient des messages ! Mais RIM fait le pari que les applications sur l&#8217;AppWorld remplaceront les applications de base pour Blackberry, et donc que si vous avez un compte Gmail, vous pourrez consulter vos mails soit via le navigateur, soit via l&#8217;application Gmail, mais pas avec l&#8217;application Mail de Blackberry&#8230;</p>
+<p style="text-align: center;"><img src="http://www.abricocotier.fr/wp-content/uploads/2011/01/blackberry-playbook-6.jpg" alt="" title="blackberry-playbook-6" width="580" /></p>
+<p>Ne vous méprenez pas, le Playbook tel qu’il est lancé s’annonce être un très bon produit. Par contre j’espère que RIM mettra autant d’attention au développement de l’environnement de son App World qu’ils ont mis de soins dans le hardware du Playbook.</p>
+<p style="text-align: center;"><img src="http://www.abricocotier.fr/wp-content/uploads/2011/01/blackberry-playbook-7.jpg" alt="" title="blackberry-playbook-7" width="580" /></p>
+<p style="text-align: center;"><img src="http://www.abricocotier.fr/wp-content/uploads/2011/01/blackberry-playbook-8.jpg" alt="" title="blackberry-playbook-8" width="580" /></p>
+<p style="text-align: center;"><img src="http://www.abricocotier.fr/wp-content/uploads/2011/01/blackberry-playbook-9.jpg" alt="" title="blackberry-playbook-9" width="580" /></p>
+<p style="text-align: center;"><img src="http://www.abricocotier.fr/wp-content/uploads/2011/01/blackberry-playbook-10.jpg" alt="" title="blackberry-playbook-10" width="580" /></p>
+<p style="text-align: center;"><img src="http://www.abricocotier.fr/wp-content/uploads/2011/01/blackberry-playbook-11.jpg" alt="" title="blackberry-playbook-11" width="580" /></p>
+<p style="text-align: center;"><img src="http://www.abricocotier.fr/wp-content/uploads/2011/01/blackberry-playbook-12.jpg" alt="" title="blackberry-playbook-12" width="580" /></p>
+<p style="text-align: center;"><img src="http://www.abricocotier.fr/wp-content/uploads/2011/01/blackberry-playbook-13.jpg" alt="" title="blackberry-playbook-13" width="580" /></p>
+<p style="text-align: center;"><img src="http://www.abricocotier.fr/wp-content/uploads/2011/01/blackberry-playbook-15.jpg" alt="" title="blackberry-playbook-15" width="580" /></p>
+<p style="text-align: center;"><img src="http://www.abricocotier.fr/wp-content/uploads/2011/01/blackberry-playbook-16.jpg" alt="" title="blackberry-playbook-16" width="580" /></p>
+<p style="text-align: center;"><img src="http://www.abricocotier.fr/wp-content/uploads/2011/01/blackberry-playbook-17.jpg" alt="" title="blackberry-playbook-17" width="580" /></p>
+<p style="text-align: center;"><img src="http://www.abricocotier.fr/wp-content/uploads/2011/01/blackberry-playbook-18.jpg" alt="" title="blackberry-playbook-18" width="580" /></p>
+<p style="text-align: right;"><a href="http://feedproxy.google.com/~r/TheBoyGeniusReport/~3/7yAnjHgxVyw/">Via le BGR</a></p>
+<hr />
+<p><small><a href="http://www.abricocotier.fr">AbriCoCotier.fr</a>, 2011. |
+<a href="http://www.abricocotier.fr/14089-blackberry-playbook-test-complet">Permalien</a> |
+<a href="http://www.abricocotier.fr/14089-blackberry-playbook-test-complet#comments">2 commentaires</a> | Plugin <a href="http://planetozh.com/blog/my-projects/wordpress-plugin-better-feed-rss/">Better Feed</a>, par <a href="http://planetozh.com/">Ozh</a>
+<br/>
+Rangé dans : Blackberry<br/>
+</small></p>]]></content:encoded>
+			<wfw:commentRss>http://www.abricocotier.fr/14089-blackberry-playbook-test-complet/feed</wfw:commentRss>
+		<slash:comments>2</slash:comments>
+		</item>
+		<item>
+		<title>iOS 4.3 : Vidéo des nouvelles combinaisons de multitouch pour l&#8217;iPad. Vers la suppression du bouton Home ?</title>
+		<link>http://www.abricocotier.fr/14077-ios-43-video-combinaisons-multitouch-ipad</link>
+		<comments>http://www.abricocotier.fr/14077-ios-43-video-combinaisons-multitouch-ipad#comments</comments>
+		<pubDate>Thu, 13 Jan 2011 09:58:35 +0000</pubDate>
+		<dc:creator>Louis</dc:creator>
+				<category><![CDATA[Web]]></category>
+		<category><![CDATA[Apple]]></category>
+
+		<guid isPermaLink="false">http://www.abricocotier.fr/?p=14077</guid>
+		<description><![CDATA[Une des fonctionnalités les plus intéressantes trouvées dans la version pour développeurs de iOS 4.3, c&#8217;est l&#8217;introduction de combinaisons de quatre ou cinq doigts pour faire des actions sur l&#8217;écran multitouch de l&#8217;iPad. &#171;&#160;Cette version Beta contient des previews de ce qu&#8217;il sera possible de faire avec les multitouch sur iPad. Vous pouvez utiliser quatre [...]]]></description>
+			<content:encoded><![CDATA[<p>Une des fonctionnalités les plus intéressantes trouvées dans la version pour développeurs de iOS 4.3, c&#8217;est l&#8217;introduction de combinaisons de quatre ou cinq doigts pour faire des actions sur l&#8217;écran multitouch de l&#8217;iPad. &laquo;&nbsp;Cette version Beta contient des previews de ce qu&#8217;il sera possible de faire avec les multitouch sur iPad. Vous pouvez utiliser quatre ou cinq doigts pour revenir à la <em>Home</em>; glisser vers le haut pour afficher la barre de multitache, glisser à gauche ou à droite pour passer d&#8217;une application ouverte à une autre. Nous fournissons cette preview avant de la fournir au grand public pour que les développeurs puissent commencer à intégrer ces mouvements multitouch avec leurs applications.&nbsp;&raquo; <span id="more-14077"></span></p>
+<p style="text-align: center;"><img src="http://www.abricocotier.fr/wp-content/uploads/2011/01/iPhone-iPad-home-button.jpg" alt="" title="iPhone-iPad-home-button" width="580" /></p>
+<p>La vidéo ci-dessous montre un utilisateur passer d&#8217;une application à une autre en faisant glisser à gauche et à droite les applications ouvertes. Avec quatre ou cinq doigts, dans un mouvement de rassemblement des doigts (comme pour fermer le poing rapidement), on retourne directement à la Home, ce qui enlève le besoin d&#8217;un bouton physique.</p>
+<p style="text-align:center;"><object width="580" height="460"><param name="movie" value="http://www.youtube.com/v/wvxSSGUtTYA?fs=1&amp;hl=en_US"></param><param name="allowFullScreen" value="true"></param><param name="allowscriptaccess" value="always"></param><embed src="http://www.youtube.com/v/wvxSSGUtTYA?fs=1&amp;hl=en_US" type="application/x-shockwave-flash" allowscriptaccess="always" allowfullscreen="true" width="580" height="460"></embed></object></p>
+<p>Ainsi, cette non nécéssité du bouton Home fait penser à <a href="http://feedproxy.google.com/~r/TheBoyGeniusReport/~3/nUs2MVO6oAA/">certains</a> que celui-ci va sans doute finir par disparaitre de l&#8217;iPad, ce qui permettrait du coup à Apple d&#8217;enlever encore une pièce mécanique de l&#8217;iPad (et on sait que toute pièce mécanique est potentiellement soumise à disfonctionnement, ou du moins prends potentiellement plus de place en terme de volume qu&#8217;un simple bout de code supplémentaire).</p>
+<p>En plus de l&#8217;iPad, il se pourrait bien que ce soit également l&#8217;iPhone qui subisse cette disparition du bouton Home. La source du BoyGeniusReport dit que les employés d&#8217;Apple testeraient d&#8217;ores et déjà des iPad et des iPhones sans bouton Home (dans les labos d&#8217;Apple, bien sûr, et il est peu probable que l&#8217;on voit ces changements dans les versions d&#8217;iPad et d&#8217;iPhone qui sortiront cette année). A l&#8217;origine, Steve Jobs ne voulait pas du tout de boutons physiques sur l&#8217;iPhone, parait-il, et il semble bien qu&#8217;il ait gardé l&#8217;idée en tête <img src='http://www.abricocotier.fr/wp-includes/images/smilies/icon_smile.gif' alt=':-)' class='wp-smiley' /> </p>
+<p>Le BGR, toujours, a appris que l&#8217;application de prise de photo Photo Booth apparaitrait sur le prochain iPad. Il est de surcroît fort probable, selon eux, que les applications iLife soient annoncées sur iOS lors de la sortie de l&#8217;iPad 2.</p>
+<p><a href="http://www.macrumors.com/2011/01/12/video-of-new-multi-touch-gestures-on-ipad-ios-4-3/"><br />
+Source</a></p>
+<hr />
+<p><small><a href="http://www.abricocotier.fr">AbriCoCotier.fr</a>, 2011. |
+<a href="http://www.abricocotier.fr/14077-ios-43-video-combinaisons-multitouch-ipad">Permalien</a> |
+<a href="http://www.abricocotier.fr/14077-ios-43-video-combinaisons-multitouch-ipad#comments">1 commentaire</a> | Plugin <a href="http://planetozh.com/blog/my-projects/wordpress-plugin-better-feed-rss/">Better Feed</a>, par <a href="http://planetozh.com/">Ozh</a>
+<br/>
+Rangé dans : Apple<br/>
+</small></p>]]></content:encoded>
+			<wfw:commentRss>http://www.abricocotier.fr/14077-ios-43-video-combinaisons-multitouch-ipad/feed</wfw:commentRss>
+		<slash:comments>1</slash:comments>
+		</item>
+		<item>
+		<title>Google arrête le support du codec H.264 pour les vidéos en HTML5, mais conserve le player Flash : un grand bluff ?</title>
+		<link>http://www.abricocotier.fr/14054-google-support-codec-h264-videos-html5-player-flash</link>
+		<comments>http://www.abricocotier.fr/14054-google-support-codec-h264-videos-html5-player-flash#comments</comments>
+		<pubDate>Wed, 12 Jan 2011 14:27:38 +0000</pubDate>
+		<dc:creator>Louis</dc:creator>
+				<category><![CDATA[Web]]></category>
+		<category><![CDATA[Adobe]]></category>
+		<category><![CDATA[Google]]></category>
+		<category><![CDATA[H.264]]></category>
+		<category><![CDATA[WebM]]></category>
+
+		<guid isPermaLink="false">http://www.abricocotier.fr/?p=14054</guid>
+		<description><![CDATA[Vous avez surement lu ça à droite et à gauche : Google arrête le support du codec H.264 dans Chrome, mais conserve le plugin Flash (qui lui aura toujours le codec). Donc en gros, Chrome ne lira plus en HTML5 les vidéos encodées en H.264, mais ça ne changera rien pour les vidéos dont le [...]]]></description>
+			<content:encoded><![CDATA[<p>Vous avez surement lu ça à droite et à gauche : Google <a href="http://blog.chromium.org/2011/01/html-video-codec-support-in-chrome.html">arrête</a> <a href="http://techcrunch.com/2011/01/11/google-chrome-browser-h-264-video/">le</a> <a href="http://techcrunch.com/2011/01/11/google-flash/">support</a> du codec H.264 dans Chrome, mais conserve le plugin Flash (qui lui aura toujours le codec). Donc en gros, Chrome ne lira plus en HTML5 les vidéos encodées en H.264, mais ça ne changera rien pour les vidéos dont le player est en Flash. Google donne également le bâton pour se faire battre, car ils invoquent comme raison pour arrêter le H.264 que ce codec n&#8217;est pas libre de droit, alors que dans le même temps ils continuent leur intégration de Flash au sein de Chrome, alors que Flash n&#8217;est pas du tout libre de droit non plus.    <span id="more-14054"></span></p>
+<p style="text-align: center;"><img src="http://www.abricocotier.fr/wp-content/uploads/2011/01/Eric_E_Schmidt_2005.jpg" alt="" title="Eric_E_Schmidt_2005" width="580" /></p>
+<p>D&#8217;où l&#8217;idée bizarre qui me vient en tête : puisque que Google conserve le support du codec H.264 dans Flash, l&#8217;arrêt du H.264 au sein du HTML5 n&#8217;est pas une si grosse annonce que ça. Beaucoup de vidéos sur Youtube sont encore visionnées en Flash, et j&#8217;aurais même tendance à penser que c&#8217;est une large majorité qui le sont.</p>
+<p>Donc c&#8217;est une annonce pour pas grand chose. Et ça me fait penser que Google cherche davantage à faire peur qu&#8217;à faire mal. Pour autant, quasiment rien ne change, et donc je me demande si Google ne cherche pas plutôt à faire bouger les lignes du côté de la MPEG-LA que du côté des développeurs et vidéastes.</p>
+<p>Je m&#8217;explique : j&#8217;ai l&#8217;impression que Google veut amplifier la pression sur la MPEG-LA pour qu&#8217;elle assouplisse encore les conditions d&#8217;utilisation de son codec (en gros qu&#8217;ils le mettent gratuit à vie, même pour les vidéos payantes), car Google a besoin de cette gratuité pour créer des services payants pour Youtube. Or, il est possible que Google ne puisse pas décemment ouvrir ces services avec un player <a href="http://www.abricocotier.fr/11045-google-libere-completement-vp8-webm-lors-de-lio-2010">HTML5+WebM</a>, et donc ils ont besoin du combo Flash+H.264, sauf que dans le cadre d&#8217;une utilisation payante, la licence H.264 est potentiellement payante&#8230; et Google ne veut pas payer !</p>
+<p>Tout ceci reste seulement des supputations personnelles, mais tout ceci me parait un peu trop proche de gros sous et un peu trop empreint de bonnes intentions pour être totalement vrai. Certes, le ciel est plus bleu quand on utilise WebM, mais je ne suis pas sûr que ce soit la seule raison qui suffise à convaincre tous les gens qui possèdent des actions Google <img src='http://www.abricocotier.fr/wp-includes/images/smilies/icon_biggrin.gif' alt=':-D' class='wp-smiley' /> </p>
+<p>[<a href="http://commons.wikimedia.org/wiki/File:Eric_E_Schmidt,_2005.jpg">Photo</a>]</p>
+<hr />
+<p><small><a href="http://www.abricocotier.fr">AbriCoCotier.fr</a>, 2011. |
+<a href="http://www.abricocotier.fr/14054-google-support-codec-h264-videos-html5-player-flash">Permalien</a> |
+<a href="http://www.abricocotier.fr/14054-google-support-codec-h264-videos-html5-player-flash#comments">3 commentaires</a> | Plugin <a href="http://planetozh.com/blog/my-projects/wordpress-plugin-better-feed-rss/">Better Feed</a>, par <a href="http://planetozh.com/">Ozh</a>
+<br/>
+Rangé dans : Adobe, Google, H.264, WebM<br/>
+</small></p>]]></content:encoded>
+			<wfw:commentRss>http://www.abricocotier.fr/14054-google-support-codec-h264-videos-html5-player-flash/feed</wfw:commentRss>
+		<slash:comments>3</slash:comments>
+		</item>
+		<item>
+		<title>Le Samsung Galaxy S2 aurait un processeur double coeur, un écran Super AMOLED Plus de 4.3 pouces et une puce NFC&#8230;</title>
+		<link>http://www.abricocotier.fr/14065-samsung-galaxy-s2-processeur-double-coeur-ecran-super-amoled-plus-43-puce-nfc</link>
+		<comments>http://www.abricocotier.fr/14065-samsung-galaxy-s2-processeur-double-coeur-ecran-super-amoled-plus-43-puce-nfc#comments</comments>
+		<pubDate>Wed, 12 Jan 2011 13:12:17 +0000</pubDate>
+		<dc:creator>Louis</dc:creator>
+				<category><![CDATA[Web]]></category>
+		<category><![CDATA[Android]]></category>
+		<category><![CDATA[Samsung]]></category>
+		<category><![CDATA[Smartphones]]></category>
+
+		<guid isPermaLink="false">http://www.abricocotier.fr/?p=14065</guid>
+		<description><![CDATA[Samsung présentera le successeur du Galaxy S au début du mois prochain au Mobile World Congress de Barcelone. Le design, le nom et les spécifications ne sont pas encore connues. Pour autant, le journal koréen ETnews prétends savoir que le Samsung Galaxy S2 (ils ne sont pas sûrs du nom, par contre), aura le design [...]]]></description>
+			<content:encoded><![CDATA[<p>Samsung présentera le successeur du Galaxy S au début du mois prochain au Mobile World Congress de Barcelone. Le design, le nom et les spécifications ne sont pas encore connues. Pour autant, le journal koréen ETnews <a href="http://www.etnews.co.kr/news/detail.html?id=201101110132">prétends</a> savoir que le Samsung Galaxy S2 (ils ne sont pas sûrs du nom, par contre), aura le design reproduit en photo ci-dessous, qu&#8217;il aura un écran Super AMOLED Plus de 4,3 pouces, un processeur double-coeur, une puce NFC et tournerait sur Android 2.3.    <span id="more-14065"></span> </p>
+<p style="text-align: center;"><img src="http://www.abricocotier.fr/wp-content/uploads/2011/01/samsung_galaxy_s2.jpg" alt="" title="samsung_galaxy_s2" width="400" /></p>
+<p>Ces caractéristiques ne sont pas étonnantes (à part pour l&#8217;écran 4,3 pouces, qui m&#8217;étonne un petit peu&#8230;), car il ne faut pas oublier que d&#8217;autres smartphones ont déjà été annoncés avec de telles caractéristiques, tels que le <a href="http://www.abricocotier.fr/14019-lg-optimus-2x-smartphones-nvidia-tegra2-processeur-double-coeur">LG Optimus 2X</a> et le Motorola Atrix (pour le processeur double coeur) ou encore le <a href="http://www.abricocotier.fr/13941-samsung-infuse-4g-htc-desire-hd-evo-hd2">Samsung Infuse</a> (pour l&#8217;écran Amoled Plus).</p>
+<p>Ce qui m&#8217;étonne, par contre, c&#8217;est le design que sort ETnews&#8230; Pour moi, certes ce design correspond avec la lignée Samsung (et encore, on pourrait aussi le faire correspondre avec la lignée HTC), mais il me parait un peu trop flou pour être un élément digne de confiance.</p>
+<hr />
+<p><small><a href="http://www.abricocotier.fr">AbriCoCotier.fr</a>, 2011. |
+<a href="http://www.abricocotier.fr/14065-samsung-galaxy-s2-processeur-double-coeur-ecran-super-amoled-plus-43-puce-nfc">Permalien</a> |
+<a href="http://www.abricocotier.fr/14065-samsung-galaxy-s2-processeur-double-coeur-ecran-super-amoled-plus-43-puce-nfc#comments">1 commentaire</a> | Plugin <a href="http://planetozh.com/blog/my-projects/wordpress-plugin-better-feed-rss/">Better Feed</a>, par <a href="http://planetozh.com/">Ozh</a>
+<br/>
+Rangé dans : Android, Samsung, Smartphones<br/>
+</small></p>]]></content:encoded>
+			<wfw:commentRss>http://www.abricocotier.fr/14065-samsung-galaxy-s2-processeur-double-coeur-ecran-super-amoled-plus-43-puce-nfc/feed</wfw:commentRss>
+		<slash:comments>1</slash:comments>
+		</item>
+		<item>
+		<title>Google : fuite des cerveaux et lancements de produits mitigés&#8230; Vers un ralentissement de la croissance ?</title>
+		<link>http://www.abricocotier.fr/14059-google-fuite-cerveauxlancements-de-produits-mitiges-vers-un-ralentissement-de-la-croissance</link>
+		<comments>http://www.abricocotier.fr/14059-google-fuite-cerveauxlancements-de-produits-mitiges-vers-un-ralentissement-de-la-croissance#comments</comments>
+		<pubDate>Wed, 12 Jan 2011 10:59:12 +0000</pubDate>
+		<dc:creator>Louis</dc:creator>
+				<category><![CDATA[Web]]></category>
+		<category><![CDATA[Google]]></category>
+
+		<guid isPermaLink="false">http://www.abricocotier.fr/?p=14059</guid>
+		<description><![CDATA[En ce moment, ça sent le sapin chez Google : d&#8217;un côté, la qualité du moteur de recherche est critiquée car submergée par des sites optimisés SEO mais qui pour autant ne présentent pas une qualité digne de leur place dans les résultats de recherche. D&#8217;un autre côté, les récents échecs au lancement de plusieurs [...]]]></description>
+			<content:encoded><![CDATA[<p>En ce moment, ça sent le sapin chez Google : d&#8217;un côté, la qualité du moteur de recherche <a href="http://techcrunch.com/2011/01/01/why-we-desperately-need-a-new-and-better-google-2/">est critiquée</a> car submergée par des sites optimisés SEO mais qui pour autant ne présentent pas une qualité digne de leur place dans les résultats de recherche. D&#8217;un autre côté, les récents échecs au lancement de plusieurs produits (<a href="http://fr.techcrunch.com/2011/01/10/google-vers-le-declin-de-lempire-americain/">Buzz, Wave, Google TV et le Nexus One.</a>) font que Google ne fait plus autant réver qu&#8217;avant. Pour ma part, je ne sais pas si on peut ici vraiment parler d&#8217;échecs, ou alors si il faut y voir une stratégie à long terme (pour la Google TV par exemple), mais ce qui est sûr, c&#8217;est qu&#8217;il y a bien un &laquo;&nbsp;brain drain&nbsp;&raquo; (une fuite des cerveaux) de chez Google vers&#8230; Facebook ou d&#8217;autres startups de la Silicon Valley. Au delà d&#8217;une évaluation sur l&#8217;état des produits et de leur lancement, je pense que quand les plus grands développeurs s&#8217;en vont en courant de Google, c&#8217;est la preuve qu&#8217;il y a quelque chose qui cloche.    <span id="more-14059"></span></p>
+<p style="text-align: center;"><img title="google_bus_china" src="http://www.abricocotier.fr/wp-content/uploads/2011/01/google_bus_china.jpg" alt="" width="500" /></p>
+<p>Alors on pourra dire que je suis alarmiste. Sauf que ce sont les plus grands médias américains qui en parlent :</p>
+<ul>
+<li><a href="http://www.businessinsider.com/google-brain-drain-2009-4">The Google Brain Drain</a> sur BusinessInsider</li>
+<li><a href="http://techcrunch.com/2010/11/15/google-schmidt/">Eric Schmidt: It Is A War For Talent</a> sur TechCrunch</li>
+<li><a href="http://www.wired.com/epicenter/2008/03/can-google-stop/">Can Google Stop the Brain Drain?</a> sur Wired</li>
+<li><a href="http://venturebeat.com/2011/01/12/google-search/">Google already knows its search sucks (and is working to fix it)</a> sur VentureBeat</li>
+<li><a href="http://www.marco.org/2617546197">Google’s decreasingly useful, spam-filled web search</a> sur Marco.org (fondateur de Instapaper et ancien <em>lead developer</em> chez Tumblr)</li>
+</ul>
+<p>Bref, dire que chez Google, &laquo;&nbsp;tout va pour le mieux&nbsp;&raquo; me semble un petit peu hatif.</p>
+<p>Certes, beaucoup de gens, comme <a href="http://www.frandroid.com/56146/google-pourquoi-va-ton-assister-a-une-annee-record/">Ulrich</a>, restent très optimistes et pensent que Google va continuer sa croissance, avec notamment des produits comme Android ou ChromeOS ou ChromeTV.</p>
+<p>Je ne partage pas totalement son avis sur ChromeOS ou GoogleTV, mais je pense également que Android est une réussite incontestable pour Google, au moins aussi importante à mon avis que Gmail ou Youtube (je ne place pas Chrome dans cette catégorie, car je ne pense pas que Google &laquo;&nbsp;gagne&nbsp;&raquo; de l&#8217;argent grace à Chrome). Donc rien que grâce à Android, Google continuera à grandir, et vous continuerez à entendre parler de Google dans les années à venir.</p>
+<p>Pour autant, je reste sur l&#8217;idée que Google commence à perdre de sa splendeur, ce n&#8217;est plus une startup, le rêve a laissé place à la bureaucratie, le volume de l&#8217;entreprise commence à devenir, comme Microsoft, un facteur négatif plutôt qu&#8217;un ensemble d&#8217;atouts. On trouve toujours des fans de Google, mais comme pour Microsoft, la quantité de fans ne signifie pas que l&#8217;entreprise est forcément en bonne santé. Je pense que Google va continuer à croître, mais sa croissance va ralentir (on parle en dérivée deuxième, pour les matheux), et c&#8217;est cela que ressentent les employés ou les spécialistes de la Silicon Valley.</p>
+<p style="text-align: right;">[<a href="http://www.flickr.com/photos/auselen/4307026915/">Photo</a>]</p>
+<hr />
+<p><small><a href="http://www.abricocotier.fr">AbriCoCotier.fr</a>, 2011. |
+<a href="http://www.abricocotier.fr/14059-google-fuite-cerveauxlancements-de-produits-mitiges-vers-un-ralentissement-de-la-croissance">Permalien</a> |
+<a href="http://www.abricocotier.fr/14059-google-fuite-cerveauxlancements-de-produits-mitiges-vers-un-ralentissement-de-la-croissance#comments">4 commentaires</a> | Plugin <a href="http://planetozh.com/blog/my-projects/wordpress-plugin-better-feed-rss/">Better Feed</a>, par <a href="http://planetozh.com/">Ozh</a>
+<br/>
+Rangé dans : Google<br/>
+</small></p>]]></content:encoded>
+			<wfw:commentRss>http://www.abricocotier.fr/14059-google-fuite-cerveauxlancements-de-produits-mitiges-vers-un-ralentissement-de-la-croissance/feed</wfw:commentRss>
+		<slash:comments>4</slash:comments>
+		</item>
+		<item>
+		<title>Steve Jobs regrette qu&#8217;en entreprise, les employés utilisent un matériel qu&#8217;ils n&#8217;auraient pas choisi</title>
+		<link>http://www.abricocotier.fr/14046-steve-jobs-entreprise-employes-materiel</link>
+		<comments>http://www.abricocotier.fr/14046-steve-jobs-entreprise-employes-materiel#comments</comments>
+		<pubDate>Wed, 12 Jan 2011 07:40:38 +0000</pubDate>
+		<dc:creator>Louis</dc:creator>
+				<category><![CDATA[Web]]></category>
+		<category><![CDATA[Apple]]></category>
+
+		<guid isPermaLink="false">http://www.abricocotier.fr/?p=14046</guid>
+		<description><![CDATA[Le 5 janvier dernier, Apple a envoyé un mail promotionnel intitulé &#171;&#160;Mac pour l&#8217;entreprise&#160;&#187;, marquant le retour officiel d&#8217;Apple dans le monde des entreprises. Cela correspond avec le fait que Apple prenait des parts de marché avec son iPhone sur RIM et ses Blackberry, mais cela reste étonnant par certains aspects avec l&#8217;arrêt des Xserve. [...]]]></description>
+			<content:encoded><![CDATA[<p>Le 5 janvier dernier, Apple a envoyé un mail promotionnel intitulé &laquo;&nbsp;Mac pour l&#8217;entreprise&nbsp;&raquo;, marquant le retour officiel d&#8217;Apple dans le monde des entreprises. Cela correspond avec le fait que Apple prenait des parts de marché avec son iPhone sur RIM et ses Blackberry, mais cela reste étonnant par certains aspects <a href="http://www.abricocotier.fr/13421-arret-xserve-apple-un-nouveau-serveur-renversant">avec l&#8217;arrêt des Xserve</a>. <a href="http://www.infoworld.com/t/mac/apple-formally-declares-its-enterprise-intentions-703">InfoWorld</a> rapport que le vice-president des ventes aux entreprises chez Apple est parti en 2008 de la firme mais n&#8217;a jamais été remplacé. Les ambitions d&#8217;Apple pour les entreprises étaient donc jusqu&#8217;alors plutôt floues. Pour autant, une intervention de Steve Jobs vient expliquer cette (non-) orientation.     <span id="more-14046"></span></p>
+<p>L&#8217;été dernier, le PDG d&#8217;Apple a en effet <a href="http://www.informationweek.com/blog/main/archives/2010/06/why_steve_jobs.html">expliqué</a> :</p>
+<blockquote><p>Ce que j&#8217;aime avec le marché des consommateurs est exactement ce que je n&#8217;ai jamais aimé sur le marché professionnel : vous venez avec un produit, nous essayons de le dire au plus grand nombre, et chacun votes pour lui-même. Ils disent oui ou non. Et si une assez grande quantité dit oui, alors nous avons du travail le lendemain. Vous savez, c&#8217;est comme ça que ça fonctionne. C&#8217;est très simple. C&#8217;est pourquoi dans le marché professionnel ce n&#8217;est pas aussi simple. Les gens qui utilisent les produits ne décident pas pour eux-même. Et les gens qui prennent ces décisions sont quelques fois incertains du bien-fondé de leur choix. Nous aimons faire les meilleurs produits pour les utilisateurs, et les faire voter avec leur porte-monnaie pour savoir si nous sommes dans le bon chemin ou non.</p></blockquote>
+<p style="text-align: center;"><img src="http://www.abricocotier.fr/wp-content/uploads/2011/01/steve_jobs_with_macbook_air_2.jpg" alt="" title="steve_jobs_with_macbook_air_2" width="570" /></p>
+<p style="text-align: center;"><em>Si il faut bien reconnaitre un truc, c&#8217;est que quand Steve Jobs présente un produit, on sent la fierté envers ses équipes et la demande de &laquo;&nbsp;vote&nbsp;&raquo; des utilisateurs.</em></p>
+<p>Je suis sûr et certain que je ne suis pas le seul, mais je dois dire que je partage totalement son avis, au moins sur l&#8217;aspect choix/utilisation du matériel en entreprise. Ceux parmi vous qui ont été dans une entreprise assez grosse (ou un service public) savent à quel point le monde se divise en deux (pour reprendre Sergio Leone) : il y a ceux qui utilisent le matériel qu&#8217;on leur impose, et ceux qui l&#8217;imposent. Toi, tu l&#8217;utilises. Et chacun sait comme on peut avoir à se demander d&#8217;où sort tel ou tel outil, pourquoi on a voulu nous l&#8217;imposer. Les raisons de ces choix ne sont pas toujours connues, mais quelque fois, il vaut mieux ne pas avoir à les connaitre.</p>
+<p>Imaginez un monde où certaines grosses décisions (en entreprise) seraient faites sur des critères qui dépasseraient la simple comparaison. Je prend un exemple : une grosse entreprise veut s&#8217;équiper de 10000 ordinateurs portables assez puissants, avec une valeur d&#8217;environ 400 euros pièce, le contrat incluant tout une séries de clauses de SAV,  d&#8217;accompagnement, de matériel annexe, etc. L&#8217;appel d&#8217;offre va être fait, et on va dire qu&#8217;une dizaine d&#8217;entreprises vont répondre, à peu près au même prix, à peu près avec la même qualité pour ce qu&#8217;à prévu l&#8217;appel d&#8217;offre. Ne sachant pas comment les départager, et plutôt que de pousser la sélection plus profondément, le choix du prestataire/fournisseur se fera &laquo;&nbsp;politiquement&nbsp;&raquo; (en gros, la décision ne se fera plus sur des critères écrits noir sur blanc, mais sur d&#8217;autres critères, plus &laquo;&nbsp;relationnels&nbsp;&raquo;).</p>
+<p>Sauf que, chacun le sait, un ordinateur ne se résume pas à son processeur et sa quantité de RAM : si vous avez un ordinateur lourd, volumineux, avec un clavier peu pratique, un trackpad de mauvaise qualité, et un écran dont la luminosité est comparable à ce qui se faisait il y a dix ans, l&#8217;utilisation d&#8217;un tel outil de travail peut vite devenir un point &laquo;&nbsp;ralentissant&nbsp;&raquo; votre productivité plutôt que facilitant votre travail. Mais ça, la personne qui a pris la décision n&#8217;y avait pas pensé&#8230;</p>
+<p>Je pense que c&#8217;est cela dont veut parler Steve Jobs. Quand on choisit &laquo;&nbsp;pour soit-même&nbsp;&raquo;, on se renseigne beaucoup plus que les simples critères rapides et flous : on se renseigne autour de soit, on demande des avis, on tergiverse (c&#8217;est d&#8217;ailleurs un inconvénient), mais on se pose des questions. Et si un produit est bon, qu&#8217;on a fait un bon choix, on le fait savoir.</p>
+<p>Alors que quand quelqu&#8217;un d&#8217;autre a pris la décision, quelqu&#8217;un qui, probablement, soit n&#8217;a pas idée de ce que c&#8217;est de travailler toute la journée sur un PC et de ce que cela implique comme exigences pour cet outil de travail, soit utilise un autre type de PC, cette décision est prise avec moins de considération que si c&#8217;était chacun qui l&#8217;aurait faite.</p>
+<p>&laquo;&nbsp;On n&#8217;est jamais mieux servi que par soi-même&nbsp;&raquo;.</p>
+<hr />
+<p><small><a href="http://www.abricocotier.fr">AbriCoCotier.fr</a>, 2011. |
+<a href="http://www.abricocotier.fr/14046-steve-jobs-entreprise-employes-materiel">Permalien</a> |
+<a href="http://www.abricocotier.fr/14046-steve-jobs-entreprise-employes-materiel#comments">4 commentaires</a> | Plugin <a href="http://planetozh.com/blog/my-projects/wordpress-plugin-better-feed-rss/">Better Feed</a>, par <a href="http://planetozh.com/">Ozh</a>
+<br/>
+Rangé dans : Apple<br/>
+</small></p>]]></content:encoded>
+			<wfw:commentRss>http://www.abricocotier.fr/14046-steve-jobs-entreprise-employes-materiel/feed</wfw:commentRss>
+		<slash:comments>4</slash:comments>
+		</item>
+		<item>
+		<title>Le Mac App Store est une étape supplémentaire dans la mort des CD</title>
+		<link>http://www.abricocotier.fr/12808-apple-mac-app-store-mort-cd</link>
+		<comments>http://www.abricocotier.fr/12808-apple-mac-app-store-mort-cd#comments</comments>
+		<pubDate>Tue, 11 Jan 2011 07:59:26 +0000</pubDate>
+		<dc:creator>Caroline</dc:creator>
+				<category><![CDATA[Web]]></category>
+		<category><![CDATA[Apple]]></category>
+		<category><![CDATA[Matériel]]></category>
+
+		<guid isPermaLink="false">http://www.abricocotier.fr/?p=12808</guid>
+		<description><![CDATA[Apple a lancé son Mac App Store le 6 janvier dernier. La firme à la pomme a tenu ainsi son pari de sortir cette plateforme dans les 80 jours suivant son annonce publique, en octobre dernier. En clair Apple s’apprête à passer à la phase 3 de son plan pour démolir le « CD ». [...]]]></description>
+			<content:encoded><![CDATA[<p><a href="http://www.abricocotier.fr/13948-mac-app-store-ventes-applications-ios">Apple a lancé son Mac App Store le 6 janvier dernier.</a> La firme à la pomme a tenu ainsi son pari de sortir cette plateforme dans les 80 jours suivant son annonce publique, en octobre dernier. En clair Apple s’apprête à passer à la phase 3 de son plan pour démolir le « CD ». La phase 1 a débuté en 2003, avec le lancement d’iTunes Music Store. Au démarrage, le Store ne comptait que quelques 200 000 titres en téléchargement. Ce faible nombre ne menaçait en rien l’industrie du disque, qui se portait encore bien. Mais l’équilibre s’est vite inversé et maintenant iTunes est le plus gros distributeur virtuel de musique au monde, le nombre de téléchargement dépasse de très loin les chiffres des ventes de CD.    <span id="more-12808"></span></p>
+<p style="text-align: center;"><img src="http://www.abricocotier.fr/wp-content/uploads/2011/01/apps_gallery_topcharts.jpg" alt="" title="apps_gallery_topcharts" width="574" /></p>
+<p>La phase 2 a commencé il y a 5 ans, lorsqu’en 2008, Apple a lancé la première génération de MacBook Air. Cet ultra portable très léger avait la particularité de ne pas être équipé d’un lecteur CD. Bénéficiant de l’attractivité de la nouveauté, le MacBook Air première génération a eu ses fans, mais l’engouement est vite retombé en raison des performances médiocres que ce netbook proposait. Ceci dit, le lancement en fin d’année dernière de la nouvelle génération de MacBook Air change la donne. Si en effet celui-ci ne comporte toujours pas de lecteur CD, ses performances sont excellentes et puis pour enfoncer un peu plus le CD, Apple fournit avec cet ultraportable Mac OS X sur une clef USB pour ré-installer le système. Exit le CD.</p>
+<p>Cela nous amène à la phase 3, le Mac App Store. Apple s’est montré très clair sur sa page de présentation de la plateforme, leur but est de distribuer leurs propres logiciels, comme iLife ou iWorks. Toutes ces applications se vendront individuellement (pour $14,99 en l’occurrence) au lieu d’être vendus par « suites » (au prix fort bien sûr). Dans ces conditions il est difficile d’imaginer que les gens vont continuer d’acheter les suites complètes lorsqu’ils n’utilisent que un ou deux logiciels de l’ensemble. Du coup on comprend mieux pourquoi les gens vont préférer télécharger directement les logiciels depuis le Mac App Store au lieu d’aller en magasin. Une fois encore, le CD est visé.</p>
+<p>Bien sûr, il reste encore à voir si le Mac App Store connaîtra le même succès que l’App Store sur iOS.  Si l’on se fonde sur les premiers chiffres du lancement du Chrome Web Store, on pourrait dire que cela n’augure rien de très bon pour le Mac App Store. Mais bon on peut aussi relativiser la chose en se disant que le Chrome Web Store ne comporte que des applications en ligne et non pas des logiciels à proprement parler. Et puis le Mac App Store bénéficiera sûrement de la popularité de l’App Store (fiabilité de paiement, suivi…). D&#8217;ailleurs, Apple a communiqué sur le fait qu&#8217;un millions d&#8217;applications y ont été téléchargées rien que pour la première journée. Ça s&#8217;annonce plutôt bien, donc.</p>
+<p>On ne sait pas encore si les plus gros éditeurs de logiciels vont suivre Apple dans sa démarche et proposer leurs logiciels sur cette plateforme. Il faut qu’ils acceptent de laisser une commission de 30% à Apple sur chaque vente, une proportion à laquelle ils ne sont pas habitués.</p>
+<p>Au lieu d’applications très complexes, il semblerait que les développeurs travaillent plus sur des versions simples comme sur iOS. Ce sont donc les jeux comme Angry Birds qui ont là une grosse opportunité d’accroître leur part de marché, en attendant que les éditeurs de logiciels prennent conscience qu’ils ne pourront pas éviter longtemps cette nouvelle plateforme de distribution. Les CD et DVD seront alors des technologies sur le déclin.</p>
+<blockquote><p><strong>Edit de Louis : </strong>Je note également que Apple a donné l&#8217;exemple en divisant ses suites pour ne proposer les applications qu&#8217;à l&#8217;unité et pas en &laquo;&nbsp;bundle&nbsp;&raquo;. Un peu comme ce qu&#8217;Apple avait fait sur l&#8217;iTunes Music Store en divisant les morceaux au lieu de ne les vendre que en Albums.</p></blockquote>
+<p style="text-align: right;"><a href="http://feedproxy.google.com/~r/Techcrunch/~3/yGRp3TEuJoo/">Source</a></p>
+<hr />
+<p><small><a href="http://www.abricocotier.fr">AbriCoCotier.fr</a>, 2011. |
+<a href="http://www.abricocotier.fr/12808-apple-mac-app-store-mort-cd">Permalien</a> |
+<a href="http://www.abricocotier.fr/12808-apple-mac-app-store-mort-cd#comments">1 commentaire</a> | Plugin <a href="http://planetozh.com/blog/my-projects/wordpress-plugin-better-feed-rss/">Better Feed</a>, par <a href="http://planetozh.com/">Ozh</a>
+<br/>
+Rangé dans : Apple, Matériel<br/>
+</small></p>]]></content:encoded>
+			<wfw:commentRss>http://www.abricocotier.fr/12808-apple-mac-app-store-mort-cd/feed</wfw:commentRss>
+		<slash:comments>1</slash:comments>
+		</item>
+		<item>
+		<title>Google s&#8217;intéresse de près aux puces NFC et aux porte-monnaie électroniques mobiles</title>
+		<link>http://www.abricocotier.fr/13360-google-puces-nfc-wallet-porte-monnaie-electroniques-mobiles</link>
+		<comments>http://www.abricocotier.fr/13360-google-puces-nfc-wallet-porte-monnaie-electroniques-mobiles#comments</comments>
+		<pubDate>Tue, 11 Jan 2011 07:30:51 +0000</pubDate>
+		<dc:creator>Louis</dc:creator>
+				<category><![CDATA[Web]]></category>
+		<category><![CDATA[Android]]></category>
+		<category><![CDATA[Google]]></category>
+
+		<guid isPermaLink="false">http://www.abricocotier.fr/?p=13360</guid>
+		<description><![CDATA[J&#8217;étais il y a quelques semaines à Hambourg, en Allemagne, et j&#8217;ai pu mesurer là-bas à quel point nous avons de la chance en France sur au moins un aspect : celui de la facilité de payer par carte bancaire. En France, beaucoup de gens (moi le premier) n&#8217;ont pas une once de petite monnaie [...]]]></description>
+			<content:encoded><![CDATA[<p>J&#8217;étais il y a <a href="http://www.abricocotier.fr/13871-week-end-hambourg-lubeck">quelques semaines à Hambourg, en Allemagne</a>, et j&#8217;ai pu mesurer là-bas à quel point nous avons de la chance en France sur au moins un aspect : celui de la facilité de payer par carte bancaire. En France, beaucoup de gens (moi le premier) n&#8217;ont pas une once de petite monnaie sur eux : ils paient tout par carte bleue. Et les commerçants s&#8217;adaptent, à tel point que cela devient un standard. En Allemagne, ou au moins à Hambourg, les gens apprécient beaucoup de payer par monnaie sonnante et trébuchante, ce qui fait que peu de commerçants sont équipés de lecteurs de carte bleues, ou certains sont équipés de pseudo-lecteurs (ne lisant qu&#8217;un seul type de carte, genre les cartes Monéo locale), donc ce n&#8217;est pas fantastique. D&#8217;où l&#8217;intérêt que je porte aujourd&#8217;hui sur les innovation du côté des <a href="http://www.abricocotier.fr/13795-google-zetawire-porte-monnaie-android-nfc">puces NFC</a> que les grands constructeurs veulent mettre dans leurs smartphones (le Google Nexus S en tête, mais on peu également regarder <a href="http://www.abricocotier.fr/8355-le-principe-de-square-a-un-gros-defaut-son-physique">du côté de Square</a>), ce qui permettra à chacun de devenir soit-même une carte bleue (au moyen d&#8217;un Square) ou de payer juste avec son smartphone (via les puces NFC).    <span id="more-13360"></span></p>
+<p style="text-align: center;"><img src="http://www.abricocotier.fr/wp-content/uploads/2011/01/samsung-nfc-chips.jpg" alt="" title="samsung-nfc-chips" width="540" /></p>
+<p style="text-align: center;"><em>Ci-dessous, des puces NFC Samsung.</em></p>
+<p>Tout ça pour dire que les puces NFC ont <a href="http://feedproxy.google.com/~r/Techcrunch/~3/8Eo4vPf5L6s/">reparu</a> dans les médias récemment, avec un article de <a href="http://www.businessweek.com/technology/content/dec2010/tc20101231_087039.htm">BusinessWeek</a>, disant :</p>
+<blockquote><p>Google est en train d&#8217;envisager de créer un service de publicité et de paiement qui permettraient aux utilisateurs d&#8217;acheter du pain ou du lait simplement en collant ou en bougeant leur smartphone devant une &laquo;&nbsp;caisse numérique&nbsp;&raquo;, selon deux personnes proches du dossier. Le service pourrait débuter dès cette année, disent-ils, sans vouloir dévoiler leur identité car le service n&#8217;a pas encore été annoncé. Le service est basé sur la technologie NFC qui peu échanger des informations sans fil jusqu&#8217;à une distance d&#8217;environ 15 centimètres.</p>
+<p>[...] Une simple puce NFC sur un téléphone mobile pourrait stocker les informations de paiement de l&#8217;utilisateur, ses cartes de crédit, ses coupons de réduction. Les utilisateurs pourront également faire des achats directement depuis leur smartphone sur le web. En scannant un poster de cinéma, par exemple, un utilisateur pourrait lire les avis du ce film, et utiliser le service de Google pour acheter des places de cinéma pour ce film.</p></blockquote>
+<p>L&#8217;article parle aussi de l&#8217;intérêt que porte Paypal pour ces puces NFC, en disant que Paypal pourrait lancer ce type de service d&#8217;ici la deuxième moitié de 2011.</p>
+<p>Google, Paypal, Apple et toutes les grosses entreprises veulent que les porte-monnaie mobiles deviennent une réalité. Mais un grand nombre de choses ont besoin d&#8217;être clarifiées avant que ces services fonctionnent. Les puces NFC doivent d&#8217;abord être dans tous les smartphones (alors que pour l&#8217;instant, seul le Nexus S en dispose), et les commerçants doivent s&#8217;équiper de récepteur NFC, ce qui est plutôt cher (quelques centaines de dollars quand même !), et donc, comme pour les équipements en carte bleue, les commerçants pourraient trainer des pieds pour s&#8217;équiper.</p>
+<p style="text-align: center;"><img src="http://www.abricocotier.fr/wp-content/uploads/2011/01/square_iphone.jpg" alt="" title="square_iphone" width="540" height="348" class="alignleft size-full wp-image-14036" /></p>
+<h3>Du côté de Square</h3>
+<p>Parallèlement, Square, la société de Jack Dorsey qui propose un petit cube blanc qui lit les cartes bleues, semble se porter très bien. <a href="http://techcrunch.com/2010/11/09/square-now-processing-millions-of-dollars-in-mobile-transactions-every-week/">TechCrunch</a> disait en novembre dernier qu&#8217;après 10 mois de Beta privée (limitée à 50000 utilisateurs), Square avait finalement ouvert ses portes au public. Actuellement, la startup a des applications pour iPhone, iPad et Android, et alors qu&#8217;elle sort de sa phase de Beta-test, elle donne un chiffre impressionnant : Square fait transiter 1 millions de dollars chaque semaine.</p>
+<p>Pour l&#8217;instant, les plus gros utilisateurs de Square sont les petites entreprises, les travailleurs indépendants et les petits commerçants. La technologie ne nécessite qu&#8217;un petit scanner de carte de crédit qui se branche dans la prise Jack (celle du casque audio de son smartphone). Le petit scanner et l&#8217;application sont gratuits, mais Square se rémunère en prenant un petit pourcentage de chaque transaction (2.75%).</p>
+<p>Bref, grâce à cette startup et à la technologie NFC, j&#8217;ose espérer que d&#8217;ici quelques années nous n&#8217;auront plus à nous encombrer de pièce de monnaies aussi sales que lourdes et peu pratiques. Vivement l&#8217;ère du tout numérique en terme de paiement !</p>
+<hr />
+<p><small><a href="http://www.abricocotier.fr">AbriCoCotier.fr</a>, 2011. |
+<a href="http://www.abricocotier.fr/13360-google-puces-nfc-wallet-porte-monnaie-electroniques-mobiles">Permalien</a> |
+<a href="http://www.abricocotier.fr/13360-google-puces-nfc-wallet-porte-monnaie-electroniques-mobiles#comments">Ajoutez un commentaire !</a> | Plugin <a href="http://planetozh.com/blog/my-projects/wordpress-plugin-better-feed-rss/">Better Feed</a>, par <a href="http://planetozh.com/">Ozh</a>
+<br/>
+Rangé dans : Android, Google<br/>
+</small></p>]]></content:encoded>
+			<wfw:commentRss>http://www.abricocotier.fr/13360-google-puces-nfc-wallet-porte-monnaie-electroniques-mobiles/feed</wfw:commentRss>
+		<slash:comments>0</slash:comments>
+		</item>
+		<item>
+		<title>L&#8217;iPad 2 sortirait peut-être le 1er Février 2011 d&#8217;après le fondateur de Digg Kevin Rose</title>
+		<link>http://www.abricocotier.fr/14016-apple-ipad-2-sortie-1er-fevrier-2011-digg</link>
+		<comments>http://www.abricocotier.fr/14016-apple-ipad-2-sortie-1er-fevrier-2011-digg#comments</comments>
+		<pubDate>Mon, 10 Jan 2011 08:49:39 +0000</pubDate>
+		<dc:creator>Louis</dc:creator>
+				<category><![CDATA[Web]]></category>
+		<category><![CDATA[Apple]]></category>
+		<category><![CDATA[Matériel]]></category>
+
+		<guid isPermaLink="false">http://www.abricocotier.fr/?p=14016</guid>
+		<description><![CDATA[Kevin Rose s&#8217;est avancé sur la date de sortie de l&#8217;iPad2 dans sa newsletter privée (fondat.io/n) et payante, car il a annoncé dans celle-ci que d&#8217;après une source qu&#8217;il pense sûre de chez Apple, l&#8217;iPad 2 serait annoncé dans &#171;&#160;3 à 4 semaines&#160;&#187;, potentiellement le 1er Février 2011. L&#8217;iPad2 aurait, toujours selon cette source, un [...]]]></description>
+			<content:encoded><![CDATA[<p>Kevin Rose s&#8217;est avancé sur la date de sortie de l&#8217;iPad2 dans sa newsletter privée (<a href="http://foundat.io/n">fondat.io/n</a>) et payante, car il a annoncé dans celle-ci que d&#8217;après une source qu&#8217;il pense sûre de chez Apple, l&#8217;iPad 2 serait annoncé dans &laquo;&nbsp;3 à 4 semaines&nbsp;&raquo;, potentiellement le 1er Février 2011. L&#8217;iPad2 aurait, toujours selon cette source, un Retina Display et une caméra frontale en plus d&#8217;un caméra dorsale. Il cite ensuite une autre source, selon laquelle l&#8217;iPad 2 n&#8217;aurait pas &laquo;&nbsp;techniquement&nbsp;&raquo; un Rétina Display, mais aurait pour autant une résolution meilleure que la version actuelle d&#8217;iPad.   <span id="more-14016"></span></p>
+<p style="text-align: center;"><img src="http://www.abricocotier.fr/wp-content/uploads/2011/01/ipad2_ilounge.jpg" alt="" title="ipad2_ilounge" width="580" /></p>
+<p>Ce qui est plus intéressant, comme le <a href="http://techcrunch.com/2011/01/07/yet-another-kevin-rose-rumor-ipad-2-coming-in-3-4-weeks/">rapporte</a> Alexia Tsotsis sur TechCrunch, c&#8217;est un calcul repéré dans les commentaires :</p>
+<blockquote><p>L&#8217;Ipad 2 ne peut pas avoir de Retina Display. Ce n&#8217;est pas faisable. Faisons les calculs.</p>
+<p>L&#8217;iPhone 2G/3G/3GS a un écran de 3,5 pouces avec une résolution de 320&#215;480 pixels. Ce qui donne un coefficient de 164.83 PPI (pixels per inch, ou pixels par pouces en français).<br />
+L&#8217;iPhone 4 a un écran de 3.5 pouces avec une résolution de 640&#215;960 pixels. Ce qui fait un coefficient de 329.65 PPI.<br />
+En l&#8217;occurrence, l&#8217;iPhone 4 a un PPI au dessus de 300, ce qui a fait dire à Steve Jobs lui-même que l&#8217;iPhone 4 avait un PPI supérieur à ce que l&#8217;oeil humain peut percevoir, c&#8217;est pour cette raison qu&#8217;il l&#8217;a nommé Retina Display.</p>
+<p>L&#8217;iPad a un écran de 9.7 pouces avec une résolution de 1024&#215;768 pixels. Cela donne un PPI de 131.96.<br />
+Si l&#8217;iPad avait un écran Retina Display, à savoir le même PPI que l&#8217;iPhone 4, cela signifierait qu&#8217;il lui faudrait une résolution de 2560&#215;1920 pour atteindre un PPI de 329.9, ce qui n&#8217;est absolument pas faisable à l&#8217;heure actuelle.</p></blockquote>
+<p>Pour autant que je partage l&#8217;avis de la personne qui a fait ce calcul, je pense qu&#8217;on pourrait déjà s&#8217;arrêter à une résolution FullHD (en terme de marketing, ça peut avoir du sens), ce qui ferait du 1920&#215;1080 pixels, et qui correspondrait à un PPI d&#8217;environ 250. J&#8217;ai tendance à penser que s&#8217;il y a augmentation de la résolution, elle pourra se faire dans ce sens là, car cela permettrait à Steve Jobs de dire qu&#8217;il a presque doublé la résolution (en passant de 1024 à 1920, ce qui n&#8217;est pas faux), et que du coup il serait le plus &laquo;&nbsp;haut&nbsp;&raquo; en résolution sur le marché&#8230;</p>
+<p><a href="http://www.ilounge.com/index.php/news/comments/ipad-2-body-spotted-at-ilounge-pavilion/">Photo</a></p>
+<hr />
+<p><small><a href="http://www.abricocotier.fr">AbriCoCotier.fr</a>, 2011. |
+<a href="http://www.abricocotier.fr/14016-apple-ipad-2-sortie-1er-fevrier-2011-digg">Permalien</a> |
+<a href="http://www.abricocotier.fr/14016-apple-ipad-2-sortie-1er-fevrier-2011-digg#comments">6 commentaires</a> | Plugin <a href="http://planetozh.com/blog/my-projects/wordpress-plugin-better-feed-rss/">Better Feed</a>, par <a href="http://planetozh.com/">Ozh</a>
+<br/>
+Rangé dans : Apple, Matériel<br/>
+</small></p>]]></content:encoded>
+			<wfw:commentRss>http://www.abricocotier.fr/14016-apple-ipad-2-sortie-1er-fevrier-2011-digg/feed</wfw:commentRss>
+		<slash:comments>6</slash:comments>
+		</item>
+	</channel>
+</rss>
+
+<!-- Dynamic page generated in 1.569 seconds. -->
+<!-- Cached page generated by WP-Super-Cache on 2011-01-17 12:59:27 -->

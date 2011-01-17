@@ -1,0 +1,502 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0">
+<channel>
+	<title>planete php fr</title>
+	<description>planete php fr</description>
+	<link>http://planete-php.fr/rss.php</link>
+	<language>fr-fr</language>
+	<pubDate>Mon, 17 Jan 2011 12:56:43 +0100</pubDate>
+	<lastBuildDate>Tue, 10 Jun 2003 09:41:01 GMT</lastBuildDate>
+	<generator>AFUP - à la mano</generator>
+	<managingEditor>planetephpfr@afup.org (Perrick Penet / AFUP)</managingEditor>
+
+		<item>
+		<title>Wikipedia a 10 ans</title>
+		<link>http://www.nexen.net/actualites/php/20009-wikipedia_a_10_ans.php</link>
+		<description>&lt;div class=&quot;content_header_img&quot;&gt;
+					&lt;img alt=&quot;Image pour le titre du contenu&quot; src=&quot;http://www.nexen.net/images/stories/biseau/wikipedia.png&quot;&gt;
+				    &lt;/div&gt;&lt;div class=&quot;blogcontent&quot;&gt;
+Cela fait 10 ans que l'encyclop&amp;eacute;die libre appel&amp;eacute; &amp;laquo;&amp;nbsp;Wikipedia&amp;nbsp;&amp;raquo; est n&amp;eacute;, un jour le 15 janvier 2001, bas&amp;eacute; sur une technologie PHP et ouvert &amp;agrave; l'ensemble de la communaut&amp;eacute; du monde entier.&lt;br /&gt;
+De nombreux sites webs parlent de cet anniversaire comme le site OWNI qui donne l'occasion de revenir sur l'histoire de ce site.&lt;br /&gt;
+Bien sur, le site SLATE propose une interview d'un des contributeurs des plus actifs en France, et qui montre que tout le monde peut participer &amp;agrave; collaborer &amp;agrave; ce projet libre.&lt;br /&gt;
+Au niveau des chiffres communiqu&amp;eacute;s par le site Wikip&amp;eacute;dia sont : &lt;br /&gt;
+&lt;ul&gt;&lt;li&gt;270 langues&lt;/li&gt;&lt;li&gt;80 000 collaborateurs&lt;/li&gt;&lt;li&gt;1 020 000 articles en fran&amp;ccedil;ais&lt;/li&gt;&lt;li&gt;17 000 000 articles au total&lt;/li&gt;&lt;li&gt;410 000 000 de visiteurs par mois&lt;/li&gt;&lt;/ul&gt;&lt;div&gt;&lt;br /&gt;
+&lt;/div&gt;&lt;div&gt;&lt;br /&gt;
+&lt;/div&gt;&lt;ul&gt;&lt;li&gt;&lt;img src= &quot;http://www.nexen.net/nx_media/images/drapeaux/fr.png&quot; alt=&quot;fr&quot; witdth=&quot;18&quot; height=&quot;12&quot; /&gt;&amp;nbsp;&lt;a href=&quot;http://owni.fr/2011/01/15/wikipedia-a-10-ans/?utm_source=feedburner&amp;utm_medium=feed&amp;utm_campaign=Feed%253A%2BOwni%2B%2528Owni%2529&quot; title=&quot;http://owni.fr/2011/01/15/wikipedia-a-10-ans/?utm_source=feedburner&amp;amp;amp;utm_medium=feed&amp;amp;amp;utm_campaign=Feed%253A%2BOwni%2B%2528Owni%2529&quot;  onclick=&quot;window.location.href='http://www.nexen.net/index.php?option=com_nx_weblink&amp;amp;weblink=Site+Owni+%3A+Wikipedia+a+10+ans&amp;amp;content_id=0'; return false;&quot;  class=&quot;weblink_img&quot;&gt;Site Owni : Wikip&amp;eacute;dia a 10 ans&lt;/a&gt; (0 visite)&lt;/li&gt;&lt;li&gt;&lt;img src= &quot;http://www.nexen.net/nx_media/images/drapeaux/fr.png&quot; alt=&quot;fr&quot; witdth=&quot;18&quot; height=&quot;12&quot; /&gt;&amp;nbsp;&lt;a href=&quot;http://www.slate.fr/story/19537/wikipedia-polmars-contributeur&quot; title=&quot;http://www.slate.fr/story/19537/wikipedia-polmars-contributeur&quot;  onclick=&quot;window.location.href='http://www.nexen.net/index.php?option=com_nx_weblink&amp;amp;weblink=Site+Slate+%3A+Polmars+241.920+modifications+de+Wikipedia&amp;amp;content_id=0'; return false;&quot;  class=&quot;weblink_img&quot;&gt;Site Slate : Polmars 241.920 modifications de Wikip&amp;eacute;dia&lt;/a&gt; (0 visite)&lt;/li&gt;&lt;/ul&gt;&lt;/div&gt;</description>
+		<pubDate>Sun, 16 Jan 2011 21:18:41 +0100</pubDate>
+		<guid>http://www.nexen.net/actualites/php/20009-wikipedia_a_10_ans.php</guid>
+	</item>
+		<item>
+		<title>PHP QR Code : Générer facilement des QR Codes avec PHP</title>
+		<link>http://www.berejeb.com/2011/01/php-qr-code-generer-facilement-des-qr-codes-avec-php/</link>
+		<description>&lt;p&gt;&lt;a href=&quot;http://www.berejeb.com/wp-content/uploads/2011/01/phpqrcode1.png&quot;&gt;&lt;img class=&quot;alignnone size-full wp-image-1744&quot; title=&quot;phpqrcode&quot; src=&quot;http://www.berejeb.com/wp-content/uploads/2011/01/phpqrcode1.png&quot; alt=&quot;&quot; width=&quot;261&quot; height=&quot;261&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;http://phpqrcode.sourceforge.net/&quot; target=&quot;_blank&quot;&gt;PHP QR Code&lt;/a&gt; est une librairie LGPL pour générer du QR Code, un code a barre 2 dimensions. PHP QR Code est basée sur la librairie C libqrencode  et offre une API pour créer des images QR Code.&lt;/p&gt;
+&lt;p&gt;Fonctionnalités :&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Plusieurs tailles  : 1-40&lt;/li&gt;
+&lt;li&gt;8 bit, numérique, alphanumérique et encodage Kanji supportes.&lt;/li&gt;
+&lt;li&gt;Implémentée en PHP (Pas de dependances externes)&lt;/li&gt;
+&lt;li&gt;Export en PNG, JPG ou en table de bit&lt;/li&gt;
+&lt;li&gt;Support de l&amp;#8217;API Barcode TCPDF 2-D&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;L&amp;#8217;utilisation est très simple :&lt;/p&gt;
+
+&lt;div class=&quot;wp_codebox_msgheader&quot;&gt;&lt;span class=&quot;right&quot;&gt;&lt;sup&gt;&lt;a href=&quot;http://www.ericbess.com/ericblog/2008/03/03/wp-codebox/#examples&quot; target=&quot;_blank&quot; title=&quot;WP-CodeBox HowTo?&quot;&gt;&lt;span style=&quot;color: #99cc00&quot;&gt;?&lt;/span&gt;&lt;/a&gt;&lt;/sup&gt;&lt;/span&gt;&lt;span class=&quot;left&quot;&gt;&lt;a href=&quot;javascript:;&quot; onclick=&quot;javascript:showCodeTxt('p1742code2'); return false;&quot;&gt;View Code&lt;/a&gt; PHP&lt;/span&gt;&lt;div class=&quot;codebox_clear&quot;&gt;&lt;/div&gt;&lt;/div&gt;&lt;div class=&quot;wp_codebox&quot;&gt;&lt;table&gt;&lt;tr id=&quot;p17422&quot;&gt;&lt;td class=&quot;line_numbers&quot;&gt;&lt;pre&gt;1
+2
+3
+4
+&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot; id=&quot;p1742code2&quot;&gt;&lt;pre class=&quot;php&quot; style=&quot;font-family:monospace;&quot;&gt;&lt;span style=&quot;color: #666666; font-style: italic;&quot;&gt;// créer un fichier&lt;/span&gt;
+QRcode&lt;span style=&quot;color: #339933;&quot;&gt;::&lt;/span&gt;&lt;span style=&quot;color: #004000;&quot;&gt;png&lt;/span&gt;&lt;span style=&quot;color: #009900;&quot;&gt;&amp;#40;&lt;/span&gt;&lt;span style=&quot;color: #0000ff;&quot;&gt;'code data text'&lt;/span&gt;&lt;span style=&quot;color: #339933;&quot;&gt;,&lt;/span&gt; &lt;span style=&quot;color: #0000ff;&quot;&gt;'filename.png'&lt;/span&gt;&lt;span style=&quot;color: #009900;&quot;&gt;&amp;#41;&lt;/span&gt;&lt;span style=&quot;color: #339933;&quot;&gt;;&lt;/span&gt;
+&lt;span style=&quot;color: #666666; font-style: italic;&quot;&gt;// Afficher directement le qr code (dans le navigateur)&lt;/span&gt;
+QRcode&lt;span style=&quot;color: #339933;&quot;&gt;::&lt;/span&gt;&lt;span style=&quot;color: #004000;&quot;&gt;png&lt;/span&gt;&lt;span style=&quot;color: #009900;&quot;&gt;&amp;#40;&lt;/span&gt;&lt;span style=&quot;color: #0000ff;&quot;&gt;'some othertext 1234'&lt;/span&gt;&lt;span style=&quot;color: #009900;&quot;&gt;&amp;#41;&lt;/span&gt;&lt;span style=&quot;color: #339933;&quot;&gt;;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/div&gt;
+
+&lt;p&gt;&lt;a href=&quot;../wp-content/uploads/2011/01/phpqrcode.png&quot;&gt;&lt;img title=&quot;phpqrcode&quot; src=&quot;../wp-content/uploads/2011/01/phpqrcode.png&quot; alt=&quot;&quot; width=&quot;316&quot; height=&quot;48&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Une demo est disponible sur le site officiel : &lt;a href=&quot;http://phpqrcode.sourceforge.net/&quot;&gt;http://phpqrcode.sourceforge.net/&lt;/a&gt;&lt;/p&gt;
+
+&lt;div class=&quot;sociable&quot;&gt;
+&lt;div class=&quot;sociable_tagline&quot;&gt;
+Partager :
+&lt;/div&gt;
+&lt;ul&gt;
+	&lt;li class=&quot;sociablefirst&quot;&gt;&lt;a rel=&quot;nofollow&quot;  target=&quot;_blank&quot; href=&quot;http://www.printfriendly.com/print?url=http%3A%2F%2Fwww.berejeb.com%2F2011%2F01%2Fphp-qr-code-generer-facilement-des-qr-codes-avec-php%2F&amp;amp;partner=sociable&quot; title=&quot;Print&quot;&gt;&lt;img src=&quot;http://www.berejeb.com/wp-content/plugins/sociable/images/printfriendly.png&quot; title=&quot;Print&quot; alt=&quot;Print&quot; class=&quot;sociable-hovers&quot; /&gt;&lt;/a&gt;&lt;/li&gt;
+	&lt;li&gt;&lt;a rel=&quot;nofollow&quot;  target=&quot;_blank&quot; href=&quot;http://digg.com/submit?phase=2&amp;amp;url=http%3A%2F%2Fwww.berejeb.com%2F2011%2F01%2Fphp-qr-code-generer-facilement-des-qr-codes-avec-php%2F&amp;amp;title=PHP%20QR%20Code%20%3A%20G%C3%A9n%C3%A9rer%20facilement%20des%20QR%20Codes%20avec%20PHP&amp;amp;bodytext=%0D%0A%0D%0APHP%20QR%20Code%20est%20une%20librairie%20LGPL%20pour%20g%C3%A9n%C3%A9rer%20du%20QR%20Code%2C%20un%20code%20a%20barre%202%20dimensions.%20PHP%20QR%20Code%20est%20bas%C3%A9e%20sur%20la%20librairie%20C%20libqrencode%C2%A0%20et%20offre%20une%20API%20pour%20cr%C3%A9er%20des%20images%20QR%20Code.%0D%0A%0D%0AFonctionnalit%C3%A9s%20%3A%0D%0A%0D%0A%09Plusieurs%20tailles%C2%A0%20%3A%201&quot; title=&quot;Digg&quot;&gt;&lt;img src=&quot;http://www.berejeb.com/wp-content/plugins/sociable/images/digg.png&quot; title=&quot;Digg&quot; alt=&quot;Digg&quot; class=&quot;sociable-hovers&quot; /&gt;&lt;/a&gt;&lt;/li&gt;
+	&lt;li&gt;&lt;a rel=&quot;nofollow&quot;  target=&quot;_blank&quot; href=&quot;http://delicious.com/post?url=http%3A%2F%2Fwww.berejeb.com%2F2011%2F01%2Fphp-qr-code-generer-facilement-des-qr-codes-avec-php%2F&amp;amp;title=PHP%20QR%20Code%20%3A%20G%C3%A9n%C3%A9rer%20facilement%20des%20QR%20Codes%20avec%20PHP&amp;amp;notes=%0D%0A%0D%0APHP%20QR%20Code%20est%20une%20librairie%20LGPL%20pour%20g%C3%A9n%C3%A9rer%20du%20QR%20Code%2C%20un%20code%20a%20barre%202%20dimensions.%20PHP%20QR%20Code%20est%20bas%C3%A9e%20sur%20la%20librairie%20C%20libqrencode%C2%A0%20et%20offre%20une%20API%20pour%20cr%C3%A9er%20des%20images%20QR%20Code.%0D%0A%0D%0AFonctionnalit%C3%A9s%20%3A%0D%0A%0D%0A%09Plusieurs%20tailles%C2%A0%20%3A%201&quot; title=&quot;del.icio.us&quot;&gt;&lt;img src=&quot;http://www.berejeb.com/wp-content/plugins/sociable/images/delicious.png&quot; title=&quot;del.icio.us&quot; alt=&quot;del.icio.us&quot; class=&quot;sociable-hovers&quot; /&gt;&lt;/a&gt;&lt;/li&gt;
+	&lt;li&gt;&lt;a rel=&quot;nofollow&quot;  target=&quot;_blank&quot; href=&quot;http://www.facebook.com/share.php?u=http%3A%2F%2Fwww.berejeb.com%2F2011%2F01%2Fphp-qr-code-generer-facilement-des-qr-codes-avec-php%2F&amp;amp;t=PHP%20QR%20Code%20%3A%20G%C3%A9n%C3%A9rer%20facilement%20des%20QR%20Codes%20avec%20PHP&quot; title=&quot;Facebook&quot;&gt;&lt;img src=&quot;http://www.berejeb.com/wp-content/plugins/sociable/images/facebook.png&quot; title=&quot;Facebook&quot; alt=&quot;Facebook&quot; class=&quot;sociable-hovers&quot; /&gt;&lt;/a&gt;&lt;/li&gt;
+	&lt;li&gt;&lt;a rel=&quot;nofollow&quot;  target=&quot;_blank&quot; href=&quot;http://www.google.com/bookmarks/mark?op=edit&amp;amp;bkmk=http%3A%2F%2Fwww.berejeb.com%2F2011%2F01%2Fphp-qr-code-generer-facilement-des-qr-codes-avec-php%2F&amp;amp;title=PHP%20QR%20Code%20%3A%20G%C3%A9n%C3%A9rer%20facilement%20des%20QR%20Codes%20avec%20PHP&amp;amp;annotation=%0D%0A%0D%0APHP%20QR%20Code%20est%20une%20librairie%20LGPL%20pour%20g%C3%A9n%C3%A9rer%20du%20QR%20Code%2C%20un%20code%20a%20barre%202%20dimensions.%20PHP%20QR%20Code%20est%20bas%C3%A9e%20sur%20la%20librairie%20C%20libqrencode%C2%A0%20et%20offre%20une%20API%20pour%20cr%C3%A9er%20des%20images%20QR%20Code.%0D%0A%0D%0AFonctionnalit%C3%A9s%20%3A%0D%0A%0D%0A%09Plusieurs%20tailles%C2%A0%20%3A%201&quot; title=&quot;Google Bookmarks&quot;&gt;&lt;img src=&quot;http://www.berejeb.com/wp-content/plugins/sociable/images/googlebookmark.png&quot; title=&quot;Google Bookmarks&quot; alt=&quot;Google Bookmarks&quot; class=&quot;sociable-hovers&quot; /&gt;&lt;/a&gt;&lt;/li&gt;
+	&lt;li&gt;&lt;a rel=&quot;nofollow&quot;  target=&quot;_blank&quot; href=&quot;https://favorites.live.com/quickadd.aspx?marklet=1&amp;amp;url=http%3A%2F%2Fwww.berejeb.com%2F2011%2F01%2Fphp-qr-code-generer-facilement-des-qr-codes-avec-php%2F&amp;amp;title=PHP%20QR%20Code%20%3A%20G%C3%A9n%C3%A9rer%20facilement%20des%20QR%20Codes%20avec%20PHP&quot; title=&quot;Live&quot;&gt;&lt;img src=&quot;http://www.berejeb.com/wp-content/plugins/sociable/images/live.png&quot; title=&quot;Live&quot; alt=&quot;Live&quot; class=&quot;sociable-hovers&quot; /&gt;&lt;/a&gt;&lt;/li&gt;
+	&lt;li&gt;&lt;a rel=&quot;nofollow&quot;  target=&quot;_blank&quot; href=&quot;http://reporter.nl.msn.com/?fn=contribute&amp;amp;Title=PHP%20QR%20Code%20%3A%20G%C3%A9n%C3%A9rer%20facilement%20des%20QR%20Codes%20avec%20PHP&amp;amp;URL=http%3A%2F%2Fwww.berejeb.com%2F2011%2F01%2Fphp-qr-code-generer-facilement-des-qr-codes-avec-php%2F&amp;amp;cat_id=6&amp;amp;tag_id=31&amp;amp;Remark=%0D%0A%0D%0APHP%20QR%20Code%20est%20une%20librairie%20LGPL%20pour%20g%C3%A9n%C3%A9rer%20du%20QR%20Code%2C%20un%20code%20a%20barre%202%20dimensions.%20PHP%20QR%20Code%20est%20bas%C3%A9e%20sur%20la%20librairie%20C%20libqrencode%C2%A0%20et%20offre%20une%20API%20pour%20cr%C3%A9er%20des%20images%20QR%20Code.%0D%0A%0D%0AFonctionnalit%C3%A9s%20%3A%0D%0A%0D%0A%09Plusieurs%20tailles%C2%A0%20%3A%201&quot; title=&quot;MSN Reporter&quot;&gt;&lt;img src=&quot;http://www.berejeb.com/wp-content/plugins/sociable/images/msnreporter.png&quot; title=&quot;MSN Reporter&quot; alt=&quot;MSN Reporter&quot; class=&quot;sociable-hovers&quot; /&gt;&lt;/a&gt;&lt;/li&gt;
+	&lt;li&gt;&lt;a rel=&quot;nofollow&quot;  target=&quot;_blank&quot; href=&quot;http://www.netvibes.com/share?title=PHP%20QR%20Code%20%3A%20G%C3%A9n%C3%A9rer%20facilement%20des%20QR%20Codes%20avec%20PHP&amp;amp;url=http%3A%2F%2Fwww.berejeb.com%2F2011%2F01%2Fphp-qr-code-generer-facilement-des-qr-codes-avec-php%2F&quot; title=&quot;Netvibes&quot;&gt;&lt;img src=&quot;http://www.berejeb.com/wp-content/plugins/sociable/images/netvibes.png&quot; title=&quot;Netvibes&quot; alt=&quot;Netvibes&quot; class=&quot;sociable-hovers&quot; /&gt;&lt;/a&gt;&lt;/li&gt;
+	&lt;li&gt;&lt;a rel=&quot;nofollow&quot;  target=&quot;_blank&quot; href=&quot;http://technorati.com/faves?add=http%3A%2F%2Fwww.berejeb.com%2F2011%2F01%2Fphp-qr-code-generer-facilement-des-qr-codes-avec-php%2F&quot; title=&quot;Technorati&quot;&gt;&lt;img src=&quot;http://www.berejeb.com/wp-content/plugins/sociable/images/technorati.png&quot; title=&quot;Technorati&quot; alt=&quot;Technorati&quot; class=&quot;sociable-hovers&quot; /&gt;&lt;/a&gt;&lt;/li&gt;
+	&lt;li&gt;&lt;a rel=&quot;nofollow&quot;  target=&quot;_blank&quot; href=&quot;http://twitter.com/home?status=PHP%20QR%20Code%20%3A%20G%C3%A9n%C3%A9rer%20facilement%20des%20QR%20Codes%20avec%20PHP%20-%20http%3A%2F%2Fwww.berejeb.com%2F2011%2F01%2Fphp-qr-code-generer-facilement-des-qr-codes-avec-php%2F&quot; title=&quot;Twitter&quot;&gt;&lt;img src=&quot;http://www.berejeb.com/wp-content/plugins/sociable/images/twitter.png&quot; title=&quot;Twitter&quot; alt=&quot;Twitter&quot; class=&quot;sociable-hovers&quot; /&gt;&lt;/a&gt;&lt;/li&gt;
+	&lt;li&gt;&lt;a rel=&quot;nofollow&quot;  target=&quot;_blank&quot; href=&quot;http://bookmarks.yahoo.com/toolbar/savebm?u=http%3A%2F%2Fwww.berejeb.com%2F2011%2F01%2Fphp-qr-code-generer-facilement-des-qr-codes-avec-php%2F&amp;amp;t=PHP%20QR%20Code%20%3A%20G%C3%A9n%C3%A9rer%20facilement%20des%20QR%20Codes%20avec%20PHP&amp;opener=bm&amp;amp;ei=UTF-8&amp;amp;d=%0D%0A%0D%0APHP%20QR%20Code%20est%20une%20librairie%20LGPL%20pour%20g%C3%A9n%C3%A9rer%20du%20QR%20Code%2C%20un%20code%20a%20barre%202%20dimensions.%20PHP%20QR%20Code%20est%20bas%C3%A9e%20sur%20la%20librairie%20C%20libqrencode%C2%A0%20et%20offre%20une%20API%20pour%20cr%C3%A9er%20des%20images%20QR%20Code.%0D%0A%0D%0AFonctionnalit%C3%A9s%20%3A%0D%0A%0D%0A%09Plusieurs%20tailles%C2%A0%20%3A%201&quot; title=&quot;Yahoo! Bookmarks&quot;&gt;&lt;img src=&quot;http://www.berejeb.com/wp-content/plugins/sociable/images/yahoomyweb.png&quot; title=&quot;Yahoo! Bookmarks&quot; alt=&quot;Yahoo! Bookmarks&quot; class=&quot;sociable-hovers&quot; /&gt;&lt;/a&gt;&lt;/li&gt;
+	&lt;li&gt;&lt;a rel=&quot;nofollow&quot;  target=&quot;_blank&quot; href=&quot;http://www.linkedin.com/shareArticle?mini=true&amp;amp;url=http%3A%2F%2Fwww.berejeb.com%2F2011%2F01%2Fphp-qr-code-generer-facilement-des-qr-codes-avec-php%2F&amp;amp;title=PHP%20QR%20Code%20%3A%20G%C3%A9n%C3%A9rer%20facilement%20des%20QR%20Codes%20avec%20PHP&amp;amp;source=Anis+Berejeb+Actualites+et+nouveautes+du+developpement+web%2C+PHP%2C+MySQL%2C+HTTP%2C+JavaScript%2C+Performance&amp;amp;summary=%0D%0A%0D%0APHP%20QR%20Code%20est%20une%20librairie%20LGPL%20pour%20g%C3%A9n%C3%A9rer%20du%20QR%20Code%2C%20un%20code%20a%20barre%202%20dimensions.%20PHP%20QR%20Code%20est%20bas%C3%A9e%20sur%20la%20librairie%20C%20libqrencode%C2%A0%20et%20offre%20une%20API%20pour%20cr%C3%A9er%20des%20images%20QR%20Code.%0D%0A%0D%0AFonctionnalit%C3%A9s%20%3A%0D%0A%0D%0A%09Plusieurs%20tailles%C2%A0%20%3A%201&quot; title=&quot;LinkedIn&quot;&gt;&lt;img src=&quot;http://www.berejeb.com/wp-content/plugins/sociable/images/linkedin.png&quot; title=&quot;LinkedIn&quot; alt=&quot;LinkedIn&quot; class=&quot;sociable-hovers&quot; /&gt;&lt;/a&gt;&lt;/li&gt;
+	&lt;li&gt;&lt;a rel=&quot;nofollow&quot;  target=&quot;_blank&quot; href=&quot;http://www.dzone.com/links/add.html?url=http%3A%2F%2Fwww.berejeb.com%2F2011%2F01%2Fphp-qr-code-generer-facilement-des-qr-codes-avec-php%2F&amp;amp;title=PHP%20QR%20Code%20%3A%20G%C3%A9n%C3%A9rer%20facilement%20des%20QR%20Codes%20avec%20PHP&quot; title=&quot;DZone&quot;&gt;&lt;img src=&quot;http://www.berejeb.com/wp-content/plugins/sociable/images/dzone.png&quot; title=&quot;DZone&quot; alt=&quot;DZone&quot; class=&quot;sociable-hovers&quot; /&gt;&lt;/a&gt;&lt;/li&gt;
+	&lt;li class=&quot;sociablelast&quot;&gt;&lt;a rel=&quot;nofollow&quot;  target=&quot;_blank&quot; href=&quot;http://www.viadeo.com/shareit/share/?url=http%3A%2F%2Fwww.berejeb.com%2F2011%2F01%2Fphp-qr-code-generer-facilement-des-qr-codes-avec-php%2F&amp;title=PHP%20QR%20Code%20%3A%20G%C3%A9n%C3%A9rer%20facilement%20des%20QR%20Codes%20avec%20PHP&amp;urllanguage=fr&quot; title=&quot;viadeo FR&quot;&gt;&lt;img src=&quot;http://www.berejeb.com/wp-content/plugins/sociable/images/viadeo.png&quot; title=&quot;viadeo FR&quot; alt=&quot;viadeo FR&quot; class=&quot;sociable-hovers&quot; /&gt;&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+
+&lt;!-- WordPress Connect Modules v1.05 --&gt;&lt;!-- WordPress Connect Comments Widget v1.05--&gt;
+&lt;fb:comments xid=&quot;aa66d4982a29614f090a0df22e75b3f7&quot; url=&quot;http://www.berejeb.com/2011/01/php-qr-code-generer-facilement-des-qr-codes-avec-php/&quot; site=&quot;http://www.berejeb.com/2011/01/php-qr-code-generer-facilement-des-qr-codes-avec-php/&quot; width=&quot;&quot; numposts=&quot;&quot;&gt;&lt;/fb:comments&gt;
+&lt;!-- WordPress Connect Comments Widget --&gt;
+</description>
+		<pubDate>Mon, 17 Jan 2011 01:08:40 +0100</pubDate>
+		<guid>http://www.berejeb.com/2011/01/php-qr-code-generer-facilement-des-qr-codes-avec-php/</guid>
+	</item>
+		<item>
+		<title>Mort de PHP6 + 300 jours</title>
+		<link>http://blog.mageekbox.net/?post/2011/01/16/Mort-de-PHP6-300-jours</link>
+		<description>&lt;p&gt;Cette nouvelle période de dix jours a commencé sur les chapeaux de roues, à cause du bug &lt;a href=&quot;http://bugs.php.net/bug.php?id=53632&quot;&gt;#53632&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;En effet, découvert fin décembre par &lt;a href=&quot;http://www.exploringbinary.com/php-hangs-on-numeric-value-2-2250738585072011e-308/&quot;&gt;Rick Regan&lt;/a&gt;, il a le potentiel suffisant pour mettre à genoux tout serveur mettant en ?uvre &lt;a href=&quot;http://www.php.net/&quot;&gt;PHP&lt;/a&gt;, à condition évidemment de pouvoir l'exploiter, ce qui est loin d'être évident.&lt;/p&gt;
+&lt;p&gt;Il a donc provoqué un certain émoi au sein de la communauté des développeurs, à tel point que &lt;del&gt;Dieu&lt;/del&gt; &lt;a href=&quot;http://en.wikipedia.org/wiki/Rasmus_Lerdorf&quot;&gt;Rasmus&lt;/a&gt; lui-même s'est penché sur le problème.&lt;/p&gt;    &lt;p&gt;Le bug &lt;a href=&quot;http://bugs.php.net/bug.php?id=53632&quot;&gt;#53632&lt;/a&gt; a donc été résolu et sa correction est d'ailleurs à l'origine de la sortie des versions &lt;a href=&quot;http://www.php.net/archive/2011.php#id2011-01-06-1&quot;&gt;5.3.5 et 5.2.17&lt;/a&gt; du langage.&lt;/p&gt;
+&lt;p&gt;Cependant, ce n'est pas le seul bug à avoir été corrigé puisque les bugs &lt;a href=&quot;http://bugs.php.net?id=53466&quot;&gt;#53466&lt;/a&gt;,
+&lt;a href=&quot;http://bugs.php.net?id=53682&quot;&gt;#53682&lt;/a&gt;,
+&lt;a href=&quot;http://bugs.php.net?id=53503&quot;&gt;#53503&lt;/a&gt;,
+&lt;a href=&quot;http://bugs.php.net?id=56349&quot;&gt;#56349&lt;/a&gt;,
+&lt;a href=&quot;http://bugs.php.net?id=53630&quot;&gt;#53630&lt;/a&gt;,
+&lt;a href=&quot;http://bugs.php.net?id=53729&quot;&gt;#53729&lt;/a&gt;,
+&lt;a href=&quot;http://bugs.php.net?id=53717&quot;&gt;#53717&lt;/a&gt; et
+&lt;a href=&quot;http://bugs.php.net?id=53551&quot;&gt;#53551&lt;/a&gt; ont été résolus.&lt;/p&gt;
+&lt;p&gt;Dans un tout autre registre, la méthode &lt;code&gt;\regexIterator::getRegex()&lt;/code&gt; a été implémententée, conformément à la demande &lt;a href=&quot;http://bugs.php.net/bug.php?id=53659&quot;&gt;#53659&lt;/a&gt;, et son auteur a publié sur son &lt;a href=&quot;http://www.adayinthelifeof.nl/&quot;&gt;blog&lt;/a&gt; un &lt;a href=&quot;http://www.adayinthelifeof.nl/2011/01/06/php-5-4-regexiteratorgetregex/&quot;&gt;exemple d'utilisation&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;Cette période a d'ailleur été faste pour les requêtes en provenance des utilisateurs du langage, puisque trois autre demandes ont été acceptées, à savoir &lt;a href=&quot;http://bugs.php.net?id=47802&quot;&gt;#47802&lt;/a&gt;, &lt;a href=&quot;http://bugs.php.net?id=53684&quot;&gt;#53684&lt;/a&gt;, &lt;a href=&quot;http://bugs.php.net?id=53466&quot;&gt;#53466&lt;/a&gt; et &lt;a href=&quot;http://bugs.php.net?id=39847&quot;&gt;#39847&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;Les directives &lt;a href=&quot;http://www.php.net/manual/en/errorfunc.configuration.php#ini.error-prepend-string&quot;&gt;&lt;code&gt;error_prepend_string&lt;/code&gt;&lt;/a&gt; et &lt;a href=&quot;http://www.php.net/manual/en/errorfunc.configuration.php#ini.error-append-string&quot;&gt;&lt;code&gt;error_append_string&lt;/code&gt;&lt;/a&gt; ne font donc dorénavant plus appel à la balise &lt;abbr title=&quot;HyperText Markup Language&quot;&gt;HTML&lt;/abbr&gt; &lt;code&gt;&amp;lt;font /&amp;gt;&lt;/code&gt;, dépréciée depuis 1999.&lt;/p&gt;
+&lt;p&gt;De plus, l'encodage des caractéres est maintenant supporté dans le &lt;abbr title=&quot;Database Service Name&quot;&gt;DSN&lt;/abbr&gt; du pilote &lt;a href=&quot;http://mysql.com/&quot;&gt;MySQL&lt;/a&gt; de &lt;a href=&quot;http://fr.php.net/manual/en/book.pdo.php&quot;&gt;&lt;abbr title=&quot;PHP Database Objects&quot;&gt;PDO&lt;/abbr&gt;&lt;/a&gt;, et les fonctions &lt;code&gt;&lt;a href=&quot;http://fr.php.net/manual/en/mysqli-result.fetch-field.php&quot;&gt;mysqli_fetch_[field|fields|field_direct]&lt;/a&gt;&lt;/code&gt; retourne maintenant le nom de la base de données d'où sont extraits les champs concernés.&lt;/p&gt;
+&lt;p&gt;Et pour en finir avec les bases de données, la méthode &lt;a href=&quot;http://fr.php.net/manual/en/sqlite3result.columntype.php&quot;&gt;&lt;code&gt;\sQLite3Result::columnType()&lt;/code&gt;&lt;/a&gt; retourne maintenant &lt;code&gt;false&lt;/code&gt; lorsqu'il n'y a plus d'enregistrements à récupérer.&lt;/p&gt;
+&lt;p&gt;La méthode &lt;code&gt;\regexIterator::getRegex()&lt;/code&gt;n'est pas la seule à avoir été ajoutée au langage, puisque suite à une discussion commencée durant &lt;a href=&quot;http://blog.mageekbox.net/?post/2011/01/04/Mort-de-PHP6-290-jours&quot;&gt;la période précédente&lt;/a&gt; sur la liste de diffusion des développeurs, la méthode&lt;code&gt;\splObjectStorage::removeAllExcept()&lt;/code&gt; a été ajoutée à la version de développement de &lt;a href=&quot;http://www.php.net&quot;&gt;PHP&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;La méthode &lt;code&gt;trait_exists()&lt;/code&gt; a également été ajoutée, afin de pouvoir vérifier l'existence d'un trait à l'exécution, de la même façon que &lt;a href=&quot;http://fr.php.net/manual/en/function.class-exists.php&quot;&gt;&lt;code&gt;class_exists()&lt;/code&gt;&lt;/a&gt;, qui retourne dorénavant et logiquement &lt;code&gt;false&lt;/code&gt; lorsqu'elle est utilisée sur un trait.&lt;/p&gt;
+&lt;p&gt;Et en parlant des &lt;a href=&quot;http://blog.mageekbox.net/?post/2010/05/17/Et-si-on-tirait-des-traits&quot;&gt;traits&lt;/a&gt;, ces derniers ont été à l'honneur sur la liste de diffusion des contributeurs au langage, &lt;a href=&quot;http://news.php.net/group.php?group=php.internals&quot;&gt;internals@&lt;/a&gt;, puisqu'ils ont été le sujet de la majorité des discussions.&lt;/p&gt;
+&lt;p&gt;Il faut dire que la liste n'a pas été des plus actives, sans que je puisse en donner une explication.&lt;/p&gt;
+&lt;p&gt;Dans tous les cas, les &lt;a href=&quot;http://blog.mageekbox.net/?post/2011/01/16/?post/2010/12/16/Rendez-vous-AFUP-du-15/12/2010&quot;&gt;traits&lt;/a&gt; semblent passionner la communauté des développeurs, même s'ils semblent avoir &lt;a href=&quot;http://news.php.net/php.internals/51184&quot;&gt;quelques difficultés&lt;/a&gt; à en appréhender les subtilités.&lt;/p&gt;
+&lt;p&gt;De plus, la question de l'implémentation des &lt;a href=&quot;http://blog.mageekbox.net/?post/2010/12/16/Rendez-vous-AFUP-du-15/12/2010&quot;&gt;traits&lt;/a&gt; au sein des fonctionnalités d'introspection de &lt;a href=&quot;http://www.php.net/&quot;&gt;PHP&lt;/a&gt; fait toujours débat, et n'a toujours &lt;a href=&quot;http://news.php.net/php.internals/51234&quot;&gt;pas de réponse&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;http://www.stefan-marr.de/2010/12/php-next-traits-presentation-for-afup-in-paris//&quot;&gt;Stefan Marr&lt;/a&gt;, l'auteur de l'implémentation des traits dans PHP, a d'ailleurs saisi l'occasion pour &lt;a href=&quot;http://news.php.net/php.internals/51231&quot;&gt;demander une planification&lt;/a&gt; pour la sortie de la prochaine version du langage, afin qu'il puisse organiser au mieux son temps, mais sa requête n'a pas reçu de réponse pour le moment.&lt;/p&gt;
+&lt;p&gt;Au niveau des &lt;a href=&quot;http://wiki.php.net/rfc/&quot;&gt;&lt;abbr title=&quot;Request For Comments&quot;&gt;RFC&lt;/abbr&gt;&lt;/a&gt;, &lt;a href=&quot;http://derickrethans.nl/&quot;&gt;Derick Rethans&lt;/a&gt; a &lt;a href=&quot;http://news.php.net/php.internals/51272&quot;&gt;proposé&lt;/a&gt; d'ajouter &lt;a href=&quot;http://wiki.php.net/rfc/debugoptions&quot;&gt;un argument&lt;/a&gt; à la fonction &lt;code&gt;&lt;a href=&quot;http://fr.php.net/manual/en/function.debug-backtrace.php&quot;&gt;debug_backtrace()&lt;/a&gt;&lt;/code&gt; afin de pouvoir désactiver le traitement des arguments au niveau de la pile d'exécution, et sa demande reçoit pour le moment un accueil favorable.&lt;/p&gt;
+&lt;p&gt;Enfin, il y a eu le lot habituel de corrections et d'optimisation, aussi bien au niveau du moteur du langage que de sa compilation, qui devrait s'effectuer plus proprement.&lt;/p&gt;
+&lt;p&gt;Et pour terminer sur une note d'humour, pour ceux qui se demanderaient comment participer au développement de PHP, l'un des contributeurs, &lt;a href=&quot;http://www.linkedin.com/in/chadfulton&quot;&gt;Chad Fulton&lt;/a&gt;, a donné &lt;a href=&quot;http://news.php.net/php.internals/51264&quot;&gt;le mode d'emploi officieux&lt;/a&gt;, et je peux dire que, de part mon expérience, c'est, et de loin, le meilleur que j'ai pu lire à ce jour.&lt;/p&gt;
+&lt;p&gt;Cette rétrospective est maintenant terminée, vous pouvez reprendre une activité normale.&lt;/p&gt;</description>
+		<pubDate>Fri, 14 Jan 2011 23:59:00 +0100</pubDate>
+		<guid>http://blog.mageekbox.net/?post/2011/01/16/Mort-de-PHP6-300-jours</guid>
+	</item>
+		<item>
+		<title>Flogr</title>
+		<link>http://www.nexen.net/actualites/php/20008-flogr.php</link>
+		<description>&lt;div class=&quot;content_header_img&quot;&gt;
+					&lt;img alt=&quot;Image pour le titre du contenu&quot; src=&quot;http://www.nexen.net/images/stories/biseau/galerie.png&quot;&gt;
+				    &lt;/div&gt;&lt;div class=&quot;blogcontent&quot;&gt;
+Flogr est une nouvelle plateforme de galerie photos, r&amp;eacute;alis&amp;eacute;e en PHP et distribu&amp;eacute;e en Open Source. La partie Front est g&amp;eacute;rer avec  jQuery.&lt;br /&gt;
+Cette API va vous permettre d'afficher vos photos venant directement du site Flick'R d'une mani&amp;egrave;re int&amp;eacute;ractive. De nombreuses options sont disponibles permettant de proposer un album photos tr&amp;egrave;s complet comme : &lt;br /&gt;
+&lt;ul&gt;&lt;li&gt;Affichages de diff&amp;eacute;rentes vues&amp;nbsp;&lt;/li&gt;&lt;li&gt;Positionner sur une carte le lieu de la photo&lt;/li&gt;&lt;li&gt;Gestion des tags&lt;/li&gt;&lt;li&gt;Possibilit&amp;eacute; de poster des commentaires&lt;/li&gt;&lt;li&gt;Diff&amp;eacute;rents modes de classements&lt;/li&gt;&lt;/ul&gt;
+&lt;br /&gt;
+Vous pouvez vous rendre sur le site pour visualiser le r&amp;eacute;sultat&lt;ul&gt;&lt;li&gt;&lt;img src= &quot;http://www.nexen.net/nx_media/images/drapeaux/en.png&quot; alt=&quot;en&quot; witdth=&quot;18&quot; height=&quot;12&quot; /&gt;&amp;nbsp;&lt;a href=&quot;http://code.google.com/p/flogr/&quot; title=&quot;http://code.google.com/p/flogr/&quot;  onclick=&quot;window.location.href='http://www.nexen.net/index.php?option=com_nx_weblink&amp;amp;weblink=Site+de+Flogr&amp;amp;content_id=0'; return false;&quot;  class=&quot;weblink_img&quot;&gt;Site de Flogr&lt;/a&gt; (0 visite)&lt;/li&gt;&lt;li&gt;&lt;img src= &quot;http://www.nexen.net/nx_media/images/drapeaux/fr.png&quot; alt=&quot;fr&quot; witdth=&quot;18&quot; height=&quot;12&quot; /&gt;&amp;nbsp;&lt;a href=&quot;http://thecarruthfamily.com/michael/photos/index.php&quot; title=&quot;http://thecarruthfamily.com/michael/photos/index.php&quot;  onclick=&quot;window.location.href='http://www.nexen.net/index.php?option=com_nx_weblink&amp;amp;weblink=Demo+de+Flogr&amp;amp;content_id=0'; return false;&quot;  class=&quot;weblink_img&quot;&gt;Demo de Flogr&lt;/a&gt; (0 visite)&lt;/li&gt;&lt;/ul&gt;&lt;/div&gt;</description>
+		<pubDate>Sat, 15 Jan 2011 15:13:24 +0100</pubDate>
+		<guid>http://www.nexen.net/actualites/php/20008-flogr.php</guid>
+	</item>
+		<item>
+		<title>Magix CMS - Drupal - Joomla - Wordpress</title>
+		<link>http://blog.hello-design.fr/index.php?post/2011/01/15/Magix-CMS-Drupal-Joomla-Wordpress</link>
+		<description>    &lt;p&gt;Depuis ces dernières semaines et aussi derniers mois, l'univers du CMS a vu de nombreux chamboulement avec l'apparition de nouvelles versions mineures et surtout majeures des principaux outils de gestions de contenus pour les plus connus en PHP.&lt;/p&gt;
+
+
+&lt;p&gt;Les versions disponibles actuellement sont&amp;nbsp;:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;http://www.magix-cms.com/&quot;&gt;Magix CMS 2.3.42&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;http://drupal.org/drupal-7.0&quot;&gt;Drupal 7&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;http://www.joomla.fr/les-news-joomla/13-news-officielles/1032-joomla-1-6-est-sorti&quot;&gt;Joomla 1.6&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;http://www.wordpress-fr.net/&quot;&gt;Wordpress 3.04&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Ces différentes applications sont des CMS que j'utilise et chacune d'elle pour différents projets et sites webs, ce qui va me permettre de connaître les différents points importants pour préparer encore mieux l'approche de cette nouvelle année avec&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Au moins une conférence déjà planifiée à &lt;a href=&quot;http://www.confoo.ca/fr&quot;&gt;Confoo.ca&lt;/a&gt; et surment d'autres par la suite&lt;/li&gt;
+&lt;li&gt;De nouveaux articles pour différents magazines&lt;/li&gt;
+&lt;li&gt;De nouveaux travaux autour d'eux&lt;/li&gt;
+&lt;li&gt;etc&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Mais il est clair que la tendance du &quot;Drag And Drop&quot;, l'utilisation du code sémantique, et la possibilité de communiquer avec l'ensemble des bases de données par l'intermédiaire de PDO sont des critères qui sont bien présents dans ces différents CMS.&lt;/p&gt;</description>
+		<pubDate>Sat, 15 Jan 2011 17:54:24 +0100</pubDate>
+		<guid>http://blog.hello-design.fr/index.php?post/2011/01/15/Magix-CMS-Drupal-Joomla-Wordpress</guid>
+	</item>
+		<item>
+		<title>Gestionnaire de Bugs</title>
+		<link>http://www.nexen.net/actualites/php/20007-gestionnaire_de_bugs.php</link>
+		<description>&lt;div class=&quot;content_header_img&quot;&gt;
+					&lt;img alt=&quot;Image pour le titre du contenu&quot; src=&quot;http://www.nexen.net/images/stories/biseau/bug.png&quot;&gt;
+				    &lt;/div&gt;&lt;div class=&quot;blogcontent&quot;&gt;
+Le site 4lw a publi&amp;eacute; un article autour des gestionnaires de bugs ou aussi appel&amp;eacute; Bug tracker.&lt;br /&gt;
+L'utilisation de ce genre d'outils devient n&amp;eacute;cessaire lors de la mise en place d'une &amp;eacute;quipe de d&amp;eacute;veloppement pour la r&amp;eacute;alisation d'un projet, m&amp;ecirc;me si cette &amp;eacute;quipe poss&amp;egrave;de 1 seule personne.&lt;br /&gt;
+L'avantage doit vous permettre de r&amp;eacute;pondre aux diff&amp;eacute;rentes demandes du client concernant le projet.&lt;br /&gt;
+L'article explique qu'il faut installer ce genre d'outil sur une plateforme accessible de l'ext&amp;eacute;rieur comme une plateforme mutualis&amp;eacute; PHP/MySQL. Pour ensuite, installer un outil qui r&amp;eacute;pondra au mieux &amp;agrave; votre besoin et surtout disponible sur le march&amp;eacute;, comme : &lt;br /&gt;
+&lt;ul&gt;&lt;li&gt;Etraxis&lt;/li&gt;&lt;li&gt;Bugzilla&lt;/li&gt;&lt;li&gt;Mantis&lt;/li&gt;&lt;li&gt;The Bug Genie&lt;/li&gt;&lt;li&gt;Webissue&lt;/li&gt;&lt;/ul&gt;
+&lt;br /&gt;
+Bien sur, il en existe d'autres sortes mais pour des langages diff&amp;eacute;rents.&lt;ul&gt;&lt;li&gt;&lt;img src= &quot;http://www.nexen.net/nx_media/images/drapeaux/fr.png&quot; alt=&quot;fr&quot; witdth=&quot;18&quot; height=&quot;12&quot; /&gt;&amp;nbsp;&lt;a href=&quot;http://4lw.fr/blog/post/2011/01/13/Quand-le-besoin-d-un-gestionnaire-de-bugs-%28bug-tracker%29-se-fait-ressentir&quot; title=&quot;http://4lw.fr/blog/post/2011/01/13/Quand-le-besoin-d-un-gestionnaire-de-bugs-%28bug-tracker%29-se-fait-ressentir&quot;  onclick=&quot;window.location.href='http://www.nexen.net/index.php?option=com_nx_weblink&amp;amp;weblink=Quand+le+besoin+d+un+gestionnaire+de+bugs+bug+tracker+se+fait+ressentir&amp;amp;content_id=0'; return false;&quot;  class=&quot;weblink_img&quot;&gt;Quand le besoin d un gestionnaire de bugs (bug tracker) se fait ressentir&lt;/a&gt; (0 visite)&lt;/li&gt;&lt;/ul&gt;&lt;/div&gt;</description>
+		<pubDate>Fri, 14 Jan 2011 10:43:41 +0100</pubDate>
+		<guid>http://www.nexen.net/actualites/php/20007-gestionnaire_de_bugs.php</guid>
+	</item>
+		<item>
+		<title>Webinar passé et futur trimestre 2011</title>
+		<link>http://www.nexen.net/actualites/php/20006-webinar_passe_et_futur_trimestre_2011.php</link>
+		<description>&lt;div class=&quot;content_header_img&quot;&gt;
+					&lt;img alt=&quot;Image pour le titre du contenu&quot; src=&quot;http://www.nexen.net/images/stories/biseau/zend3.png&quot;&gt;
+				    &lt;/div&gt;&lt;div class=&quot;blogcontent&quot;&gt;
+Les Webinars du Framework Zend sont des &amp;eacute;v&amp;egrave;nements r&amp;eacute;guliers.&lt;br /&gt;
+Si vous avez rat&amp;eacute; les 2 derniers, vous pouvez les visualiser sans probl&amp;egrave;mes :&lt;br /&gt;
+&lt;ul&gt;&lt;li&gt;&lt;strong&gt;Cr&amp;eacute;ation d'un plugin ZF d'authentification et de droits d'acc&amp;egrave;s (en fran&amp;ccedil;ais)&amp;nbsp;&lt;/strong&gt;&lt;/li&gt;&lt;/ul&gt;&lt;blockquote style=&quot;margin-top: 0px; margin-right: 0px; margin-bottom: 0px; margin-left: 40px; border-top-style: none; border-right-style: none; border-bottom-style: none; border-left-style: none; border-width: initial; border-color: initial; padding-top: 0px; padding-right: 0px; padding-bottom: 0px; padding-left: 0px; &quot;&gt;&lt;div&gt;&lt;a href=&quot;http://www.zend.com/fr/webinar/zf/70170000000bTAx-webinar-authentification-zf-20110111.flv &quot; target=&quot;_self&quot;&gt;http://www.zend.com/fr/webinar/zf/70170000000bTAx-webinar-authentification-zf-20110111.flv &lt;/a&gt;&lt;/div&gt;&lt;div&gt;
+Pr&amp;eacute;sentateur : Guillaume Pon&amp;ccedil;on, Expert PHP &amp;amp; Zend Framework&lt;/div&gt;&lt;/blockquote&gt;&lt;div&gt;
+&lt;br /&gt;
+&lt;ul&gt;&lt;li&gt;&lt;strong&gt;Zend Framework v1 + Doctrine v2&amp;nbsp;&lt;/strong&gt;&lt;/li&gt;&lt;/ul&gt;&lt;/div&gt;&lt;blockquote style=&quot;margin-top: 0px; margin-right: 0px; margin-bottom: 0px; margin-left: 40px; border-top-style: none; border-right-style: none; border-bottom-style: none; border-left-style: none; border-width: initial; border-color: initial; padding-top: 0px; padding-right: 0px; padding-bottom: 0px; padding-left: 0px; &quot;&gt;&lt;div&gt;&lt;a href=&quot;http://www.zend.com/en/webinar/Framework/70170000000bSrG-webinar-zf-v-1-doctrine-v-2-20101214.flv &quot; target=&quot;_self&quot;&gt;http://www.zend.com/en/webinar/Framework/70170000000bSrG-webinar-zf-v-1-doctrine-v-2-20101214.flv &lt;/a&gt;&lt;/div&gt;&lt;div&gt;
+Presenters &amp;ndash; Ralph Schindler, Jonathan Wage and Guilherme Blanco &lt;/div&gt;&lt;/blockquote&gt;&lt;div&gt;
+&lt;br /&gt;
+Et &amp;agrave; cette occasion, les prochains rendez-vous ont &amp;eacute;t&amp;eacute; publi&amp;eacute;s autour de 2 nouveaux points disponible directement dans le communiqu&amp;eacute;&lt;ul&gt;&lt;li&gt;&lt;img src= &quot;http://www.nexen.net/nx_media/images/drapeaux/fr.png&quot; alt=&quot;fr&quot; witdth=&quot;18&quot; height=&quot;12&quot; /&gt;&amp;nbsp;&lt;a href=&quot;http://www.nexen.net/articles/communique_de_presse/20005-webinar_zend_:_1er_trimestre_2011.php&quot; title=&quot;http://www.nexen.net/articles/communique_de_presse/20005-webinar_zend_:_1er_trimestre_2011.php&quot;  onclick=&quot;window.location.href='http://www.nexen.net/index.php?option=com_nx_weblink&amp;amp;weblink=Webinar+Zend+%3A+1er+trimestre+2011&amp;amp;content_id=0'; return false;&quot;  class=&quot;weblink_img&quot;&gt;Webinar Zend : 1er trimestre 2011&lt;/a&gt; (0 visite)&lt;/li&gt;&lt;/ul&gt;&lt;/div&gt;&lt;/div&gt;</description>
+		<pubDate>Fri, 14 Jan 2011 10:28:58 +0100</pubDate>
+		<guid>http://www.nexen.net/actualites/php/20006-webinar_passe_et_futur_trimestre_2011.php</guid>
+	</item>
+		<item>
+		<title>Retrait du format H.264 de Chrome</title>
+		<link>http://xhtml.net/breves/644-Retrait-du-format-H264-de-Chrome</link>
+		<description>
+	    &lt;div xmlns=&quot;http://www.w3.org/1999/xhtml&quot;&gt;
+		    &lt;p &gt;
+&lt;a href=&quot;http://blog.chromium.org/2011/01/html-video-codec-support-in-chrome.html&quot;&gt;719 commentaires sur la news du retrait du support de H.264 de Chrome&lt;/a&gt;. Tout le monde tourne et retourne l?argument d?ouverture, la comparaison avec Flash, etc. Mais presque personne ne pense à Android vs. iPhone/iOS. La bataille du web sur le desktop est déjà terminée, car elle est gagnée par le choix. Aujourd?hui vous avez 3 moteurs de rendus sur le web et 4 implémentations javascript. Ce sont les solutions :
+&lt;/p&gt;
+&lt;ul &gt;
+
+&lt;li &gt; Mozilla ;
+&lt;/li&gt;&lt;li &gt; WebKit + moteur JS d?Apple (je ne le connais pas) ;
+&lt;/li&gt;&lt;li &gt; WebKit + V8 pour Google ;
+&lt;/li&gt;&lt;li &gt; Microsoft.
+&lt;/li&gt;&lt;/ul&gt;
+
+&lt;p &gt;
+Il faut noter que le libre est donc maintenant majoritaire et que les parts de marché bougent vite, on est dans une situation concurrentielle bonne pour les utilisateurs finaux. Opéra est inexistant sur le desktop ou presque. Par contre, Opéra est énorme dans les mobiles, OpéraMini a une croissance remarquable et est massivement utilisé et soutenu par les opérateurs mobiles. Mais la vraie bataille, c?est iOS vs. Android. 
+&lt;/p&gt;
+&lt;p &gt;
+&lt;strong &gt;En forçant WebM, Google veut reprendre la main dans la bataille du mobile pour contrer Apple&lt;/strong&gt;. Si WebM devient le standard de la vidéo sur le web, cela forcera Apple à utiliser un codec libre dans ses iTrucMuch et cela, il ne le veut surtout, surtout pas. La politique d?Apple dans les mobiles/tablets et maintenant doucement dans le desktop, est d?avoir un contrôle total et absolu sur l?ensemble hardware et software livré par Apple et contrôler au maximum ce que les développeurs peuvent fournir aux utilisateurs. Si WebM devient un standard, le support de WebM devra être inclus à la base dans les produits Apple. 
+&lt;/p&gt;
+&lt;p &gt;
+La guerre est lancée, Apple a tapé sur YouTube en ne proposant pas de support de Flash, Google tape en retour. Je ne souhaite qu?une chose, c?est que de cette guerre, cela soit la liberté qui sorte gagnante.
+&lt;/p&gt;	    &lt;/div&gt;
+    </description>
+		<pubDate>Fri, 14 Jan 2011 13:43:32 +0100</pubDate>
+		<guid>http://xhtml.net/breves/644-Retrait-du-format-H264-de-Chrome</guid>
+	</item>
+		<item>
+		<title>RegexIterator::getRegex</title>
+		<link>http://www.nexen.net/actualites/php/20004-regexiterator::getregex.php</link>
+		<description>&lt;div class=&quot;content_header_img&quot;&gt;
+					&lt;img alt=&quot;Image pour le titre du contenu&quot; src=&quot;http://www.nexen.net/images/stories/biseau/fonction.png&quot;&gt;
+				    &lt;/div&gt;&lt;div class=&quot;blogcontent&quot;&gt;
+Il s'agit d'une nouvelle fonctionnalité qui devrait être disponible avec la version de PHP 5.4. Pour rappel, cette fonction est un itérateur pour réaliser un filtre basé sur une expression régulière.&lt;br /&gt;
+Le site « A day in the life of... » montre par l'intermédiaire d'exemples comment utiliser cette fonctionnalité et surtout l'utilisation de la méthode getRegex.&lt;ul&gt;&lt;li&gt;&lt;img src= &quot;http://www.nexen.net/nx_media/images/drapeaux/fr.png&quot; alt=&quot;fr&quot; witdth=&quot;18&quot; height=&quot;12&quot; /&gt;&amp;nbsp;&lt;a href=&quot;http://fr.php.net/manual/fr/class.regexiterator.php&quot; title=&quot;http://fr.php.net/manual/fr/class.regexiterator.php&quot;  onclick=&quot;window.location.href='http://www.nexen.net/index.php?option=com_nx_weblink&amp;amp;weblink=La+classe+RegexIterator&amp;amp;content_id=0'; return false;&quot;  class=&quot;weblink_img&quot;&gt;La classe RegexIterator&lt;/a&gt; (0 visite)&lt;/li&gt;&lt;li&gt;&lt;img src= &quot;http://www.nexen.net/nx_media/images/drapeaux/en.png&quot; alt=&quot;en&quot; witdth=&quot;18&quot; height=&quot;12&quot; /&gt;&amp;nbsp;&lt;a href=&quot;http://www.adayinthelifeof.nl/2011/01/06/php-5-4-regexiteratorgetregex/&quot; title=&quot;http://www.adayinthelifeof.nl/2011/01/06/php-5-4-regexiteratorgetregex/&quot;  onclick=&quot;window.location.href='http://www.nexen.net/index.php?option=com_nx_weblink&amp;amp;weblink=script+exemple+pour+PHP+5.4%3A+RegexIterator%3A%3AgetRegex&amp;amp;content_id=0'; return false;&quot;  class=&quot;weblink_img&quot;&gt;script exemple pour PHP 5.4: RegexIterator::getRegex()&lt;/a&gt; (0 visite)&lt;/li&gt;&lt;/ul&gt;&lt;/div&gt;</description>
+		<pubDate>Thu, 13 Jan 2011 10:54:52 +0100</pubDate>
+		<guid>http://www.nexen.net/actualites/php/20004-regexiterator::getregex.php</guid>
+	</item>
+		<item>
+		<title>Contrôler la version de votre base de données</title>
+		<link>http://www.nexen.net/actualites/php/20003-controler_la_version_de_votre_base_de_donnees.php</link>
+		<description>&lt;div class=&quot;content_header_img&quot;&gt;
+					&lt;img alt=&quot;Image pour le titre du contenu&quot; src=&quot;http://www.nexen.net/images/stories/biseau/construction.png&quot;&gt;
+				    &lt;/div&gt;&lt;div class=&quot;blogcontent&quot;&gt;
+Le site techportal Ibuildings a publi&amp;eacute; un article de Harrie Verveer, sur un sujet assez difficile pour les groupes de d&amp;eacute;veloppement PHP, sur le meilleur moyen de contr&amp;ocirc;ler  la version de base de donn&amp;eacute;es SQL.&lt;br /&gt;
+L'article commence par rappeler que la majorit&amp;eacute; des d&amp;eacute;veloppeurs arrivent avec leurs propres routines personnalis&amp;eacute;es. Mais qu'il est souvent n&amp;eacute;cessaire d'appliquer des patchs pour &amp;ecirc;tre compatible avec la version de la base de donn&amp;eacute;es utilis&amp;eacute;e. Par cons&amp;eacute;quent des probl&amp;egrave;mes peuvent appara&amp;icirc;tre pendant la p&amp;eacute;riode de d&amp;eacute;veloppement.&lt;br /&gt;
+Cependant, il ne faut pas perdre de vue qu'il existe d'autres solutions comme phing + DBDeploy ou encore Doctrine qui peuvent r&amp;eacute;soudre un certain nombre de soucis.&lt;ul&gt;&lt;li&gt;&lt;img src= &quot;http://www.nexen.net/nx_media/images/drapeaux/en.png&quot; alt=&quot;en&quot; witdth=&quot;18&quot; height=&quot;12&quot; /&gt;&amp;nbsp;&lt;a href=&quot;http://techportal.ibuildings.com/2011/01/11/database-version-control/&quot; title=&quot;http://techportal.ibuildings.com/2011/01/11/database-version-control/&quot;  onclick=&quot;window.location.href='http://www.nexen.net/index.php?option=com_nx_weblink&amp;amp;weblink=Database+Version+Control&amp;amp;content_id=0'; return false;&quot;  class=&quot;weblink_img&quot;&gt;Database Version Control&lt;/a&gt; (0 visite)&lt;/li&gt;&lt;/ul&gt;&lt;/div&gt;</description>
+		<pubDate>Thu, 13 Jan 2011 10:21:21 +0100</pubDate>
+		<guid>http://www.nexen.net/actualites/php/20003-controler_la_version_de_votre_base_de_donnees.php</guid>
+	</item>
+		<item>
+		<title>Nantes lance un resto PHP le 27 janvier</title>
+		<link>/pages/site/?route=actualites/438/Nantes-lance-un-resto-PHP-le-27-janvier</link>
+		<description>&lt;div style=&quot;color: #000000; font-family: Verdana, Arial, Helvetica, sans-serif; font-size: 10px; background-image: initial; background-attachment: initial; background-origin: initial; background-clip: initial; background-color: #ffffff; margin: 8px;&quot;&gt;
+&lt;p&gt;L'ap&amp;eacute;ro ne durait pas assez longtemps pour pouvoir discuter suffisamment de PHP: nos membres nantais se lancent donc dans le resto PHP! RDV pour le tout premier du genre au Flesselles le jeudi 27 janvier. Confirmez votre venue sur le site Ap&amp;eacute;ro PHP: &lt;a href=&quot;http://aperophp.net/apero.php?id=802&quot;&gt;http://aperophp.net/apero.php?id=802&lt;/a&gt;&lt;/p&gt;
+&lt;/div&gt;</description>
+		<pubDate>Thu, 13 Jan 2011 00:00:00 +0100</pubDate>
+		<guid>/pages/site/?route=actualites/438/Nantes-lance-un-resto-PHP-le-27-janvier</guid>
+	</item>
+		<item>
+		<title>Reprendre contrôle de mes données</title>
+		<link>http://xhtml.net/breves/643-Reprendre-controle-de-mes-donnees</link>
+		<description>
+	    &lt;div xmlns=&quot;http://www.w3.org/1999/xhtml&quot;&gt;
+		    &lt;p &gt;
+C?est ma devise de cette année, cela mature pour aller dans le sens d?un site web en construction continue, pas forcément un logiciel libre (car cela prend beaucoup, beaucoup de temps de gérer un projet libre), mais dans tous les cas, basé sur &lt;strong &gt;Photon&lt;/strong&gt; et &lt;strong &gt;Mongrel2&lt;/strong&gt;.
+&lt;/p&gt;
+&lt;p &gt;
+Pour nourrir un peu le débat, le mythe du c?est génial tout est dans les nuages prend un peu l?eau, cela condense :
+&lt;/p&gt;
+&lt;ul &gt;
+
+&lt;li &gt; &lt;a href=&quot;http://blogs.law.harvard.edu/doc/2011/01/12/what-if-flickr-fails/&quot;&gt;What if Flickr fails?&lt;/a&gt; ;
+&lt;/li&gt;&lt;li &gt; &lt;a href=&quot;http://techcrunch.com/2011/01/10/why-im-having-second-thoughts-about-the-wisdom-of-the-cloud/&quot;&gt;Why I?m Having Second Thoughts About The Wisdom Of The Cloud&lt;/a&gt;.
+&lt;/li&gt;&lt;/ul&gt;
+
+&lt;p &gt;
+Je passe probablement pour un intégriste quand je ne veux pas de produit Apple chez moi, que je veux, même au sein de mes applications libres, contrôler la manière dont les informations sont stockées. À chaque nouvelle d?un utilisateur qui perd ses données (compte Google Mail fermé, compte Flickr, compte truc ou bidule), il y a toujours la réponse, c?est de sa faute il n?a pas respecté les règles X, Y ou Z, cela ne s?appliquera pas à moi.
+&lt;/p&gt;
+&lt;p &gt;
+Cela me rappel un &lt;a href=&quot;http://de.wikipedia.org/wiki/Martin_Niem%C3%B6ller#Zitat&quot;&gt;court texte du pasteur Martin Niemöller&lt;/a&gt;:
+&lt;/p&gt;
+&lt;blockquote &gt;&lt;p &gt;
+ ?Als die Nazis die Kommunisten holten, habe ich geschwiegen; ich war ja kein Kommunist.
+&lt;br &gt;&lt;/br&gt; Als sie die Sozialdemokraten einsperrten, habe ich geschwiegen; ich war ja kein Sozialdemokrat.
+&lt;br &gt;&lt;/br&gt; Als sie die Gewerkschafter holten, habe ich nicht protestiert; ich war ja kein Gewerkschafter.
+&lt;br &gt;&lt;/br&gt; Als sie mich holten, gab es keinen mehr, der protestieren konnte.?
+&lt;/p&gt;&lt;/blockquote&gt;
+&lt;p &gt;
+Nous abandonnons notre vie à des sociétés dont le but n?est que de faire de l?argent, pas de prendre soin de la vie privée des gens. Les personnes qui pensent que les mécanismes naturels du marché (valeur boursière, etc.) et les lois permettent de limiter les dérapages, vous connaissez la situation de nos États par rapport aux forces économiques et vous savez comment le &quot;gentil Google&quot; a pu collecter des informations personnelles via ses petites voitures, ceci totalement hors la loi dans de nombreux pays, pour finalement ne jamais être puni?
+&lt;/p&gt;	    &lt;/div&gt;
+    </description>
+		<pubDate>Thu, 13 Jan 2011 12:58:43 +0100</pubDate>
+		<guid>http://xhtml.net/breves/643-Reprendre-controle-de-mes-donnees</guid>
+	</item>
+		<item>
+		<title>10 astuces expressions regulières</title>
+		<link>http://www.nexen.net/actualites/php/20002-10_astuces_expressions_regulieres.php</link>
+		<description>&lt;div class=&quot;content_header_img&quot;&gt;
+					&lt;img alt=&quot;Image pour le titre du contenu&quot; src=&quot;http://www.nexen.net/images/stories/biseau/regex.png&quot;&gt;
+				    &lt;/div&gt;&lt;div class=&quot;blogcontent&quot;&gt;
+Les expressions r&amp;eacute;guli&amp;egrave;res sont tr&amp;egrave;s utilis&amp;eacute;es lorsque vous d&amp;eacute;sirez manipuler de longues chaines de caract&amp;egrave;res.&lt;br /&gt;
+Le site 'tutorial cadet' donne 10 astuces suppl&amp;eacute;mentaires en PHP pour vous aider &amp;agrave; vous en servir et concerne les points suivants : &lt;br /&gt;
+&lt;ul&gt;&lt;li&gt;
+Validation email&lt;/li&gt;&lt;li&gt;
+Manipulation de cha&amp;icirc;ne de caract&amp;egrave;res&lt;/li&gt;&lt;li&gt;
+Test un entier dans un emplacement pr&amp;eacute;cis&lt;/li&gt;&lt;li&gt;
+contenu d'une balise HTML&lt;/li&gt;&lt;li&gt;
+Test d'une URL valide&lt;/li&gt;&lt;li&gt;
+Format t&amp;eacute;l&amp;eacute;phonique&lt;/li&gt;&lt;li&gt;
+Code postal&lt;/li&gt;&lt;li&gt;
+Adresse IPv4 IP&lt;/li&gt;&lt;li&gt;
+Adresse IPv6 IP&lt;/li&gt;&lt;/ul&gt;&lt;div&gt;&lt;br /&gt;
+&lt;/div&gt;&lt;ul&gt;&lt;li&gt;&lt;a href=&quot;http://www.tutorialcadet.com/10-useful-regex-patterns-for-php/&quot; target=&quot;_self&quot;&gt;10++ Useful Regex Patterns for PHP&lt;/a&gt;&lt;/li&gt;&lt;/ul&gt;&lt;div&gt;&lt;br /&gt;
+&lt;/div&gt;&lt;div&gt;&lt;br /&gt;
+&lt;/div&gt;&lt;/div&gt;</description>
+		<pubDate>Wed, 12 Jan 2011 09:47:41 +0100</pubDate>
+		<guid>http://www.nexen.net/actualites/php/20002-10_astuces_expressions_regulieres.php</guid>
+	</item>
+		<item>
+		<title>Mise à jour de TYPO3 4.5.0 beta4</title>
+		<link>http://www.ycerdan.fr/typo-3/mise-a-jour-de-typo3-4-5-0-beta4/</link>
+		<description>La quatrième beta de la branche 4.5.x vient de sortir. Pour rappel, cette version sera une version majeure de TYPO3 et sera donc définit comme une LTS (Long Time Support). La sortie de la version finale est pour le moment prévue pour fin janvier 2011 (le 26 janvier). Vous pouvez consulter les nouveautés apportées par [...]</description>
+		<pubDate>Thu, 13 Jan 2011 08:44:52 +0100</pubDate>
+		<guid>http://www.ycerdan.fr/typo-3/mise-a-jour-de-typo3-4-5-0-beta4/</guid>
+	</item>
+		<item>
+		<title>Plus de H264 dans Chrome</title>
+		<link>http://ljouanneau.com/blog/post/2011/01/12/Plus-de-H264-dans-Chrome</link>
+		<description>    &lt;p&gt;Google vient de l'annoncer&amp;nbsp;: &lt;a href=&quot;http://blog.chromium.org/2011/01/html-video-codec-support-in-chrome.html&quot;&gt;le support du format video H264 va être retiré de Chrome&lt;/a&gt; (sachant que dans Chromium, la version opensource du navigateur, il n'y en avait déjà pas). Ce qui veut dire que Google va commencer à pousser fortement à l'utilisation de son propre format vidéo, &lt;a href=&quot;http://www.webmproject.org/&quot;&gt;WebM&lt;/a&gt;, déjà supporté par Firefox, Opera et d'autres navigateurs libres.&lt;/p&gt;
+
+
+&lt;p&gt;C'est une excellente nouvelle pour le web, et pour la balise video, que d'avoir un format, WebM, de qualité et non encombré de brevets logiciels connus. &lt;a href=&quot;http://ljouanneau.com/blog/post/2010/05/19/WebM%2C-le-nouveau-format-video-du-web&quot;&gt;J'en avais déjà parlé il y a quelques mois&lt;/a&gt;, quand Google libérait ce format. Depuis, cette époque, même s'il n'a pas trop fait parlé de lui publiquement, WebM a progressé, tant au niveau logiciel qu'au niveau hardware, puisque &lt;a href=&quot;http://blog.webmproject.org/2011/01/availability-of-webm-vp8-video-hardware.html&quot;&gt;des puces vont bientôt être disponibles&lt;/a&gt;.&lt;/p&gt;
+
+
+&lt;p&gt;Il ne reste &quot;que&quot; Internet Explorer et Safari (sur Macbook ou iphone) à ne pas supporter nativement WebM. Toutefois, avec IE9, il suffira d'installer le codec au niveau du système.&lt;/p&gt;
+
+
+&lt;p&gt;Attention cependant, ne crions pas victoire trop vite. Le retrait du support n'est pas encore fait, et l'annonce de ce retrait provoque une vague de mécontentement chez beaucoup d'utilisateurs et de développeurs, si on en croit &lt;a href=&quot;http://blog.chromium.org/2011/01/html-video-codec-support-in-chrome.html?commentPage=1&quot;&gt;les nombreux commentaires sur la news&lt;/a&gt; (les menaces de passer à un autre navigateur sont particulièrement risibles).&lt;/p&gt;
+
+
+&lt;p&gt;Sans parler du fait que c'est philosophiquement un peu en contradiction avec une précédente décision&amp;nbsp;: celle d'inclure dans le navigateur, Flash, un produit propriétaire.&lt;/p&gt;
+
+
+&lt;p&gt;Espérons que Google tiendra bon dans sa décision sur WebM. Cela fait de lui un allié de plus à Mozilla, dans la lutte pour garder un web ouvert, dans sa volonté de ne pas supporter de formats propriétaires.&lt;/p&gt;</description>
+		<pubDate>Wed, 12 Jan 2011 11:25:00 +0100</pubDate>
+		<guid>http://ljouanneau.com/blog/post/2011/01/12/Plus-de-H264-dans-Chrome</guid>
+	</item>
+		<item>
+		<title>Joomla 1.6</title>
+		<link>http://www.nexen.net/actualites/php/20001-joomla_1.6.php</link>
+		<description>&lt;div class=&quot;content_header_img&quot;&gt;
+					&lt;img alt=&quot;Image pour le titre du contenu&quot; src=&quot;http://www.nexen.net/images/stories/biseau/joomla.png&quot;&gt;
+				    &lt;/div&gt;&lt;div class=&quot;blogcontent&quot;&gt;
+La nouvelle version du CMS Joomla 1.6 (en PHP) vient de sortir apr&amp;egrave;s de nombreux mois de d&amp;eacute;veloppements.&lt;br /&gt;
+Cette version a &amp;eacute;t&amp;eacute; r&amp;eacute;alis&amp;eacute;e pour fournir aux d&amp;eacute;veloppeurs et int&amp;eacute;grateurs web, encore plus de contr&amp;ocirc;le sur leur site.&lt;br /&gt;
+Par ailleurs, elle apporte de nombreux &amp;eacute;volutions comme : &lt;br /&gt;
+&lt;ul&gt;&lt;li&gt;
+Outils pour am&amp;eacute;liorer l'acc&amp;egrave;s aux sites web&lt;/li&gt;&lt;li&gt;
+Nouvelle structure organisationnelle pour la gestion du contenu.&lt;/li&gt;&lt;li&gt;
+Nouvelle gestion des droits d'acc&amp;egrave;s ACS&lt;/li&gt;&lt;li&gt;
+G&amp;eacute;n&amp;eacute;ration de la mise en page xHTML&lt;/li&gt;&lt;li&gt;
+Am&amp;eacute;lioration du code s&amp;eacute;mantique&lt;/li&gt;&lt;li&gt;
+Gestion du multilangue&lt;/li&gt;&lt;li&gt;etc...&lt;br /&gt;
+&lt;/li&gt;&lt;/ul&gt;
+&lt;br /&gt;
+Par ailleurs, les auteurs du CMS propose une version testable en ligne, sous la forme d'une d&amp;eacute;mo, pour vous permettre de vous rendre compte des nombreuses am&amp;eacute;liorations.&lt;ul&gt;&lt;li&gt;&lt;img src= &quot;http://www.nexen.net/nx_media/images/drapeaux/fr.png&quot; alt=&quot;fr&quot; witdth=&quot;18&quot; height=&quot;12&quot; /&gt;&amp;nbsp;&lt;a href=&quot;http://www.joomla.fr/les-news-joomla/13-news-officielles/1032-joomla-1-6-est-sorti&quot; title=&quot;http://www.joomla.fr/les-news-joomla/13-news-officielles/1032-joomla-1-6-est-sorti&quot;  onclick=&quot;window.location.href='http://www.nexen.net/index.php?option=com_nx_weblink&amp;amp;weblink=Communique+Joomla+1.6&amp;amp;content_id=0'; return false;&quot;  class=&quot;weblink_img&quot;&gt;Communiqu&amp;eacute; Joomla 1.6&lt;/a&gt; (0 visite)&lt;/li&gt;&lt;li&gt;&lt;img src= &quot;http://www.nexen.net/nx_media/images/drapeaux/en.png&quot; alt=&quot;en&quot; witdth=&quot;18&quot; height=&quot;12&quot; /&gt;&amp;nbsp;&lt;a href=&quot;http://demo.joomla.org/&quot; title=&quot;http://demo.joomla.org/&quot;  onclick=&quot;window.location.href='http://www.nexen.net/index.php?option=com_nx_weblink&amp;amp;weblink=Tester+en+ligne+Joomla+1.6&amp;amp;content_id=0'; return false;&quot;  class=&quot;weblink_img&quot;&gt;Tester en ligne Joomla 1.6&lt;/a&gt; (0 visite)&lt;/li&gt;&lt;/ul&gt;&lt;/div&gt;</description>
+		<pubDate>Tue, 11 Jan 2011 19:59:23 +0100</pubDate>
+		<guid>http://www.nexen.net/actualites/php/20001-joomla_1.6.php</guid>
+	</item>
+		<item>
+		<title>Wampserver version portable</title>
+		<link>http://www.nexen.net/actualites/php/20000-wampserver_version_portable.php</link>
+		<description>&lt;div class=&quot;content_header_img&quot;&gt;
+					&lt;img alt=&quot;Image pour le titre du contenu&quot; src=&quot;http://www.nexen.net/images/stories/biseau/wamp52.png&quot;&gt;
+				    &lt;/div&gt;&lt;div class=&quot;blogcontent&quot;&gt;
+Une nouvelle branche de Wampserver vient d'&amp;ecirc;tre publier. Cette version est destin&amp;eacute;e pour tous les supports amovible comme les clefs USB.&lt;br /&gt;
+Maintenant Wampserver propose 3 versions : &lt;br /&gt;
+&lt;ul&gt;&lt;li&gt;
+1 version 32 bits&lt;/li&gt;&lt;li&gt;
+1 version 64 bits&lt;/li&gt;&lt;li&gt;
+1 version portable&lt;/li&gt;&lt;/ul&gt;
+&lt;br /&gt;
+Cette version portable comprend : &lt;br /&gt;
+&lt;ul&gt;&lt;li&gt;
+Apache 2.2.17&lt;/li&gt;&lt;li&gt;
+Php 5.3.5&lt;/li&gt;&lt;li&gt;
+Mysql 5.5.8&lt;/li&gt;&lt;li&gt;
+PhpMyadmin 3.3.9&lt;/li&gt;&lt;li&gt;
+SQLBuddy 1.3.2&lt;/li&gt;&lt;li&gt;
+XDebug 2.1.0-5.3&lt;/li&gt;&lt;li&gt;
+webGrind 1.0&lt;/li&gt;&lt;li&gt;
+XDC 1.5&lt;/li&gt;&lt;/ul&gt;
+&lt;br /&gt;
+Pour utiliser cette version, aucune installation n'est n&amp;eacute;cessaire et tout se passe &amp;agrave; travers ce support.&lt;br /&gt;
+&lt;ul&gt;&lt;li&gt;&lt;a href=&quot;http://www.wampserver.com/download.php&quot; target=&quot;_self&quot;&gt;Telecharger WampServer version portable&lt;/a&gt;&lt;/li&gt;&lt;/ul&gt;&lt;div&gt;&lt;br /&gt;
+&lt;/div&gt;&lt;div&gt;&lt;br /&gt;
+&lt;/div&gt;&lt;/div&gt;</description>
+		<pubDate>Tue, 11 Jan 2011 08:27:54 +0100</pubDate>
+		<guid>http://www.nexen.net/actualites/php/20000-wampserver_version_portable.php</guid>
+	</item>
+		<item>
+		<title>Actualité de développement PECL, edition 289</title>
+		<link>http://www.nexen.net/actualites/pecl/19999-actualite_de_developpement_pecl,_edition_289.php</link>
+		<description>&lt;div class=&quot;content_header_img&quot;&gt;
+					&lt;img alt=&quot;Image pour le titre du contenu&quot; src=&quot;http://www.nexen.net/images/stories/biseau/pecl.png&quot;&gt;
+				    &lt;/div&gt;&lt;div class=&quot;blogcontent&quot;&gt;
+12 paquets ont &amp;eacute;t&amp;eacute; mis &amp;agrave; jour ces 2 derni&amp;egrave;res semaines :&lt;br /&gt;
+Semaine du 4 janvier 2011&lt;br /&gt;
+&lt;ul&gt;&lt;li&gt;&lt;a href=&quot;http://pecl.php.net/package/v8js/download/0.1.0/&quot;&gt;v8js 0.1.0&lt;/a&gt;
+&lt;/li&gt;&lt;li&gt;&lt;a href=&quot;http://pecl.php.net/package/v8js/download/0.1.1/&quot;&gt;v8js 0.1.1&lt;/a&gt;
+&lt;/li&gt;&lt;li&gt;&lt;a href=&quot;http://pecl.php.net/package/v8js/download/0.1.2/&quot;&gt;v8js 0.1.2&lt;/a&gt;
+&lt;/li&gt;&lt;li&gt;&lt;a href=&quot;http://pecl.php.net/package/amqp/download/0.2.2/&quot;&gt;amqp 0.2.2&lt;/a&gt;
+&lt;/li&gt;&lt;li&gt;&lt;a href=&quot;http://pecl.php.net/package/rrd/download/0.9.0/&quot;&gt;rrd 0.9.0&lt;/a&gt;
+&lt;/li&gt;&lt;li&gt;&lt;a href=&quot;http://pecl.php.net/package/CUBRID/download/8.3.0.0005/&quot;&gt;CUBRID 8.3.0.0005&lt;/a&gt;&lt;/li&gt;&lt;/ul&gt;&lt;br /&gt;
+Semaine du 1 janvier 2011&lt;br /&gt;
+&lt;ul&gt;&lt;li&gt;&lt;a href=&quot;http://pecl.php.net/package/CUBRID/download/8.3.1.0001/&quot;&gt;CUBRID 8.3.1.0001&lt;/a&gt;
+&lt;/li&gt;&lt;li&gt;&lt;a href=&quot;http://pecl.php.net/package/mongo/download/1.1.1/&quot;&gt;mongo 1.1.1&lt;/a&gt;
+&lt;/li&gt;&lt;li&gt;&lt;a href=&quot;http://pecl.php.net/package/mongo/download/1.1.2/&quot;&gt;mongo 1.1.2&lt;/a&gt;
+&lt;/li&gt;&lt;li&gt;&lt;a href=&quot;http://pecl.php.net/package/mongo/download/1.1.3/&quot;&gt;mongo 1.1.3&lt;/a&gt;
+&lt;/li&gt;&lt;li&gt;&lt;a href=&quot;http://pecl.php.net/package/expect/download/0.2.8/&quot;&gt;expect 0.2.8&lt;/a&gt;
+&lt;/li&gt;&lt;li&gt;&lt;a href=&quot;http://pecl.php.net/package/CUBRID/download/8.3.1.0002/&quot;&gt;CUBRID 8.3.1.0002&lt;/a&gt;&lt;/li&gt;&lt;/ul&gt;&lt;br /&gt;
+PECL est la biblioth&amp;egrave;que d'extensions C de PHP.&lt;br /&gt;
+&lt;ul&gt;&lt;br /&gt;
+&lt;li&gt;&lt;a href=&quot;http://pecl.php.net/&quot; title=&quot;http://pecl.php.net&quot;&gt;PECL&lt;/a&gt;&lt;br /&gt;
+&lt;/li&gt;&lt;br /&gt;
+&lt;li&gt;&lt;a href=&quot;http://pecl.php.net/packages.php&quot; title=&quot;http://pecl.php.net/packages.php&quot;&gt;Tous les paquets PECL&lt;/a&gt;&lt;/li&gt;&lt;/ul&gt;&lt;br /&gt;
+&lt;/div&gt;</description>
+		<pubDate>Tue, 11 Jan 2011 08:10:05 +0100</pubDate>
+		<guid>http://www.nexen.net/actualites/pecl/19999-actualite_de_developpement_pecl,_edition_289.php</guid>
+	</item>
+		<item>
+		<title>Actualité de développement PEAR, edition 293</title>
+		<link>http://www.nexen.net/actualites/pear/19998-actualite_de_developpement_pear,_edition_293.php</link>
+		<description>&lt;div class=&quot;content_header_img&quot;&gt;
+					&lt;img alt=&quot;Image pour le titre du contenu&quot; src=&quot;http://www.nexen.net/images/stories/biseau/pear.png&quot;&gt;
+				    &lt;/div&gt;&lt;div class=&quot;blogcontent&quot;&gt; 8 Paquets ont &amp;eacute;t&amp;eacute; mis &amp;agrave; jour ces 2 derni&amp;egrave;res semaines :&lt;br /&gt;
+Semaine du 3 janvier 2011&lt;br /&gt;
+&lt;ul&gt;&lt;li&gt;&lt;a href=&quot;http://pear.php.net/package/OpenID/download/0.3.0/&quot;&gt;OpenID 0.3.0&lt;/a&gt;
+&lt;/li&gt;&lt;li&gt;&lt;a href=&quot;http://pear.php.net/package/HTTP_OAuth/download/0.2.0/&quot;&gt;HTTP_OAuth 0.2.0&lt;/a&gt;
+&lt;/li&gt;&lt;li&gt;&lt;a href=&quot;http://pear.php.net/package/HTTP_OAuth/download/0.2.1/&quot;&gt;HTTP_OAuth 0.2.1&lt;/a&gt;
+&lt;/li&gt;&lt;li&gt;&lt;a href=&quot;http://pear.php.net/package/HTTP_OAuth/download/0.2.2/&quot;&gt;HTTP_OAuth 0.2.2&lt;/a&gt;
+&lt;/li&gt;&lt;li&gt;&lt;a href=&quot;http://pear.php.net/package/Net_IPv6/download/1.2.1RC1/&quot;&gt;Net_IPv6 1.2.1RC1&lt;/a&gt;
+&lt;/li&gt;&lt;li&gt;&lt;a href=&quot;http://pear.php.net/package/OpenID/download/0.3.1/&quot;&gt;OpenID 0.3.1&lt;/a&gt;
+&lt;/li&gt;&lt;li&gt;&lt;a href=&quot;http://pear.php.net/package/Services_Yadis/download/0.5.1/&quot;&gt;Services_Yadis 0.5.1&lt;/a&gt;
+&lt;/li&gt;&lt;/ul&gt;&lt;br /&gt;
+Semaine du 10 janvier 2011&lt;br /&gt;
+&lt;ul&gt;&lt;li&gt;&lt;a href=&quot;http://pear.php.net/package/Services_oEmbed/download/0.2.0/&quot;&gt;Services_oEmbed 0.2.0&lt;/a&gt;&lt;/li&gt;&lt;/ul&gt;&lt;br /&gt;
+PEAR est la biblioth&amp;egrave;que de composants PHP.
+&lt;p&gt;&amp;nbsp;&lt;/p&gt;
+
+&lt;ul&gt;&lt;li&gt;&lt;a title=&quot;http://pear.php.net&quot; href=&quot;http://pear.php.net/&quot;&gt;PEAR&lt;/a&gt;&lt;br /&gt;
+&lt;/li&gt;&lt;li&gt;&lt;a title=&quot;http://pear.php.net/packages.php&quot; href=&quot;http://pear.php.net/packages.php&quot;&gt;Tous les paquets PEAR&lt;/a&gt;&lt;/li&gt;&lt;/ul&gt;&lt;br /&gt;
+&lt;/div&gt;</description>
+		<pubDate>Mon, 10 Jan 2011 07:58:38 +0100</pubDate>
+		<guid>http://www.nexen.net/actualites/pear/19998-actualite_de_developpement_pear,_edition_293.php</guid>
+	</item>
+		<item>
+		<title>Les frameworks, c'est de la merde... ou pas !</title>
+		<link>http://blog.mageekbox.net/?post/2011/01/05/Les-frameworks%2C-c-est-de-la-merde%2C-ou-pas-%21</link>
+		<description>&lt;p&gt;Le&amp;nbsp;&lt;a href=&quot;http://www.c-by-h.tk/pourquoi-le-framework-est-synonyme-du-mal-suite-1&quot;&gt;troll à la mode&lt;/a&gt; actuellement dans le monde des utilisateurs de &lt;a href=&quot;http://www.php.net&quot;&gt;PHP&lt;/a&gt; est de dire que les frameworks sont comme l'Anneau Unique de &lt;a href=&quot;http://fr.wikipedia.org/wiki/Sauron&quot;&gt;Sauron&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;Tout comme ce dernier, les frameworks seraient maléfiques et n'auraient pour unique vocation que d'unifier la Pensée et de mettre l'ensemble des développeurs qui les utilisent à la botte de leur créateur tout en leur retirant toutes capacités de raisonnement.&lt;/p&gt;
+&lt;p&gt;Évidemment, je caricature un peu et je force le trait, mais l'idée générale est bien là.&lt;/p&gt;
+&lt;p&gt;Certaines personnes, qui connaissent mon opinion sur le sujet, ou du moins qui croit la connaître, m'ont donc gentiment relayé l'information, m'incitant ainsi à donner mon avis sur la question.&lt;/p&gt;    &lt;p&gt;Car j'ai un avis, ne serait-ce que parce qu'en plus de 10 ans d'expérience professionnelle, j'ai eu le temps de développer quatre frameworks, de discuter avec d'autres créateurs, d'en utiliser que je n'avais pas créé et de concevoir des projets en &lt;q&gt;pur&lt;/q&gt; &lt;a href=&quot;http://www.php.net/&quot;&gt;PHP&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;Et je vais être immédiatement très clair, à titre strictement personnel, je n'aime pas utiliser de framework, pour plusieurs raisons, dont voici une liste non exhaustive.&lt;/p&gt;
+&lt;p&gt;Tout d'abord, je préfère, et de loin, trainer mes guêtres dans les couches basses d'une application, dans les coins sombres et reculés que peu de développeurs aiment arpenter, tout simplement parce que c'est à ce niveau que je trouve le challenge technique qui me semble le plus gratifiant à résoudre intellectuellement.&lt;/p&gt;
+&lt;p&gt;Le corollaire de cela est que je trouve beaucoup plus intéressant de concevoir un framework que de le mettre en ?uvre.&lt;/p&gt;
+&lt;p&gt;En effet, un framework a pour but de simplifier les développements, et en développer un implique donc de devoir résoudre des problèmes plus ou moins complexes, ou en tout cas suffisamment délicats à résoudre pour que cela vaille le coût de se lancer dans un tel développement.&lt;/p&gt;
+&lt;p&gt;Ensuite, les frameworks imposent un certain nombre de règles, parfois explicitement, comme les conventions de codage, mais aussi parfois implicitement, de part leur conception.&lt;/p&gt;
+&lt;p&gt;Et dans les deux cas, il est totalement impossible de prévoir les implications que ces règles auront sur les développements futurs.&lt;/p&gt;
+&lt;p&gt;Or, de part mon expérience, je sais qu'à partir d'un certain niveau de complexité ou pour répondre à certain besoins &lt;q&gt;exotiques&lt;/q&gt;, l'utilisation d'un framework devient plus un inconvénient qu'un avantage.&lt;/p&gt;
+&lt;p&gt;En effet, dans certain cas, il devient nécessaire de court-circuiter le fonctionnement normal du framework pour obtenir le résultat désiré, et outre le fait que cela nécessite du temps en terme de recherche et développement (alors qu'un framework est censé permettre d'en gagner), bien souvent, c'est également une source d'erreurs et de problèmes à plus ou moins long terme&amp;nbsp; (alors qu'un framework est normalement conçu pour limiter le risque d'erreur et simplifier la vie des développeurs).&lt;/p&gt;
+&lt;p&gt;D'ailleurs, à la réflexion, il n'y a pas besoin de devoir faire face à une problématique complexe ou un besoin étrange pour se retrouver dans ce cas, puisqu'il suffit parfois de devoir simplement, par exemple, mettre en place des tests unitaires.&lt;/p&gt;
+&lt;p&gt;Si le framework considéré met en ?uvre massivement des singletons, n'utilise pas l'injection de dépendance, bref, n'est clairement pas conçu dans l'optique de permettre au code d'être testé, il faut avoir recours à des ruses et des techniques peu avouables pour arriver au résultat désiré, et dans le pire des cas, il est même impossible de répondre totalement au besoin.&lt;/p&gt;
+&lt;p&gt;Un autre problème que me pose les frameworks est qu'il n'est pas possible de mesurer leur efficacité.&lt;/p&gt;
+&lt;p&gt;L'une de leur raison d'être est en effet d'améliorer la productivité, mais dans les faits, je ne connais aucune étude qui permette de dire que pour un projet mené à bien, un framework a permis de gagner X % de productivité.&lt;/p&gt;
+&lt;p&gt;Or, encore une fois par expérience, je pense que ce gain de productivité est loin d'être au rendez-vous dans tous les cas de figure, et qu'en fonction des projets et de leur problématique, un framework peut dans le pire des cas faire perdre du temps, et au mieux permettre une productivité égale à un développement sans framework, et cela à cause d'au moins trois facteurs.&lt;/p&gt;
+&lt;p&gt;Le premier facteur est évidemment celui que j'ai énoncé précédemment, à savoir qu'il faut parfois passer énormément de temps pour parvenir à court-circuiter le fonctionnement du framework afin de répondre à un besoin spécifique.&lt;/p&gt;
+&lt;p&gt;Le second facteur est qu'il arrive que l'on soit amené à être obligé d'utiliser une fonctionnalité peu ou pas du tout documenté, parce qu'on a besoin de sortir des sentiers battus, pour une raison ou pour une autre.&lt;/p&gt;
+&lt;p&gt;Dans ce cas, le développeur se retrouve à devoir mettre le nez dans le code en profondeur, à étudier son fonctionnement, à tracer la pile d'exécution, à afficher le contenu d'objet pour comprendre ce qu'il se passe, à devoir utiliser xdebug, etc.&lt;/p&gt;
+&lt;p&gt;Bref, il se retrouve a devoir sortir l'artillerie, alors qu'il ne devrait pas avoir à le faire puisque, encore une fois, le framework est censé lui simplifier la vie.&lt;/p&gt;
+&lt;p&gt;Le troisième facteur est l'ergonomie du framework, qui peut, lorsqu'il est mal conçu, ou bien lorsqu'il a une philosophie de développement peu usuelle, demander au développeur un effort d'écriture conséquent pour répondre à un besoin simple.&lt;/p&gt;
+&lt;p&gt;J'ai ainsi déjà rencontré un framework qui demande au développeur d'écrire en PHP plus de deux fois la quantité de code &lt;abbr title=&quot;Hyper Text Markup Language&quot;&gt;HTML&lt;/abbr&gt; effectivement produite par le framework, sans parler des interfaces de classes alambiquées ou mal conçu qui obligent à une gymnastique mentale permanente.&lt;/p&gt;
+&lt;p&gt;Dans ce genre de cas, il est légitime de s'interroger sur le bénéfice apporté par l'outil...&lt;/p&gt;
+&lt;p&gt;Un autre problème que me pose les frameworks est que, de par leur nature, ils masquent une complexité.&lt;/p&gt;
+&lt;p&gt;Or, cette complexité existe toujours, et un jour ou l'autre, pour une raison ou une autre, le développeur y sera forcément confronté, et, &lt;a href=&quot;http://fr.wikipedia.org/wiki/Loi_de_Murphy&quot;&gt;loi de Murphy&lt;/a&gt; aidant, cela se passera certainement au plus mauvais moment possible.&lt;/p&gt;
+&lt;p&gt;Et comme le développeur n'y aura jamais été confronté, il ne saura pas gérer la situation, ou en tout cas moins bien qu'un développeur plus au fait des mécanismes internes à &lt;a href=&quot;http://www.php.net/&quot;&gt;PHP&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;De plus, ce masquage de la complexité induit une perte de savoir-faire, car plus personne ne sait ce qu'il se passe sous le capot, pour reprendre une métaphore mécanique cher à &lt;a href=&quot;http://code18.blogspot.com/2010/11/le-framework-est-il-synonyme-de-mal.html&quot;&gt;certain&lt;/a&gt; dans ce débat.&lt;/p&gt;
+&lt;p&gt;Il y a donc de moins en moins de mécaniciens capables de le soulever pour résoudre les problèmes.&lt;/p&gt;
+&lt;p&gt;Je ne compte plus les stagiaires qui n'ont pas su répondre à une question pourtant simple parce que leur cher framework fait tout le travail pour eux et qu'ils n'ont absolument aucune idée des mécanismes sous-jacents.&lt;/p&gt;
+&lt;p&gt;J'ai même eu le cas extrême de l'un de mes collègues actuels qui m'a dit qu'une fois qu'on avait essayé son framework favori, il n'était plus possible de refaire du &lt;a href=&quot;http://www.php.net&quot;&gt;PHP&lt;/a&gt;, et j'avoue qu'une telle attitude m'effraye quelque peu.&lt;/p&gt;
+&lt;p&gt;Alors certes, je sais très bien que personne ne peut tout maîtriser, mais il y a un socle minimum de connaissances qu'un développeur se doit de posséder, et actuellement, je pense qu'il se réduit de plus en plus.&lt;/p&gt;
+&lt;p&gt;Et si l'enseignement a sans nul doute sa part de responsabilité dans ce phénomène, comme le souligne &lt;a href=&quot;http://www.hugohamon.com/fr/&quot;&gt;Hugo Hamon&lt;/a&gt; dans son commentaire au sujet du billet de &lt;a href=&quot;http://nautilebleu.tumblr.com/&quot;&gt;Goulwen Reboux&lt;/a&gt; sur le même thème, je pense que que les frameworks en ont également une, ou qu'en tout cas, à minima, il n'arrange pas la situation.&lt;/p&gt;
+&lt;p&gt;&amp;lt;parenthèse&amp;gt;D'ailleurs, en parlant de la responsabilité de l'enseignement, je me souviendrais toujours de ma réaction interloqué lorsqu'au moment de noter un stage et la soutenance associée, les deux &lt;q&gt;professeurs&lt;/q&gt; présents m'ont annoncé avec le plus grand sérieux que la moyenne dans leur établissement (une école d'ingénieur) était 12 et qu'il n'était pas bien vu de noter en dessous.&lt;/p&gt;
+&lt;p&gt;Sur le coup, je n'ai rien trouvé de mieux à répondre que de leur demander s'ils notaient sur 24, d'autant que le travail du stagiaire ne méritait pas mieux qu'un 7 à mes yeux...&amp;lt;/parenthèse&amp;gt;&lt;/p&gt;
+&lt;p&gt;Voici donc quelques unes des raisons pour lesquelles, à titre personnel, je n'aime pas utiliser un framework.&lt;/p&gt;
+&lt;p&gt;Maintenant, faut-il pour autant jeter le bébé avec l'eau du bain ?&lt;/p&gt;
+&lt;p&gt;Je sais que cela peut paraître très paradoxal avec tout ce qui précède, mais Je pense que dans un cadre professionnel, un framework bien construit et utilisé à bon escient, en toute connaissance de cause, est un outil puissant qui a beaucoup plus d'avantages que d'inconvénients, ne serait-ce que parce qu'il permet de structurer et d'industrialiser les développements.&lt;/p&gt;
+&lt;p&gt;De plus, dans la grande majorité des cas, un framework apporte une réponse efficace et rapide à tout un ensemble de problèmes, surtout lorsqu'il est utilisé pour ce pourquoi il a été conçu.&lt;/p&gt;
+&lt;p&gt;Enfin, même si les frameworks actuels ne sont pas parfaits, et ne le seront d'ailleurs jamais, ils sont en amélioration constante, et je ne doute pas qu'à terme, une bonne partie des problèmes qu'ils me posent n'existeront plus ou seront en tout cas fortement atténués.&lt;/p&gt;
+&lt;p&gt;De mon point de vue, ils ne sont donc pas le Mal en entreprise, mais à la condition que, comme tous les outils au monde, ils soient sélectionnés et utilisés par des personnes compétentes, qui comprennent parfaitement ce que leur utilisation implique en terme d'avantages et d'inconvénients, qui sauront en tirer le meilleur parti en les utilisant au maximum de leurs capacités lorsqu'il y a lieu et qui sauront également à contrario, parfaitement s'en passer ou les contourner lorsqu'il le faut.&lt;/p&gt;
+&lt;p&gt;Un framework n'est qu'un outil, et un outil ne remplacera jamais un cerveau humain bien utilisé.&lt;/p&gt;</description>
+		<pubDate>Tue, 11 Jan 2011 16:45:00 +0100</pubDate>
+		<guid>http://blog.mageekbox.net/?post/2011/01/05/Les-frameworks%2C-c-est-de-la-merde%2C-ou-pas-%21</guid>
+	</item>
+	</channel>
+</rss>

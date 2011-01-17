@@ -1,0 +1,577 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>DLFP - Forums</title>
+    <link>http://linuxfr.org/forums/</link>
+    <atom:link href="http://linuxfr.org/backend/forums/rss20.rss" rel="self" type="application/rss+xml" />
+     
+    <description>LinuxFr.org</description>
+    <language>fr</language>
+    <image>
+      <title>DLFP - Forums</title>
+      <link>http://linuxfr.org/forums/</link>
+      <url>http://linuxfr.org/images/favicon.png</url>
+    </image>
+    <ttl>10</ttl>
+    
+
+    <item>
+      <title>
+	
+Visualiser l'arbre de dépendance d'un paquet</title>
+      <author>null@linuxfr.org (Spack)</author>
+      <pubDate>Mon, 17 Jan 2011 12:18:15 +0100</pubDate>
+      <link>http://linuxfr.org/forums/47/29593.html</link>
+      <guid>http://linuxfr.org/forums/47/29593.html</guid>
+      <category>divers</category>
+      <description>
+	
+Pour les distributions basées sur le système de paquet RPM, l'utilitaire &lt;tt&gt;rpmdep&lt;/tt&gt; fourni par le paquet &lt;a href=&quot;http://rpmorphan.sourceforge.net/&quot;&gt;rpmorphan&lt;/a&gt; permet de parcourir l'arbre de dépendance d'un paquet.&lt;br /&gt;
+&lt;br /&gt;
+Il permet entre autres de créer un fichier en &lt;a href=&quot;http://fr.wikipedia.org/wiki/Langage_DOT&quot; title=&quot;Définition Wikipédia&quot;&gt;Langage_DOT&lt;/a&gt;, à partir duquel on pourra créer le graphique correspondant à l'aide de &lt;a href=&quot;http://fr.wikipedia.org/wiki/Graphviz&quot; title=&quot;Définition Wikipédia&quot;&gt;Graphviz&lt;/a&gt;.&lt;br /&gt;
+&lt;br /&gt;
+Pour tracer l'arbre des dépendances de Firefox, nous utiliserons les commandes suivante :&lt;br /&gt;
+&lt;code&gt;$ rpmdep -dot firefox.dot firefox&lt;br /&gt;
+$ dot -Tpng firefox.dot -o firefox.png&lt;/code&gt;&lt;br /&gt;
+&lt;br /&gt;
+Il ne reste plus qu'à visualiser le résultat dans le fichier &lt;i&gt;firefox.png&lt;/i&gt;.</description>
+    </item>
+    <item>
+      <title>
+	
+Gestion de moyens humain en planning</title>
+      <author>null@linuxfr.org (elow)</author>
+      <pubDate>Mon, 17 Jan 2011 11:31:26 +0100</pubDate>
+      <link>http://linuxfr.org/forums/41/29592.html</link>
+      <guid>http://linuxfr.org/forums/41/29592.html</guid>
+      <category>cherche-logiciel</category>
+      <description>
+	
+Bonjour à tous,&lt;br /&gt;
+&lt;br /&gt;
+Je cherche (en vain, ou noyé dans trop de réponses à côté) un logiciel si possible à héberger sur un serveur web qui permettrait de faire de la gestion de planning suivant des ressources humaines pour assurer celui-ci.&lt;br /&gt;
+&lt;br /&gt;
+J'entends par là quelque chose d'assez simple : Nous sommes une association où nous faisons des permanences continues, deux par jours, le matin et l'après midi. Il faut que toutes les demie-journées de la semaines soient attribuées et que maximum chaque personne fasse 3 permanences (donc trois demie-journées) dans le mois.&lt;br /&gt;
+&lt;br /&gt;
+Je cherche donc une sorte de calendrier à remplissage automatique fonction des disponibilités de chaque membre, et/ou qui proposerait par demie-journée un menu déroulant fonction des dispos et du nombre d'utilisation de chaque membre (un membre déjà utilisé trois fois ne serait plus proposé).&lt;br /&gt;
+&lt;br /&gt;
+Vous auriez une idée si quelque chose d'approchant existe déjà, ou si je vais devoir me mettre au php ? Ce serait surtout pour soulager et automatiser cette tâche assez rébarbative de création de planning.&lt;br /&gt;
+&lt;br /&gt;
+Merci d'avance ;)</description>
+    </item>
+    <item>
+      <title>
+	
+SFTP avec password file dédié -- possible ?</title>
+      <author>null@linuxfr.org (ratw3)</author>
+      <pubDate>Mon, 17 Jan 2011 11:01:33 +0100</pubDate>
+      <link>http://linuxfr.org/forums/47/29591.html</link>
+      <guid>http://linuxfr.org/forums/47/29591.html</guid>
+      <category>divers</category>
+      <description>
+	
+Bonjour à tous (et à toutes) !&lt;br /&gt;
+&lt;br /&gt;
+J'ai eu beau chercher sur le ent je ne trouve pas de document expliquant comment mettre en place un serveur SFTP utilisant un password file dédié...&lt;br /&gt;
+&lt;br /&gt;
+Pour ce qui est du chroot pas de soucis... Mais je ne souhaite pas que les users en sftp soient mélangés avec mes users locaux.&lt;br /&gt;
+&lt;br /&gt;
+Quelqu'un connait il la solution à ce problème je me dis peut petre faudrait il jouer avec PAM pour définir un passwd file différent (un peu comme on le fait avec proftpd ou vsftpd)...&lt;br /&gt;
+&lt;br /&gt;
+Merci d 'avance pour vos retours!</description>
+    </item>
+    <item>
+      <title>
+	
+lighttpd, ne répondre que pour les vhosts</title>
+      <author>null@linuxfr.org (Spack)</author>
+      <pubDate>Mon, 17 Jan 2011 10:30:11 +0100</pubDate>
+      <link>http://linuxfr.org/forums/12/29590.html</link>
+      <guid>http://linuxfr.org/forums/12/29590.html</guid>
+      <category>general</category>
+      <description>
+	
+Bonjour,&lt;br /&gt;
+&lt;br /&gt;
+J'ai une configuration de lighttpd utilisant les hôtes virtuelles en utilisant &lt;i&gt;mod_simple_vhost&lt;/i&gt;.&lt;br /&gt;
+&lt;br /&gt;
+Jusqu'ici pas de problème. Je voudrais configurer lighttpd de façon à ce qu'il ne réponde pas lorsque la requête ne concerne aucun hôte virtuel.&lt;br /&gt;
+&lt;br /&gt;
+Si l'adresse entrée est &lt;i&gt;www.mon-vhost.tld&lt;/i&gt; alors bienvenu.&lt;br /&gt;
+Si l'adresse est &lt;i&gt;mon.ad.dr.ip&lt;/i&gt; ou &lt;i&gt;mondns.pas-vhost.tld&lt;/i&gt; .... timeout.&lt;br /&gt;
+&lt;br /&gt;
+Actuellement, il suffit de ne rien mettre dans le document root par défaut et lighttpd retourne une erreur 404 mais, je voudrais qu'il ne réponde pas du tout. Cela est-il possible ?</description>
+    </item>
+    <item>
+      <title>
+	
+Changer l'action associée à XF86Audio[Lower/Raise]Volume</title>
+      <author>null@linuxfr.org (pab)</author>
+      <pubDate>Sun, 16 Jan 2011 20:43:55 +0100</pubDate>
+      <link>http://linuxfr.org/forums/15/29589.html</link>
+      <guid>http://linuxfr.org/forums/15/29589.html</guid>
+      <category>debian/ubuntu</category>
+      <description>
+	
+Bonjour à tous,&lt;br /&gt;
+&lt;br /&gt;
+Voilà un petit souci que je rencontre sur ma Debian (testing, à jour d'aujourd'hui, Gnome) fraîchement installée :&lt;br /&gt;
+- je dispose d'un clavier avec des touches numériques&lt;br /&gt;
+- elles ont été automatiquement reconnues&lt;br /&gt;
+- et effectivement quand je les presse, une petite barre de volume s'affiche à l'écran et le volume du canal 'Front' est modifié&lt;br /&gt;
+&lt;br /&gt;
+Or, ce n'est pas le canal 'Front' que je souhaite modifier mais le canal 'PCM'.&lt;br /&gt;
+&lt;br /&gt;
+Bien sûr, je peux ajouter de nouveaux raccourcis claviers auxquels j'associe XF86AudioRaiseVolume et la commande :&lt;br /&gt;
+amixer -c 0 set PCM 2db+ &lt;br /&gt;
+&lt;br /&gt;
+mais ainsi je perds le charmant petit élément d'interface qui venait me donner un aperçu de mon action.&lt;br /&gt;
+&lt;br /&gt;
+Quelqu'un saurait-il comment, dans Gnome, modifier les actions associées aux raccourcis pré-paramétrés ?&lt;br /&gt;
+&lt;br /&gt;
+Merci pour votre aide&lt;br /&gt;
+PAB</description>
+    </item>
+    <item>
+      <title>
+	
+Avantages et inconvénients d'un noyau Bigmem</title>
+      <author>null@linuxfr.org (mc_arnaud)</author>
+      <pubDate>Sun, 16 Jan 2011 16:33:29 +0100</pubDate>
+      <link>http://linuxfr.org/forums/15/29588.html</link>
+      <guid>http://linuxfr.org/forums/15/29588.html</guid>
+      <category>debian/ubuntu</category>
+      <description>
+	
+Bonjour, &lt;br /&gt;
+&lt;br /&gt;
+Je viens de changer de PC et comme à mon habitude, j'ai choisi une grosse config qui sera encore compétitive dans 3 ans. Seulement cette fois çi, je me suis peut-être un peu trop laché. Voyez plutôt :&lt;br /&gt;
+&lt;br /&gt;
+ - i7 980X (6 coeurs hyperthreadés à 3.33 Ghz, 12 Mo Cache L3)&lt;br /&gt;
+ - 3 x 2Go DDR3&lt;br /&gt;
+ - Carte mère Asus P6X58D-E&lt;br /&gt;
+ - SSD&lt;br /&gt;
+&lt;br /&gt;
+J'ai installé mon OS plusieurs fois dans différentes versions et avec différents problèmes à la clé. Dans l'ordre :&lt;br /&gt;
+&lt;br /&gt;
+ - Squeeze 64bits : après quelques secondes de connexion, l'affichage part dans tous les sens -&amp;gt; inexploitable.&lt;br /&gt;
+ - Lenny 64bits : quand je met une vidéo flash en plein écran, Iceweasel plante instantanément (testé sur Youtube, Dailymotion, M6Replay, TF1video).&lt;br /&gt;
+ - Lenny 32bits : Tout fonctionne à merveille, sauf qu'il ne me voit que 8 threads (donc 4 coeurs) et 3 Go de RAM.&lt;br /&gt;
+ - Lenny 32bits-Bigmem : (aurait du être nommé &amp;quot;big mémé&amp;quot;) Il me voit bien mes 12 treads et mes 6 Go de RAM, mais tout est extrêmement lent. &lt;br /&gt;
+&lt;br /&gt;
+J'aimerai donc résoudre un des 2 problèmes suivants :&lt;br /&gt;
+&lt;br /&gt;
+ - Soit le problème de vidéos flash en plein écran sous Lenny 64 (ce serait l'idéal)&lt;br /&gt;
+ - Soit le problème de lenteurs sous Lenny 32-bigmem&lt;br /&gt;
+&lt;br /&gt;
+Pour le problème de flash sous architecture 64 bits c'est un problème vieux comme le monde (le monde du 64 bits), par contre le problème du bigmem semble assez récent, sans doute apparu avec les dernières configurations à base de DDR3 et la multiplication des coeurs dans les processeurs grand public. Du coup, je n'ai rien trouvé sur Google à propos de lenteurs sous kernel bigmem. &lt;br /&gt;
+&lt;br /&gt;
+Est-ce que vous avez des idées pour tenter de résoudre un de ces problème ? Ou éventuellement une solution alternative à laquelle je n'aurais pas pensé ? Merci.&lt;br /&gt;
+&lt;br /&gt;
+-- &lt;br /&gt;
+Rénald</description>
+    </item>
+    <item>
+      <title>
+	
+les manuels</title>
+      <author>null@linuxfr.org (robertix)</author>
+      <pubDate>Sun, 16 Jan 2011 15:35:13 +0100</pubDate>
+      <link>http://linuxfr.org/forums/15/29587.html</link>
+      <guid>http://linuxfr.org/forums/15/29587.html</guid>
+      <category>debian/ubuntu</category>
+      <description>
+	
+j'ai pu constater que les manuels pour debian ne sont pas le point fort de l'OS&lt;br /&gt;
+c'est qu'il y a différents concepts pour la documentation et souvent qui n'accrochent pas du tout,en tout cas pas pour moi&lt;br /&gt;
+j'ai préféré le plus simple,donc j'ai pris cette initiative chez ovh&lt;br /&gt;
+&lt;a href=&quot;http://www.debian-manuels.com/&quot;&gt;http://www.debian-manuels.com/&lt;/a&gt;&lt;br /&gt;
+faire sois même ça peut aider</description>
+    </item>
+    <item>
+      <title>
+	
+Récupération de données</title>
+      <author>null@linuxfr.org (mat3o)</author>
+      <pubDate>Sun, 16 Jan 2011 15:18:58 +0100</pubDate>
+      <link>http://linuxfr.org/forums/10/29586.html</link>
+      <guid>http://linuxfr.org/forums/10/29586.html</guid>
+      <category>general</category>
+      <description>
+	
+Bonjour à tous,&lt;br /&gt;
+&lt;br /&gt;
+Ce message est un appel au secours, hier, suite à une annerie de ma part (la fatigue fait faire n'importe quoi des fois) j'ai détruit, lors d'une réinstallation de ma squeeze, mon raid1 logiciel composé de deux disques non partitionnés : /dev/sdb, /dev/sdc : /dev/md0.&lt;br /&gt;
+&lt;br /&gt;
+/dev/md0 est directement chiffré me donnant mon /dev/loop0, lequel est partitionné avec une seule partition qui prend tout l'espace du disque.&lt;br /&gt;
+&lt;br /&gt;
+J'ai tenté de monter directement un des deux disques :&lt;br /&gt;
+  - /dev/sdb ne peut pas etre déchiffré avec la clé,&lt;br /&gt;
+  - /dev/sdc est correctement déchiffré, cependant il ne trouve pas de partition au sein de /dev/loop0&lt;br /&gt;
+&lt;br /&gt;
+J'ai essayé de lancer un testdisk sur /dev/loop0 mais il ne me détecte aucune partition correcte&lt;br /&gt;
+&lt;br /&gt;
+Je n'ai pas essayé de recréer une partition ou l'array de peur d'agraver la situation ...&lt;br /&gt;
+J'ai tenté de réassembler le raid via un mdam --assemble /dev/md0 /dev/sdb /dev/sdc mais sans succès.&lt;br /&gt;
+&lt;br /&gt;
+Les données semble bien la pourtant, un string /dev/loop0 me permet d'apercevoir des fichiers textes que j'avais stockés ...&lt;br /&gt;
+&lt;br /&gt;
+Si vous avez une idée de la marche à suivre ... merci d'avance !!!&lt;br /&gt;
+PS : ça m'apprendra à appuyer sur enter trop vite et sans réfléchir à ce que je fais dans le debian installer :(</description>
+    </item>
+    <item>
+      <title>
+	
+Stage chez Scilab / Digiteo</title>
+      <author>null@linuxfr.org (grayswandir)</author>
+      <pubDate>Sat, 15 Jan 2011 11:37:25 +0100</pubDate>
+      <link>http://linuxfr.org/forums/45/29585.html</link>
+      <guid>http://linuxfr.org/forums/45/29585.html</guid>
+      <category>petites-annonces</category>
+      <description>
+	
+Hello,&lt;br /&gt;
+&lt;br /&gt;
+On recherche (au moins) deux stagiaires dans le courant de l'année 2011 pour travailler sur différents aspects du développement de Scilab. Les principaux axes sont les suivants:&lt;br /&gt;
+ * le nouvel interprète (future version 6 de Scilab).&lt;br /&gt;
+ * l'optimisation des performances.&lt;br /&gt;
+ * le packaging (Fink, Fedora, ...).&lt;br /&gt;
+ * le développement d'extensions.&lt;br /&gt;
+&lt;br /&gt;
+Le sujet du stage sera affiné en fonction du profil du stagiaire et de l'avancement de la roadmap Scilab...&lt;br /&gt;
+&lt;br /&gt;
+Les candidatures de geeks sont les bienvenues!&lt;br /&gt;
+&lt;br /&gt;
+Plus d'informations sur l'offre:&lt;br /&gt;
+&lt;a href=&quot;http://www.scilab.org/fr/aboutus/job/20101223&quot;&gt;http://www.scilab.org/fr/aboutus/job/20101223&lt;/a&gt;&lt;br /&gt;
+&lt;br /&gt;
+Des informations autour de Scilab:&lt;br /&gt;
+&lt;a href=&quot;http://www.scilab.org/&quot;&gt;http://www.scilab.org/&lt;/a&gt;&lt;br /&gt;
+&lt;a href=&quot;http://fr.wikipedia.org/wiki/Scilab&quot;&gt;http://fr.wikipedia.org/wiki/Scilab&lt;/a&gt;</description>
+    </item>
+    <item>
+      <title>
+	
+Le js d'un formulaire d'un site web plante xorg</title>
+      <author>null@linuxfr.org (glouton)</author>
+      <pubDate>Fri, 14 Jan 2011 18:10:37 +0100</pubDate>
+      <link>http://linuxfr.org/forums/15/29584.html</link>
+      <guid>http://linuxfr.org/forums/15/29584.html</guid>
+      <category>debian/ubuntu</category>
+      <description>
+	
+Bonjour,&lt;br /&gt;
+&lt;br /&gt;
+Depuis quelque temps le site web limpers.com me fait planter xorg quand j'utilise leur formulaire. Le problème vient de js, car une fois désactivé je n'ai plus ce problème.&lt;br /&gt;
+&lt;br /&gt;
+Le bug produit un écran totalement noir. J'ai prévenue le site limpers sur leur forum, est-ce que je dois/devrait remonter ce bug quelque part ? L'équipe Debian, l'équipe xorg, ou l'équipe en charge de firefox ? Les trois ?</description>
+    </item>
+    <item>
+      <title>
+	
+Amorçage lent</title>
+      <author>null@linuxfr.org (guayf)</author>
+      <pubDate>Fri, 14 Jan 2011 16:10:04 +0100</pubDate>
+      <link>http://linuxfr.org/forums/14/29583.html</link>
+      <guid>http://linuxfr.org/forums/14/29583.html</guid>
+      <category>mandriva</category>
+      <description>
+	
+Bonjour,&lt;br /&gt;
+Voulant installer un système d'amorçage Mandriva 2008 sur une clé USB, j'ai fait une fausse manoeuvre avec gparted. Des informations se sont écrite sur mon disque dur de ma Mandriva 2010.&lt;br /&gt;
+Maintenant à l'amorçage de mon poste mandriva 2010 j'ai un logn délai d'attente. Si je lis les renseigments affichés lors du BOOT je découvre que le système ne reconnait pas mon disque sda5 swap.&lt;br /&gt;
+&lt;br /&gt;
+Après vérification du fichier /etc/fstab et avec la commnde blkid les paramètres concernant les disques sont identiques pour les diques sda1 sda6 mais complètement différent pour sda5.&lt;br /&gt;
+&lt;br /&gt;
+/etc/fstab &lt;br /&gt;
+# Entry for /dev/sda5 : &lt;br /&gt;
+UUID=f7a13d2c-c239-46c9-9e12-36b7f504fb97 swap swap defaults 0 0&lt;br /&gt;
+&lt;br /&gt;
+commande blkid /dev/sda5: UUID=&amp;quot;bd5ead70-040d-46af-afc7-25d071338fed&amp;quot; TYPE=&amp;quot;swap&amp;quot; &lt;br /&gt;
+&lt;br /&gt;
+Tant qu'au fichier /boot/grub/menu.lst il contient entre autre :&lt;br /&gt;
+kernel (hd0,0)/boot/vmlinuz BOOT_IMAGE=linux-nonfb root=UUID=e0e499d5-f080-4fbb-9f75-f9d6fcdd0d54 resume=UUID=f7a13d2c-c239-46c9-9e12-36b7f504fb97 initrd (hd0,0)/boot/initrd.img&lt;br /&gt;
+&lt;br /&gt;
+Je constate que l'identifiaction du disque swap est identique dans les fichiers /etc/fstab et /boot/grub/menu.lst et différent dans l'identification obtenue avec blkid.&lt;br /&gt;
+&lt;br /&gt;
+Que me faut-il faire pour remédier à la situation ?&lt;br /&gt;
+&lt;br /&gt;
+Merci&lt;br /&gt;
+&lt;br /&gt;
+François</description>
+    </item>
+    <item>
+      <title>
+	
+Erreurs de segmentation sur plusieurs applications</title>
+      <author>null@linuxfr.org (mr_maurice)</author>
+      <pubDate>Fri, 14 Jan 2011 13:39:46 +0100</pubDate>
+      <link>http://linuxfr.org/forums/15/29582.html</link>
+      <guid>http://linuxfr.org/forums/15/29582.html</guid>
+      <category>debian/ubuntu</category>
+      <description>
+	
+Bonjour&lt;br /&gt;
+&lt;br /&gt;
+il y a quelques jours, j'ai changé le disque dur de mon ordinateur, après en avoir copié le contenu sur un disque neuf, plus gros. Le tout fonctionne exactement comme avant, bonheur.&lt;br /&gt;
+&lt;br /&gt;
+Par contre, plusieurs applications ont tendance à planter, en affichant ou pas un Segmentation fault dans le terminal, dmesg affiche souvent quelque chose comme:&lt;br /&gt;
+&lt;code&gt;&lt;br /&gt;
+segfault at xxx ip xxxd sp xxx error 4 in libc-2.10.2.so&lt;br /&gt;
+&lt;/code&gt;&lt;br /&gt;
+&lt;br /&gt;
+Est-ce qu'un fichier mal copié depuis mon ancien disque dur mourant pourrait déclencher ça ? Je précise que le problème n'est pas matériel externe au disque dur, j'ai essayé sur une autre unité centrale, idem.&lt;br /&gt;
+&lt;br /&gt;
+Et sinon, comment réparer ça en conservant mon système aux petits oignons ?</description>
+    </item>
+    <item>
+      <title>
+	
+Iowait et record de load sur Fusion MPT / LSISAS1068E</title>
+      <author>null@linuxfr.org (chrisk)</author>
+      <pubDate>Fri, 14 Jan 2011 12:09:01 +0100</pubDate>
+      <link>http://linuxfr.org/forums/10/29581.html</link>
+      <guid>http://linuxfr.org/forums/10/29581.html</guid>
+      <category>general</category>
+      <description>
+	
+Bonjour,&lt;br /&gt;
+&lt;br /&gt;
+Je patine un peu sur un problème de charge sur un Dell r300 équipé d'un contrôleur SAS Fusion MPT / LSISAS1068E. &lt;br /&gt;
+&lt;br /&gt;
+Dès que l'on lance un index des fichiers, que ça soit par le client retrospect ou rsync, la charge monte en peu à peu jusqu'à plus de 200... et là les connexions réseau SSH et autres tombent.&lt;br /&gt;
+&lt;br /&gt;
+Vu que la sauvegarde de la machine est tout de même nécessaire ;)... je m'acharne depuis plusieurs heures à essayer de trouver le pourquoi de ce record... sans grand succès jusqu'à présent. &lt;br /&gt;
+&lt;br /&gt;
+Le même script rsync sur une autre machine assez proche au niveau des versions de packages Debian, ayant plus de données et un processeur beaucoup moins puissant mais équipée d'un contrôleur Intel ICH ne pose pas de problèmes. D'ailleurs dans les deux cas le processeur est très très loin de la surcharge. &lt;br /&gt;
+&lt;br /&gt;
+Le problème se pose véritablement au niveau de l'accès disque avec un taux d'io wait extrêmement élevé.&lt;br /&gt;
+&lt;br /&gt;
+Je pense donc que le problème se situe au niveau des drivers du contrôleur SAS. Mais google n'est pas mon ami aujourd'hui et je ne trouve pas d'informations.&lt;br /&gt;
+&lt;br /&gt;
+J'ai tenté une mise à niveau vers un noyau plus récent (le 2.6.32-5-vserver-686-bigmem de Squeeze) mais cela ne change rien au problème. A la base j'utilisais le 2.6.26-2-vserver-686-bigmem de Lenny.&lt;br /&gt;
+&lt;br /&gt;
+Bref si quelqu'un ici est familier de ces contrôleurs raid ou a des pistes à me proposer je suis preneur.&lt;br /&gt;
+&lt;br /&gt;
+Je télécharge actuellement la dernière version des drivers sur le site de LSI pour tenter une compilation manuelle mais vu que le driver est prévu pour une RHEL je sens que je n'ai pas fini de m'amuser.</description>
+    </item>
+    <item>
+      <title>
+	
+squid+limitation du nombre d'IP clients??</title>
+      <author>null@linuxfr.org (serval21)</author>
+      <pubDate>Fri, 14 Jan 2011 01:02:30 +0100</pubDate>
+      <link>http://linuxfr.org/forums/47/29580.html</link>
+      <guid>http://linuxfr.org/forums/47/29580.html</guid>
+      <category>divers</category>
+      <description>
+	
+Bonsoir&lt;br /&gt;
+J'utilise squid comme poortail de redirection vers une page donnée avec la directive deny_info. les plages autorisées sont 172.16.0.0/21 172.17.0.0/21 ceci dit je n'ai que les 3 premiers blocs d'adresses qui fonctionnent à savoir 172.16.0.0/24 172.16.1.0/24 172.16.2.0/24.&lt;br /&gt;
+Avez vous une idée à à quoi celà peut il etre dû??&lt;br /&gt;
+un exemple de ma config&lt;br /&gt;
+&lt;code&gt;&lt;br /&gt;
+acl manager proto cache_object&lt;br /&gt;
+acl localhost src 127.0.0.1/32&lt;br /&gt;
+acl to_localhost dst 127.0.0.0/8&lt;br /&gt;
+acl mynetworks src 192.168.3.0/24 172.16.0.0/21 172.17.0.0/21&lt;br /&gt;
+acl accessOK url_regex &amp;quot;/etc/squid3/sitesOK&amp;quot;&lt;br /&gt;
+acl SSL_ports port 443&lt;br /&gt;
+acl Safe_ports port 80		# http&lt;br /&gt;
+acl Safe_ports port 21		# ftp&lt;br /&gt;
+acl Safe_ports port 443		# https&lt;br /&gt;
+acl Safe_ports port 70		# gopher&lt;br /&gt;
+acl Safe_ports port 210		# wais&lt;br /&gt;
+acl Safe_ports port 1025-65535	# unregistered ports&lt;br /&gt;
+acl Safe_ports port 280		# http-mgmt&lt;br /&gt;
+acl Safe_ports port 488		# gss-http&lt;br /&gt;
+acl Safe_ports port 591		# filemaker&lt;br /&gt;
+acl Safe_ports port 777		# multiling http&lt;br /&gt;
+&lt;br /&gt;
+acl CONNECT method CONNECT&lt;br /&gt;
+http_access allow manager localhost&lt;br /&gt;
+http_access deny manager&lt;br /&gt;
+http_access deny !Safe_ports&lt;br /&gt;
+http_access deny CONNECT !SSL_ports&lt;br /&gt;
+http_access allow localhost&lt;br /&gt;
+http_access allow accessOK&lt;br /&gt;
+http_access deny all&lt;br /&gt;
+http_access allow mynetworks&lt;br /&gt;
+icp_access deny all&lt;br /&gt;
+icp_access allow mynetworks&lt;br /&gt;
+htcp_access deny all&lt;br /&gt;
+http_port 3128 transparent&lt;br /&gt;
+hierarchy_stoplist cgi-bin ?&lt;br /&gt;
+cache_mem 64 MB&lt;br /&gt;
+maximum_object_size_in_memory 128 KB&lt;br /&gt;
+cache_swap_low 90&lt;br /&gt;
+cache_swap_high 95&lt;br /&gt;
+access_log /var/log/squid3/access.log squid&lt;br /&gt;
+url_rewrite_children 20&lt;br /&gt;
+refresh_pattern ^ftp:		1440	20%	10080&lt;br /&gt;
+refresh_pattern ^gopher:	1440	0%	1440&lt;br /&gt;
+refresh_pattern (cgi-bin|\?)	0	0%	0&lt;br /&gt;
+refresh_pattern .		0	20%	4320&lt;br /&gt;
+request_header_max_size 32 KB&lt;br /&gt;
+reply_header_max_size 32 KB&lt;br /&gt;
+visible_hostname susp-srvr&lt;br /&gt;
+icp_port 3130&lt;br /&gt;
+deny_info &lt;a href=&quot;http://mypage.com&quot;&gt;http://mypage.com&lt;/a&gt; all&lt;br /&gt;
+dns_nameservers 211.123.123.2&lt;br /&gt;
+coredump_dir /var/spool/squid3&lt;br /&gt;
+pipeline_prefetch on&lt;br /&gt;
+&lt;/code&gt;</description>
+    </item>
+    <item>
+      <title>
+	
+Suppression de messages</title>
+      <author>null@linuxfr.org (guayf)</author>
+      <pubDate>Thu, 13 Jan 2011 23:19:33 +0100</pubDate>
+      <link>http://linuxfr.org/forums/47/29579.html</link>
+      <guid>http://linuxfr.org/forums/47/29579.html</guid>
+      <category>divers</category>
+      <description>
+	
+Bonjour,&lt;br /&gt;
+J'aimerais que l'on m'aide à gérer mes vieux messages qui se trouvent dans ma page personnelle.&lt;br /&gt;
+&lt;br /&gt;
+Je voudrais supprimer les messages qui ne sont plus pertinents. Soit que j'ai eu ma réponse ou que j'ai changé de version de Mandriva.&lt;br /&gt;
+&lt;br /&gt;
+Je trouve très déplaisant de devoir chercher parmi tous mes vieux messages les réponses à mes nouveaux messages.&lt;br /&gt;
+J'ai bien cherché une barre d'outils mais je ne vois pas où elle peut-re. J'ai pourtant coché la case activer la barre d'outil di site dans mes préférences personnelles.&lt;br /&gt;
+&lt;br /&gt;
+Merci de l'intérêt porté à ce message et pour les réponses à venir.&lt;br /&gt;
+&lt;br /&gt;
+François</description>
+    </item>
+    <item>
+      <title>
+	
+Mandriva 2010</title>
+      <author>null@linuxfr.org (guayf)</author>
+      <pubDate>Thu, 13 Jan 2011 17:22:10 +0100</pubDate>
+      <link>http://linuxfr.org/forums/41/29578.html</link>
+      <guid>http://linuxfr.org/forums/41/29578.html</guid>
+      <category>cherche-logiciel</category>
+      <description>
+	
+Bonjour je cherche mplayer et surtout mencoder compilées avec libmp3lame suppor.&lt;br /&gt;
+&lt;br /&gt;
+J'ai vu qu'il pouvait exister en plf mais je ne trouve pas le nom exact de ce que je cherche ni comment accéder à un plf, s'il n'est pas listé dans ma banque de mise à jour de média support de paquetage.&lt;br /&gt;
+&lt;br /&gt;
+Merci</description>
+    </item>
+    <item>
+      <title>
+	
+Restaurer un RAID1</title>
+      <author>null@linuxfr.org (Guolang)</author>
+      <pubDate>Thu, 13 Jan 2011 15:00:00 +0100</pubDate>
+      <link>http://linuxfr.org/forums/15/29577.html</link>
+      <guid>http://linuxfr.org/forums/15/29577.html</guid>
+      <category>debian/ubuntu</category>
+      <description>
+	
+Bonjour,&lt;br /&gt;
+&lt;br /&gt;
+j'ai deux disques durs, &lt;strong&gt;sdb&lt;/strong&gt; et &lt;strong&gt;sdc&lt;/strong&gt;, avec chacun une seule partition.&lt;br /&gt;
+&lt;br /&gt;
+Les deux disques sont en parfait état de fonctionnement.&lt;br /&gt;
+&lt;br /&gt;
+Ces deux partitions sont en &lt;strong&gt;ext3&lt;/strong&gt;, avec les même données.&lt;br /&gt;
+&lt;br /&gt;
+C'était anciennement un RAID1, puis il y a eu un accident, puis j'ai été obligé de changer le groupe propriétaire des fichiers de l'un des deux disques.&lt;br /&gt;
+&lt;br /&gt;
+Depuis, ces deux disques sont maintenant de nouveau avec le même contenu (j'ai fait un rsync de l'un vers lautre).&lt;br /&gt;
+&lt;br /&gt;
+Lorsque j'ai voulu recréer le RAID, je n'ai pas réussi à le réassembler.&lt;br /&gt;
+&lt;br /&gt;
+Comment créer un RAID1 à partir de deux partitions (&lt;strong&gt;sdb1&lt;/strong&gt; et &lt;strong&gt;sdc1&lt;/strong&gt;) contenant des données, sans qu'il y ait effacement de ces données?.&lt;br /&gt;
+&lt;br /&gt;
+Il y a bien un disque de backup des données, mais il faut 70 heures pour effectuer le transfert, via l'USB. Si je peux éviter l'utilisation du backup, ça me ferait plaisir.&lt;br /&gt;
+&lt;br /&gt;
+Grégoire</description>
+    </item>
+    <item>
+      <title>
+	
+Chaîne hifi, ampli ou système 2.1  ?</title>
+      <author>null@linuxfr.org (Elessar)</author>
+      <pubDate>Thu, 13 Jan 2011 13:35:57 +0100</pubDate>
+      <link>http://linuxfr.org/forums/44/29576.html</link>
+      <guid>http://linuxfr.org/forums/44/29576.html</guid>
+      <category>cherche-materiel</category>
+      <description>
+	
+Bonjour,&lt;br /&gt;
+&lt;br /&gt;
+Ma chaîne hifi actuelle étant en passe de tomber en panne — elle amplifie énormément le bruit de fond de ma carte son qui est normalement à peine audible, actuellement, ça devient insupportable —, je cherche à la remplacer. Je l'utilise essentiellement pour amplifier le son sortant de mon ordinateur, essentiellement de la musique à usage personnel et des flux de radio sur Internet, et parfois de la musique pour de petites soirées.&lt;br /&gt;
+&lt;br /&gt;
+D'après ce que j'ai pu voir, trois types d'appareils peuvent fournir cette fonction :&lt;br /&gt;
+– les chaînes hifi avec entrée auxiliaire ;&lt;br /&gt;
+– les amplis autonomes ;&lt;br /&gt;
+– les systèmes 2.1 (pas 5.1, je n'ai pas envie de mettre des enceintes partout).&lt;br /&gt;
+&lt;br /&gt;
+Les chaînes hifi sont une solution tout en un, mais vu que je ne me servirai que de la fonction d'amplification d'une entrée auxiliaire, c'est du gâchis.&lt;br /&gt;
+&lt;br /&gt;
+Les amplis autonomes et les enceintes sont chers, j'imagine que la qualité vient avec.&lt;br /&gt;
+&lt;br /&gt;
+En revanche, les systèmes 2.1 me surprennent énormément : c'est censé fournir un son de bonne qualité, mais c'est vraiment bon marché par rapport aux amplis autonomes.&lt;br /&gt;
+&lt;br /&gt;
+Qu'en pensez-vous ?</description>
+    </item>
+    <item>
+      <title>
+	
+Quelle solution IDS choisir ?</title>
+      <author>null@linuxfr.org (ratw3)</author>
+      <pubDate>Thu, 13 Jan 2011 11:49:41 +0100</pubDate>
+      <link>http://linuxfr.org/forums/41/29575.html</link>
+      <guid>http://linuxfr.org/forums/41/29575.html</guid>
+      <category>cherche-logiciel</category>
+      <description>
+	
+Bonjour à tous!&lt;br /&gt;
+&lt;br /&gt;
+Voilà ma problématique je souhaiterai pouvoir être informé par mail + interface des tentatives d'intrusions sur mes serveurs en DMZ. (2) &lt;br /&gt;
+&lt;br /&gt;
+Je dispose également d'un firewall PIX  pour lequel j'ai mis en place une interface super sympat pour consulter les logs de DROP/DENY (ca s'appel PLA Pix Log Architecture) le problème c'est que si je ne vais rien voir ... rien ne remonte :(&lt;br /&gt;
+- Ainsi que sur mes 2 serveurs en DMZ de règles IPTABLES que j'aimerai aussi pouvoir analyser&lt;br /&gt;
+&lt;br /&gt;
+Donc voilà je ne sais pas trop comment m'y prendre ...&lt;br /&gt;
+&lt;br /&gt;
+Il semble qu'il y ait plusieurs solutions:&lt;br /&gt;
+&lt;br /&gt;
+- Connecter une machine sur le switch en promesceous mode pour analyser les données qui transitent ... (Cette solution me semble assez périlleuse à mettre en place.../rsique de lenteurs et c'est pas dit que tout soit analysé notamment les attaques sur le flux SSL)&lt;br /&gt;
+&lt;br /&gt;
+- Installer des IDS sur mes 2 serveurs en DMZ (là ca me parait plus simple... ou pas :)&lt;br /&gt;
+&lt;br /&gt;
+- Faire de l'analyse sur les fichiers de logs en les centralisant -- je ne sais pas si un IDS fait ca ou non ...&lt;br /&gt;
+&lt;br /&gt;
+- Je ne sais pas si cela se fait mais je dispose d une VM pour les taches d'administration qui a accès a tous mes serveurs (dont ceux en DMZ) et sur laquelle je centralise deja pas mal de logs... (via syslog-ng)  l'idée serait alors de mettre un serveurs IDS central sur cette machinne avec des sondes sur la DMZ mais peut être que là je dis n'importe quoi ...&lt;br /&gt;
+&lt;br /&gt;
+Qu'en pensez vous et quelle solution serait la plus aisé à mettre en place ??? avec mes prérequis remonté d'info sur interface web + mail pour les trucs vraiment critiques&lt;br /&gt;
+&lt;br /&gt;
+Merci à tous pour vos idées!!!</description>
+    </item>
+    <item>
+      <title>
+	
+dhcp3-server ne démarre pas ... au boot</title>
+      <author>null@linuxfr.org (mururoa69)</author>
+      <pubDate>Wed, 12 Jan 2011 19:00:18 +0100</pubDate>
+      <link>http://linuxfr.org/forums/15/29574.html</link>
+      <guid>http://linuxfr.org/forums/15/29574.html</guid>
+      <category>debian/ubuntu</category>
+      <description>
+	
+Salut,&lt;br /&gt;
+J'ai un problème avec le démarrage de dhcp3-server sur une debian (5.0.7) up to date.&lt;br /&gt;
+Le serveur dhcp3-server ne démarre pas mais seulement au boot avec un message classique &amp;quot;Not  configured to listen to any interfaces!&amp;quot; dans le syslog.&lt;br /&gt;
+Pourtant j'ai bien dans /etc/default/dhcp3-server :&lt;br /&gt;
+INTERFACES=&amp;quot;eth0&amp;quot;&lt;br /&gt;
+Et le truc qui fait que je ne comprends pas ce qui se passe c'est que si je me connecte sur le serveur et que je démarre le dhcpd à la main ça se passe toujours très bien et le dhcp fonctionne comme prévu.&lt;br /&gt;
+Ca dit qq chose à quelqu'un ?</description>
+    </item>  </channel>
+</rss>

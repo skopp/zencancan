@@ -8,7 +8,7 @@ require_once("FeedUpdater.class.php");
 $recuperateur = new Recuperateur($_POST);
 $feedSQL = new FeedSQL($sqlQuery);
 $abonnementSQL = new AbonnementSQL($sqlQuery);
-$feedUpdater = new FeedUpdater($feedSQL);
+$feedUpdater = new FeedUpdater($feedSQL,STATIC_PATH);
 
 $id = $recuperateur->get('id');
 $url = $recuperateur->get('url');

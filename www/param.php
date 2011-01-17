@@ -33,6 +33,8 @@ $pageHTML->haut();
 
 <h3>Exporter mes flux</h3>
 
+<a href='export.php?id=<?php hecho($id)?>'>zencancan-<?php hecho($id) ?>.opml</a>
+
 <?php 
 
 $pageHTML->bas();

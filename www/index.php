@@ -40,8 +40,7 @@ if (! $id ){
 	exit;
 }
 
-$allFlux = $abonnementSQL->getAll($id,$offset);
-
+$allFlux = $abonnementSQL->get($id,$offset);
 $nbFlux = $abonnementSQL->getNbFlux($id);
 
 $paginator = new Paginator($nbFlux,AbonnementSQL::NB_DISPLAY,$offset);
@@ -66,18 +65,13 @@ Site à suivre: <br/>
 
 <?php if ($allFlux) : ?>
 <h2>Dernières mises à jour : </h2>
-<?php $paginator->displayNext("« Sites mises à jour plus récemment"); ?>
+<?php $paginator->displayNext("« Sites mis à jour plus récemment"); ?>
 <table>
 <?php foreach($allFlux as $flux) : ?>
 	<tr>
 		<td class='date'><a name='' title='Dernier passage : <?php echo $fancyDate->get($flux['last_recup'])?>'><?php echo $fancyDate->get($flux['last_maj'])?></a></td>
-			<td><form method='post' action='del.php'>
-				<input class='bouton' type='submit' value='X'/>
-				<input type='hidden' name='id' value='<?php echo $id ?>'/>
-				<input type='hidden' name='id_f' value='<?php echo $flux['id_f']?>'/>
-			</form>
-		</td>
-		<td class='site'><a href='<?php hecho($flux['link'])?>' target='_blank' title='<?php hecho($flux['title'])?>'><?php hecho(wrap($flux['title'],25,2))?></a></td>
+		
+		<td class='site'><a href='feed.php?id=<?php echo $id ?>&id_f=<?php hecho($flux['id_f'])?>' title='<?php hecho($flux['title'])?>'><?php hecho(wrap($flux['title'],25,2))?></a></td>
 	
 		<td class='lien'><a href='<?php hecho($flux['item_link'])?>' target='_blank'><?php hecho($flux['item_title']) ?></a></td>
 		
@@ -86,7 +80,7 @@ Site à suivre: <br/>
 </table>
 <?php endif;?>
 <?php 
-$paginator->displayPrevious("Sites mises à jour il y a plus longtemps »");
+$paginator->displayPrevious("Sites mis à jour avant »");
 ?>
 		<p class='petit'>
 				<a href='param.php?id=<?php hecho($id)?>'>Configurer mon compte</a>

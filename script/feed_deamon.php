@@ -9,7 +9,7 @@ require_once("AbonnementSQL.class.php");
 $feedSQL = new FeedSQL($sqlQuery);
 $abonnementSQL = new AbonnementSQL($sqlQuery);
 
-$feedUpdater = new FeedUpdater($feedSQL);
+$feedUpdater = new FeedUpdater($feedSQL,STATIC_PATH);
 $feedUpdater->updateForever($abonnementSQL);
 
 

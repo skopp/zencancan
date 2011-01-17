@@ -1,0 +1,292 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<feed xmlns="http://www.w3.org/2005/Atom" xmlns:dc="http://purl.org/dc/elements/1.1/">
+<title type="html">Tancrède &amp; Éléonise&#039;s blog</title>
+<subtitle type="html">A cloud of the Internet</subtitle>
+<link href="http://blog.taneleo.org/feed/atom" rel="self" type="application/atom+xml"/>
+<link href="http://blog.taneleo.org/" rel="alternate" type="text/html"/>
+<updated>2011-01-14T22:41:00+01:00</updated>
+<id>urn:md5:829b8801bd80f06a874b51002692c005</id>
+<generator uri="http://pluxml.org/">PluXml 5.0.2</generator>
+<entry>
+	<title>Être geek et s&#039;adresser à Madame Michu</title> 
+	<link href="http://blog.taneleo.org/article39/etre-geek-et-s-adresser-a-madame-michu"/>
+	<id>urn:md5:a159329b079849c58f8f00e478a0b9f2</id>
+	<updated>2011-01-14T22:41:00+01:00</updated>
+	<author><name>Tancrède</name></author>
+	<dc:subject>GNU/Linux, Internet, Auto-hébergement</dc:subject>
+	<content type="html">&lt;p&gt;«La route est longue, mais la voie est libre» relève très joliment Framasoft. Mais dans ce voyage dans le monde du Logiciel Libre, de GNU/Linux et de l&#039;Internet nous sommes confrontés au même problème que toutes les personnes passionnées ou spécialisées : il devient de plus en plus difficile, au fur et à mesure que nous avançons dans nos connaissances, de savoir ce qu&#039;un individu ordinaire connaît ou devrait connaître de notre discipline. En ce sens, l&#039;être humain est un geek. Un geek entouré de Dames Michu.&lt;/p&gt;
+
+&lt;p&gt;Comment rester réaliste dans ce que nous pouvons demander comme connaissances informatiques à notre entourage ? On lit ou entend souvent que l&#039;informatique et GNU/Linux sont compliqués. Ce que je ne pense pas. Ils demandent juste une base de connaissances pour être appréhendés. De la même manière qu&#039;une fois que nous savons lire et écrire la musique, nous pouvons manipuler aussi bien de la musique classique, que du Jazz ou du Rock.&lt;/p&gt;&lt;p&gt;Cependant, dans toute courbe d&#039;apprentissage il existe des paliers. Et ce premier gros palier qui nous met à l&#039;aise devant l&#039;outil informatique quelque soit ce qu&#039;on manipule, a tendance à nous faire oublier nos débuts. Tout comme lorsque nous savons déchiffrer une partition musicale à vue, on oublie presque qu&#039;un jour nous avons eu du mal à lire une simple clé de sol d&#039;une tessiture d&#039;une octave. Pire, on peut ne plus réaliser que la majorité des individus ne savent pas lire la musique.&lt;/p&gt;
+
+&lt;p&gt;Un fossé se creuse alors naturellement entre ceux qui connaissent, et ceux qui ne connaissent pas. Nous avons beau nous dire que Madame Michu pense qu&#039;Internet c&#039;est l&#039;icône E bleue sur son bureau, nous avons beaucoup de mal à réaliser le degré de non connaissance informatique que cela suppose. On ne sait plus à quel point à jour, nous aussi, nous ne savions pas. Et inversement, il est difficile de mesurer son ignorance dans un sujet dont on ignore tout sans le savoir.&lt;/p&gt;
+
+&lt;p&gt;Nous savons aujourd&#039;hui qu&#039;une des réponses aux problématiques des données personnelles et de la vie privée passe par l&#039;auto-hébergement. C&#039;est indéniable et incontournable : je ne pourrai pas faire plus confiance envers un inconnu qu&#039;en moi-même pour gérer mes données. Et il n&#039;y a aucune raison que je le fasse. Mais aujourd&#039;hui, s&#039;auto-héberger est presque une discipline, ce qui la réserve à des utilisateurs avertis, voire plus qu&#039;avertis selon ce qui est hébergé.&lt;/p&gt;
+
+&lt;p&gt;Il est absolument impossible de demander à la femme de Monsieur Toutlemonde des compétences aussi importantes que celles requises aujourd&#039;hui pour s&#039;auto-héberger sur du Logiciel Libre. D&#039;autant plus que la tendance actuelle n&#039;est pas à la vulgarisation de l&#039;informatique, mais plus à cacher tout ce qui pourrait un tant soit peu freiner les utilisateurs d&#039;utiliser cet outil. Alors certes, de plus en plus de gens savent ce qu&#039;est un DNS, mais nous avons surtout des navigateurs Web qui se mettent à cacher le protocole utilisé (http://), et une standardisation des compétences techniques requises pour utiliser un logiciel qui se résume au drag-and-drop.&lt;/p&gt;
+
+&lt;p&gt;Les commerciaux savent le degré de non connaissance de Madame Michu, et ils sauront lui fournir des outils clés en main pour héberger et partager ses albums photos (ce qui est déjà le cas en fait). Quant aux libristes, j&#039;en suis beaucoup moins sûr (ils n&#039;ont d&#039;ailleurs toujours rien à proposer, à part peut-être Ubuntu One).&lt;/p&gt;
+
+&lt;p&gt;Les libristes sont tiraillés entre d&#039;un côté promouvoir le Logiciel Libre et de l&#039;autre, une conscience forte de la nécessité d&#039;instruire et d&#039;éduquer les individus à l&#039;outil informatique. Je crains malheureusement que cette approche doit être profondément repensée. Nous ne nous dirigeons pas vers un monde dans lequel la ligne de commande sera apprivoiser par un nombre croissant d&#039;utilisateurs, mais au contraire, nous nous dirigeons vers un monde dans lequel l&#039;informatique obéira au doigt (écran tactile) et à l&#039;oeil (Kinect-like) des êtres humains.&lt;/p&gt;
+
+&lt;p&gt;Cela ne veut pas nécessairement dire que les logiciels seront beaucoup plus compliqués, mais simplement que l&#039;interface homme-machine se devra d&#039;être simple. C&#039;est elle qui sera complexe à coder. Et malheureusement, dans ce domaine, le Logiciel Libre a souvent du retard sur les solutions propriétaires. Ce qui s&#039;explique principalement par le manque d&#039;utilisateurs non avertis qui l&#039;utilisent, mais aussi par le fait que si le geek parle souvent de Madame Michu, ça fait bien longtemps qu&#039;il n&#039;arrive plus à se représenter son niveau de non connaissance informatique.&lt;/p&gt;
+
+&lt;p&gt;Ailleurs sur un thème similaire : &lt;a href=&quot;http://www.cyrille-borne.com/index.php?post/2010/10/19/Ce-qu-on-ne-peut-pas-expliquer-aux-mamans-...&quot;&gt;Ce qu&#039;on ne peut pas expliquer aux mamans ...&lt;/a&gt;&lt;/p&gt;</content>
+</entry>
+<entry>
+	<title>L&#039;auto-hébergement, cet incompris</title> 
+	<link href="http://blog.taneleo.org/article38/l-auto-hebergement-cet-incompris"/>
+	<id>urn:md5:c64a35f2ac1be03f11d50ca964b075c9</id>
+	<updated>2011-01-07T16:04:00+01:00</updated>
+	<author><name>Tancrède</name></author>
+	<dc:subject>Internet, Auto-hébergement</dc:subject>
+	<content type="html">&lt;p&gt;Nous sommes passés avec l&#039;Internet d&#039;un monde où une minorité pouvait diffuser du contenu à un auditoire délimité et restreint, à un monde dans lequel chaque individu peut diffuser du contenu à l&#039;ensemble de l&#039;humanité, pourvu qu&#039;elle soit connectée au réseau.&lt;/p&gt; 
+
+&lt;p&gt;Cela s&#039;est fait rapidement et c&#039;est un aspect incompris de l&#039;Internet. C&#039;est tellement énorme que je crois que les gens n&#039;y croient pas, qu&#039;ils n&#039;arrivent même pas à se le représenter. Et pas seulement chez les individus qui n&#039;entendent rien à l&#039;informatique et au réseau, mais même chez ceux dont c&#039;est le métier.&lt;/p&gt;&lt;p&gt;Après des décennies passées à ingurgiter les contenus produits par une minorité triée sur le volet, voilà que tout un chacun se trouve libre d&#039;émettre et de recevoir le contenu qu&#039;il choisit.&lt;/p&gt;
+
+&lt;p&gt;Le fait qu&#039;une machinbox n&#039;est rien d&#039;autre qu&#039;une «super imprimerie» couplée à un diffuseur mondial et à un récepteur mondial des autres « supers imprimeries», n&#039;arrive pas à être assimilé par les individus. Le concept même semble être trop révolutionnaire pour être assimilé alors qu&#039;hier encore l&#039;information était unidirectionnelle et le privilège d&#039;une minorité.&lt;/p&gt;
+
+&lt;p&gt;Aujourd&#039;hui, «tout le monde a accès à l&#039;information». Mais une fois encore, cette formulation n&#039;est qu&#039;à moitié comprise. Avoir accès à l&#039;information à l&#039;heure de l&#039;Internet, veut dire à la fois pouvoir la recevoir et à la fois pouvoir en émettre.&lt;/p&gt;
+
+&lt;p&gt;Il suffit d&#039;observer la champ lexical utilisé couramment pour parler de l&#039;Internet pour percevoir l&#039;incompréhension. À lire ou à entendre ceux qui en parlent, nous avons l&#039;impression que l&#039;Internet est quelque chose qui ressemblerait un nuage qui vivrait dans un pays lointain.&lt;/p&gt;
+
+&lt;p&gt;En guise de pays lointain, il se trouve en fait une machinbox dans nos salons.&lt;/p&gt;
+
+&lt;p&gt;Lorsque l&#039;on «émet» sur l&#039;Internet, nous ne sommes pas obligé de le faire depuis un centre «émetteur», tel un studio de télévision, mais nous pouvons le faire depuis l&#039;endroit où l&#039;on se trouve, quelque soit cet endroit. Ainsi, l&#039;Internet n&#039;offre pas simplement la possibilité d&#039;«émettre», mais d&#039;émettre depuis chez soi, depuis la terrasse d&#039;un café, d&#039;une plage paradisiaque ou du sommet d&#039;une montagne. À partir du moment où l&#039;on reçoit de l&#039;Internet, alors on peut émettre de l&#039;Internet. C&#039;est comme ça qu&#039;il a été conçu, et c&#039;est comme ça qu&#039;il fonctionne.&lt;/p&gt;
+
+&lt;p&gt;C&#039;est ici que l&#039;aspect pédagogique de l&#039;auto-hébergement prend toute sa dimension. Lorsque j&#039;appuie sur le bouton &quot;OFF&quot; de ma machine, j&#039;éteins en même temps une partie de l&#039;Internet. Et quand j&#039;appuie sur son bout &quot;ON&quot;, j&#039;agrandis l&#039;Internet de mon contenu. C&#039;est très concret, et palpable. L&#039;Internet n&#039;est plus un obscure concept, mais quelque chose que je peux toucher, manipuler et avec lequel je peux interagir. «Ceci est une révolution», diraient certains. Et ils n&#039;auraient pas tort. Mais ce n&#039;est pas tant l&#039;aspect «récepteur» de l&#039;Internet qui est révolutionnaire, mais bien son aspect «diffuseur».&lt;/p&gt;
+
+&lt;p&gt;Pour terminer, et si vous avez compris ces quelques lignes, vous devriez alors comprendre pourquoi le titre de cet article devrait plutôt être «L&#039;Internet, cet incompris».&lt;/p&gt;</content>
+</entry>
+<entry>
+	<title>Profiter de la hausse de la TVA pour un FAI auto-hébergement ready</title> 
+	<link href="http://blog.taneleo.org/article37/profiter-de-la-hausse-de-la-tva-pour-un-fai-auto-hebergement-ready"/>
+	<id>urn:md5:263ff2e27c9311d386093b83e0a4176c</id>
+	<updated>2011-01-06T23:22:00+01:00</updated>
+	<author><name>Tancrède</name></author>
+	<dc:subject>Auto-hébergement</dc:subject>
+	<content type="html">&lt;p&gt;Comme vous le savez sans doute, certaines des offres ADSL des plus gros FAI français vont voir leurs tarifs majorés suite à l&#039;augmentation de la TVA sur la partie télévision du «triple play». Que vous receviez effectivement la télévision et la regardiez, ou pas. Ils n&#039;ont pas fait dans le détail.&lt;/p&gt;
+
+&lt;p&gt;Cette hausse des tarifs permet au client de résilier son contrat pour en souscrire un nouveau chez un autre opérateur, ou le même, et ce légalement et sans frais. C&#039;est tellement rare qu&#039;il arrive quelque chose de positif pour les consommateurs, que cet «événement» a fait partie des «Unes» des médias pendant plusieurs jours consécutifs. J&#039;ai même cru à un moment qu&#039;ils allaient mettre en place une cellule psychologique tant la chose est peu commune. Et une cellule pas seulement pour les entreprises et les journalistes, mais aussi pour les consommateurs ;-)&lt;/p&gt;
+
+&lt;p&gt;Peu importe, ce qui nous intéresse ici est la possibilité de choisir un FAI plus adéquat pour l&#039;auto-hébergement. Malheureusement, ce n&#039;est pas aussi simple que cela. Et à moins d&#039;être chez le seul «FAI» qui interdit (sic) de faire de l&#039;Internet - Numéricâble pour ne pas le nommer - je ne suis pas sûr qu&#039;il soit très intéressant de migrer.&lt;/p&gt;&lt;p&gt;Tout d&#039;abord il est difficile d&#039;échapper à cette hausse de prix car le consommateur se voit enfermer dans des offres «triple play», et bientôt «quadruple play», sans que des offres «simple play», voire «double play», ne soit obligatoirement proposées. Le seul avantage que je vois à ces offres «3 en 1» est que cela oblige les FAI à loueur des lignes ADSL stables et de qualité acceptable. Pour le dire autrement, si je suis déconnecté régulièrement et de façon aléatoire, il est peu probable que je veuille utiliser le service VoD de mon FAI.&lt;/p&gt;
+
+&lt;p&gt;Mais regardons d&#039;un peu plus près &lt;a href=&quot;http://wiki.auto-hebergement.fr/dokuwiki/fournisseurs/fai&quot;&gt;la page FAI&lt;/a&gt; du wiki sur l&#039;auto-hébergement. Si l&#039;on devait changer de FAI pour un qui soit plus utilisable pour l&#039;auto-hébergé, il nous faudrait un FAI qui propose :&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;une IPv4 fixe&lt;/li&gt;
+&lt;li&gt;un pool IPv6, ou au stricte minimum connaître le planning du déploiement IPv6&lt;/li&gt;
+&lt;li&gt;pas de blocage de ports, ou alors il faut que ce soit désactivable&lt;/li&gt;
+&lt;li&gt;personnalisation du reverse DNS (pour le mail principalement)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Inutile de chercher longtemps, parmi les gros FAI seul Free remplit ces critères. Je ne connais pas vraiment ce fournisseur, alors de loin, je n&#039;ai jamais trop compris si en allant chez Free on s&#039;abonnait à l&#039;Internet ou à son réseau local (il paraît que si la freebox tombe en panne, notre réseau local ne fonctionne plus; c&#039;est vrai ça ?)&lt;/p&gt;
+
+&lt;p&gt;Arrive ensuite le point le plus délicat à mon sens : une ligne ADSL, c&#039;est un peu la roulette russe. Suivant notre ligne et le fournisseur auquel nous souhaitons souscrire, cela peut être le jour et la nuit. Sans parler des complications qui peuvent survenir lors d&#039;une migration et du temps que cela prend.&lt;/p&gt;
+
+&lt;p&gt;A moins d&#039;être chez Numéricâble, ou d&#039;avoir une ligne de piètre qualité, je ne suis pas sûr qu&#039;il soit judicieux de migrer. Quand on a une ligne stable, faut-il prendre le risque de changer de FAI ?&lt;/p&gt;</content>
+</entry>
+<entry>
+	<title>Bots Attacks vs Madame Michu</title> 
+	<link href="http://blog.taneleo.org/article36/bots-attacks-vs-madame-michu"/>
+	<id>urn:md5:aba60ee2510ff94c8f8bd0aae0732607</id>
+	<updated>2011-01-04T19:47:00+01:00</updated>
+	<author><name>Tancrède</name></author>
+	<dc:subject>Auto-hébergement</dc:subject>
+	<content type="html">&lt;p&gt;Il y a quelques jours de cela, ce blog a connu son baptême en essuyant sa première invasion de bots, de spambots plus exactement. L&#039;occasion de réfléchir un peu sur les différents bots que l&#039;on rencontre sur le réseau et leur implication dans l&#039;auto-hébergement.&lt;/p&gt;
+
+&lt;p&gt;Car cet épisode, somme toute assez banal pour un serveur, me met un peu mal à l&#039;aise quand il s&#039;agit d&#039;étudier la question sous l&#039;angle d&#039;un auto-hébergé, et plus particulièrement dans le cadre de la démocratisation de l&#039;auto-hébergement.&lt;/p&gt;
+
+&lt;p&gt;Que peut faire l&#039;auto-hébergé dans pareil cas hormis attendre que l&#039;attaque se passe ? Que diront les FAI quand la croissance de l&#039;auto-hébergement s&#039;accompagnera d&#039;une croissance du nombre d&#039;attaques ?&lt;/p&gt;&lt;p&gt;Pour les admins system, ici les auto-hébergés, ces bots sont une source de travail et de préoccupation. Si cela fait partie du métier de l&#039;admin system, ce n&#039;est pas le cas de l&#039;auto-hébergé.&lt;/p&gt;
+
+&lt;p&gt;Rappelons les grands types d&#039;attaques ou de nuisibles qu&#039;un serveur rencontre :&lt;/p&gt;
+
+&lt;ul&gt;
+
+&lt;li&gt;les BoMNI, ou Bots Mal ou Non Identifiés : cela va du pseudo futur moteur de recherches aux crawlers qui ne s&#039;identifient pas, en passant par les aspirateurs de sites&lt;/li&gt;
+
+&lt;li&gt;les bots «louches» : ils sont plus ou moins identifiés mais on ne sait pas trop ce pourquoi ils sont faits et/ou ne respectent pas les directives du fichiers robots.txt&lt;/li&gt;
+
+&lt;li&gt;les bots script kiddie : du jeune insouciant au «hacker» dilettante, ça se traduit le plus souvent par un DoS ou une tentative de hack de la machine&lt;/li&gt;
+
+&lt;li&gt;les botnets : principalement utilisés pour spammer ou faire du DDoS, mais aussi pour trouver des failles de sécurité sur des machines&lt;/li&gt;
+
+&lt;/ul&gt;
+
+&lt;p&gt;Je ne pense pas avoir besoin de détailler cette intuition qui serait que cet univers là est à des années lumière de celui de Madame Michu. Pourtant, l&#039;auto-hébergement les fera se rencontrer.&lt;/p&gt;
+
+&lt;p&gt;«La technique aux techniciens», disent certains.&lt;/p&gt;
+
+&lt;p&gt;J&#039;ai un peu de mal à laisser aux seuls techniciens ma liberté d&#039;expression, mon accès à la parole publique et mes données et informations personnelles. Techniciens que je ne connais pas et qui font partie d&#039;entreprises aux intérêts pouvant diverger des miens.&lt;/p&gt;
+
+&lt;p&gt;Une partie des problèmes liés aux bots concernent les possesseurs de tuyaux, ici les FAI. Pour eux, je ne sais pas comment ils envisagent les choses.&lt;/p&gt;
+
+&lt;p&gt;Pour les internautes, de bons outils et probablement un peu de coopération devraient aider. Sans oublier l&#039;éducation, la formation et l&#039;information. Je ne sais pas si cela sera suffisant, mais ce qui est sûr est que cela constitue l&#039;une des difficultés à la démocratisation de l&#039;auto-hébergement et que par conséquent il faut aussi y réfléchir et y apporter des solutions.&lt;/p&gt;</content>
+</entry>
+<entry>
+	<title>2011 et l&#039;auto-hébergement</title> 
+	<link href="http://blog.taneleo.org/article35/2011-et-l-auto-hebergement"/>
+	<id>urn:md5:30e15fc53425a5b3d1507bd2d3b50a67</id>
+	<updated>2011-01-01T00:01:00+01:00</updated>
+	<author><name>Tancrède</name></author>
+	<dc:subject>Auto-hébergement</dc:subject>
+	<content type="html">&lt;p&gt;Non, je ne vous souhaiterai pas de prendre la bonne résolution de vous auto-héberger en 2011. J&#039;ai bien trop envie que vous le fassiez pour cela.&lt;/p&gt;
+
+&lt;p&gt;Je vais plutôt écrire ce que devrait nous réserver cette nouvelle année naissante et ce que nous pourrions faire en matière d&#039;hébergement à domicile.&lt;/p&gt;
+
+&lt;p&gt;Car il me semble que 2011 va être une année importante pour l&#039;auto-hébergement. Il s&#039;agit alors de ne pas manquer le rendez-vous.&lt;/p&gt;&lt;p&gt;Tout d&#039;abord l&#039;IPv6.&lt;/p&gt;
+
+&lt;p&gt;«Cette fois c&#039;est la bonne», ai-je envie d&#039;écrire, les derniers blocs d&#039;IPv4 devant être distribués d&#039;ici le printemps. Cela ne veut pas dire qu&#039;il ne sera plus possible pour un FAI d&#039;allouer une IPv4 à ses clients, mais que le passage à l&#039;IPv6 va devenir inéluctable. Peut-être pas pour 2011. Mais 2012 ne devrait pouvoir y échapper.&lt;/p&gt;
+
+&lt;p&gt;Du moins en théorie. Je ne suis toujours pas convaincu que nous allons massivement basculer sur la v6 de l&#039;IP. Le minitel 2.0 se satisfera très bien de la v4 et de son compagnon le NAT.&lt;/p&gt;
+
+&lt;p&gt;Encore faudra-t-il avoir le choix. Ce qui impliquera qu&#039;il faudra, pour les auto-hébergés, se mettre à niveau en se préparant à gérer un pool d&#039;adresses fixes IPv6 et les programmes informatiques qui font tourner nos serveurs.&lt;/p&gt;
+
+&lt;p&gt;Il serait utile que nos FAI dévoilent leurs intentions quant au déploiement - ou non, de l&#039;IPv6, ainsi que leurs roadmaps. Mais en attendant, nous naviguons à vue, et il faut se préparer à cette éventuelle transition.&lt;/p&gt;
+
+&lt;p&gt;Dans un second temps, les questions liées à la vie privée et aux données personnelles devraient continuer à préoccuper toujours plus les autorités et les citoyens. Dans un tel contexte, je pense qu&#039;il sera beaucoup question d&#039;auto-hébergement cette année. Peut-être même le début d&#039;un phénomène de mode.&lt;/p&gt;
+
+&lt;p&gt;Nous devrions alors nous attendre à voir un intérêt croissant pour ce que certains réduisent à notre «geekerie», mais aussi nous préparer à recevoir et accueillir un nouveau public. Sommes-nous prêts ?&lt;/p&gt;
+
+&lt;p&gt;Le point qui fait défaut est le logiciel. Libre s&#039;entend. Cela reste encore beaucoup trop compliqué de s&#039;auto-héberger pour une madame Michu. Mais même en y mettant toute la meilleure volonté, nous ne saurions proposer un outil clé en main en 2011 pour notre chère dame Michu. Elle devra alors plutôt se tourner vers des solutions types NAS.&lt;/p&gt;
+
+&lt;p&gt;Cependant, pour les internautes qui ont les capacités, tant matérielles qu&#039;intellectuelles, de s&#039;auto-héberger et qui voudront franchir le pas en 2011, nous devrions réfléchir à la meilleure façon d&#039;entrer dans cet usage de l&#039;Internet, et de préparer un «quelque chose» en ce sens (que ce soit un logiciel, ou des configurations «types» qui vont bien).&lt;/p&gt;
+
+&lt;p&gt;Pour le formuler sous la forme d&#039;une question, dans ce qu&#039;il sera le plus utile d&#039;auto-héberger pour les internautes, qu&#039;est-ce qui sera le plus simple à mettre en place par tout un chacun ?&lt;/p&gt;
+
+&lt;p&gt;Voilà, bien qu&#039;il y aurait d&#039;autres points à évoquer, je vais m&#039;en tenir là pour ce premier jour de l&#039;année 2011. Et de vous souhaiter de prendre toujours autant de plaisir à construire activement le réseau Internet, ce réseau des réseaux dont le votre fait partie.&lt;/p&gt;</content>
+</entry>
+<entry>
+	<title>Du schisme de l&#039;Internet et le domaine .42</title> 
+	<link href="http://blog.taneleo.org/article34/du-schisme-de-l-internet-et-le-domaine-42"/>
+	<id>urn:md5:65d999ed8edfd5bee6fc7e0db79ab40a</id>
+	<updated>2010-12-24T01:37:00+01:00</updated>
+	<author><name>Tancrède</name></author>
+	<dc:subject>Internet</dc:subject>
+	<content type="html">&lt;p&gt;Chaque jour qui passe et c&#039;est un peu plus criant : l&#039;Internet est en train de se faire enfermer dans une bulle politico-économique.&lt;/p&gt;
+
+&lt;p&gt;Aussi bien du côté de le presse en ligne que des acteurs du Net et des politiques, l&#039;Internet se fait mettre dans une cage dans laquelle les internautes deviennent chaque jour un peu plus des consommateurs, et pour laquelle les politiques nous montrent leurs visions singulières de la démocratie maintenant qu&#039;elle peut s&#039;exprimer plus pleinement. Ces derniers ne sont d&#039;ailleurs pas complètement étrangers à la marchandisation en marche de l&#039;espace Internet. Que ne feraient-ils pas pour l&#039;argent sous prétexte qu&#039;il est nécessaire à nos sociétés ?&lt;/p&gt;&lt;p&gt;L&#039;aliénation par le pouvoir et l&#039;argent devraient être reconnues au rang de maladies et la malhonnêteté intellectuelle se voir réprimander.&lt;/p&gt;
+
+&lt;p&gt;Mais ce serait trop simpliste que de ne point incriminer les internautes, toujours prompts à râler mais beaucoup moins à agir. Car à râler sans conviction l&#039;on finit par passer pour un con. Peut-on dire que nous avons l&#039;Internet que nous méritons ? Peut-être en partie. En partie seulement.&lt;/p&gt;
+
+&lt;p&gt;Il y a un visage de l&#039;Internet que j&#039;aime particulièrement : celui de la connaissance, des savoirs, de l&#039;éducation, des échanges, des débats, mais aussi de l&#039;information et de la coopération. Mais qui le protège cet Internet là ? Et qui se fait railler en tentant de le protéger ?&lt;/p&gt;
+
+&lt;p&gt;Entre ces marchands numériques nous enfermant chaque jour un peu plus dans leurs entreprises et emprises, et des politiques marionnettes réduits à assurer les intérêts économiques des premiers et à jouir de leurs privilèges, nous étouffons, nous manquons d&#039;air. Ou quand l&#039;Internet révèle un océan de médiocrité... Le reflet que nous renvoie l&#039;Internet de nos sociétés devrait nous inciter à agir mieux dès à présent et non pas à nous réfugier dans le fascisme ou le totalitarisme.&lt;/p&gt;
+
+&lt;p&gt;Nous faut-il scinder l&#039;Internet en deux ? Marquant une rupture nette entre ce monde d&#039;avant, K.O debout et en train de pourrir sur place, et ce nouveau monde qui s&#039;ouvre devant nous. Faut-il un grand schisme de l&#039;Internet pour le séparer de ce minitel politico-économique qui le gangrène ?&lt;/p&gt;
+
+&lt;p&gt;Depuis quelques temps, je songeais à une idée comme étant une possible solution entre ces deux mondes incompatibles : se créer un Top Level Domain .quelconque pour y regrouper ce berceau du monde de demain, pour y consulter des contenus non-commerciaux, pour y héberger cet Internet qui me tient à cœur, pour enfin faire les choses biens pour ce qu&#039;elles sont, pour l&#039;humanité et pour son environnement.&lt;/p&gt;
+
+&lt;p&gt;Et depuis quelques jours un projet y ressemblant prend son envole sur l&#039;Internet, le &lt;a href=&quot;http://42registry.org/&quot;&gt;42registry.org&lt;/a&gt;. Il semble que nous sommes de plus en plus nombreux à prendre conscience que le monde ne tourne plus vraiment rond, et pas vraiment comme il le devrait. Et que pour corriger ça, il faut agir, expérimenter, faire. Le domaine .42 me semble être une réponse logique face à la situation actuelle de l&#039;Internet.&lt;/p&gt;
+
+&lt;p&gt;L&#039;expérience 42 Registry telle que présentée sur le site actuellement correspond assez précisément à la solution que j&#039;imaginais. Aussi bien sur le principe, les motivations que sur la chartre. Alors certes ce n&#039;est pas le premier projet alternatif à l&#039;ICANN, mais ce n&#039;est pas un motif pour l&#039;inaction. Et il faut savoir s&#039;inscrire dans le temps présent : 42registry.org est né en 2010, dans le contexte de 2010.&lt;/p&gt;
+
+&lt;p&gt;C&#039;est un projet qui mérite d&#039;être suivi. Ne serait-ce que pour améliorer sa compréhension de l&#039;Internet. Il suffit d&#039;en lire les premières réactions grand public pour mesurer l&#039;e-illettrisme des citoyens.&lt;/p&gt;
+
+&lt;p&gt;La force de l&#039;Internet est sa simplicité : son fonctionnement est si rudimentaire qu&#039;il est quasi impossible d&#039;y porter atteinte son risquer de tout casser. Alors dans un contexte de tentative de le museler, les DNS sont une proie logique.&lt;/p&gt;</content>
+</entry>
+<entry>
+	<title>Publiez un article sur l&#039;auto-hébergement sur taneleo.org</title> 
+	<link href="http://blog.taneleo.org/article33/publiez-un-article-sur-l-auto-hebergement-sur-taneleo-org"/>
+	<id>urn:md5:6cea2035266e7f63af19c8731bae1380</id>
+	<updated>2010-12-23T22:01:00+01:00</updated>
+	<author><name>Tancrède</name></author>
+	<dc:subject>Auto-hébergement</dc:subject>
+	<content type="html">&lt;p&gt;Je propose à tout un chacun la possibilité de publier un article concernant l&#039;auto-hébergement sur ce blog.&lt;/p&gt;
+
+&lt;p&gt;L&#039;objectif est de participer à la réflexion sur cette thématique en permettant d&#039;en avoir différents éclairages, points de vue ou argumentations.&lt;/p&gt;&lt;p&gt;Pour savoir comment procéder, je vous renvoie sur la page &lt;a href=&quot;http://blog.taneleo.org/static3/participer&quot;&gt;«Participer»&lt;/a&gt; de ce site où les conditions et modalités sont développées.&lt;/p&gt;
+
+&lt;p&gt;Cette page fait un peu solennel mais c&#039;est pour que les choses soient claires et m&#039;éviter les ennuis. Mais il ne faut pas se laisser intimider, cet espace de publication est beaucoup plus conviviale que ces conditions n&#039;en donnent l&#039;impression.&lt;/p&gt;
+
+&lt;p&gt;Nous n&#039;avons pas tous un blog, et encore moins un blog qui parle d&#039;auto-hébergement. Cet espace veut permettre à ceux qui ont des choses à dire sur l&#039;auto-hébergement sans savoir où les dire, de trouver un coin de Web où s&#039;exprimer.&lt;/p&gt;
+
+&lt;p&gt;Je ne suis pas très à l&#039;aise avec la rédaction de «conditions d&#039;utilisations», donc si quelque chose n&#039;est pas clair, ou si j&#039;ai oublié certains aspects, merci de m&#039;en informer.&lt;/p&gt;
+
+&lt;p&gt;Pour une version courte de ces conditions :&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;un article qui parle d&#039;auto-hébergement&lt;/li&gt;
+&lt;li&gt;il ne doit pas être trollesque, ne pas porter atteinte à quoi ou à qui que ce soit et il doit respecter la législation française&lt;/li&gt;
+&lt;li&gt;il doit être sous une licence Creative Commons&lt;/li&gt;
+&lt;li&gt;vous devez accepter que votre article soit agrégé par &lt;a href=&quot;http://planet.auto-hebergement.fr/&quot;&gt;le Planet auto-hébergement&lt;/a&gt; (mais ça c&#039;est pour vous procurer la renommée mondiale. Ou pas)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Bref, un article qui s&#039;en tient à participer à la réflexion dans ce domaine et que je peux diffuser ici.&lt;/p&gt;
+
+&lt;p&gt;S&#039;il y a des questions, les commentaires sont là ;-)&lt;/p&gt;</content>
+</entry>
+<entry>
+	<title>Créer un Round-robin mutualisé entre auto-hébergés</title> 
+	<link href="http://blog.taneleo.org/article32/creer-un-round-robin-mutualise-entre-auto-heberges"/>
+	<id>urn:md5:270795b5fa360736c27a9ea3ac335030</id>
+	<updated>2010-12-22T20:15:00+01:00</updated>
+	<author><name>Tancrède</name></author>
+	<dc:subject>Auto-hébergement</dc:subject>
+	<content type="html">&lt;p&gt;C&#039;est une idée qui me trotte dans la tête depuis quelques temps déjà. Pourquoi ne pas créer un Round-robin par et pour les auto-hébergés ?&lt;/p&gt;
+
+&lt;p&gt;Pour ceux qui ne connaissent pas, le Round-robin permet de distribuer un même contenu hébergé sur des machines différentes. Ici, le Round-robin se ferait par les DNS. Nous aurions donc typiquement :&lt;/p&gt;&lt;p class=&quot;shell&quot;&gt;
+static.rr-auto-heberge.tld IN A 10.0.0.1&lt;br /&gt;
+static.rr-auto-heberge.tld IN A 10.0.0.2&lt;br /&gt;
+static.rr-auto-heberge.tld IN A 10.0.0.3&lt;br /&gt;
+static.rr-auto-heberge.tld IN A 10.0.0.4
+&lt;/p&gt;
+
+&lt;p class=&quot;note&quot;&gt;
+Les adresses IP sont celles des auto-hébergés participants au Round-robin.
+&lt;/p&gt;
+
+&lt;p&gt;Ainsi, lorsqu&#039;un internaute demandera le contenu static.rr-auto-héberge.tld/image.jpg, celui-ci sera pris au hasard sur l&#039;une des adresses IP.&lt;/p&gt;
+
+&lt;h2&gt;Pourquoi faire du Round-robin entre auto-hébergés ?&lt;/h2&gt;
+
+&lt;p&gt;Voici quelques éléments de réponses :&lt;/p&gt;
+
+&lt;ul&gt;
+
+&lt;li&gt;Tisser un réseau social : ou dit autrement, c&#039;est de la coopération entre auto-hébergés&lt;/li&gt;
+
+&lt;li&gt;Créer un réseau technique : donner une visibilité dans les tuyaux à l&#039;auto-hébergement.&lt;/li&gt;
+
+&lt;li&gt;Avoir quelques statistiques sur l&#039;activité de l&#039;auto-hébergement en France. Une petite tâche cron pour envoyer les logs sur une même machine, &lt;a href=&quot;http://blog.taneleo.org/article17/webalizer-et-plusieurs-logs-pour-un-meme-site-avec-mergelog&quot;&gt;MergeLog&lt;/a&gt; pour n&#039;en faire qu&#039;un seul fichier, et Webalizer (ou autre) nous donnera de jolies stats.&lt;/li&gt;
+
+&lt;li&gt;Piéger les mauvais bots. Par exemple en créant un dossier /bidon/ avec pour règle Disallow dans le robots.txt, ainsi nous pourrions mutualiser la détection de bots pas assez regardants.&lt;/li&gt;
+
+&lt;li&gt;Et parce qu&#039;on a encore le droit de s&#039;amuser et de geeker un peu ;-)&lt;/li&gt;
+
+&lt;/ul&gt;
+
+&lt;p&gt;Cela permet aussi de mutualiser un peu la bande passante, et donner une idée d&#039;utilisation à ceux qui hésitent à s&#039;auto-héberger par peur de faire tourner un serveur pour pas grand chose.&lt;/p&gt;
+
+&lt;h2&gt;Quels contenus ?&lt;/h2&gt;
+
+&lt;p&gt;Uniquement du contenu statique léger. Typiquement, dans un premier temps, puisque la plupart des blogs auto-hébergés sont sous licence Creative Commons, pourquoi ne pas héberger les petits logos la représentant ? Ils font entre 1ko et 3ko, c&#039;est à dire presque rien.&lt;/p&gt;
+
+&lt;p&gt;On peut aussi créer un logo de toute pièce représentant l&#039;auto-hébergement, ou rien du tout. Ça n&#039;a guère d&#039;importance pour commencer, l&#039;important est de mettre la machine en route et de voir comment elle se comporte.&lt;/p&gt;
+
+&lt;h2&gt;Mise en place&lt;/h2&gt;
+
+&lt;p&gt;La seule contrainte technique est qu&#039;il faut indiquer une adresse IP pour le Round-robin (en plus d&#039;avoir un serveur toujours relié au réseau, cela va de soi). Ce qui veut dire que les IP dynamiques vont être un petit soucis. Du moins en apparence.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;http://blog.taneleo.org/article26/ip-dynamique-et-ovh-configuration-de-ddclient&quot;&gt;OVH sait jouer les DynDNS&lt;/a&gt;, donc on sait comment régler le soucis. Mais cela implique d&#039;avoir le nom de domaine chez eux et qu&#039;il soit géré par eux (est-ce un problème ?)&lt;/p&gt;
+
+&lt;p&gt;Ensuite, il ne reste plus qu&#039;a déterminer une arborescence que tout le monde devra respecter, typiquement :&lt;/p&gt;
+
+&lt;p class=&quot;shell&quot;&gt;
+static.rr-auto-heberge.tld&lt;br /&gt;
+                          /data/&lt;br /&gt;
+                          /data/image01.jpg&lt;br /&gt;
+                          /data/image02.jpg
+&lt;/p&gt;
+
+&lt;p&gt;Tout le monde devra bien sûr héberger le même contenu.&lt;/p&gt;
+
+&lt;p&gt;Par commodité, il faudra séparer les logs Web du Round-Robin des autres sites hébergés sur le même serveur : il faut un fichier log dédié.&lt;/p&gt;
+
+&lt;h2&gt;Ensuite ?&lt;/h2&gt;
+
+&lt;p&gt;Ensuite, nous n&#039;avons plus qu&#039;a mettre une des ces images sur nos sites, et le tour est joué !&lt;/p&gt;
+
+&lt;p&gt;Le service ne sera proposé que pour les auto-hébergés, même s&#039;il ne sera pas nécessaire de faire partie du Round-robin pour utiliser ce qu&#039;il héberge. Et pour les webmasters ou internautes indélicats ou ignorants, quelques directives Apache ou .htaccess devraient faire l&#039;affaire.&lt;/p&gt;
+
+&lt;p&gt;Voilà, si ça vous dit, on peut mettre ça en place. Il n&#039;y en a pas pour très longtemps en plus :-)&lt;/p&gt;</content>
+</entry>
+</feed>

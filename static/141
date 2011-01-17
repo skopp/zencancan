@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<rdf:RDF
+  xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+  xmlns:dc="http://purl.org/dc/elements/1.1/"
+  xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+  xmlns:admin="http://webns.net/mvcb/"
+  xmlns:content="http://purl.org/rss/1.0/modules/content/"
+  xmlns="http://purl.org/rss/1.0/">
+
+<channel rdf:about="http://www.jeuxadeux.com/index.php/">
+  <title>Jeux à Deux</title>
+  <description><![CDATA[Jeux de société pour deux joueurs]]></description>
+  <link>http://www.jeuxadeux.com/index.php/</link>
+  <dc:language>fr</dc:language>
+  <dc:creator></dc:creator>
+  <dc:rights></dc:rights>
+  <dc:date>2010-12-27T15:31:32+01:00</dc:date>
+  <admin:generatorAgent rdf:resource="http://www.dotclear.net/" />
+  
+  <sy:updatePeriod>daily</sy:updatePeriod>
+  <sy:updateFrequency>1</sy:updateFrequency>
+  <sy:updateBase>2010-12-27T15:31:32+01:00</sy:updateBase>
+  
+  <items>
+  <rdf:Seq>
+    <rdf:li rdf:resource="http://www.jeuxadeux.com/index.php/2010/12/27/614-les-jeux-de-societe-sur-ipad" />
+  <rdf:li rdf:resource="http://www.jeuxadeux.com/index.php/2010/12/27/615-aide-de-jeu-pour-qui-l-a-vu" />
+  <rdf:li rdf:resource="http://www.jeuxadeux.com/index.php/2010/12/22/613-ajout-de-cyberfab-et-a-la-carte" />
+  <rdf:li rdf:resource="http://www.jeuxadeux.com/index.php/2010/12/21/612-six-pieds-sous-terre-un-jeu-politiquement-incorrect" />
+  <rdf:li rdf:resource="http://www.jeuxadeux.com/index.php/2010/12/21/611-bottle-imp" />
+  <rdf:li rdf:resource="http://www.jeuxadeux.com/index.php/2010/12/20/610-versus-sur-iphone-ipad-gratuit-a-noel" />
+  <rdf:li rdf:resource="http://www.jeuxadeux.com/index.php/2010/12/07/609-recyclez-votre-vieux-monopoly" />
+  <rdf:li rdf:resource="http://www.jeuxadeux.com/index.php/2010/12/01/608-tricoda" />
+  <rdf:li rdf:resource="http://www.jeuxadeux.com/index.php/2010/11/28/607-london" />
+  <rdf:li rdf:resource="http://www.jeuxadeux.com/index.php/2010/11/26/606-pixel" />
+  </rdf:Seq>
+  </items>
+</channel>
+
+<item rdf:about="http://www.jeuxadeux.com/index.php/2010/12/27/614-les-jeux-de-societe-sur-ipad">
+  <title>Les jeux de société sur iPad</title>
+  <link>http://www.jeuxadeux.com/index.php/2010/12/27/614-les-jeux-de-societe-sur-ipad</link>
+  <dc:date>2010-12-27T15:31:32+01:00</dc:date>
+  <dc:language>fr</dc:language>
+  <dc:creator>Guillaume LEMERY</dc:creator>
+  <dc:subject>Jeux</dc:subject>
+  <description>La célèbre tablette d'Apple n'est sortie qu'au printemps 2010, mais elle a déjà su emporter l'adhésion de nombreux développeurs et éditeurs, y compris dans le jeu de société. La preuve en était donnée au salon d'Essen où l'iPad trônait fièrement sur quelques stands, moins de six mois...</description>
+  <content:encoded><![CDATA[La célèbre tablette d'Apple n'est sortie qu'au printemps 2010, mais elle a déjà su emporter l'adhésion de nombreux développeurs et éditeurs, y compris dans le jeu de société. La preuve en était donnée au salon d'Essen où l'iPad trônait fièrement sur quelques stands, moins de six mois...]]></content:encoded>
+</item>
+<item rdf:about="http://www.jeuxadeux.com/index.php/2010/12/27/615-aide-de-jeu-pour-qui-l-a-vu">
+  <title>Aide de jeu pour Qui l'a vu ?</title>
+  <link>http://www.jeuxadeux.com/index.php/2010/12/27/615-aide-de-jeu-pour-qui-l-a-vu</link>
+  <dc:date>2010-12-27T12:55:05+01:00</dc:date>
+  <dc:language>fr</dc:language>
+  <dc:creator>Guillaume LEMERY</dc:creator>
+  <dc:subject>Jeux pour enfants</dc:subject>
+  <description>Les enfants ont reçu à Noël Qui l'a vu ? de Reiner Knizia chez Ravensburger. C'est un bon jeu d'enquête coopératif pour enfants. Le déroulement du jeu est géré par le boîtier électronique du coffre. Malheureusement, le nombre d'informations à retenir est important pour des enfants et...</description>
+  <content:encoded><![CDATA[Les enfants ont reçu à Noël Qui l'a vu ? de Reiner Knizia chez Ravensburger. C'est un bon jeu d'enquête coopératif pour enfants. Le déroulement du jeu est géré par le boîtier électronique du coffre. Malheureusement, le nombre d'informations à retenir est important pour des enfants et...]]></content:encoded>
+</item>
+<item rdf:about="http://www.jeuxadeux.com/index.php/2010/12/22/613-ajout-de-cyberfab-et-a-la-carte">
+  <title>Ajout de CyberFab et A la carte</title>
+  <link>http://www.jeuxadeux.com/index.php/2010/12/22/613-ajout-de-cyberfab-et-a-la-carte</link>
+  <dc:date>2010-12-22T10:23:01+01:00</dc:date>
+  <dc:language>fr</dc:language>
+  <dc:creator>Guillaume LEMERY</dc:creator>
+  <dc:subject>Vie du site</dc:subject>
+  <description>Vous l'aurez remarqué (enfin, je l'espère), peu à peu, ce site reprend des couleurs. Petit à petit, je fais le ménage et dépoussière certaines parties.
+J'en profite également pour faire du neuf. Cela faisait un moment que je souhaitais étoffer mes liens sur les fiches de jeu vers d'autres...</description>
+  <content:encoded><![CDATA[Vous l'aurez remarqué (enfin, je l'espère), peu à peu, ce site reprend des couleurs. Petit à petit, je fais le ménage et dépoussière certaines parties.
+J'en profite également pour faire du neuf. Cela faisait un moment que je souhaitais étoffer mes liens sur les fiches de jeu vers d'autres...]]></content:encoded>
+</item>
+<item rdf:about="http://www.jeuxadeux.com/index.php/2010/12/21/612-six-pieds-sous-terre-un-jeu-politiquement-incorrect">
+  <title>Six pieds sous terre, un jeu politiquement incorrect qui fait du bien</title>
+  <link>http://www.jeuxadeux.com/index.php/2010/12/21/612-six-pieds-sous-terre-un-jeu-politiquement-incorrect</link>
+  <dc:date>2010-12-21T16:01:13+01:00</dc:date>
+  <dc:language>fr</dc:language>
+  <dc:creator>Guillaume LEMERY</dc:creator>
+  <dc:subject>Actu</dc:subject>
+  <description>Tout comme dans le cinéma où les jeux vidéo, le petit monde du jeu répond à quelques règles de bonnes conduites. Ainsi, certains thèmes décalés ou immoraux semblent être tabous. Mais nous, pauvres joueurs en avons parfois marre des fantômes, pirates et autres trains. Heureusement des...</description>
+  <content:encoded><![CDATA[Tout comme dans le cinéma où les jeux vidéo, le petit monde du jeu répond à quelques règles de bonnes conduites. Ainsi, certains thèmes décalés ou immoraux semblent être tabous. Mais nous, pauvres joueurs en avons parfois marre des fantômes, pirates et autres trains. Heureusement des...]]></content:encoded>
+</item>
+<item rdf:about="http://www.jeuxadeux.com/index.php/2010/12/21/611-bottle-imp">
+  <title>Bottle Imp</title>
+  <link>http://www.jeuxadeux.com/index.php/2010/12/21/611-bottle-imp</link>
+  <dc:date>2010-12-21T10:18:17+01:00</dc:date>
+  <dc:language>fr</dc:language>
+  <dc:creator>Guillaume LEMERY</dc:creator>
+  <dc:subject>Jeux</dc:subject>
+  <description>Après Code 777 il y a quelques semaines, je vous propose de (re)découvrir un jeu qui bénéficie d'une nouvelle édition. Il s'agit de Bottle Imp. Il s'agit de la version anglaise de Flaschenteufel / Le diable dans la bouteille,  un petit jeu de plis qui tourne assez bien à deux joueurs, tout...</description>
+  <content:encoded><![CDATA[Après Code 777 il y a quelques semaines, je vous propose de (re)découvrir un jeu qui bénéficie d'une nouvelle édition. Il s'agit de Bottle Imp. Il s'agit de la version anglaise de Flaschenteufel / Le diable dans la bouteille,  un petit jeu de plis qui tourne assez bien à deux joueurs, tout...]]></content:encoded>
+</item>
+<item rdf:about="http://www.jeuxadeux.com/index.php/2010/12/20/610-versus-sur-iphone-ipad-gratuit-a-noel">
+  <title>Versus sur iPhone/iPad gratuit à Noël</title>
+  <link>http://www.jeuxadeux.com/index.php/2010/12/20/610-versus-sur-iphone-ipad-gratuit-a-noel</link>
+  <dc:date>2010-12-20T13:02:37+01:00</dc:date>
+  <dc:language>fr</dc:language>
+  <dc:creator>Guillaume LEMERY</dc:creator>
+  <dc:subject>Actu</dc:subject>
+  <description>Les jeux de société sont fortement impactés par la révolution des tablets (iPad, Galaxy Tab et consorts). Un billet sur le sujet de cette déferlante est prévu très prochainement.
+En attendant, sachez que chez Asynchron Games, ils ont décidé de fêter Noël en beauté : pendant toute la...</description>
+  <content:encoded><![CDATA[Les jeux de société sont fortement impactés par la révolution des tablets (iPad, Galaxy Tab et consorts). Un billet sur le sujet de cette déferlante est prévu très prochainement.
+En attendant, sachez que chez Asynchron Games, ils ont décidé de fêter Noël en beauté : pendant toute la...]]></content:encoded>
+</item>
+<item rdf:about="http://www.jeuxadeux.com/index.php/2010/12/07/609-recyclez-votre-vieux-monopoly">
+  <title>Recyclez votre vieux Monopoly</title>
+  <link>http://www.jeuxadeux.com/index.php/2010/12/07/609-recyclez-votre-vieux-monopoly</link>
+  <dc:date>2010-12-07T12:57:56+01:00</dc:date>
+  <dc:language>fr</dc:language>
+  <dc:creator>Guillaume LEMERY</dc:creator>
+  <dc:subject>Actu</dc:subject>
+  <description>On a tous quelque part dans nos placards un vieux Monopoly (bien caché en général ;) ). Voici donc une suggestion pour réutiliser ce jeu et apporter une petite touche ludique à votre déco d'intérieur : cet article (en anglais, désolé) vous indique tout ce qu'il faut pour confectionner une...</description>
+  <content:encoded><![CDATA[On a tous quelque part dans nos placards un vieux Monopoly (bien caché en général ;) ). Voici donc une suggestion pour réutiliser ce jeu et apporter une petite touche ludique à votre déco d'intérieur : cet article (en anglais, désolé) vous indique tout ce qu'il faut pour confectionner une...]]></content:encoded>
+</item>
+<item rdf:about="http://www.jeuxadeux.com/index.php/2010/12/01/608-tricoda">
+  <title>Tricoda</title>
+  <link>http://www.jeuxadeux.com/index.php/2010/12/01/608-tricoda</link>
+  <dc:date>2010-12-01T16:09:15+01:00</dc:date>
+  <dc:language>fr</dc:language>
+  <dc:creator>Guillaume LEMERY</dc:creator>
+  <dc:subject>Jeux</dc:subject>
+  <description>Cette fin d'année voit l'arrivée de nombreuses rééditions de jeux sortis il y a quelques années. Voilà l'occasion pour nous de dépoussiérer un peu les fiches et de remettre un coup de projecteur sur ces perles parfois un peu oubliées sous l'avalanche des nouveautés permanentes......</description>
+  <content:encoded><![CDATA[Cette fin d'année voit l'arrivée de nombreuses rééditions de jeux sortis il y a quelques années. Voilà l'occasion pour nous de dépoussiérer un peu les fiches et de remettre un coup de projecteur sur ces perles parfois un peu oubliées sous l'avalanche des nouveautés permanentes......]]></content:encoded>
+</item>
+<item rdf:about="http://www.jeuxadeux.com/index.php/2010/11/28/607-london">
+  <title>London</title>
+  <link>http://www.jeuxadeux.com/index.php/2010/11/28/607-london</link>
+  <dc:date>2010-11-28T17:42:10+01:00</dc:date>
+  <dc:language>fr</dc:language>
+  <dc:creator>Guillaume LEMERY</dc:creator>
+  <dc:subject>Jeux</dc:subject>
+  <description>Sorti lors du salon d'Essen il y a tout juste un mois, London a tout de suite attiré mon attention car c'est un jeu de Martin Wallace jouable à deux et qui propose une durée de partie correcte (environ 90 minutes).
+Et il faut bien avouer qu'encore une fois, je ne suis pas déçu. Le jeu est bien...</description>
+  <content:encoded><![CDATA[Sorti lors du salon d'Essen il y a tout juste un mois, London a tout de suite attiré mon attention car c'est un jeu de Martin Wallace jouable à deux et qui propose une durée de partie correcte (environ 90 minutes).
+Et il faut bien avouer qu'encore une fois, je ne suis pas déçu. Le jeu est bien...]]></content:encoded>
+</item>
+<item rdf:about="http://www.jeuxadeux.com/index.php/2010/11/26/606-pixel">
+  <title>Pixel</title>
+  <link>http://www.jeuxadeux.com/index.php/2010/11/26/606-pixel</link>
+  <dc:date>2010-11-26T17:50:22+01:00</dc:date>
+  <dc:language>fr</dc:language>
+  <dc:creator>Guillaume LEMERY</dc:creator>
+  <dc:subject>Jeux</dc:subject>
+  <description>Malheureusement pour lui,  Pixel est jeu méconnu des joueurs. Pourtant, sous des airs très flashy, c'est un petit jeu d'alignement agréable, et parfait pour l'initiation des enfants à ce type de jeu.
+Alors que les fêtes approchent, voilà un choix intéressant...
+
+
+Voir la critique de Pixel...</description>
+  <content:encoded><![CDATA[Malheureusement pour lui,  Pixel est jeu méconnu des joueurs. Pourtant, sous des airs très flashy, c'est un petit jeu d'alignement agréable, et parfait pour l'initiation des enfants à ce type de jeu.
+Alors que les fêtes approchent, voilà un choix intéressant...
+
+
+Voir la critique de Pixel...]]></content:encoded>
+</item>
+
+</rdf:RDF>

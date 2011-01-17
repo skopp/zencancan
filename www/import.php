@@ -6,7 +6,7 @@ require_once("FeedSQL.class.php");
 
 $feedSQL = new FeedSQL($sqlQuery);
 $abonnementSQL = new AbonnementSQL($sqlQuery);
-$feedUpdater = new FeedUpdater($feedSQL);
+$feedUpdater = new FeedUpdater($feedSQL,STATIC_PATH);
 
 $recuperateur = new Recuperateur($_POST);
 $id = $recuperateur->get('id');

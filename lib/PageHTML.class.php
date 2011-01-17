@@ -15,7 +15,7 @@ class PageHTML {
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html>
 	<head>
-		<title>La gestion simple du suivie de commentaire - zenCancan </title>
+		<title>La gestion simple du suivie de site - zAgregator </title>
 		<meta name="description" content='La gestion simple du suivie de commentaire' />
 		
 		<link rel="stylesheet" type="text/css" href="zencancan.css" media="screen" />
@@ -25,7 +25,7 @@ class PageHTML {
 	</head>
 	<body>
 		<div id='header'>
-			<h1><a href='index.php?id=<?php echo $this->id ?>'>zenCancan</a></h1>
+			<h1><a href='index.php?id=<?php echo $this->id ?>'>zAgregator</a></h1>
 		</div>
 		
 		<div id='content'>
@@ -41,7 +41,7 @@ class PageHTML {
 		</div>
 		<div id='footer'>
 			<p class='temps'> 
-			Page générée par zenCancan en <?php echo round((microtime(true) - $this->debut) * 10000) / 10 ?>ms
+			Page générée par zAgregator en <?php echo round((microtime(true) - $this->debut) * 10000) / 10 ?>ms
 			</p>		
 		</div>
 	</body>

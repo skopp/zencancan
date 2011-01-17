@@ -1,0 +1,1063 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0">
+    <channel>
+        <title>zenProg</title>
+        <description>Programmez simplement</description>
+        <lastBuildDate>Sat, 15 Jan 2011 08:40:19 +0100</lastBuildDate>
+        <link>http://zenprog.com//</link>
+                <item>
+            <title>Expression rationnelle</title>
+            <description><![CDATA[
+            <p><img src='http://farm6.static.flickr.com/5208/5222835532_1a5f03e270_m.jpg' title='Théodore Géricault - Etude de pieds et de mains' style='float:right; padding:10px;' />
+Via le site Nexen, je tombe sur un <a href='http://www.tutorialcadet.com/10-useful-regex-patterns-for-php/'>billet</a> qui propose 10 expressions rationnelles <em>utiles</em>.
+
+
+<p>Effectivement, les <a href='http://fr.wikipedia.org/wiki/Expressions_rationnelles'>expressions rationnelles</a> sont parfois très utiles à condition :
+<ul><li> de les comprendre</li>
+<li> d'être vraiment sûr qu'il n'existe aucune autre manière de faire.</li>
+<li> d'essayer d'écrire l'expression de la manière la plus simple qui soit.</li>
+</ul>
+
+<br/>Je vais m'essayer au même exercice que l'auteur du billet ci-dessus uniquement sur les points où je suis en complet désaccord.
+
+
+<p></p><h3> Valider une chaîne entre 4 et 128 caractères </h3><p>
+
+
+
+
+
+
+	<div class='code'><pre><span style='display:inline; white-space:normal'><span class='t_variable'>$string</span> = <span class='t_constant_encapsed_string'>&quot;tutorial&quot;</span>; </span>
+<span style='display:inline; white-space:normal'><span class='t_keyword'>if</span> ( ! ( ( <span class='t_string'><a href='http://www.php.net/manual-lookup.php?pattern=strlen&lang=fr'  target='_blank' class='external_link'>strlen</a></span>(<span class='t_variable'>$string</span> ) <span class='t_keyword'>&gt;=</span> <span class='t_lnumber'>4</span> ) <span class='t_keyword'>&amp;&amp;</span> ( <span class='t_string'><a href='http://www.php.net/manual-lookup.php?pattern=strlen&lang=fr'  target='_blank' class='external_link'>strlen</a></span>(<span class='t_variable'>$string</span> ) <span class='t_keyword'>&lt;=</span> <span class='t_lnumber'>128</span> ) ) ) { </span>
+<span style='display:inline; white-space:normal'></span>&#9;<span style='display:inline; white-space:normal'><span class='t_keyword'>echo</span> <span class='t_constant_encapsed_string'>&#039;La cha&icirc;ne n&#039;</span><span class='t_string'>est</span> <span class='t_string'>pas</span> <span class='t_string'>valide</span>.<span class='t_keyword'>&#039;;} </span></pre>
+	</div>
+	
+
+
+<p></p><h3> Extraire le contenu d'un élement HTML </h3><p>
+
+
+	<div class='code'><pre><span style='display:inline; white-space:normal'><span class='t_string'><a href='http://www.php.net/manual-lookup.php?pattern=preg_match&lang=fr'  target='_blank' class='external_link'>preg_match</a></span>(<span class='t_constant_encapsed_string'>&#039;/&lt;style[^&gt;]*)?&gt;(.*)&lt;\/style\s*&gt;/&#039;</span>, <span class='t_variable'>$html</span>, <span class='t_variable'>$match</span>);</span>
+<span style='display:inline; white-space:normal'></pre>
+	</div>
+	
+
+<br/>Bien que mon expression soit plus simple (et sans doute plus juste), c'est toujours une mauvaise idée d'analyser du HTML avec une expression rationnelle. Je pense que le code suivant est plus correcte :
+
+
+
+
+
+
+
+
+
+
+
+	<div class='code'><pre><span style='display:inline; white-space:normal'><span class='t_variable'>$html</span> = <span class='t_constant_encapsed_string'>&#039;&lt;style class=&quot;sdfgsd&quot;&gt;this is the matched pattern&lt;/style&gt;&#039;</span>;</span>
+<span style='display:inline; white-space:normal'></span>
+<span style='display:inline; white-space:normal'><span class='t_variable'>$dom</span> = <span class='t_keyword'>new</span> <span class='t_string'>DOMDocument</span>();</span>
+<span style='display:inline; white-space:normal'><span class='t_variable'>$dom</span><span class='t_object_operator'>-&gt;</span><span class='t_string'>loadHTML</span>(<span class='t_variable'>$html</span>);</span>
+<span style='display:inline; white-space:normal'></span>
+<span style='display:inline; white-space:normal'><span class='t_variable'>$nodeList</span> = <span class='t_variable'>$dom</span><span class='t_object_operator'>-&gt;</span><span class='t_string'>getElementsByTagName</span>(<span class='t_constant_encapsed_string'>&quot;style&quot;</span>);</span>
+<span style='display:inline; white-space:normal'><span class='t_keyword'>if</span> (<span class='t_variable'>$nodeList</span><span class='t_object_operator'>-&gt;</span><span class='t_string'>length</span>){</span>
+<span style='display:inline; white-space:normal'></span>&#9;<span style='display:inline; white-space:normal'><span class='t_keyword'>echo</span> <span class='t_string'><a href='http://www.php.net/manual-lookup.php?pattern=strval&lang=fr'  target='_blank' class='external_link'>strval</a></span>(<span class='t_variable'>$nodeList</span><span class='t_object_operator'>-&gt;</span><span class='t_string'>item</span>(<span class='t_lnumber'>0</span>)<span class='t_object_operator'>-&gt;</span><span class='t_string'>nodeValue</span>);</span>
+<span style='display:inline; white-space:normal'>}</span>
+<span style='display:inline; white-space:normal'></pre>
+	</div>
+	
+
+
+<p></p><h3> Valider une URL </h3><p>
+Les très grosses expressions régulières sont souvent des <a href='http://en.wikipedia.org/wiki/Code_smell'>mauvaises odeurs de code</a>.
+
+
+
+	<div class='code'><pre><span style='display:inline; white-space:normal'><span class='t_string'><a href='http://www.php.net/manual-lookup.php?pattern=filter_var&lang=fr'  target='_blank' class='external_link'>filter_var</a></span>(<span class='t_variable'>$url</span>,<span class='t_string'>FILTER_VALIDATE_URL</span>);</span>
+<span style='display:inline; white-space:normal'></pre>
+	</div>
+	
+
+
+<p></p><h3> Valider un numéro de téléphone US </h3><p>
+Pour celui-ci et tous ceux qui suivent, j'ai horreur qu'un site fasse ca : qu'il enregistre ou affiche le numéro suivant un masque, ok, mais qu'il se permette de m'imposer sa vision
+du formatage, je ne suis pas d'accord !
+
+<br/>Néanmoins, les expressions présentent aussi des problèmes de complexités
+
+
+
+
+
+
+
+	<div class='code'><pre><span style='display:inline; white-space:normal'><span class='t_variable'>$phonenumber</span> = <span class='t_constant_encapsed_string'>&#039;333-333-3333&#039;</span>;</span>
+<span style='display:inline; white-space:normal'> </span>
+<span style='display:inline; white-space:normal'><span class='t_keyword'>if</span>(<span class='t_string'><a href='http://www.php.net/manual-lookup.php?pattern=preg_match&lang=fr'  target='_blank' class='external_link'>preg_match</a></span>(<span class='t_constant_encapsed_string'>&quot;/^[0-9]{3}-[0-9]{3}-[0-9]{4}$/&quot;</span>, <span class='t_variable'>$phonenumber</span>)) {</span>
+<span style='display:inline; white-space:normal'></span>&#9;<span style='display:inline; white-space:normal'><span class='t_keyword'>echo</span> <span class='t_variable'>$phonenumber</span>;</span>
+<span style='display:inline; white-space:normal'>}</span>
+<span style='display:inline; white-space:normal'></pre>
+	</div>
+	
+
+
+<p>Les suivantes sont toutes calqués sur les même simplifications:
+
+
+
+
+
+
+	<div class='code'><pre><span style='display:inline; white-space:normal'></span>
+<span style='display:inline; white-space:normal'><span class='t_string'>XXX</span>{<span class='t_string'>y</span>,<span class='t_string'>y</span>} <span class='t_keyword'>==</span> <span class='t_string'>XXX</span>{<span class='t_string'>y</span>}</span>
+<span style='display:inline; white-space:normal'></span>
+<span style='display:inline; white-space:normal'><span class='t_string'>X</span>{<span class='t_lnumber'>1</span>,<span class='t_lnumber'>1</span>} <span class='t_keyword'>==</span> <span class='t_string'>X</span></span>
+<span style='display:inline; white-space:normal'></pre>
+	</div>
+	
+
+<p></p><h3> Valider une adresse IP </h3><p>
+Je vous conseille la page du manuel sur les <a href='http://www.php.net/manual/fr/filter.filters.validate.php'>filtres de validation</a>
+
+
+
+
+
+
+
+
+	<div class='code'><pre><span style='display:inline; white-space:normal'><span class='t_variable'>$ip</span> = <span class='t_constant_encapsed_string'>&#039;233.122.122.255&#039;</span>;</span>
+<span style='display:inline; white-space:normal'><span class='t_comment'>//$ip = &#039;fe80:0000:0000:0000:0204:61ff:fe9d:f156&#039;;</span></span>
+<span style='display:inline; white-space:normal'><span class='t_keyword'>if</span>(<span class='t_string'><a href='http://www.php.net/manual-lookup.php?pattern=filter_var&lang=fr'  target='_blank' class='external_link'>filter_var</a></span>(<span class='t_variable'>$ip</span>,<span class='t_string'>FILTER_VALIDATE_IP</span>)) {</span>
+<span style='display:inline; white-space:normal'></span>&#9;<span style='display:inline; white-space:normal'><span class='t_keyword'>echo</span> <span class='t_variable'>$ip</span>;</span>
+<span style='display:inline; white-space:normal'>}</span>
+<span style='display:inline; white-space:normal'></pre>
+	</div>
+	
+
+<p></p><h3> Conclusion </h3><p>
+Pour paraphraser ma grand-mère :
+
+<br/><blockquote>
+<em>Il faut toujours tourner 7 fois son expression rationnelle dans son éditeur avant de la publier.</em>
+</blockquote>
+N'hésitez pas à me faire appliquer ce principe pour ce billet. N'oublier pas que vous pouvez mettre du code dans les commentaires avec :
+<pre>
+[code:php]
+[/code]
+</pre>
+            ]]></description>
+            <pubDate>Sat, 15 Jan 2011 08:40:19 +0100</pubDate>
+            <link>http://zenprog.com//index.php?cle=Expression-rationnelle</link>
+        </item>
+                <item>
+            <title>Un cas d'utilisation possible des closures</title>
+            <description><![CDATA[
+            <p><img style='float: right; margin: 10px' src='http://upload.wikimedia.org/wikipedia/commons/thumb/d/dc/Jean-Honor%C3%A9_Fragonard_009.jpg/280px-Jean-Honor%C3%A9_Fragonard_009.jpg'  title='Jean-Honoré Fragonard - Le Verrou'  />
+
+<br/>PHP 5.3 a apporté quelques ajouts dans la grammaire du langage, comme <a href='http://www.php.net/manual/fr/language.namespaces.php'>les  espaces de noms</a>, l'opérateur ?:,
+et <a href='http://www.php.net/manual/fr/migration53.new-features.php'>pleins d'autres</a>.
+
+
+<p>Un ajout important est celui des <a href='http://www.php.net/manual/fr/functions.anonymous.php'>fonctions anonymes</a>
+(ou fermeture, ou closure en Anglais), qui rappel peut-être à certain le bon vieux temps du <a href='http://fr.wikipedia.org/wiki/LISP'>Lots of Insipid and Stupid Parentheses</a>.
+
+
+<p>Attention, ce billet est assez technique. Ce <em>n'est pas</em> un cours sur les fonctions anonymes, si vous ne savez pas ce que c'est, la documentation de PHP est probablement le meilleur endroit pour commencer.
+
+<br/>Dans ce billet, je vais décrire un problème, puis je vais essayer de découvrir si l'utilisation d'une fonction anonyme apporte un avantage quelconque à la résolution de celui-ci.
+
+<br/></p><h3> Le problème </h3><p>
+
+<br/>Lorsque l'on utilise <a href='http://www.php.net/manual/fr/book.pdo.php'>PDO</a> (c'est bien), la connexion à la base de données est effectuée dans le constructeur de la classe (c'est mal).
+
+
+
+	<div class='code'><pre><span style='display:inline; white-space:normal'><span class='t_variable'>$pdo</span> = <span class='t_keyword'>new</span> <span class='t_string'>PDO</span>(<span class='t_constant_encapsed_string'>&quot;mysql:dbname=zenblog&quot;</span>);</span>
+<span style='display:inline; white-space:normal'></pre>
+	</div>
+	
+
+<p>Il serait moins couteux de se connecter à la base de données lors de la première requête. Ainsi, si la page n'a pas de requête à faire, il n'y a pas de connexion.
+
+<br/>Dans <a href='http://zenprog.com/index.php?cle=un-logiciel-de-blog'>zenBlog</a>,
+je traite ce cas dans la classe <a href='http://source.zenprog.com/zenblog/lib/SQLQuery.class.php'>SQLQuery</a>.
+Toutefois, cette classe ne permet pas d'utiliser complètement l'objet PDO.
+
+<br/>Ce problème m'a été soufflé par Savageman sur un <a href='http://zenprog.com/index.php?cle=Critique-du-design-pattern-singleton#10'>commentaire</a> d'un
+<a href='http://zenprog.com/index.php?cle=Critique-du-design-pattern-singleton'>précédent billet</a>.
+
+
+<p></p><h3> Une solution avec une fonction anonyme </h3><p>
+
+
+
+
+
+
+
+
+
+
+	<div class='code'><pre><span style='display:inline; white-space:normal'></span>
+<span style='display:inline; white-space:normal'><span class='t_variable'>$getPDO</span> = <span class='t_keyword'>function</span>() <span class='t_keyword'>use</span> (<span class='t_variable'>$dsn</span>,<span class='t_variable'>$login</span>,<span class='t_variable'>$password</span>) {</span>
+<span style='display:inline; white-space:normal'></span>&#9;<span style='display:inline; white-space:normal'><span class='t_keyword'>static</span> <span class='t_variable'>$PDO</span>;</span>
+<span style='display:inline; white-space:normal'></span>&#9;<span style='display:inline; white-space:normal'><span class='t_keyword'>if</span> ( ! <span class='t_variable'>$PDO</span>) {</span>
+<span style='display:inline; white-space:normal'></span>&#9;<span style='display:inline; white-space:normal'></span>&#9;<span style='display:inline; white-space:normal'><span class='t_variable'>$PDO</span> = <span class='t_keyword'>new</span> <span class='t_string'>PDO</span>(<span class='t_variable'>$dsn</span>,<span class='t_variable'>$login</span>,<span class='t_variable'>$password</span>);</span>&#9;<span style='display:inline; white-space:normal'></span>
+<span style='display:inline; white-space:normal'></span>&#9;<span style='display:inline; white-space:normal'>}</span>
+<span style='display:inline; white-space:normal'></span>&#9;<span style='display:inline; white-space:normal'><span class='t_keyword'>return</span> <span class='t_variable'>$PDO</span>;</span>
+<span style='display:inline; white-space:normal'>};</span>
+<span style='display:inline; white-space:normal'></span>
+<span style='display:inline; white-space:normal'></pre>
+	</div>
+	
+
+<br/>Attention, $dsn, $login et $password doivent être définies dans la portée de la fonction lors de la <b>définition</b> de celle-ci.
+
+<br/>L'utilisation est ensuite très simple :
+
+
+
+	<div class='code'><pre><span style='display:inline; white-space:normal'><span class='t_variable'>$getPDO</span> ()<span class='t_object_operator'>-&gt;</span><span class='t_string'>query</span>(<span class='t_constant_encapsed_string'>&quot;SELECT * FROM billet&quot;</span>);</span>
+<span style='display:inline; white-space:normal'></pre>
+	</div>
+	
+
+<p>Cela se complique un peu dans les objets :
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	<div class='code'><pre><span style='display:inline; white-space:normal'></span>
+<span style='display:inline; white-space:normal'><span class='t_keyword'>class</span> <span class='t_string'>BilletSQL</span> {</span>
+<span style='display:inline; white-space:normal'></span>&#9;<span style='display:inline; white-space:normal'><span class='t_keyword'>private</span> <span class='t_variable'>$getPDO</span>;</span>
+<span style='display:inline; white-space:normal'></span>&#9;<span style='display:inline; white-space:normal'><span class='t_keyword'>public</span> <span class='t_keyword'>function</span> <span class='t_string'>__construct</span>(<span class='t_string'>Closure</span> <span class='t_variable'>$getPDO</span>){</span>
+<span style='display:inline; white-space:normal'></span>&#9;<span style='display:inline; white-space:normal'></span>&#9;<span style='display:inline; white-space:normal'><span class='t_variable'>$this</span><span class='t_object_operator'>-&gt;</span><span class='t_string'>getPDO</span> = <span class='t_variable'>$getPDO</span>;</span>&#9;<span style='display:inline; white-space:normal'></span>
+<span style='display:inline; white-space:normal'></span>&#9;<span style='display:inline; white-space:normal'>}</span>
+<span style='display:inline; white-space:normal'></span>
+<span style='display:inline; white-space:normal'></span>&#9;<span style='display:inline; white-space:normal'><span class='t_keyword'>public</span> <span class='t_keyword'>function</span> <span class='t_string'>getAll</span>(){</span>
+<span style='display:inline; white-space:normal'></span>&#9;<span style='display:inline; white-space:normal'></span>&#9;<span style='display:inline; white-space:normal'><span class='t_variable'>$pdo</span> = <span class='t_variable'>$this</span><span class='t_object_operator'>-&gt;</span><span class='t_string'>getPDO</span>;</span>
+<span style='display:inline; white-space:normal'></span>&#9;<span style='display:inline; white-space:normal'></span>&#9;<span style='display:inline; white-space:normal'><span class='t_keyword'>return</span> <span class='t_variable'>$pdo</span>()<span class='t_object_operator'>-&gt;</span><span class='t_string'>query</span>(<span class='t_constant_encapsed_string'>&quot;SELECT * FROM billet&quot;</span>);</span>
+<span style='display:inline; white-space:normal'></span>&#9;<span style='display:inline; white-space:normal'>}</span>
+<span style='display:inline; white-space:normal'>}</span>
+<span style='display:inline; white-space:normal'></span>
+<span style='display:inline; white-space:normal'><span class='t_variable'>$billetSQL</span> = <span class='t_keyword'>new</span> <span class='t_string'>BilletSQL</span>(<span class='t_variable'>$getPDO</span>);</span>
+<span style='display:inline; white-space:normal'><span class='t_variable'>$billetSQL</span><span class='t_object_operator'>-&gt;</span><span class='t_string'>getAll</span>();</span>
+<span style='display:inline; white-space:normal'></pre>
+	</div>
+	
+
+
+<p>Quelques points :
+<ul><li>Je ne suis pas obligé de trimballer les arguments du constructeur de PDO partout, c'est le gros avantage du <em>use</em>.</li>
+<li>J'ai un certain contrôle sur ce qui est passé au constructeur de BilletSQL.</li>
+<li>Il y a une dépendance cachée importante : rien ne permet de savoir que la fonction getPDO doit renvoyer un objet PDO. Il n'est même pas possible de le tester avant d'appeler la fonction.</li>
+<li>La classe 'Closure' est utilisée en interne par l'interpréteur PHP, rien ne me dis que les futurs implémentations de PHP l'utiliserons. Néanmoins, il faut bien que je marque le fait que le constructeur attend une fonction anonyme ...</li>
+<li>Des <a href='http://www.ruby-lang.org/fr/'>gens méchants</a> vont encore me dire que PHP est un langage de m... car je ne peux pas écrire : </li>
+
+
+	<div class='code'><pre><span style='display:inline; white-space:normal'> <span class='t_variable'>$this</span><span class='t_object_operator'>-&gt;</span><span class='t_string'>getPDO</span>()<span class='t_object_operator'>-&gt;</span><span class='t_string'>query</span>(<span class='t_constant_encapsed_string'>&quot;SELECT * FROM billet&quot;</span>);</span>
+<span style='display:inline; white-space:normal'></pre>
+	</div>
+	
+</ul>
+
+<br/>On noteras que les fonctions anonymes sont une véritable amélioration du langage. Pour s'en convaincre, il suffit d'essayer d'implémenter la même chose en utilisant les <a href='http://php.net/manual/fr/functions.variable-functions.php'>fonctions variables</a>.
+
+<br/></p><h3> Une solution en programmation orientée objet </h3><p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	<div class='code'><pre><span style='display:inline; white-space:normal'><span class='t_keyword'>class</span> <span class='t_string'>DBConnect</span> {</span>
+<span style='display:inline; white-space:normal'></span>&#9;<span style='display:inline; white-space:normal'><span class='t_keyword'>private</span> <span class='t_variable'>$pdo</span>;</span>
+<span style='display:inline; white-space:normal'></span>&#9;<span style='display:inline; white-space:normal'></span>
+<span style='display:inline; white-space:normal'></span>&#9;<span style='display:inline; white-space:normal'><span class='t_keyword'>public</span> <span class='t_keyword'>function</span> <span class='t_string'>__construct</span>(<span class='t_variable'>$dsn</span>,<span class='t_variable'>$login</span>,<span class='t_variable'>$password</span>){</span>
+<span style='display:inline; white-space:normal'></span>&#9;<span style='display:inline; white-space:normal'></span>&#9;<span style='display:inline; white-space:normal'><span class='t_variable'>$this</span><span class='t_object_operator'>-&gt;</span><span class='t_string'>dsn</span> = <span class='t_variable'>$dsn</span>;</span>
+<span style='display:inline; white-space:normal'></span>&#9;<span style='display:inline; white-space:normal'></span>&#9;<span style='display:inline; white-space:normal'><span class='t_variable'>$this</span><span class='t_object_operator'>-&gt;</span><span class='t_string'>login</span> = <span class='t_variable'>$login</span>;</span>
+<span style='display:inline; white-space:normal'></span>&#9;<span style='display:inline; white-space:normal'></span>&#9;<span style='display:inline; white-space:normal'><span class='t_variable'>$this</span><span class='t_object_operator'>-&gt;</span><span class='t_string'>password</span> = <span class='t_variable'>$password</span>;</span>
+<span style='display:inline; white-space:normal'></span>&#9;<span style='display:inline; white-space:normal'>}</span>
+<span style='display:inline; white-space:normal'></span>&#9;<span style='display:inline; white-space:normal'></span>
+<span style='display:inline; white-space:normal'></span>&#9;<span style='display:inline; white-space:normal'><span class='t_keyword'>public</span> <span class='t_keyword'>function</span> <span class='t_string'>getPDO</span>(){</span>
+<span style='display:inline; white-space:normal'></span>&#9;<span style='display:inline; white-space:normal'></span>&#9;<span style='display:inline; white-space:normal'><span class='t_keyword'>if</span> ( ! <span class='t_variable'>$this</span><span class='t_object_operator'>-&gt;</span><span class='t_string'>pdo</span>) {</span>
+<span style='display:inline; white-space:normal'></span>&#9;<span style='display:inline; white-space:normal'></span>&#9;<span style='display:inline; white-space:normal'></span>&#9;<span style='display:inline; white-space:normal'><span class='t_variable'>$this</span><span class='t_object_operator'>-&gt;</span><span class='t_string'>pdo</span> = <span class='t_keyword'>new</span> <span class='t_string'>PDO</span>(<span class='t_variable'>$this</span><span class='t_object_operator'>-&gt;</span><span class='t_string'>dsn</span>,<span class='t_variable'>$this</span><span class='t_object_operator'>-&gt;</span><span class='t_string'>login</span>,<span class='t_variable'>$this</span><span class='t_object_operator'>-&gt;</span><span class='t_string'>password</span>);</span>&#9;<span style='display:inline; white-space:normal'></span>
+<span style='display:inline; white-space:normal'></span>&#9;<span style='display:inline; white-space:normal'></span>&#9;<span style='display:inline; white-space:normal'>}</span>
+<span style='display:inline; white-space:normal'></span>&#9;<span style='display:inline; white-space:normal'></span>&#9;<span style='display:inline; white-space:normal'><span class='t_keyword'>return</span> <span class='t_variable'>$this</span><span class='t_object_operator'>-&gt;</span><span class='t_string'>pdo</span>;</span>
+<span style='display:inline; white-space:normal'></span>&#9;<span style='display:inline; white-space:normal'>}</span>
+<span style='display:inline; white-space:normal'>}</span>
+<span style='display:inline; white-space:normal'></pre>
+	</div>
+	
+
+<p>L'utilisation :
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	<div class='code'><pre><span style='display:inline; white-space:normal'></span>
+<span style='display:inline; white-space:normal'><span class='t_keyword'>class</span> <span class='t_string'>BilletSQL</span> {</span>
+<span style='display:inline; white-space:normal'></span>&#9;<span style='display:inline; white-space:normal'><span class='t_keyword'>private</span> <span class='t_variable'>$dbConnect</span>;</span>
+<span style='display:inline; white-space:normal'></span>&#9;<span style='display:inline; white-space:normal'><span class='t_keyword'>public</span> <span class='t_keyword'>function</span> <span class='t_string'>__construct</span>(<span class='t_string'>DBConnect</span> <span class='t_variable'>$dbConnect</span>){</span>
+<span style='display:inline; white-space:normal'></span>&#9;<span style='display:inline; white-space:normal'></span>&#9;<span style='display:inline; white-space:normal'><span class='t_variable'>$this</span><span class='t_object_operator'>-&gt;</span><span class='t_string'>dbConnect</span> = <span class='t_variable'>$dbConnect</span>;</span>&#9;<span style='display:inline; white-space:normal'></span>
+<span style='display:inline; white-space:normal'></span>&#9;<span style='display:inline; white-space:normal'>}</span>
+<span style='display:inline; white-space:normal'></span>
+<span style='display:inline; white-space:normal'></span>&#9;<span style='display:inline; white-space:normal'><span class='t_keyword'>public</span> <span class='t_keyword'>function</span> <span class='t_string'>getAll</span>(){</span>
+<span style='display:inline; white-space:normal'></span>&#9;<span style='display:inline; white-space:normal'></span>&#9;<span style='display:inline; white-space:normal'><span class='t_keyword'>return</span> <span class='t_variable'>$this</span><span class='t_object_operator'>-&gt;</span><span class='t_string'>dbConnect</span><span class='t_object_operator'>-&gt;</span><span class='t_string'>getPDO</span>()<span class='t_object_operator'>-&gt;</span><span class='t_string'>query</span>(<span class='t_constant_encapsed_string'>&quot;SELECT * FROM billet&quot;</span>);</span>
+<span style='display:inline; white-space:normal'></span>&#9;<span style='display:inline; white-space:normal'>}</span>
+<span style='display:inline; white-space:normal'>}</span>
+<span style='display:inline; white-space:normal'></span>
+<span style='display:inline; white-space:normal'><span class='t_variable'>$dbConnect</span> = <span class='t_keyword'>new</span> <span class='t_string'>DBConnect</span>(<span class='t_variable'>$dsn</span>,<span class='t_variable'>$login</span>,<span class='t_variable'>$password</span>);</span>
+<span style='display:inline; white-space:normal'></span>
+<span style='display:inline; white-space:normal'><span class='t_variable'>$billetSQL</span> = <span class='t_keyword'>new</span> <span class='t_string'>BilletSQL</span>(<span class='t_variable'>$dbConnect</span>);</span>
+<span style='display:inline; white-space:normal'><span class='t_variable'>$billetSQL</span><span class='t_object_operator'>-&gt;</span><span class='t_string'>getAll</span>();</span>
+<span style='display:inline; white-space:normal'></pre>
+	</div>
+	
+
+<br/>Quelque points :
+<ul><li>La dépendance à été explicités, de ce coté, c'est mieux, il n'est pas possible de passer autre chose qu'un DBConnect au constructeur de BilletSQL</li>
+<li>On sens que l'objet BilletSQL a envie d'être un objet DBConnect : il viole la <a href='http://fr.wikipedia.org/wiki/Loi_de_Demeter'>loi de Demeter</a>.</li>
+<li>Le code est plus lourd (comme souvent) en POO qu'avec des fonctions anonymes.</li>
+</ul>
+</p><h3> Conclusion </h3><p>
+Il existe donc au moins un avantage à utiliser une fonction anonyme : le code est plus concis et de ce fait, il est plus simple à comprendre.
+Malheureusement, on obtient également un code moins explicite.
+
+<br/>On peut s'en sortir, sans les honneurs, en mettant un commentaire (beark):
+
+
+
+
+
+
+
+
+
+
+	<div class='code'><pre><span style='display:inline; white-space:normal'></span>
+<span style='display:inline; white-space:normal'><span class='t_keyword'>class</span> <span class='t_string'>BilletSQL</span> {</span>
+<span style='display:inline; white-space:normal'></span>&#9;<span style='display:inline; white-space:normal'><span class='t_keyword'>private</span> <span class='t_variable'>$getPDO</span>;</span>
+<span style='display:inline; white-space:normal'></span>
+<span style='display:inline; white-space:normal'></span>&#9;<span style='display:inline; white-space:normal'><span class='t_comment'>//getPDO doit renvoyer un objet de type PDO</span></span>
+<span style='display:inline; white-space:normal'></span>&#9;<span style='display:inline; white-space:normal'><span class='t_keyword'>public</span> <span class='t_keyword'>function</span> <span class='t_string'>__construct</span>(<span class='t_string'>Closure</span> <span class='t_variable'>$getPDO</span>){</span>
+<span style='display:inline; white-space:normal'></span>&#9;<span style='display:inline; white-space:normal'></span>&#9;<span style='display:inline; white-space:normal'><span class='t_variable'>$this</span><span class='t_object_operator'>-&gt;</span><span class='t_string'>getPDO</span> = <span class='t_variable'>$getPDO</span>;</span>&#9;<span style='display:inline; white-space:normal'></span>
+<span style='display:inline; white-space:normal'></span>&#9;<span style='display:inline; white-space:normal'>}</span>
+<span style='display:inline; white-space:normal'></pre>
+	</div>
+	
+
+<br/>Vivement le jour ou PHP permettra de typer le retour des fonctions ....
+            ]]></description>
+            <pubDate>Thu, 13 Jan 2011 10:19:31 +0100</pubDate>
+            <link>http://zenprog.com//index.php?cle=Un-cas-d'utilisation-possible-des-closures</link>
+        </item>
+                <item>
+            <title>Critique de l'email</title>
+            <description><![CDATA[
+            <p><img src='http://upload.wikimedia.org/wikipedia/commons/thumb/2/21/Johannes_Vermeer_-_A_lady_writing_%28c_1665-1666%29.jpg/108px-Johannes_Vermeer_-_A_lady_writing_%28c_1665-1666%29.jpg' title="Johannes Vermeer - Jeune Femme écrivant une lettre" style='float:left; padding:10px'  />
+
+<br/>L'email est probablement une des technologie qui a le plus révolutionné le quotidien lors de ces 15 dernières années. Pourtant, l'email est loin de ne pas présenter de défaut majeur. Certain commencent à penser que l'email va bientôt disparaitre. Je ne suis pas loin d'en faire partie. Voici pourquoi.
+
+<br/></p><h3> Retour vers le futur </h3><p>
+Remontons 20 ans en arrière. Nous somme en 1990. J'ai un <a href='http://fr.wikipedia.org/wiki/Amstrad_CPC_464'>Amstrad CPC 464</a>, il n'est pas relié à l'Internet.... Voici, pour nos jeunes amis, comment se passait l'échange d'information :
+
+<br/><ul><li>j'écris une longue lettre de 3 pages à un correspondant, en oubliant rien de ce que je dois lui dire ;</li>
+<li>je me rend a la boite au lettre la plus proche de chez moi pour y déposer la lettre ;</li>
+<li>2 à 3 jours plus tard, mon correspondant reçois la lettre ;</li>
+<li>il se fend d'une réponse également très longue ;</li>
+<li>il la poste ;</li>
+<li>2 à 3 jours plus tard, je reçois la réponse ;</li>
+<li> le cycle recommence.</li>
+</ul>
+Le temps de l'aller-retour est de l'ordre de la semaine. J'ai intérêt à ne rien oublier et donc, à faire des lettres de trois pages !
+
+
+<p>Avançons de 10 ans. Nous sommes en 2000, j'utilise un PC avec un <a href='http://fr.wikipedia.org/wiki/Intel_P5'>Intel Pentium</a>
+et un <a href='http://en.wikipedia.org/wiki/56k_modem'>modem 56K</a> qui me permet d'aller sur Internet pour le prix d'une communication locale.
+<ul><li>J'écris un mail assez long.</li>
+<li>La prochaine fois que je me connecte, mon logiciel enverras mon mail.</li>
+<li>Le mail passe par les serveurs de mon FAI jusqu'aux serveurs du FAI du destinataire.</li>
+<li>La prochaine fois que le destinataire se connectera à Internet sur sa machine, il recevra mon mail !</li>
+</ul>
+Le temps de l'aller-retour est maintenant de l'ordre de la journée. Au fur et à mesure du temps qui passe, diverses avancés permettent :
+<ul><li>de faire diminuer le temps de l'aller-retour ;</li>
+<li>de faire mécaniquement diminuer la taille des mails ! Je n'ai plus peur d'oublier des choses, au contraire, diviser une conversation permet de rendre les choses plus simples.</li>
+</ul>
+Parmi les avancées, citons : l'ADSL, IMAP, le webmail, les conversations, l'internet 3G, etc...
+
+
+<p>Aujourd'hui : j'utilise un PC avec un AMD64, un portable Intel Centino, une Samsumg Galaxy Tab, le tout relié en permanence à une une box ADSL, ou au réseau 3G+....
+
+<br/><ul><li>J'envoie un lien sur ma page Facebook ;</li>
+<li>mon correspondant commente par un chef-d'œuvre de poésie : "Lol".</li>
+</ul>
+Le temps de l'aller-retour est de l'ordre de la seconde...
+
+<br/></p><h3> Exemple de conversation </h3><p>
+La situation précédente n'était pas réelle : Facebook c'est le diable : je ne l'utilise pas. J'essaye donc  d'utiliser le mail, comme si c'était un mur Facebook :
+
+<br/>Voici ce que ca donne (cliquer pour agrandir):
+<center>
+<a href='http://zenprog.com/static/Shie8Ra8al4aebae.png' ><img src='static/mail_pb1_mini.png' style='border-width: 0' /></a>
+</center>
+
+<br/>Que de choses inutiles sur cette page. Tout est embrouillé :
+<ul><li> un système grotesque ajoute une signature 5 fois grosse comme le messages à chaque échange ;</li>
+<li> on répond au dessus, et on supprime ou pas le message précédent ;</li>
+<li> ici, j'ai un système qui gère les conversations, sinon, les messages seraient dispersés (et  inutiles de toute manière , car tous le contenu utile est présent dans le dernier mail) ;</li>
+<li> les mails sont en HTML, ce qui est parfaitement superflu.</li>
+</ul>
+Voici la même conversation sur un système de type mur (cliquez pour agrandir):
+<center>
+<a href='http://zenprog.com/static/EiC3Ia7gohtaeche.png' ><img src='static/mail_pb2_mini.png' style='border-width: 0' /></a>
+</center>
+
+
+<p>Et après, on ira se demander pourquoi les jeunes préfèrent Facebook au mail ....
+
+<br/>L'email n'est pas adapté pour créer et suivre des conversations. Les systèmes à la Gmail sont d'excellentes béquilles, mais ils n'arriveront jamais à avoir la simplicité d'une conversation "mur".
+
+<br/></p><h3> La face cachée </h3><p>
+Les deux images ne montrent que la face visible de l'iceberg : la vue de l'utilisateur. Au niveau outils et protocoles réseaux, c'est encore bien pire :
+
+<br/>Exemple de cheminement des informations via l'email :
+<ul><li> Firefox </li>
+<li> HTTP/HTML</li>
+<li> LAMP </li>
+<li> IMAP/POP/MIME</li>
+<li> Postfix</li>
+<li> SMTP</li>
+<li> MS Exchange </li>
+<li> IMAP/POP/autre</li>
+<li> Outlook</li>
+</ul>
+Exemple de cheminement des information pour un mur
+<ul><li> Firefox </li>
+<li> LAMP </li>
+<li> HTTP/autre</li>
+<li> LAMP</li>
+<li>Firefox </li>
+</ul>
+</p><h3> Yapuka, Yfocon </h3><p>
+Il ne reste donc plus qu'a faire une application open source qui permet de gérer les murs ...
+            ]]></description>
+            <pubDate>Tue, 11 Jan 2011 10:14:35 +0100</pubDate>
+            <link>http://zenprog.com//index.php?cle=Critique-de-l-email</link>
+        </item>
+                <item>
+            <title>DBDiff : voir les différences entre base de données</title>
+            <description><![CDATA[
+            <p><img src='http://upload.wikimedia.org/wikipedia/commons/thumb/8/83/Jean-Fran%C3%A7ois_Millet_-_L%27Ang%C3%A9lus.jpg/280px-Jean-Fran%C3%A7ois_Millet_-_L%27Ang%C3%A9lus.jpg' title="Jean-François Millet - L'Angélus" style='float:left; padding:10px' height='150px'  />
+<img src='http://www.photosmarval.org/images/peintres/surrealisme/salvador-dali-10.jpg' height='150px' style='float:right; padding:10px' title="Salvador Dali - L'Angélus" />
+Un des problèmes récurent lors de développement web est de savoir si la base de données d'un site est bien à jour : il est si facile d'ajouter un champs ou un index via PHPMyAdmin et tout autant facile de l'oublier lors de la livraison...
+
+
+
+<p></p><h3> Présentation </h3><p>
+<a href='http://soft.zenprog.com/DBDiff.tar.gz'>DBDiff</a> est un petit outil (12 fichiers et 687 lignes de PHP) présentant une bibliothèque, un script et une page web permettant :
+<ul><li> se connecter à une base de données pour en obtenir une définition canonique</li>
+<li> lire un fichier de définition canonique et produire un script SQL de génération d'une base qui respecte cette définition canonique</li>
+<li> lire un fichier de définition canonique, se connecter à une base de données et afficher un script SQL qui permet de modifier la base pour qu'elle respecte la définition canonique.</li>
+</ul>
+
+<br/>Ce qui donne via la ligne de commande  :
+<ul><li> php dbupdate.php -d ma_base > ma_base.def</li>
+<li> php dbupdate.php < ma_base.def</li>
+
+
+	<div class='code'><pre><span style='display:inline; white-space:normal'><span class='t_string'>CREATE</span> <span class='t_string'>TABLE</span> <span class='t_string'>ma_table</span> ( ...</span>
+<span style='display:inline; white-space:normal'></pre>
+	</div>
+	
+<li> php dbupdate.php -d ma_base < ma_base.def</li>
+
+
+
+	<div class='code'><pre><span style='display:inline; white-space:normal'><span class='t_string'>ALTER</span> <span class='t_string'>ma_table</span> <span class='t_string'>ADD</span> <span class='t_string'>UNIQUE</span> <span class='t_string'>INDEX</span> <span class='t_string'>mon_index</span> (<span class='t_constant_encapsed_string'>&#039;id_ma_table&#039;</span>);</span>
+<span style='display:inline; white-space:normal'>....</span>
+<span style='display:inline; white-space:normal'></pre>
+	</div>
+	
+</ul>
+
+
+<p>La bibliothèque et la page web sont prévues pour être inséré dans n'importe quel projet qui souhaite valider la cohérence de la définition de la base de données.
+
+<br/></p><h3> Limitation </h3><p>
+Pour le moment, le script ne gère que MySQL, mais il est possible d'étendre pour n'importe quel type de base qui permet de faire un minimum d'introspection.
+
+
+<p>Le script se limite également aux tables et aux index, il ne gère donc pas les vues, les procédures stockées et les clés étrangères (entre autres)
+
+
+<p></p><h3>Téléchargement </h3><p>
+<a href='http://soft.zenprog.com/DBDiff.tar.gz'>Télécharger DBDiff</a>
+            ]]></description>
+            <pubDate>Thu, 06 Jan 2011 08:09:24 +0100</pubDate>
+            <link>http://zenprog.com//index.php?cle=DBDiff---voir-les-differences-entre-base-de-donnees</link>
+        </item>
+                <item>
+            <title>Les frameworks</title>
+            <description><![CDATA[
+            <p><img src='http://upload.wikimedia.org/wikipedia/commons/thumb/d/de/Martyre_de_saint_Andr%C3%A9_par_Rubens.jpg/424px-Martyre_de_saint_Andr%C3%A9_par_Rubens.jpg' title='Pierre-Paul Rubens - Le Martyre de Saint André'
+height='200' style='float:left; padding: 10px'
+/>
+
+<br/>HeadCoder nous propose un <a href='http://www.coding-by-head.tk/pourquoi-le-framework-est-synonyme-du-mal'>billet intéressant</a> sur les frameworks.
+
+
+<p>Un blog sur la programmation simple est bien sûr contre l'utilisation des frameworks ;-)
+
+
+<p></p><h3> Faut-il recoder Apache pour être contre les FW ? </h3><p>
+La critique qui revient la plus souvent quand on se déclare "contre" les frameworks est : Tu n'as qu'a recoder PHP, Apache, le système d'exploitation, allez chercher du sable sur la plage pour fabriquer des <a href='http://fr.wikipedia.org/wiki/Semi-conducteur'>semi-conducteurs</a>.
+
+
+<p>Cette critique n'est pas du tout sérieuse :
+
+
+<p>PHP et Apache parlent via l'interface CGI, Apache et Linux via le les appels systèmes, <em>etc...</em> Je peux remplacer facilement une pièce par une autres pourvu qu'elle parle le même langage (protocole).  Utiliser des outils complétement <em>décorélés</em> les uns des autres qui parlent selon un protocole établi respecte le principe de simplicité.
+
+
+<p>PHP permet d'écrire des logiciels qui vont pouvoir parler avec les reste du monde. Le langage en lui même est très simple  : il n'y a qu'une cinquantaine de <a href='http://php.net/manual/en/reserved.keywords.php'>mot-clés</a> ).
+Une fois ces mots-clés connus, le langage étant <a href='http://fr.wikipedia.org/wiki/Turing-complet'>Turing-complet</a>, je peux écrire tout les programmes que je veux. La grammaire de PHP est relativement <b>simple</b>.
+
+
+<p>La bibliothèque de fonction PHP est pléthorique. Toutefois, le rangement des fonctions particulièrement bien pensée fait que leur utilisation est généralement <b>simple</b>. Surtout, chacune des fonctions de la bibliothèque ne résous qu'un petit problème.
+
+
+<p>Un framework par contre va ajouter tous un tas de règles et tout un tas de structures et de pattern à respecter (MVC pour l'architecture, un ORM pour l'accès en base) : ce n'est plus un outil fortement décorélés, ni un ensemble de fonctionnalités.
+
+
+<p>Cela va m'obliger a penser comme le développeur du framework le fait : ce n'est plus un service qu'on me rend (comme pour une bibliothèque, un système d'exploitation, un langage), mais un ensemble de règles stricts censés résoudre tout les problèmes du monde : un framework rend donc les choses <b>complexes</b>.
+
+
+
+<p></p><h3> Un FW permet de résoudre les problèmes complexes ... ou pas </h3><p>
+Pour les projets simples, un framework est toujours disproportionné.  Est-ce qu'un framework permet de résoudre les problèmes complexes ? Est-ce qu'une grosse machine va me permettre de résoudre globalement des gros problèmes ?
+
+
+<p>Je laisserais Descartes conclure sur ce point :
+
+
+<p><em>Le second précept , de diviser chacune des difficultés que j’examinerais, en autant de parcelles qu’il se pourrait et qu’il serait requis pour les mieux résoudre. - René Descartes </em>
+            ]]></description>
+            <pubDate>Wed, 05 Jan 2011 07:44:53 +0100</pubDate>
+            <link>http://zenprog.com//index.php?cle=Les-frameworks</link>
+        </item>
+                <item>
+            <title>Retrospective 2010</title>
+            <description><![CDATA[
+            <p><img src='http://upload.wikimedia.org/wikipedia/commons/thumb/d/de/Michelangelo_Caravaggio_065.jpg/200px-Michelangelo_Caravaggio_065.jpg' title='Le Caravage - Narcisse' style='padding:10px; float:left;'/>
+
+<br/><em>Note : ce billet est principalement écrit afin que je puisse me souvenir de ce que j'ai pu faire au cours de l'année écoulée, il est très probable qu'il n'intéresse pas d'autre lecteur que son rédacteur</em>.
+
+
+<p>Au début de l'année, je m'étais fixé les objectifs suivants :
+<ul><li> me débarrasser de mon compte Google</li>
+<li> produire 12 sites web en un an.</li>
+</ul>
+</p><h3> Remplacement de Google </h3><p>
+Au 1er janvier 2010, j'avais un compte Gmail, Google reader et e-Google. J'utilisais également l'adresse XMPP associé au compte Gmail.
+
+
+<p>Je trouve que tous ces services sont géniaux. Gmail a révolutionné le mail, Google Reader est ultra simple d'utilisation. Mais, d'un autre coté, je trouve que le prix a payé est trop important : je préfère encore payé quelque dizaine d'euro par mois pour gérer mes propres services, plutôt que de confier mes données à une entreprises qui peux changer sa  politique de confidentialité du jour au lendemain.
+
+
+<p>J'ai donc développé : zenMail, zenReader et zenBookmark que j'utilise au quotidien en remplacement des outils préalablement fournis par Google. Je publierais ces outils dès que j'aurai trouvé un moyen simple de le faire ;-)
+
+
+<p>J'estime donc que le premier objectif est validé.
+
+<br/></p><h3> 12 sites en un an </h3><p>
+
+<br/>En ce qui concerne le développement, j'ai pu faire cette année :
+<ul><li>Trois sites de jeux ( <a href='http://www.king-sudoku.fr'>exemple</a>)</li>
+<li>Un site de comparaison des  <a href='http://www.prix-jeux.com'>prix des jeux vidéo</a></li>
+<li>Un site d'achat/vente de livres (dont la sortie est prévue en 2011)</li>
+<li>Un logiciel de gestion de flux documentaire</li>
+<li>Un outil de gestion de tâche : <a href='http://task.sigmalis.com/login.php'>zenTask</a></li>
+<li>Un blog : <a href='http://soft.zenprog.com/zenBlog.tgz'>zenBlog</a> </li>
+<li>Une <a href='http://www.minuterie.fr/'>minuterie</a> sur internet : </li>
+<li>Les trois logiciels de remplacement de Google</li>
+</ul>
+J'ai donc bien développé 12 sites web en un an.
+
+
+<p>L'ensemble des objectifs 2010 a donc été atteints. Rendez-vous en 2011 pour de nouveaux objectifs
+            ]]></description>
+            <pubDate>Thu, 23 Dec 2010 06:55:55 +0100</pubDate>
+            <link>http://zenprog.com//index.php?cle=Retrospective-2010</link>
+        </item>
+                <item>
+            <title>Accesseurs et mutateurs</title>
+            <description><![CDATA[
+            <p><img src='http://upload.wikimedia.org/wikipedia/commons/thumb/d/da/Peter_Paul_Rubens_037.jpg/220px-Peter_Paul_Rubens_037.jpg'
+title="Pierre Paul Rubens - L'échange des princesses de France et d'Espagne" style='padding:10px; float:left'>
+
+<br/>L'encapsulation est de très loin le meilleur des principes de la programmation orienté objet. On peut jeter sans problème l'héritage, le polymorphisme et toutes ces choses compliquées, mais pas l'encapsulation.
+
+
+<p>Notamment, la des meilleurs pratiques consistant à mettre tous les attributs privés : un attribut est juste vu comme une variable globale à la classe que les utilisateurs ne peuvent pas voir. C'est un excellent principe : ne jamais mettre d'attribut public permet d'obtenir des classes plus simples et plus expressives.
+<div style='clear:both'></div>
+
+<br/>Il est possible, pour accéder à la variable,  d'utiliser un accesseur, ou un mutateur ou, les deux. Ce dernier cas sera le sujet de ce billet.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	<div class='code'><pre><span style='display:inline; white-space:normal'><span class='t_keyword'>class</span> <span class='t_string'>Data</span> {</span>
+<span style='display:inline; white-space:normal'></span>&#9;<span style='display:inline; white-space:normal'></span>
+<span style='display:inline; white-space:normal'></span>&#9;<span style='display:inline; white-space:normal'><span class='t_keyword'>private</span> <span class='t_variable'>$field</span>;</span>
+<span style='display:inline; white-space:normal'></span>
+<span style='display:inline; white-space:normal'></span>&#9;<span style='display:inline; white-space:normal'><span class='t_keyword'>public</span> <span class='t_keyword'>function</span> <span class='t_string'>setField</span>(<span class='t_string'>Field</span> <span class='t_variable'>$field</span>){</span>
+<span style='display:inline; white-space:normal'></span>&#9;<span style='display:inline; white-space:normal'></span>&#9;<span style='display:inline; white-space:normal'><span class='t_variable'>$this</span><span class='t_object_operator'>-&gt;</span><span class='t_string'>field</span> = <span class='t_variable'>$field</span>;</span>
+<span style='display:inline; white-space:normal'></span>&#9;<span style='display:inline; white-space:normal'>}</span>
+<span style='display:inline; white-space:normal'></span>
+<span style='display:inline; white-space:normal'></span>&#9;<span style='display:inline; white-space:normal'><span class='t_keyword'>public</span> <span class='t_keyword'>function</span> <span class='t_string'>getField</span>(){</span>
+<span style='display:inline; white-space:normal'></span>&#9;<span style='display:inline; white-space:normal'></span>&#9;<span style='display:inline; white-space:normal'><span class='t_keyword'>return</span> <span class='t_variable'>$field</span>;</span>
+<span style='display:inline; white-space:normal'></span>&#9;<span style='display:inline; white-space:normal'>}</span>
+<span style='display:inline; white-space:normal'></span>
+<span style='display:inline; white-space:normal'>} </span>
+<span style='display:inline; white-space:normal'></pre>
+	</div>
+	
+
+<p>En fait, ce code est équivalent (au contrôle de type près) à celui-ci :
+
+
+
+
+
+	<div class='code'><pre><span style='display:inline; white-space:normal'><span class='t_keyword'>class</span> <span class='t_string'>Data</span> {</span>
+<span style='display:inline; white-space:normal'></span>&#9;<span style='display:inline; white-space:normal'><span class='t_keyword'>public</span> <span class='t_variable'>$field</span>;</span>
+<span style='display:inline; white-space:normal'>} </span>
+<span style='display:inline; white-space:normal'></pre>
+	</div>
+	
+
+<p>Ce code est plus simple, et permet de voir immédiatement que l'on rompt les bonnes pratiques d'encapsulation des attributs, <em>$data->field</em> devient une donnée globale pour tous les utilisateurs de la classe : c'est mal !
+
+
+<p>J'ai remarqué le fait curieux suivant : une classe définissant un accesseur et un mutateur sur un même attribut de type objet dénote le plus souvent un défaut de conception.
+
+
+<p>Examinons quelques cas de figure :
+
+
+<p>1. C'est un même objet qui utilise à la fois l'accesseur et le mutateur : dans ce premier cas, le code de cet objet doit être particulièrement complexe pour qu'il ait oublié ce qu'il a fait précédemment.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	<div class='code'><pre><span style='display:inline; white-space:normal'></span>
+<span style='display:inline; white-space:normal'><span class='t_keyword'>class</span> <span class='t_string'>BigBallOfMud</span> {</span>
+<span style='display:inline; white-space:normal'></span>&#9;<span style='display:inline; white-space:normal'></span>
+<span style='display:inline; white-space:normal'></span>&#9;<span style='display:inline; white-space:normal'><span class='t_keyword'>public</span> <span class='t_keyword'>function</span> <span class='t_string'>mud</span>(){</span>
+<span style='display:inline; white-space:normal'></span>&#9;<span style='display:inline; white-space:normal'></span>&#9;<span style='display:inline; white-space:normal'><span class='t_variable'>$data</span><span class='t_object_operator'>-&gt;</span><span class='t_string'>setField</span>(<span class='t_keyword'>new</span> <span class='t_string'>Field</span>());</span>
+<span style='display:inline; white-space:normal'></span>&#9;<span style='display:inline; white-space:normal'></span>&#9;<span style='display:inline; white-space:normal'></span>
+<span style='display:inline; white-space:normal'></span>&#9;<span style='display:inline; white-space:normal'></span>&#9;<span style='display:inline; white-space:normal'><span class='t_comment'>//....</span></span>&#9;<span style='display:inline; white-space:normal'></span>&#9;<span style='display:inline; white-space:normal'></span>
+<span style='display:inline; white-space:normal'></span>&#9;<span style='display:inline; white-space:normal'></span>&#9;<span style='display:inline; white-space:normal'><span class='t_variable'>$field</span> = <span class='t_variable'>$data</span><span class='t_object_operator'>-&gt;</span><span class='t_string'>getField</span>();</span>
+<span style='display:inline; white-space:normal'></span>&#9;<span style='display:inline; white-space:normal'></span>&#9;<span style='display:inline; white-space:normal'></span>
+<span style='display:inline; white-space:normal'></span>&#9;<span style='display:inline; white-space:normal'>}</span>
+<span style='display:inline; white-space:normal'>}</span>
+<span style='display:inline; white-space:normal'></pre>
+	</div>
+	
+
+
+<p>2. Ce n'est pas le même objet. Mais dans ce cas, il est quasiment certain que l'objet B utilisant l'accesseur viole la <a href='http://fr.wikipedia.org/wiki/Loi_de_D%C3%A9m%C3%A9ter'>loi de Demeter</a> : Si B a besoin d'un service de Field alors, c'est que Data devrait proposer ce service ! Dans ce cas, l'accesseur est probablement de trop.
+
+
+
+
+
+
+
+
+	<div class='code'><pre><span style='display:inline; white-space:normal'><span class='t_keyword'>class</span> <span class='t_string'>DemeterRape</span> {</span>
+<span style='display:inline; white-space:normal'></span>
+<span style='display:inline; white-space:normal'></span>&#9;<span style='display:inline; white-space:normal'><span class='t_keyword'>public</span> <span class='t_keyword'>function</span> <span class='t_string'>rape</span>(<span class='t_variable'>$data</span>){</span>
+<span style='display:inline; white-space:normal'></span>&#9;<span style='display:inline; white-space:normal'></span>&#9;<span style='display:inline; white-space:normal'><span class='t_variable'>$data</span><span class='t_object_operator'>-&gt;</span><span class='t_string'>getField</span>()<span class='t_object_operator'>-&gt;</span><span class='t_string'>doStuff</span>();</span>
+<span style='display:inline; white-space:normal'></span>&#9;<span style='display:inline; white-space:normal'>}</span>
+<span style='display:inline; white-space:normal'></span>
+<span style='display:inline; white-space:normal'>}</span>
+<span style='display:inline; white-space:normal'></pre>
+	</div>
+	
+
+<br/>3. L'objet accedé peut changer. C'est le cas notamment dans les machines à état : un champs <em>$state</em> permet de garder l'état. Mais dans ce cas, il est presque certain que l'état ne devrait pas être modifié directement par les utilisateurs de la classes (le mutateur public est donc de trop).
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	<div class='code'><pre><span style='display:inline; white-space:normal'></span>
+<span style='display:inline; white-space:normal'><span class='t_keyword'>class</span> <span class='t_string'>StateMachine</span> {</span>
+<span style='display:inline; white-space:normal'></span>&#9;<span style='display:inline; white-space:normal'></span>
+<span style='display:inline; white-space:normal'></span>&#9;<span style='display:inline; white-space:normal'><span class='t_keyword'>private</span> <span class='t_variable'>$state</span>;</span>
+<span style='display:inline; white-space:normal'></span>
+<span style='display:inline; white-space:normal'></span>&#9;<span style='display:inline; white-space:normal'><span class='t_keyword'>public</span> <span class='t_keyword'>function</span> <span class='t_string'>setState</span>(<span class='t_variable'>$state</span>){</span>
+<span style='display:inline; white-space:normal'></span>&#9;<span style='display:inline; white-space:normal'>}</span>
+<span style='display:inline; white-space:normal'></span>
+<span style='display:inline; white-space:normal'></span>&#9;<span style='display:inline; white-space:normal'><span class='t_keyword'>private</span> <span class='t_keyword'>function</span> <span class='t_string'>getState</span>(){</span>
+<span style='display:inline; white-space:normal'></span>&#9;<span style='display:inline; white-space:normal'>}</span>
+<span style='display:inline; white-space:normal'></span>
+<span style='display:inline; white-space:normal'>}</span>
+<span style='display:inline; white-space:normal'></span>
+<span style='display:inline; white-space:normal'></pre>
+	</div>
+	
+
+
+<p>Il y a très certainement des cas de figure que j'ai oubliés, mais j'ai souvent remarqué que cette règle fonctionnait.
+
+<br/>Et vous, connaissez-vous des situations ou il est obligatoire de mettre à la fois un accesseur et un mutateur sur un même attribut de type objet ?
+            ]]></description>
+            <pubDate>Sun, 19 Dec 2010 09:23:39 +0100</pubDate>
+            <link>http://zenprog.com//index.php?cle=Accesseurs-et-mutateurs</link>
+        </item>
+                <item>
+            <title>Tirage aléatoire en fonction d'une chaîne</title>
+            <description><![CDATA[
+            <p><img src='http://upload.wikimedia.org/wikipedia/commons/2/2f/Judith_Leyster_A_Game_of_Tric_Trac.jpg' title="Judith Leyster - Une partie de trictrac" style='float:left; padding:10px; width: 200px' >
+
+
+<p>Je suis un fan du hasard. Je pense que le hasard est dans bien des cas la meilleure manière pour résoudre un problème. C'est de toute façon souvent la plus simple.
+
+
+<p>Parfois, on a besoin d'obtenir un élément A en fonction d'un élément B, mais, on veut que cette association soit faite au hasard.
+
+
+<p>Par exemple : je voudrais bien que sur <a href='http://zenprog.com'>zenProg</a> les utilisateurs qui commente aient un avatar qui serait choisi par le site. J'ai donc une liste d'avatar (on va dire 50) et je voudrais associer un avatar en fonction du nom de l'utilisateur.
+
+
+<p>Il me faut donc une fonction qui soit :
+<ul><li> contante (ie. ∀x : f(x)= f(x))</li>
+<li> sans cycle (ie. il n'existe pas de y tel que ∀x : f(x) = f(x+y))</li>
+<li> rapidement divergente ( f(x0,.....xi,....,xn) très différent de  f(x0,.....,(xi+1),....,xn))</li>
+</ul>
+Les  <a href='http://en.wikipedia.org/wiki/Cryptographic_hash_function'>fonctions de hachage cryptographiques</a> ont toutes ces propriétés !
+
+
+<p>On peut donc prendre n'importe quelle fonction, comme par exemple <a href='http://fr.wikipedia.org/wiki/MD5'>MD5</a> qui est disponible partout et dont l'empreinte est la plus courte (128 bits).
+
+
+
+
+
+
+
+
+
+
+
+	<div class='code'><pre><span style='display:inline; white-space:normal'><span class='t_keyword'>function</span> <span class='t_string'>get_random_number_from_string</span>(<span class='t_variable'>$input</span>, <span class='t_variable'>$max_number</span>){</span>
+<span style='display:inline; white-space:normal'></span>&#9;<span style='display:inline; white-space:normal'><span class='t_variable'>$hex</span> = <span class='t_string'><a href='http://www.php.net/manual-lookup.php?pattern=md5&lang=fr'  target='_blank' class='external_link'>md5</a></span>(<span class='t_variable'>$input</span>);</span>
+<span style='display:inline; white-space:normal'></span>&#9;<span style='display:inline; white-space:normal'><span class='t_variable'>$dec</span>=<span class='t_lnumber'>0</span>;</span>
+<span style='display:inline; white-space:normal'></span>&#9;<span style='display:inline; white-space:normal'><span class='t_variable'>$len</span> = <span class='t_string'><a href='http://www.php.net/manual-lookup.php?pattern=strlen&lang=fr'  target='_blank' class='external_link'>strlen</a></span>(<span class='t_variable'>$hex</span>);</span>
+<span style='display:inline; white-space:normal'></span>&#9;<span style='display:inline; white-space:normal'><span class='t_keyword'>for</span> (<span class='t_variable'>$i</span> = <span class='t_lnumber'>1</span>; <span class='t_variable'>$i</span> <span class='t_keyword'>&lt;=</span> <span class='t_variable'>$len</span>; <span class='t_variable'>$i</span><span class='t_keyword'>++</span>) {</span>
+<span style='display:inline; white-space:normal'></span>&#9;<span style='display:inline; white-space:normal'></span>&#9;<span style='display:inline; white-space:normal'><span class='t_variable'>$dec</span> = <span class='t_string'><a href='http://www.php.net/manual-lookup.php?pattern=bcadd&lang=fr'  target='_blank' class='external_link'>bcadd</a></span>(<span class='t_variable'>$dec</span>, <span class='t_string'><a href='http://www.php.net/manual-lookup.php?pattern=bcmul&lang=fr'  target='_blank' class='external_link'>bcmul</a></span>(<span class='t_string'><a href='http://www.php.net/manual-lookup.php?pattern=strval&lang=fr'  target='_blank' class='external_link'>strval</a></span>(<span class='t_string'><a href='http://www.php.net/manual-lookup.php?pattern=hexdec&lang=fr'  target='_blank' class='external_link'>hexdec</a></span>(<span class='t_variable'>$hex</span>[<span class='t_variable'>$i</span> - <span class='t_lnumber'>1</span>])), <span class='t_string'><a href='http://www.php.net/manual-lookup.php?pattern=bcpow&lang=fr'  target='_blank' class='external_link'>bcpow</a></span>(<span class='t_constant_encapsed_string'>&#039;16&#039;</span>, <span class='t_string'><a href='http://www.php.net/manual-lookup.php?pattern=strval&lang=fr'  target='_blank' class='external_link'>strval</a></span>(<span class='t_variable'>$len</span> - <span class='t_variable'>$i</span>))));</span>
+<span style='display:inline; white-space:normal'></span>&#9;<span style='display:inline; white-space:normal'>}</span>
+<span style='display:inline; white-space:normal'></span>&#9;<span style='display:inline; white-space:normal'><span class='t_keyword'>return</span> </span>&#9;<span style='display:inline; white-space:normal'><span class='t_string'><a href='http://www.php.net/manual-lookup.php?pattern=bcmod&lang=fr'  target='_blank' class='external_link'>bcmod</a></span>(<span class='t_variable'>$dec</span>,<span class='t_variable'>$max_number</span>);</span>
+<span style='display:inline; white-space:normal'>}</span>
+<span style='display:inline; white-space:normal'></pre>
+	</div>
+	
+
+<p>Ce code est assez complexe car :
+<ul><li><em>md5()</em> renvoi un nombre hexadécimal</li>
+<li>ce nombre est trop grand pour tenir sur 32bits et même sur 64bits. Il faut donc utiliser la bibliothèque <a href='http://www.php.net/manual/en/book.bc.php'>bc</a>.</li>
+<li>je ne suis pas sûr qu'une simplification dans l'algorithme (par exemple, prendre les 5 derniers numéros du MD5, n'introduirais pas un biais).</li>
+</ul>
+
+<br/>Si j'ai le temps, je rajouterais donc un système d'Avatar dans <a href='http://commentaire.zenprog.com/'>zenCancan</a>.
+            ]]></description>
+            <pubDate>Fri, 17 Dec 2010 07:51:38 +0100</pubDate>
+            <link>http://zenprog.com//index.php?cle=Tirage-aleatoire-en-fonction-d-une-chaine</link>
+        </item>
+                <item>
+            <title>Critique du design pattern singleton - 2</title>
+            <description><![CDATA[
+            <p><img src='http://upload.wikimedia.org/wikipedia/commons/thumb/0/07/Le_Caravage_-_L%27incr%C3%A9dulit%C3%A9_de_Saint_Thomas.jpg/220px-Le_Caravage_-_L%27incr%C3%A9dulit%C3%A9_de_Saint_Thomas.jpg' title="Le Caravage - L'Incrédulité de Saint Thomas" style='float:left; padding:10px;' >
+
+<br/>Ouah, j'ai un <a href='http://commentaire.zenprog.com/'>premier commentaire</a> ;-) Et en plus intéressant !
+
+
+<p>Dans le <a href='http://zenprog.com/index.php?cle=Critique-du-design-pattern-singleton'>billet précédent</a>, je montrais que le design pattern singleton était le plus souvent mal utilisé et qu'une injection dans le constructeur était de loin préférable.
+
+
+<p>Reste toutefois à montrer que je n'ai pas besoin du singleton dans d'autres cas.
+
+
+<p>Le cas classique est donc : j'ai une ressource (fichier, base de données, ...), mais je ne veux pas avoir à initialiser cette ressource plusieurs fois. Mieux, je veux que les utilisateurs de ma classe n'ai même pas à réfléchir à l'initialisation de cette ressource!
+
+
+<p>Ce qui est important, c'est que la ressource soit unique, et donc :
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	<div class='code'><pre><span style='display:inline; white-space:normal'><span class='t_keyword'>class</span> <span class='t_string'>MySuperComplicatedStuff</span> {</span>
+<span style='display:inline; white-space:normal'></span>
+<span style='display:inline; white-space:normal'></span>&#9;<span style='display:inline; white-space:normal'><span class='t_keyword'>static</span> <span class='t_keyword'>private</span> <span class='t_variable'>$mySuperComplicatedRessource</span>;</span>
+<span style='display:inline; white-space:normal'></span>
+<span style='display:inline; white-space:normal'></span>&#9;<span style='display:inline; white-space:normal'><span class='t_keyword'>public</span> <span class='t_keyword'>function</span> <span class='t_string'>__construct</span>(){</span>
+<span style='display:inline; white-space:normal'></span>&#9;<span style='display:inline; white-space:normal'></span>&#9;<span style='display:inline; white-space:normal'><span class='t_keyword'>if</span> (! <span class='t_string'>self</span><span class='t_keyword'>::</span><span class='t_variable'>$mySuperComplicatedRessource</span>){</span>
+<span style='display:inline; white-space:normal'></span>&#9;<span style='display:inline; white-space:normal'></span>&#9;<span style='display:inline; white-space:normal'></span>&#9;<span style='display:inline; white-space:normal'><span class='t_variable'>$this</span><span class='t_object_operator'>-&gt;</span><span class='t_string'>init</span>();</span>&#9;<span style='display:inline; white-space:normal'></span>
+<span style='display:inline; white-space:normal'></span>&#9;<span style='display:inline; white-space:normal'></span>&#9;<span style='display:inline; white-space:normal'>}</span>
+<span style='display:inline; white-space:normal'></span>&#9;<span style='display:inline; white-space:normal'>}</span>
+<span style='display:inline; white-space:normal'></span>
+<span style='display:inline; white-space:normal'></span>&#9;<span style='display:inline; white-space:normal'><span class='t_keyword'>private</span> <span class='t_keyword'>function</span> <span class='t_string'>init</span>(){</span>
+<span style='display:inline; white-space:normal'></span>&#9;<span style='display:inline; white-space:normal'></span>&#9;<span style='display:inline; white-space:normal'><span class='t_variable'>$mySuperComplicatedRessource</span> = <span class='t_lnumber'>42</span>;</span>&#9;<span style='display:inline; white-space:normal'></span>
+<span style='display:inline; white-space:normal'></span>&#9;<span style='display:inline; white-space:normal'>}</span>
+<span style='display:inline; white-space:normal'>}</span>
+<span style='display:inline; white-space:normal'></pre>
+	</div>
+	
+
+
+<p>Je trouve que cette solution est plus simple que le singleton.
+
+
+<p>Toutefois, je n'ai encore jamais rencontré ce besoin en programmation web en PHP.
+
+
+<p>Si je crée un objet, par exemple $databaseConnexion, si jamais je m'aperçois, qu'à un moment donné, j'ai par mégarde créé une deuxième instance de ce type c'est que probablement :
+<ul><li> mon script est trop complexe;</li>
+<li> mon script n'est pas assez concis;</li>
+<li> j'ai réellement besoin d'une seconde connexion à une base de données. Ce dernier cas ne se traitant pas avec le singleton;</li>
+<li> j'ai instancié un $databaseConnexion dans une classe, et là c'est carrément très mal !</li>
+</ul>
+
+<br/>Mais il suffit d'un seul exemple pour me montrer que j'ai tord et qu'il existe au moins un cas tel que  le singleton améliore de manière significative la lisibilité ou la simplicité ou la performance, ou tout autre avantage auquel je n'ai pas pensé. Et dans ce cas, mon billet partira aux oubliettes.
+            ]]></description>
+            <pubDate>Tue, 14 Dec 2010 10:25:51 +0100</pubDate>
+            <link>http://zenprog.com//index.php?cle=Critique-du-design-pattern-singleton---2</link>
+        </item>
+                <item>
+            <title>Critique du design pattern singleton</title>
+            <description><![CDATA[
+            <p><img src="http://upload.wikimedia.org/wikipedia/commons/thumb/6/63/GoldCalf.jpg/350px-GoldCalf.jpg"  title="L'adoration du veau d'or - Nicolas Poussin" style='float:right; padding: 10px'/>
+
+
+<p>Non, je ne vais pas commencer une série de billet sur les <a href='http://fr.wikipedia.org/wiki/Design_Pattern'>designs patterns</a>. D'autres le font bien mieux que moi.
+
+
+<p>Néanmoins, voici ma propre définition des <em>design pattern</em> <b>appliqués aux développements web</b> :
+
+
+<p><em>Un design pattern est une solution à un problème imaginaire dont la complexité rivalise avec le pédantisme.</em>
+
+
+<p>En ayant terminé avec ces prolégomènes, attaquons-nous au sujet du jour : le <a href='http://fr.wikipedia.org/wiki/Singleton_%28patron_de_conception%29'>singleton</a>.
+
+
+<p>Le problème imaginaire : on veux une classe qui ne peut être instanciée qu'une fois.
+
+<br/>La solution aussi complexe que pédante :
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	<div class='code'><pre><span style='display:inline; white-space:normal'><span class='t_keyword'>class</span> <span class='t_string'>Singleton</span> {</span>
+<span style='display:inline; white-space:normal'></span>
+<span style='display:inline; white-space:normal'></span>&#9;<span style='display:inline; white-space:normal'><span class='t_keyword'>private</span> <span class='t_keyword'>static</span> <span class='t_variable'>$instance</span>;</span>
+<span style='display:inline; white-space:normal'></span>&#9;<span style='display:inline; white-space:normal'></span>
+<span style='display:inline; white-space:normal'></span>&#9;<span style='display:inline; white-space:normal'><span class='t_keyword'>public</span> <span class='t_keyword'>static</span> <span class='t_keyword'>function</span> <span class='t_string'>getInstance</span>(){</span>
+<span style='display:inline; white-space:normal'></span>&#9;<span style='display:inline; white-space:normal'></span>&#9;<span style='display:inline; white-space:normal'><span class='t_keyword'>if</span> ( ! <span class='t_string'>self</span><span class='t_keyword'>::</span><span class='t_variable'>$instance</span>){</span>
+<span style='display:inline; white-space:normal'></span>&#9;<span style='display:inline; white-space:normal'></span>&#9;<span style='display:inline; white-space:normal'></span>&#9;<span style='display:inline; white-space:normal'><span class='t_string'>self</span><span class='t_keyword'>::</span><span class='t_variable'>$instance</span> = <span class='t_keyword'>new</span> <span class='t_string'>Singleton</span>();</span>
+<span style='display:inline; white-space:normal'></span>&#9;<span style='display:inline; white-space:normal'></span>&#9;<span style='display:inline; white-space:normal'>}</span>
+<span style='display:inline; white-space:normal'></span>&#9;<span style='display:inline; white-space:normal'></span>&#9;<span style='display:inline; white-space:normal'><span class='t_keyword'>return</span> <span class='t_string'>self</span><span class='t_keyword'>::</span><span class='t_variable'>$instance</span>;</span>
+<span style='display:inline; white-space:normal'></span>&#9;<span style='display:inline; white-space:normal'>}</span>
+<span style='display:inline; white-space:normal'></span>&#9;<span style='display:inline; white-space:normal'></span>
+<span style='display:inline; white-space:normal'></span>&#9;<span style='display:inline; white-space:normal'><span class='t_keyword'>private</span> <span class='t_keyword'>function</span> <span class='t_string'>__construct</span>(){}</span>
+<span style='display:inline; white-space:normal'></span>&#9;<span style='display:inline; white-space:normal'><span class='t_keyword'>private</span> <span class='t_keyword'>function</span> <span class='t_string'>__clone</span>(){}</span>
+<span style='display:inline; white-space:normal'>}</span>
+<span style='display:inline; white-space:normal'></pre>
+	</div>
+	
+
+
+<p>Le singleton est utilisé par exemple pour protéger l'accès à une ressource : on ne veut qu'une seule connexion à la base de données lors de l'exécution du script, on ne veux ouvrir qu'une fois le fichier journal, <em>etc.</em>
+
+
+<p>Pourquoi avons nous besoin d'un singleton ? En effet, pourquoi ne pas initialiser un objet "connexion-vers-base-de-données" et l'utiliser dans le reste du script ?
+
+
+<p>La réponse est étonnante : c'est parce que le singleton va nous permettre d'écrire ce genre d'horreur :
+
+
+
+
+
+
+
+	<div class='code'><pre><span style='display:inline; white-space:normal'><span class='t_keyword'>class</span> <span class='t_string'>Truc</span> {</span>
+<span style='display:inline; white-space:normal'></span>&#9;<span style='display:inline; white-space:normal'></span>
+<span style='display:inline; white-space:normal'></span>&#9;<span style='display:inline; white-space:normal'><span class='t_keyword'>public</span> <span class='t_keyword'>function</span> <span class='t_string'>machin</span>(){</span>
+<span style='display:inline; white-space:normal'></span>&#9;<span style='display:inline; white-space:normal'></span>&#9;<span style='display:inline; white-space:normal'><span class='t_variable'>$instance</span> = <span class='t_string'>Singleton</span><span class='t_keyword'>::</span><span class='t_string'>getInstance</span>();</span>
+<span style='display:inline; white-space:normal'></span>&#9;<span style='display:inline; white-space:normal'>}</span>
+<span style='display:inline; white-space:normal'>}</span>
+<span style='display:inline; white-space:normal'></pre>
+	</div>
+	
+
+
+<p>Pourquoi est-ce que le code précédent est une horreur ? Voici comment j'aurais pu l'écrire&nbsp;:
+
+
+
+
+
+
+
+	<div class='code'><pre><span style='display:inline; white-space:normal'><span class='t_keyword'>class</span> <span class='t_string'>Truc</span> {</span>
+<span style='display:inline; white-space:normal'></span>&#9;<span style='display:inline; white-space:normal'></span>
+<span style='display:inline; white-space:normal'></span>&#9;<span style='display:inline; white-space:normal'><span class='t_keyword'>public</span> <span class='t_keyword'>function</span> <span class='t_string'>machin</span>(){</span>
+<span style='display:inline; white-space:normal'></span>&#9;<span style='display:inline; white-space:normal'></span>&#9;<span style='display:inline; white-space:normal'><span class='t_keyword'>global</span> <span class='t_variable'>$instance</span>;</span>
+<span style='display:inline; white-space:normal'></span>&#9;<span style='display:inline; white-space:normal'>}</span>
+<span style='display:inline; white-space:normal'>}</span>
+<span style='display:inline; white-space:normal'></pre>
+	</div>
+	
+
+
+<p>Là, c'est vraiment horrible, j'ai utilisé une variable globale dans un objet !
+
+
+<p>Mais en fait, cela revient exactement au même! Utiliser un singleton, c'est utiliser une variable globale de manière plus complexe et pédante. Je pense que le singleton s'est démocratisé dans les langages à objets pour contourner le manque de variables globales !
+
+
+<p>Voici une manière de faire qui est plus simple et sans obligation d'utiliser un singleton ou une variable globale:
+
+
+
+
+
+
+
+
+
+
+
+
+
+	<div class='code'><pre><span style='display:inline; white-space:normal'><span class='t_keyword'>class</span> <span class='t_string'>Truc</span> {</span>
+<span style='display:inline; white-space:normal'></span>&#9;<span style='display:inline; white-space:normal'></span>
+<span style='display:inline; white-space:normal'></span>&#9;<span style='display:inline; white-space:normal'><span class='t_keyword'>private</span> <span class='t_variable'>$instance</span>;</span>
+<span style='display:inline; white-space:normal'></span>&#9;<span style='display:inline; white-space:normal'></span>
+<span style='display:inline; white-space:normal'></span>&#9;<span style='display:inline; white-space:normal'><span class='t_keyword'>public</span> <span class='t_keyword'>function</span> <span class='t_string'>__construct</span>(<span class='t_variable'>$instance</span>){</span>
+<span style='display:inline; white-space:normal'></span>&#9;<span style='display:inline; white-space:normal'></span>&#9;<span style='display:inline; white-space:normal'><span class='t_variable'>$this</span><span class='t_object_operator'>-&gt;</span><span class='t_string'>instance</span> = <span class='t_variable'>$instance</span>;</span>
+<span style='display:inline; white-space:normal'></span>&#9;<span style='display:inline; white-space:normal'>}</span>
+<span style='display:inline; white-space:normal'></span>&#9;<span style='display:inline; white-space:normal'></span>
+<span style='display:inline; white-space:normal'></span>&#9;<span style='display:inline; white-space:normal'><span class='t_keyword'>public</span> <span class='t_keyword'>function</span> <span class='t_string'>machin</span>(){</span>
+<span style='display:inline; white-space:normal'></span>&#9;<span style='display:inline; white-space:normal'></span>&#9;<span style='display:inline; white-space:normal'><span class='t_variable'>$this</span><span class='t_object_operator'>-&gt;</span><span class='t_string'>instance</span>;</span>
+<span style='display:inline; white-space:normal'></span>&#9;<span style='display:inline; white-space:normal'>}</span>
+<span style='display:inline; white-space:normal'>}</span>
+<span style='display:inline; white-space:normal'></pre>
+	</div>
+	
+
+<br/>La dépendance est directement injectée dans le constructeur de l'objet <em>Truc</em>. Celui-ci est maintenant beaucoup moins couplé à la ressource fourni par <em>$instance</em>. Charge au créateur de <em>Truc</em> de ne pas créer 50 instances différentes de la ressource. Le problème auquel le singleton répond n'est plus utile : le problème devient donc imaginaire !
+            ]]></description>
+            <pubDate>Sat, 11 Dec 2010 14:07:48 +0100</pubDate>
+            <link>http://zenprog.com//index.php?cle=Critique-du-design-pattern-singleton</link>
+        </item>
+            </channel>
+</rss>

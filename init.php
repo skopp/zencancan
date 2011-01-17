@@ -21,3 +21,4 @@ session_start();
 $lastMessage = new LastMessage();
 
 define("DATABASE_FILE",dirname(__FILE__)."/script/zencancan.bin");
+define("STATIC_PATH",dirname(__FILE__)."/static/");
