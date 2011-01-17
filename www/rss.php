@@ -12,7 +12,7 @@ $id = $recuperateur->get('id');
 
 $rssCreator = new RSSCreator("zenCancan - flux $id","Flux pour l'id $id",   $_SERVER["SERVER_NAME"] . $_SERVER["REQUEST_URI"] );
 
-$allFlux = $abonnementSQL->get($id,0);
+$allFlux = $abonnementSQL->getWithContent($id,0);
 foreach($allFlux as $flux){
 	$rssCreator->addItem($flux['title'] . ": " .$flux['item_title'],$flux['item_link'],$flux['last-modified'],$flux['item_content']);
 }
