@@ -1,6 +1,7 @@
 CREATE TABLE abonnement (
 	`id` varchar(16) NOT NULL,
 	`id_f` int(11) NOT NULL,
+	`tag` varchar(64) NOT NULL,
 	PRIMARY KEY (`id`,`id_f`),
 	UNIQUE KEY id_f (`id_f`,`id`)
 )  ENGINE=MyISAM  ;
