@@ -17,7 +17,6 @@ class FeedUpdater {
 		$this->urlLoader = new URLLoader();
 		$this->feedParser = new FeedParser();
 		$this->staticPath = $staticPath;
-		
 	}
 	
 	private $lastError;
