@@ -10,7 +10,7 @@ $abonnementSQL = new AbonnementSQL($sqlQuery);
 
 $lesFlux = $abonnementSQL->getAll($id);
 header("Content-type: text/xml; charset=UTF-8");
-header('Content-Disposition: attachment; filename="zenReader.opml.xml"'); 
+header('Content-Disposition: attachment; filename="zencancan-'.$id.'opml"'); 
 ?>
 <opml version="1.0">
 	<head>

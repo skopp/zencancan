@@ -43,7 +43,6 @@ class FeedParser {
 		
 		$xml = simplexml_load_string($content);
 		if (! $xml ){
-			echo $content;
 			$this->lastError = "L'adresse n'est pas un flux RSS (load)";
 			return false;
 		}
