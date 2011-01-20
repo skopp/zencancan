@@ -8,3 +8,5 @@ if (! $result){
 } else {
 	print_r($result);
 }
+
+// $feedFetchInfo->getLastContent();

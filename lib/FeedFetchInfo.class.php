@@ -27,14 +27,14 @@ class FeedFetchInfo {
 	}
 	
 	public function updateURL($url,$etag,$lastModified){
-		$content = $this->urlLoader->getContent($url,$etag,$lastModified);
+		$this->lastContent = $this->urlLoader->getContent($url,$etag,$lastModified);
 		
-		if (! $content ){
+		if (! $this->lastContent ){
 			$this->lastError = $this->urlLoader->getLastError() ;
 			return false;
 		}
 		
-		$feedInfo = $this->feedParser->getInfo($content);
+		$feedInfo = $this->feedParser->getInfo($this->lastContent );
 		
 		if (! $feedInfo){
 			$this->lastError = $this->feedParser->getLastError();
@@ -62,7 +62,6 @@ class FeedFetchInfo {
 				return false;
 			}
 		}
-		
 		$result = $this->feedParser->getInfo($this->lastContent);
 		
 		if ( ! $result ){
@@ -84,6 +83,8 @@ class FeedFetchInfo {
 			}
 			$url = $new_url;
 		}
+		
+		
 		$result['url'] = $url;
 		$result['lasterror'] = "";
 		$result['etag'] = $this->urlLoader->getHeader('etag');
