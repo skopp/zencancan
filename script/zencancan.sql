@@ -5,6 +5,11 @@ CREATE TABLE abonnement (
 	PRIMARY KEY (`id`,`id_f`),
 	UNIQUE KEY id_f (`id_f`,`id`)
 )  ENGINE=MyISAM  ;
+CREATE TABLE error (
+	`search` varchar(255) NOT NULL,
+	`date` datetime NOT NULL,
+	`raison` varchar(255) NOT NULL
+)  ENGINE=MyISAM  ;
 CREATE TABLE feed (
 	`id_f` int(11) NOT NULL AUTO_INCREMENT,
 	`url` varchar(512) NOT NULL,

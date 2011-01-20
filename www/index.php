@@ -85,7 +85,8 @@ Site à suivre: <br/>
 		
 		<td class='site'><a href='feed.php?id=<?php echo $id ?>&id_f=<?php hecho($flux['id_f'])?>' title='<?php hecho($flux['title'])?>'><?php hecho(wrap($flux['title'],25,2))?></a></td>
 	
-		<td class='lien'><a href='<?php hecho($flux['item_link'])?>' target='_blank'><?php hecho($flux['item_title']) ?></a></td>
+		<td class='lien'><a href='<?php hecho($flux['item_link'])?>' target='_blank' title='<?php  hecho(wrap(strip_tags($flux['item_content']),200,1)) ?>'>
+		<?php hecho($flux['item_title']) ?></a></td>
 		
 	</tr>
 <?php endforeach;?>

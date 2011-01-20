@@ -10,21 +10,22 @@ class FeedUpdater {
 	const MIN_TIME_BEETWEEN_LOAD = 360;
 	
 	private $feedSQL;
+	private $feedFetchInfo;
 	private $staticPath;
 	
-	public function __construct(FeedSQL $feedSQL,$staticPath){
+	private $lastError;
+	
+	public function __construct(FeedSQL $feedSQL,FeedFetchInfo $feedFetchInfo,$staticPath){
 		$this->feedSQL = $feedSQL;
-		$this->urlLoader = new URLLoader();
-		$this->feedParser = new FeedParser();
+		$this->feedFetchInfo = $feedFetchInfo;
+		
+		
 		$this->staticPath = $staticPath;
 	}
-	
-	private $lastError;
 	
 	public function getLastError(){
 		return $this->lastError;
 	}
-	
 	
 	public function addWithoutFetch($url){
 		$info = $this->feedSQL->getInfo($url);
@@ -35,125 +36,58 @@ class FeedUpdater {
 		$feedInfo['lasterror'] = "";
 		$feedInfo['url'] = $url;
 		$feedInfo['etag'] = "";
-		$feedInfo['last-modified'] = "";
+		$feedInfo['last-modified'] = date();
 		$feedInfo['id_item'] = "";
 		$feedInfo['title'] = "En cours de récupération";
 		$feedInfo['link'] = $url;
 		$feedInfo['item_title'] = $url;
 		$feedInfo['item_link'] =  $url;		
 		$feedInfo['item_content'] = "";	
-		$feedInfo['pubDate'] = "";
+		$feedInfo['pubDate'] = date();
 		$id_f= $this->feedSQL->insert($feedInfo);
 		$this->feedSQL->forceLastRecup($url);
 		return $id_f;
 	}
 	
-	//On ajoute une URL
 	public function add($url){
 		
 		if (! $url){
 			 $this->lastError = "Aucune URL spécifié";
 			return false;
 		}
-		
 		$info = $this->feedSQL->getInfo($url);
 		if ($info){
 			return $info['id_f'];
 		}
-		$content = $this->urlLoader->getContent($url);
-		if ( ! $content ){
-			
-			
-			$google = "https://ajax.googleapis.com/ajax/services/search/web?v=1.0&q=".urlencode($url);
-			
-			if (empty($_SERVER['HTTP_ACCEPT_LANGUAGE'])){
-				$_SERVER['HTTP_ACCEPT_LANGUAGE'] = 'fr,fr-fr;q=0.8,en-us;q=0.5,en;q=0.3';
-			}
-			
-			$result = $this->urlLoader->getContent($google,false,false,$_SERVER['HTTP_ACCEPT_LANGUAGE']);
-			
-			$result = json_decode($result,true);
-			
-			
-			if (empty($result['responseData']['results'][0]['url'])){
-				$this->lastError = "Je n'ai rien trouvé de tel";
-				return false;
-			}
-			$url = $result['responseData']['results'][0]['url'];
-			//$urlToGrab =  $result['responseData']['results'][0]['cacheUrl'];
-			
-			
-			$content = $this->urlLoader->getContent($url);
-			if (! $content){
-				$this->lastError = "J'ai essayé $url ";
-				return false;
-			}
-			
-		}
 		
-		$finfo = new finfo(FILEINFO_MIME);
-		$contentType  = $finfo->buffer($content);
-		
-		if (strstr($contentType,'text/html') !== false){
-			$url_fromHTML =  $this->findFromHTML($url,$content);	
-			
-			if ($url_fromHTML){
-				$url = $url_fromHTML;
-				$content = $this->urlLoader->getContent($url);
-				$contentType  = $finfo->buffer($content);
-				
-				$info = $this->feedSQL->getInfo($url);
-				if ($info){
-					return $info['id_f'];
-				}
-				
-			} else {	
-				$this->lastError = "$url ne permet pas qu'on le suive";
-				return false;
-			}
-		} 
-		
-		if (strstr($contentType,'application/xml') === false){
-			$this->lastError = "$url ne permet pas qu'on le suive ($contentType)";
-			return false;
-		}
-		
-		
-		$feedInfo = $this->feedParser->getInfo($content);
+		$feedInfo = $this->feedFetchInfo->getURL($url);
 		
 		if ( ! $feedInfo){
-			$this->lastError = $this->feedParser->getLastError();
+			$this->lastError = $this->feedFetchInfo->getLastError();
 			return false;
 		}
-			
-		$feedInfo['lasterror'] = "";
-		$feedInfo['url'] = $url;
-		$feedInfo['etag'] = $this->urlLoader->getHeader('etag');
-		$feedInfo['last-modified'] = $this->urlLoader->getHeader('last-modified');
-	
+		if ($url != $feedInfo['url']){
+			$info = $this->feedSQL->getInfo($feedInfo['url']);
+			if ($info){
+				$this->feedSQL->doUpdate($info['id_f'],$feedInfo);
+				$this->updateFile($info['id_f'],$this->feedFetchInfo->getLastContent());
+				return $info['id_f'];
+			}
+		}
+		
 		$id_f = $this->feedSQL->insert($feedInfo);
-		$this->updateFile($id_f,$content);
+		$this->updateFile($id_f,$this->feedFetchInfo->getLastContent());
 		return $id_f;
 	}
 	
-	
-	//On met à jour une URL : on est sur qu'elle existe;
 	public function update($url , $info ) {		
-	
-		$content = $this->urlLoader->getContent($url,$info['etag'],$info['last-modified']);
-		if (! $content ){
-			$this->feedSQL->udpateLastRecup($url,$this->urlLoader->getLastError());
-			return $this->urlLoader->getLastError();
+		$feedInfo = $this->feedFetchInfo->updateURL($url,$info['etag'],$info['last-modified']);
+		if (! $feedInfo){
+			$this->feedSQL->udpateLastRecup($url,$this->feedFetchInfo->getLastError());
+			return $this->feedFetchInfo->getLastError();
 		}
-		
-		$feedInfo = $this->feedParser->getInfo($content);
-		$feedInfo['lasterror'] = $this->feedParser->getLastError();
-		$feedInfo['url'] = $url;
-		$feedInfo['etag'] = $this->urlLoader->getHeader('etag');
-		$feedInfo['last-modified'] = $this->urlLoader->getHeader('last-modified');
-	
 		$this->feedSQL->doUpdate($info['id_f'] , $feedInfo);
-		$this->updateFile($info['id_f'] ,$content);
+		$this->updateFile($info['id_f'] ,$this->feedFetchInfo->getLastContent());
 		return $feedInfo['lasterror'];
 	}
 	
@@ -190,37 +124,6 @@ class FeedUpdater {
 			echo "Je m'endors pendant $timeToSleep s\n";
 			sleep( $timeToSleep);
 		}
-	}
-	
-	private function findFromHTML($base_url,$content){
-		$dom = new DOMDocument();
-		$dom->loadHTML($content);
-		
-		$url = "";
-		$elementNode = $dom->getElementsByTagName("link");
-		foreach($elementNode as $e){
-			if (in_array($e->getAttribute("type") ,  array("application/rss+xml",'application/atom+xml') ) ){
-				$url =  $e->getAttribute("href");
-				break;
-			}
-				
-		}
-		if (! $url){
-			return false;
-		}
-		if (preg_match("#https?://#",$url)){
-			return $url;
-		}
-		if (! preg_match("#^/#",$url)){
-			return $base_url."/".$url;
-		}
-		
-		$parse = parse_url($base_url);
-		$parse['path'] = $url;
-		
-		$url = $parse["scheme"]."://".$parse['host'].$url;
-		return $url;
-		
 	}
 	
 	private function updateFile($id_f,$content){

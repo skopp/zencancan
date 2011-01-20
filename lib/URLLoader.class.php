@@ -8,7 +8,6 @@ class URLLoader {
 		$this->timeout = $timeout;
 	}
 	
-	
 	public function getContent($url,$eTag = false ,$lastModified = false,$acceptLanguage = false){
 		if ( ! $url) {
 			return false;
@@ -19,6 +18,7 @@ class URLLoader {
 		curl_setopt( $curl, CURLOPT_FOLLOWLOCATION, 1 );	
 
 		$option = array();
+		$option[] = "User-Agent: zencancan - (+http://zencancan.com/)";
 		if ($eTag){
 			$option[] = "If-None-Match: $eTag";
 		}
