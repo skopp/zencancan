@@ -7,7 +7,7 @@ NAME=zencancan
 DESC=ZENCANCAN
 PIDFILE="${NAME}.pid"
 QUIET="--quiet"
-START_OPTS="--start ${QUIET} --background --make-pidfile --pidfile ${PIDFILE} --exec ${DAEMON} ${DAEMON_OPTS}"
+START_OPTS="-c www-data --start ${QUIET} --background --make-pidfile --pidfile ${PIDFILE} --exec ${DAEMON} ${DAEMON_OPTS}"
 STOP_OPTS="--stop --pidfile ${PIDFILE}"
 
 test -x $DAEMON || exit 0

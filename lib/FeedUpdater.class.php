@@ -91,7 +91,7 @@ class FeedUpdater {
 		return $feedInfo['lasterror'];
 	}
 	
-	public function updateForever($abonnementSQL){
+	public function updateForever($abonnementSQL,$log_file){
 		
 		$info = $this->feedSQL->getFirstToUpdate();
 		
@@ -107,10 +107,10 @@ class FeedUpdater {
 			
 			if ($abonnementSQL->getNbAbonner($id_f) == 0){
 				$this->feedSQL->del($id_f);
-				echo "Supression de {$info['url']}\n";
+				file_put_contents($log_file,"Supression de {$info['url']}\n",FILE_APPEND);
 			} else {
 				$lastError = $this->update($info['url'],$info);
-				echo "Récup de {$info['url']} - {$lastError}\n";
+				file_put_contents($log_file,"Récup de {$info['url']} - {$lastError}\n",FILE_APPEND);
 			}
 			
 			$info = $this->feedSQL->getFirstToUpdate();
@@ -121,7 +121,7 @@ class FeedUpdater {
 			
 		$timeToSleep =  self::MIN_TIME_BEETWEEN_LOAD - (time() - strtotime($lastRecup));
 		if ( $timeToSleep > 0){
-			echo "Je m'endors pendant $timeToSleep s\n";
+			file_put_contents($log_file,"Je m'endors pendant $timeToSleep s\n",FILE_APPEND);
 			sleep( $timeToSleep);
 		}
 	}
