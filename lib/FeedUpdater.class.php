@@ -101,7 +101,7 @@ class FeedUpdater {
 				continue;
 			}
 			
-			$this->sleepIfNeeded($info['last_recup']);
+			$this->sleepIfNeeded($info['last_recup'],$log_file);
 			
 			$id_f = $info['id_f'];	
 			
@@ -117,7 +117,7 @@ class FeedUpdater {
 		}
 	}
 	
-	private function sleepIfNeeded($lastRecup){
+	private function sleepIfNeeded($lastRecup,$log_file){
 			
 		$timeToSleep =  self::MIN_TIME_BEETWEEN_LOAD - (time() - strtotime($lastRecup));
 		if ( $timeToSleep > 0){
