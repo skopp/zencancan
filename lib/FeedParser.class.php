@@ -44,7 +44,7 @@ class FeedParser {
 	
 	public function parseXMLContent($content){
 		
-		$xml = simplexml_load_string($content);
+		$xml = simplexml_load_string($content,"SimpleXMLElement",LIBXML_NOCDATA);
 		if (! $xml ){
 			$this->lastError = "L'adresse n'est pas un flux RSS (load)";
 			return false;
