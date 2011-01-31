@@ -1,7 +1,6 @@
 <?php
 
-require_once( dirname(__FILE__)."/../init.php");
-require_once("PasswordGenerator.class.php");
+require_once( __DIR__."/../init-web.php");
 require_once("PageHTML.class.php");
 require_once("AbonnementSQL.class.php");
 require_once("FancyDate.class.php");
@@ -12,34 +11,8 @@ $recuperateur = new Recuperateur($_GET);
 $abonnementSQL = new AbonnementSQL($sqlQuery);
 $fancyDate = new FancyDate();
 
-$id = $recuperateur->get('id');
 $offset = $recuperateur->getInt('offset',0);
 $tag = $recuperateur->get('tag');
-
-if (strlen($id) > 16 ){
-	setcookie("id","");
-	$id = "";
-}
-
-if (isset($_COOKIE['id'])){
-	if (! $id ){
-		header("Location: index.php?id=".$_COOKIE['id']);
-		exit;
-	}
-	if ($id !=  $_COOKIE['id'] ){
-		setcookie("id",$id);
-		header("Location: index.php?id=$id");
-		exit;
-	} 
-}
-
-if (! $id ){
-	$passwordGenerator = new PasswordGenerator();
-	$id = $passwordGenerator->getPassword();
-	setcookie("id",$id);
-	header("Location: index.php?id=$id");
-	exit;
-}
 
 $allFlux = $abonnementSQL->get($id,$tag,$offset);
 $nbFlux = $abonnementSQL->getNbFlux($id,$tag);
@@ -47,7 +20,7 @@ $nbFlux = $abonnementSQL->getNbFlux($id,$tag);
 $paginator = new Paginator($nbFlux,AbonnementSQL::NB_DISPLAY,$offset);
 $paginator->setLink("index.php?id=$id&tag=$tag");
 
-$pageHTML = new PageHTML($id,$debut);
+$pageHTML = new PageHTML($id,$debut,$authentification->isNamedAccount());
 $pageHTML->haut();
 ?>
 
@@ -97,6 +70,7 @@ $paginator->displayPrevious("Sites mis à jour avant »");
 ?>
 		<p class='petit'>
 			<a href='param.php?id=<?php hecho($id)?>'>Configurer mon compte</a>
+			<a href='logout.php'>Déconnexion</a>
 		</p>
 <?php 
 

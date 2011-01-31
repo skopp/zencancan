@@ -1,6 +1,6 @@
 <?php
 
-require_once( dirname(__FILE__)."/../init.php");
+require_once( __DIR__."/../init-web.php");
 require_once("PageHTML.class.php");
 require_once("util.php");
 
@@ -12,7 +12,7 @@ if (!$id){
 	exit;
 }
 
-$pageHTML = new PageHTML($id,$debut);
+$pageHTML = new PageHTML($id,$debut,$authentification->isNamedAccount());
 
 $pageHTML->haut();
 ?>
@@ -21,6 +21,10 @@ $pageHTML->haut();
 </p>
 
 <h2>Mon compte</h2>
+<?php if ( ! $authentification->isNamedAccount() ):?>
+<a href='create-account.php?id=<?php echo $id ?>'>Créer un compte nommée (exemple : eric.<?php echo DOMAIN_NAME ?>)</a>
+<?php endif;?>
+
 
 <h2>Import/export</h2>
 

@@ -17,10 +17,12 @@ $sqlQuery->setCredential($database_login,$database_password);
 
 setlocale(LC_ALL,"fr_FR.UTF-8");
 
-session_start();
-$lastMessage = new LastMessage();
 
 define("DATABASE_FILE",dirname(__FILE__)."/script/zencancan.bin");
 define("STATIC_PATH",dirname(__FILE__)."/static/");
 
 define("LOG_FILE","/var/log/zencancan.log");
+
+if (! defined("DOMAIN_NAME")){
+	define("DOMAIN_NAME","zencancan.com");
+}

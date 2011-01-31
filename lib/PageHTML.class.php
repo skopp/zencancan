@@ -1,12 +1,17 @@
 <?php
+require_once("util.php");
+
+
 class PageHTML {
 	
 	private $debut;
 	private $id;
+	private $namedAccount;
 	
-	public function __construct($id,$debut){
+	public function __construct($id,$debut,$namedAccount = false ){
 		$this->debut = $debut;
 		$this->id = $id;
+		$this->namedAccount = $namedAccount;
 	}
 	
 	public function haut(){
@@ -29,10 +34,11 @@ class PageHTML {
 		</div>
 		
 		<div id='content'>
-			
-			<p>
-			Votre identifiant : <a href='param.php?id=<?php hecho($this->id)?>'><?php hecho($this->id) ?></a>
-			</p>
+			<?php if (! $this->namedAccount) : ?>
+				<p>
+				Votre identifiant : <a href='param.php?id=<?php hecho($this->id)?>'><?php hecho($this->id) ?></a>
+				</p>
+			<?php endif;?>
 		<?php 		
 	}
 	

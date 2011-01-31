@@ -1,5 +1,5 @@
 <?php 
-require_once( dirname(__FILE__)."/../init.php");
+require_once( __DIR__."/../init-web.php");
 
 require_once("FeedSQL.class.php");
 require_once("AbonnementSQL.class.php");

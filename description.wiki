@@ -1,4 +1,4 @@
-zenCancan est une application web qui permet d'aggréger des flux RSS.
+zenCancan est une application web entièrement gratuite et libre qui permet d'aggréger des flux RSS.
 
 == But ==
 zenCancan a été initialement créer pour suivre les flux de commentaires de billet de blog
@@ -24,3 +24,6 @@ la recherche via google va afficher une page HTML disposant d'une alternative RS
 *Regroupement des flux via un mot-clé ;
 *Import/export des flux en OPML ;
 
+== Autres informations ==
+Le site zencancan.com permet d'utiliser le service d'aggrégation de manière entièrement gratuite 
+sans avoir a posséder son propre serveur.

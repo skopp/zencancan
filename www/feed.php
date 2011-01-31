@@ -1,6 +1,5 @@
 <?php
-
-require_once( dirname(__FILE__)."/../init.php");
+require_once( __DIR__."/../init-web.php");
 require_once("PageHTML.class.php");
 require_once("FancyDate.class.php");
 require_once("util.php");
@@ -29,7 +28,7 @@ $feedParser = new FeedParser();
 $rssInfo = $feedParser->parseXMLContent($content);
 
 
-$pageHTML = new PageHTML($id,$debut);
+$pageHTML = new PageHTML($id,$debut,$authentification->isNamedAccount());
 $pageHTML->haut();
 ?>
 <?php if ($info['tag']) : ?>
