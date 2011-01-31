@@ -12,8 +12,6 @@ if (!$id){
 	exit;
 }
 
-
-
 $pageHTML = new PageHTML($id,$debut);
 
 $pageHTML->haut();
@@ -23,6 +21,8 @@ $pageHTML->haut();
 </p>
 
 <h2>Mon compte</h2>
+
+<h2>Import/export</h2>
 
 <h3>Importer des flux</h3>
 <form action='import.php' enctype='multipart/form-data' method='post'>
@@ -34,6 +34,19 @@ $pageHTML->haut();
 <h3>Exporter mes flux</h3>
 
 <a href='export.php?id=<?php hecho($id)?>'>zencancan-<?php hecho($id) ?>.opml</a>
+
+<h2>Supression</h2>
+
+Détruire ce compte définitivement. 
+<?php if ($lastMessage->getLastMessage()) : ?>
+	<p><?php echo $lastMessage->getLastMessage(); ?></p>
+<?php endif;?>
+<form action='delete-account.php' method='post'>
+<input type='hidden' name='id' value='<?php echo $id?>' />
+Veuillez saisir l'identifiant du compte : <input name='code' value=''/>
+<input type='submit' value='Détruire'/>
+</form>
+<b>Cette opération n'est pas réversible</b>
 
 <?php 
 

@@ -101,4 +101,9 @@ class AbonnementSQL {
 		return $this->sqlQuery->queryOne($sql,$id,$id_f);
 	}
 	
+	public function delCompte($id){
+		$sql = "DELETE FROM abonnement WHERE id=?";
+		$this->sqlQuery->query($sql,$id);
+	}
+	
 }
