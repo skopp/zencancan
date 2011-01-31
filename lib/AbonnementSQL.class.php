@@ -81,9 +81,14 @@ class AbonnementSQL {
 		return $this->sqlQuery->queryOne($sql,$id_f);
 	}
 	
-	public function getNbFlux($id){
-		$sql = "SELECT count( * ) FROM abonnement WHERE id =?";
-		return $this->sqlQuery->queryOne($sql,$id);
+	public function getNbFlux($id,$tag = ''){
+		$sql = "SELECT count( * ) FROM abonnement WHERE id =? ";
+		$info[] = $id;
+		if ($tag) {
+			$sql .= " AND tag=?";
+			$info[] = $tag;
+		}
+		return $this->sqlQuery->queryOne($sql,$info);
 	}
 	
 	public function addTag($id,$id_f,$tag){

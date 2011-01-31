@@ -45,7 +45,7 @@ $allFlux = $abonnementSQL->get($id,$tag,$offset);
 $nbFlux = $abonnementSQL->getNbFlux($id,$tag);
 
 $paginator = new Paginator($nbFlux,AbonnementSQL::NB_DISPLAY,$offset);
-$paginator->setLink("index.php?id=$id");
+$paginator->setLink("index.php?id=$id&tag=$tag");
 
 $pageHTML = new PageHTML($id,$debut);
 $pageHTML->haut();
