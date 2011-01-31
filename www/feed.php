@@ -43,7 +43,7 @@ $pageHTML->haut();
 <?php foreach($rssInfo['item'] as $flux) : ?>
 	<tr>
 		<td class='date'><a name='' title='Dernier passage : <?php echo $fancyDate->get($flux['pubDate'])?>'><?php echo $fancyDate->get($flux['pubDate'])?></a></td>
-		<td class='lien'><a href='<?php hecho($flux['link'])?>' target='_blank' title='<?php  hecho(wrap(strip_tags($flux['description']),200,1)) ?>'><?php hecho($flux['title']) ?></a><br/>
+		<td class='lien'><a href='<?php hecho($flux['link'])?>' target='_blank' title='<?php  echo wrap(strip_tags($flux['description']),200,1) ?>'><?php echo strip_tags($flux['title']) ?></a><br/>
 	</td>
 	</tr>
 <?php endforeach;?>
