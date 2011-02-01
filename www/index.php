@@ -21,6 +21,7 @@ $paginator = new Paginator($nbFlux,AbonnementSQL::NB_DISPLAY,$offset);
 $paginator->setLink("index.php?id=$id&tag=$tag");
 
 $pageHTML = new PageHTML($id,$debut,$authentification->getNamedAccount());
+$pageHTML->setRSSURL("rss.php?id=$id");
 $pageHTML->haut();
 ?>
 
