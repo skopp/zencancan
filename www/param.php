@@ -12,7 +12,7 @@ if (!$id){
 	exit;
 }
 
-$pageHTML = new PageHTML($id,$debut,$authentification->isNamedAccount());
+$pageHTML = new PageHTML($id,$debut,$authentification->getNamedAccount());
 
 $pageHTML->haut();
 ?>
@@ -21,7 +21,7 @@ $pageHTML->haut();
 </p>
 
 <h2>Mon compte</h2>
-<?php if ( ! $authentification->isNamedAccount() ):?>
+<?php if ( ! $authentification->getNamedAccount() ):?>
 <a href='create-account.php?id=<?php echo $id ?>'>Créer un compte nommé (exemple : eric.<?php echo DOMAIN_NAME ?>)</a>
 <?php endif;?>
 

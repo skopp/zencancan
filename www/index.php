@@ -20,7 +20,7 @@ $nbFlux = $abonnementSQL->getNbFlux($id,$tag);
 $paginator = new Paginator($nbFlux,AbonnementSQL::NB_DISPLAY,$offset);
 $paginator->setLink("index.php?id=$id&tag=$tag");
 
-$pageHTML = new PageHTML($id,$debut,$authentification->isNamedAccount());
+$pageHTML = new PageHTML($id,$debut,$authentification->getNamedAccount());
 $pageHTML->haut();
 ?>
 

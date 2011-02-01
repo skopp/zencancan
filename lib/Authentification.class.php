@@ -3,6 +3,8 @@
 class Authentification {
 
 	private $passwordGenerator;
+	private $idHasChanged;
+	
 	
 	public function __construct(PasswordGenerator $passwordGenerator){
 		$this->passwordGenerator = $passwordGenerator;
@@ -10,15 +12,24 @@ class Authentification {
 	
 	public function setId($id){
 		$_SESSION['id'] = $id ;
+		$this->idHasChanged = true;
 	}
 	
-	public function isNamedAccount(){
+	public function getFullAccountName() {
+		return $this->getNamedAccount() . "." . DOMAIN_NAME;
+	}
+	
+	public function hasChangedId(){
+		return ($this->idHasChanged &&  ! $this->getNamedAccount());
+	}
+	
+	public function getNamedAccount(){
 		$server_name = $_SERVER['SERVER_NAME'];
 		return strstr($server_name,"." . DOMAIN_NAME,true);
 	}
 	
 	public function getId(){		
-		if ($this->isNamedAccount() ){
+		if ($this->getNamedAccount() ){
 			if (empty($_SESSION['id'])){
 				return false;
 			}
@@ -40,57 +51,8 @@ class Authentification {
 		return $id;
 	}
 	
-}
-/*
- * 
- * if (strlen($id) > 16 ){
-	setcookie("id","");
-	$id = "";
-}
-
-if (isset($_COOKIE['id'])){
-	if (! $id ){
-		header("Location: index.php?id=".$_COOKIE['id']);
-		exit;
+	public function logout(){	
+		session_destroy();
 	}
-	if ($id !=  $_COOKIE['id'] ){
-		setcookie("id",$id);
-		header("Location: index.php?id=$id");
-		exit;
-	} 
-}
-
-if (! $id ){
-	$passwordGenerator = new PasswordGenerator();
-	$id = $passwordGenerator->getPassword();
-	setcookie("id",$id);
-	header("Location: index.php?id=$id");
-	exit;
-}
-
- */
-/*
- * 
-		if (  ! $username ){
-			if (isset($_REQUEST['id'])){
-				return $id;
-			}
-		}
-		
-			if ($username){
-				if ($compte->exists($username)){
-					if ( ! in_array(basename($_SERVER['PHP_SELF']),array('login.php','login-controler.php') )) {
-						header("Location: login.php");
-						exit;
-					}
-				} else {
-					header("Location: http://".DOMAIN_NAME);
-					exit;
-				}
-			}
-		}
-		
-		
-		return false;
 	
- */
+}

@@ -41,4 +41,10 @@ class Compte {
 		return $this->lastError;
 	}
 	
+	public function getAccountName($id){
+		$sql = "SELECT name FROM compte WHERE id = ?";
+		return $this->sqlQuery->queryOne($sql,$id);
+	}
+	
+	
 }

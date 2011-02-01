@@ -28,7 +28,7 @@ $feedParser = new FeedParser();
 $rssInfo = $feedParser->parseXMLContent($content);
 
 
-$pageHTML = new PageHTML($id,$debut,$authentification->isNamedAccount());
+$pageHTML = new PageHTML($id,$debut,$authentification->getNamedAccount());
 $pageHTML->haut();
 ?>
 <?php if ($info['tag']) : ?>

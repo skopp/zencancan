@@ -34,7 +34,7 @@ class PageHTML {
 		</div>
 		
 		<div id='content'>
-			<?php if (! $this->namedAccount) : ?>
+			<?php if (! $this->namedAccount && $this->id) : ?>
 				<p>
 				Votre identifiant : <a href='param.php?id=<?php hecho($this->id)?>'><?php hecho($this->id) ?></a>
 				</p>
