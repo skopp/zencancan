@@ -27,5 +27,5 @@ if (! $result){
 	$exit($compte->getLastError());
 }
 
-
+$authentification->logout();
 header("Location: http://$name.".DOMAIN_NAME);
