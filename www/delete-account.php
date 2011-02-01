@@ -21,4 +21,4 @@ if ($authentification->getNamedAccount()){
 	$compte->delete($authentification->getNamedAccount());
 }
 $authentification->logout();
-header("Location: http://".SITE_DOMAIN);
+header("Location: http://".DOMAIN_NAME);
