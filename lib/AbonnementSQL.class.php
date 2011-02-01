@@ -36,7 +36,20 @@ class AbonnementSQL {
 		return $this->sqlQuery->query($sql,$id);
 	}
 	
-	public function getWithContent($id,$offset){
+	public function getWithContentWithTag($id,$offset,$tag){
+			$sql = "SELECT * FROM abonnement " . 
+				" JOIN feed ON abonnement.id_f = feed.id_f " . 
+				" WHERE id=? AND abonnement.tag=?" . 
+				" ORDER BY last_maj DESC".
+				" LIMIT $offset,".self::NB_DISPLAY;
+		
+		return $this->sqlQuery->query($sql,$id,$tag);	
+	}
+	
+	public function getWithContent($id,$offset,$tag){
+		if ($tag){
+			return $this->getWithContentWithTag($id,$offset,$tag);
+		}
 		$sql = "SELECT * FROM abonnement " . 
 				" JOIN feed ON abonnement.id_f = feed.id_f " . 
 				" WHERE id=?" . 
@@ -97,7 +110,7 @@ class AbonnementSQL {
 	}
 	
 	public function getInfo($id,$id_f){
-		$sql = "SELECT * FROM abonnement WHERE id=? AND id_f = ? ";
+		$sql = "SELECT * FROM abonnement JOIN feed ON abonnement.id_f=feed.id_f WHERE id=? AND abonnement.id_f = ? ";
 		return $this->sqlQuery->queryOne($sql,$id,$id_f);
 	}
 	

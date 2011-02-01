@@ -29,6 +29,13 @@ $rssInfo = $feedParser->parseXMLContent($content);
 
 
 $pageHTML = new PageHTML($id,$debut,$authentification->getNamedAccount());
+
+$pageHTML->addRSSURL("Votre flux zencancan","rss.php?id=$id");
+if ($info['tag']){
+	$pageHTML->addRSSURL("Votre flux zencancan - {$info['tag']}","rss.php?id=$id&tag={$info['tag']}");
+}
+$pageHTML->addRSSURL($info['title'],$info['url']);
+
 $pageHTML->haut();
 ?>
 <?php if ($info['tag']) : ?>

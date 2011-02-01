@@ -13,7 +13,7 @@ class RSSCreator {
 		$this->addElement($this->channel,"title",$title);
 		$this->addElement($this->channel,"description",$description);
 		$this->addElement($this->channel,"lastBuildDate",date("r"));
-		$this->addElement($this->channel,'link',"http://".$url);
+		$this->addElement($this->channel,'link',"http://".str_replace("&","&amp;",$url));
 	}
 		
 	public function addItem($title,$link,$date,$content){

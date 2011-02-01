@@ -7,17 +7,18 @@ class PageHTML {
 	private $debut;
 	private $id;
 	private $namedAccount;
-	private $rssURL;
+	private $rss;
 	
 	public function __construct($id,$debut,$namedAccount = false ){
 		$this->debut = $debut;
 		$this->id = $id;
 		$this->namedAccount = $namedAccount;
+		$this->rss = array();
 	}
 	
 	
-	public function setRSSURL($url){
-		$this->rssURL = $url;
+	public function addRSSURL($title,$url){
+		$this->rss[] = array('title' => $title,'url' => $url);
 	}
 	
 	public function haut(){
@@ -30,9 +31,9 @@ class PageHTML {
 		<meta name="description" content='La gestion simple du suivi de site' />
 		
 		<link rel="stylesheet" type="text/css" href="zencancan.css" media="screen" />
-		<?php if ($this->rssURL) : ?>
-			<link rel="alternate" type="application/rss+xml" title="zenCancan - votre flux" href="<?php echo $this->rssURL?>" />
-		<?php endif;?>
+		<?php foreach ($this->rss as $feed) : ?>
+			<link rel="alternate" type="application/rss+xml" title="<?php echo $feed['title'] ?>" href="<?php echo $feed['url'] ?>" />
+		<?php endforeach;?>
 		<link rel="Shortcut Icon" href="favicon.ico" type="image/x-icon" />
 	</head>
 	<body>

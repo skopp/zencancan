@@ -21,7 +21,10 @@ $paginator = new Paginator($nbFlux,AbonnementSQL::NB_DISPLAY,$offset);
 $paginator->setLink("index.php?id=$id&tag=$tag");
 
 $pageHTML = new PageHTML($id,$debut,$authentification->getNamedAccount());
-$pageHTML->setRSSURL("rss.php?id=$id");
+$pageHTML->addRSSURL("Votre flux zencancan","rss.php?id=$id");
+if ($tag){
+	$pageHTML->addRSSURL("Votre flux zencancan - $tag","rss.php?id=$id&tag=$tag");
+}
 $pageHTML->haut();
 ?>
 
@@ -37,8 +40,6 @@ Site à suivre: <br/>
 <input type='submit' value='Suivre' />
 </form>
 <p class='petit'>Exemple: L'Equipe, Le Monde, Morandini, ...</p>
-
-
 
 <?php if ($tag) : ?>
 <a href='index.php?id=<?php hecho($id)?>'>« Revenir à la liste des sites</a>
@@ -60,8 +61,7 @@ Site à suivre: <br/>
 		<td class='site'><a href='feed.php?id=<?php echo $id ?>&id_f=<?php hecho($flux['id_f'])?>' title='<?php hecho($flux['title'])?>'><?php hecho(wrap($flux['title'],25,2))?></a></td>
 	
 		<td class='lien'><a href='<?php hecho($flux['item_link'])?>' target='_blank' title='<?php  hecho(wrap(strip_tags($flux['item_content']),200,1)) ?>'>
-		<?php hecho($flux['item_title']) ?></a></td>
-		
+		<?php hecho($flux['item_title']) ?></a></td>		
 	</tr>
 <?php endforeach;?>
 </table>
