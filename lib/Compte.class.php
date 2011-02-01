@@ -46,5 +46,10 @@ class Compte {
 		return $this->sqlQuery->queryOne($sql,$id);
 	}
 	
+	public function delete($name){
+		$sql = "DELETE FROM compte WHERE name=?";
+		$this->sqlQuery->query($sql,$name);
+	}
+	
 	
 }

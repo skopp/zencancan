@@ -17,4 +17,8 @@ if ($code != $id){
 $abonnementSQL = new AbonnementSQL($sqlQuery);
 $abonnementSQL->delCompte($id);
 	
-header("Location:index.php");
+if ($authentification->getNamedAccount()){
+	$compte->delete($authentification->getNamedAccount());
+}
+$authentification->logout();
+header("Location: http://".SITE_DOMAIN);
