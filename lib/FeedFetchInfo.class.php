@@ -67,7 +67,7 @@ class FeedFetchInfo {
 		if ( ! $result ){
 			$new_url =  $this->findFromHTML($url,$this->lastContent);	
 			if ( ! $new_url){
-				$this->lastError = "Le site <a href='$url'>$keyword_or_url</a> ne donne aucune information de suivie";
+				$this->lastError = "Le site <a href='$url'>$keyword_or_url</a> ne donne aucune information de suivi";
 				return false;
 			}
 			$this->lastContent = $this->urlLoader->getContent($new_url);
@@ -78,7 +78,7 @@ class FeedFetchInfo {
 			}
 			$result = $this->feedParser->getInfo($this->lastContent);
 			if ( ! $result ){
-				$this->lastError = "Les informations de suivie du site <a href='$url'>$keyword_or_url</a> ne sont pas utilisables";
+				$this->lastError = "Les informations de suivi du site <a href='$url'>$keyword_or_url</a> ne sont pas utilisables";
 				return false;
 			}
 			$url = $new_url;

@@ -22,7 +22,7 @@ $pageHTML->haut();
 
 <h2>Mon compte</h2>
 <?php if ( ! $authentification->isNamedAccount() ):?>
-<a href='create-account.php?id=<?php echo $id ?>'>Créer un compte nommée (exemple : eric.<?php echo DOMAIN_NAME ?>)</a>
+<a href='create-account.php?id=<?php echo $id ?>'>Créer un compte nommé (exemple : eric.<?php echo DOMAIN_NAME ?>)</a>
 <?php endif;?>
 
 
