@@ -10,6 +10,7 @@ CREATE TABLE compte (
 	`name` varchar(255) NOT NULL,
 	`id` varchar(16) NOT NULL,
 	`password` varchar(255) NOT NULL,
+	`remember` varchar(64) NOT NULL,
 	PRIMARY KEY (`id_u`),
 	UNIQUE KEY name (`name`),
 	UNIQUE KEY id (`id`)
