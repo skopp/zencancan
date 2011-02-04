@@ -69,10 +69,13 @@ Site à suivre: <br/>
 <?php 
 $paginator->displayPrevious("Sites mis à jour avant »");
 ?>
-		<p class='petit'>
-			<a href='param.php?id=<?php hecho($id)?>'>Configurer mon compte</a>
-			<a href='logout.php'>Déconnexion</a>
-		</p>
+	<p class='petit'>
+		<a href='param.php?id=<?php hecho($id)?>'>Configurer mon compte</a>
+		<a href='logout.php'>Déconnexion</a>
+		<?php if(! $authentification->getNamedAccount()) :?>
+			<a href='login.php?id=<?php hecho($id) ?>'>Connexion sur un compte identifié</a>
+		<?php endif;?>
+	</p>
 <?php 
 
 $pageHTML->bas();

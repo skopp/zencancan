@@ -51,5 +51,29 @@ class Compte {
 		$this->sqlQuery->query($sql,$name);
 	}
 	
+	public function getRemember($id){
+		$remember = $this->sqlQuery->queryOne("SELECT remember FROM compte WHERE id= ?",$id);
+		if ($remember){
+			return $remember;
+		}
+		$remember = md5(mt_rand(0,mt_getrandmax()));
+		$this->sqlQuery->query("UPDATE compte SET remember=? WHERE id=?",$remember,$id);
+		return $remember;
+	}
+	
+	public function verifRemember($name,$remember){
+		$sql = "SELECT id FROM compte WHERE name=? AND remember=?";
+		return $this->sqlQuery->queryOne($sql,$name,$remember);
+	}
+	
+	public function verifWithoutName($remember){
+		$sql = "SELECT name FROM compte WHERE remember=?";
+		return $this->sqlQuery->queryOne($sql,$remember);
+	}
+
+	public function deleteRemember($id){
+		$sql = "UPDATE compte set remember='' WHERE id=?";
+		$this->sqlQuery->query($sql,$id);
+	}
 	
 }

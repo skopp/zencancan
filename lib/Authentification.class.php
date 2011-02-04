@@ -29,6 +29,7 @@ class Authentification {
 	}
 	
 	public function getId(){		
+		
 		if ($this->getNamedAccount() ){
 			if (empty($_SESSION['id'])){
 				return false;
@@ -36,13 +37,13 @@ class Authentification {
 			return $_SESSION['id'];
 		}
 			
-		if (isset($_REQUEST['id']) && strlen($_REQUEST['id']) < 16  ){
+		if ((! empty ($_REQUEST['id'])) && strlen($_REQUEST['id']) < 16  ){
 			$id = $_REQUEST['id'];
 			$this->setId($id);
 			return $id;
 		} 
 		
-		if(isset($_SESSION['id'])) {
+		if(! empty($_SESSION['id'])) {
 			return $_SESSION['id'];
 		}
 		
@@ -52,6 +53,7 @@ class Authentification {
 	}
 	
 	public function logout(){	
+		setcookie('remember_zencancan',"");
 		session_destroy();
 	}
 	

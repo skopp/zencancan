@@ -6,8 +6,7 @@ $recuperateur = new Recuperateur($_GET);
 $id = $recuperateur->get('id');
 
 if (!$id){
-	header("Location: index.php");
-	exit;
+	$id = $authentification->getId();
 }
 
 $pageHTML = new PageHTML($id,$debut);
