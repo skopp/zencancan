@@ -90,9 +90,9 @@ class PageHTML {
 			<div class="cont">
 			
 			
-			<p><a class='menu_link' href='create-account.php'>Créer un compte</a></p>
-			<p><a class='menu_link' href='index.php'>Tester sur un compte anonyme</a></p>
-			<p><a class='menu_link' href='login.php'>Se connecter</a></p>
+			<p><a class='menu_link' href='<?php echo DOMAIN_NAME ?>/create-account.php'>Créer un compte</a></p>
+			<p><a class='menu_link' href='<?php echo DOMAIN_NAME ?>/index.php'>Tester sur un compte anonyme</a></p>
+			<p><a class='menu_link' href='<?php echo DOMAIN_NAME ?>/login.php'>Se connecter</a></p>
 			<p><a class='menu_link' href='contact.php'>Nous contacter</a></p>
 			</div>
 			<div class="bas"></div>				

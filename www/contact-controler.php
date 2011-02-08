@@ -8,7 +8,7 @@ require_once( "util.php");
 $recuperateur = new Recuperateur($_POST);
 
 $info['sujet'] = $recuperateur->get("sujet");
-$info['message']  = $recuperateur->get("message");
+$info['message']  = $recuperateur->get("question");
 $email = $recuperateur->get("email");
 
 
