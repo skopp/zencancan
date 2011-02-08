@@ -28,7 +28,7 @@ $zMail->send();
 $zMail->setEmmeteur(EMAIL_DESCRIPTION,EMAIL_CONTACT);
 $zMail->setDestinataire($email);
 $zMail->setSujet("[contact] " . $info['sujet'] );
-$zMail->setContenu(  DIR . "/../mail/contact-ar.php" ,$info );
+$zMail->setContenu(  __DIR__ . "/../mail/contact-ar.php" ,$info );
 $zMail->send();
 
 		
