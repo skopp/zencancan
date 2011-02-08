@@ -53,7 +53,9 @@ class PageHTML {
 			Bienvenue <span class='name'><?php echo $this->namedAccount ?></span> |
 			<?php endif;?>
 			<a href='param.php?id=<?php hecho($this->id)?>'>Paramètres</a> |
-			<a href='logout.php'>Déconnexion</a>
+			<a href='logout.php'>Déconnexion</a> | 
+			<a href='site.php'>Aide</a> 
+			
 			</div>
 		</div>
 		
@@ -78,4 +80,38 @@ class PageHTML {
 </html>	
 <?php 
 	}
+	
+	public function menu(){ ?>
+	<div id="colonne">
+	
+	
+		<div class="box">
+			<div class="haut"><h2>Utilisateur</h2></div>
+			<div class="cont">
+			
+			
+			<p><a class='menu_link' href='create-account.php'>Créer un compte</a></p>
+			<p><a class='menu_link' href='index.php'>Tester sur un compte anonyme</a></p>
+			<p><a class='menu_link' href='login.php'>Se connecter</a></p>
+			<p><a class='menu_link' href='contact.php'>Nous contacter</a></p>
+			</div>
+			<div class="bas"></div>				
+		</div>
+		
+		<div class="box">
+			<div class="haut"><h2>Développeur</h2></div>
+			<div class="cont">
+			<p><a class='menu_link' href='http://soft.zenprog.com/zenCancan.tgz'>Télecharger</a></p>
+			<p><a class='menu_link' href='http://source.zenprog.com/zencancan'>Voir le code source</a></p>
+			<p><a class='menu_link' href='site.php#licence'>Licence</a></p>
+			</div>
+			<div class="bas"></div>				
+		</div>
+		
+		
+	</div><!-- fin colonne -->
+	<?php 
+	
+	}
+	
 }

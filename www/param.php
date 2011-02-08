@@ -27,11 +27,15 @@ $pageHTML->haut();
 <p class='petit'>
 <a href='index.php?id=<?php hecho($id)?>'>« Revenir à la liste des sites</a>
 </p>
-
 <?php if ( ! $authentification->getNamedAccount() ):?>
-<a href='create-account.php?id=<?php echo $id ?>'>Créer un compte nommé (exemple : eric.<?php echo DOMAIN_NAME ?>)</a>
-<?php endif;?>
+<br/>
+<p>
 
+<a href='create-account.php?id=<?php echo $id ?>'>Créer un compte nommé </a>
+(exemple : eric.<?php echo DOMAIN_NAME ?>)
+</p>
+
+<?php endif;?>
 
 <h2>Import/export</h2>
 
@@ -56,8 +60,10 @@ Détruire ce compte définitivement.
 <input type='hidden' name='id' value='<?php echo $id?>' />
 Veuillez saisir l'identifiant du compte : <input name='code' value=''/>
 <input type='submit' value='Détruire'/>
-</form>
+<br/>
 <b>Cette opération n'est pas réversible</b>
+
+</form>
 </div>
 </div>
 <?php 

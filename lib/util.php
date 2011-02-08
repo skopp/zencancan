@@ -33,3 +33,16 @@ function wrap($txt,$line_length,$nb_line){
 function get_link_title($content){
 	return htmlentities(trim(wrap(strip_tags($content),200,1)),ENT_QUOTES,"UTF-8");
 }
+
+function display_requete_info(){ ?>
+
+Requête genéré par : 
+
+IP : <?php echo $_SERVER['REMOTE_ADDR'] ?>
+
+Date : <?php echo date("Y-m-d h:i:s");?>
+
+URL: <?php echo "http://".$_SERVER['SERVER_NAME']."/" . $_SERVER['REQUEST_URI'] ?>
+<?php 
+}
+

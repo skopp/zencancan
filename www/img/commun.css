@@ -211,6 +211,11 @@ commun
 	color:#FF8100;
 }
 
+.menu_link {
+	text-decoration: none;
+	color:#FF8100;
+}
+
 .name {
 	color: #645C4F;
 	font-weight: bold;
