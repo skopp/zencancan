@@ -58,8 +58,11 @@ $pageHTML->haut();
 	<tr class="<?php echo $i%2?"":"bgcolor01";?>">
 		<td class='date'><?php echo $fancyDate->get($flux['pubDate'])?></td>
 		<td class='lien'>
-			<a href='<?php hecho($flux['link'])?>' target='_blank' title='<?php  echo get_link_title($flux['content']?:$flux['description']) ?>'>
+			<a href='read.php?id=<?php hecho($id) ?>&id_f=<?php echo $id_f ?>&item=<?php echo urlencode($flux['id_item'])?>' title='<?php  echo get_link_title($flux['content']?:$flux['description']) ?>'>
 				<?php echo strip_tags($flux['title']) ?>
+			</a>
+			<a href='<?php hecho($flux['link'])?>' target='_blank' title="Ouvrir l'article original">
+				»
 			</a>
 		<br/>
 	</td>
