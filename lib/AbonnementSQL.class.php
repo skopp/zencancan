@@ -15,12 +15,11 @@ class AbonnementSQL {
 		return $this->sqlQuery->queryOne($sql,$id,$id_f);
 	}
 	
-	public function add($id,$id_f){
-		if ($this->isAbonner($id,$id_f)){
-			return;
-		}
-		$sql = "INSERT INTO abonnement(id,id_f) VALUES (?,?)";
+	public function add($id,$id_f,$tag){
+		$sql = "DELETE FROM abonnement WHERE id=? AND id_f=?";
 		$this->sqlQuery->query($sql,$id,$id_f);
+		$sql = "INSERT INTO abonnement(id,id_f,tag) VALUES (?,?,?)";
+		$this->sqlQuery->query($sql,$id,$id_f,$tag);
 	}
 	
 	function del($id,$id_f){

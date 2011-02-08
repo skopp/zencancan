@@ -15,9 +15,10 @@ $errorSQL = new ErrorSQL($sqlQuery);
 
 $id = $recuperateur->get('id');
 $url = $recuperateur->get('url');
+$tag = $recuperateur->get('tag');
 
-$sortie = function () use ($id) {
-	header("Location: index.php?id=$id");
+$sortie = function () use ($id,$tag) {
+	header("Location: index.php?id=$id&tag=$tag");
 	exit;
 };
 
@@ -29,6 +30,6 @@ if (! $id_f){
 	$sortie();
 } 
 	
-$abonnementSQL->add($id,$id_f);
+$abonnementSQL->add($id,$id_f,$tag);
 	
 $sortie();

@@ -30,7 +30,9 @@ $pageHTML->haut();
 
 <form action='add-flux.php' method='post'>
 <input type='hidden' name='id'  value='<?php hecho($id) ?>' />
-Ajouter un site à suivre: <br/>
+<input type='hidden' name='tag'  value='<?php hecho($tag) ?>' />
+
+Ajouter un site<?php echo $tag?" dans la catégorie $tag":""?>: <br/>
 <?php if ($lastMessage->getLastMessage()) : ?>
 <p>
 <?php echo $lastMessage->getLastMessage(); ?>
