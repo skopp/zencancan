@@ -29,3 +29,7 @@ function wrap($txt,$line_length,$nb_line){
 	}
 	return $result;
 }
+
+function get_link_title($content){
+	return htmlentities(trim(wrap(strip_tags($content),200,1)),ENT_QUOTES,"UTF-8");
+}

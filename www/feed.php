@@ -38,18 +38,30 @@ $pageHTML->addRSSURL($info['title'],$info['url']);
 
 $pageHTML->haut();
 ?>
-<?php if ($info['tag']) : ?>
+
+
+<div class="box">
+	<div class="haut">
+<h2>Dernières mises à jour de <a href='<?php hecho($rssInfo['link']) ?>'><?php hecho($rssInfo['title']) ?></a></h2>
+	</div>
+	<div class="cont">
+	
+	<?php if ($info['tag']) : ?>
 <a href='index.php?id=<?php hecho($id)?>&tag=<?php hecho($info['tag']) ?>'>« Revenir à la liste des sites de la catégorie <?php hecho($info['tag']) ?></a>
 
 <?php else :?>
 <a href='index.php?id=<?php hecho($id)?>'>« Revenir à la liste des sites</a>
 <?php endif;?>
-<h2>Dernières mises à jour de <a href='<?php hecho($rssInfo['link']) ?>'><?php hecho($rssInfo['title']) ?></a></h2>
+	
 <table>
-<?php foreach($rssInfo['item'] as $flux) : ?>
-	<tr>
+<?php foreach($rssInfo['item'] as $i => $flux) : ?>
+	<tr class="<?php echo $i%2?"":"bgcolor01";?>">
 		<td class='date'><a name='' title='Dernier passage : <?php echo $fancyDate->get($flux['pubDate'])?>'><?php echo $fancyDate->get($flux['pubDate'])?></a></td>
-		<td class='lien'><a href='<?php hecho($flux['link'])?>' target='_blank' title='<?php  echo wrap(strip_tags($flux['description']),200,1) ?>'><?php echo strip_tags($flux['title']) ?></a><br/>
+		<td class='lien'>
+			<a href='<?php hecho($flux['link'])?>' target='_blank' title='<?php  echo get_link_title($flux['content']) ?>'>
+				<?php echo strip_tags($flux['title']) ?>
+			</a>
+		<br/>
 	</td>
 	</tr>
 <?php endforeach;?>
@@ -59,13 +71,16 @@ $pageHTML->haut();
 	<input type='text' name='tag' value='<?php hecho($info['tag']) ?>' />
 	<input type='hidden' name='id' value='<?php echo $id ?>'/>
 	<input type='hidden' name='id_f' value='<?php echo $id_f ?>'/>
-	<input class='bouton' type='submit' value='Mettre dans une catégorie'/>
+	<input class='a_btn' type='submit' value='Mettre dans une catégorie'/>
 </form>
 <form method='post' action='del.php'>
-	<input class='bouton' type='submit' value='Supprimer le suivi de ce site'/>
+	<input class='a_btn' type='submit' value='Supprimer le suivi de ce site'/>
 	<input type='hidden' name='id' value='<?php echo $id ?>'/>
 	<input type='hidden' name='id_f' value='<?php echo $id_f ?>'/>
 </form>
+</div>
+			<div class="bas"></div>				
+		</div>
 <?php 
 $pageHTML->bas();
 

@@ -30,27 +30,34 @@ $pageHTML->haut();
 
 <form action='add-flux.php' method='post'>
 <input type='hidden' name='id'  value='<?php hecho($id) ?>' />
-Site à suivre: <br/>
+Ajouter un site à suivre: <br/>
 <?php if ($lastMessage->getLastMessage()) : ?>
 <p>
 <?php echo $lastMessage->getLastMessage(); ?>
 </p>
 <?php endif;?>
 <input type='text' size='50' name='url' />
-<input type='submit' value='Suivre' />
-</form>
-<p class='petit'>Exemple: L'Equipe, Le Monde, Morandini, ...</p>
 
-<?php if ($tag) : ?>
-<a href='index.php?id=<?php hecho($id)?>'>« Revenir à la liste des sites</a>
-<?php endif;?>
+<input type='submit' value='Suivre' class="a_btn" />
+<p class='petit'>Exemple: L'Equipe, Le Monde, Morandini, ...</p>
+</form>
 
 <?php if ($allFlux) : ?>
-<h2>Dernières mises à jour<?php echo $tag?" dans la catégorie $tag":""?> :</h2>
-<?php $paginator->displayNext("« Sites mis à jour plus récemment"); ?>
+<div class="box">
+	<div class="haut">
+		<h2>Dernières mises à jour<?php echo $tag?" dans la catégorie $tag":""?></h2>
+	</div>
+	<div class="cont">
+	
+	<?php if ($tag) : ?>
+		<a href='index.php?id=<?php hecho($id)?>'>« Revenir à la liste des sites</a>
+	<?php endif;?>
+
+
+		<?php $paginator->displayNext("« Sites mis à jour plus récemment"); ?>
 <table>
-<?php foreach($allFlux as $flux) : ?>
-	<tr>
+<?php foreach($allFlux as $i => $flux) : ?>
+	<tr class="<?php echo $i%2?"":"bgcolor01";?>">
 		<td class='date'><a name='' title='Dernier passage : <?php echo $fancyDate->get($flux['last_recup'])?>'><?php echo $fancyDate->get($flux['last_maj'])?></a></td>
 		<td class='tag'>
 		<?php if(! $tag): ?>
@@ -60,22 +67,18 @@ Site à suivre: <br/>
 		
 		<td class='site'><a href='feed.php?id=<?php echo $id ?>&id_f=<?php hecho($flux['id_f'])?>' title='<?php hecho($flux['title'])?>'><?php hecho(wrap($flux['title'],25,2))?></a></td>
 	
-		<td class='lien'><a href='<?php hecho($flux['item_link'])?>' target='_blank' title='<?php  hecho(wrap(strip_tags($flux['item_content']),200,1)) ?>'>
+		<td class='lien'><a href='<?php hecho($flux['item_link'])?>' target='_blank' title='<?php  echo get_link_title($flux['item_content']) ?>'>
 		<?php hecho($flux['item_title']) ?></a></td>		
 	</tr>
 <?php endforeach;?>
 </table>
-<?php endif;?>
 <?php 
 $paginator->displayPrevious("Sites mis à jour avant »");
 ?>
-	<p class='petit'>
-		<a href='param.php?id=<?php hecho($id)?>'>Configurer mon compte</a>
-		<a href='logout.php'>Déconnexion</a>
-		<?php if(! $authentification->getNamedAccount()) :?>
-			<a href='login.php?id=<?php hecho($id) ?>'>Connexion sur un compte identifié</a>
-		<?php endif;?>
-	</p>
+</div>
+			<div class="bas"></div>				
+		</div>
+<?php endif;?>
 <?php 
 
 $pageHTML->bas();

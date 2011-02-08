@@ -16,11 +16,18 @@ $pageHTML = new PageHTML($id,$debut,$authentification->getNamedAccount());
 
 $pageHTML->haut();
 ?>
+
+
+<div class="box">
+	<div class="haut">
+<h2>Mon compte</h2>
+</div>
+	<div class="cont">
+
 <p class='petit'>
 <a href='index.php?id=<?php hecho($id)?>'>« Revenir à la liste des sites</a>
 </p>
 
-<h2>Mon compte</h2>
 <?php if ( ! $authentification->getNamedAccount() ):?>
 <a href='create-account.php?id=<?php echo $id ?>'>Créer un compte nommé (exemple : eric.<?php echo DOMAIN_NAME ?>)</a>
 <?php endif;?>
@@ -51,7 +58,8 @@ Veuillez saisir l'identifiant du compte : <input name='code' value=''/>
 <input type='submit' value='Détruire'/>
 </form>
 <b>Cette opération n'est pas réversible</b>
-
+</div>
+</div>
 <?php 
 
 $pageHTML->bas();

@@ -80,7 +80,7 @@ class FeedParser {
 	
 	private function parseRDForRSS($xml,$itemElement){
 		$result = array();
-		$result['title'] = strval($xml->channel->title);
+		$result['title'] = $this->normalizeText($xml->channel->title);
 		$result['link'] = $this->getRSSLink($xml->channel->link);
 		$result['item'] = $this->getRSSItem($itemElement,$xml->getNamespaces(true));
 		$result['lastBuildDate'] = strval(date("Y-m-d H:i:s",strtotime($xml->channel->lastBuildDate)));
@@ -101,15 +101,15 @@ class FeedParser {
 		
 		foreach($xmlItem as $item){
 			$it = array();
-			$it['title'] = strval($item->title);
+			$it['title'] = $this->normalizeText(strval($item->title));
 			$it['link'] = strval($item->link);
-			$it['description'] = strval($item->description);
+			$it['description'] = $this->normalizeText(strval($item->description));
 						
-			$it['content'] = strval($item->content);	
+			$it['content'] = $this->normalizeText(strval($item->content));	
 			if (empty($it['content'])){				
 				if (isset($ns["content"])){
 					$content = $item->children($ns["content"]);
-					$it['content'] = strval(trim($content->encoded));
+					$it['content'] = $this->normalizeText(strval(trim($content->encoded)));
 				}
 			}
 						
@@ -136,7 +136,7 @@ class FeedParser {
 	
 	private function parseAtom($xml){
 		$result = array();
-		$result['title'] = strval($xml->title);
+		$result['title'] = $this->normalizeText(strval($xml->title));
 		$result['link'] = $this->getOneLink($xml->link);
 		$result['item'] = $this->getAtomItem($xml->entry);
 		$result['lastBuildDate'] = date("Y-m-d H:i:s",strtotime(strval($xml->lastBuildDate)));
@@ -160,12 +160,12 @@ class FeedParser {
 		$items = array();
 		foreach($xml as $item){
 			$it = array();
-			$it['title'] = strval($item->title);
+			$it['title'] = $this->normalizeText($item->title);
 			if (! $it['title']){
 				$it['title'] = '(aucun sujet)';
 			}
 			$it['link'] = $this->getOneLink($item->link);						
-			$it['description'] = strval($item->summary);
+			$it['description'] = $this->normalizeText($item->summary);
 			$it['content'] = $this->getAtomItemContent($item->content);			
 			if ($item->published){
 				$date = $item->published; 							
@@ -189,11 +189,16 @@ class FeedParser {
   		}
   		//BOF
  		if (strval($contentNode)){
- 			return strval($contentNode);
+ 			return $this->normalizeText($contentNode);
  		}
 		foreach($contentNode->children() as $child){
 			$result .= $child->asXML();		
 		}  		
-		return $result;
+		return $this->normalizeText($result);
   	}
+  	
+  	private function normalizeText($text){
+  		return html_entity_decode(strval($text),ENT_QUOTES,"UTF-8");
+  	}
+  	
 }
