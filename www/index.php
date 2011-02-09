@@ -66,6 +66,20 @@ Ajouter un site<?php echo $tag?" dans la catégorie $tag":""?>: <br/>
 </div>
 			<div class="bas"></div>				
 		</div>
+<?php else: ?>
+<div class="box">
+	<div class="haut">
+	<h2>Suivie des sites</h2>
+	</div>
+	<div class="cont">
+	
+	<p>Vous ne suivez actuelllement aucun site.</p>
+	
+	<p>Pour suivre un site, écrivez juste son nom dans le formulaire du dessus.
+	</p>
+</div>
+<div class="bas"></div>				
+		</div>
 <?php endif;?>
 <?php 
 
