@@ -72,7 +72,7 @@ class AbonnementSQL {
 		if ($tag){
 			return $this->getByTag($id,$tag,$offset);
 		}
-		$sql = "(SELECT a.id_f,tag,last_maj,last_recup,title,item_link,item_title, item_content" .
+		$sql = "(SELECT last_id,a.id_f,tag,last_maj,last_recup,title,item_link,item_title, item_content" .
   					" FROM abonnement as a JOIN feed On a.id_f=feed.id_f " .
  					" WHERE last_maj = " . 
  					" ( SELECT MAX(last_maj) "." FROM abonnement " . 
@@ -80,7 +80,7 @@ class AbonnementSQL {
  					" WHERE tag = a.tag and id=? ) AND id=?  and tag!='' ". 
 				" ) ".
 				" UNION " . 
-					"(SELECT abonnement.id_f,tag,last_maj,last_recup,title,item_link,item_title,item_content" .
+					"(SELECT last_id,abonnement.id_f,tag,last_maj,last_recup,title,item_link,item_title,item_content" .
   					" FROM abonnement  JOIN feed On abonnement.id_f=feed.id_f " . 
 					" WHERE tag='' AND id=? ) " .
 				" ORDER BY last_maj DESC " . 

@@ -6,6 +6,7 @@ require_once("AbonnementSQL.class.php");
 require_once("FancyDate.class.php");
 require_once("util.php");
 require_once("Paginator.class.php");
+require_once("FeedHTML.class.php");
 
 $recuperateur = new Recuperateur($_GET);
 $abonnementSQL = new AbonnementSQL($sqlQuery);
@@ -25,6 +26,9 @@ $pageHTML->addRSSURL("Votre flux zencancan","rss.php?id=$id");
 if ($tag){
 	$pageHTML->addRSSURL("Votre flux zencancan - $tag","rss.php?id=$id&tag=$tag");
 }
+
+$feedHTML = new FeedHTML($fancyDate);
+
 $pageHTML->haut();
 ?>
 
@@ -54,29 +58,11 @@ Ajouter un site<?php echo $tag?" dans la catégorie $tag":""?>: <br/>
 	<?php if ($tag) : ?>
 		<a href='index.php?id=<?php hecho($id)?>'>« Revenir à la liste des sites</a>
 	<?php endif;?>
-
-
-		<?php $paginator->displayNext("« Sites mis à jour plus récemment"); ?>
-<table>
-<?php foreach($allFlux as $i => $flux) : ?>
-	<tr class="<?php echo $i%2?"":"bgcolor01";?>">
-		<td class='date'><a name='' title='Dernier passage : <?php echo $fancyDate->get($flux['last_recup'])?>'><?php echo $fancyDate->get($flux['last_maj'])?></a></td>
-		<td class='tag'>
-		<?php if(! $tag): ?>
-			<a href='index.php?id=<?php echo $id?>&tag=<?php echo $flux['tag']?>'><?php echo $flux['tag'] ?></a>
-		<?php endif;?>
-		</td>
-		
-		<td class='site'><a href='feed.php?id=<?php echo $id ?>&id_f=<?php hecho($flux['id_f'])?>' title='<?php hecho($flux['title'])?>'><?php hecho(wrap($flux['title'],25,2))?></a></td>
-	
-		<td class='lien'><a href='<?php hecho($flux['item_link'])?>' target='_blank' title='<?php  echo get_link_title($flux['item_content']) ?>'>
-		<?php hecho($flux['item_title']) ?></a></td>		
-	</tr>
-<?php endforeach;?>
-</table>
-<?php 
-$paginator->displayPrevious("Sites mis à jour avant »");
-?>
+	<?php 
+		$paginator->displayNext("« Sites mis à jour plus récemment"); 
+		$feedHTML->display($allFlux,$id,$tag);
+		$paginator->displayPrevious("Sites mis à jour avant »");
+	?>
 </div>
 			<div class="bas"></div>				
 		</div>
