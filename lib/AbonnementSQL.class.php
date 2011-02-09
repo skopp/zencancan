@@ -59,7 +59,7 @@ class AbonnementSQL {
 	}
 	
 	public function getByTag($id,$tag,$offset){
-		$sql = "SELECT abonnement.id_f,last_maj,last_recup,title,item_link,item_title,item_content FROM abonnement " . 
+		$sql = "SELECT last_id,abonnement.id_f,last_maj,last_recup,title,item_link,item_title,item_content FROM abonnement " . 
 				" JOIN feed ON abonnement.id_f = feed.id_f " . 
 				" WHERE id=? AND abonnement.tag=?" .
 				" ORDER BY last_maj DESC".
