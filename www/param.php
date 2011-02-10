@@ -5,9 +5,9 @@ require_once("PageHTML.class.php");
 require_once("util.php");
 
 $recuperateur = new Recuperateur($_GET);
-$id = $recuperateur->get('id');
+$id = $authentification->getId();
 
-if (!$id){
+if (!$authentification->getId()){
 	header("Location: index.php");
 	exit;
 }
@@ -27,6 +27,11 @@ $pageHTML->haut();
 <p class='petit'>
 <a href='index.php?id=<?php hecho($id)?>'>« Revenir à la liste des sites</a>
 </p>
+
+<?php if ($lastMessage->getLastMessage()) : ?>
+	<p><?php echo $lastMessage->getLastMessage(); ?></p>
+<?php endif;?>
+
 <?php if ( ! $authentification->getNamedAccount() ):?>
 <br/>
 <p>
@@ -35,6 +40,11 @@ $pageHTML->haut();
 (exemple : eric.<?php echo DOMAIN_NAME ?>)
 </p>
 
+<?php else:?>
+<br/>
+<p>
+<a href='password.php'>Modifier mon mot de passe</a>
+</p>
 <?php endif;?>
 
 <h2>Import/export</h2>
@@ -53,9 +63,7 @@ $pageHTML->haut();
 <h2>Supression</h2>
 
 Détruire ce compte définitivement. 
-<?php if ($lastMessage->getLastMessage()) : ?>
-	<p><?php echo $lastMessage->getLastMessage(); ?></p>
-<?php endif;?>
+
 <form action='delete-account.php' method='post'>
 <input type='hidden' name='id' value='<?php echo $id?>' />
 Veuillez saisir l'identifiant du compte : <input name='code' value=''/>

@@ -26,7 +26,8 @@ class Compte {
 		if ( ! $info){
 			return false;
 		}	
-		if ( ! crypt($password, $info['password']) == $info['password'] ){
+		
+		if ( crypt($password, $info['password']) != $info['password'] ){
 			return false;
 		}
 		return $info['id'];
@@ -74,6 +75,11 @@ class Compte {
 	public function deleteRemember($id){
 		$sql = "UPDATE compte set remember='' WHERE id=?";
 		$this->sqlQuery->query($sql,$id);
+	}
+	
+	public function setPassword($id,$password){
+			$sql = "UPDATE compte set password=? WHERE id=?";
+		$this->sqlQuery->query($sql,crypt($password),$id);
 	}
 	
 }
