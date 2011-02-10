@@ -73,9 +73,9 @@ Ajouter un site<?php echo $tag?" dans la catégorie $tag":""?>: <br/>
 	</div>
 	<div class="cont">
 	
-	<p>Vous ne suivez actuelllement aucun site.</p>
+	<p>Vous ne suivez actuellement aucun site.</p>
 	
-	<p>Pour suivre un site, écrivez juste son nom dans le formulaire du dessus.
+	<p>Pour suivre un site, écrivez son nom dans le formulaire ci-dessus.
 	</p>
 </div>
 <div class="bas"></div>				
