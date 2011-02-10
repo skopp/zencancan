@@ -30,13 +30,13 @@ $pageHTML->menu();
 		<div class="box">
 			<div class="haut"><h2>Description</h2></div>
 			<div class="cont">
-			<p>Avec zenCancan, vous saississez le nom d'un site web (par exemple :<a href='http://www.lemonde.fr/'>Le Monde</a>)
+			<p>Avec zenCancan, vous saisissez le nom d'un site web (par exemple :<a href='http://www.lemonde.fr/'>Le Monde</a>)
 			et automatiquement, chaque fois que la page du <em>Monde</em> changera, zenCancan 
 			vous l'indiquera.
 			</p>
 			<br/>
 			
-			<p>zenCancan a été initialement créer pour suivre les flux de commentaires
+			<p>zenCancan a été initialement créé pour suivre les flux de commentaires
 			 des billets de blog afin de ne pas polluer les lecteurs de flux par de nombreux petits flux.</p>
 <br/>
 <p>zenCancan sert aussi à suivre des gros sites d'actualité 
@@ -69,10 +69,10 @@ la recherche via <a href='http://www.google.com'>Google</a>
 va afficher une page HTML disposant d'une alternative RSS</li></ul>
 </td></tr>
 <tr  class="bgcolor01"> <td>Liste des derniers articles de l'ensemble des flux
- trié par date </td></tr>
+ triés par date </td></tr>
 <tr><td>Aggrégation de tous les flux dans un flux RSS unique </td></tr>
-<tr  class="bgcolor01"><td>Liste de tous les items présent sur le flux 
-pour un flux données </td></tr>
+<tr  class="bgcolor01"><td>Liste de tous les articles présents sur le flux 
+pour un flux donné </td></tr>
 <tr><td>Suppresion de flux </td></tr>
 <tr  class="bgcolor01"><td>Regroupement des flux via un mot-clé (catégorie)</td></tr>
 <tr><td>Import/export des flux en OPML </td></tr>
