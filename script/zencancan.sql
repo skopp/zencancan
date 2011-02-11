@@ -11,6 +11,8 @@ CREATE TABLE compte (
 	`id` varchar(16) NOT NULL,
 	`password` varchar(255) NOT NULL,
 	`remember` varchar(64) NOT NULL,
+	`is_admin` tinyint(1) NOT NULL,
+	`date` datetime NOT NULL,
 	PRIMARY KEY (`id_u`),
 	UNIQUE KEY name (`name`),
 	UNIQUE KEY id (`id`)
