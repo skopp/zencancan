@@ -45,6 +45,8 @@ class FeedParser {
 	public function parseXMLContent($content){
 		
 		$xml = simplexml_load_string($content,"SimpleXMLElement",LIBXML_NOCDATA);
+		
+		
 		if (! $xml ){
 			$this->lastError = "L'adresse n'est pas un flux RSS (load)";
 			return false;
@@ -198,7 +200,11 @@ class FeedParser {
   	}
   	
   	private function normalizeText($text){
-  		return html_entity_decode(strval($text),ENT_QUOTES,"UTF-8");
+  		//copier/coller depuis MS Word ...
+  		$text = str_replace("", "'",$text);
+  		
+  		return strval($text);
+  		//return html_entity_decode(strval($text),ENT_QUOTES,"UTF-8");
   	}
   	
 }

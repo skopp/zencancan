@@ -62,7 +62,7 @@ $pageHTML->haut();
 		<a href='<?php echo $resultItem['link'] ?>' target='_blanck'>Lire l'article original »</a>
 		</p>
 		<div class='item_content'>
-			<?php echo $resultItem['content']?:$resultItem['description']?>
+			<?php echo $resultItem['content']?:$resultItem['description'];?>
 		</div>
 	</div>
 	<div class="bas"></div>				

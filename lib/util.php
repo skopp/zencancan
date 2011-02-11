@@ -31,6 +31,8 @@ function wrap($txt,$line_length,$nb_line){
 }
 
 function get_link_title($content){
+	
+	$content = html_entity_decode(strval($content),ENT_QUOTES,"UTF-8");
 	return htmlentities(trim(wrap(strip_tags($content),200,1)),ENT_QUOTES,"UTF-8");
 }
 
