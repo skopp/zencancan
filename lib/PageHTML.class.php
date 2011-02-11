@@ -8,12 +8,14 @@ class PageHTML {
 	private $id;
 	private $namedAccount;
 	private $rss;
+	private $isAdmin;
 	
-	public function __construct($id,$debut,$namedAccount = false ){
+	public function __construct($id,$debut,$namedAccount = false, $isAdmin = false ){
 		$this->debut = $debut;
 		$this->id = $id;
 		$this->namedAccount = $namedAccount;
 		$this->rss = array();
+		$this->isAdmin = $isAdmin;
 	}
 	
 	
@@ -55,6 +57,9 @@ class PageHTML {
 			<a href='param.php?id=<?php hecho($this->id)?>'>Paramètres</a> |
 			<a href='logout.php'>Déconnexion</a> | 
 			<a href='site.php'>Aide</a> 
+			<?php if ($this->isAdmin) : ?>
+				| <a href='admin.php'>Admin</a> 
+			<?php endif;?>
 			
 			</div>
 		</div>

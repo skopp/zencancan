@@ -10,6 +10,10 @@ class AbonnementSQL {
 		$this->sqlQuery = $sqlQuery;	
 	}
 	
+	public function getNbAbo(){
+		return $this->sqlQuery->queryOne("SELECT count(distinct id) FROM abonnement ");
+	}
+	
 	public function isAbonner($id,$id_f){
 		$sql = "SELECT count(*) FROM abonnement WHERE id=? AND id_f = ? ";
 		return $this->sqlQuery->queryOne($sql,$id,$id_f);

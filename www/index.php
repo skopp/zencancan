@@ -21,7 +21,7 @@ $nbFlux = $abonnementSQL->getNbFlux($id,$tag);
 $paginator = new Paginator($nbFlux,AbonnementSQL::NB_DISPLAY,$offset);
 $paginator->setLink("index.php?id=$id&tag=$tag");
 
-$pageHTML = new PageHTML($id,$debut,$authentification->getNamedAccount());
+$pageHTML = new PageHTML($id,$debut,$authentification->getNamedAccount(),$compte->isAdmin($authentification->getId()));
 $pageHTML->addRSSURL("Votre flux zencancan","rss.php?id=$id");
 if ($tag){
 	$pageHTML->addRSSURL("Votre flux zencancan - $tag","rss.php?id=$id&tag=$tag");

@@ -18,7 +18,6 @@ $compte = new Compte($sqlQuery);
 
 $id = $authentification->getId();
 
-
 if ( isset($_COOKIE['remember_zencancan'])){
 	if (! $id){
 		$id = $compte->verifRemember($authentification->getNamedAccount(),$_COOKIE['remember_zencancan'] );

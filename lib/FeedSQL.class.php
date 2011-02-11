@@ -74,4 +74,9 @@ class FeedSQL {
 		$this->sqlQuery->query($sql,$id_f);
 	}
 	
+	public function feedInfo(){
+		$info =  $this->sqlQuery->query("SELECT count(*) as nb, max(last_recup) as date FROM feed");	
+		return $info[0];
+	}
+	
 }

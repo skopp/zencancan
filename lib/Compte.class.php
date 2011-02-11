@@ -14,7 +14,7 @@ class Compte {
 			return false;
 		}
 		
-		$sql = "INSERT INTO compte(id,name,password) VALUES (?,?,?)";
+		$sql = "INSERT INTO compte(id,name,password,date) VALUES (?,?,?,now())";
 		$this->sqlQuery->query($sql,$id,$name,crypt($password));
 		return true;
 	}
@@ -45,6 +45,11 @@ class Compte {
 	public function getAccountName($id){
 		$sql = "SELECT name FROM compte WHERE id = ?";
 		return $this->sqlQuery->queryOne($sql,$id);
+	}
+	
+	public function isAdmin($id){
+		$sql = "SELECT is_admin FROM compte WHERE id=?";
+		return  $this->sqlQuery->queryOne($sql,$id);
 	}
 	
 	public function delete($name){
@@ -80,6 +85,11 @@ class Compte {
 	public function setPassword($id,$password){
 			$sql = "UPDATE compte set password=? WHERE id=?";
 		$this->sqlQuery->query($sql,crypt($password),$id);
+	}
+	
+	public function getNbAccount(){
+		return $this->sqlQuery->queryOne("SELECT count(*) FROM compte");
+			
 	}
 	
 }
