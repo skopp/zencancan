@@ -17,7 +17,7 @@ class FeedHTML {
 		<td class='date'><a name='' title='Dernier passage : <?php echo $this->fancyDate->get($flux['last_recup'])?>'><?php echo $this->fancyDate->get($flux['last_maj'])?></a></td>
 		<td class='tag'>
 		<?php if(! $tag): ?>
-			<a href='index.php?id=<?php echo $id?>&tag=<?php echo $flux['tag']?>'><?php echo $flux['tag'] ?></a>
+			<a href='index.php?id=<?php echo $id?>&tag=<?php echo urlencode($flux['tag'])?>'><?php echo $flux['tag'] ?></a>
 		<?php endif;?>
 		</td>
 		
