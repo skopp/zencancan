@@ -116,6 +116,13 @@ class FeedFetchInfo {
 		}
 		
 		$parse = parse_url($base_url);
+		
+		if (empty($parse["scheme"])){
+			$parse["scheme"] = "http";
+		}
+		if (empty($parse["host"])){
+			$parse["host"] = $base_url;
+		}
 		$parse['path'] = $url;
 		
 		$url = $parse["scheme"]."://".$parse['host'].$url;
