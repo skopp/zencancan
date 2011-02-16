@@ -6,6 +6,11 @@ class HTMLNormalizer {
 	public function get($html_content,$base_link){
 		
 		$rss_url = parse_url($base_link );
+		
+		if (empty($rss_url['scheme'])){
+			return $html_content;
+		}
+		
 		$adresse = $rss_url['scheme'] ."://". $rss_url['host']."/";
 		
 		$domDocument = new DomDocument();
