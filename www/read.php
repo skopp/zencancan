@@ -6,11 +6,13 @@ require_once("util.php");
 require_once("AbonnementSQL.class.php");
 require_once("FeedParser.class.php");
 require_once("FancyDate.class.php");
+require_once("HTMLNormalizer.class.php");
+
 $fancyDate = new FancyDate();
-
 $recuperateur = new Recuperateur($_GET);
-
 $abonnementSQL = new AbonnementSQL($sqlQuery);
+$htmlNormalizer = new HTMLNormalizer();
+
 
 $id = $recuperateur->get('id');
 $id_f = $recuperateur->getInt('id_f');
@@ -46,6 +48,11 @@ foreach($rssInfo['item'] as $i => $itemInfo){
 }
 
 
+
+$content_html = $resultItem['content']?:$resultItem['description'];
+$content_html = $htmlNormalizer->get($content_html,$rssInfo['link']);
+
+
 $pageHTML->haut();
 ?>
 
@@ -62,7 +69,7 @@ $pageHTML->haut();
 		<a href='<?php echo $resultItem['link'] ?>' target='_blanck'>Lire l'article original »</a>
 		</p>
 		<div class='item_content'>
-			<?php echo $resultItem['content']?:$resultItem['description'];?>
+			<?php echo $content_html;?>
 		</div>
 	</div>
 	<div class="bas"></div>				

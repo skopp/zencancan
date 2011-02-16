@@ -57,6 +57,7 @@ class FeedParser {
 			$this->lastError = "L'adresse n'est pas un flux RSS (parse)";
 			return false; 
 		}
+	
 		
 		return $feed;
 	}
@@ -126,9 +127,12 @@ class FeedParser {
 				}
 			}
 			
+			$it['id_item'] = "";
 			if ($item->guid){
-				$it['id_item'] = strval($item->guid);	
-			} else {
+				$it['id_item'] = trim(strval($item->guid));	
+			} 
+			
+			if (! $it['id_item']) {
 				$it['id_item'] = strval($item->link);
 			}						
 			$items[]=$it;			
@@ -177,7 +181,7 @@ class FeedParser {
 				$date = date("Y-m-d H:i:s");
 			}
 			$it['pubDate'] = date("Y-m-d H:i:s",strtotime($date)); 	
-			$it['id_item'] = strval($item->id);				
+			$it['id_item'] = strval($item->id) ;				
 			$items[]=$it;
 		}
 

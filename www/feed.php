@@ -28,6 +28,7 @@ $feedParser = new FeedParser();
 $rssInfo = $feedParser->parseXMLContent($content);
 
 
+
 $pageHTML = new PageHTML($id,$debut,$authentification->getNamedAccount(),$compte->isAdmin($authentification->getId()));
 
 $pageHTML->addRSSURL("Votre flux zencancan","rss.php?id=$id");
