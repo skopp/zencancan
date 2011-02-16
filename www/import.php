@@ -41,7 +41,9 @@ if ( ! $xml || ! $xml->body) {
 
 foreach($xml->body->outline as $feed){
 	$id_f = $feedUpdater->addWithoutFetch($feed['xmlUrl']);
-	$abonnementSQL->add($id,$id_f,"");
+	if ($id_f){
+		$abonnementSQL->add($id,$id_f,"");
+	}
 }
 
 $sortie();
