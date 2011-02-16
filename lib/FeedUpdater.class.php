@@ -36,14 +36,14 @@ class FeedUpdater {
 		$feedInfo['lasterror'] = "";
 		$feedInfo['url'] = $url;
 		$feedInfo['etag'] = "";
-		$feedInfo['last-modified'] = date();
+		$feedInfo['last-modified'] = date("1970-01-01");
 		$feedInfo['id_item'] = "";
 		$feedInfo['title'] = "En cours de récupération";
 		$feedInfo['link'] = $url;
 		$feedInfo['item_title'] = $url;
 		$feedInfo['item_link'] =  $url;		
 		$feedInfo['item_content'] = "";	
-		$feedInfo['pubDate'] = date();
+		$feedInfo['pubDate'] = date("Y-m-d H:i:s");
 		$id_f= $this->feedSQL->insert($feedInfo);
 		$this->feedSQL->forceLastRecup($url);
 		return $id_f;
