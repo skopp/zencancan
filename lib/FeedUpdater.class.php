@@ -28,6 +28,9 @@ class FeedUpdater {
 	}
 	
 	public function addWithoutFetch($url){
+		if (! $url){
+			return;
+		}
 		$info = $this->feedSQL->getInfo($url);
 		if ($info){
 			return $info['id_f'];
