@@ -1,0 +1,35 @@
+Procédure d'installation
+
+Prérequis :
+*PHP 5.3 minimum
+*Une base de données MySQL (tester avec la version 5)
+*Le programme start-stop-daemon 
+*Extension PHP : curl, dom, fileinfo, libxml, pdo, pdo_mysql, SimpleXML
+
+
+1. Créer un fichier et configurer le fichier LocalSettings.php (par exemple à partir de LocalSettings-exemple.php)
+
+2. Créer une base de données MySQL à partir de info du fichier LocalSettings.php
+
+3. Importer la structure de la base script/zencancan.sql
+
+4. Configurer la récuperation de flux
+
+La récupération est réalisée grâce au démon zencancan. 
+Le script d'initialisation SysV est script/zencancan
+
+Il faut configurer ce script, puis le copier dans /etc/init.d
+
+La procédure d'arret/démarrage du démon zencancan est alors :
+
+Démarrage :
+/etc/init.d/zencancan start 
+
+Arret: 
+/etc/init.d/zencancan stop
+
+5. Il est possible de créer un compte d'administration :
+Dans la base de données, sur un compte nommée (table compte), il suffit 
+de mettre la colonne "is_admin" à 1.
+L'utilisateur du compte correspondant pourras voir le nombre de comptes, d'abonnements et de flux, ainsi que 
+la date de récupération du dernier flux.
