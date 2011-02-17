@@ -1,39 +1,39 @@
-ProcÈdure d'installation
+Proc√©dure d'installation
 
-PrÈrequis :
+Pr√©requis :
 *PHP 5.3 minimum
-*Une base de donnÈes MySQL (tester avec la version 5)
+*Une base de donn√©es MySQL (tester avec la version 5)
 *Le programme start-stop-daemon 
 *Extension PHP : curl, dom, fileinfo, libxml, pdo, pdo_mysql, SimpleXML
 
 
-1. CrÈer un fichier et configurer le fichier LocalSettings.php (par exemple ‡ partir de LocalSettings-exemple.php)
+1. Cr√©er un fichier et configurer le fichier LocalSettings.php (par exemple √† partir de LocalSettings-exemple.php)
 
-2. CrÈer une base de donnÈes MySQL ‡ partir de info du fichier LocalSettings.php
+2. Cr√©er une base de donn√©es MySQL √† partir de info du fichier LocalSettings.php
 
 3. Importer la structure de la base script/zencancan.sql
 
-4. Configurer la rÈcuperation de flux
+4. Configurer la r√©cuperation de flux
 
-La rÈcupÈration est rÈalisÈe gr‚ce au dÈmon zencancan. 
+La r√©cup√©ration est r√©alis√©e gr√¢ce au d√©mon zencancan. 
 Le script d'initialisation SysV est script/zencancan
 
 Il faut configurer ce script, puis le copier dans /etc/init.d
 
-La procÈdure d'arret/dÈmarrage du dÈmon zencancan est alors :
+La proc√©dure d'arret/d√©marrage du d√©mon zencancan est alors :
 
-DÈmarrage :
+D√©marrage :
 /etc/init.d/zencancan start 
 
 Arret: 
 /etc/init.d/zencancan stop
 
-5. Mettre les droit d'Ècriture pour le serveur web sur le rÈpertoire static
+5. Mettre les droit d'√©criture pour le serveur web sur le r√©pertoire static
 chown www-data static
 
 
-6. Il est possible de crÈer un compte d'administration :
-Dans la base de donnÈes, sur un compte nommÈe (table compte), il suffit 
-de mettre la colonne "is_admin" ‡ 1.
+6. Il est possible de cr√©er un compte d'administration :
+Dans la base de donn√©es, sur un compte nomm√©e (table compte), il suffit 
+de mettre la colonne "is_admin" √† 1.
 L'utilisateur du compte correspondant pourras voir le nombre de comptes, d'abonnements et de flux, ainsi que 
-la date de rÈcupÈration du dernier flux.
+la date de r√©cup√©ration du dernier flux.
