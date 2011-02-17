@@ -38,7 +38,7 @@ function get_link_title($content){
 
 function display_requete_info(){ ?>
 
-Requête genéré par : 
+Requ&ecirc;te gen&eacute;r&eacute; par : 
 
 IP : <?php echo $_SERVER['REMOTE_ADDR'] ?>
 

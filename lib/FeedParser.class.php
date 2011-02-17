@@ -205,7 +205,7 @@ class FeedParser {
   	
   	private function normalizeText($text){
   		//copier/coller depuis MS Word ...
-  		$text = str_replace("", "'",$text);
+  		$text = str_replace("?", "'",$text);
   		
   		return strval($text);
   		//return html_entity_decode(strval($text),ENT_QUOTES,"UTF-8");

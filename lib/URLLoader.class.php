@@ -35,7 +35,9 @@ class URLLoader {
 		curl_setopt($curl, CURLOPT_HEADER, false);
 		curl_setopt($curl, CURLOPT_HEADERFUNCTION, array($this,"readHeader"));
 		curl_setopt($curl, CURLINFO_HEADER_OUT, false); 
-		$result =  curl_exec($curl);
+		curl_setopt($curl,CURLOPT_SSL_VERIFYPEER,false);
+		
+		$result = curl_exec($curl);
 		
 		if ($result === false){
 			$this->lastError = curl_error($curl);		

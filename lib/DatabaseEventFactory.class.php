@@ -15,7 +15,7 @@ class DatabaseEventFactory {
 			case 'mysql': return new DatabaseEventMySQL();
 			case 'text': return new DatabaseEventText();
 		}
-		throw new Exception("Type de base '$databaseType' non supporté\n");
+		throw new Exception("Type de base '$databaseType' non support&eacute;\n");
 		
 	}
 	

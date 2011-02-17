@@ -10,7 +10,7 @@ class Compte {
 	
 	public function create($id,$name,$password){
 		if ($this->exists($name)){
-			$this->lastError = "Ce nom est déjà utilisé";
+			$this->lastError = "Ce nom est d&eacute;j&agrave; utilis&eacute;";
 			return false;
 		}
 		

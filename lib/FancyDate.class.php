@@ -8,7 +8,7 @@ class FancyDate {
 		$nb_jour = (strtotime(date("Y-m-d")) - strtotime(date("Y-m-d",$time))) / 86400;
 			
 		if ($nb_jour == 1 ){
-			return "Hier à ". date("H:i",$time);
+			return "Hier &agrave; ". date("H:i",$time);
 		}
 		if ($nb_jour > 6){
 			$result = strftime("%e %B",$time);

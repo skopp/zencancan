@@ -28,7 +28,7 @@ class FeedHTML {
 				<?php echo strip_tags($flux['item_title']) ?>
 			</a>
 			<a href='<?php hecho($flux['item_link'])?>' target='_blank' title="Ouvrir l'article original">
-				»
+				&raquo;
 			</a></td>		
 	</tr>
 <?php endforeach;?>
