@@ -16,7 +16,7 @@ $pageHTML->haut();
 
 <div class="box">
 			<div class="haut">
-<h2>Création d'un compte</h2>
+<h2>Cr&eacute;ation d'un compte</h2>
 	</div>
 <div class="cont">
 	
@@ -31,10 +31,10 @@ $pageHTML->haut();
 	<label for="password">Mot de passe</label>
 	<input type='password' name='password'/>
 	<hr/>
-	<label for="password2">Mot de passe (vérification)</label>
+	<label for="password2">Mot de passe (v&eacute;rification)</label>
 	<input type='password' name='password2'/><br/>
 	<hr/>
-	<input type='submit' class='submit' value='Créer le compte'/>
+	<input type='submit' class='submit' value='Cr&eacute;er le compte'/>
 </form>
 </div>
 </div>

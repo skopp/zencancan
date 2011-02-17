@@ -15,8 +15,8 @@ $pageHTML->menu();
 		<div class="box">
 			<div class="haut"><h2>Contact</h2></div>
 			<div class="cont">
-			<p>Une remarque ? Un bug ? Une demande d'évolution ? 
-			N'hésitez pas à utiliser le formulaire ci-dessous pour nous
+			<p>Une remarque ? Un bug ? Une demande d'&eacute;volution ? 
+			N'h&eacute;sitez pas &agrave; utiliser le formulaire ci-dessous pour nous
 			faire part de votre question.</p>
 			<form action="contact-controler.php" method='post'>
 							

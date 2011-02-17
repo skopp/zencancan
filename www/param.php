@@ -19,7 +19,7 @@ $pageHTML->haut();
 
 
 <p class='petit'>
-<a href='index.php?id=<?php hecho($id)?>'>« Revenir à la liste des sites</a>
+<a href='index.php?id=<?php hecho($id)?>'>&laquo; Revenir &agrave; la liste des sites</a>
 </p>
 
 <div class="box">
@@ -34,11 +34,11 @@ $pageHTML->haut();
 
 <?php if ( ! $authentification->getNamedAccount() ):?>
 
-<h2>Créer un compte</h2>
+<h2>Cr&eacute;er un compte</h2>
 
 <p>
 
-<a href='create-account.php?id=<?php echo $id ?>' class='a_btn'>Créer un compte nommé </a>
+<a href='create-account.php?id=<?php echo $id ?>' class='a_btn'>Cr&eacute;er un compte nomm&eacute; </a>
 </p>
 <p class='petit'>Exemple : eric.<?php echo DOMAIN_NAME ?></p>
 
@@ -49,9 +49,9 @@ $pageHTML->haut();
 </p>
 <?php endif;?>
 
-<h2>Mes données</h2>
+<h2>Mes donn&eacute;es</h2>
 
-Récuperer mes données : <a href='export.php?id=<?php hecho($id)?>'>zencancan-<?php hecho($id) ?>.opml</a>
+R&eacute;cuperer mes donn&eacute;es : <a href='export.php?id=<?php hecho($id)?>'>zencancan-<?php hecho($id) ?>.opml</a>
 
 
 <form action='import.php' enctype='multipart/form-data' method='post'>
@@ -64,14 +64,14 @@ Récuperer mes données : <a href='export.php?id=<?php hecho($id)?>'>zencancan-<
 
 <h2>Supprimer mon compte</h2>
 
-Détruire ce compte définitivement. 
+D&eacute;truire ce compte d&eacute;finitivement. 
 
 <form action='delete-account.php' method='post'>
 <input type='hidden' name='id' value='<?php echo $id?>' />
 Veuillez saisir l'identifiant du compte : <input name='code' value=''/>
-<input type='submit' value='Détruire' class='a_btn'/>
+<input type='submit' value='D&eacute;truire' class='a_btn'/>
 <br/>
-<b>Cette opération n'est pas réversible</b>
+<b>Cette op&eacute;ration n'est pas r&eacute;versible</b>
 
 </form>
 </div>

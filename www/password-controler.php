@@ -25,5 +25,5 @@ if ( ! $compte->verif($authentification->getNamedAccount(),$oldpassword)){
 $compte->setPassword($authentification->getId(),$password);
 
 
-$lastMessage->setLastMessage(LastMessage::MESSAGE,"Votre mot de passe a été modifié");
+$lastMessage->setLastMessage(LastMessage::MESSAGE,"Votre mot de passe a &eacute;t&eacute; modifi&eacute;");
 header("Location: param.php");

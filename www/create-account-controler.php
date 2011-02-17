@@ -15,7 +15,7 @@ $exit = function($message) use ($lastMessage,$id){
 };
 
 if (! $name){
-	$exit("Il faut spécifier un nom de compte");
+	$exit("Il faut sp&eacute;cifier un nom de compte");
 }
 
 if ($password != $password2){

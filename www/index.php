@@ -36,7 +36,7 @@ $pageHTML->haut();
 <input type='hidden' name='id'  value='<?php hecho($id) ?>' />
 <input type='hidden' name='tag'  value='<?php hecho($tag) ?>' />
 
-Ajouter un site<?php echo $tag?" dans la catégorie $tag":""?>: <br/>
+Ajouter un site<?php echo $tag?" dans la cat&eacute;gorie $tag":""?>: <br/>
 <?php if ($lastMessage->getLastMessage()) : ?>
 <p>
 <?php echo $lastMessage->getLastMessage(); ?>
@@ -51,17 +51,17 @@ Ajouter un site<?php echo $tag?" dans la catégorie $tag":""?>: <br/>
 <?php if ($allFlux) : ?>
 <div class="box">
 	<div class="haut">
-		<h2>Dernières mises à jour<?php echo $tag?" dans la catégorie $tag":""?></h2>
+		<h2>Derni&egrave;res mises &agrave; jour<?php echo $tag?" dans la cat&eacute;gorie $tag":""?></h2>
 	</div>
 	<div class="cont">
 	
 	<?php if ($tag) : ?>
-		<a href='index.php?id=<?php hecho($id)?>'>« Revenir à la liste des sites</a>
+		<a href='index.php?id=<?php hecho($id)?>'>&laquo; Revenir &agrave; la liste des sites</a>
 	<?php endif;?>
 	<?php 
-		$paginator->displayNext("« Sites mis à jour plus récemment"); 
+		$paginator->displayNext("&laquo; Sites mis &agrave; jour plus r&eacute;cemment"); 
 		$feedHTML->display($allFlux,$id,$tag);
-		$paginator->displayPrevious("Sites mis à jour avant »");
+		$paginator->displayPrevious("Sites mis &agrave; jour avant &raquo;");
 	?>
 </div>
 			<div class="bas"></div>				
@@ -75,7 +75,7 @@ Ajouter un site<?php echo $tag?" dans la catégorie $tag":""?>: <br/>
 	
 	<p>Vous ne suivez actuellement aucun site.</p>
 	
-	<p>Pour suivre un site, écrivez son nom dans le formulaire ci-dessus.
+	<p>Pour suivre un site, &eacute;crivez son nom dans le formulaire ci-dessus.
 	</p>
 </div>
 <div class="bas"></div>				

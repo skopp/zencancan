@@ -43,15 +43,15 @@ $pageHTML->haut();
 
 <div class="box">
 	<div class="haut">
-<h2>Dernières mises à jour de <a href='<?php hecho($rssInfo['link']) ?>'><?php hecho($rssInfo['title']) ?></a></h2>
+<h2>Derni&egrave;res mises &agrave; jour de <a href='<?php hecho($rssInfo['link']) ?>'><?php hecho($rssInfo['title']) ?></a></h2>
 	</div>
 	<div class="cont">
 	
 	<?php if ($info['tag']) : ?>
-<a href='index.php?id=<?php hecho($id)?>&tag=<?php hecho($info['tag']) ?>'>« Revenir à la liste des sites de la catégorie <?php hecho($info['tag']) ?></a>
+<a href='index.php?id=<?php hecho($id)?>&tag=<?php hecho($info['tag']) ?>'>&laquo; Revenir &agrave; la liste des sites de la cat&eacute;gorie <?php hecho($info['tag']) ?></a>
 
 <?php else :?>
-<a href='index.php?id=<?php hecho($id)?>'>« Revenir à la liste des sites</a>
+<a href='index.php?id=<?php hecho($id)?>'>&laquo; Revenir &agrave; la liste des sites</a>
 <?php endif;?>
 	
 <table>
@@ -63,7 +63,7 @@ $pageHTML->haut();
 				<?php echo strip_tags($flux['title']) ?>
 			</a>
 			<a href='<?php hecho($flux['link'])?>' target='_blank' title="Ouvrir l'article original">
-				»
+				&raquo;
 			</a>
 		<br/>
 	</td>
@@ -71,11 +71,11 @@ $pageHTML->haut();
 <?php endforeach;?>
 </table>
 <form method='post' action='aggregate.php'>
-	Catégorie : 
+	Cat&eacute;gorie : 
 	<input type='text' name='tag' value='<?php hecho($info['tag']) ?>' />
 	<input type='hidden' name='id' value='<?php echo $id ?>'/>
 	<input type='hidden' name='id_f' value='<?php echo $id_f ?>'/>
-	<input class='a_btn' type='submit' value='Mettre dans une catégorie'/>
+	<input class='a_btn' type='submit' value='Mettre dans une cat&eacute;gorie'/>
 </form>
 <form method='post' action='del.php'>
 	<input class='a_btn' type='submit' value='Supprimer le suivi de ce site'/>

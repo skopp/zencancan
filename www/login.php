@@ -36,7 +36,7 @@ $pageHTML->haut();
 		 <hr/>
 		<input type='submit' class="submit" value='Connexion'/>
 		<input type='checkbox' name='remember'/>
-		Rester connecté
+		Rester connect&eacute;
 		<br/>
 		
 	
@@ -44,7 +44,7 @@ $pageHTML->haut();
 
 <p>
 <a href='http://<?php echo DOMAIN_NAME?>'>Utiliser un compte anonyme</a>
-<a href='http://<?php echo DOMAIN_NAME?>/create-account.php?id=<?php echo $id ?>'>Créer un compte</a></p>
+<a href='http://<?php echo DOMAIN_NAME?>/create-account.php?id=<?php echo $id ?>'>Cr&eacute;er un compte</a></p>
 					
 	</div>
 	<div class="bas"></div>				

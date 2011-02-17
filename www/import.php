@@ -23,7 +23,7 @@ if (!$id){
 }
 
 if (empty($_FILES['fichier_opml'])){
-	$lastMessage->setLastMessage(LastMessage::ERROR,"Fichier non présents");
+	$lastMessage->setLastMessage(LastMessage::ERROR,"Fichier non pr&eacute;sents");
 	$sortie();
 } 
 	

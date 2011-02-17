@@ -63,10 +63,10 @@ $pageHTML->haut();
 	</h2>
 	</div>
 	<div class="cont">
-		<a href='feed.php?id=<?php hecho($id)?>&id_f=<?php echo $id_f?>'>« Revenir aux articles de  <?php hecho($rssInfo['title']) ?></a>
+		<a href='feed.php?id=<?php hecho($id)?>&id_f=<?php echo $id_f?>'>&laquo; Revenir aux articles de  <?php hecho($rssInfo['title']) ?></a>
 		
 		<p class='align_right'>
-		<a href='<?php echo $resultItem['link'] ?>' target='_blanck'>Lire l'article original »</a>
+		<a href='<?php echo $resultItem['link'] ?>' target='_blanck'>Lire l'article original &raquo;</a>
 		</p>
 		<div class='item_content'>
 			<?php echo $content_html;?>

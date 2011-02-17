@@ -15,9 +15,9 @@ $pageHTML->menu();
 		<div class="box">
 			<div class="haut"><h2>Contact</h2></div>
 			<div class="cont">
-			<p>Votre message a été envoyé</p>
+			<p>Votre message a &eacute;t&eacute; envoy&eacute;</p>
 		<br/>
-			<p><a href='site.php'>Revenir</a> à l'aide du site</p>
+			<p><a href='site.php'>Revenir</a> &agrave; l'aide du site</p>
 			</div>
 			<div class="bas"></div>				
 		</div>

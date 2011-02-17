@@ -12,7 +12,7 @@ $pageHTML = new PageHTML($id,$debut);
 $pageHTML->haut();
 ?>
 
-<a href='param.php'>« Revenir aux paramètres du compte </a>
+<a href='param.php'>&laquo; Revenir aux param&egrave;tres du compte </a>
 
 
 <div class="box">
@@ -31,7 +31,7 @@ $pageHTML->haut();
 	<label for="password">Nouveau mot de passe</label>
 	<input type='password' name='password'/>
 	<hr/>
-	<label for="password2">Nouveau mot de passe (vérification)</label>
+	<label for="password2">Nouveau mot de passe (v&eacute;rification)</label>
 	<input type='password' name='password2'/><br/>
 	<hr/>
 	<input type='submit' class='submit' value='Modifier'/>
