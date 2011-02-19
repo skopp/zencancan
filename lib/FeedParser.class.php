@@ -35,7 +35,7 @@ class FeedParser {
 			$feedInfo['item_title'] = "";
 			$feedInfo['item_link'] =  "";		
 			$feedInfo['item_content'] = "";	
-			$feedInfo['pubDate'] = date();
+			$feedInfo['pubDate'] = date("Y-m-d H:i:s");
 		}
 		unset($feedInfo['item']);
 		return $feedInfo;
