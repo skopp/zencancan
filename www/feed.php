@@ -40,12 +40,15 @@ $pageHTML->addRSSURL($info['title'],$info['url']);
 $pageHTML->haut();
 ?>
 
+<div id="contenu">
+
+	<div class="breadcrumbs">
 	<?php if ($info['tag']) : ?>
 		<a href='index.php?id=<?php hecho($id)?>&tag=<?php hecho($info['tag']) ?>'>&laquo; Revenir &agrave; la liste des sites de la cat&eacute;gorie <?php hecho($info['tag']) ?></a>
-
 		<?php else :?>
-			<a href='index.php?id=<?php hecho($id)?>'>&laquo; Revenir &agrave; la liste des sites</a>
+		<a href='index.php?id=<?php hecho($id)?>'>&laquo; Revenir &agrave; la liste des sites</a>
 	<?php endif;?>
+	</div>
 	
 <div class="box">
 	<div class="haut">
@@ -74,21 +77,52 @@ $pageHTML->haut();
 	</tr>
 <?php endforeach;?>
 </table>
+</div>
+<div class="bas"></div>				
+</div>
+
+
+</div>
+
+<div id="colonne">
+
+<div class="box">
+	<div class="haut">
+	</div>
+	<div class="cont">
 <form method='post' action='aggregate.php'>
-	Cat&eacute;gorie : 
-	<input type='text' name='tag' value='<?php hecho($info['tag']) ?>' />
+	
 	<input type='hidden' name='id' value='<?php echo $id ?>'/>
 	<input type='hidden' name='id_f' value='<?php echo $id_f ?>'/>
-	<input class='a_btn' type='submit' value='Mettre dans une cat&eacute;gorie'/>
+	<p>
+	Cat&eacute;gorie : <input type='text' name='tag' value='<?php hecho($info['tag']) ?>' />
+	</p>
+	<p><input class='submit' type='submit' value='Mettre dans une cat&eacute;gorie'/>	</p>
 </form>
+</div>
+<div class="bas"></div>				
+</div>
+
+<div class="box">
+	<div class="haut">
+	</div>
+	<div class="cont">
 <form method='post' action='del.php'>
-	<input class='a_btn' type='submit' value='Supprimer le suivi de ce site'/>
+	<p>
+	<input class='submit' type='submit' value='Supprimer le suivi de ce site'/>
+	</p>
 	<input type='hidden' name='id' value='<?php echo $id ?>'/>
 	<input type='hidden' name='id_f' value='<?php echo $id_f ?>'/>
 </form>
 </div>
-			<div class="bas"></div>				
-		</div>
+<div class="bas"></div>				
+</div>
+
+
+</div>
+
+
+
 <?php 
 $pageHTML->bas();
 

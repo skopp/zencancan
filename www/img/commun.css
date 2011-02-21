@@ -154,8 +154,6 @@ border-top-right-radius: 4px;
 Definition des boox de type message
 */
 
-
-
 .box_error, .box_alert, .box_confirm, .box_info {margin:8px;padding:8px;padding-left:40px;border-top:1px solid;border-bottom:1px solid;}
 .box_focus, .box_code {margin:8px;padding:8px;}
 
@@ -209,7 +207,6 @@ cursor:pointer;
 text-transform:uppercase;
 font-size:90%;
 font-weight:bold;
-letter-spacing:0.6px;
 text-decoration:none;
 color:#ffffff;
 border:1px solid #648A94;
@@ -219,6 +216,9 @@ background:url(commun/back-btn.png) top left repeat-x #536E76;
 .a_btn {display:inline-block;}
 .submit:hover, .a_btn:hover {background-image:none;background-color:#84B5BF;}
 
+#colonne .submit, #colonne .a_btn {
+
+}
 
 .box .cont a.a_btn {color:#ffffff;}
 
@@ -243,6 +243,11 @@ border-radius: 4px;
 }
 
 #colonne .ul_lien li a:hover {background-color:#F7F0EA;}
+#colonne hr {border:0;height:1px;border-bottom:1px solid #F8F2EC;}
+
+
+
+
 
 /* CSS Eric à nettoyer */
 
