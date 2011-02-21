@@ -21,20 +21,22 @@ $pageHTML->haut();
 
 
 <p class="breadcrumbs">
-<a href='index.php?id=<?php hecho($id)?>'>&laquo; Revenir &agrave; la liste des sites</a>
+<a href="index.php?id=<?php hecho($id)?>">&laquo; Revenir &agrave; la liste des sites</a>
 </p>
 
-<div class="box">
-	<div class="haut"><h2>Mon compte</h2></div>
-	<div class="cont">
+
 
 	<?php if ($lastMessage->getLastMessage()) : ?>
-		<p><?php echo $lastMessage->getLastMessage(); ?></p>
+	<div class="box">
+		<div class="haut"><h2>Mon compte</h2></div>
+		<div class="cont">
+			<p><?php echo $lastMessage->getLastMessage(); ?></p>
+		</div>
+		<div class="bas"></div>
+</div>		
 	<?php endif;?>
 	
-	</div>
-	<div class="bas"></div>
-</div>
+
 
 <?php if ( ! $authentification->getNamedAccount() ):?>
 <div class="box">
