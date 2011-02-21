@@ -40,20 +40,24 @@ $pageHTML->addRSSURL($info['title'],$info['url']);
 $pageHTML->haut();
 ?>
 
+	<?php if ($info['tag']) : ?>
+		<a href='index.php?id=<?php hecho($id)?>&tag=<?php hecho($info['tag']) ?>'>&laquo; Revenir &agrave; la liste des sites de la cat&eacute;gorie <?php hecho($info['tag']) ?></a>
 
+		<?php else :?>
+			<a href='index.php?id=<?php hecho($id)?>'>&laquo; Revenir &agrave; la liste des sites</a>
+	<?php endif;?>
+	
 <div class="box">
 	<div class="haut">
 <h2>Derni&egrave;res mises &agrave; jour de <a href='<?php hecho($rssInfo['link']) ?>'><?php hecho($rssInfo['title']) ?></a></h2>
 	</div>
 	<div class="cont">
-	
-	<?php if ($info['tag']) : ?>
-<a href='index.php?id=<?php hecho($id)?>&tag=<?php hecho($info['tag']) ?>'>&laquo; Revenir &agrave; la liste des sites de la cat&eacute;gorie <?php hecho($info['tag']) ?></a>
+	<?php if ($lastMessage->getLastMessage()) : ?>
+		<p>
+		<?php echo $lastMessage->getLastMessage(); ?>
+		</p>
+	<?php endif;?>
 
-<?php else :?>
-<a href='index.php?id=<?php hecho($id)?>'>&laquo; Revenir &agrave; la liste des sites</a>
-<?php endif;?>
-	
 <table>
 <?php foreach($rssInfo['item'] as $i => $flux) : ?>
 	<tr class="<?php echo $i%2?"":"bgcolor01";?>">

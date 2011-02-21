@@ -47,7 +47,11 @@ foreach($rssInfo['item'] as $i => $itemInfo){
 	}
 }
 
-
+if (empty($resultItem)){
+	$lastMessage->setLastMessage(LastMessage::ERROR,"Cet article n'existe pas ou plus");
+	header("Location: feed.php?id=$id&id_f=$id_f");
+	exit;
+}
 
 $content_html = $resultItem['content']?:$resultItem['description'];
 $content_html = $htmlNormalizer->get($content_html,$rssInfo['link']);
@@ -55,7 +59,8 @@ $content_html = $htmlNormalizer->get($content_html,$rssInfo['link']);
 
 $pageHTML->haut();
 ?>
-
+		<a href='index.php?id=<?php hecho($id)?>'>&laquo; Revenir à la liste des sites</a>
+		<br/>
 <div class="box">
 	<div class="haut">
 	<h2><?php hecho($resultItem['title'])?>
@@ -63,6 +68,8 @@ $pageHTML->haut();
 	</h2>
 	</div>
 	<div class="cont">
+
+	
 		<a href='feed.php?id=<?php hecho($id)?>&id_f=<?php echo $id_f?>'>&laquo; Revenir aux articles de  <?php hecho($rssInfo['title']) ?></a>
 		
 		<p class='align_right'>

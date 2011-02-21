@@ -81,6 +81,24 @@ Ajouter un site<?php echo $tag?" dans la cat&eacute;gorie $tag":""?>: <br/>
 <div class="bas"></div>				
 		</div>
 <?php endif;?>
+<?php if (! $authentification->getNamedAccount()) : ?>
+<div class="box">
+	<div class="haut">
+	<h2>Compte anonyme</h2>
+	</div>
+	<div class="cont">
+	
+	<p>Vous êtes actuellement sur un compte anonyme.</p>
+	<p>Pour retrouver cette page : <a href='http://<?php echo DOMAIN_NAME?>?<?php echo $id?>'>http://<?php echo DOMAIN_NAME?>?id=<?php echo $id?></a></p>
+	<br/>
+	<a href='http://<?php echo DOMAIN_NAME?>/create-account.php?id=<?php echo $id ?>'>Cr&eacute;er un compte gratuitement</a></p>
+	<br/>
+	</p>
+</div>
+<div class="bas"></div>				
+		</div>
+<?php endif;?>
+
 <?php 
 
 $pageHTML->bas();

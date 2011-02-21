@@ -47,10 +47,7 @@ class PageHTML {
 			</div>
 			<div id="menu_login">
 			<?php if (! $this->namedAccount && $this->id) : ?>
-				Votre identifiant :
-				 <a href='param.php?id=<?php hecho($this->id)?>'><?php hecho($this->id) ?></a>		
-			(<a href='login.php?id=<?php hecho($this->id) ?>'>Connexion</a>)
-			|
+				<a href='login.php?id=<?php hecho($this->id) ?>'>Connexion</a> |
 			<?php else:?>
 			Bienvenue <span class='name'><?php echo $this->namedAccount ?></span> |
 			<?php endif;?>

@@ -66,19 +66,20 @@ class FeedFetchInfo {
 		
 		if ( ! $result ){
 			$new_url =  $this->findFromHTML($url,$this->lastContent);	
+			$url = $this->formateURL($url);
 			if ( ! $new_url){
-				$this->lastError = "Le site <a href='$url'>$keyword_or_url</a> ne donne aucune information de suivi";
+				$this->lastError = "Le site <a href='$url' target='_blank'>$keyword_or_url</a> ne donne aucune information de suivi";
 				return false;
 			}
 			$this->lastContent = $this->urlLoader->getContent($new_url);
 			if (! $this->lastContent){
-				$this->lastError = "Le site <a href='$url'>$keyword_or_url</a> ne r&eacute;pond pas" . 
+				$this->lastError = "Le site <a href='$url' target='_blank'>$keyword_or_url</a> ne r&eacute;pond pas" . 
 					"(Page $new_url inaccessible - ".$this->urlLoader->getLastError().")";
 				return false;
 			}
 			$result = $this->feedParser->getInfo($this->lastContent);
 			if ( ! $result ){
-				$this->lastError = "Les informations de suivi du site <a href='$url'>$keyword_or_url</a> ne sont pas utilisables";
+				$this->lastError = "Les informations de suivi du site <a href='$url' target='_blank'>$keyword_or_url</a> ne sont pas utilisables";
 				return false;
 			}
 			$url = $new_url;
@@ -91,6 +92,15 @@ class FeedFetchInfo {
 		$result['last-modified'] = $this->urlLoader->getHeader('last-modified');
 		return $result;
 	}
+	
+	private function formateURL($url){
+		$parse = parse_url($url);
+		if (empty($parse["scheme"])){
+			return "http://$url";
+		}
+		return $url;
+	}
+	
 	
 	private function findFromHTML($base_url,$content){
 		$dom = new DOMDocument();

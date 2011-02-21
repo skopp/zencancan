@@ -41,10 +41,13 @@ $pageHTML->haut();
 		
 	
 </form>
-
+<p>
+Pas encore inscrit ? 
+<a href='http://<?php echo DOMAIN_NAME?>/create-account.php?id=<?php echo $id ?>'>Cr&eacute;er un compte gratuitement</a></p>
+<br/>
 <p>
 <a href='http://<?php echo DOMAIN_NAME?>'>Utiliser un compte anonyme</a>
-<a href='http://<?php echo DOMAIN_NAME?>/create-account.php?id=<?php echo $id ?>'>Cr&eacute;er un compte</a></p>
+</p>
 					
 	</div>
 	<div class="bas"></div>				
