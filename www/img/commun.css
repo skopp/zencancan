@@ -217,7 +217,9 @@ background:url(commun/back-btn.png) top left repeat-x #536E76;
 .submit:hover, .a_btn:hover {background-image:none;background-color:#84B5BF;}
 
 #colonne .submit, #colonne .a_btn {
-
+padding:2px;
+font-size:80%;
+margin:4px 0 4px 0;
 }
 
 .box .cont a.a_btn {color:#ffffff;}
