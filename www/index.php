@@ -75,16 +75,21 @@ Ajouter un site<?php echo $tag?" dans la cat&eacute;gorie $tag":""?>: <br/>
 	</div>
 	<div class="cont">
 	
+	<div class="box_alert">
 	<p>Vous ne suivez actuellement aucun site.</p>
+	<p>Pour suivre un site, inscrivez son nom dans le formulaire ci-dessus.</p>
+	</div>
 	
-	<p>Pour suivre un site, &eacute;crivez son nom dans le formulaire ci-dessus.
-	</p>
+	
 </div>
 <div class="bas"></div>				
 </div>
 
 
-
+<?php
+//De LBI pour ERIC : voici les box info, err, confirm, etc...
+?>
+<!--
 <div class="box">
 	<div class="haut"><h2>Messages</h2></div>
 	<div class="cont">
@@ -102,26 +107,31 @@ Ajouter un site<?php echo $tag?" dans la cat&eacute;gorie $tag":""?>: <br/>
 	</div>
 <div class="bas"></div>				
 </div>
+-->
 
-</div><!-- fin contenu -->
+
 <?php endif;?>
 <?php if (! $authentification->getNamedAccount()) : ?>
 <div class="box">
-	<div class="haut">
-	<h2>Compte anonyme</h2>
-	</div>
+	<div class="haut"><h2>Compte anonyme</h2></div>
 	<div class="cont">
 	
-	<p>Vous êtes actuellement sur un compte anonyme.</p>
+	<div class="box_info">
+	<p>Vous &ecirc;tes actuellement sur un compte anonyme.</p>
 	<p>Pour retrouver cette page : <a href='http://<?php echo DOMAIN_NAME?>?<?php echo $id?>'>http://<?php echo DOMAIN_NAME?>?id=<?php echo $id?></a></p>
-	<br/>
-	<a href='http://<?php echo DOMAIN_NAME?>/create-account.php?id=<?php echo $id ?>'>Cr&eacute;er un compte gratuitement</a></p>
-	<br/>
+	</div>
+	
+	<p class="align_center">
+		<a class="a_btn" href="http://<?php echo DOMAIN_NAME?>/create-account.php?id=<?php echo $id ?>">Cr&eacute;er un compte gratuitement</a>
 	</p>
+	
+	
 </div>
 <div class="bas"></div>				
-		</div>
+</div>
 <?php endif;?>
+
+</div><!-- fin contenu -->
 
 <?php 
 

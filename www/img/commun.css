@@ -66,8 +66,14 @@ padding-top:20px;
 #contenu {
 float:left;
 width:640px;
+/*
 border:1px solid #676053;
 background-color:#FFFFFF;
+*/
+border:1px solid #90897E;
+
+background-color:#FBF8F5;
+
 -webkit-border-radius: 4px;
 -moz-border-radius: 4px;
 border-radius: 4px;
@@ -99,7 +105,8 @@ border:1px solid #EDE0D3;
 -webkit-border-radius: 4px;
 -moz-border-radius: 4px;
 border-radius: 4px;
-background-color:#FBF8F5;
+/*background-color:#FBF8F5;*/
+background-color:#FFFFFF;
 }
 .box .haut {}
 .box .haut h2 {color:#D76E07;font-size:100%;text-transform:uppercase;font-weight:bold;border-bottom:1px solid #EDE0D3;margin:2px;padding:8px 2px 8px 2px;}
