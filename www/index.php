@@ -69,7 +69,7 @@ Ajouter un site<?php echo $tag?" dans la cat&eacute;gorie $tag":""?>: <br/>
 <?php else: ?>
 <div class="box">
 	<div class="haut">
-	<h2>Suivie des sites</h2>
+	<h2>Suivi des sites</h2>
 	</div>
 	<div class="cont">
 	
