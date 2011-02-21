@@ -28,8 +28,6 @@ $pageHTML->haut();
 	<div class="haut"><h2>Mon compte</h2></div>
 	<div class="cont">
 
-	voici mon compte en texte normal et ici <a href="#">un lien pas</a> ici par la.
-	
 	<?php if ($lastMessage->getLastMessage()) : ?>
 		<p><?php echo $lastMessage->getLastMessage(); ?></p>
 	<?php endif;?>
