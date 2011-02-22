@@ -59,8 +59,13 @@ $content_html = $htmlNormalizer->get($content_html,$rssInfo['link']);
 
 $pageHTML->haut();
 ?>
-		<a href='index.php?id=<?php hecho($id)?>'>&laquo; Revenir à la liste des sites</a>
-		<br/>
+
+
+<div id="contenu">
+<div class="breadcrumbs">
+	<a href='index.php?id=<?php hecho($id)?>'>&laquo; Revenir à la liste des sites</a>
+</div>
+
 <div class="box">
 	<div class="haut">
 	<h2><?php hecho($resultItem['title'])?>
@@ -81,6 +86,28 @@ $pageHTML->haut();
 	</div>
 	<div class="bas"></div>				
 </div>
+</div>
+
+<div id="colonne">
+<div class="box">
+	<div class="haut"><h2><?php hecho($rssInfo['title']) ?></h2></div>
+	<div class="cont">
+		<ul class="ul_lien">
+			<?php foreach($rssInfo['item'] as $i => $itemInfo) : ?>
+				<li>
+					<?php echo $fancyDate->get($itemInfo['pubDate'])?>
+					<a href='read.php?id=<?php hecho($id)?>&id_f=<?php echo $id_f?>&item=<?php echo urlencode($itemInfo['id_item'])?>'  title='<?php  echo get_link_title($itemInfo['content']?:$itemInfo['description']) ?>'>
+						<?php hecho($itemInfo['title']) ?>
+					</a>
+				</li>
+	
+			<?php endforeach; ?>
+		</ul>
+	</div>
+<div class="bas"></div>				
+</div>
+</div>
+
 <?php 
 $pageHTML->bas();
 

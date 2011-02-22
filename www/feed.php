@@ -43,23 +43,22 @@ $pageHTML->haut();
 <div id="contenu">
 
 	<div class="breadcrumbs">
-	<?php if ($info['tag']) : ?>
-		<a href='index.php?id=<?php hecho($id)?>&tag=<?php hecho($info['tag']) ?>'>&laquo; Revenir &agrave; la liste des sites de la cat&eacute;gorie <?php hecho($info['tag']) ?></a>
-		<?php else :?>
 		<a href='index.php?id=<?php hecho($id)?>'>&laquo; Revenir &agrave; la liste des sites</a>
-	<?php endif;?>
 	</div>
+
+	
+<?php if ($lastMessage->getLastMessage()) : ?>
+<div class="<?php echo $lastMessage->getLastMessageType()==LastMessage::ERROR?'box_error':'box_confirm'?>"><p>
+<?php echo $lastMessage->getLastMessage(); ?>
+</p></div>
+<?php endif;?>
 	
 <div class="box">
 	<div class="haut">
 <h2>Derni&egrave;res mises &agrave; jour de <a href='<?php hecho($rssInfo['link']) ?>'><?php hecho($rssInfo['title']) ?></a></h2>
 	</div>
 	<div class="cont">
-	<?php if ($lastMessage->getLastMessage()) : ?>
-		<p>
-		<?php echo $lastMessage->getLastMessage(); ?>
-		</p>
-	<?php endif;?>
+	
 
 <table>
 <?php foreach($rssInfo['item'] as $i => $flux) : ?>
@@ -87,9 +86,14 @@ $pageHTML->haut();
 <div id="colonne">
 
 <div class="box">
-	<div class="haut">
+	<div class="haut"><h2>Gestion</h2>
 	</div>
 	<div class="cont">
+	
+	<?php if ($info['tag']) : ?>
+	Catégorie actuelle : <a href='index.php?id=<?php hecho($id)?>&tag=<?php hecho($info['tag']) ?>'><?php hecho($info['tag']) ?></a>
+	<?php endif;?>
+	
 <form method='post' action='aggregate.php'>
 	
 	<input type='hidden' name='id' value='<?php echo $id ?>'/>
@@ -99,14 +103,6 @@ $pageHTML->haut();
 	</p>
 	<p><input class='submit' type='submit' value='Mettre dans une cat&eacute;gorie'/>	</p>
 </form>
-</div>
-<div class="bas"></div>				
-</div>
-
-<div class="box">
-	<div class="haut">
-	</div>
-	<div class="cont">
 <form method='post' action='del.php'>
 	<p>
 	<input class='submit' type='submit' value='Supprimer le suivi de ce site'/>

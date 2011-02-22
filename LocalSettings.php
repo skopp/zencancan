@@ -2,8 +2,8 @@
 
 $database_name="zencancan";
 $database_host="localhost";
-$database_login="root";
-$database_password="";
+$database_login="zencancan";
+$database_password="zencancan";
 
 
 //DOMAINE_NAME est le nom de domaine 
