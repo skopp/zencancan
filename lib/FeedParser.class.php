@@ -58,7 +58,7 @@ class FeedParser {
 			return false; 
 		}
 	
-		
+		$this->lastError = "";
 		return $feed;
 	}
 
