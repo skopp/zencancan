@@ -253,7 +253,7 @@ border-radius: 4px;
 
 
 
-/* CSS Eric à nettoyer */
+/* CSS Eric ï¿½ nettoyer */
 
 .date{
 	min-width: 100px;
@@ -297,3 +297,6 @@ border-radius: 4px;
 	border:1px solid #C3DFC3;
 	
 }
+
+
+#footer a {color: #383228;}
