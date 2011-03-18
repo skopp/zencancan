@@ -84,6 +84,7 @@ class PageHTML {
 			<div class="wrap">
 			<p class="align_center">
 			Page g&eacute;n&eacute;r&eacute;e par zenCancan en <?php echo round((microtime(true) - $this->debut) * 10000) / 10 ?>ms
+			- <a href='legal.php'>Mentions légales</a>
 			</p>
 			</div>
 		</div><!-- fin footer -->
