@@ -13,26 +13,16 @@ $pageHTML->menu();
 	<div id="contenu">
 	
 		<div class="box">
-			<div class="haut"><h2>Mentions Légales</h2></div>
+			<div class="haut"><h2>Mentions L&eacute;gales</h2></div>
 			<div class="cont">
-			<p>Le site zencancan.com est édité par Sigmalis SARL</p>
+			<p>Le site zencancan.com est &eacute;dit&eacute; par</p>
 		<br/>
 		
-<h3>Informations légales</h3>
-			<p>
-<pre>
-SIGMALIS
-SARL au capital de 3000 Euros.
-RCS LYON : 493 587 273 00019
-NAF : 722C
-Numéro de TVA Intracommunautaire : FR86493587273
 
-Siège social :
-31 avenue des frères Lumières
-69008 LYON
-Mél: web arrobasse sigmalis point com
-Tél: 06 81 62 12 82
-</pre>
+
+
+<p>
+<img src="img/commun/mentions-legales.png" alt="" />
 </p>
 			</div>
 			<div class="bas"></div>				
