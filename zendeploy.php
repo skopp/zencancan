@@ -5,7 +5,6 @@ $licence  = "&copy;Sigmalis 2011 - Sigmalis vous autorise &agrave; utiliser, cop
 $description_file = "description.wiki";
 $description_short="zenCancan est un lecteur de flux RSS en ligne.";
 
-
 $file_to_preserve = array("LocalSettings.php",'static','script/zencancan');
 $database_definition_file = "script/zencancan.bin";
 
