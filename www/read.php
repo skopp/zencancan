@@ -97,7 +97,7 @@ $pageHTML->haut();
 				<li>
 					<?php echo $fancyDate->get($itemInfo['pubDate'])?>
 					<a href='read.php?id=<?php hecho($id)?>&id_f=<?php echo $id_f?>&item=<?php echo urlencode($itemInfo['id_item'])?>'  title='<?php  echo get_link_title($itemInfo['content']?:$itemInfo['description']) ?>'>
-						<?php hecho($itemInfo['title']) ?>
+						<?php echo strip_tags($itemInfo['title']) ?>
 					</a>
 				</li>
 	
