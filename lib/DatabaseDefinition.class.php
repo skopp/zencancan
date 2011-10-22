@@ -1,7 +1,4 @@
 <?php
-
-require_once("SQLQuery.class.php");
-
 class DatabaseDefinition {
 	
 	private $sqlQuery;

@@ -1,7 +1,5 @@
 <?php
-require_once("URLLoader.class.php");
-require_once("FeedParser.class.php");
-require_once("GoogleSearch.class.php");
+
 
 class FeedFetchInfo {
 	

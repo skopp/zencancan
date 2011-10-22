@@ -1,5 +1,4 @@
 <?php
-require_once("URLLoader.class.php");
 
 class GoogleSearch {
 	

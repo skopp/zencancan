@@ -1,9 +1,5 @@
 <?php
 
-require_once("FeedParser.class.php");
-require_once("URLLoader.class.php");
-require_once("FeedSQL.class.php");
-require_once("AbonnementSQL.class.php");
 
 class FeedUpdater {
 	
@@ -92,6 +88,16 @@ class FeedUpdater {
 		$this->feedSQL->doUpdate($info['id_f'] , $feedInfo);
 		$this->updateFile($info['id_f'] ,$this->feedFetchInfo->getLastContent());
 		return $feedInfo['lasterror'];
+	}
+	
+	public function forceUpdate($id_f,$url){
+		$feedInfo = $this->feedFetchInfo->getURL($url);
+		if ( ! $feedInfo){
+			return false;
+		}
+		$this->feedSQL->doUpdate($id_f,$feedInfo);
+		$this->updateFile($id_f,$this->feedFetchInfo->getLastContent());
+		return true;
 	}
 	
 	public function updateForever($abonnementSQL,$log_file){

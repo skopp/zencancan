@@ -2,13 +2,17 @@
 
 $debut = microtime(true);
 
-set_include_path( __DIR__ . "/lib/" );
-
 require_once(  __DIR__  . "/LocalSettings.php");
 
-require_once("Recuperateur.class.php");
-require_once("LastMessage.class.php");
-require_once("SQLQuery.class.php");
+set_include_path( __DIR__ . "/lib/" . PATH_SEPARATOR . __DIR__ . "/model" . PATH_SEPARATOR . __DIR__ . "/controler");
+
+function __autoload($class_name) {	
+	@ $result = include($class_name . '.class.php');
+	if(!$result){
+		throw new Exception("Impossible de trouver $class_name");
+	}
+	
+}
 
 
 $sqlQuery = new SQLQuery($database_name);
@@ -27,4 +31,19 @@ if (! defined("DOMAIN_NAME")){
 	define("DOMAIN_NAME","zencancan.com");
 }
 
-$revision_number = "100"; 
+$objectInstancier = new ObjectInstancier();
+$objectInstancier->site_base = DOMAIN_NAME;
+$objectInstancier->site_script = "index.php";
+$objectInstancier->debut = $debut;
+$objectInstancier->template_path = __DIR__ . "/template/";
+$objectInstancier->SQLQuery = $sqlQuery;
+$objectInstancier->nbSigne = 7;
+$objectInstancier->revision_number = 100;
+$objectInstancier->timeout = 5;
+$objectInstancier->staticPath = STATIC_PATH;
+if (isset($_SERVER['HTTP_ACCEPT_LANGUAGE'])){
+	$objectInstancier->GoogleSearch->setHTTPAcceptLanguage($_SERVER['HTTP_ACCEPT_LANGUAGE']);
+}
+
+
+

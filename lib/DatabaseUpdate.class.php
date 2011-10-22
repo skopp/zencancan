@@ -1,8 +1,4 @@
 <?php
-require_once("DatabaseDiff.class.php");
-require_once("DatabaseEventFactory.class.php");
-require_once("DatabaseDefinition.class.php");
-require_once("SQLQuery.class.php");
 
 class DatabaseUpdate {
 	

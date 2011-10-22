@@ -1,6 +1,5 @@
 <?php
 
-require_once("DatabaseEvent.interface.php");
 
 class DatabaseEventMySQL implements DatabaseEvent {
 	

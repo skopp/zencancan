@@ -1,12 +1,9 @@
 <?php
 require_once("init.php");
-require_once("Compte.class.php");
-require_once("Authentification.class.php");
-require_once("PasswordGenerator.class.php");
+
 session_start();
-$lastMessage = new LastMessage();
-$passwordGenerator = new PasswordGenerator();
-$authentification = new Authentification($passwordGenerator);
+
+$authentification = $objectInstancier->Authentification;
 
 if ($authentification->getNamedAccount() == 'www'){
 	header("Location: http://".DOMAIN_NAME);
@@ -14,7 +11,7 @@ if ($authentification->getNamedAccount() == 'www'){
 }
 
 
-$compte = new Compte($sqlQuery);
+$compte = $objectInstancier->Compte;
 
 $id = $authentification->getId();
 
@@ -54,3 +51,6 @@ if ($authentification->hasChangedId()){
 	}
 	
 }
+
+require_once("util.php");
+

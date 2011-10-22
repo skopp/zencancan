@@ -1,7 +1,5 @@
 <?php
 
-require_once("DatabaseEventText.class.php");
-require_once("DatabaseEventMySQL.class.php");
 
 class DatabaseEventFactory {
 	

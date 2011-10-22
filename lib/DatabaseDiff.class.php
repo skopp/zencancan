@@ -1,8 +1,5 @@
 <?php
 
-require_once("SQLQuery.class.php");
-require_once("DatabaseEvent.interface.php");
-
 class DatabaseDiff {
 
 	private $databaseEvent;

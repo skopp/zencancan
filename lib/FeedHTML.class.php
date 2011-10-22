@@ -1,12 +1,11 @@
 <?php 
 
-require_once("FancyDate.class.php");
 
 class FeedHTML {
 	
 	private $fancyDate;
 	
-	public function __construct($fancyDate){
+	public function __construct(FancyDate $fancyDate){
 		$this->fancyDate = $fancyDate;
 	}
 	

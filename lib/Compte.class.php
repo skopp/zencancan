@@ -4,7 +4,7 @@ class Compte {
 	private $sqlQuery;
 	private $lastError;
 	
-	public function __construct($sqlQuery){
+	public function __construct(SQLQuery $sqlQuery){
 		$this->sqlQuery = $sqlQuery;
 	}
 	
