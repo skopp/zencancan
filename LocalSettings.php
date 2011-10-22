@@ -2,8 +2,8 @@
 
 $database_name="zencancan";
 $database_host="localhost";
-$database_login="root";
-$database_password="";
+$database_login="zencancan";
+$database_password="zencancan";
 
 
 //DOMAINE_NAME est le nom de domaine 
@@ -11,3 +11,5 @@ $database_password="";
 //comptes anonymes
 //les comptes "nommes" sont alors NOM.DOMAINE_NAME
 define("DOMAIN_NAME","localhost");
+
+$revision_number = "98"; 

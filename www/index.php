@@ -88,31 +88,6 @@ Ajouter un site<?php echo $tag?" dans la cat&eacute;gorie $tag":""?>: <br/>
 <div class="bas"></div>				
 </div>
 
-
-<?php
-//De LBI pour ERIC : voici les box info, err, confirm, etc...
-?>
-<!--
-<div class="box">
-	<div class="haut"><h2>Messages</h2></div>
-	<div class="cont">
-	
-
-	<div class="box_info"><p>box_info</p></div>
-	<div class="box_error"><p>box_error</p></div>
-	<div class="box_alert"><p>box_alert</p></div>
-	<div class="box_confirm"><p>box_confirm</p></div>
-	<div class="box_focus"><p>box_focus</p></div>			
-	<div class="box_code"><p>box_code</p></div>	
-	<div class="breadcrumbs"><p>breadcrumbs</p></div>	
-
-
-	</div>
-<div class="bas"></div>				
-</div>
--->
-
-
 <?php endif;?>
 
 

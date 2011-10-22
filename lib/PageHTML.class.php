@@ -69,10 +69,8 @@ class PageHTML {
 		<?php
 	}
 	public function bas($debut = false){
+		global $revision_number;
 		?>
-		
-		
-		
 		
 		</div><!-- fin main -->
 		
@@ -83,7 +81,7 @@ class PageHTML {
 		<div id="footer">
 			<div class="wrap">
 			<p class="align_center">
-			Page g&eacute;n&eacute;r&eacute;e par zenCancan en <?php echo round((microtime(true) - $this->debut) * 10000) / 10 ?>ms
+			Page g&eacute;n&eacute;r&eacute;e par zenCancan révision <?php echo $revision_number ?> en <?php echo round((microtime(true) - $this->debut) * 10000) / 10 ?>ms
 			- <a href='legal.php'>Mentions légales</a>
 			</p>
 			</div>
