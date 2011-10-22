@@ -26,3 +26,5 @@ define("LOG_FILE","/var/log/zencancan.log");
 if (! defined("DOMAIN_NAME")){
 	define("DOMAIN_NAME","zencancan.com");
 }
+
+$revision_number = "100"; 

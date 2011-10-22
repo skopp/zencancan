@@ -12,4 +12,3 @@ $database_password="zencancan";
 //les comptes "nommes" sont alors NOM.DOMAINE_NAME
 define("DOMAIN_NAME","localhost");
 
-$revision_number = "98"; 
