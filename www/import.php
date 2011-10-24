@@ -23,19 +23,20 @@ if (!$id){
 }
 
 if (empty($_FILES['fichier_opml'])){
-	$lastMessage->setLastMessage(LastMessage::ERROR,"Fichier non pr&eacute;sents");
+	$objectInstancier->LastMessage->setLastError("Fichier non pr&eacute;sents");	
 	$sortie();
 } 
 	
 
 if ($_FILES['fichier_opml']['error'] !=  UPLOAD_ERR_OK  ){
-	$lastMessage->setLastMessage(LastMessage::ERROR,"Erreur lors de l'import du fichier : ". $_FILES['fichier_opml']['error']);
+	$objectInstancier->LastMessage->setLastError("Erreur lors de l'import du fichier : ". $_FILES['fichier_opml']['error']);		
 	$sortie();
 }
 
 $xml = simplexml_load_file($_FILES['fichier_opml']['tmp_name']);
 if ( ! $xml || ! $xml->body) {
-	$lastMessage->setLastMessage(LastMessage::ERROR,"Ce n'est pas un fichier OPML");
+	
+	$objectInstancier->LastMessage->setLastError("Ce n'est pas un fichier OPML");
 	$sortie();
 }
 

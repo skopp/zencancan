@@ -8,7 +8,7 @@ $password = $recuperateur->get('password');
 $password2 = $recuperateur->get('password2');
 
 if ($password != $password2){
-	$lastMessage->setLastMessage(LastMessage::ERROR,"Les mots de passe ne correspondent pas");
+	$objectInstancier->LastMessage->setLastError("Les mots de passe ne correspondent pas");
 	header("Location: password.php");
 	exit;
 }
@@ -16,7 +16,7 @@ if ($password != $password2){
 $compte = new Compte($sqlQuery);
 
 if ( ! $compte->verif($authentification->getNamedAccount(),$oldpassword)){
-	$lastMessage->setLastMessage(LastMessage::ERROR,"Votre ancien mot de passe est incorrecte");
+	$objectInstancier->LastMessage->setLastError("Votre ancien mot de passe est incorrecte");
 	header("Location: password.php");
 	exit;
 }
@@ -25,5 +25,5 @@ if ( ! $compte->verif($authentification->getNamedAccount(),$oldpassword)){
 $compte->setPassword($authentification->getId(),$password);
 
 
-$lastMessage->setLastMessage(LastMessage::MESSAGE,"Votre mot de passe a &eacute;t&eacute; modifi&eacute;");
+$objectInstancier->LastMessage->setLastMessage("Votre mot de passe a &eacute;t&eacute; modifi&eacute;");
 header("Location: param.php");

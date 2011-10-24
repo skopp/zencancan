@@ -8,8 +8,10 @@ $name = $recuperateur->get('name');
 $password = $recuperateur->get('password');
 $password2 = $recuperateur->get('password2');
 
-$exit = function($message) use ($lastMessage,$id){
-	$lastMessage->setLastMessage(LastMessage::ERROR,$message);
+$exit = function($message) use ($id){
+	global $objectInstancier;
+	$objectInstancier->LastMessage->setLastError($message);
+	
 	header("Location: create-account.php?id=$id");
 	exit;
 };

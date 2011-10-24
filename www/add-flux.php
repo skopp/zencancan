@@ -22,7 +22,7 @@ $id_f = $feedUpdater->add($url);
 
 if (! $id_f){
 	$errorSQL->add($url,$feedUpdater->getLastError());
-	$lastMessage->setLastMessage(LastMessage::ERROR,$feedUpdater->getLastError());
+	$objectInstancier->LastMessage->setLastError($feedUpdater->getLastError());
 	$sortie();
 } 
 	

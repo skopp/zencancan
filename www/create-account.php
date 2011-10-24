@@ -19,9 +19,7 @@ $pageHTML->haut();
 	<div class="haut"><h2>Cr&eacute;ation d'un compte</h2></div>
 	<div class="cont">
 	
-	<?php if ($lastMessage->getLastMessage()) : ?>
-		<p class="box_error"><?php echo $lastMessage->getLastMessage(); ?></p>
-	<?php endif;?>
+	<?php $objectInstancier->LastMessage->display(); ?>
 	<form action='create-account-controler.php' method='post'>
 		<input type='hidden' name='id' value='<?php echo $id?>' />
 		<label for="name">Nom du compte</label>

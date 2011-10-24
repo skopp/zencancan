@@ -20,10 +20,8 @@ $pageHTML->haut();
 <h2>Modifier de votre mot de passe</h2>
 	</div>
 <div class="cont">
-	
-<?php if ($lastMessage->getLastMessage()) : ?>
-	<p><?php echo $lastMessage->getLastMessage(); ?></p>
-<?php endif;?>
+
+<?php $objectInstancier->LastMessage->display(); ?>
 <form action='password-controler.php' method='post'>
 	<label for="oldpassword">Votre ancien mot de passe</label>
 	<input type='password' name='oldpassword'/>

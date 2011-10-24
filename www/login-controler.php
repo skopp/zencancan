@@ -17,7 +17,7 @@ if (! $username){
 $id = $compte->verif($username,$password);
 
 if (! $id ){
-	$lastMessage->setLastMessage(LastMessage::ERROR,"Le mot de passe est incorrect");
+	$objectInstancier->LastMessage->setLastError("Le mot de passe est incorrect");
 	header("Location: login.php");		
 	exit;
 }
