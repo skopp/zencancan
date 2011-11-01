@@ -30,6 +30,7 @@ a:hover {text-decoration:none;}
 min-height: 100%;
 margin-bottom: -30px;
 position: relative;
+overflow:auto;
 }
 
 #header {background-color:#000;padding:6px 8px 4px 8px;height:20px;}
@@ -49,23 +50,28 @@ padding:8px 0 8px 300px;
 #main {
 clear:both;
 height:1%;
-overflow:auto;
-padding:4px;
+width:100%;
 }
 
 #colonne {
 width:240px;
-float:left;
+clear: left;
+float: left;
 margin:10px;
+padding-right:10px;
 }
 
 
 #contenu {
-width:700px;
-float:left;
+left: 250px;
+margin-left: 250px;
 margin:10px;
 }
 
+.item_content {width:750px;position:relative;margin-left: 250px;}
+.item_content img {width:auto;}
+
+.box_col {margin:12px 0 12px 0;height:1%;overflow:auto;width:740px;}
 
 #footer {
 background-color:#000;;
@@ -81,20 +87,12 @@ position:relative;
 .clearfooter {height:30px;clear:both;}
 
 
-/* 
-Definition des bloc d'info
-*/
+/* Definition des bloc d'info */
 
 .box {margin-bottom:20px;}
-.box .haut {}
 .box .haut h2 {color:#000;font-size:120%;margin:0;font-family:arial, helvetica, no-serif;}
-.box .cont {}
-.box .cont a {}
 .box .cont a:hover {text-decoration:none;}
-.box .bas {}
 
-
-#colonne .box {}
 #colonne .box .haut h2 {color:#B0B0B0;border-bottom:1px solid #DBD5CD;padding-bottom:6px;margin-bottom:6px;}
 #colonne .box .cont {line-height:1.6em;}
 
@@ -121,7 +119,7 @@ Definition des boox de type message
 table
 */
 
-table {width:100%;border-collapse:collapse;font-size:90%;margin:8px 0 8px 0;}
+table {border-collapse:collapse;font-size:90%;margin:8px 0 8px 0;}
 table th {background-color:#C5BFB7;color:#FFFFFF;padding:6px;font-weight: bold;padding:4px;border-bottom:1px solid #645C4F;text-align:left;}
 table td {padding:6px;}
 table tr {border-bottom:1px solid #F0E8DE;}
@@ -179,11 +177,7 @@ commun
 .float_left {float:left;}
 .float_right {float:right;}
 
-.box_col {
-height:1%;
-overflow:auto;
-margin:8px 0 8px 0;
-}
+
 
 .clear {clear:both;}
 
@@ -236,6 +230,6 @@ margin:8px 0 8px 0;
 	font-weight: bold;
 }
 
-.item_content {margin:12px 0 12px 0;}
+
 
 

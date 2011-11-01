@@ -40,10 +40,12 @@
 				<a href='<?php echo $resultItem['link'] ?>' target='_blank'>Lire l'article original &raquo;</a>
 				</p>
 			</div>
-			<div class="clear"></div>
+			
 	
 			<div class='item_content'>
+				<p>
 				<?php echo $content_html;?>
+				</p>
 			</div>
 			
 		</div>
