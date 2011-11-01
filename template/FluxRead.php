@@ -1,4 +1,7 @@
 <div id="colonne">
+	<div class="breadcrumbs">
+		<a href='index.php?id=<?php hecho($id)?>'>&laquo; Revenir a la liste des sites</a>
+	</div>
 	<div class="box">
 		<div class="haut"><h2><?php hecho($rssInfo['title']) ?></h2></div>
 		<div class="cont">
@@ -19,9 +22,6 @@
 
 
 <div id="contenu">
-	<div class="breadcrumbs">
-		<a href='index.php?id=<?php hecho($id)?>'>&laquo; Revenir a la liste des sites</a>
-	</div>
 
 	<div class="box">
 		<div class="haut">

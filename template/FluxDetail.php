@@ -1,5 +1,7 @@
 <div id="colonne">
-
+	<div class="breadcrumbs">
+		<a href='index.php?id=<?php hecho($id)?>'>&laquo; Revenir &agrave; la liste des sites</a>
+	</div>
 	<div class="box">
 		<div class="haut"><h2>Gestion</h2>
 		</div>
@@ -33,9 +35,7 @@
 
 <div id="contenu">
 
-	<div class="breadcrumbs">
-		<a href='index.php?id=<?php hecho($id)?>'>&laquo; Revenir &agrave; la liste des sites</a>
-	</div>
+
 
 	
 <?php $this->LastMessage->display()?>
