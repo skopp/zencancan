@@ -29,4 +29,4 @@
 		</div>
 		
 		
-	</div><!-- fin colonne -->
+</div><!-- fin colonne -->

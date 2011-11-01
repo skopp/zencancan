@@ -81,8 +81,8 @@ class PageHTML {
 		<div id="footer">
 			<div class="wrap">
 			<p class="align_center">
-			Page g&eacute;n&eacute;r&eacute;e par zenCancan révision <?php echo $revision_number ?> en <?php echo round((microtime(true) - $this->debut) * 10000) / 10 ?>ms
-			- <a href='legal.php'>Mentions légales</a>
+			Page g&eacute;n&eacute;r&eacute;e par zenCancan r&eacute;vision <?php echo $revision_number ?> en <?php echo round((microtime(true) - $this->debut) * 10000) / 10 ?>ms
+			- <a href='legal.php'>Mentions l&eacute;gales</a>
 			</p>
 			</div>
 		</div><!-- fin footer -->

@@ -1,3 +1,29 @@
+<div id="colonne">
+
+<div class="box">
+	<div class="haut"><h2>Pas encore inscrit ?</h2></div>
+	<div class="cont align_center">
+<br/>
+<p>
+<a class="a_btn" href="http://<?php echo DOMAIN_NAME?>/create-account.php?id=<?php echo $id ?>">Cr&eacute;er un compte gratuitement</a>
+</p>
+
+<br/>
+
+<hr/>
+<br/>
+<p>
+<a href="http://<?php echo DOMAIN_NAME?>">Utiliser un compte anonyme</a>
+</p>
+	<br/>				
+	</div>
+	<div class="bas"></div>				
+</div>
+
+
+</div><!-- fin colonne -->
+
+
 <div id="contenu">
 
 <div class="box">
@@ -32,30 +58,5 @@
 	<div class="bas"></div>				
 </div>
 
+
 </div><!-- fin contenu -->
-
-<div id="colonne">
-
-
-<div class="box">
-	<div class="haut"><h2>Pas encore inscrit ?</h2></div>
-	<div class="cont align_center">
-<br/>
-<p>
-<a class="a_btn" href="http://<?php echo DOMAIN_NAME?>/create-account.php?id=<?php echo $id ?>">Cr&eacute;er un compte gratuitement</a>
-</p>
-
-<br/>
-
-<hr/>
-<br/>
-<p>
-<a href="http://<?php echo DOMAIN_NAME?>">Utiliser un compte anonyme</a>
-</p>
-	<br/>				
-	</div>
-	<div class="bas"></div>				
-</div>
-
-
-</div><!-- fin colonne -->

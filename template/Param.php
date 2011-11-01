@@ -1,4 +1,4 @@
-
+<?php $this->render("Menu");?>
 <div id="contenu">
 
 
@@ -94,4 +94,4 @@ Veuillez saisir l'identifiant du compte : <input name='code' value=''/>
 
 
 </div><!-- fin contenu -->
-				<?php $this->render("Menu");?>
+				

@@ -58,9 +58,9 @@
 		
 		
 		<div id="main">
-			<div class="wrap">
+			
 			<?php $this->render($template_milieu);?>
-			</div>
+			
 		</div><!-- fin main -->
 		
 			<div class="clearfooter"></div>
