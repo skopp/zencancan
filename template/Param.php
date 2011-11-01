@@ -23,14 +23,17 @@
 <?php if ( ! $namedAccount ):?>
 <div class="box">
 	<div class="haut"><h2>Cr&eacute;er un compte</h2></div>
+
+	<form class="ff">
 	<div class="cont align_center">
 	<p>
 	<a href="create-account.php?id=<?php echo $id ?>" class="a_btn">Cr&eacute;er un compte nomm&eacute; </a>
 	</p>
-	
 	<p class="discret">Exemple : eric.<?php echo DOMAIN_NAME ?></p>
-	
 	</div>
+	</form>
+	
+	
 	<div class="bas"></div>
 </div>
 <?php else:?>
@@ -50,12 +53,14 @@
 	<div class="haut"><h2>Mes donn&eacute;es</h2></div>
 	<div class="cont">
 
-	<p class="box_info">
+
+
+
+	<form class='ff' action='import.php' enctype='multipart/form-data' method='post'>
+		
+			<p class="box_info">
 	R&eacute;cuperer mes donn&eacute;es : <a href='export.php?id=<?php hecho($id)?>'>zencancan-<?php hecho($id) ?>.opml</a>
 	</p>
-
-
-	<form action='import.php' enctype='multipart/form-data' method='post'>
 		
 		<input type='hidden' name='id' value='<?php hecho($id) ?>' />
 		<label for='fichier_opml' >Importer des flux (OPML)</label>
@@ -72,14 +77,15 @@
 	<div class="cont">
 
 
-	<p class="box_info">D&eacute;truire ce compte d&eacute;finitivement.</p>
+	
 
-<form action='delete-account.php' method='post'>
+<form class='ff' action='delete-account.php' method='post'>
+<p class="box_info">D&eacute;truire ce compte d&eacute;finitivement. (Cette op&eacute;ration n'est pas r&eacute;versible)</p>
+
 <input type='hidden' name='id' value='<?php echo $id?>' />
 Veuillez saisir l'identifiant du compte : <input name='code' value=''/>
 <input type='submit' value='D&eacute;truire' class='a_btn'/>
 
-<p class="box_alert">Cette op&eacute;ration n'est pas r&eacute;versible</p>
 
 </form>
 	</div>

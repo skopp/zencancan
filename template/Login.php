@@ -10,7 +10,7 @@
 </div>
 <div class="cont">
 <?php $this->LastMessage->display()?>
-<form action='login-controler.php' method='post'>
+<form class='ff' action='login-controler.php' method='post'>
 	<?php if (! $namedAccount) : ?>
 		<label for="id_login">Identifiant</label>
 	 	<input type='text' name='login' id="id_login" />.<?php echo DOMAIN_NAME ?>
@@ -20,7 +20,7 @@
 		<input type='password' id="id_password" name='password'/>
 		<hr/>	
 
-		<p class="align_right">
+		<p class="align_left">
 		<label for="id_remember">Rester connect&eacute;</label><input type="checkbox" name="remember" id="id_remember" />
 		&nbsp;&nbsp;
 		<input type="submit" class="submit" value="Connexion" />

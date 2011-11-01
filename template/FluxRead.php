@@ -11,11 +11,17 @@
 	</div>
 	<div class="cont">
 	
+		<div class="box_col">
+		<p class='float_left'>
 		<a href='feed.php?id=<?php hecho($id)?>&id_f=<?php echo $id_f?>'>&laquo; Revenir aux articles de  <?php hecho($rssInfo['title']) ?></a>
-		
-		<p class='align_right'>
+		</p>
+		<p class='float_right'>
 		<a href='<?php echo $resultItem['link'] ?>' target='_blank'>Lire l'article original &raquo;</a>
 		</p>
+		</div>
+		<div class="clear"></div>
+				
+				
 		<div class='item_content'>
 			<?php echo $content_html;?>
 		</div>

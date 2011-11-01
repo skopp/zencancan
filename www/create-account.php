@@ -20,7 +20,7 @@ $pageHTML->haut();
 	<div class="cont">
 	
 	<?php $objectInstancier->LastMessage->display(); ?>
-	<form action='create-account-controler.php' method='post'>
+	<form class='ff' action='create-account-controler.php' method='post'>
 		<input type='hidden' name='id' value='<?php echo $id?>' />
 		<label for="name">Nom du compte</label>
 		<input name='name'/>.<?php echo DOMAIN_NAME ?>

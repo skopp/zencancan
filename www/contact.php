@@ -18,7 +18,7 @@ $pageHTML->menu();
 			<p>Une remarque ? Un bug ? Une demande d'&eacute;volution ? 
 			N'h&eacute;sitez pas &agrave; utiliser le formulaire ci-dessous pour nous
 			faire part de votre question.</p>
-			<form action="contact-controler.php" method='post'>
+			<form class='ff' action="contact-controler.php" method='post'>
 							
 				<label for="sujet">Sujet</label>
 				<input type="text" name="sujet" id="sujet" size='40' />

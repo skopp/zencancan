@@ -21,9 +21,9 @@ body  > #container {height: auto; min-height: 100%;}
 
 .wrap {width:930px;}
 
-p {margin-top:2px;margin-bottom:2px;}
+p {margin:2px 0 2px 0;}
 h1 {display:none;}
-a {color:#BB5205;}
+a {color:#2C6DCE;}
 a:hover {text-decoration:none;}
 
 #container {
@@ -34,12 +34,12 @@ position: relative;
 
 }
 
-#header {background:url(commun/back.png) top left repeat-x #fff;padding:6px 8px 4px 8px;height:20px;}
+#header {background-color:#000;padding:6px 8px 4px 8px;height:20px;}
 
-#logo {float:left;position:absolute;top:10px;margin-left:12px;}
+#logo {float:left;position:absolute;top:40px;margin-left:12px;}
 #logo img {border:0;}
 #menu_login {float:right;color:#B0A99F;}
-#menu_login a {margin:0 4px 0 4px;color:#F8F2EB;text-decoration:none;}
+#menu_login a {margin:0 4px 0 4px;color:#fff;text-decoration:none;}
 #menu_login a:hover {text-decoration:underline;}
 
 #box_add_flux {
@@ -72,14 +72,15 @@ margin-left:270px;
 
 
 #footer {
-background:url(commun/back.png) top left repeat-x #7D7569;
+background-color:#000;;
 padding:6px 8px 4px 8px;
 height:20px;
-color:#383228;
+color:#D1D1D1;
 font-size:80%;
 position:relative;
 /* hauteur total 80px, voir #container et .clearfooter */
 }
+#footer a {color: #D1D1D1;}
 
 .clearfooter {height:30px;clear:both;}
 
@@ -90,7 +91,7 @@ Definition des bloc d'info
 
 .box {margin-bottom:20px;}
 .box .haut {}
-.box .haut h2 {color:#6A6255;font-size:120%;margin:0;font-family:arial, helvetica, no-serif;}
+.box .haut h2 {color:#000;font-size:120%;margin:0;font-family:arial, helvetica, no-serif;}
 .box .cont {}
 .box .cont a {}
 .box .cont a:hover {text-decoration:none;}
@@ -111,7 +112,7 @@ Definition des boox de type message
 .box_error, .box_alert, .box_confirm, .box_info {margin:8px 0 8px 0;padding:8px;padding-left:40px;border-top:1px solid;border-bottom:1px solid;}
 .box_focus, .box_code {margin:8px 0 8px 0;padding:8px;}
 
-.box_info {background:url(commun/ilu_info.png) 12px 8px no-repeat #EDF4F5;border-color:#D8E6E8;}
+.box_info {background:url(commun/ilu_info.png) 12px 8px no-repeat #FCFBF8;border-color:#EFEBE3;}
 .box_error {background:url(commun/ilu_error.png) 8px 4px no-repeat #FEE8E8;color:#F20C0C;border-color:#F20C0C;}
 .box_alert {background:url(commun/ilu_alert.png) 8px 4px no-repeat #FEFEE4;color:#EC8B00;border-color:#FFD639;}
 .box_confirm {background:url(commun/ilu_confirm.png) 8px 4px no-repeat #EFFBCF;color:#108203;border-color:#BCE166;}
@@ -135,11 +136,11 @@ table tr {border-bottom:1px solid #F0E8DE;}
 form
 */
 
-form {
-}
+.ff {border:1px solid #DBD5CD;padding:16px 8px 16px 8px;background-color:#F4F2EE;margin:8px 0 8px 0}
 
 form label {width:200px;display:inline-block;margin:2px;padding:4px;vertical-align:top;}
-input, textarea, select {padding:3px;border:1px solid #CCDDE0;}
+input, textarea, select {padding:3px;border:1px solid #DBD5CD;}
+input:focus, textarea, select {border:1px solid #BB5205;}
 
 textarea {font-family:verdana, helvetica, arial, sans-serif;font-size:90%;}
 form hr {height:1px; border:0; border-bottom:1px solid #FFFFFF;}
@@ -148,19 +149,19 @@ form hr {height:1px; border:0; border-bottom:1px solid #FFFFFF;}
 -webkit-border-radius: 4px;
 -moz-border-radius: 4px;
 border-radius: 4px;
-padding:5px;
+padding:4px;
 cursor:pointer;
 text-transform:uppercase;
 font-size:90%;
 font-weight:bold;
 text-decoration:none;
 color:#ffffff;
-border:1px solid #648A94;
+border:1px solid #7D7D7D;
 background:url(commun/back-btn.png) top left repeat-x #536E76;
 }
 
 .a_btn {display:inline-block;}
-.submit:hover, .a_btn:hover {background-image:none;background-color:#84B5BF;}
+.submit:hover, .a_btn:hover {background-image:none;background-color:#B1B1B1;}
 
 #colonne .submit, #colonne .a_btn {
 padding:2px;
@@ -179,12 +180,23 @@ commun
 .align_left {text-align:left;}
 .align_justify {text-align:justify;}
 
+.float_left {float:left;}
+.float_right {float:right;}
+
+.box_col {
+height:1%;
+overflow:auto;
+margin:8px 0 8px 0;
+}
+
+.clear {clear:both;}
+
 .discret{color: #AAAAAA;font-size: 90%;}
 .breadcrumbs {margin:8px 0 8px 0;padding:8px 0 8px 0;}
 
 .ul_lien {margin:0;padding:0;list-style-type: none;}
 .ul_lien li {}
-.ul_lien li a {color:#6A6255;display:block;padding:4px;text-decoration:none;}
+.ul_lien li a {color:#000;display:block;padding:4px;text-decoration:none;}
 
 #colonne .ul_lien li a:hover {background-color:#F4F2EE;color:#000;}
 #colonne hr {border:0;height:1px;border-bottom:1px solid #F8F2EC;}
@@ -201,13 +213,13 @@ commun
 
 .site{
 	max-width: 200px;
-	color: #999999;
+	color: #6F6F6F;
 	
 }
 
 .site a{
 	text-decoration: none;
-	color: #999999;
+	color: #6F6F6F;
 }
 
 .lien a {
@@ -228,15 +240,6 @@ commun
 	font-weight: bold;
 }
 
-.item_content {
-	-webkit-border-radius: 10px;
-	-moz-border-radius: 10px;
-	border-radius: 10px;
-	background-color: #FFFFFF;
-	padding: 10px;
-	border:1px solid #C3DFC3;
-	
-}
+.item_content {margin:12px 0 12px 0;}
 
 
-#footer a {color: #383228;}

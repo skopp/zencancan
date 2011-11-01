@@ -22,7 +22,7 @@ $pageHTML->haut();
 <div class="cont">
 
 <?php $objectInstancier->LastMessage->display(); ?>
-<form action='password-controler.php' method='post'>
+<form class='ff' action='password-controler.php' method='post'>
 	<label for="oldpassword">Votre ancien mot de passe</label>
 	<input type='password' name='oldpassword'/>
 	<hr/>

@@ -51,7 +51,7 @@
 	Cat&eacute;gorie actuelle : <a href='index.php?id=<?php hecho($id)?>&tag=<?php hecho($info['tag']) ?>'><?php hecho($info['tag']) ?></a>
 	<?php endif;?>
 	
-	<form method='post' action='aggregate.php'>
+	<form class='ff' method='post' action='aggregate.php'>
 		
 		<input type='hidden' name='id' value='<?php echo $id ?>'/>
 		<input type='hidden' name='id_f' value='<?php echo $id_f ?>'/>
