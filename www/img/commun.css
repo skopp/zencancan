@@ -140,7 +140,7 @@ form
 
 form label {width:200px;display:inline-block;margin:2px;padding:4px;vertical-align:top;}
 input, textarea, select {padding:3px;border:1px solid #DBD5CD;}
-input:focus, textarea, select {border:1px solid #BB5205;}
+input:focus, textarea, select {border:1px solid #2C6DCE;}
 
 textarea {font-family:verdana, helvetica, arial, sans-serif;font-size:90%;}
 form hr {height:1px; border:0; border-bottom:1px solid #FFFFFF;}
