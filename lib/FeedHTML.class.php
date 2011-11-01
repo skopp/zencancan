@@ -22,7 +22,7 @@ class FeedHTML {
 		
 		<td class='site' style=' white-space:nowrap;'><a href='feed.php?id=<?php echo $id ?>&id_f=<?php hecho($flux['id_f'])?>' title='<?php hecho($flux['title'])?>'><?php hecho(wrap($flux['title'],25,2))?></a></td>
 	
-		<td class='lien' width='100%'>
+		<td class='lien' white-space:nowrap;'>
 		<a href='read.php?id=<?php hecho($id) ?>&id_f=<?php echo $flux['id_f'] ?>&item=<?php echo urlencode($flux['last_id'])?>' title='<?php  echo get_link_title($flux['item_content']) ?>'>
 				<?php echo strip_tags($flux['item_title']) ?>
 			</a>
