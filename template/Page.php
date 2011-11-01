@@ -5,7 +5,7 @@
 		<title>zenCancan : La gestion simple du suivi de site</title>
 		<meta name="description" content='La gestion simple du suivi de site' />
 		
-		<link rel="stylesheet" type="text/css" href="img/commun.css" media="screen" />
+		<link rel="stylesheet" type="text/css" href="img/commun.css?i=1" media="screen" />
 		<?php foreach ($rss as $feed) : ?>
 			<link rel="alternate" type="application/rss+xml" title="<?php echo $feed['title'] ?>" href="<?php echo $feed['url'] ?>" />
 		<?php endforeach;?>
