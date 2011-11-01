@@ -52,7 +52,7 @@
 	<table>
 	<?php foreach($rssInfo['item'] as $i => $flux) : ?>
 		<tr class="<?php echo $i%2?"":"bgcolor01";?>">
-			<td class='date'><?php echo $this->FancyDate->get($flux['pubDate'])?></td>
+			<td class='date' width='80'><?php echo $this->FancyDate->get($flux['pubDate'])?></td>
 			<td class='lien'>
 				<a href='read.php?id=<?php hecho($id) ?>&amp;id_f=<?php echo $id_f ?>&&amp;item=<?php echo urlencode($flux['id_item'])?>' title='<?php  echo get_link_title($flux['content']?:$flux['description']) ?>'>
 					<?php echo strip_tags($flux['title']) ?>

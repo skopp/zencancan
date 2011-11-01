@@ -13,7 +13,7 @@ class FeedHTML {
 		<table>
 <?php foreach($allFlux as $i => $flux) : ?>
 	<tr class="<?php echo $i%2?"":"bgcolor01";?>">
-		<td class='date'><a name='' title='Dernier passage : <?php echo $this->fancyDate->get($flux['last_recup'])?>'><?php echo $this->fancyDate->get($flux['last_maj'])?></a></td>
+		<td class='date' width='80'><a name='' title='Dernier passage : <?php echo $this->fancyDate->get($flux['last_recup'])?>'><?php echo $this->fancyDate->get($flux['last_maj'])?></a></td>
 		<td class='tag'>
 		<?php if(! $tag): ?>
 			<a href='index.php?id=<?php echo $id?>&tag=<?php echo urlencode($flux['tag'])?>'><?php echo $flux['tag'] ?></a>
