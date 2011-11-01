@@ -119,7 +119,7 @@ Definition des boox de type message
 table
 */
 
-table {border-collapse:collapse;font-size:90%;margin:8px 0 8px 0;}
+table {width:100%;border-collapse:collapse;font-size:90%;margin:8px 0 8px 0;}
 table th {background-color:#C5BFB7;color:#FFFFFF;padding:6px;font-weight: bold;padding:4px;border-bottom:1px solid #645C4F;text-align:left;}
 table td {padding:2px;height:40px;vertical-align:middle;}
 table tr {border-bottom:1px solid #F0E8DE;}
