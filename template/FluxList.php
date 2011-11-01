@@ -9,17 +9,7 @@
 <?php endif;?>
 	
 
-<form action='add-flux.php' method='post'>
-<input type='hidden' name='id'  value='<?php hecho($id) ?>' />
-<input type='hidden' name='tag'  value='<?php hecho($tag) ?>' />
 
-Ajouter un site<?php echo $tag?" dans la cat&eacute;gorie $tag":""?>: <br/>
-
-<input type='text' size='50' name='url' />
-
-<input type='submit' value='Suivre' class="a_btn" />
-<p class='petit'>Exemple: L'Equipe, Le Monde, Morandini, ...</p>
-</form>
 
 <?php if ($allFlux) : ?>
 <div class="box">

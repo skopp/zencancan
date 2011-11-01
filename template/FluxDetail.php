@@ -14,7 +14,7 @@
 	</div>
 	<div class="cont">	
 	<?php if (! $content ) : ?>
-		<div class='box_error'>Un problème est survenu sur la récuperation de ce flux</div>
+		<div class='box_error'>Un probl&egrave;me est survenu sur la r&Atilde;&copy;cuperation de ce flux</div>
 	<?php endif;?>
 
 <table>
@@ -48,29 +48,27 @@
 	<div class="cont">
 	
 	<?php if ($info['tag']) : ?>
-	Catégorie actuelle : <a href='index.php?id=<?php hecho($id)?>&tag=<?php hecho($info['tag']) ?>'><?php hecho($info['tag']) ?></a>
+	Cat&eacute;gorie actuelle : <a href='index.php?id=<?php hecho($id)?>&tag=<?php hecho($info['tag']) ?>'><?php hecho($info['tag']) ?></a>
 	<?php endif;?>
 	
-<form method='post' action='aggregate.php'>
-	
-	<input type='hidden' name='id' value='<?php echo $id ?>'/>
-	<input type='hidden' name='id_f' value='<?php echo $id_f ?>'/>
-	<p>
-	Cat&eacute;gorie : <input type='text' name='tag' value='<?php hecho($info['tag']) ?>' />
-	</p>
-	<p><input class='submit' type='submit' value='Mettre dans une cat&eacute;gorie'/>	</p>
-</form>
-<form method='post' action='del.php'>
-	<p>
-	<input class='submit' type='submit' value='Supprimer le suivi de ce site'/>
-	</p>
-	<input type='hidden' name='id' value='<?php echo $id ?>'/>
-	<input type='hidden' name='id_f' value='<?php echo $id_f ?>'/>
-</form>
-</div>
-<div class="bas"></div>				
-</div>
-
-
+	<form method='post' action='aggregate.php'>
+		
+		<input type='hidden' name='id' value='<?php echo $id ?>'/>
+		<input type='hidden' name='id_f' value='<?php echo $id_f ?>'/>
+		<p>
+		Cat&eacute;gorie : <input type='text' name='tag' value='<?php hecho($info['tag']) ?>' />
+		</p>
+		<p><input class='submit' type='submit' value='Mettre dans une cat&eacute;gorie'/>	</p>
+	</form>
+	<form method='post' action='del.php'>
+		<p>
+		<input class='submit' type='submit' value='Supprimer le suivi de ce site'/>
+		</p>
+		<input type='hidden' name='id' value='<?php echo $id ?>'/>
+		<input type='hidden' name='id_f' value='<?php echo $id_f ?>'/>
+	</form>
+	</div>
+	<div class="bas"></div>				
+	</div>
 </div>
 
