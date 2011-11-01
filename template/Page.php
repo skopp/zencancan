@@ -15,7 +15,7 @@
 	<div id="container">
 	
 		<div id="header">
-			<div class="wrap">
+			
 				<div id="logo">
 					<a href="index.php?id=<?php echo $id ?>"><img src="img/commun/logo.png" alt="" /></a>
 				</div>
@@ -34,7 +34,7 @@
 				<?php endif;?>
 				
 				</div>
-			</div>
+			
 			
 		</div>
 		
