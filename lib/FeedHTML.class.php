@@ -19,13 +19,10 @@ class FeedHTML {
 			<a href='index.php?id=<?php echo $id?>&tag=<?php echo urlencode($flux['tag'])?>'><?php echo $flux['tag'] ?></a>
 		<?php endif;?>
 		</td>
-		<td class='lien' >
-		<!-- <td class='lien' white-space:nowrap;'>  -->
-		<a href='feed.php?id=<?php echo $id ?>&id_f=<?php hecho($flux['id_f'])?>' title='<?php hecho($flux['title'])?>'><?php hecho(wrap($flux['title'],25,2))?></a>
 		
-		<!-- </td>  -->
+		<td class='site' style=' white-space:nowrap;'><a href='feed.php?id=<?php echo $id ?>&id_f=<?php hecho($flux['id_f'])?>' title='<?php hecho($flux['title'])?>'><?php hecho(wrap($flux['title'],25,2))?></a></td>
 	
-		&nbsp;-&nbsp;
+		<td class='lien' white-space:nowrap;'>
 		<a href='read.php?id=<?php hecho($id) ?>&id_f=<?php echo $flux['id_f'] ?>&item=<?php echo urlencode($flux['last_id'])?>' title='<?php  echo get_link_title($flux['item_content']) ?>'>
 				<?php echo strip_tags($flux['item_title']) ?>
 			</a>
