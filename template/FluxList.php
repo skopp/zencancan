@@ -30,7 +30,7 @@
 		
 		<td class='site'><a href='<?php $this->Path->path("/Feed/detail/{$flux['id_f']}/") ?>' title='<?php hecho($flux['title'])?>'><?php hecho(wrap($flux['title'],25,2))?></a></td>
 	
-		<td class='lien' style='border-bottom:1px solid #fff;'>
+		<td class='lien'>
 		<a href='<?php $this->Path->path("/Feed/read/{$flux['id_f']}/0") ?>' title='<?php  echo get_link_title($flux['item_content']) ?>'>
 				<?php hecho($flux['item_title']) ?>
 			</a>

@@ -134,8 +134,9 @@ table
 
 table {width:100%;border-collapse:collapse;font-size:90%;margin:8px 0 8px 0;}
 table th {background-color:#C5BFB7;color:#FFFFFF;padding:6px;font-weight: bold;padding:4px;border-bottom:1px solid #645C4F;text-align:left;}
-table td {padding:4px;}
-table tr {border-bottom:1px solid #F0E8DE;}
+table td {padding:6px 0 6px 0;}
+table tr {/*border-bottom:1px solid #F0E8DE;*/}
+table tr:hover {background-color:#FCFBEE;}
 .bgcolor01 {background-color:#ffffff;}
 .bgcolor02 {background-color:#F1E8DD;}
 
