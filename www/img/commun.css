@@ -64,6 +64,7 @@ width:100%;
 float: left;
 width: 240px; /*Width of left column*/
 padding:10px;
+
 }
 
 #contenu {
@@ -149,7 +150,7 @@ input:focus, textarea, select {border:1px solid #2C6DCE;}
 textarea {font-family:verdana, helvetica, arial, sans-serif;font-size:90%;}
 form hr {height:1px; border:0; border-bottom:1px solid #FFFFFF;}
 
-.submit, .a_btn {
+.submit, .a_btn, .a_btn_nav {
 -webkit-border-radius: 4px;
 -moz-border-radius: 4px;
 border-radius: 4px;
@@ -162,6 +163,26 @@ text-decoration:none;
 color:#ffffff;
 border:1px solid #7D7D7D;
 background:url(commun/back-btn.png) top left repeat-x #536E76;
+}
+
+.a_btn_nav {
+font-weight:normal;
+background-image:none;
+background-color:#CFDEF5;
+border:1px solid #ABC5ED;
+color:#2C6DCE;
+text-transform:none;
+}
+
+.a_btn_nav:hover {
+background-color:#DFE9F9;
+border:1px solid #ABC5ED;
+}
+
+#colonne .a_btn_nav {
+width:230px;
+display:block;
+
 }
 
 .a_btn {display:inline-block;}

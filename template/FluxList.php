@@ -10,11 +10,11 @@
 	<div class="cont">
 	
 		<?php if ($tag) : ?>
-			<a href='<?php $this->Path->path("/Feed/list/")?>'>&laquo; Revenir &agrave; la liste des sites</a>
+			<a class='a_btn_nav' href='<?php $this->Path->path("/Feed/list/")?>'>&laquo; Revenir &agrave; la liste des sites</a>
 		<?php endif;?>
 		
 		<?php if ($offset) : ?>
-			<a href='<?php $this->Path->path("/Feed/list/".($offset - $nbAfficher) ."/$tag") ?>'>	
+			<a class='a_btn_nav' href='<?php $this->Path->path("/Feed/list/".($offset - $nbAfficher) ."/$tag") ?>'>	
 				&laquo; Sites mis &agrave; jour plus r&eacute;cemment
 			</a>
 		<?php endif;?>

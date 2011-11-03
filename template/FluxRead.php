@@ -1,6 +1,6 @@
 <div id="colonne">
 	<div class="breadcrumbs">
-		<a href='<?php $this->Path->path() ?>'>&laquo; Revenir a la liste des sites</a>
+		<a class='a_btn_nav' href='<?php $this->Path->path() ?>'>&laquo; Revenir a la liste des sites</a>
 	</div>
 	<div class="box">
 		<div class="haut"><h2><?php hecho($rssInfo['title']) ?></h2></div>
