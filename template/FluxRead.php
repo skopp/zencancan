@@ -58,8 +58,9 @@
 			
 			
 			</div>			
+			<div class="bas"></div>	
 		</div>
-		<div class="bas"></div>				
+					
 	</div>
 
 
