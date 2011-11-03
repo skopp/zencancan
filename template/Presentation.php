@@ -36,7 +36,7 @@
 		
 		<div id="main">
 			
-<div id="contenu">
+<div id="contenu_unique">
 	<?php $this->LastMessage->display()?>
 	
 		<div class="box">

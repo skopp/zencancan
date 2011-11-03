@@ -1,7 +1,5 @@
-<div id="colonne">
-</div>
 
-<div id="contenu">
+<div id="contenu_unique">
 <?php $this->LastMessage->display(); ?>
 
 <?php if ($allFlux) : ?>
