@@ -37,7 +37,7 @@
 		</div>
 		
 		<div id="box_add_flux">
-			<div class="wrap">
+			
 				<?php if ($this->Authentification->getId()) : ?>
 				
 				<form  action='<?php $this->Path->path() ?>' method='post'>
@@ -57,7 +57,6 @@
 				<br/><br/><br/>
 				<?php endif;?>
 
-			</div>
 		</div>
 		
 		
