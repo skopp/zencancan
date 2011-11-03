@@ -83,6 +83,8 @@ padding:10px;
 .item_content img {width:auto;}
 
 .box_col {margin:12px 0 12px 0;height:1%;overflow:auto;width:740px;}
+.box_col a {text-decoration:underline;}
+.box_col a:hover {text-decoration:none;}
 
 #footer {
 background-color:#000;;
@@ -101,7 +103,7 @@ position:relative;
 /* Definition des bloc d'info */
 
 .box {margin-bottom:20px;}
-.box .haut h2 {color:#000;font-size:120%;margin:0;font-family:arial, helvetica, no-serif;}
+.box .haut h2 {color:#000;font-size:120%;margin:0 0 10px 0;font-family:arial, helvetica, no-serif;}
 .box .cont a:hover {text-decoration:none;}
 
 #colonne .box .haut h2 {color:#B0B0B0;border-bottom:1px solid #DBD5CD;padding-bottom:6px;margin-bottom:6px;}
@@ -168,15 +170,15 @@ background:url(commun/back-btn.png) top left repeat-x #536E76;
 .a_btn_nav {
 font-weight:normal;
 background-image:none;
-background-color:#CFDEF5;
-border:1px solid #ABC5ED;
+background-color:#DFE9F9;
+border:1px solid #B9CFEF;
 color:#2C6DCE;
 text-transform:none;
 }
 
 .a_btn_nav:hover {
-background-color:#DFE9F9;
-border:1px solid #ABC5ED;
+background-color:#EEF4FC;
+
 }
 
 #colonne .a_btn_nav {
