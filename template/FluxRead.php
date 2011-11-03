@@ -62,7 +62,6 @@
 		<div class="bas"></div>				
 	</div>
 
-</div>
 
 
 
