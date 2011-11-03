@@ -51,24 +51,22 @@ padding:8px 0 8px 300px;
 clear:both;
 height:1%;
 width:100%;
+
 }
 
 #colonne {
-width:240px;
-clear: left;
 float: left;
-margin:10px;
-padding-right:10px;
+width: 240px; /*Width of left column*/
+padding:10px;
 }
 
 
 #contenu {
-left: 250px;
-margin-left: 250px;
-margin:10px;
+margin-left: 260px; 
+padding:10px;
 }
 
-.item_content {width:750px;position:relative;margin-left: 250px;}
+.item_content {width:750px;position:relative;}
 .item_content img {width:auto;}
 
 .box_col {margin:12px 0 12px 0;height:1%;overflow:auto;width:740px;}
