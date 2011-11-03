@@ -1,4 +1,5 @@
 <?php $this->render("Menu");?>
+<div id="contenu">
 
 <a href='<?php $this->Path->path("/Param/index")?>'>&laquo; Revenir aux param&egrave;tres du compte </a>
 
@@ -24,5 +25,6 @@
 	<hr/>
 	<input type='submit' class='submit' value='Modifier'/>
 </form>
+</div>
 </div>
 </div>
