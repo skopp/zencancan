@@ -134,7 +134,7 @@ table
 
 table {width:100%;border-collapse:collapse;font-size:90%;margin:8px 0 8px 0;}
 table th {background-color:#C5BFB7;color:#FFFFFF;padding:6px;font-weight: bold;padding:4px;border-bottom:1px solid #645C4F;text-align:left;}
-table td {padding:6px 0 6px 0;}
+table td {padding:6px 0 6px 6px;}
 table tr {/*border-bottom:1px solid #F0E8DE;*/}
 table tr:hover {background-color:#FCFBEE;}
 .bgcolor01 {background-color:#ffffff;}
@@ -171,8 +171,8 @@ background:url(commun/back-btn.png) top left repeat-x #536E76;
 .a_btn_nav {
 font-weight:normal;
 background-image:none;
-background-color:#DFE9F9;
-border:1px solid #B9CFEF;
+background-color:#F3F7FD;
+border:1px solid #E0EAF8;
 color:#2C6DCE;
 text-transform:none;
 }
@@ -220,14 +220,13 @@ commun
 
 .ul_lien {margin:0;padding:0;list-style-type: none;}
 .ul_lien li {}
-.ul_lien li a {color:#000;display:block;padding:4px;text-decoration:none;}
+.ul_lien li a {color:#2C6DCE;display:block;padding:4px;text-decoration:none;}
 
-#colonne .ul_lien li a:hover {background-color:#F4F2EE;color:#000;}
+#colonne .ul_lien li a:hover {background-color:#F3F7FD;}
 #colonne hr {border:0;height:1px;border-bottom:1px solid #F8F2EC;}
 
 
 .li_date {
-font-weight:bold;
 font-size:80%;
 color:#B2B2B2;
 }

@@ -21,7 +21,7 @@
 			<table>
 <?php foreach($allFlux as $i => $flux) : ?>
 	<tr class="<?php echo $i%2?"":"bgcolor01";?>">
-		<td class='date'><a title='Dernier passage : <?php echo $this->FancyDate->get($flux['last_recup'])?>'><?php echo $this->fancyDate->get($flux['last_maj'])?></a></td>
+		<td><a title='Dernier passage : <?php echo $this->FancyDate->get($flux['last_recup'])?>'><?php echo $this->fancyDate->get($flux['last_maj'])?></a></td>
 		<td class='tag'>
 		<?php if(! $tag): ?>
 			<a href='<?php $this->Path->path("/Feed/list/0/".urlencode($flux['tag'])) ?>'><?php echo $flux['tag'] ?></a>
