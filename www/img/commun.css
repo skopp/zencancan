@@ -3,7 +3,7 @@ margin:0;
 padding:0;
 font-family:verdana, helvetica, arial, sans-serif;
 font-size:0.80em;
-color:#6F6F6F;
+color:#4D4D4D;
 
 
 }
@@ -37,15 +37,23 @@ overflow:auto;
 
 #logo {float:left;position:absolute;top:40px;margin-left:12px;}
 #logo img {border:0;}
-#menu_login {float:right;color:#B0A99F;}
-#menu_login a {margin:0 4px 0 4px;color:#fff;text-decoration:none;}
+#menu_login {float:right;color:#E2E2E2;}
+#menu_login a {margin:0 4px 0 4px;color:#E2E2E2;text-decoration:none;}
 #menu_login a:hover {text-decoration:underline;}
 
 #box_add_flux {
 background-color:#F4F2EE;
 border-bottom:1px solid #DBD5CD;
 padding:8px 0 8px 300px;
+min-height:48px;
 }
+
+#box_add_flux div {
+padding:10px 10px 0 0 ;
+text-align:right;
+}
+
+#box_add_flux div a {margin-left:10px;}
 
 #main {
 clear:both;
@@ -206,13 +214,13 @@ color:#B2B2B2;
 
 .site{
 	max-width: 200px;
-	color: #6F6F6F;
+	color: #4D4D4D;
 	
 }
 
 .site a{
 	text-decoration: none;
-	color: #6F6F6F;
+	color: #4D4D4D;
 }
 
 .lien a {
@@ -228,10 +236,7 @@ color:#B2B2B2;
 
 
 
-.name {
-	color: #645C4F;
-	font-weight: bold;
-}
+.nom_user {color:#ffffff;font-weight:bold;}
 
 
 

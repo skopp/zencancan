@@ -18,20 +18,19 @@
 		</div>
 		
 			<div id="box_add_flux">
-			<div class="wrap">
-				
-				&nbsp;<br/><br/>
-				<?php if ($this->Authentification->getId()) : ?>
-					<a href='<?php $this->Path->path();?>'>Retourner à mon compte</a>
-				<?php else : ?>
-					<a href='<?php $this->Path->path('/Connexion/login');?>'>Se connecter</a>
-					<a href='<?php $this->Path->path('/Account/create');?>'>Créer un compte</a>
-				<?php endif;?>
-				<br/>
-				
 			
-
-			</div>
+				
+				<div>
+				<?php if ($this->Authentification->getId()) : ?>
+					<a class="a_btn" href='<?php $this->Path->path();?>'>Retourner &agrave; mon compte</a>
+				<?php else : ?>
+					<a class="a_btn" href='<?php $this->Path->path('/Connexion/login');?>'>Se connecter</a>
+					<a class="a_btn" href='<?php $this->Path->path('/Account/create');?>'>Cr&eacute;er un compte</a>
+				<?php endif;?>
+				</div>
+				
+				
+	
 		</div>
 		
 		<div id="main">
