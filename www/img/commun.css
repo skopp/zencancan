@@ -60,11 +60,17 @@ width: 240px; /*Width of left column*/
 padding:10px;
 }
 
-
 #contenu {
 margin-left: 260px; 
 padding:10px;
 }
+
+#contenu_unique {
+padding:10px;
+}
+
+
+
 
 .item_content {width:750px;position:relative;}
 .item_content img {width:auto;}
@@ -190,7 +196,11 @@ commun
 #colonne hr {border:0;height:1px;border-bottom:1px solid #F8F2EC;}
 
 
-
+.li_date {
+font-weight:bold;
+font-size:80%;
+color:#B2B2B2;
+}
 
 
 /* CSS Eric a nettoyer */
