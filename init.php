@@ -31,7 +31,7 @@ define("LOG_FILE","/var/log/zencancan.log");
 
 $objectInstancier = new ObjectInstancier();
 
-$objectInstancier->site_index = "http://localhost/workspace2/zencancan/www/index.php";
+$objectInstancier->site_index = $site_index;
 
 
 

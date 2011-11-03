@@ -14,3 +14,5 @@ define("DOMAIN_NAME","zencancan.local");
 
 define("EMAIL_CONTACT","your_email_adresse");
 define("EMAIL_DESCRIPTION","mail zencancan");
+
+$site_index = "http://localhost/workspace2/zencancan/www/index.php";
