@@ -1,3 +1,4 @@
+<?php $this->render("Menu");?>
 <div id="contenu">
 <div class="box">
 	<div class="haut">
@@ -13,4 +14,3 @@
 	<div class="bas"></div>				
 </div>
 </div>
-<?php $this->render("Menu");?>

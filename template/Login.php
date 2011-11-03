@@ -1,27 +1,5 @@
-<div id="colonne">
 
-<div class="box">
-	<div class="haut"><h2>Pas encore inscrit ?</h2></div>
-	<div class="cont align_center">
-<br/>
-<p>
-<a class="a_btn" href="http://<?php echo DOMAIN_NAME?>/create-account.php?id=<?php echo $id ?>">Cr&eacute;er un compte gratuitement</a>
-</p>
-
-<br/>
-
-<hr/>
-<br/>
-<p>
-<a href="http://<?php echo DOMAIN_NAME?>">Utiliser un compte anonyme</a>
-</p>
-	<br/>				
-	</div>
-	<div class="bas"></div>				
-</div>
-
-
-</div><!-- fin colonne -->
+	<?php $this->render("Menu");?>
 
 
 <div id="contenu">
@@ -30,16 +8,19 @@
 	<div class="haut">
 <?php if ($namedAccount) : ?>
 <h2>Connexion au compte <?php echo $this->Authentification->getFullAccountName(); ?></h2>
+<a href='<?php echo $this->Path->getPathWithUsername("","/Connexion/login");?>'>changer de compte</a>
 <?php else : ?>
 <h2>Connexion</h2>
 <?php endif;?>
 </div>
 <div class="cont">
 <?php $this->LastMessage->display()?>
-<form class='ff' action='login-controler.php' method='post'>
+<form class='ff' action='<?php $this->Path->path() ?>' method='post'>
+	<?php $this->Connexion->displayTokenField(); ?>
+	<input type='hidden' name='path_info' value='/Connexion/doLogin' />
 	<?php if (! $namedAccount) : ?>
 		<label for="id_login">Identifiant</label>
-	 	<input type='text' name='login' id="id_login" />.<?php echo DOMAIN_NAME ?>
+	 	<input type='text' name='login' id="id_login" value='<?php echo $this->LastMessage->getLastInput("login")?>'/>.<?php echo DOMAIN_NAME ?>
 	 	<hr/>
 	<?php endif; ?>
 		<label for="id_password">Mot de passe</label>
@@ -51,12 +32,10 @@
 		&nbsp;&nbsp;
 		<input type="submit" class="submit" value="Connexion" />
 		</p>
-		
-
 </form>
 	</div>
 	<div class="bas"></div>				
 </div>
 
 
-</div><!-- fin contenu -->
+</div>

@@ -1,34 +1,8 @@
 <div id="colonne">
-<?php if (! $namedAccount ) : ?>
-<div class="box">
-	<div class="haut"><h2>Compte anonyme</h2></div>
-	<div class="cont">
-	
-	<p>Vous &ecirc;tes actuellement sur un compte anonyme.</p>
-	<p>Adresse de cette page : <a href='http://<?php echo DOMAIN_NAME?>?<?php echo $id?>'>http://<?php echo DOMAIN_NAME?>?id=<?php echo $id?></a></p>
-	
-	<p class="align_center">
-		<a class="a_btn" href="http://<?php echo DOMAIN_NAME?>/create-account.php?id=<?php echo $id ?>">Cr&eacute;er un compte gratuitement</a>
-	</p>
-	
-	
 </div>
-<div class="bas"></div>				
-</div>
-<?php endif;?>
-</div><!-- fin colonne -->
-
 
 <div id="contenu">
-
-<?php if ($this->LastMessage->getLastMessage()) : ?>
-<div class="<?php echo $this->LastMessage->getLastMessageType()==LastMessage::ERROR?'box_error':'box_confirm'?>"><p>
-<?php echo $this->LastMessage->getLastMessage(); ?>
-</p></div>
-<?php endif;?>
-	
-
-
+<?php $this->LastMessage->display(); ?>
 
 <?php if ($allFlux) : ?>
 <div class="box">
@@ -38,13 +12,45 @@
 	<div class="cont">
 	
 		<?php if ($tag) : ?>
-			<a href='index.php?id=<?php hecho($id)?>'>&laquo; Revenir &agrave; la liste des sites</a>
+			<a href='<?php $this->Path->path("/Feed/list/")?>'>&laquo; Revenir &agrave; la liste des sites</a>
 		<?php endif;?>
-		<?php 
-			$paginator->displayNext("&laquo; Sites mis &agrave; jour plus r&eacute;cemment"); 
-			$this->FeedHTML->display($allFlux,$id,$tag);
-			$paginator->displayPrevious("Sites mis &agrave; jour avant &raquo;");
-		?>
+		
+		<?php if ($offset) : ?>
+			<a href='<?php $this->Path->path("/Feed/list/".($offset - $nbAfficher) ."/$tag") ?>'>	
+				&laquo; Sites mis &agrave; jour plus r&eacute;cemment
+			</a>
+		<?php endif;?>
+			<table>
+<?php foreach($allFlux as $i => $flux) : ?>
+	<tr class="<?php echo $i%2?"":"bgcolor01";?>">
+		<td class='date'><a title='Dernier passage : <?php echo $this->FancyDate->get($flux['last_recup'])?>'><?php echo $this->fancyDate->get($flux['last_maj'])?></a></td>
+		<td class='tag'>
+		<?php if(! $tag): ?>
+			<a href='<?php $this->Path->path("/Feed/list/0/".urlencode($flux['tag'])) ?>'><?php echo $flux['tag'] ?></a>
+		<?php endif;?>
+		</td>
+		
+		<td class='site'><a href='<?php $this->Path->path("/Feed/detail/{$flux['id_f']}/") ?>' title='<?php hecho($flux['title'])?>'><?php hecho(wrap($flux['title'],25,2))?></a></td>
+	
+		<td class='lien'>
+		<a href='<?php $this->Path->path("/Feed/read/{$flux['id_f']}/0") ?>' title='<?php  echo get_link_title($flux['item_content']) ?>'>
+				<?php hecho($flux['item_title']) ?>
+			</a>
+			<?php if ($flux['item_link']) : ?>
+			<a href='<?php hecho($flux['item_link'])?>' target='_blank' title="Ouvrir l'article original">
+			
+				&raquo;
+			</a>
+			<?php endif;?>
+			</td>		
+	</tr>
+<?php endforeach;?>
+</table>
+		<?php if ($offset + $nbAfficher < $nbFlux) : ?>
+			<a href='<?php $this->Path->path("/Feed/list/".($offset + $nbAfficher) ."$tag") ?>'>	
+				Sites mis &agrave; jour avant &raquo;
+			</a>
+		<?php endif;?>
 	</div>
 	<div class="bas"></div>				
 </div>
@@ -65,9 +71,4 @@
 
 <?php endif;?>
 
-
-
-
-
-
-</div><!-- fin contenu -->
+</div>

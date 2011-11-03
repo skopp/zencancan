@@ -1,6 +1,6 @@
 <div id="colonne">
 	<div class="breadcrumbs">
-		<a href='index.php?id=<?php hecho($id)?>'>&laquo; Revenir a la liste des sites</a>
+		<a href='<?php $this->Path->path() ?>'>&laquo; Revenir a la liste des sites</a>
 	</div>
 	<div class="box">
 		<div class="haut"><h2><?php hecho($rssInfo['title']) ?></h2></div>
@@ -8,8 +8,8 @@
 			<ul class="ul_lien">
 				<?php foreach($rssInfo['item'] as $i => $itemInfo) : ?>
 					<li>
-						<?php echo $this->FancyDate->get($itemInfo['pubDate'])?>
-						<a href='read.php?id=<?php hecho($id)?>&amp;id_f=<?php echo $id_f?>&amp;item=<?php echo urlencode($itemInfo['id_item'])?>'  title='<?php  echo get_link_title($itemInfo['content']?:$itemInfo['description']) ?>'>
+						<?php echo $this->FancyDate->get($itemInfo['pubDate'])?>						
+						<a href='<?php $this->Path->path("/Feed/read/$id_f/$i")?>'  title='<?php  echo get_link_title($itemInfo['content']?:$itemInfo['description']) ?>'>
 							<?php echo strip_tags($itemInfo['title']) ?>
 						</a>
 					</li>
@@ -18,7 +18,7 @@
 		</div>
 		<div class="bas"></div>				
 	</div>
-</div><!-- fin colonne -->
+</div>
 
 
 <div id="contenu">
@@ -34,25 +34,35 @@
 		
 			<div class="box_col">
 				<p class='float_left'>
-				<a href='feed.php?id=<?php hecho($id)?>&amp;id_f=<?php echo $id_f?>'>&laquo; Revenir aux articles de  <?php hecho($rssInfo['title']) ?></a>
+				<a href='<?php $this->Path->path("/Feed/detail/$id_f");?>' >« Revenir à la liste des articles</a>
 				</p>
 				<p class='float_right'>
 				<a href='<?php echo $resultItem['link'] ?>' target='_blank'>Lire l'article original &raquo;</a>
 				</p>
 			</div>
-			
-	
 			<div class='item_content'>
-				<p>
 				<?php echo $content_html;?>
-				</p>
 			</div>
+			<?php 
+			if ($rejected_tag || $rejected_attributes) : ?>
+				<div>
+					Le document à été purifié de la manière suivantes :
+					<?php if ($rejected_tag) : ?>
+						<p>Les balises suivantes ont été rejetés : <?php echo implode(",",$rejected_tag)?></p>
+					<?php endif;?>
+					<?php if ($rejected_attributes) : ?>
+						<p>Les attributs suivantes ont été rejetés : <?php echo implode(",",$rejected_attributes)?></p>
+					<?php endif;?>  
+				</div>	
+			<?php endif;?>
 			
+			
+			</div>			
 		</div>
 		<div class="bas"></div>				
 	</div>
 
-</div><!-- fin contenu -->
+</div>
 
 
 

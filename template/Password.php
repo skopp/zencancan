@@ -1,18 +1,6 @@
-<?php
-require_once( __DIR__."/../init-web.php");
-require_once("PageHTML.class.php");
+<?php $this->render("Menu");?>
 
-if (!$authentification->getNamedAccount()){
-	header("Location: index.php");
-	exit;
-}
-
-$pageHTML = new PageHTML($id,$debut);
-
-$pageHTML->haut();
-?>
-
-<a href='param.php'>&laquo; Revenir aux param&egrave;tres du compte </a>
+<a href='<?php $this->Path->path("/Param/index")?>'>&laquo; Revenir aux param&egrave;tres du compte </a>
 
 
 <div class="box">
@@ -21,8 +9,10 @@ $pageHTML->haut();
 	</div>
 <div class="cont">
 
-<?php $objectInstancier->LastMessage->display(); ?>
-<form class='ff' action='password-controler.php' method='post'>
+<?php $this->LastMessage->display(); ?>
+<form class='ff' action='<?php $this->Path->path() ?>' method='post'>
+	<?php $this->Connexion->displayTokenField(); ?>
+	<input type='hidden' name='path_info' value='/Param/doPassword' />
 	<label for="oldpassword">Votre ancien mot de passe</label>
 	<input type='password' name='oldpassword'/>
 	<hr/>
@@ -36,5 +26,3 @@ $pageHTML->haut();
 </form>
 </div>
 </div>
-<?php 
-$pageHTML->bas();

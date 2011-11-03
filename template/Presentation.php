@@ -1,5 +1,43 @@
+<?php header("Content-type: text/html; charset=UTF-8");?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+	<head>
+		<title>zenCancan : La gestion simple du suivi de site</title>
+		<meta name="description" content='zencancan est un lecteur de flux RSS en ligne' />
+		
+		<link rel="stylesheet" type="text/css" href="<?php $this->Path->echoRessourcePath("/img/commun.css?i=1") ?>" media="screen" />
+		<link rel="Shortcut Icon" href="<?php $this->Path->echoRessourcePath("favicon.ico") ?>" type="image/x-icon" />
+	</head>
+	<body>
+	<div id="container">
+	
+		<div id="header">
+				<div id="logo">
+					<a href="<?php $this->Path->path()?>"><img src="<?php $this->Path->echoRessourcePath("/img/commun/logo.png") ?>" alt="" /></a>
+				</div>
+		</div>
+		
+			<div id="box_add_flux">
+			<div class="wrap">
+				
+				&nbsp;<br/><br/>
+				<?php if ($this->Authentification->getId()) : ?>
+					<a href='<?php $this->Path->path();?>'>Retourner à mon compte</a>
+				<?php else : ?>
+					<a href='<?php $this->Path->path('/Connexion/login');?>'>Se connecter</a>
+					<a href='<?php $this->Path->path('/Account/create');?>'>Créer un compte</a>
+				<?php endif;?>
+				<br/>
+				
+			
 
-	<div id="contenu">
+			</div>
+		</div>
+		
+		<div id="main">
+			
+<div id="contenu">
+	<?php $this->LastMessage->display()?>
 	
 		<div class="box">
 			<div class="haut"><h2>Bienvenue sur zenCancan</h2></div>
@@ -85,5 +123,24 @@ pour un flux donn&eacute; </td></tr>
 		</div>		
 
 	</div><!-- fin contenu -->
-	
-<?php $this->render("Menu");?>
+			
+			
+		</div><!-- fin main -->
+		
+			<div class="clearfooter"></div>
+		</div><!-- fin container -->
+		
+		
+		<div id="footer">
+			
+			<p class="align_right">
+			Page g&eacute;n&eacute;r&eacute;e par zenCancan en <?php echo round((microtime(true) - $debut) * 10000) / 10 ?>ms
+			- <a href='<?php $this->Path->path("/Param/legal") ?>'>Mentions l&eacute;gales</a>
+			</p>
+			
+		</div><!-- fin footer -->
+		
+		
+	</body>
+</html>	
+		

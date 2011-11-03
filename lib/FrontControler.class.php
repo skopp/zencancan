@@ -1,11 +1,12 @@
 <?php
-class FrontControler extends Controler {
+abstract class FrontControler extends Controler {
 	
 	private $object;
 
+	abstract public function noToken();
+	
 	public function go(){		
-		$path_token = $this->PathInfo->getInfo($this->getPathInfo());	
-		$this->defaultAction($path_token);
+		$path_token = $this->PathInfo->getInfo($this->getPathInfo());
 		$controler = $this->doAction($path_token);		
 	}
 	
@@ -13,7 +14,9 @@ class FrontControler extends Controler {
 		if ($_SERVER['REQUEST_METHOD'] != 'POST'){
 			return isset($_SERVER['PATH_INFO'])?$_SERVER['PATH_INFO']:"";
 		}
-		$this->ConnexionSQL->verifToken() or $this->exitToIndex();		
+		if ( ! $this->Connexion->verifToken()){
+			$this->noToken();
+		}		
 		
 		return $this->Recuperateur->get('path_info');
 	}
@@ -21,22 +24,17 @@ class FrontControler extends Controler {
 	private function doAction($path_token){
 		try {
 			$reflexionClass = new ReflectionClass($path_token['controler']);
-		} catch (Exception $e){		
-			
+		} catch (Exception $e){					
 			return $this;
 		}
 		if (! $reflexionClass->hasMethod($path_token['action'])){
 			return $this;
 		}
 		$controler = $this->$path_token['controler'];	
-		$controler -> selectView($path_token['defaultView']);	
-		call_user_func_array(array($controler,$path_token['action']),$path_token['param']);		
-		
+		call_user_func_array(array($controler,$path_token['action']),$path_token['param']);				
 		return $controler;
 	}
 	
-	private function defaultAction($path_token){
-		$this->selectView($path_token['defaultView']);
-	}
+
 	
 }

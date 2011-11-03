@@ -7,10 +7,6 @@ class Gabarit {
 	public function __construct(ObjectInstancier $objectInstancier){
 		$this->viewParameter = array();
 		$this->objectInstancier = $objectInstancier;
-		$this->viewParameter['site_base'] = $this->objectInstancier->site_base; 
-		$this->viewParameter['site_script'] = $this->objectInstancier->site_script; 
-		
-		$this->viewParameter['debut'] = $this->objectInstancier->debut;
 	}
 	
 	public function __set($key,$value){
@@ -21,8 +17,7 @@ class Gabarit {
 		$this->viewParameter = array_merge($this->viewParameter,$parameter); 
 	}
 	
-	public function render($template){
-		
+	public function render($template){		
 		foreach($this->viewParameter as $key => $value){
 			$$key = $value;
 		}		
@@ -30,6 +25,9 @@ class Gabarit {
 	}
 	
 	public function __get($key){
+		if (isset($this->viewParameter[$key])){
+			return $this->viewParameter[$key];
+		}
 		return $this->objectInstancier->$key;
 	}
 }

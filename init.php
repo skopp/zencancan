@@ -27,13 +27,14 @@ define("STATIC_PATH",dirname(__FILE__)."/static/");
 
 define("LOG_FILE","/var/log/zencancan.log");
 
-if (! defined("DOMAIN_NAME")){
-	define("DOMAIN_NAME","zencancan.com");
-}
+
 
 $objectInstancier = new ObjectInstancier();
-$objectInstancier->site_base = DOMAIN_NAME;
-$objectInstancier->site_script = "index.php";
+
+$objectInstancier->site_index = "http://localhost/workspace2/zencancan/www/index.php";
+
+
+
 $objectInstancier->debut = $debut;
 $objectInstancier->template_path = __DIR__ . "/template/";
 $objectInstancier->SQLQuery = $sqlQuery;
@@ -41,6 +42,9 @@ $objectInstancier->nbSigne = 7;
 $objectInstancier->revision_number = 100;
 $objectInstancier->timeout = 5;
 $objectInstancier->staticPath = STATIC_PATH;
+
+
+
 if (isset($_SERVER['HTTP_ACCEPT_LANGUAGE'])){
 	$objectInstancier->GoogleSearch->setHTTPAcceptLanguage($_SERVER['HTTP_ACCEPT_LANGUAGE']);
 }

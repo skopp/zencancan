@@ -10,7 +10,7 @@ class Compte {
 	
 	public function create($id,$name,$password){
 		if ($this->exists($name)){
-			$this->lastError = "Ce nom est d&eacute;j&agrave; utilis&eacute;";
+			$this->lastError = "Ce nom est déjà utilisé";
 			return false;
 		}
 		
@@ -35,6 +35,11 @@ class Compte {
 	
 	public function exists($name){
 		$sql = "SELECT count(*) FROM compte WHERE name = ?";
+		return $this->sqlQuery->queryOne($sql,$name);
+	}
+	
+	public function getId($name){
+		$sql = "SELECT id FROM compte WHERE name = ?";
 		return $this->sqlQuery->queryOne($sql,$name);
 	}
 	

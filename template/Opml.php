@@ -1,16 +1,6 @@
 <?php
-require_once( __DIR__."/../init-web.php");
-require_once("AbonnementSQL.class.php");
-require_once("util.php");
-
-$recuperateur = new Recuperateur($_GET);
-$id = $recuperateur->get('id');
-
-$abonnementSQL = new AbonnementSQL($sqlQuery);
-
-$lesFlux = $abonnementSQL->getAll($id);
 header("Content-type: text/xml; charset=UTF-8");
-header('Content-Disposition: attachment; filename="zencancan-'.$id.'.opml"'); 
+header('Content-Disposition: attachment; filename="zencancan.xml"'); 
 ?>
 <opml version="1.0">
 	<head>

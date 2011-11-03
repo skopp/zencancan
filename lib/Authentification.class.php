@@ -2,13 +2,7 @@
 
 class Authentification {
 
-	private $passwordGenerator;
 	private $idHasChanged;
-	
-	
-	public function __construct(PasswordGenerator $passwordGenerator){
-		$this->passwordGenerator = $passwordGenerator;
-	}
 	
 	public function setId($id){
 		$_SESSION['id'] = $id ;
@@ -28,28 +22,11 @@ class Authentification {
 		return strstr($server_name,"." . DOMAIN_NAME,true);
 	}
 	
-	public function getId(){		
-		
-		if ($this->getNamedAccount() ){
-			if (empty($_SESSION['id'])){
-				return false;
-			}
-			return $_SESSION['id'];
+	public function getId(){				
+		if (empty($_SESSION['id'])){
+			return false;
 		}
-			
-		if ((! empty ($_REQUEST['id'])) && strlen($_REQUEST['id']) < 16  ){
-			$id = $_REQUEST['id'];
-			$this->setId($id);
-			return $id;
-		} 
-		
-		if(! empty($_SESSION['id'])) {
-			return $_SESSION['id'];
-		}
-		
-		$id = $this->passwordGenerator->getPassword();
-		$this->setId($id);
-		return $id;
+		return $_SESSION['id'];
 	}
 	
 	public function logout(){	

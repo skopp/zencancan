@@ -51,12 +51,12 @@ class FeedFetchInfo {
 		if (! $this->lastContent){
 			$url = $this->googleSearch->get($keyword_or_url);
 			if (! $url){
-				$this->lastError = "Je n'ai rien trouv&eacute; correspondant &agrave;: $keyword_or_url";
+				$this->lastError = "Je n'ai rien trouvé correspondant à : $keyword_or_url";
 				return false;
 			}
 			$this->lastContent = $this->urlLoader->getContent($url);
 			if (! $this->lastContent){
-				$this->lastError = "Le site <a href='$url'>$keyword_or_url</a> ne r&eacute;pond pas (".$this->urlLoader->getLastError().")";
+				$this->lastError = "Le site <a href='$url'>$keyword_or_url</a> ne répond pas (".$this->urlLoader->getLastError().")";
 				return false;
 			}
 		}
@@ -71,7 +71,7 @@ class FeedFetchInfo {
 			}
 			$this->lastContent = $this->urlLoader->getContent($new_url);
 			if (! $this->lastContent){
-				$this->lastError = "Le site <a href='$url' target='_blank'>$keyword_or_url</a> ne r&eacute;pond pas" . 
+				$this->lastError = "Le site <a href='$url' target='_blank'>$keyword_or_url</a> ne répond pas" . 
 					"(Page $new_url inaccessible - ".$this->urlLoader->getLastError().")";
 				return false;
 			}

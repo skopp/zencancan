@@ -1,4 +1,4 @@
-
+	<?php $this->render("Menu");?>
 	<div id="contenu">
 	
 		<div class="box">
@@ -18,11 +18,11 @@
 			
 			NAF : 722C<br/>
 			
-			N° de TVA intracommunautaire FR86493587273<br/>
+			NÂ° de TVA intracommunautaire FR86493587273<br/>
 			
 			
 			<br/>
-			<b>Siège social :</b><br/>
+			<b>SiÃ¨ge social :</b><br/>
 			
 			12, rue Moissonnier<br/>
 			
@@ -36,4 +36,4 @@
 	
 
 	</div><!-- fin contenu -->
-				<?php $this->render("Menu");?>
+			

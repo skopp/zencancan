@@ -37,7 +37,7 @@ class FeedUpdater {
 		$feedInfo['etag'] = "";
 		$feedInfo['last-modified'] = date("1970-01-01");
 		$feedInfo['id_item'] = "";
-		$feedInfo['title'] = "En cours de r&eacute;cup&eacute;ration";
+		$feedInfo['title'] = "En cours de récupération";
 		$feedInfo['link'] = $url;
 		$feedInfo['item_title'] = $url;
 		$feedInfo['item_link'] =  $url;		
@@ -51,7 +51,7 @@ class FeedUpdater {
 	public function add($url){
 		
 		if (! $url){
-			 $this->lastError = "Aucune URL sp&eacute;cifi&eacute;";
+			 $this->lastError = "Aucune URL spécifiée";
 			return false;
 		}
 		$info = $this->feedSQL->getInfo($url);
@@ -119,7 +119,7 @@ class FeedUpdater {
 				file_put_contents($log_file,"Supression de {$info['url']}\n",FILE_APPEND);
 			} else {
 				$lastError = $this->update($info['url'],$info);
-				file_put_contents($log_file,"R&eacute;cup de {$info['url']} - {$lastError}\n",FILE_APPEND);
+				file_put_contents($log_file,"Récup de {$info['url']} - {$lastError}\n",FILE_APPEND);
 			}
 			
 			$info = $this->feedSQL->getFirstToUpdate();

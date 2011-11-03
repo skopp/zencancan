@@ -3,8 +3,12 @@ class Recuperateur {
 	
 	private $tableauInput;
 	
-	public function __construct($tableauInput){
-		$this->tableauInput = $tableauInput;
+	public function __construct(){
+		$this->tableauInput = $_POST;
+	}
+	
+	public function __get($name){
+		return $this->get($name);
 	}
 	
 	public function getInt($name,$default = 0){
@@ -21,4 +25,15 @@ class Recuperateur {
 		}		
 		return trim($value);
 	}
+	
+	public function getFilePath($input_file_name){
+		if (empty($_FILES['fichier'])){
+			return false;
+		}
+		if ( ! $_FILES["fichier"]['tmp_name']){
+			return false;
+		}
+		return $_FILES["fichier"]['tmp_name'];
+	}
+	
 }

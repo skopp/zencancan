@@ -5,10 +5,11 @@
 			<div class="haut"><h2>Utilisateur</h2></div>
 			<div class="cont">
 				<ul class="ul_lien">
-				<li><a href="http://<?php echo DOMAIN_NAME ?>/create-account.php">Cr&eacute;er un compte</a></li>
-				<li><a href="http://<?php echo DOMAIN_NAME ?>/index.php">Tester sur un compte anonyme</a></li>
-				<li><a href="http://<?php echo DOMAIN_NAME ?>/login.php">Se connecter</a></li>
-				<li><a href="contact.php">Nous contacter</a></li>
+				<?php if (! $this->Authentification->getId()) : ?>
+					<li><a href="<?php echo $this->Path->getPathWithUsername("","/Account/create") ?>">Cr&eacute;er un compte</a></li>
+					<li><a href="<?php echo $this->Path->getPathWithUsername("","/Connexion/login") ?>">Se connecter</a></li>
+				<?php endif;?>
+				<li><a href="<?php $this->Path->path("/Contact/index")?>">Nous contacter</a></li>
 				</ul>
 			
 			</div>
@@ -22,7 +23,7 @@
 			<ul class="ul_lien">
 			<li><a href="http://soft.zenprog.com/zenCancan.tgz">T&eacute;lecharger</a></li>
 			<li><a href="http://source.zenprog.com/zencancan">Voir le code source</a></li>
-			<li><a href="site.php#licence">Licence</a></li>
+			<li><a href="<?php $this->Path->path("/Aide/presentation#licence")?>">Licence</a></li>
 			</ul>
 			</div>
 			<div class="bas"></div>				

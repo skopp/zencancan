@@ -5,11 +5,11 @@
 		<title>zenCancan : La gestion simple du suivi de site</title>
 		<meta name="description" content='La gestion simple du suivi de site' />
 		
-		<link rel="stylesheet" type="text/css" href="img/commun.css?i=1" media="screen" />
+		<link rel="stylesheet" type="text/css" href="<?php $this->Path->echoRessourcePath("/img/commun.css?i=1") ?>" media="screen" />
 		<?php foreach ($rss as $feed) : ?>
 			<link rel="alternate" type="application/rss+xml" title="<?php echo $feed['title'] ?>" href="<?php echo $feed['url'] ?>" />
 		<?php endforeach;?>
-		<link rel="Shortcut Icon" href="favicon.ico" type="image/x-icon" />
+		<link rel="Shortcut Icon" href="<?php $this->Path->echoRessourcePath("/favicon.ico") ?>" type="image/x-icon" />
 	</head>
 	<body>
 	<div id="container">
@@ -17,22 +17,20 @@
 		<div id="header">
 			
 				<div id="logo">
-					<a href="index.php?id=<?php echo $id ?>"><img src="img/commun/logo.png" alt="" /></a>
+					<a href="<?php  $this->Path->path()?>"><img src="<?php $this->Path->echoRessourcePath("/img/commun/logo.png") ?>" alt="" /></a>
 				</div>
 				
+			
 				<div id="menu_login">
-				<?php if (! $namedAccount && $id) : ?>
-					<a href='login.php?id=<?php hecho($id) ?>'>Connexion</a> |
-				<?php else:?>
+					<?php if ($id) : ?>
 				Bienvenue <span class='name'><?php echo $namedAccount ?></span> |
-				<?php endif;?>
-				<a href='param.php?id=<?php hecho($id)?>'>Param&egrave;tres</a> |
-				<a href='logout.php'>D&eacute;connexion</a> | 
-				<a href='site.php'>Aide</a> 
+				<a href='<?php $this->Path->path("/Param/index")?>'>Param&egrave;tres</a> |
+				<a href='<?php $this->Path->path("/Connexion/doLogout")?>'>D&eacute;connexion</a> | 
+				<a href='<?php $this->Path->path("/Aide/presentation")?>'>Aide</a> 
 				<?php if ($isAdmin) : ?>
-					| <a href='admin.php'>Admin</a> 
+					| <a href='<?php $this->Path->path("/Param/admin")?>'>Admin</a> 
 				<?php endif;?>
-				
+				<?php endif;?>
 				</div>
 			
 			
@@ -40,7 +38,11 @@
 		
 		<div id="box_add_flux">
 			<div class="wrap">
-				<form action='add-flux.php' method='post'>
+				<?php if ($this->Authentification->getId()) : ?>
+				
+				<form  action='<?php $this->Path->path() ?>' method='post'>
+				<?php $this->Connexion->displayTokenField(); ?>
+				<input type='hidden' name='path_info' value='/Feed/doAdd' />
 				<input type='hidden' name='id'  value='<?php hecho($id) ?>' />
 				<input type='hidden' name='tag'  value='<?php hecho($tag) ?>' />
 				
@@ -51,7 +53,9 @@
 				<input type='submit' value='Suivre' class="a_btn" />
 				<p class='petit'>Exemple: L'Equipe, Le Monde, Morandini, ...</p>
 				</form>
-
+				<?php else : ?>
+				<br/><br/><br/>
+				<?php endif;?>
 
 			</div>
 		</div>
@@ -71,7 +75,7 @@
 			
 			<p class="align_right">
 			Page g&eacute;n&eacute;r&eacute;e par zenCancan r&eacute;vision <?php echo $revision_number ?> en <?php echo round((microtime(true) - $debut) * 10000) / 10 ?>ms
-			- <a href='legal.php'>Mentions l&eacute;gales</a>
+			- <a href='<?php $this->Path->path("/Param/legal") ?>'>Mentions l&eacute;gales</a>
 			</p>
 			
 		</div><!-- fin footer -->

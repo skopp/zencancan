@@ -1,15 +1,5 @@
-<?php
+	<?php $this->render("Menu");?>
 
-require_once( __DIR__."/../init-web.php");
-require_once("PageHTML.class.php");
-
-$pageHTML = new PageHTML($id,$debut,$authentification->getNamedAccount());
-
-
-$pageHTML->haut();
-$pageHTML->menu();
-?>
-	
 	<div id="contenu">
 	
 		<div class="box">
@@ -18,8 +8,9 @@ $pageHTML->menu();
 			<p>Une remarque ? Un bug ? Une demande d'&eacute;volution ? 
 			N'h&eacute;sitez pas &agrave; utiliser le formulaire ci-dessous pour nous
 			faire part de votre question.</p>
-			<form class='ff' action="contact-controler.php" method='post'>
-							
+			<form class='ff' action='<?php $this->Path->path() ?>' method='post'>
+				<?php $this->Connexion->displayTokenField(); ?>
+				<input type='hidden' name='path_info' value='/Contact/doContact' />							
 				<label for="sujet">Sujet</label>
 				<input type="text" name="sujet" id="sujet" size='40' />
 				<hr/>
@@ -48,9 +39,3 @@ $pageHTML->menu();
 
 	</div><!-- fin contenu -->
 	
-
-<?php 
-$pageHTML->bas();
-
-
-
