@@ -63,11 +63,8 @@ class ParamControler extends ZenCancanControler {
 	}
 	public function exportAction(){
 		$id = $this->verifConnected();
-		$this->Gabarit->id = $id;
-		$this->Gabarit->lesFlux = $this->AbonnementSQL->getAll($id);
-		$this->Gabarit->render("Opml");
+		$this->OPMLWriter->send("zenCancan",$this->AbonnementSQL->getAll($id));
 	}
-	
 	
 	protected function sortirToParam($message){
 		parent::sortir($message,"/Param/index");

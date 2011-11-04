@@ -43,7 +43,7 @@
 	</div>
 	<div class="cont">	
 	<?php if (! $content ) : ?>
-		<div class='box_error'>Un probl&egrave;me est survenu sur la r&Atilde;&copy;cuperation de ce flux</div>
+		<div class='box_error'>Un probl&egrave;me est survenu sur la récuperation de ce flux</div>
 	<?php endif;?>
 
 	<table>

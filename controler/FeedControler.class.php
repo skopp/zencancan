@@ -30,7 +30,7 @@ class FeedControler extends ZenCancanControler {
 			$this->LastMessage->setLastError($this->FeedUpdater->getLastError(),true);
 			$this->ErrorSQL->add($url,$this->FeedUpdater->getLastError());
 		} 	
-		$this->redirect();
+		$this->redirect("/Feed/detail/$id_f");
 	}
 	
 	public function detailAction($id_f){

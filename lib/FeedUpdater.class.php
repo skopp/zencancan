@@ -14,8 +14,6 @@ class FeedUpdater {
 	public function __construct(FeedSQL $feedSQL,FeedFetchInfo $feedFetchInfo,$staticPath){
 		$this->feedSQL = $feedSQL;
 		$this->feedFetchInfo = $feedFetchInfo;
-		
-		
 		$this->staticPath = $staticPath;
 	}
 	
@@ -92,6 +90,7 @@ class FeedUpdater {
 	
 	public function forceUpdate($id_f,$url){
 		$feedInfo = $this->feedFetchInfo->getURL($url);
+
 		if ( ! $feedInfo){
 			return false;
 		}

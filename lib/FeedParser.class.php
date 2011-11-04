@@ -17,6 +17,7 @@ class FeedParser {
 	
 	public function getInfo($content){
 		$feedInfo = $this->parseXMLContent($content);
+		
 		if (! $feedInfo ){
 			return false;
 		}
@@ -46,13 +47,13 @@ class FeedParser {
 		
 		$xml = simplexml_load_string($content,"SimpleXMLElement",LIBXML_NOCDATA);
 		
-		
 		if (! $xml ){
 			$this->lastError = "L'adresse n'est pas un flux RSS (load)";
 			return false;
 		}
 		
 		$feed = $this->parse($xml);
+		
 		if (! $feed ){
 			$this->lastError = "L'adresse n'est pas un flux RSS (parse)";
 			return false; 

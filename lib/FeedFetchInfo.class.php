@@ -48,6 +48,7 @@ class FeedFetchInfo {
 	public function getURL($keyword_or_url){	
 		$url = $keyword_or_url;
 		$this->lastContent = $this->urlLoader->getContent($keyword_or_url);
+		
 		if (! $this->lastContent){
 			$url = $this->googleSearch->get($keyword_or_url);
 			if (! $url){
