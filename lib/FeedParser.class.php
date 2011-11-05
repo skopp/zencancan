@@ -45,6 +45,9 @@ class FeedParser {
 	
 	public function parseXMLContent($content){
 		
+		$xmlPurifier = new XMLPurifier();
+		$content = $xmlPurifier->getXML($content);
+		
 		$xml = simplexml_load_string($content,"SimpleXMLElement",LIBXML_NOCDATA);
 		
 		if (! $xml ){
