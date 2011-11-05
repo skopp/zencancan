@@ -28,6 +28,11 @@
 			</p>
 			<input type='hidden' name='id_f' value='<?php echo $id_f ?>'/>
 		</form>
+		
+		<?php if ($isAdmin) : ?>
+		<a  class="a_btn" href='<?php $this->Path->path("/Feed/forceReload/$id_f")?>'>Rafraichir</a>
+		<?php endif;?>
+		
 		</div>
 		<div class="bas"></div>				
 		</div>

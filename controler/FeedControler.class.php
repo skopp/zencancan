@@ -17,6 +17,16 @@ class FeedControler extends ZenCancanControler {
 		$this->renderDefault($tag);
 	}
 	
+	public function forceReloadAction($id_f){
+		$id = $this->verifConnected();
+		if ($this->Compte->isAdmin($id)){
+			$info = $this->AbonnementSQL->getInfo($id,$id_f);
+			$r = $this->FeedUpdater->forceUpdate($id_f,$info['url']);
+			$this->LastMessage->setLastMessage($r?"Flux rafraichi":"Flux non rafraichi");
+		}
+		$this->redirect("/Feed/detail/$id_f");
+	}
+	
 	public function doAddAction(){
 		$id = $this->verifConnected();
 		$url = $this->Recuperateur->get('url');
