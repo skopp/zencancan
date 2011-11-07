@@ -21,11 +21,11 @@
 				</div>
 				
 				<?php if ($id_u) : ?>
-				<!-- <div> -->
-					<!-- <a href='<?php $this->Path->path("/Mur/index")?>'>Mon mur</a>
+				<!-- <div>
+					 <a href='<?php $this->Path->path("/Mur/index")?>'>Mon mur</a>
 					<a href='<?php $this->Path->path("/Feed/list")?>'>Mes sites</a>
-					 -->
-				<!--  </div>  -->	
+					
+				  </div>  -->	
 				<?php endif;?>
 			
 			
@@ -49,7 +49,7 @@
 		
 		<div id="box_add_flux">
 			
-				<?php if ($this->Connexion->getId()) : ?>
+				<?php if ($this->Connexion->getId() && isset($add_site)) : ?>
 				
 				<form  action='<?php $this->Path->path() ?>' method='post'>
 				<?php $this->Connexion->displayTokenField(); ?>

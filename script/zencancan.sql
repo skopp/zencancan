@@ -47,5 +47,7 @@ CREATE TABLE mur (
 	`id_u` int(11) NOT NULL,
 	`content` text NOT NULL,
 	`date` datetime NOT NULL,
+	`title` varchar(255) NOT NULL,
+	`link` varchar(255) NOT NULL,
 	PRIMARY KEY (`id_m`)
 )  ENGINE=MyISAM  ;

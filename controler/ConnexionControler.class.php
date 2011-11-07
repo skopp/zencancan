@@ -8,7 +8,7 @@ class ConnexionControler extends ZenCancanControler {
 	
 	public function setRemember($id_u){
 		$remember = $this->UtilisateurSQL->getRemember($id_u);
-		setcookie("remember_zencancan",$remember,time()+3600*24*365);
+		setcookie("remember_zencancan",$remember,time()+3600*24*365,"/");
 	}
 	
 	public function doLoginAction(){
@@ -37,9 +37,10 @@ class ConnexionControler extends ZenCancanControler {
 		}
 	}
 	
-	public function doLogoutAction(){
+	public function doLogoutAction(){		
+		setcookie('remember_zencancan',"",1,"/");
 		$this->Connexion->logout();
-		$this->redirectWithUsername("","/Connexion/login");
+		$this->redirect();
 	}
 	
 	public function autoLoginAction($verif_id,$remember){

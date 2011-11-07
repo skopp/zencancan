@@ -1,7 +1,28 @@
 <?php
+
+
 class FeedControler extends ZenCancanControler {
 	
+	public function renderDefault($tag=""){
+		
+		$id_u = $this->Connexion->getId();	
+		$info = $this->UtilisateurSQL->getInfo($id_u);
+		$id = $info['id'];
+		
+		$this->addRSS("Votre flux zencancan",$this->Path->getPath("/RSS/all/$id"));
+		if ($tag){
+			$this->addRSS("Votre flux zencancan - $tag",$this->Path->getPath("/RSS/all/$id/$tag"));
+		}		
+		$this->Gabarit->rss = $this->rss;
+		$this->Gabarit->tag = $tag;
+		$this->Gabarit->add_site = true;
+		parent::renderDefault();
+		
+	}
+	
+	
 	public function listAction($offset = 0,$tag = false){
+		
 		$offset = (int) $offset;
 		if ($offset<0){
 			$offset = 0;
@@ -77,6 +98,36 @@ class FeedControler extends ZenCancanControler {
 	}
 	
 	
+	private function getFeedInfo($id_f){			
+		@ $content = file_get_contents(STATIC_PATH."/$id_f");
+		
+		if (! $content){
+			if ($this->FeedUpdater->forceUpdate($id_f,$info['url'])){
+				$content = file_get_contents(STATIC_PATH."/$id_f");
+			} 
+		}
+		
+		$rssInfo = $this->FeedParser->parseXMLContent($content);
+		
+		return $rssInfo;
+	}
+	
+	public function getItem($rssInfo,$i){
+		if (empty($rssInfo['item'][$i])){
+			$this->LastMessage->setLastError("Cet article n'existe pas ou plus");
+			$this->redirect();
+		}
+		$resultItem = $rssInfo['item'][$i];
+		
+		$content_html = $resultItem['content']?:$resultItem['description'];
+		$content_html = $this->HTMLNormalizer->get($content_html,$rssInfo['link']);
+		
+		$resultItem['content'] = $content_html;
+		
+		return $resultItem;
+	}
+	
+	
 	public function readAction($id_f,$i = 0){
 		if (!$i){
 			$i = 0;
@@ -86,44 +137,42 @@ class FeedControler extends ZenCancanControler {
 			header("Location: index.php?id=$id");
 			exit;
 		}
-		
 		$info = $this->AbonnementSQL->getInfo($id,$id_f);
-		
-		@ $content = file_get_contents(STATIC_PATH."/$id_f");
-		
-		if (! $content){
-			if ($this->FeedUpdater->forceUpdate($id_f,$info['url'])){
-				$content = file_get_contents(STATIC_PATH."/$id_f");
-			} 
-		}
-		
-		
-		$rssInfo = $this->FeedParser->parseXMLContent($content);
-		
 		$this->addRSS($info['title'],$info['url']);
-		if (empty($rssInfo['item'][$i])){
-			$this->LastMessage->setLastError("Cet article n'existe pas ou plus");
-			$this->redirect();
-		}
 		
-		$resultItem = $rssInfo['item'][$i];
-		
-		$content_html = $resultItem['content']?:$resultItem['description'];
-		$content_html = $this->HTMLNormalizer->get($content_html,$rssInfo['link']);
-		
+		$rssInfo = $this->getFeedInfo($id_f,$i);
+		$resultItem = $this->getItem($rssInfo,$i);
+			
 		$this->Gabarit->rejected_tag = $this->HTMLPurifier->getRejectedTag();
 		$this->Gabarit->rejected_attributes = $this->HTMLPurifier->getRejectedAttributes();
 		
-		$this->Gabarit->content_html = $content_html;
+		$this->Gabarit->content_html = $resultItem['content'];
 		$this->Gabarit->resultItem = $resultItem;
 		$this->Gabarit->selected_item = $i;
 		$this->Gabarit->rssInfo = $rssInfo;
 		$this->Gabarit->id_f = $id_f;
+		$this->Gabarit->num_feed = $i;
 		$this->Gabarit->template_milieu = "FluxRead";
 		
 		$this->renderDefault($info['tag']);
 		
 	}
+	
+	public function doAddMurAction(){
+		$id_u = $this->verifConnected();
+		$id_f = $this->Recuperateur->getInt('id_f');
+		$num_feed = $this->Recuperateur->getInt('num_feed');
+		$rssInfo = $this->getFeedInfo($id_f,$num_feed);
+		$resultItem = $this->getItem($rssInfo,$num_feed);
+		$content = get_link_title($resultItem['content']?:$resultItem['description']);
+		
+		$this->MurSQL->add($id_u,$content,$resultItem['title'],$resultItem['link']);
+		$mur_path = $this->Path->getPath("/Mur/index");
+		$this->LastMessage->setLastMessage("L'article a été publié sur <a href='$mur_path'>votre mur</a>",true);
+		$this->redirect("/Feed/read/$id_f/$num_feed");
+		
+	}
+	
 	
 	public function doDeleteAction(){
 		$id = $this->verifConnected();

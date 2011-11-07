@@ -23,6 +23,7 @@
 
 
 <div id="contenu">
+<?php $this->LastMessage->display()?>
 
 	<div class="box">
 		<div class="haut">
@@ -56,7 +57,14 @@
 					<?php endif;?>  
 				</div>	
 			<?php endif;?>
-			
+			<!-- <form action='<?php $this->Path->path() ?>' method='post'>
+				<?php $this->Connexion->displayTokenField(); ?>
+				<input type='hidden' name='path_info' value='/Feed/doAddMur' />
+				<input type='hidden' name='id_f' value='<?php hecho($id_f)?>' />				
+				<input type='hidden' name='num_feed' value='<?php hecho($num_feed)?>' />
+				<input type='submit' value='Publier sur mon mur' class="a_btn" />
+			</form>
+			 -->
 			</div>			
 			<div class="bas"></div>	
 		</div>

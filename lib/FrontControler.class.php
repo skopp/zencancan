@@ -6,6 +6,7 @@ abstract class FrontControler extends Controler {
 	abstract public function noToken();
 	
 	public function go(){		
+		
 		$path_token = $this->PathInfo->getInfo($this->getPathInfo());
 		$controler = $this->doAction($path_token);		
 	}
@@ -22,6 +23,7 @@ abstract class FrontControler extends Controler {
 	}
 	
 	private function doAction($path_token){
+		
 		try {
 			$reflexionClass = new ReflectionClass($path_token['controler']);
 		} catch (Exception $e){					

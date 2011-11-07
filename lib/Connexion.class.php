@@ -19,7 +19,7 @@ class Connexion {
 	}
 	
 	public function logout(){
-		setcookie('remember_zencancan',"");
+		
 		unset($_SESSION['connexion']);
 		session_destroy();
 	}

@@ -24,8 +24,8 @@ class LastMessage {
 		$this->setMessage(self::ERROR,$message,$secure);
 	}
 	
-	public function setLastMessage($message){
-		$this->setMessage(self::MESSAGE,$message);
+	public function setLastMessage($message,$secure = false){
+		$this->setMessage(self::MESSAGE,$message,$secure);
 	}
 	
 	private function setMessage($type,$message,$secure = false){
