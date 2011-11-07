@@ -28,7 +28,7 @@
 					<div class="item_wall">
 						<?php if ($id_u) : ?>
 							<a href='<?php $this->Path->path("/Mur/index")?>'>Mon mur</a>|
-							<a href='<?php $this->Path->path("/Feed/list")?>'>Mes sites</a>
+							<a class='actif' href='<?php $this->Path->path("/Feed/list")?>'>Mes sites</a>
 						<?php endif;?>
 					</div>
 					<div class="item_login">
