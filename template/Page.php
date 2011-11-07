@@ -20,28 +20,31 @@
 					<a href="<?php  $this->Path->path()?>"><img src="<?php $this->Path->echoRessourcePath("/img/commun/logo.png") ?>" alt="" /></a>
 				</div>
 				
-				<?php if ($id_u) : ?>
-				<!-- <div>
-					 <a href='<?php $this->Path->path("/Mur/index")?>'>Mon mur</a>
-					<a href='<?php $this->Path->path("/Feed/list")?>'>Mes sites</a>
-					
-				  </div>  -->	
-				<?php endif;?>
+
 			
 			
 				<div id="menu_login">
-					<?php if ($id_u) : ?>
-						Bienvenue <span class='nom_user'><?php echo $namedAccount ?></span> |
-						<a href='<?php $this->Path->path("/Param/index")?>'>Param&egrave;tres</a> |
-						<a href='<?php $this->Path->path("/Connexion/doLogout")?>'>D&eacute;connexion</a> | 
-						<a href='<?php $this->Path->path("/Aide/presentation")?>'>Aide</a> 
-							<?php if ($isAdmin) : ?>
-								| <a href='<?php $this->Path->path("/Param/admin")?>'>Admin</a> 
-							<?php endif;?>
-					<?php else : ?>
-						<a  href='<?php $this->Path->path('/Connexion/login');?>'>Se connecter</a>
-						<a href='<?php echo $this->Path->getPathWithUsername("",'/Account/create');?>'>Cr&eacute;er un compte</a>
-					<?php endif;?>
+					
+					<div class="item_wall">
+						<?php if ($id_u) : ?>
+							<a href='<?php $this->Path->path("/Mur/index")?>'>Mon mur</a>|
+							<a href='<?php $this->Path->path("/Feed/list")?>'>Mes sites</a>
+						<?php endif;?>
+					</div>
+					<div class="item_login">
+						<?php if ($id_u) : ?>
+							Bienvenue <span class='nom_user'><?php echo $namedAccount ?></span> |
+							<a href='<?php $this->Path->path("/Param/index")?>'>Param&egrave;tres</a> |
+							<a href='<?php $this->Path->path("/Connexion/doLogout")?>'>D&eacute;connexion</a> | 
+							<a href='<?php $this->Path->path("/Aide/presentation")?>'>Aide</a> 
+								<?php if ($isAdmin) : ?>
+									| <a href='<?php $this->Path->path("/Param/admin")?>'>Admin</a> 
+								<?php endif;?>
+						<?php else : ?>
+							<a  href='<?php $this->Path->path('/Connexion/login');?>'>Se connecter</a>
+							<a href='<?php echo $this->Path->getPathWithUsername("",'/Account/create');?>'>Cr&eacute;er un compte</a>
+						<?php endif;?>
+					</div>
 				</div>
 			
 			

@@ -37,9 +37,13 @@ overflow:auto;
 
 #logo {float:left;position:absolute;top:34px;margin-left:12px;}
 #logo img {border:0;}
-#menu_login {float:right;color:#E2E2E2;}
+#menu_login {padding-left:12px;}
 #menu_login a {margin:0 4px 0 4px;color:#E2E2E2;text-decoration:none;}
 #menu_login a:hover {text-decoration:underline;}
+
+#menu_login .item_wall {float:left;color:#E2E2E2;}
+#menu_login .item_login {float:right;color:#E2E2E2;}
+
 
 #box_add_flux {
 background-color:#F4F2EE;
