@@ -3,7 +3,9 @@ class ParamControler extends ZenCancanControler {
 	
 	
 	public function indexAction(){
-		$id = $this->verifConnected();
+		$id_u = $this->verifConnected();
+		$info = $this->UtilisateurSQL->getInfo($id_u);
+		$this->Gabarit->id = $info['id'];
 		
 		$this->Gabarit->template_milieu = "Param";
 		$this->renderDefault();
@@ -11,7 +13,7 @@ class ParamControler extends ZenCancanControler {
 	
 	public function adminAction(){		
 		$id = $this->verifConnected();
-		if ( ! $this->Compte->isAdmin($id)){
+		if ( ! $this->UtilisateurSQL->isAdmin($id)){
 			header("Location: index.php");
 			exit;
 		}
@@ -52,11 +54,11 @@ class ParamControler extends ZenCancanControler {
 			$this->sortir("Les mots de passe ne correspondent pas");
 		}
 		
-		if ( ! $this->Compte->verif($this->Authentification->getNamedAccount(),$oldpassword)){
+		if ( ! $this->UtilisateurSQL->verif($this->Authentification->getNamedAccount(),$oldpassword)){
 			$this->sortir("Votre ancien mot de passe est incorrecte");
 		}
 
-		$this->Compte->setPassword($id,$password);
+		$this->UtilisateurSQL->setPassword($id,$password);
 		
 		$this->LastMessage->setLastMessage("Votre mot de passe a été modifié");
 		$this->redirect("/Param/index");
@@ -71,7 +73,7 @@ class ParamControler extends ZenCancanControler {
 	}
 	
 	public function importAction(){
-		$id = $this->verifConnected();
+		$id_u = $this->verifConnected();
 	
 		if (empty($_FILES['fichier_opml'])){
 			$this->sortirToParam("Fichier non présents");	
@@ -85,11 +87,11 @@ class ParamControler extends ZenCancanControler {
 		if ( ! $xml || ! $xml->body) {
 			$this->sortirToParam("Ce n'est pas un fichier OPML");
 		}
-
-		foreach($xml->body->outline as $feed){
+		
+		foreach($xml->body->outline as $feed){			
 			$id_f = $this->FeedUpdater->addWithoutFetch($feed['xmlUrl']);
 			if ($id_f){
-				$this->AbonnementSQL->add($id,$id_f,"");
+				$this->AbonnementSQL->add($id_u,$id_f,"");
 			}
 		}
 
@@ -108,9 +110,9 @@ class ParamControler extends ZenCancanControler {
 		}
 		
 		$this->AbonnementSQL->delCompte($id);
-		$this->Compte->delete($this->Authentification->getNamedAccount());
+		$this->UtilisateurSQL->delete($this->Authentification->getNamedAccount());
 		
-		$this->Authentification->logout();
+		$this->Connexion->logout();
 		$this->redirectWithUsername("");
 		
 	}

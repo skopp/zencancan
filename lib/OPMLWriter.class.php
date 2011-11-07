@@ -14,7 +14,7 @@ class OPMLWriter {
 		foreach($allFeed as $i => $f){
 			$opml->body->outline[$i]['text'] = $f['title'];
 			$opml->body->outline[$i]['title'] = $f['title'];
-			$opml->body->outline[$i]['xmlURL'] = $f['url'];
+			$opml->body->outline[$i]['xmlUrl'] = $f['url'];
 			$opml->body->outline[$i]['htmlUrl'] = $f['link'];
 		}
 		return $opml->asXML();

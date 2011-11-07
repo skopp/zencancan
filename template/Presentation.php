@@ -1,5 +1,5 @@
-<?php header("Content-type: text/html; charset=UTF-8");?>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<!-- <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html>
 	<head>
 		<title>zenCancan : La gestion simple du suivi de site</title>
@@ -21,7 +21,7 @@
 			
 				
 				<div>
-				<?php if ($this->Authentification->getId()) : ?>
+				<?php if ($this->Connexion->getId()) : ?>
 					<a class="a_btn" href='<?php $this->Path->path();?>'>Retourner &agrave; mon compte</a>
 				<?php else : ?>
 					<a class="a_btn" href='<?php $this->Path->path('/Connexion/login');?>'>Se connecter</a>
@@ -34,7 +34,7 @@
 		</div>
 		
 		<div id="main">
-			
+	 -->		
 <div id="contenu_unique">
 	<?php $this->LastMessage->display()?>
 	
@@ -123,23 +123,4 @@ pour un flux donn&eacute; </td></tr>
 
 	</div><!-- fin contenu -->
 			
-			
-		</div><!-- fin main -->
-		
-			<div class="clearfooter"></div>
-		</div><!-- fin container -->
-		
-		
-		<div id="footer">
-			
-			<p class="align_right">
-			Page g&eacute;n&eacute;r&eacute;e par zenCancan en <?php echo round((microtime(true) - $debut) * 10000) / 10 ?>ms
-			- <a href='<?php $this->Path->path("/Param/legal") ?>'>Mentions l&eacute;gales</a>
-			</p>
-			
-		</div><!-- fin footer -->
-		
-		
-	</body>
-</html>	
 		

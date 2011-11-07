@@ -18,6 +18,7 @@
 		</div>
 		<div class="bas"></div>				
 	</div>
+	<?php $this->render("FluxGestion"); ?>
 </div>
 
 
@@ -46,23 +47,17 @@
 			<?php 
 			if ($rejected_tag || $rejected_attributes) : ?>
 				<div>
-					Le document &Atilde;� &Atilde;&copy;t&Atilde;&copy; purifi&Atilde;&copy; de la mani&Atilde;&uml;re suivantes :
+					Le document a été purifié de la manière suivantes :
 					<?php if ($rejected_tag) : ?>
-						<p>Les balises suivantes ont &Atilde;&copy;t&Atilde;&copy; rejet&Atilde;&copy;s : <?php echo implode(",",$rejected_tag)?></p>
+						<p>Les balises suivantes ont été rejeté : <?php echo implode(",",$rejected_tag)?></p>
 					<?php endif;?>
 					<?php if ($rejected_attributes) : ?>
-						<p>Les attributs suivantes ont &Atilde;&copy;t&Atilde;&copy; rejet&Atilde;&copy;s : <?php echo implode(",",$rejected_attributes)?></p>
+						<p>Les attributs suivantes ont été rejeté : <?php echo implode(",",$rejected_attributes)?></p>
 					<?php endif;?>  
 				</div>	
 			<?php endif;?>
 			
-			
 			</div>			
 			<div class="bas"></div>	
 		</div>
-					
 	</div>
-
-
-
-

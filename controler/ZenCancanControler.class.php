@@ -13,20 +13,20 @@ class ZenCancanControler extends Controler {
 		$this->rss[] = array('title'=>$title,'url'=>$link);
 	}
 	
-	public function verifConnected(){
-		$id = $this->Authentification->getId();
-		if (! $id){
+	public function verifConnected(){		
+		$id_u = $this->Connexion->getId();
+		if (! $id_u){
 			if ($this->Authentification->getNamedAccount() && isset($_COOKIE['remember_zencancan'])) {
-				$id = $this->Compte->verifRemember($this->Authentification->getNamedAccount(),$_COOKIE['remember_zencancan']);
+				$id_u = $this->UtilisateurSQL->verifRemember($this->Authentification->getNamedAccount(),$_COOKIE['remember_zencancan']);
 			}
-			if ($id){
-				$this->Authentification->setId($id);
+			if ($id_u){
+				$this->Connexion->login($id_u);
 			
 			} else {			
 				$this->redirect("/Connexion/login");
 			}
 		}
-		return $id;
+		return $id_u;
 	}
 	
 	public function redirectWithUsername($username = "",$to=""){		
@@ -50,7 +50,9 @@ class ZenCancanControler extends Controler {
 	}
 	
 	public function renderDefault($tag = false){		
-		$id = $this->Authentification->getId();		
+		$id_u = $this->Connexion->getId();		
+		$info = $this->UtilisateurSQL->getInfo($id_u);
+		$id = $info['id'];
 		
 		$this->addRSS("Votre flux zencancan",$this->Path->getPath("/RSS/all/$id"));
 		if ($tag){
@@ -58,9 +60,9 @@ class ZenCancanControler extends Controler {
 		}
 		
 		$this->Gabarit->rss = $this->rss;
-		$this->Gabarit->id = $id;
+		$this->Gabarit->id_u = $id_u;
 		$this->Gabarit->namedAccount = $this->Authentification->getNamedAccount();
-		$this->Gabarit->isAdmin  = $this->Compte->isAdmin($this->Authentification->getId());
+		$this->Gabarit->isAdmin  = $this->UtilisateurSQL->isAdmin($id_u);
 		$this->Gabarit->tag = $tag;
 		$this->Gabarit->revision_number = $this->revision_number;
 		$this->Gabarit->debut = $this->debut;

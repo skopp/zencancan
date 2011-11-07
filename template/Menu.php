@@ -5,7 +5,7 @@
 			<div class="haut"><h2>Utilisateur</h2></div>
 			<div class="cont">
 				<ul class="ul_lien">
-				<?php if (! $this->Authentification->getId()) : ?>
+				<?php if (! $this->Connexion->getId()) : ?>
 					<li><a href="<?php echo $this->Path->getPathWithUsername("","/Account/create") ?>">Cr&eacute;er un compte</a></li>
 					<li><a href="<?php echo $this->Path->getPathWithUsername("","/Connexion/login") ?>">Se connecter</a></li>
 				<?php endif;?>

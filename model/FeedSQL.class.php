@@ -1,16 +1,9 @@
 <?php
-
-class FeedSQL {
-	
-	private $sqlQuery;
-		
-	public function __construct(SQLQuery $sqlQuery){
-		$this->sqlQuery = $sqlQuery;
-	}
+class FeedSQL extends SQL {
 	
 	public function getInfo($url){
 		$sql = "SELECT * FROM feed WHERE url = ?";
-		return $this->sqlQuery->queryOne($sql,$url);
+		return $this->queryOne($sql,$url);
 	}
 	
 	public function add(array $feedInfo){
@@ -21,7 +14,7 @@ class FeedSQL {
 			$this->insert($feedInfo);
 		}
 		$sql = "SELECT id_f FROM feed WHERE url=?";
-		return $this->sqlQuery->queryOne($sql,$feedInfo['url']);
+		return $this->queryOne($sql,$feedInfo['url']);
 	}
 	
 	public function doUpdate($lastId, $feedInfo){
@@ -34,16 +27,16 @@ class FeedSQL {
 	
 	public function insert($feedInfo){
 		$sql = "INSERT INTO feed(url,title,link,last_id,last_maj,last_recup,etag,`last-modified`,item_title,item_link,item_content) VALUES (?,?,?,?,?,now(),?,?,?,?,?)";
-		$this->sqlQuery->query($sql, $feedInfo['url'],$feedInfo['title'],$feedInfo['link'],$feedInfo['id_item'],$feedInfo['pubDate'],$feedInfo['etag'],$feedInfo['last-modified']
+		$this->query($sql, $feedInfo['url'],$feedInfo['title'],$feedInfo['link'],$feedInfo['id_item'],$feedInfo['pubDate'],$feedInfo['etag'],$feedInfo['last-modified']
 			,$feedInfo['item_title'],$feedInfo['item_link'],$feedInfo['item_content']
 		);
 		$sql = "SELECT id_f FROM feed WHERE url=?";
-		return $this->sqlQuery->queryOne($sql,$feedInfo['url']);
+		return $this->queryOne($sql,$feedInfo['url']);
 	}
 	
 	private function update($feedInfo){
 		$sql = "UPDATE feed SET title=?, link= ?, last_id=?, last_maj=?, etag = ? ,`last-modified` = ?, last_recup=now(),lasterror='', item_title=?, item_link=?,item_content=? WHERE url=?";
-		$this->sqlQuery->query($sql,$feedInfo['title'],$feedInfo['link'],$feedInfo['id_item'],
+		$this->query($sql,$feedInfo['title'],$feedInfo['link'],$feedInfo['id_item'],
 			$feedInfo['pubDate'],$feedInfo['etag'],$feedInfo['last-modified'],
 			$feedInfo['item_title'],$feedInfo['item_link'],$feedInfo['item_content'],$feedInfo['url']
 			);
@@ -51,31 +44,31 @@ class FeedSQL {
 	
 	public function forceLastRecup($url){
 		$sql = "UPDATE feed SET last_recup='1970-01-01' WHERE url=?";
-		$this->sqlQuery->query($sql,$url);
+		$this->query($sql,$url);
 	}
 	
 	public function udpateLastRecup($url,$error = ''){
 		$sql = "UPDATE feed SET last_recup=now(),lasterror=? WHERE url=?";
-		$this->sqlQuery->query($sql,$error,$url);
+		$this->query($sql,$error,$url);
 	}
 	
 	public function getNext($id_f){
 		$sql = "SELECT * FROM feed WHERE id_f > ? LIMIT 1";
-		return $this->sqlQuery->queryOne($sql,$id_f);
+		return $this->queryOne($sql,$id_f);
 	}
 	
 	public function getFirstToUpdate(){
 		$sql = "SELECT * FROM feed WHERE id_f= (SELECT id_f FROM feed ORDER BY last_recup LIMIT 1)";
-		return $this->sqlQuery->queryOne($sql);
+		return $this->queryOne($sql);
 	}
 	
 	public function del($id_f){
 		$sql = "DELETE FROM feed WHERE id_f=?";
-		$this->sqlQuery->query($sql,$id_f);
+		$this->query($sql,$id_f);
 	}
 	
 	public function feedInfo(){
-		$info =  $this->sqlQuery->query("SELECT count(*) as nb, max(last_recup) as date FROM feed");	
+		$info =  $this->query("SELECT count(*) as nb, max(last_recup) as date FROM feed");	
 		return $info[0];
 	}
 	

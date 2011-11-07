@@ -2,40 +2,7 @@
 	<div class="breadcrumbs">
 		<a class="a_btn_nav" href='<?php $this->Path->path() ?>'>&laquo; Revenir a la liste des sites</a>
 	</div>
-	<div class="box">
-		<div class="haut"><h2>Gestion</h2>
-		</div>
-		<div class="cont">
-		
-		<?php if ($info['tag']) : ?>
-		Cat&eacute;gorie actuelle : <a href='<?php $this->Path->path("/Feed/list/0/{$info['tag']}") ?>'><?php hecho($info['tag']) ?></a>
-		<?php endif;?>
-		
-		<form class='ff' action='<?php $this->Path->path() ?>' method='post'>
-			<?php $this->Connexion->displayTokenField(); ?>
-			<input type='hidden' name='path_info' value='/Feed/doAggregate' />
-			<input type='hidden' name='id_f' value='<?php echo $id_f ?>'/>
-			<p>
-			Cat&eacute;gorie : <input type='text' name='tag' value='<?php hecho($info['tag']) ?>' />
-			</p>
-			<p><input class='submit' type='submit' value='Mettre dans une cat&eacute;gorie'/>	</p>
-		</form>
-		<form action='<?php $this->Path->path() ?>' method='post'>
-			<?php $this->Connexion->displayTokenField(); ?>
-			<input type='hidden' name='path_info' value='/Feed/doDelete' />
-			<p>
-			<input class='submit' type='submit' value='Supprimer le suivi de ce site'/>
-			</p>
-			<input type='hidden' name='id_f' value='<?php echo $id_f ?>'/>
-		</form>
-		
-		<?php if ($isAdmin) : ?>
-		<a  class="a_btn" href='<?php $this->Path->path("/Feed/forceReload/$id_f")?>'>Rafraichir</a>
-		<?php endif;?>
-		
-		</div>
-		<div class="bas"></div>				
-		</div>
+	<?php $this->render("FluxGestion"); ?>
 </div><!-- fin colonne -->
 
 

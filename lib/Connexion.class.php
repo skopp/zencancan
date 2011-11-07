@@ -1,29 +1,27 @@
 <?php
 class Connexion {
 	
-	public function setConnexion($id_u,$email){
-		$_SESSION['connexion']['id_u'] = $id_u;
-		$_SESSION['connexion']['email'] = $email;
+	const ID_U = "zencancan_id_u";
+	
+	public function login($id_u){
+		$_SESSION['connexion'][self::ID_U] = $id_u;
 	}
 	
 	public function isConnected(){
 		return isset($_SESSION['connexion']);
 	}
 	
-	public function getEmail(){
-		assert('$this->isConnected()');
-		return $_SESSION['connexion']['email'];
-	}
-	
 	public function getId(){
 		if (! $this->isConnected()){
 			return false;
 		}
-		return $_SESSION['connexion']['id_u'];
+		return $_SESSION['connexion'][self::ID_U];
 	}
 	
-	public function deconnexion(){
+	public function logout(){
+		setcookie('remember_zencancan',"");
 		unset($_SESSION['connexion']);
+		session_destroy();
 	}
 	
 	public function getToken(){

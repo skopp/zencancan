@@ -1,5 +1,6 @@
 CREATE TABLE abonnement (
 	`id` varchar(16) NOT NULL,
+	`id_u` int(11) NOT NULL,
 	`id_f` int(11) NOT NULL,
 	`tag` varchar(64) NOT NULL,
 	PRIMARY KEY (`id`,`id_f`),
@@ -40,4 +41,11 @@ CREATE TABLE feed (
 	UNIQUE KEY url (`url`),
 	UNIQUE KEY last_recup (`last_recup`,`id_f`),
 	KEY last_maj (`last_maj`,`id_f`)
+)  ENGINE=MyISAM  ;
+CREATE TABLE mur (
+	`id_m` int(11) NOT NULL AUTO_INCREMENT,
+	`id_u` int(11) NOT NULL,
+	`content` text NOT NULL,
+	`date` datetime NOT NULL,
+	PRIMARY KEY (`id_m`)
 )  ENGINE=MyISAM  ;

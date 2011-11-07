@@ -29,12 +29,12 @@ class AccountControler extends ZenCancanControler {
 		
 		$id = $this->PasswordGenerator->getPassword();
 		
-		$result = $this->Compte->create($id,$name,$password);
+		$result = $this->UtilisateurSQL->create($id,$name,$password);
 		if (! $result){
-			$this->sortir($this->Compte->getLastError());
+			$this->sortir($this->UtilisateurSQL->getLastError());
 		}
 		
-		$this->Authentification->logout();
+		$this->Connexion->logout();
 		$this->redirectWithUsername($name);
 	}
 }

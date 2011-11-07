@@ -1,16 +1,9 @@
 <?php
-
-
-class ErrorSQL {
-	
-	
-	public function __construct(SQLQuery $sqlQuery){
-		$this->sqlQuery = $sqlQuery;
-	}
+class ErrorSQL extends SQL {
 	
 	public function add($search,$raison){
 		$sql = "INSERT INTO error(search,date,raison) VALUES (?,now(),?)";
-		$this->sqlQuery->query($sql,$search,$raison);
+		$this->query($sql,$search,$raison);
 	}
 	
 }

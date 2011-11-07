@@ -6,10 +6,10 @@ class FeedControler extends ZenCancanControler {
 		if ($offset<0){
 			$offset = 0;
 		}
-		$id = $this->verifConnected();
+		$id_u = $this->verifConnected();
 		
-		$this->Gabarit->allFlux = $this->AbonnementSQL->get($id,$tag,$offset);
-		$this->Gabarit->nbFlux = $this->AbonnementSQL->getNbFlux($id,$tag);	
+		$this->Gabarit->allFlux = $this->AbonnementSQL->get($id_u,$tag,$offset);
+		$this->Gabarit->nbFlux = $this->AbonnementSQL->getNbFlux($id_u,$tag);	
 		$this->Gabarit->template_milieu = "FluxList";
 		$this->Gabarit->offset = $offset;
 		$this->Gabarit->nbAfficher = AbonnementSQL::NB_DISPLAY;
@@ -19,7 +19,7 @@ class FeedControler extends ZenCancanControler {
 	
 	public function forceReloadAction($id_f){
 		$id = $this->verifConnected();
-		if ($this->Compte->isAdmin($id)){
+		if ($this->UtilisateurSQL->isAdmin($id)){
 			$info = $this->AbonnementSQL->getInfo($id,$id_f);
 			$r = $this->FeedUpdater->forceUpdate($id_f,$info['url']);
 			$this->LastMessage->setLastMessage($r?"Flux rafraichi":"Flux non rafraichi");

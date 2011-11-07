@@ -37,7 +37,7 @@
 	<input type='hidden' name='path_info' value='/Param/import' />
 		
 		<label for='fichier_opml' >Importer des flux (OPML)</label>
-		<input type='file' name='fichier_opml' />
+		<input type='file' name='fichier_opml' id='fichier_opml'/>
 		<input type='submit' name='Envoyer' class='a_btn' />
 	</form>
 	</div>
