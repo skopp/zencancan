@@ -1,7 +1,7 @@
 <?php
 class Controler {
 
-	private $objectInstancier;
+	protected $objectInstancier;
 	
 	private $selectedView;
 	private $viewParameter;

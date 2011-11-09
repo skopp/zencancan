@@ -10,7 +10,7 @@
 					<li>
 						<div class="li_date"><?php echo $this->FancyDate->get($itemInfo['pubDate'])?></div>
 						<a href='<?php $this->Path->path("/Feed/read/$id_f/$i")?>'  title='<?php  echo get_link_title($itemInfo['content']?:$itemInfo['description']) ?>'>
-							<?php echo strip_tags($itemInfo['title']) ?>
+							<?php hecho(strip_tags($itemInfo['title'])) ?>
 						</a>
 					</li>
 				<?php endforeach; ?>
@@ -47,24 +47,28 @@
 			</div>
 			<?php 
 			if ($rejected_tag || $rejected_attributes) : ?>
-				<div>
-					Le document a été purifié de la manière suivantes :
+				<?php if (! $isAdmin) : ?><!--<?php endif; ?> 
+					<div>Le document a été purifié de la manière suivante :
 					<?php if ($rejected_tag) : ?>
-						<p>Les balises suivantes ont été rejeté : <?php echo implode(",",$rejected_tag)?></p>
+						Les balises suivantes ont été rejeté : 
+						<?php echo implode(",\n",$rejected_tag)?>
 					<?php endif;?>
+					
 					<?php if ($rejected_attributes) : ?>
-						<p>Les attributs suivantes ont été rejeté : <?php echo implode(",",$rejected_attributes)?></p>
-					<?php endif;?>  
-				</div>	
+						Les attributs suivantes ont été rejeté : 
+						<?php echo implode(",\n",$rejected_attributes)?>
+					<?php endif;?>
+					</div>  
+				<?php if (! $isAdmin) : ?> -->	<?php endif;?>
 			<?php endif;?>
-			<!-- <form action='<?php $this->Path->path() ?>' method='post'>
+			 <form action='<?php $this->Path->path() ?>' method='post'>
 				<?php $this->Connexion->displayTokenField(); ?>
 				<input type='hidden' name='path_info' value='/Feed/doAddMur' />
 				<input type='hidden' name='id_f' value='<?php hecho($id_f)?>' />				
 				<input type='hidden' name='num_feed' value='<?php hecho($num_feed)?>' />
 				<input type='submit' value='Publier sur mon mur' class="a_btn" />
 			</form>
-			 -->
+			
 			</div>			
 			<div class="bas"></div>	
 		</div>

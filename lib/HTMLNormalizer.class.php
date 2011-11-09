@@ -28,19 +28,6 @@ class HTMLNormalizer {
 		} 
 		return $domDocument->saveHTML();
 		
-		/*$simple = simplexml_import_dom($domDocument);
-		$data = "";
-		foreach($simple->body->children() as $s){
-			$data .= $s->asXML();	
-		}*/
-			
-		
-		/*$lib_filter = new lib_filter();
-		
-		$data = $lib_filter->go($data);*/
-		
-		return $data; 
-		
 	}
 	
 	

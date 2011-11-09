@@ -14,7 +14,7 @@ class ZenCancanControler extends Controler {
 		$this->Gabarit->rss = array();
 		
 	}
-	
+
 	protected function addRSS($title,$link){
 		$this->rss[] = array('title'=>$title,'url'=>$link);
 	}
@@ -56,7 +56,8 @@ class ZenCancanControler extends Controler {
 	}
 	
 	public function renderDefault(){		
-		$id_u = $this->Connexion->getId();				
+		$id_u = $this->Connexion->getId();	
+		$this->Gabarit->rss = $this->rss;			
 		$this->Gabarit->id_u = $id_u;
 		$this->Gabarit->namedAccount = $this->Authentification->getNamedAccount();
 		$this->Gabarit->isAdmin  = $this->UtilisateurSQL->isAdmin($id_u);

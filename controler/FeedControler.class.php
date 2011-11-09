@@ -13,7 +13,7 @@ class FeedControler extends ZenCancanControler {
 		if ($tag){
 			$this->addRSS("Votre flux zencancan - $tag",$this->Path->getPath("/RSS/all/$id/$tag"));
 		}		
-		$this->Gabarit->rss = $this->rss;
+		
 		$this->Gabarit->tag = $tag;
 		$this->Gabarit->add_site = true;
 		parent::renderDefault();
@@ -64,15 +64,20 @@ class FeedControler extends ZenCancanControler {
 		$this->redirect("/Feed/detail/$id_f");
 	}
 	
+	private function verifAbonnement($id_u,$id_f){
+	if ( ! $this->AbonnementSQL->isAbonner($id_u,$id_f)){
+			if (! $this->UtilisateurSQL->isAdmin($id_u)){
+				$this->redirect();
+			}
+		}
+	}
+	
 	public function detailAction($id_f){
 		
-		$id = $this->verifConnected();
-		if ( ! $this->AbonnementSQL->isAbonner($id,$id_f)){
-			header("Location: index.php?id=$id");
-			exit;
-		}
+		$id_u = $this->verifConnected();
+		$this->verifAbonnement($id_u,$id_f);
 
-		$info = $this->AbonnementSQL->getInfo($id,$id_f);
+		$info = $this->AbonnementSQL->getInfo($id_u,$id_f);
 
 		@ $content =  file_get_contents(STATIC_PATH."/$id_f");
 		
@@ -120,7 +125,9 @@ class FeedControler extends ZenCancanControler {
 		$resultItem = $rssInfo['item'][$i];
 		
 		$content_html = $resultItem['content']?:$resultItem['description'];
-		$content_html = $this->HTMLNormalizer->get($content_html,$rssInfo['link']);
+		
+		//$content_html = $this->HTMLNormalizer->get($content_html,$rssInfo['link']);
+		$content_html = $this->HTMLPurifier->purify($content_html);
 		
 		$resultItem['content'] = $content_html;
 		
@@ -132,12 +139,10 @@ class FeedControler extends ZenCancanControler {
 		if (!$i){
 			$i = 0;
 		}
-		$id = $this->verifConnected();
-		if ( ! $this->AbonnementSQL->isAbonner($id,$id_f)){
-			header("Location: index.php?id=$id");
-			exit;
-		}
-		$info = $this->AbonnementSQL->getInfo($id,$id_f);
+		$id_u = $this->verifConnected();
+		$this->verifAbonnement($id_u,$id_f);
+		
+		$info = $this->AbonnementSQL->getInfo($id_u,$id_f);
 		$this->addRSS($info['title'],$info['url']);
 		
 		$rssInfo = $this->getFeedInfo($id_f,$i);
@@ -166,7 +171,7 @@ class FeedControler extends ZenCancanControler {
 		$resultItem = $this->getItem($rssInfo,$num_feed);
 		$content = get_link_title($resultItem['content']?:$resultItem['description']);
 		
-		$this->MurSQL->add($id_u,$content,$resultItem['title'],$resultItem['link']);
+		$this->MurSQL->add($id_u,$content,$rssInfo['title'] ." - " .$resultItem['title'],$resultItem['link']);
 		$mur_path = $this->Path->getPath("/Mur/index");
 		$this->LastMessage->setLastMessage("L'article a été publié sur <a href='$mur_path'>votre mur</a>",true);
 		$this->redirect("/Feed/read/$id_f/$num_feed");

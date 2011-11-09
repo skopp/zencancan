@@ -7,7 +7,7 @@
 		
 		<link rel="stylesheet" type="text/css" href="<?php $this->Path->echoRessourcePath("/img/commun.css?i=1") ?>" media="screen" />
 		<?php foreach ($rss as $feed) : ?>
-			<link rel="alternate" type="application/rss+xml" title="<?php echo $feed['title'] ?>" href="<?php echo $feed['url'] ?>" />
+			<link rel="alternate" type="application/rss+xml" title="<?php hecho($feed['title']) ?>" href="<?php hecho($feed['url']) ?>" />
 		<?php endforeach;?>
 		<link rel="Shortcut Icon" href="<?php $this->Path->echoRessourcePath("/favicon.ico") ?>" type="image/x-icon" />
 	</head>
@@ -21,8 +21,6 @@
 				</div>
 				
 
-			
-			
 				<div id="menu_login">
 					
 					<div class="item_wall">

@@ -2,7 +2,7 @@
 
 
 function hecho($txt,$quotes = ENT_QUOTES ){
-	echo htmlentities($txt,$quotes,"UTF-8");
+	echo htmlspecialchars($txt,$quotes,"UTF-8");
 }
 
 function wrap($txt,$line_length,$nb_line){
