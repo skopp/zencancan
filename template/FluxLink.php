@@ -1,19 +1,19 @@
-<div class="box_col">
+<div class="box_suiv_prec width_min">
 
-	<p class='float_left'>
+	<div class='prec'>
 	<?php if ($num_feed > 0) : ?>
-		<a href='<?php $this->Path->path("/Feed/read/$id_f/".($num_feed-1)); ?>' >&laquo; Article précédent</a>
+		<a href='<?php $this->Path->path("/Feed/read/$id_f/".($num_feed-1)); ?>'>Article pr&eacute;c&eacute;dent</a>
 	<?php endif;?>
-	</p>
+	</div>
 	
-	<p class='float_milieu'>
+	<div class='milieu'>
 	<?php if ($resultItem['link']) : ?>
 		<a href='<?php echo $resultItem['link'] ?>' target='_blank'>Lire l'article original</a>
 	<?php endif;?>
-	</p>
-	<p class='float_right'>
+	</div>
+	<div class='suiv'>
 	<?php if ($num_feed < count($rssInfo['item']) - 1) : ?>
-		<a href='<?php $this->Path->path("/Feed/read/$id_f/".($num_feed+1)); ?>' >Article suivant &raquo;</a>
+		<a href='<?php $this->Path->path("/Feed/read/$id_f/".($num_feed+1)); ?>'>Article suivant</a>
 	<?php endif;?>
-	</p>
+	</div>
 </div>

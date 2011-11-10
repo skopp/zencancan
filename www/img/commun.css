@@ -48,8 +48,8 @@ overflow:auto;
 
 
 #box_add_flux {
-background-color:#F4F2EE;
-border-bottom:1px solid #DBD5CD;
+background-color:#F8F8F8;
+border-bottom:1px solid #E6E6E6;
 padding:4px 0 4px 300px;
 height:64px;
 }
@@ -83,16 +83,33 @@ padding:10px;
 }
 
 
+.width_min {width:600px;}
+
 .col {clear:both;overflow:auto;margin:2px 0 2px 0;}
 
-.item_content {width:600px;position:relative;}
+.item_content {position:relative;}
 .item_content img {width:auto;}
 
-.item_wall {width:600px;position:relative;border-bottom:1px dotted #DBD5CD;padding:8px 0 8px 0;}
+.item_wall {position:relative;border-bottom:1px dotted #E6E6E6;padding:8px 0 8px 0;}
 .item_wall  h3 {margin:0 0 8px 0;padding:0;font-size:100%;}
 
-.box_col {margin:12px 0 12px 0;height:1%;overflow:auto;width:590px;}
+.box_suiv_prec {
+padding:6px 0 6px 0;
+margin:6px 0 6px 0;
+height:1%;
+overflow:auto;
+border-top:1px dotted #E6E6E6;
+border-bottom:1px dotted #E6E6E6;
+}
+.box_suiv_prec a {color:#959595;}
+.box_suiv_prec a:hover {color:#959595;}
 
+.box_suiv_prec .prec {float:left;width:32%;margin:1px;display:block;text-align:left;}
+.box_suiv_prec .milieu {float:left;width:33%;text-align:center;margin:2px;}
+.box_suiv_prec .suiv {float:right;width:32%;margin:1px;display:block;text-align:right;}
+
+.prec a {background:url(commun/fleche_prec.png) left no-repeat;padding-left:10px;}
+.suiv a {background:url(commun/fleche_suiv.png) right no-repeat;padding-right:10px;}
 
 #footer {
 background-color:#000;;
@@ -114,7 +131,7 @@ position:relative;
 .box .haut h2 {color:#000;font-size:120%;margin:10px 0 10px 0;font-family:arial, helvetica, no-serif;}
 .box .cont a:hover {}
 
-#colonne .box .haut h2 {color:#B0B0B0;border-bottom:1px solid #DBD5CD;padding-bottom:6px;margin-bottom:6px;}
+#colonne .box .haut h2 {color:#B0B0B0;border-bottom:1px solid #E6E6E6;padding-bottom:6px;margin-bottom:6px;}
 #colonne .box .cont {line-height:1.6em;}
 
 
@@ -152,10 +169,10 @@ table tr:hover {background-color:#FCFBEE;}
 form
 */
 
-.ff, .box_deco {border:1px solid #DBD5CD;padding:10px;background-color:#F4F2EE;margin:10px 0 10px 0}
+.ff, .box_deco {border:1px solid #E6E6E6;padding:10px;background-color:#F8F8F8;margin:10px 0 10px 0}
 
 form label {width:200px;display:inline-block;margin:2px;padding:4px;vertical-align:top;}
-input, textarea, select {padding:3px;border:1px solid #DBD5CD;}
+input, textarea, select {padding:3px;border:1px solid #E6E6E6;}
 input:focus, textarea, select {border:1px solid #2C6DCE;}
 
 textarea {font-family:verdana, helvetica, arial, sans-serif;font-size:90%;}
@@ -219,6 +236,7 @@ commun
 .align_center {text-align:center;}
 .align_left {text-align:left;}
 .align_justify {text-align:justify;}
+.forec_center {margin-left:auto;margin-right:auto;}
 
 .float_left {float:left;}
 .float_right {float:right;}

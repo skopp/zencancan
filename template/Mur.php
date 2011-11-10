@@ -24,7 +24,7 @@
 		
 			<?php endif;?>
 			<?php foreach($all_item as $item) : ?>
-				<div class='item_wall'>
+				<div class='item_wall width_min'>
 				
 				
 				<?php if ($item['link']) : ?>

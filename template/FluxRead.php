@@ -39,18 +39,22 @@
 		<div class="cont">
 		
 			
-			<div class='item_content'>
+			<div class='item_content width_min'>
 				<?php echo $content_html;?>
 			</div>
 		
 			<br/><br/>
-			 <form action='<?php $this->Path->path() ?>' method='post'>
+			
+			<div class="width_min align_center">
+			 <form class='force_center' action='<?php $this->Path->path() ?>' method='post'>
 				<?php $this->Connexion->displayTokenField(); ?>
 				<input type='hidden' name='path_info' value='/Feed/doAddMur' />
 				<input type='hidden' name='id_f' value='<?php hecho($id_f)?>' />				
 				<input type='hidden' name='num_feed' value='<?php hecho($num_feed)?>' />
-				<input type='submit' value='Publier sur mon mur' class="a_btn" />
+				<input type='submit' value='Publier sur mon mur' class="submit " />
 			</form>
+			</div>
+			
 			
 			<?php $this->render("FluxLink"); ?>
 			
