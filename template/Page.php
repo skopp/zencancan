@@ -23,7 +23,7 @@
 
 				<div id="menu_login">
 					
-					<div class="item_wall">
+					<div class="item_mur_site">
 						<?php if ($id_u) : ?>
 							<a href='<?php $this->Path->path("/Mur/index")?>'>Mon mur</a>|
 							<a class='actif' href='<?php $this->Path->path("/Feed/list")?>'>Mes sites</a>
@@ -62,7 +62,7 @@
 				<input type='text' size='50' name='url' />
 				
 				<input type='submit' value='Suivre' class="a_btn" />
-				<p class='petit'>Exemple: L'Equipe, Le Monde, Morandini, ...</p>
+				<p>Exemple: L'Equipe, Le Monde, Morandini, ...</p>
 				</form>
 				<?php else : ?>
 				<br/><br/><br/>

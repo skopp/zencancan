@@ -42,7 +42,7 @@ overflow:auto;
 #menu_login a .actif {font-weight:bold;color:yellow;}
 #menu_login a:hover {text-decoration:underline;}
 
-#menu_login .item_wall {float:left;}
+#menu_login .item_mur_site {float:left;}
 #menu_login .item_login {float:right;}
 
 
@@ -87,6 +87,9 @@ padding:10px;
 
 .item_content {width:600px;position:relative;}
 .item_content img {width:auto;}
+
+.item_wall {width:600px;position:relative;border-bottom:1px dotted #DBD5CD;padding:8px 0 8px 0;}
+.item_wall  h3 {margin:0 0 8px 0;padding:0;font-size:100%;}
 
 .box_col {margin:12px 0 12px 0;height:1%;overflow:auto;width:590px;}
 .box_col a {text-decoration:underline;}
