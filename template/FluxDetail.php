@@ -1,6 +1,6 @@
 <div id="colonne">
 	<div class="breadcrumbs">
-		<a class="a_btn_nav" href='<?php $this->Path->path() ?>'>&laquo; Revenir a la liste des sites</a>
+		<a class="a_btn_nav" href='<?php $this->Path->path() ?>'>&laquo; Revenir &agrave; la liste des sites</a>
 	</div>
 	<?php $this->render("FluxGestion"); ?>
 </div><!-- fin colonne -->

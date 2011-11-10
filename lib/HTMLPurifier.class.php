@@ -38,7 +38,7 @@ class HTMLPurifier {
 				"div" => array("style"),
 		);
 		
-		$this->emptyTagToSupress = array("p","span","div","pre");
+		$this->emptyTagToSupress = array("p","span","div","pre","em","strong");
 	}
 	
 	public function setBaseLink($baseLink){

@@ -3,7 +3,9 @@
 		<a class='a_btn_nav' href='<?php $this->Path->path() ?>'>&laquo; Revenir &agrave; la liste des sites</a>
 	</div>
 	<div class="box">
-		<div class="haut"><h2><?php hecho($rssInfo['title']) ?></h2></div>
+		<div class="haut"><h2>
+		<a href='<?php $this->Path->path("/Feed/detail/$id_f");?>' >		
+<?php hecho($rssInfo['title']) ?></a></h2></div>
 		<div class="cont">
 			<ul class="ul_lien">
 				<?php foreach($rssInfo['item'] as $i => $itemInfo) : ?>
@@ -25,6 +27,8 @@
 <div id="contenu">
 <?php $this->LastMessage->display()?>
 
+<?php $this->render("FluxLink"); ?>
+
 	<div class="box">
 		<div class="haut">
 		<h2><?php hecho($resultItem['title'])?>
@@ -34,16 +38,7 @@
 		
 		<div class="cont">
 		
-			<div class="box_col">
-				<p class='float_left'>
-				<a href='<?php $this->Path->path("/Feed/detail/$id_f");?>' >&laquo; Revenir &agrave; la liste des articles</a>
-				</p>
-				<p class='float_right'>
-				<?php if ($resultItem['link']) : ?>
-					<a href='<?php echo $resultItem['link'] ?>' target='_blank'>Lire l'article original &raquo;</a>
-				<?php endif;?>
-				</p>
-			</div>
+			
 			<div class='item_content'>
 				<?php echo $content_html;?>
 			</div>
@@ -56,6 +51,10 @@
 				<input type='hidden' name='num_feed' value='<?php hecho($num_feed)?>' />
 				<input type='submit' value='Publier sur mon mur' class="a_btn" />
 			</form>
+			
+			<?php $this->render("FluxLink"); ?>
+			
+			
 				<?php 
 			if ($rejected_tag || $rejected_attributes) : ?>
 				<?php if (! $isAdmin) : ?><!--<?php endif; ?>
@@ -74,6 +73,12 @@
 				<?php if (! $isAdmin) : ?> -->	<?php endif;?>
 			<?php endif;?>
 			</div>			
+			
+			
+			
 			<div class="bas"></div>	
 		</div>
 	</div>
+	
+	
+	
