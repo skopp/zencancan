@@ -100,8 +100,10 @@ height:1%;
 overflow:auto;
 border-top:1px dotted #E6E6E6;
 border-bottom:1px dotted #E6E6E6;
+font-weight:bold;
+font-size:86%;
 }
-.box_suiv_prec a {color:#959595;}
+.box_suiv_prec a {color:#FF7901;}
 .box_suiv_prec a:hover {color:#959595;}
 
 .box_suiv_prec .prec {float:left;width:32%;margin:1px;display:block;text-align:left;}
