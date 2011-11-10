@@ -47,9 +47,19 @@
 			<div class='item_content'>
 				<?php echo $content_html;?>
 			</div>
-			<?php 
+		
+			<br/><br/>
+			 <form action='<?php $this->Path->path() ?>' method='post'>
+				<?php $this->Connexion->displayTokenField(); ?>
+				<input type='hidden' name='path_info' value='/Feed/doAddMur' />
+				<input type='hidden' name='id_f' value='<?php hecho($id_f)?>' />				
+				<input type='hidden' name='num_feed' value='<?php hecho($num_feed)?>' />
+				<input type='submit' value='Publier sur mon mur' class="a_btn" />
+			</form>
+				<?php 
 			if ($rejected_tag || $rejected_attributes) : ?>
-				<?php if (! $isAdmin) : ?><!--<?php endif; ?> 
+				<?php if (! $isAdmin) : ?><!--<?php endif; ?>
+					<br/><br/> 
 					<div>Le document a été purifié de la manière suivante :
 					<?php if ($rejected_tag) : ?>
 						Les balises suivantes ont été rejeté : 
@@ -63,15 +73,6 @@
 					</div>  
 				<?php if (! $isAdmin) : ?> -->	<?php endif;?>
 			<?php endif;?>
-			<br/><br/>
-			 <form action='<?php $this->Path->path() ?>' method='post'>
-				<?php $this->Connexion->displayTokenField(); ?>
-				<input type='hidden' name='path_info' value='/Feed/doAddMur' />
-				<input type='hidden' name='id_f' value='<?php hecho($id_f)?>' />				
-				<input type='hidden' name='num_feed' value='<?php hecho($num_feed)?>' />
-				<input type='submit' value='Publier sur mon mur' class="a_btn" />
-			</form>
-			
 			</div>			
 			<div class="bas"></div>	
 		</div>

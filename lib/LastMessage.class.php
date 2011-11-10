@@ -37,6 +37,10 @@ class LastMessage {
 		$_SESSION['last_message'][2] = $data;
 	}
 	
+	public function setInput($name,$value){
+		$this->lastMessage[2][$name] = $value;
+	}
+	
 	public function saveLastInput(){
 		$this->setLastInput($this->lastMessage[2]);
 	}

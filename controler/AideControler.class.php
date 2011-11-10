@@ -7,4 +7,9 @@ class AideControler extends ZenCancanControler {
 		$this->renderDefault("");
 	}
 	
+	public function indexAction(){
+		$this->Gabarit->template_milieu = "Aide";
+		$this->renderDefault("");
+	}
+	
 }

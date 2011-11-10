@@ -34,7 +34,7 @@
 							Bienvenue <span class='nom_user'><?php echo $namedAccount ?></span> |
 							<a href='<?php $this->Path->path("/Param/index")?>'>Param&egrave;tres</a> |
 							<a href='<?php $this->Path->path("/Connexion/doLogout")?>'>D&eacute;connexion</a> | 
-							<a href='<?php $this->Path->path("/Aide/presentation")?>'>Aide</a> 
+							<a href='<?php $this->Path->path("/Aide/index")?>'>Aide</a> 
 								<?php if ($isAdmin) : ?>
 									| <a href='<?php $this->Path->path("/Param/admin")?>'>Admin</a> 
 								<?php endif;?>

@@ -3,7 +3,10 @@ class ContactControler extends ZenCancanControler {
 	
 	
 	
-	public function indexAction(){
+	public function indexAction($id_f = false){
+		if ($id_f){
+			$this->LastMessage->setInput("sujet","Problème sur le flux #$id_f");
+		}
 		$this->Gabarit->template_milieu = "Contact";
 		$this->renderDefault();
 	}
@@ -16,7 +19,7 @@ class ContactControler extends ZenCancanControler {
 
 		
 		if (! $email){
-			$this->LastMessage->setLastError("Vous devez spécifié un email");
+			$this->LastMessage->setLastError("Vous devez indiqué un email");
 			$this->redirect("/Contact/index");
 		}
 

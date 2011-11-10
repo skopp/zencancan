@@ -26,8 +26,11 @@
 		
 		<?php if ($isAdmin) : ?>
 		<a  class="a_btn" href='<?php $this->Path->path("/Feed/forceReload/$id_f")?>'>Acualiser</a>
+		<br/>
 		<?php endif;?>
-		
+		<?php if ($isAdmin) : ?>
+		<a  class="a_btn" href='<?php $this->Path->path("/Contact/index/$id_f")?>'>Signaler un problème</a>
+		<?php endif;?>
 		</div>
 		<div class="bas"></div>				
 		</div>
