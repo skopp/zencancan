@@ -23,6 +23,7 @@ body  > #container {height: auto; min-height: 100%;}
 
 p {margin:2px 0 2px 0;}
 h1 {display:none;}
+h3 {margin:0;padding:0;}
 a {color:#2C6DCE;text-decoration:none;}
 a:hover {text-decoration:underline;}
 
@@ -174,6 +175,8 @@ form
 
 .ff, .box_deco {border:1px solid #E6E6E6;padding:10px;background-color:#F8F8F8;margin:10px 0 10px 0}
 
+.ff span {font-weight:bold;font-size:90%;}
+
 form label {width:200px;display:inline-block;margin:2px;padding:4px;vertical-align:top;}
 input, textarea, select {padding:3px;border:1px solid #E6E6E6;}
 input:focus, textarea, select {border:1px solid #2C6DCE;}
@@ -188,7 +191,7 @@ border-radius: 4px;
 padding:4px;
 cursor:pointer;
 text-transform:uppercase;
-font-size:90%;
+
 font-weight:bold;
 text-decoration:none;
 color:#ffffff;
@@ -220,6 +223,7 @@ display:block;
 .submit:hover, .a_btn:hover {background-image:none;background-color:#B1B1B1;}
 
 #colonne .submit, #colonne .a_btn {
+line-height:1.6em;
 padding:2px;
 font-size:80%;
 margin:4px 0 4px 0;
