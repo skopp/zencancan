@@ -177,6 +177,7 @@ background:url(commun/back-btn.png) top left repeat-x #536E76;
 }
 
 .a_btn_nav {
+text-transform:none;
 font-weight:normal;
 background-image:none;
 background-color:#F3F7FD;
