@@ -59,14 +59,14 @@
 			if ($rejected_tag || $rejected_attributes) : ?>
 				<?php if (! $isAdmin) : ?><!--<?php endif; ?>
 					<br/><br/> 
-					<div>Le document a été purifié de la manière suivante :
+					<div>Le document a &eacute;t&eacute; purifi&eacute; de la mani&egrave;re suivante :
 					<?php if ($rejected_tag) : ?>
-						Les balises suivantes ont été rejeté : 
+						Les balises suivantes ont &eacute;&eacute; rejet&eacute; : 
 						<?php echo implode(",\n",$rejected_tag)?>
 					<?php endif;?>
 					
 					<?php if ($rejected_attributes) : ?>
-						Les attributs suivantes ont été rejeté : 
+						Les attributs suivantes ont &eacute;t&eacute; rejet&eacute; : 
 						<?php echo implode(",\n",$rejected_attributes)?>
 					<?php endif;?>
 					</div>  
