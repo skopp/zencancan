@@ -7,16 +7,17 @@
 		<a href='<?php $this->Path->path("/Feed/detail/$id_f");?>' >		
 <?php hecho($rssInfo['title']) ?></a></h2></div>
 		<div class="cont">
-			<ul class="ul_lien">
+			<ul class="ul_liste_article">
 				<?php foreach($rssInfo['item'] as $i => $itemInfo) : ?>
 					<li>
-						<div class="discret"><?php echo $this->FancyDate->get($itemInfo['pubDate'])?></div>
+						<p><?php echo $this->FancyDate->get($itemInfo['pubDate'])?></p>
 						<a href='<?php $this->Path->path("/Feed/read/$id_f/$i")?>'  title='<?php  echo get_link_title($itemInfo['content']?:$itemInfo['description']) ?>'>
 							<?php hecho(strip_tags($itemInfo['title'])) ?>
 						</a>
 					</li>
 				<?php endforeach; ?>
 			</ul>
+			<div class="clear"></div>
 		</div>
 		<div class="bas"></div>				
 	</div>

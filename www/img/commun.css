@@ -255,6 +255,11 @@ commun
 .ul_lien li {}
 .ul_lien li a {color:#2C6DCE;display:block;padding:4px;}
 
+.ul_liste_article {margin:0;padding:0;list-style-type:none;font-size:86%;}
+.ul_liste_article li {clear:both;line-height:1.4em;border-bottom:1px dotted #E6E6E6;}
+.ul_liste_article li p {color:#9F9F9F;float:left;width:58px;line-height:1.1em;padding:4px 4px 4px 0;text-align:right;}
+.ul_liste_article li a {float:right;width:216px;display:block;padding:4px 0 4px 0;text-align:justify;}
+
 #colonne .ul_lien li a:hover {background-color:#FCFBEE;}
 #colonne hr {border:0;height:1px;border-bottom:1px solid #F8F2EC;}
 
