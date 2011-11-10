@@ -26,17 +26,20 @@
 			<?php foreach($all_item as $item) : ?>
 				<div class='item_wall'>
 				
-				<p class="li_date"><?php echo $this->FancyDate->get($item['date'])?></p>
+				
 				<?php if ($item['link']) : ?>
 					<h3><a href='<?php hecho($item['link'])?>'><?php hecho($item['title'])?></a></h3>
 				<?php else : ?>
 					<h3><?php hecho($item['title'])?></h3>
 				<?php endif;?>
+				
+				
 					<?php echo $item['content']; ?>
-					
-					
-					<?php if ($this->Connexion->isConnected()) : ?>
-						<p class="align_right"><a href='<?php $this->Path->path("/Mur/doDelete/{$item['id_m']}");?>'>Supprimer</a></p>
+						<div class="col">
+						<p class="float_left discret"><?php echo $this->FancyDate->get($item['date'])?></p>
+						<?php if ($this->Connexion->isConnected()) : ?>
+						<p class="float_right"><a class="discret" href='<?php $this->Path->path("/Mur/doDelete/{$item['id_m']}");?>'>Supprimer</a></p>
+						</div>
 					<?php endif;?>
 
 				</div>

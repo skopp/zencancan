@@ -23,8 +23,8 @@ body  > #container {height: auto; min-height: 100%;}
 
 p {margin:2px 0 2px 0;}
 h1 {display:none;}
-a {color:#2C6DCE;}
-a:hover {text-decoration:none;}
+a {color:#2C6DCE;text-decoration:none;}
+a:hover {text-decoration:underline;}
 
 #container {
 min-height: 100%;
@@ -38,9 +38,9 @@ overflow:auto;
 #logo {float:left;position:absolute;top:34px;margin-left:12px;}
 #logo img {border:0;}
 #menu_login {padding-left:14px;color:#E2E2E2;}
-#menu_login a {margin:0 4px 0 4px;color:#E2E2E2;text-decoration:none;}
+#menu_login a {margin:0 4px 0 4px;color:#E2E2E2;}
 #menu_login a .actif {font-weight:bold;color:yellow;}
-#menu_login a:hover {text-decoration:underline;}
+#menu_login a:hover {}
 
 #menu_login .item_mur_site {float:left;}
 #menu_login .item_login {float:right;}
@@ -83,7 +83,7 @@ padding:10px;
 }
 
 
-
+.col {clear:both;overflow:auto;margin:2px 0 2px 0;}
 
 .item_content {width:600px;position:relative;}
 .item_content img {width:auto;}
@@ -92,8 +92,7 @@ padding:10px;
 .item_wall  h3 {margin:0 0 8px 0;padding:0;font-size:100%;}
 
 .box_col {margin:12px 0 12px 0;height:1%;overflow:auto;width:590px;}
-.box_col a {text-decoration:underline;}
-.box_col a:hover {text-decoration:none;}
+
 
 #footer {
 background-color:#000;;
@@ -113,7 +112,7 @@ position:relative;
 
 .box {margin-bottom:20px;}
 .box .haut h2 {color:#000;font-size:120%;margin:10px 0 10px 0;font-family:arial, helvetica, no-serif;}
-.box .cont a:hover {text-decoration:none;}
+.box .cont a:hover {}
 
 #colonne .box .haut h2 {color:#B0B0B0;border-bottom:1px solid #DBD5CD;padding-bottom:6px;margin-bottom:6px;}
 #colonne .box .cont {line-height:1.6em;}
@@ -183,7 +182,6 @@ background-image:none;
 background-color:#F3F7FD;
 border:1px solid #E0EAF8;
 color:#2C6DCE;
-text-transform:none;
 }
 
 .a_btn_nav:hover {
@@ -228,13 +226,13 @@ commun
 
 .ul_lien {margin:0;padding:0;list-style-type: none;}
 .ul_lien li {}
-.ul_lien li a {color:#2C6DCE;display:block;padding:4px;text-decoration:none;}
+.ul_lien li a {color:#2C6DCE;display:block;padding:4px;}
 
 #colonne .ul_lien li a:hover {background-color:#FCFBEE;}
 #colonne hr {border:0;height:1px;border-bottom:1px solid #F8F2EC;}
 
 
-.li_date {
+.discret {
 font-size:80%;
 color:#B2B2B2;
 }
@@ -249,19 +247,16 @@ color:#B2B2B2;
 }
 
 .site a{
-	text-decoration: none;
 	color: #4D4D4D;
 }
 
 .lien a {
-	text-decoration: none;
 }
 
 
 
 
 .tag a {
-	text-decoration: none;
 }
 
 

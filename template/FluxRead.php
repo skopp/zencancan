@@ -8,7 +8,7 @@
 			<ul class="ul_lien">
 				<?php foreach($rssInfo['item'] as $i => $itemInfo) : ?>
 					<li>
-						<div class="li_date"><?php echo $this->FancyDate->get($itemInfo['pubDate'])?></div>
+						<div class="discret"><?php echo $this->FancyDate->get($itemInfo['pubDate'])?></div>
 						<a href='<?php $this->Path->path("/Feed/read/$id_f/$i")?>'  title='<?php  echo get_link_title($itemInfo['content']?:$itemInfo['description']) ?>'>
 							<?php hecho(strip_tags($itemInfo['title'])) ?>
 						</a>
