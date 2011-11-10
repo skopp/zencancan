@@ -126,7 +126,7 @@ class FeedControler extends ZenCancanControler {
 		
 		$content_html = $resultItem['content']?:$resultItem['description'];
 		
-		//$content_html = $this->HTMLNormalizer->get($content_html,$rssInfo['link']);
+		$this->HTMLPurifier->setBaseLink($rssInfo['link']);
 		$content_html = $this->HTMLPurifier->purify($content_html);
 		
 		$resultItem['content'] = $content_html;
@@ -146,6 +146,8 @@ class FeedControler extends ZenCancanControler {
 		$this->addRSS($info['title'],$info['url']);
 		
 		$rssInfo = $this->getFeedInfo($id_f,$i);
+		
+		
 		$resultItem = $this->getItem($rssInfo,$i);
 			
 		$this->Gabarit->rejected_tag = $this->HTMLPurifier->getRejectedTag();

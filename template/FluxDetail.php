@@ -24,7 +24,7 @@
 			<td class='date' width='80'><?php echo $this->FancyDate->get($flux['pubDate'])?></td>
 			<td class='lien'>
 				<a href='<?php $this->Path->path("/Feed/read/$id_f/$i") ?>' title='<?php  echo get_link_title($flux['content']?:$flux['description']) ?>'>
-					<?php echo strip_tags($flux['title']) ?>
+					<?php hecho(strip_tags($flux['title'])) ?>
 				</a>
 				<a href='<?php hecho($flux['link'])?>' target='_blank' title="Ouvrir l'article original">
 					&raquo;

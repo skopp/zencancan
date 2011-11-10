@@ -6,6 +6,7 @@ class HTMLPurifier {
 	private $baseLink;
 	private $allowTag;
 	private $allowAttr;
+	private $emptyTagToSupress;
 	
 	private $rejectedTag = array();
 	private $rejectedAttributes = array();
@@ -24,14 +25,20 @@ class HTMLPurifier {
 		
 						);
 		$this->allowAttr = array(
-				"a" => array("href","hreflang","title"),
-				"img" => array("src","alt","title","width","height","border","ismap"),
+				"a" => array("href","hreflang","title","style"),
+				"img" => array("src","alt","title","width","height","border"),
 				"plusone" => array("size","count"),
 				"table" => array("border"),
 				"td" => array("valign","colspan"),
 				"tr" => array("valign","colspan"),
 				"abbr" => array("title"),
+				"hr" => array("noshade","style"),
+				"p" => array("align","style"),
+				"span" => array("style"),
+				"div" => array("style"),
 		);
+		
+		$this->emptyTagToSupress = array("p","span","div","pre");
 	}
 	
 	public function setBaseLink($baseLink){
@@ -56,20 +63,14 @@ class HTMLPurifier {
 		$domDocument = new DomDocument();
 		if (! @ $domDocument->loadXML($data)){
 			@ $domDocument->loadHTML('<?xml encoding="UTF-8">'.$data);
-			/*echo $data;
-			exit;
-			/*echo $data;
-			exit;
-			$errors = libxml_get_last_error();
-			$this->lastError = "Oops... le document n'a pas pu être analysé : ".($errors->message);
-			trigger_error($this->lastError);
-			return "<p>" . $this->lastError . "</p>" . htmlentities($data,ENT_QUOTES,"UTF-8");*/
 		}
 			
 		$body = $domDocument->getElementsByTagName("document");		
 		$body = $body->item(0);
 		$this->purifyNode($body,$domDocument);
-		
+		$this->fixImg($domDocument);
+		$this->fixEmptyTag($domDocument);
+		$this->fixLink($domDocument);
 		$result = "";
 		foreach($body->childNodes as $child){
 			$result .= $domDocument->saveXML($child);
@@ -78,6 +79,61 @@ class HTMLPurifier {
 		$result = preg_replace("#&amp;#","&",$result);
 		return $result;	
 	}
+	
+	private function fixLink(DomDocument $domDocument){
+		foreach($domDocument->getElementsByTagName('a') as $element) {
+			$this->fixSrc($element,"href");
+			$element->setAttribute('target',"_blank");
+		}
+	}
+	
+	private function fixSrc(DomNode $element,$attrname){
+		$src = $element->getAttribute($attrname);		
+		$src = preg_replace("#&amp;#","&",$src);
+		$src = preg_replace("# #","%20",$src);
+		
+		$src = preg_replace("#&#","&amp;",$src);
+		$element->setAttribute($attrname,$src);
+	}
+	
+	
+	private function fixImg(DomDocument $domDocument){
+		$rss_url = parse_url($this->baseLink );
+		
+		if (empty($rss_url['scheme'])){
+			return ;
+		}
+		$adresse = $rss_url['scheme'] ."://". $rss_url['host']."/";
+		
+		foreach($domDocument->getElementsByTagName('img') as $element) {
+			$src = $element->getAttribute('src');
+			$url_tab = parse_url($src);
+			if (empty($url_tab['host'])){				
+				$new_url = $adresse . $src;
+				$element->setAttribute('src',$new_url);
+			}	
+			if ( ! $element->getAttribute('alt')){
+				$element->setAttribute('alt',"pas d'alternative");
+			}
+			$this->fixSrc($element,'src');
+		} 
+	}
+	
+	public function fixEmptyTag(DomDocument $domDocument){
+		foreach($this->emptyTagToSupress as $tag_name){
+			$to_remove = array();
+			foreach($domDocument->getElementsByTagName($tag_name) as $element) {
+				if ($element->nodeValue == "" && $element->childNodes->length == 0){
+					$to_remove[] = $element;
+				}
+			}
+			foreach($to_remove as $element){
+				$comment = $domDocument->createComment("removed emtpy $tag_name");
+				$element->parentNode->replaceChild($comment,$element);
+			}
+		}
+	}
+	
 	
 	private function purifyNode(DomNode $node,DomDocument $domDocument){
 		$to_remove = array();		

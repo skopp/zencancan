@@ -39,7 +39,9 @@
 				<a href='<?php $this->Path->path("/Feed/detail/$id_f");?>' >&laquo; Revenir &agrave; la liste des articles</a>
 				</p>
 				<p class='float_right'>
-				<a href='<?php echo $resultItem['link'] ?>' target='_blank'>Lire l'article original &raquo;</a>
+				<?php if ($resultItem['link']) : ?>
+					<a href='<?php echo $resultItem['link'] ?>' target='_blank'>Lire l'article original &raquo;</a>
+				<?php endif;?>
 				</p>
 			</div>
 			<div class='item_content'>
@@ -61,6 +63,7 @@
 					</div>  
 				<?php if (! $isAdmin) : ?> -->	<?php endif;?>
 			<?php endif;?>
+			<br/><br/>
 			 <form action='<?php $this->Path->path() ?>' method='post'>
 				<?php $this->Connexion->displayTokenField(); ?>
 				<input type='hidden' name='path_info' value='/Feed/doAddMur' />

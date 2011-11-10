@@ -10,6 +10,12 @@ class ZenCancanFrontControler extends FrontControler {
 	}
 		
 	public function go(){
+		if ($this->Authentification->getNamedAccount() && isset($_COOKIE['remember_zencancan'])) {
+			$id_u = $this->UtilisateurSQL->verifRemember($this->Authentification->getNamedAccount(),$_COOKIE['remember_zencancan']);
+			if ($id_u){
+				$this->Connexion->login($id_u);
+			}
+		}
 		if ($this->Authentification->getNamedAccount()){
 			if ($this->Connexion->isConnected()){	
 				$this->objectInstancier->defaultControler = "Feed";

@@ -27,7 +27,7 @@ class FeedParser {
 			$feedInfo['id_item'] = $feedInfo['item'][0]['id_item'];
 			$feedInfo['item_title'] =  $feedInfo['item'][0]['title'];
 			$feedInfo['item_link'] =  $feedInfo['item'][0]['link'];		
-			$feedInfo['item_content'] =  $feedInfo['item'][0]['content'];	
+			$feedInfo['item_content'] =  $feedInfo['item'][0]['content'];
 			if (! $feedInfo['item_content']){
 				$feedInfo['item_content'] =  $feedInfo['item'][0]['description'];
 			}
@@ -208,11 +208,10 @@ class FeedParser {
   	}
   	
   	private function normalizeText($text){
-  		//copier/coller depuis MS Word ...
-  		//$text = str_replace("?", "'",$text);
-  		
+  		$text = strval($text);
+  		$text = strtr($text,array("&#8217;" => "'"));
+  		$text = trim($text);
   		return strval($text);
-  		//return html_entity_decode(strval($text),ENT_QUOTES,"UTF-8");
   	}
   	
 }

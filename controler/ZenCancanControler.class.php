@@ -22,15 +22,7 @@ class ZenCancanControler extends Controler {
 	public function verifConnected(){		
 		$id_u = $this->Connexion->getId();
 		if (! $id_u){
-			if ($this->Authentification->getNamedAccount() && isset($_COOKIE['remember_zencancan'])) {
-				$id_u = $this->UtilisateurSQL->verifRemember($this->Authentification->getNamedAccount(),$_COOKIE['remember_zencancan']);
-			}
-			if ($id_u){
-				$this->Connexion->login($id_u);
-			
-			} else {			
-				$this->redirect("/Connexion/login");
-			}
+			$this->redirect("/Connexion/login");
 		}
 		return $id_u;
 	}
