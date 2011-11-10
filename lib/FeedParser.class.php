@@ -210,6 +210,7 @@ class FeedParser {
   	private function normalizeText($text){
   		$text = strval($text);
   		$text = strtr($text,array("&#8217;" => "'"));
+  		$text = strtr($text,array("&#8230;" => "…"));
   		$text = trim($text);
   		return strval($text);
   	}
