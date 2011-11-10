@@ -90,4 +90,8 @@ class UtilisateurSQL extends SQL {
 		return $this->queryOne("SELECT * FROM compte WHERE id_u = ?",$id_u);	
 	}
 	
+	public function getAll($offset){
+		return  $this->query("SELECT * FROM compte ORDER BY date DESC");		
+	}
+	
 }

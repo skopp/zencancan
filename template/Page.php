@@ -36,7 +36,7 @@
 							<a href='<?php $this->Path->path("/Connexion/doLogout")?>'>D&eacute;connexion</a> | 
 							<a href='<?php $this->Path->path("/Aide/index")?>'>Aide</a> 
 								<?php if ($isAdmin) : ?>
-									| <a href='<?php $this->Path->path("/Param/admin")?>'>Admin</a> 
+									| <a href='<?php $this->Path->path("/Admin/flux")?>'>Admin</a> 
 								<?php endif;?>
 						<?php else : ?>
 							<a  href='<?php $this->Path->path('/Connexion/login');?>'>Se connecter</a>

@@ -30,6 +30,19 @@
 			</div>
 			<div class="bas"></div>				
 		</div>
+		<?php if ($isAdmin) : ?>
+			<div class="box">
+				<div class="haut"><h2>Admin</h2></div>
+				<div class="cont">
+				
+				<ul class="ul_lien">
+				<li><a href="<?php $this->Path->path("/Admin/flux")?>">Flux</a></li>
+				<li><a href="<?php $this->Path->path("/Admin/userList")?>">Utilisateurs</a></li>
+				</ul>
+				</div>
+				<div class="bas"></div>				
+			</div>
+		<?php endif;?>
 		
 		
 </div><!-- fin colonne -->

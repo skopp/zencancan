@@ -11,18 +11,6 @@ class ParamControler extends ZenCancanControler {
 		$this->renderDefault();
 	}
 	
-	public function adminAction(){		
-		$id = $this->verifConnected();
-		if ( ! $this->UtilisateurSQL->isAdmin($id)){
-			header("Location: index.php");
-			exit;
-		}
-		$this->Gabarit->infoFeed = $this->FeedSQL->feedInfo();
-		$this->Gabarit->template_milieu = "Admin";
-		
-		$this->renderDefault();
-	}
-	
 	public function aideAction(){
 		$this->Gabarit->template_milieu = "Aide";
 		$this->renderDefault();

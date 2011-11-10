@@ -27,6 +27,15 @@ class ZenCancanControler extends Controler {
 		return $id_u;
 	}
 	
+	public function verifAdmin(){
+		$id_u = $this->verifConnected();
+		if ( ! $this->UtilisateurSQL->isAdmin($id_u)){
+			$this->redirect();
+		}
+		return $id_u;
+	}
+	
+	
 	public function redirectWithUsername($username = "",$to=""){		
 		$location = $this->Path->getPathWithUsername($username,$to);
 		header("Location: $location");
