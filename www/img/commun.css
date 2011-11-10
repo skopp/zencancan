@@ -87,7 +87,7 @@ padding:10px;
 
 .col {clear:both;overflow:auto;margin:2px 0 2px 0;}
 
-.item_content {position:relative;}
+.item_content {position:relative;line-height:1.8em;text-align:justify;}
 .item_content img {width:auto;}
 
 .item_wall {position:relative;border-bottom:1px dotted #E6E6E6;padding:8px 0 8px 0;}
