@@ -187,6 +187,7 @@ color:#2C6DCE;
 
 .a_btn_nav:hover {
 background-color: #EEF4FC;
+text-decoration:none;
 }
 
 #colonne .a_btn_nav {
@@ -205,6 +206,10 @@ margin:4px 0 4px 0;
 }
 
 .box .cont a.a_btn {color:#ffffff;}
+
+.a_deco {text-decoration:underline;}
+.a_deco:hover {text-decoration:none;}
+
 
 /*
 commun
