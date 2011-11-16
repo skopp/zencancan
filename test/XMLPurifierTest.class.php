@@ -8,4 +8,5 @@ class XMLPurifierTest extends UnitTestCase {
 	public function test1(){
 		
 	}
+	
 }
