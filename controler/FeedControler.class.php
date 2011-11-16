@@ -152,7 +152,7 @@ class FeedControler extends ZenCancanControler {
 			
 		$this->Gabarit->rejected_tag = $this->HTMLPurifier->getRejectedTag();
 		$this->Gabarit->rejected_attributes = $this->HTMLPurifier->getRejectedAttributes();
-		
+		$this->Gabarit->rejected_style = $this->HTMLPurifier->getRejectedStyle();
 		$this->Gabarit->content_html = $resultItem['content'];
 		$this->Gabarit->resultItem = $resultItem;
 		$this->Gabarit->selected_item = $i;

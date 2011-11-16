@@ -10,10 +10,6 @@ $description = "";
 <head>
 <title><?php echo $title ?></title>
 <meta name="description" content="<?php echo $description ?>" />
-<meta name="keywords" content="création de site web, hébergement, référencement, accessibilité du web, formation, hébergement, audits et conseils" /> 
-<meta name="language" content="fr" />
-<meta name="author" content="Sigmalis" />
-<meta name="robots" content="index,follow" />
 
 <meta http-equiv="Content-Language" content="fr" />
 <meta http-equiv="content-type" content="text/html; charset=iso-8859-15"/>
@@ -34,7 +30,7 @@ $description = "";
 				<div id="menu">
 					<ul>
 						<li><a href="#">Connexion</a></li>
-						<li><a href="#">Créer un compte</a></li>
+						<li><a href="#">CrÃ©er un compte</a></li>
 					</ul>
 				</div>
 			</div>
@@ -53,12 +49,12 @@ $description = "";
 					<h2>Suivez facilement les sites que vous aimez.</h2>
 					<p>ZenCancan est une application web qui vous permet de suivre facilement les nouvelles publications d'un blog ou d'un site web</p>
 					
-					<a href="" class="big_btn">Créer un<br/>compte</a>
-					<a href="" class="big_btn">Connexion à<br/>votre compte</a>
+					<a href="" class="big_btn">CrÃ©er un<br/>compte</a>
+					<a href="" class="big_btn">Connexion Ã <br/>votre compte</a>
 					
 					
 					<div class="texte2 clear">
-						<h2>Une nouvelle façon de lire vos flux RSS</h2>
+						<h2>Une nouvelle faÃ§on de lire vos flux RSS</h2>
 						<ul>
 						<li>zenCancan affiche seulement le dernier article de chaque site que vous suivez.</li>
 						<li>zenCancan ne vous indiqueras jamais que vous n'avez pas lu un article ! C'est la partie zen de l'application.</li>
@@ -80,24 +76,24 @@ $description = "";
 			<div class="wrap">
 			
 			<div class="focus">
-			<p>Si vous utilisez souvent d'autres lecteurs de flux, vous avez remarqué que, tous comme pour le mail, il vous oblige à tous lire !</p>
-			<p>Vous être constamment sous le stress d'avoir tous vos flux à 0 nouvelles non lu !</p>
-			<p>La lecture de flux devant resté amusante et zen, vous ne verrez jamais sur zencancan l'outils vous dire que vous n'avez pas fait tel ou tel chose !</p>
+			<p>Si vous utilisez souvent d'autres lecteurs de flux, vous avez remarquÃ© que, tous comme pour le mail, il vous oblige Ã  tous lire !</p>
+			<p>Vous Ãªtre constamment sous le stress d'avoir tous vos flux Ã  0 nouvelles non lu !</p>
+			<p>La lecture de flux devant restÃ© amusante et zen, vous ne verrez jamais sur zencancan l'outils vous dire que vous n'avez pas fait tel ou tel chose !</p>
 			</div>
 
 			
 			<div class="bloc">
 				<h3>Support</h3>
-				<p>Malgré tous le soin apporté au développement, il reste et il restera sans doute tous le temps des problèmes.</p>
+				<p>MalgrÃ© tous le soin apportÃ© au dÃ©veloppement, il reste et il restera sans doute tous le temps des problÃšmes.</p>
 				<br/>
-				<p>Afin de nous aidez à améliorer notre produit, vous pouvez à tous moment nous contacter. (sauf si vous souhaitez voir intégrer une fonction de non-lu !)</p>
+				<p>Afin de nous aidez Ã  amÃ©liorer notre produit, vous pouvez Ã  tous moment nous contacter. (sauf si vous souhaitez voir intÃ©grer une fonction de non-lu !)</p>
 			</div>
 			
 			
 			<div class="bloc">
 				<h3>Libre et gratuit</h3>
-				<p>Bien que nous nous engageons à ne pas utiliser vos données (par exemple, nous ne vous demandons pas de nous fournir un email) vous n'êtes pas obligé de nous faire confiance sur ce point.</p>
-				<p>zenCancan est un logiciel libre, c'est à dire que vous pouvez télécharger son code source et l'installer sur votre machine, sur votre serveur, où bon vous semblera.</p>
+				<p>Bien que nous nous engageons Ã  ne pas utiliser vos donnÃ©es (par exemple, nous ne vous demandons pas de nous fournir un email) vous n'Ãªtes pas obligÃ© de nous faire confiance sur ce point.</p>
+				<p>zenCancan est un logiciel libre, c'est Ã  dire que vous pouvez tÃ©lÃ©charger son code source et l'installer sur votre machine, sur votre serveur, oÃ¹ bon vous semblera.</p>
 			</div>
 			
 		
@@ -110,11 +106,11 @@ $description = "";
 				
 				<div class="bloc">
 				<h3>Contactez-nous</h3>
-				<p>Si vous trouver que ce logiciel est original et bien concu, et si vous souhaitez développer une application web, vous pouvez nous contacter.</p>
+				<p>Si vous trouver que ce logiciel est original et bien concu, et si vous souhaitez dÃ©velopper une application web, vous pouvez nous contacter.</p>
 				</div>
 			
 				<div class="bottom_info">
-					<a href="#">mentions légales</a>&nbsp;|&nbsp;&copy;Sigmalis <?php echo  date('Y') ?>
+					<a href="#">mentions lÃ©gales</a>&nbsp;|&nbsp;&copy;Sigmalis <?php echo  date('Y') ?>
 				</div>
 			</div>
 		</div><!-- footer -->

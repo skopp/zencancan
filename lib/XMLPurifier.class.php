@@ -21,9 +21,8 @@ class XMLPurifier {
 		
 	private function tryLoad($content){		
 		
-		$xml = simplexml_load_string($content,"SimpleXMLElement",LIBXML_NOCDATA);
+		$xml = simplexml_load_string($content,"SimpleXMLElement",LIBXML_NOCDATA);		
 		if ( ! $xml){
-			
 			$tab_error = libxml_get_errors();
 			foreach($tab_error as $error){
 				if ($error->code == self::XML_ERR_UNDECLARED_ENTITY){
@@ -35,7 +34,7 @@ class XMLPurifier {
 			}
 			libxml_clear_errors() ;
 			return false;
-		} 
+		}
 		return $xml->asXML();	
 	}
 	
