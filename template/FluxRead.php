@@ -64,17 +64,26 @@
 			if ($rejected_tag || $rejected_attributes) : ?>
 				<?php if (! $isAdmin) : ?><!--<?php endif; ?>
 					<br/><br/> 
-					<div>Le document a &eacute;t&eacute; purifi&eacute; de la mani&egrave;re suivante :
+					Le document a &eacute;t&eacute; purifi&eacute; de la mani&egrave;re suivante :
 					<?php if ($rejected_tag) : ?>
-						Les balises suivantes ont &eacute;&eacute; rejet&eacute; : 
+						<div>Les balises suivantes ont &eacute;&eacute; rejet&eacute; : 
 						<?php echo implode(",\n",$rejected_tag)?>
+						</div>
 					<?php endif;?>
-					
 					<?php if ($rejected_attributes) : ?>
+						<div>
 						Les attributs suivantes ont &eacute;t&eacute; rejet&eacute; : 
 						<?php echo implode(",\n",$rejected_attributes)?>
+						</div>
 					<?php endif;?>
-					</div>  
+					
+					<?php if ($rejected_style) : ?>
+						<div>
+						Les éléments de style suivant ont &eacute;t&eacute; rejet&eacute; : 
+						<?php echo implode(",\n",$rejected_style)?>
+						</div>
+					<?php endif;?>
+					
 				<?php if (! $isAdmin) : ?> -->	<?php endif;?>
 			<?php endif;?>
 			</div>			

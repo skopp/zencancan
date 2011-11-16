@@ -10,6 +10,7 @@ class HTMLPurifier {
 	
 	private $rejectedTag = array();
 	private $rejectedAttributes = array();
+	private $rejectedStyle = array();
 	
 	private $domDocument;
 	
@@ -21,7 +22,7 @@ class HTMLPurifier {
 						"strong","del","ol","div","sup","pre","code","blockquote",
 						"table","tr","td",
 						"abbr","hr","small",
-						"col",
+						"col","b","i",
 		
 						);
 		$this->allowAttr = array(
@@ -38,6 +39,12 @@ class HTMLPurifier {
 				"div" => array("style"),
 		);
 		
+		$this->allowStyle = array("text-align", "margin-left", 
+			"margin-right", "color", "font-size","font-weight"
+			,"background-color", "line-height", "font-family", 
+		);
+		
+		
 		$this->emptyTagToSupress = array("p","span","div","pre","em","strong");
 	}
 	
@@ -51,6 +58,10 @@ class HTMLPurifier {
 	
 	public function getRejectedAttributes(){
 		return array_keys($this->rejectedAttributes);
+	}
+	
+	public function getRejectedStyle(){
+		return array_keys($this->rejectedStyle);
 	}
 	
 	public function purify($data){		
@@ -176,12 +187,35 @@ class HTMLPurifier {
 		$node->replaceChild($endNode,$child);	
 	}
 	
+	public function purifyStyle(DomElement $node){
+		$style = trim($node->getAttribute("style"));
+		$all = explode(";",$style);
+		
+		$style_authorized = "";
+		foreach($all as $element){
+			if ( ! trim($element)){
+				continue;
+			}
+			list($name,$value) = explode(":",$element);
+			$name=trim($name);
+			if (in_array($name,$this->allowStyle)){
+				$style_authorized .= "$name: $value; ";
+			} else {
+				$this->rejectedStyle[$name] = true;
+			}
+		}
+		$node->setAttribute("style",$style_authorized);
+	}
+	
 	
 	public function purifyAttribut(DOMElement $node){		
 		$attr2remove = array();
 		foreach ($node->attributes as $name => $value) {
 			if (isset($this->allowAttr[$node->nodeName])){
 				if (in_array($name,$this->allowAttr[$node->nodeName])){
+					if ($name == "style"){
+						$this->purifyStyle($node);
+					}
 					continue;
 				}
 			}
