@@ -6,11 +6,10 @@ require_once(__DIR__ . "/../lib/XMLPurifier.class.php");
 class XMLPurifierTest extends UnitTestCase {
 	
 	public function test1(){
-		throw new Exception("Not implemented exception");
+		$this->assertFalse(true);
 	}
 	
 	public function test2(){
-		throw new Exception("Pas non plus");
 	}
 	
 }
