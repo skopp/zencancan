@@ -20,7 +20,6 @@
 					<a href="<?php  $this->Path->path()?>"><img src="<?php $this->Path->echoRessourcePath("/img/commun/logo.png") ?>" alt="" /></a>
 				</div>
 				
-
 				<div id="menu_login">
 					
 					<div class="item_mur_site">
@@ -39,6 +38,7 @@
 									| <a href='<?php $this->Path->path("/Admin/flux")?>'>Admin</a> 
 								<?php endif;?>
 						<?php else : ?>
+							<a  href='<?php echo $this->Path->getPathWithUsername();?>'>Accueil</a>
 							<a  href='<?php $this->Path->path('/Connexion/login');?>'>Se connecter</a>
 							<a href='<?php echo $this->Path->getPathWithUsername("",'/Account/create');?>'>Cr&eacute;er un compte</a>
 						<?php endif;?>
