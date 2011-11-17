@@ -42,6 +42,14 @@ $objectInstancier->nbSigne = 7;
 $objectInstancier->revision_number = 100;
 $objectInstancier->timeout = 10;
 $objectInstancier->staticPath = STATIC_PATH;
+if (isset($presentation_page)){
+	$objectInstancier->presentation_page = $presentation_page;
+} 
+if (isset($mention_legal_content)){
+	$objectInstancier->mention_legal_content = $mention_legal_content;
+} else {
+	$objectInstancier->mention_legal_content = __DIR__ . "/mention_legal.txt";
+}
 
 
 

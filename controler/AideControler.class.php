@@ -3,8 +3,12 @@
 class AideControler extends ZenCancanControler {
 	
 	public function PresentationAction(){		
-		$this->Gabarit->template_milieu = "Presentation";
-		$this->renderDefault("");
+		if (isset($this->presentation_page)){
+			include($this->presentation_page);
+		} else {
+			$this->Gabarit->template_milieu = "Login";
+			$this->renderDefault("");
+		}
 	}
 	
 	public function indexAction(){

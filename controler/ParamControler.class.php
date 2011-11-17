@@ -17,6 +17,7 @@ class ParamControler extends ZenCancanControler {
 	}
 	
 	public function legalAction(){
+		$this->Gabarit->mention_legal_content = $this->mention_legal_content;
 		$this->Gabarit->template_milieu = "Legal";
 		$this->renderDefault();
 	}
