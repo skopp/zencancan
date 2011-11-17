@@ -23,9 +23,9 @@
 			<div class="cont">
 			
 			<ul class="ul_lien">
-			<li><a href="http://zenstore.zenprog.com/telechargement/zenCancan.tgz">T&eacute;lecharger</a></li>
-			<li><a href="http://source.zenprog.com/zencancan">Voir le code source</a></li>
-			<li><a href="<?php $this->Path->path("/Aide/presentation#licence")?>">Licence</a></li>
+			<li><a href="https://github.com/epommate/zencancan/tarball/master">T&eacute;lecharger</a></li>
+			<li><a href="https://github.com/epommate/zencancan" target='_blank'>Voir le code source</a></li>
+			<li><a href="<?php $this->Path->path("/Aide/licence")?>">Licence</a></li>
 			</ul>
 			</div>
 			<div class="bas"></div>				

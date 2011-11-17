@@ -7,13 +7,18 @@ class AideControler extends ZenCancanControler {
 			include($this->presentation_page);
 		} else {
 			$this->Gabarit->template_milieu = "Login";
-			$this->renderDefault("");
+			$this->renderDefault();
 		}
 	}
 	
 	public function indexAction(){
 		$this->Gabarit->template_milieu = "Aide";
-		$this->renderDefault("");
+		$this->renderDefault();
+	}
+	
+	public function licenceAction(){
+		$this->Gabarit->template_milieu = "Licence";
+		$this->renderDefault();
 	}
 	
 }
