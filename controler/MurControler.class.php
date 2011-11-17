@@ -26,7 +26,7 @@ class MurControler extends ZenCancanControler {
 		$name_account = $this->Authentification->getNamedAccount();
 		$all_item = $this->getAllItem($name_account);
 		$full_name = $this->Authentification->getFullAccountName();						
-		$rssCreator = new RSSCreator("zenCancan - flux $full_name","zenCancan - flux $full_name",   $this->Path->getPath("/Mur/index") );
+		$rssCreator = new RSSCreator("$full_name","$full_name",   $this->Path->getPath("/Mur/index") );
 		
 		foreach($all_item as $item){
 			$rssCreator->addItem($item['title'] ,$item['link'],$item['date'],$item['content']);

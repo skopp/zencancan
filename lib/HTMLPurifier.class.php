@@ -42,6 +42,7 @@ class HTMLPurifier {
 		$this->allowStyle = array("text-align", "margin-left", 
 			"margin-right", "color", "font-size","font-weight"
 			,"background-color", "line-height", "font-family", 
+			"margin", "height", "padding", "background", "border", "font", "float", "width", "text-decoration", 
 		);
 		
 		

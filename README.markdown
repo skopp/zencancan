@@ -17,15 +17,15 @@ ou une URL puisse suivre simplement des sites web en indiquant juste leur nom.
 
 zenCancan offre les fonctionnalités suivantes :
 
-*ajout d'un flux RSS via : l'url du flux, l'url d'une page HTML disposant d'une alternative RSS, un mot-clé dont
+* Ajout d'un flux RSS via : l'url du flux, l'url d'une page HTML disposant d'une alternative RSS, un mot-clé dont
 la recherche via google va afficher une page HTML disposant d'une alternative RSS ;
-*Liste des derniers items de l'ensemble des flux configurés trié par date ;
-*Affichage de tous les flux dans un flux RSS unique
-*Liste de tous les items présent sur le flux pour un flux données ;
-*suppresion de flux ;
-*Regroupement des flux via un mot-clé ;
-*Import/export des flux en OPML ;
-*Publication sur le "mur" de l'utilisateur de ces articles préférés
+* Liste des derniers items de l'ensemble des flux configurés trié par date ;
+* Affichage de tous les flux dans un flux RSS unique
+* Liste de tous les items présent sur le flux pour un flux données ;
+* Suppresion de flux ;
+* Regroupement des flux via un mot-clé ;
+* Import/export des flux en OPML ;
+* Publication sur le "mur" de l'utilisateur de ces articles préférés
 
 
 ## Licence
