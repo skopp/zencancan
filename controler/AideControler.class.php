@@ -3,7 +3,7 @@
 class AideControler extends ZenCancanControler {
 	
 	public function PresentationAction(){		
-		if (isset($this->presentation_page)){
+		if ($this->presentation_page){
 			include($this->presentation_page);
 		} else {
 			$this->Gabarit->template_milieu = "Login";
