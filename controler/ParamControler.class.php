@@ -1,7 +1,6 @@
 <?php
 class ParamControler extends ZenCancanControler {
 	
-	
 	public function indexAction(){
 		$id_u = $this->verifConnected();
 		$info = $this->UtilisateurSQL->getInfo($id_u);
@@ -72,15 +71,19 @@ class ParamControler extends ZenCancanControler {
 			$this->sortirToParam("Erreur lors de l'import du fichier : ". $_FILES['fichier_opml']['error']);		
 		}
 
-		$xml = simplexml_load_file($_FILES['fichier_opml']['tmp_name']);
-		if ( ! $xml || ! $xml->body) {
-			$this->sortirToParam("Ce n'est pas un fichier OPML");
-		}
+		$opml_content = file_get_contents($_FILES['fichier_opml']['tmp_name']);
+		$info = $this->OPMLReader->getInfo($opml_content);
 		
-		foreach($xml->body->outline as $feed){			
+		if(! $info){
+			$this->sortirToParam($this->OPMLReader->getLastError());
+		}		
+		foreach($info as $feed){		
 			$id_f = $this->FeedUpdater->addWithoutFetch($feed['xmlUrl']);
 			if ($id_f){
-				$this->AbonnementSQL->add($id_u,$id_f,"");
+				$this->AbonnementSQL->add($id_u,$id_f);
+				foreach($feed['tag'] as $tag){
+					$this->AbonnementSQL->addTag($id_u,$id_f,$tag);
+				}
 			}
 		}
 

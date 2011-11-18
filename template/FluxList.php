@@ -5,7 +5,7 @@
 <?php if ($allFlux) : ?>
 <div class="box">
 	<div class="haut">
-		<h2>Derni&egrave;res mises &agrave; jour<?php echo $tag?" dans la cat&eacute;gorie $tag":""?></h2>
+		<h2>Derni&egrave;res mises &agrave; jour<?php echo $tag?" avec l'étiquette $tag":""?></h2>
 	</div>
 	<div class="cont">
 	
@@ -23,9 +23,9 @@
 	<tr class="<?php echo $i%2?"":"bgcolor01";?>">
 		<td><a title='Dernier passage : <?php echo $this->FancyDate->get($flux['last_recup'])?>'><?php echo $this->fancyDate->get($flux['last_maj'])?></a></td>
 		<td class='tag'>
-		<?php if(! $tag): ?>
-			<a href='<?php $this->Path->path("/Feed/list/0/".urlencode($flux['tag'])) ?>'><?php echo $flux['tag'] ?></a>
-		<?php endif;?>
+		<?php foreach($flux['tag'] as $one_tag) : ?>
+			<a href='<?php $this->Path->path("/Feed/list/0/".urlencode($one_tag)) ?>'><?php echo $one_tag ?></a>
+		<?php endforeach;?>
 		</td>
 		
 		<td class='site'><a href='<?php $this->Path->path("/Feed/detail/{$flux['id_f']}/") ?>' title='<?php hecho($flux['title'])?>'><?php hecho(wrap($flux['title'],25,2))?></a></td>

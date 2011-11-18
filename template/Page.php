@@ -55,9 +55,9 @@
 				<form  action='<?php $this->Path->path() ?>' method='post'>
 				<?php $this->Connexion->displayTokenField(); ?>
 				<input type='hidden' name='path_info' value='/Feed/doAdd' />
-				<input type='hidden' name='tag'  value='<?php hecho($tag) ?>' />
 				
-				Ajouter un site<?php echo $tag?" dans la cat&eacute;gorie $tag":""?>: <br/>
+				
+				Ajouter un site: <br/>
 				
 				<input type='text' size='50' name='url' />
 				

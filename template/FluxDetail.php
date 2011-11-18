@@ -34,6 +34,7 @@
 		</tr>
 	<?php endforeach;?>
 	</table>
+	<?php $this->render("PbAffichage");?>
 	</div>
 	<div class="bas"></div>				
 </div>
@@ -41,5 +42,7 @@
 
 </div><!-- fin contenu -->
 
-
+	
+	
+		
 

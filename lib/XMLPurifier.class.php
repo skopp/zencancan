@@ -29,7 +29,7 @@ class XMLPurifier {
 					preg_match("#Entity '([^']*)' not defined#",$error->message,$matches);
 					$this->undeclaredEntity[] = "&".$matches[1].";";
 				} else {	
-					trigger_error("Erreur lors de la lecture d'un fichier XML : " . $error->code . " - " . $error->message,E_USER_WARNING);
+					@ trigger_error("Erreur lors de la lecture d'un fichier XML : " . $error->code . " - " . $error->message,E_USER_WARNING);
 				}
 			}
 			libxml_clear_errors() ;

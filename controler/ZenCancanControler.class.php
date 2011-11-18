@@ -1,7 +1,5 @@
 <?php
 
-
-
 class ZenCancanControler extends Controler {
 	
 	protected $rss;
@@ -66,6 +64,5 @@ class ZenCancanControler extends Controler {
 		$this->Gabarit->debut = $this->debut;
 		$this->Gabarit->render("Page");
 	}
-	
 	
 }

@@ -53,3 +53,10 @@ CREATE TABLE mur (
 	`link` varchar(255) NOT NULL,
 	PRIMARY KEY (`id_m`)
 )  ENGINE=MyISAM  ;
+CREATE TABLE tag (
+	`id_u` int(11) NOT NULL,
+	`id_f` int(11) NOT NULL,
+	`tag` varchar(32) NOT NULL,
+	PRIMARY KEY (`id_u`,`id_f`,`tag`),
+	KEY id_u (`id_u`,`tag`)
+)  ENGINE=MyISAM  ;

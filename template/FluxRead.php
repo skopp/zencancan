@@ -86,8 +86,11 @@
 					
 				<?php if (! $isAdmin) : ?> -->	<?php endif;?>
 			<?php endif;?>
-			</div>			
 			
+				<?php $this->render("PbAffichage");?>
+			
+			
+			</div>			
 			
 			
 			<div class="bas"></div>	

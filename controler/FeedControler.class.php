@@ -51,12 +51,10 @@ class FeedControler extends ZenCancanControler {
 	public function doAddAction(){
 		$id = $this->verifConnected();
 		$url = $this->Recuperateur->get('url');
-		$tag = $this->Recuperateur->get('tag');
-
 		$id_f = $this->FeedUpdater->add($url);
 
 		if ($id_f){
-			$this->AbonnementSQL->add($id,$id_f,$tag);
+			$this->AbonnementSQL->add($id,$id_f);
 		} else {
 			$this->LastMessage->setLastError($this->FeedUpdater->getLastError(),true);
 			$this->ErrorSQL->add($url,$this->FeedUpdater->getLastError());
@@ -71,6 +69,8 @@ class FeedControler extends ZenCancanControler {
 			}
 		}
 	}
+	
+	
 	
 	public function detailAction($id_f){
 		
@@ -103,7 +103,12 @@ class FeedControler extends ZenCancanControler {
 	}
 	
 	
-	private function getFeedInfo($id_f){			
+	private function getFeedInfo($id_f){		
+		$id_u = $this->verifConnected();
+		$this->verifAbonnement($id_u,$id_f);
+
+		$info = $this->AbonnementSQL->getInfo($id_u,$id_f);
+			
 		@ $content = file_get_contents(STATIC_PATH."/$id_f");
 		
 		if (! $content){
@@ -145,7 +150,7 @@ class FeedControler extends ZenCancanControler {
 		$info = $this->AbonnementSQL->getInfo($id_u,$id_f);
 		$this->addRSS($info['title'],$info['url']);
 		
-		$rssInfo = $this->getFeedInfo($id_f,$i);
+		$rssInfo = $this->getFeedInfo($id_f);
 		
 		
 		$resultItem = $this->getItem($rssInfo,$i);
@@ -169,7 +174,7 @@ class FeedControler extends ZenCancanControler {
 		$id_u = $this->verifConnected();
 		$id_f = $this->Recuperateur->getInt('id_f');
 		$num_feed = $this->Recuperateur->getInt('num_feed');
-		$rssInfo = $this->getFeedInfo($id_f,$num_feed);
+		$rssInfo = $this->getFeedInfo($id_f);
 		$resultItem = $this->getItem($rssInfo,$num_feed);
 		$content = get_link_title($resultItem['content']?:$resultItem['description']);
 		
@@ -188,20 +193,7 @@ class FeedControler extends ZenCancanControler {
 		$this->LastMessage->setLastMessage("Le suivie du site à été supprimé ");
 		$this->redirect();
 	}
-	
-	public function doAggregateAction(){
-		$id = $this->verifConnected();
-		$id_f = $this->Recuperateur->getInt('id_f');
-		$tag = $this->Recuperateur->get('tag');
-		$this->AbonnementSQL->addTag($id,$id_f,$tag);
-		if ($tag){
-			$this->LastMessage->setLastMessage("Le flux est maintenant dans la catégorie $tag");
-		} else {
-			$this->LastMessage->setLastMessage("Le flux a été oté de la catégorie");
-		}
-		$this->redirect("/Feed/detail/$id_f");
-		
-	}
+
 	
 	
 }

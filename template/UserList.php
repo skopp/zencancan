@@ -12,7 +12,6 @@
 						<th><a href='<?php $this->Path->path("/Admin/userList/last_login")?>'>Dernière connexion</a></th>
 						<th><a href='<?php $this->Path->path("/Admin/userList/date")?>'>Date d'inscription</a></th>
 						<th><a href='<?php $this->Path->path("/Admin/userList/last_publication")?>'>Dernière publication</a></th>
-						
 					</tr>
 					
 					<?php foreach($all_user as $user) : ?>
@@ -22,8 +21,7 @@
 						<td><?php echo $user['nb_publication']?></td>
 						<td><?php echo $this->FancyDate->get($user['last_login'])?></td>
 						<td><?php echo $this->FancyDate->get($user['date'])?></td>
-						<td><?php echo $this->FancyDate->get($user['last_publication'])?></td>
-						
+						<td><?php echo $this->FancyDate->get($user['last_publication'])?></td>						
 					</tr>
 					<?php endforeach;?>
 				</table>
