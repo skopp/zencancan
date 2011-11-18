@@ -91,7 +91,13 @@ class UtilisateurSQL extends SQL {
 	}
 	
 	public function getAll($tri = "last_login",$offset = 0){
-		if (! in_array($tri,array("last_login","name","date","nb_abonnement"))){
+		if (! in_array($tri,array("last_login",
+									"name",
+									"date",
+									"nb_abonnement",
+									"nb_publication",
+									"last_publication",
+									))){
 			$tri = "last_login";
 		}
 		if ($tri == "name"){

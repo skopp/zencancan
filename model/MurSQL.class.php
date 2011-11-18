@@ -5,6 +5,7 @@ class MurSQL extends SQL {
 	
 	public function add($id_u,$content,$title = "",$link=""){
 		$this->query("INSERT INTO mur(id_u,content,date,title,link) VALUES (?,?,now(),?,?)",$id_u,$content,$title,$link);
+		$this->updateUtilisateur($id_u);		
 	}
 	
 	public function getLastItem($id_u,$offset){
@@ -19,6 +20,14 @@ class MurSQL extends SQL {
 
 	public function delete($id_u,$id_m){
 		$this->query("DELETE FROM mur WHERE id_u=? AND id_m=?",$id_u,$id_m);
+		$this->updateUtilisateur($id_u);	
+	}
+	
+	public function updateUtilisateur($id_u){
+		$sql = "SELECT count(*) from mur where id_u=?";
+		$nb = $this->queryOne($sql,$id_u);
+		$sql = "UPDATE utilisateur SET nb_publication=?, last_publication=now() WHERE id_u=?";
+		$this->query($sql,$nb,$id_u);
 	}
 	
 }
