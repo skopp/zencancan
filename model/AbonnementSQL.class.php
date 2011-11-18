@@ -5,7 +5,7 @@ class AbonnementSQL extends SQL {
 	const NB_DISPLAY = 30;
 	
 	public function getNbAbo(){
-		return $this->queryOne("SELECT count(distinct id) FROM abonnement ");
+		return $this->queryOne("SELECT count(distinct id_u) FROM abonnement ");
 	}
 	
 	public function isAbonner($id_u,$id_f){
@@ -18,11 +18,20 @@ class AbonnementSQL extends SQL {
 		$this->query($sql,$id_u,$id_f);
 		$sql = "INSERT INTO abonnement(id_u,id_f,tag) VALUES (?,?,?)";
 		$this->query($sql,$id_u,$id_f,$tag);
+		$this->updateUtilisateurAbonnement($id_u);
 	}
 	
-	function del($id_u,$id_f){
+	public function del($id_u,$id_f){
 		$sql = "DELETE FROM abonnement WHERE id_u=? AND id_f=?";
 		$this->query($sql,$id_u,$id_f);
+		$this->updateUtilisateurAbonnement($id_u);
+	}
+	
+	public function updateUtilisateurAbonnement($id_u){
+		$sql = "UPDATE compte set nb_abonnement = " .
+				" (SELECT count(id_f) FROM abonnement " .
+				" WHERE abonnement.id_u=?) WHERE id_u=?;";
+		$this->query($sql,$id_u,$id_u);
 	}
 	
 	public function getAll($id_u){

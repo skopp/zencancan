@@ -14,6 +14,7 @@ class ZenCancanFrontControler extends FrontControler {
 			$id_u = $this->UtilisateurSQL->verifRemember($this->Authentification->getNamedAccount(),$_COOKIE['remember_zencancan']);
 			if ($id_u){
 				$this->Connexion->login($id_u);
+				$this->UtilisateurSQL->updateLastLogin($id_u);	
 			}
 		}
 		if ($this->Authentification->getNamedAccount()){

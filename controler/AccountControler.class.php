@@ -35,6 +35,6 @@ class AccountControler extends ZenCancanControler {
 		}
 		
 		$this->Connexion->logout();
-		$this->redirectWithUsername($name);
+		$this->redirectWithUsername($name,"/Connexion/login");
 	}
 }

@@ -1,10 +1,8 @@
 CREATE TABLE abonnement (
-	`id` varchar(16) NOT NULL,
 	`id_u` int(11) NOT NULL,
 	`id_f` int(11) NOT NULL,
 	`tag` varchar(64) NOT NULL,
-	PRIMARY KEY (`id`,`id_f`),
-	UNIQUE KEY id_f (`id_f`,`id`)
+	PRIMARY KEY (`id_u`,`id_f`)
 )  ENGINE=MyISAM  ;
 CREATE TABLE compte (
 	`id_u` int(11) NOT NULL AUTO_INCREMENT,
@@ -14,6 +12,8 @@ CREATE TABLE compte (
 	`remember` varchar(64) NOT NULL,
 	`is_admin` tinyint(1) NOT NULL,
 	`date` datetime NOT NULL,
+	`nb_abonnement` int(11) NOT NULL,
+	`last_login` datetime NOT NULL,
 	PRIMARY KEY (`id_u`),
 	UNIQUE KEY name (`name`),
 	UNIQUE KEY id (`id`)

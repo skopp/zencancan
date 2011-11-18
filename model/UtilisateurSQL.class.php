@@ -90,8 +90,21 @@ class UtilisateurSQL extends SQL {
 		return $this->queryOne("SELECT * FROM compte WHERE id_u = ?",$id_u);	
 	}
 	
-	public function getAll($offset){
-		return  $this->query("SELECT * FROM compte ORDER BY date DESC");		
+	public function getAll($tri = "last_login",$offset = 0){
+		if (! in_array($tri,array("last_login","name","date","nb_abonnement"))){
+			$tri = "last_login";
+		}
+		if ($tri == "name"){
+			$tri = $tri . " ASC";
+		} else {
+			$tri = $tri . " DESC";
+		}
+		return  $this->query("SELECT * FROM compte ORDER BY $tri");		
 	}
+	
+	public function updateLastLogin($id_u){
+		$sql = "UPDATE compte SET last_login = now() WHERE id_u=?";
+		$this->query($sql,$id_u);
+	}	
 	
 }

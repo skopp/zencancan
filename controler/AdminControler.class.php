@@ -8,9 +8,9 @@ class AdminControler extends ZenCancanControler {
 		$this->renderDefault();
 	}
 	
-	public function userListAction($offset = 0){
+	public function userListAction($tri = "last_login",$offset = 0){
 		$id_u = $this->verifAdmin();
-		$this->Gabarit->all_user = $this->UtilisateurSQL->getAll($offset);
+		$this->Gabarit->all_user = $this->UtilisateurSQL->getAll($tri,$offset);
 		$this->Gabarit->template_milieu = "UserList";
 		$this->renderDefault();
 	}

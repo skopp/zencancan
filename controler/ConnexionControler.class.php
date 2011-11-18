@@ -32,7 +32,8 @@ class ConnexionControler extends ZenCancanControler {
 			if ($remember){
 				$this->setRemember($id_u);	
 			}
-			$this->Connexion->login($id_u);			
+			$this->Connexion->login($id_u);		
+			$this->UtilisateurSQL->updateLastLogin($id_u);	
 			$this->redirect("/Feed/list");
 		}
 	}
@@ -57,6 +58,7 @@ class ConnexionControler extends ZenCancanControler {
 		}
 		$this->Path->setUsername($username);
 		$this->Connexion->login($id_u);
+		$this->UtilisateurSQL->updateLastLogin($id_u);	
 		if ($remember){
 			$this->setRemember($id_u);	
 		}
