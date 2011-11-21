@@ -26,7 +26,7 @@ class MurSQL extends SQL {
 	public function updateUtilisateur($id_u){
 		$sql = "SELECT count(*) from mur where id_u=?";
 		$nb = $this->queryOne($sql,$id_u);
-		$sql = "UPDATE utilisateur SET nb_publication=?, last_publication=now() WHERE id_u=?";
+		$sql = "UPDATE compte SET nb_publication=?, last_publication=now() WHERE id_u=?";
 		$this->query($sql,$nb,$id_u);
 	}
 	
