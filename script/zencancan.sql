@@ -51,6 +51,8 @@ CREATE TABLE mur (
 	`date` datetime NOT NULL,
 	`title` varchar(255) NOT NULL,
 	`link` varchar(255) NOT NULL,
+	`description` text NOT NULL,
+	`img` text NOT NULL,
 	PRIMARY KEY (`id_m`)
 )  ENGINE=MyISAM  ;
 CREATE TABLE tag (
