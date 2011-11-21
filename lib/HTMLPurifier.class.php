@@ -102,8 +102,7 @@ class HTMLPurifier {
 	private function fixSrc(DomNode $element,$attrname){
 		$src = $element->getAttribute($attrname);		
 		$src = preg_replace("#&amp;#","&",$src);
-		$src = preg_replace("# #","%20",$src);
-		
+		$src = preg_replace("# #","%20",$src);		
 		$src = preg_replace("#&#","&amp;",$src);
 		$element->setAttribute($attrname,$src);
 	}

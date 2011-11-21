@@ -3,8 +3,12 @@
 
 class MurSQL extends SQL {
 	
-	public function add($id_u,$content,$title = "",$link=""){
-		$this->query("INSERT INTO mur(id_u,content,date,title,link) VALUES (?,?,now(),?,?)",$id_u,$content,$title,$link);
+	public function add($id_u,$content,$title = "",$link="",$description="",$img=""){
+		if (! $description){
+			$description = $content;
+		}
+		$this->query("INSERT INTO mur(id_u,content,date,title,link,description,img) ". 
+					" VALUES (?,?,now(),?,?,?,?)",$id_u,$content,$title,$link,$description,$img);
 		$this->updateUtilisateur($id_u);		
 	}
 	

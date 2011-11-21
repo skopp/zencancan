@@ -92,6 +92,7 @@ class FeedControler extends ZenCancanControler {
 		} else {
 			$rssInfo = array('link' => $info['link'],'title' => $info['title'],'item' => array());
 		}
+		
 		$this->addRSS($info['title'],$info['url']);
 		
 		$this->Gabarit->template_milieu = "FluxDetail";
@@ -176,13 +177,13 @@ class FeedControler extends ZenCancanControler {
 		$num_feed = $this->Recuperateur->getInt('num_feed');
 		$rssInfo = $this->getFeedInfo($id_f);
 		$resultItem = $this->getItem($rssInfo,$num_feed);
-		$content = get_link_title($resultItem['content']?:$resultItem['description']);
-		
-		$this->MurSQL->add($id_u,$content,$rssInfo['title'] ." - " .$resultItem['title'],$resultItem['link']);
+		$content = $resultItem['content'];
+		$description = $resultItem['description'];
+		$img = $this->ImageFinder->getFirst($resultItem['content']);
+		$this->MurSQL->add($id_u,$content,$rssInfo['title'] ." - " .$resultItem['title'],$resultItem['link'],$description,$img);
 		$mur_path = $this->Path->getPath("/Mur/index");
 		$this->LastMessage->setLastMessage("L'article a été publié sur <a href='$mur_path'>votre mur</a>",true);
 		$this->redirect("/Feed/read/$id_f/$num_feed");
-		
 	}
 	
 	

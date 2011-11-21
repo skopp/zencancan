@@ -1,6 +1,5 @@
 <?php
 
-
 class FeedParser {
 	
 	private $timeout;	
@@ -61,9 +60,29 @@ class FeedParser {
 			$this->lastError = "L'adresse n'est pas un flux RSS (parse)";
 			return false; 
 		}
+		
+		foreach($feed['item'] as $i => $item){
+			if (empty($item['content'])){
+				$feed['item'][$i]['content'] = $item['description'];
+			}
+			if (empty($item['description'])){
+				$feed['item'][$i]['description'] = $this->shorten($item['content']);
+			} else {
+				$feed['item'][$i]['description'] = $this->shorten($item['description']);
+			}
+			
+		}
 	
+		
 		$this->lastError = "";
 		return $feed;
+	}
+	
+	private function shorten($text){
+		$result =  trim(wrap(strip_tags($text),400,1));
+		$result = preg_replace("#&nbsp;#"," ",$result);
+		return $result;
+		
 	}
 
 	private function parse(SimpleXMLElement $xml){		
@@ -119,6 +138,7 @@ class FeedParser {
 					$it['content'] = $this->normalizeText(strval(trim($content->encoded)));
 				}
 			}
+			
 						
 			if ($item->pubDate){
 				$it['pubDate'] = date("Y-m-d H:i:s",strtotime($item->pubDate));
@@ -166,7 +186,7 @@ class FeedParser {
 		return strval($result);	 
 	}
 	
-	public function getAtomItem(SimpleXMLElement $xml) {
+	private function getAtomItem(SimpleXMLElement $xml) {
 		$items = array();
 		foreach($xml as $item){
 			$it = array();
@@ -211,6 +231,8 @@ class FeedParser {
   		$text = strval($text);
   		$text = strtr($text,array("&#8217;" => "'"));
   		$text = strtr($text,array("&#8230;" => "…"));
+  		$text = strtr($text,array("&#8216;" => "‘"));
+  		$text = strtr($text,array("&#39;" => "'"));
   		$text = trim($text);
   		return strval($text);
   	}

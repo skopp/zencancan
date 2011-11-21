@@ -1,6 +1,5 @@
 <?php
 
-
 class FeedFetchInfo {
 	
 	private $lastError;

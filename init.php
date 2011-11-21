@@ -11,7 +11,6 @@ function __autoload($class_name) {
 	if(!$result){
 		throw new Exception("Impossible de trouver $class_name");
 	}
-	
 }
 
 

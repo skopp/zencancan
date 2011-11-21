@@ -13,19 +13,24 @@ class RSSCreator {
 		$this->addElement($this->channel,"title",$title);
 		$this->addElement($this->channel,"description",$description);
 		$this->addElement($this->channel,"lastBuildDate",date("r"));
-		$this->addElement($this->channel,'link',"http://".str_replace("&","&amp;",$url));
+		$this->addElement($this->channel,'link',str_replace("&","&amp;",$url));
 	}
 		
-	public function addItem($title,$link,$date,$content){
+	public function addItem($title,$link,$date,$content,$description){
 		$item = $this->addElement($this->channel,"item");
 		$cdata = $this->domDocument->createCDATASection($title);
 		$title = $this->addElement($item,"title");
 		$title->appendChild($cdata);
 		$this->addElement($item,"link", $link);
 		$this->addElement($item,"pubDate",date("r",strtotime($date)));
-		$description = $this->addElement($item,"description");
+		$description_tag = $this->addElement($item,"description");
+		$cdata = $this->domDocument->createCDATASection(nl2br($description));
+		$description_tag->appendChild($cdata);
+		
+		$content_tag = $this->addElement($item,"content");
 		$cdata = $this->domDocument->createCDATASection(nl2br($content));
-		$description->appendChild($cdata);
+		$content_tag->appendChild($cdata);
+		
 	}
 	
 	private function addElement(DomNode $parentNode,$elementName,$content = false,array $attributes = array()) {

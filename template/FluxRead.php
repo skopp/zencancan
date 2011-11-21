@@ -5,13 +5,14 @@
 	<div class="box">
 		<div class="haut"><h2>
 		<a href='<?php $this->Path->path("/Feed/detail/$id_f");?>' >		
-<?php hecho($rssInfo['title']) ?></a></h2></div>
+		<?php hecho($rssInfo['title']) ?></a></h2></div>
 		<div class="cont">
 			<ul class="ul_liste_article">
 				<?php foreach($rssInfo['item'] as $i => $itemInfo) : ?>
 					<li>
 						<p><?php echo $this->FancyDate->get($itemInfo['pubDate'])?></p>
-						<a href='<?php $this->Path->path("/Feed/read/$id_f/$i")?>'  title='<?php  echo get_link_title($itemInfo['content']?:$itemInfo['description']) ?>'>
+						<a href='<?php $this->Path->path("/Feed/read/$id_f/$i")?>'  
+							title='<?php  hecho($itemInfo['description']); ?>'>
 							<?php hecho(strip_tags($itemInfo['title'])) ?>
 						</a>
 					</li>

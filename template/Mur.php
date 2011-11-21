@@ -32,9 +32,11 @@
 				<?php else : ?>
 					<h3><?php hecho($item['title'])?></h3>
 				<?php endif;?>
-				
-				
-					<?php echo $item['content']; ?>
+					<?php if($item['img']): ?>
+						<img width='150' style='float:left; padding: 0px 10px; ' src='<?php echo $item['img']?>' title='<?php hecho($item['title'])?>'/>
+					<?php endif;?>
+					<?php echo $item['description']; ?>
+					<a href='<?php hecho($item['link'])?>' target='_blank'>Lire la suite</a>
 						<div class="col">
 						<p class="float_left discret"><?php echo $this->FancyDate->get($item['date'])?></p>
 						<?php if ($this->Connexion->isConnected()) : ?>

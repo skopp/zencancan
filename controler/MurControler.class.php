@@ -7,7 +7,8 @@ class MurControler extends ZenCancanControler {
 		if (! $id_u){
 			$this->redirectWithUsername("");
 		}
-		return $this->MurSQL->getLastItem($id_u,$offset);
+		$result = $this->MurSQL->getLastItem($id_u,$offset);
+		return $result;
 	}
 	
 	public function indexAction($offset = 0){
@@ -29,7 +30,7 @@ class MurControler extends ZenCancanControler {
 		$rssCreator = new RSSCreator("$full_name","$full_name",   $this->Path->getPath("/Mur/index") );
 		
 		foreach($all_item as $item){
-			$rssCreator->addItem($item['title'] ,$item['link'],$item['date'],$item['content']);
+			$rssCreator->addItem($item['title'] ,$item['link'],$item['date'],$item['content'],$item['description']);
 		}
 		echo $rssCreator->getRSS();
 	}
