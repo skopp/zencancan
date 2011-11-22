@@ -6,23 +6,52 @@ $titre_h1 = "Titre de niveau H1";
 <?php include('_haut.php'); ?>
 
 
-<div id="titre_blog">
-	<div class="blog_info">
-		<h1><?php echo $titre_h1 ?></h1>
-		<span>Un super blog qui tue sa race !</span>
+<div id="info_blog">
+	<div class="blog_titre">
+		<p class="titre"><img src="img/commun/favicon_001.png" alt="" />Titre du blog</p>
 	</div>
 	
 	<div class="blog_option">
 		<ul>
-			<li><a href="#">Supprimer</a></li>
-			<li><a href="#">Gérer</a></li>
+			<li><a href="#">Supprimer ce blog</a></li>
+			<li><a href="#" class="option" id="tags_btn">Gérer les tags</a></li>
 		</ul>
 	</div>
+</div>
+
+<div id="info_billet">
+	<div class="billet_titre">
+		<h1>Titre du billet en H1</h1>
+		<span>résumé court du billet</span>
+	</div>
+	<div class="billet_option">
+		<ul>
+			<li><a href="#">Publier sur mon mur</a></li>
+		</ul>
+		<div id="tags_menu">
+			<p>
+			blablablbal
+			</p>
+		</div>
+	</div>
+	
+	<hr/>
+	
+	<div class="box_suiv_prec">
+		<div class="prec"><a href="#">Billet précédent</a></div>
+		<div class="milieu"></div>
+		<div class="suiv"><a href="#">Billet suivant</a></div>
+	
+	</div>
+	
+	
 </div>
 
 
 <div class="box">
 
+
+<div class="billet">
 
 Dans la famille « je publie mes articles avec 1 mois de retard », je demande « la maison kinect » :roll:
 
@@ -31,6 +60,7 @@ A part une nouvelle interface repensée (où je vais me paumer, je le sens), les n
 N’étant pas équipé de Kinect, ça ne me fait un peu ni chaud ni froid, pis j’aime pas parler dans le vide, on a l’air d’un idiot, ça fait peur au chat, toussa…
 
 D’ailleurs, puisque vous n’étiez vraisemblablement pas là, voici la ptite vidéo où l’on voit Jad Berri nous démontrer la puissance du bouzin (et aussi que les démos live ça marche pas à tous les coups :mrgreen: )…
+</div>
 
 
 </div>

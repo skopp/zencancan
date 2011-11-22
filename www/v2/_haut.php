@@ -52,10 +52,10 @@
 				
 				<div id="menu">
 					<ul>
-					<li><a href="index.php">Accueil</a></li>
+					<li><a href="index.php">Mes sites</a></li>
 					<li><a href="#">Mon mur</a></li>
-					<li><a href="mes_sites.php">Mes sites</a></li>
 					<li><a href="#">Nouveau site</a></li>
+					<li><a href="#">Blog</a></li>
 					<li><a href="#" class="option" id="option_btn">Options</a></li>
 					</ul>
 					

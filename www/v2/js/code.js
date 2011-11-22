@@ -63,7 +63,16 @@ $(document).ready(function() {
 			$('#option_menu').slideUp();
 	    });
 
-
+	  /* menu tags */
+	    $("#tags_menu").hide();
+		
+		$('#tags_btn').click(function(){
+	    	$('#tags_menu').slideDown();
+	    });
+		
+	    $("body").mouseup(function(){ 
+			$('#tags_menu').slideUp();
+	    });
    
 });
 

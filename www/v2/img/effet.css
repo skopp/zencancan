@@ -50,7 +50,7 @@ border-radius:3px;
 
 }
 
-.ff .submit, .a_btn, .blog_option ul li a {
+.ff .submit, .a_btn, .blog_option ul li a, .billet_option  ul li a {
 border-radius:3px;
 -moz-border-radius:3px;
 -webkit-border-radius: 3px;
