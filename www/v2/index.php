@@ -15,6 +15,7 @@ $titre_h1 = "Titre de niveau H1";
 <ul>
 <li><a href="mes_sites.php">Mes sites</a></li>
 <li><a href="billet.php">Mes billets</a></li>
+<li><a href="form.php">Formulaire</a></li>
 </ul>
 
 </div>

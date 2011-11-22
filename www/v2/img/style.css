@@ -307,19 +307,45 @@ td.date {width:20px;color:#2D72B4;font-size:90%;}
 /* FORM */
 form {}
 
-select {min-width:140px;}
-
-.ff {
-padding:4px 12px;
-background-color:#fff;
+form.ff {
+background:#F8F8F8;
 border:1px solid #E6E6E6;
+padding:10px;
+width:600px;
 }
 
-.ff h2 {
-font-weight:bold;
-color:#4184C3;
-margin:4px 0 4px 0; 
+form.ff p {
+margin:0 6px 0 6px;
+padding:6px 0 6px 200px;
 }
+
+form.ff label {
+float: left;
+margin-left: -200px;
+width: 190px;
+line-height:2.5em;
+
+}
+
+form.ff label.case {
+
+}
+
+
+form.ff input[type="text"], form.ff input[type="password"], form.ff textarea {width:90%;border:1px solid #E6E6E6;}
+
+form.ff input[type="checkbox"] {border:1px solid red;margin:10px 0;}
+
+form.ff select {width:94%;border:1px solid #E6E6E6;}
+form.ff textarea {height:150px;}
+form.ff option {padding:3px;}
+
+form.ff h2 {
+font-weight:bold;
+}
+
+
+
 
 select, input, textarea {
 border:1px solid #899caa;
@@ -331,14 +357,6 @@ margin:0 0 8px 0;
 select {padding:7px 4px 3px 4px;} 
 option {padding:2px;}
 
-.ff label {
-padding-top:8px;
-}
-
-.ff .checkbox {
-margin-right:4px;
-width:auto;
-}
 
 .ff .submit, .a_btn {
 background: url(commun/btn.png) repeat-x transparent;
@@ -351,6 +369,8 @@ cursor:pointer;
 font-size:80%;
 margin:4px 0 4px 0;
 }
+
+.ff .submit {margin-right:26px;}
 
 .ff .submit:hover, .a_btn:hover, .billet_option ul li a:hover {
 background-position:0 -40px;
@@ -377,18 +397,15 @@ text-decoration:none;
 /* tooltip */
 
 #tooltip {
-
-background: url(commun/back_tooltip.png) no-repeat;
-width: 156px;
-height: 29px;
-left:250px;
-position: absolute;
+background: url(commun/back_tooltip.png) repeat-x;
+border:1px solid #F0C78B;
+position:absolute;
 text-align: center;
-padding:6px 10px 10px 10px;
-font-style: normal;
+padding:8px;
 z-index: 2;
-line-height:1.4em;
+line-height:1.2em;
 display: none;
+
 }
 
 

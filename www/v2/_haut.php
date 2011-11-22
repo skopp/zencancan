@@ -42,7 +42,7 @@
 				
 				<div id="addflux">
 					<form action="#">
-					<input class="recherche" type="text" value="Ajouter un site" 
+					<input class="recherche tooltip" title="Ajouter un site<br>Exemple : Morandini, lemonde, etc..." type="text" value="Ajouter un site" 
 						onclick="this.value='';"
 						onblur="if (this.value=='') this.value='Ajouter un site';" 
 					/>

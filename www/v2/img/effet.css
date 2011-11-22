@@ -50,16 +50,30 @@ border-radius:3px;
 
 }
 
-.ff .submit, .a_btn, .blog_option ul li a, .billet_option  ul li a {
+#tooltip {
+box-shadow:2px 2px 5px #888;
+-moz-box-shadow:2px 2px 5px #888;
+-webkit-box-shadow:2px 2px 5px #888;
+}
+
+.ff .submit, .a_btn, .blog_option ul li a, .billet_option  ul li a, #addflux input.btn_go, form.ff,
+form.ff input[type="text"], form.ff input[type="password"], form.ff textarea, form.ff select, #tooltip  {
 border-radius:3px;
 -moz-border-radius:3px;
 -webkit-border-radius: 3px;
 }
 
 
+form.ff input[type="text"]:focus, form.ff input[type="password"]:focus, form.ff textarea:focus, form.ff select:focus {
+box-shadow:inset 0px 1px 2px #bbb;
+-moz-box-shadow:inset 0px 1px 2px #bbb;
+-webkit-box-shadow:inset 0px 1px 2px #bbb;
+background:#FFFEF1;
+}
 
 
-#addflux input.recherche, #addflux input.btn_go {
+
+#addflux input.recherche {
 border-radius:2px;
 -moz-border-radius:2px;
 -webkit-border-radius: 2px;
