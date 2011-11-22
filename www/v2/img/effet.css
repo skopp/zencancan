@@ -59,20 +59,8 @@ border-radius:3px;
 
 
 
-#addflux input.recherche {
--webkit-border-top-left-radius: 3px;
--webkit-border-bottom-left-radius: 3px;
--moz-border-radius-topleft: 3px;
--moz-border-radius-bottomleft: 3px;
-border-top-left-radius: 3px;
-border-bottom-left-radius: 3px;
-}
-
-#addflux input.btn_go {
--webkit-border-bottom-right-radius: 3px;
--webkit-border-top-right-radius: 3px;
--moz-border-radius-bottomright: 3px;
--moz-border-radius-topright: 3px;
-border-bottom-right-radius: 3px;
-border-top-right-radius: 3px;
+#addflux input.recherche, #addflux input.btn_go {
+border-radius:2px;
+-moz-border-radius:2px;
+-webkit-border-radius: 2px;
 }
