@@ -17,9 +17,7 @@ class FeedControler extends ZenCancanControler {
 		$this->Gabarit->tag = $tag;
 		$this->Gabarit->add_site = true;
 		parent::renderDefault();
-		
 	}
-	
 	
 	public function listAction($offset = 0,$tag = false){
 		
@@ -30,11 +28,14 @@ class FeedControler extends ZenCancanControler {
 		$id_u = $this->verifConnected();
 		
 		$this->Gabarit->allFlux = $this->AbonnementSQL->get($id_u,$tag,$offset);
-		$this->Gabarit->nbFlux = $this->AbonnementSQL->getNbFlux($id_u,$tag);	
+		$this->Gabarit->nbFlux = $this->AbonnementSQL->getNbFlux($id_u,$tag);		
+		$this->SuivantPrecedent->setParameter($offset,
+												AbonnementSQL::NB_DISPLAY,
+												$this->Gabarit->nbFlux ,
+												$this->Path->getPath("/Feed/list/%d/$tag"));
 		$this->Gabarit->template_milieu = "FluxList";
 		$this->Gabarit->offset = $offset;
 		$this->Gabarit->nbAfficher = AbonnementSQL::NB_DISPLAY;
-		
 		$this->renderDefault($tag);
 	}
 	
@@ -63,7 +64,7 @@ class FeedControler extends ZenCancanControler {
 	}
 	
 	private function verifAbonnement($id_u,$id_f){
-	if ( ! $this->AbonnementSQL->isAbonner($id_u,$id_f)){
+		if ( ! $this->AbonnementSQL->isAbonner($id_u,$id_f)){
 			if (! $this->UtilisateurSQL->isAdmin($id_u)){
 				$this->redirect();
 			}

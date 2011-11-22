@@ -33,7 +33,7 @@
 					<h3><?php hecho($item['title'])?></h3>
 				<?php endif;?>
 					<?php if($item['img']): ?>
-						<img width='150' style='float:left; padding: 0px 10px; ' src='<?php echo $item['img']?>' title='<?php hecho($item['title'])?>'/>
+						<img alt='' width='150' style='float:left; padding: 0px 10px; ' src='<?php echo $item['img']?>' title='<?php hecho($item['title'])?>'/>
 					<?php endif;?>
 					<?php echo $item['description']; ?>
 					<a href='<?php hecho($item['link'])?>' target='_blank'>Lire la suite</a>
@@ -46,7 +46,7 @@
 
 				</div>
 			<?php endforeach;?>
-		
+			<?php $this->SuivantPrecedent->display(); ?>
 		</div>
 						
 		<div class="bas"></div>	

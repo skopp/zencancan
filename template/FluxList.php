@@ -6,6 +6,7 @@
 <div class="box">
 	<div class="haut">
 		<h2>Derni&egrave;res mises &agrave; jour<?php echo $tag?" avec l'étiquette $tag":""?></h2>
+		<?php $this->SuivantPrecedent->display(); ?>
 	</div>
 	<div class="cont">
 	
@@ -13,11 +14,6 @@
 			<a class='a_btn_nav' href='<?php $this->Path->path("/Feed/list/")?>'>&laquo; Revenir &agrave; la liste des sites</a>
 		<?php endif;?>
 		
-		<?php if ($offset) : ?>
-			<a class='a_btn_nav' href='<?php $this->Path->path("/Feed/list/".($offset - $nbAfficher) ."/$tag") ?>'>	
-				&laquo; Sites mis &agrave; jour plus r&eacute;cemment
-			</a>
-		<?php endif;?>
 			<table>
 <?php foreach($allFlux as $i => $flux) : ?>
 	<tr class="<?php echo $i%2?"":"bgcolor01";?>">
@@ -44,11 +40,7 @@
 	</tr>
 <?php endforeach;?>
 </table>
-		<?php if ($offset + $nbAfficher < $nbFlux) : ?>
-			<a href='<?php $this->Path->path("/Feed/list/".($offset + $nbAfficher) ."$tag") ?>'>	
-				Sites mis &agrave; jour avant &raquo;
-			</a>
-		<?php endif;?>
+		<?php $this->SuivantPrecedent->display(); ?>
 	</div>
 	<div class="bas"></div>				
 </div>

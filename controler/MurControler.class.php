@@ -1,19 +1,23 @@
 <?php
 class MurControler extends ZenCancanControler {
 	
+	private $id_u;
 	
 	private function getAllItem($name_account,$offset = 0){
-		$id_u = $this->UtilisateurSQL->getIdFromUsername($name_account);
-		if (! $id_u){
+		$this->id_u = $this->UtilisateurSQL->getIdFromUsername($name_account);
+		if (! $this->id_u){
 			$this->redirectWithUsername("");
 		}
-		$result = $this->MurSQL->getLastItem($id_u,$offset);
+		$result = $this->MurSQL->getLastItem($this->id_u,$offset);
 		return $result;
 	}
 	
 	public function indexAction($offset = 0){
 		$name_account = $this->Authentification->getNamedAccount();
 		$this->Gabarit->all_item = $this->getAllItem($name_account,$offset);
+		$nb_total = $this->MurSQL->getNb($this->id_u);
+		
+		$this->SuivantPrecedent->setParameter($offset,MurSQL::LIMIT,$nb_total,$this->Path->getPath("/Mur/index/%d"));
 		
 		$this->addRSS("Mur de $name_account",$this->Path->getPath("/Mur/rss"));
 		

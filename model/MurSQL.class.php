@@ -1,7 +1,7 @@
 <?php
-
-
 class MurSQL extends SQL {
+	
+	const LIMIT = 20;
 	
 	public function add($id_u,$content,$title = "",$link="",$description="",$img=""){
 		if (! $description){
@@ -12,13 +12,17 @@ class MurSQL extends SQL {
 		$this->updateUtilisateur($id_u);		
 	}
 	
+	public function getNb($id_u){
+		$sql = "SELECT count(*) FROM mur WHERE id_u=?";
+		return $this->queryOne($sql,$id_u);
+	}
+	
 	public function getLastItem($id_u,$offset){
 		$offset = intval($offset);
 		if ($offset <0 ){
 			$offset = 0;
 		}
-		$limit = 20;
-		$sql = "SELECT * FROM mur WHERE id_u=? ORDER BY date DESC LIMIT $offset,$limit";
+		$sql = "SELECT * FROM mur WHERE id_u=? ORDER BY date DESC LIMIT $offset,".self::LIMIT;
 		return $this->query($sql,$id_u);
 	}
 
