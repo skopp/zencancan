@@ -39,8 +39,13 @@ $(document).ready(function() {
 	    $(this).next(".faq_reponse").slideToggle(600);
 	  });
 
-
+		//$("#contenu").addClass('cont_min');
+		//$("#colonne").addClass('col_max');
+		
+		
 	  /* tableau des billets */
+		
+		/*
 		$('#billet_list').addClass("bloc_off"); 	
 		$('#contenu').addClass("cont_max");
 		$('#colonne').addClass("col_min");
@@ -48,16 +53,15 @@ $(document).ready(function() {
 		$("#billet_list_table").hover(
 	        function() {
 	            //$(this).switchClass('bloc_off','bloc_on',500);
-				$("#contenu").switchClass('cont_max','cont_min',500);
-				$("#colonne").switchClass('col_min','col_max',500);
+				$("#contenu").addClass('cont_min');
+				$("#colonne").addClass('col_max');
 	        }, 
 	        function() {   
 	            //$(this).switchClass('bloc_on','bloc_off',500);
-				$("#contenu").switchClass('cont_min','cont_max',500);
-				$("#colonne").switchClass('col_max','col_min',500);
-	        }
+	        	$("#contenu").addClass('cont_max');
+				$("#colonne").addClass('col_min');	        }
 		);
-
+*/
 
 	  /* menu options */
 	    $("#option_menu").hide();

@@ -76,8 +76,6 @@
 			</div><!-- fin main -->
 			
 			
-			
-			
 			<div id="footer">
 				<p class="align_right">
 					Page g&eacute;n&eacute;r&eacute;e par zenCancan r&eacute;vision <?php echo $revision_number ?> en <?php echo round((microtime(true) - $debut) * 10000) / 10 ?>ms

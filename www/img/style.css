@@ -65,21 +65,20 @@ overflow:auto;
 }
 
 
-#contenu {}
-.cont_max {margin-left: 240px;}
-.cont_min {margin-left: 440px;}
+#contenu {margin-left: 300px;}
+#contenu_min {margin-left: 420px;}
 
 
-#colonne {
+#colonne, #colonne_max {
 float:left;
 border-right:1px solid #E6E6E6;
 margin-top:20px;
 padding-right:10px;
 min-height:440px;
+width:260px;
 }
 
-.col_min {width:220px;}
-.col_max {width:420px;margin-right:10px;}
+#colonne_max {width:400px;margin-right:10px;}
 
 #header {
 background:url(commun/back_header.png) repeat-x #000;
@@ -181,7 +180,7 @@ line-height:1.6em;
 /* footer */
 
 #footer {
-clear:both;width:100%;
+clear:both;
 background-color:#F8F8F8;
 border-top:1px solid #E6E6E6;
 margin-top:20px;

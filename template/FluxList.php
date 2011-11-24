@@ -36,26 +36,13 @@
 <div class="box">
 	<?php $this->SuivantPrecedent->display(); ?>
 	
-		
-<table>
-
-<?php for ( $i=1; $i < 10 ; $i++ ) : ?>
-<tr>
-<td class="favicon"><img src="img/commun/favicon_001.png" alt="" /></td>
-<td class="blog">titre du blog</td>
-<td><a href="billet.php">Article du blog blablbalblblaa</a></td>
-<td class="tag">toto, lolopopop</td>
-<td class="date">10h20</td>
-</tr>
-<?php endfor; ?>
-</table>
 
 
 <table>
 <?php foreach($allFlux as $i => $flux) : ?>
 	<tr>
 		<td class="favicon"><img src="img/commun/favicon_001.png" alt="" /></td>
-		<td class='blog'><a href='<?php $this->Path->path("/Feed/read/{$flux['id_f']}/0") ?>' title='<?php hecho($flux['title'])?>'><?php hecho(wrap($flux['title'],25,2))?></a></td>
+		<td class='blog'><?php hecho(wrap($flux['title'],25,1))?></td>
 		<td >
 			<a href='<?php $this->Path->path("/Feed/read/{$flux['id_f']}/0") ?>' title='<?php  echo get_link_title($flux['item_content']) ?>'>
 				<?php hecho($flux['item_title']) ?>
@@ -69,10 +56,10 @@
 		</td>		
 		<td class='tag'>
 		<?php foreach($flux['tag'] as $one_tag) : ?>
-			<a href='<?php $this->Path->path("/Feed/list/0/".urlencode($one_tag)) ?>'><?php echo $one_tag ?></a>
+			<?php echo $one_tag ?>
 		<?php endforeach;?>
 		</td>
-		<td class='date'><a title='Dernier passage : <?php echo $this->FancyDate->get($flux['last_recup'])?>'><?php echo $this->fancyDate->get($flux['last_maj'])?></a></td>
+		<td class='date'><?php echo $this->FancyDate->get($flux['last_maj'])?></td>
 	</tr>
 <?php endforeach;?>
 </table>

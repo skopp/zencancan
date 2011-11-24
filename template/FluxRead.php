@@ -1,4 +1,4 @@
-<div id="colonne">
+<div id="colonne_max">
 
 <div class="box">
 		<h2>Derniers articles</h2>
@@ -28,7 +28,7 @@
 </div>
 
 
-<div id="contenu">
+<div id="contenu_min">
 
 
 <div id="info_blog">
@@ -55,12 +55,12 @@
 
 			</li>
 			
-			<li><a href="#" class="option" id="tags_btn">Gérer les étiquettes</a></li>
+			<li><a href="#" class="option" id="tags_btn">G&eacute;rer les étiquettes</a></li>
 		</ul>
 		
 		
 		<div id="tags_menu">
-			<p>
+		
 
 				<?php if ($tag) : ?>
 				&Eacute;tiquettes : 
@@ -83,9 +83,9 @@
 					<input class='a_btn' type='submit' value='Ajouter'/>
 					</p>
 				</form>
+		
 			
 			
-			</p>
 		</div>
 		
 		
@@ -195,5 +195,5 @@
 		</div>
 	</div>
 	
-	
+</div>	
 	

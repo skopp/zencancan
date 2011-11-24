@@ -73,8 +73,6 @@ class FeedControler extends ZenCancanControler {
 		}
 	}
 	
-	
-	
 	public function detailAction($id_f){
 		
 		$id_u = $this->verifConnected();
@@ -105,7 +103,6 @@ class FeedControler extends ZenCancanControler {
 		$this->Gabarit->info = $info;
 		$this->renderDefault($info['tag']);
 	}
-	
 	
 	private function getFeedInfo($id_f){		
 		$id_u = $this->verifConnected();
