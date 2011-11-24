@@ -11,7 +11,7 @@
 				<?php endif;?>
 				<li><a href="<?php $this->Path->path("/Aide/index")?>">Aide</a></li>
 				<li><a href="<?php $this->Path->path("/Contact/index")?>">Nous contacter</a></li>
-				<li><a href="<?php $this->Path->path("/Param/index")?>">Paramètre du compte</a></li>
+				<li><a href="<?php $this->Path->path("/Param/index")?>">Param&egrave;tre du compte</a></li>
 				</ul>
 			
 		

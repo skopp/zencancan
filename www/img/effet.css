@@ -39,6 +39,16 @@ border-bottom-right-radius: 3px;
 border-bottom-left-radius: 3px;
 */
 
+.info_billet {
+-webkit-border-bottom-right-radius: 3px;
+-webkit-border-bottom-left-radius: 3px;
+-moz-border-radius-bottomright: 3px;
+-moz-border-radius-bottomleft: 3px;
+border-bottom-right-radius: 3px;
+border-bottom-left-radius: 3px;
+}
+
+
 .bloc_on, #option_menu {
 box-shadow:0px 2px 2px #bbb;
 -moz-box-shadow:0px 2px 2px  #bbb;
@@ -58,7 +68,7 @@ box-shadow:2px 2px 5px #888;
 
 .ff .submit, .a_btn, .blog_option ul li a, .billet_option  ul li a, #addflux input.btn_go, form.ff,
 form.ff input[type="text"], form.ff input[type="password"], form.ff textarea, form.ff select, #tooltip,
-.blog_option ul li form .submit:hover  {
+.blog_option ul li form .submit:hover, .navigation_billet  {
 border-radius:3px;
 -moz-border-radius:3px;
 -webkit-border-radius: 3px;

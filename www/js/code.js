@@ -78,12 +78,13 @@ $(document).ready(function() {
 	    $("#tags_menu").hide();
 		
 		$('#tags_btn').click(function(){
-	    	$('#tags_menu').slideDown();
+	    	$('#tags_menu').slideToggle();
 	    });
-		
+		/*
 	    $("body").mouseup(function(){ 
 			$('#tags_menu').slideUp();
 	    });
+		*/
    
 });
 

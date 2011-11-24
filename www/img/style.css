@@ -10,14 +10,14 @@ abbr,acronym {border:0;font-variant:normal;}
 sup {vertical-align:text-top;}
 sub {vertical-align:text-bottom;}
 input,textarea,select{font-size:inherit;font-weight:inherit;}
-input,textarea,select,.a_btn{font-size:90%;font-family:verdana,arial, helvetica, sans-serif;}
+input,textarea,select,.a_btn{font-size:90%;font-family:arial, helvetica, sans-serif;}
 legend{color:#000;}
 
 
 html  { font-size: 100%; }
 
 body {
-font-family:verdana, arial, helvetica, sans-serif;
+font-family:arial, helvetica, sans-serif;
 font-size:0.80em;
 color:#4D4D4D;
 background-color:#FFF;
@@ -32,7 +32,7 @@ p {line-height:1.4em;margin:4px 0 4px 0;}
 
 h1, h2, h3 {font-family:arial, helvetica, sans-serif;}
 
-h1 {font-weight:bold;font-size:140%;color:#878787;margin:16px 0 10px 0;}
+h1 {font-weight:bold;font-size:120%;color:#878787;margin:20px 0 10px 0;color:#023C76;}
 h2 {}
 h3 {}
 hr {
@@ -44,7 +44,7 @@ margin:8px 0 4px 0;
 
 
 
-a {color:#959595;text-decoration:none;}
+a {color:##2C71B3;text-decoration:none;}
 a:hover {color:#0E86F6;text-decoration:none;}
 
 
@@ -65,11 +65,12 @@ overflow:auto;
 }
 
 
-#contenu {margin-left: 300px;}
-#contenu_min {margin-left: 420px;}
 
+#contenu {
+margin-left: 280px;
+}
 
-#colonne, #colonne_max {
+#colonne {
 float:left;
 border-right:1px solid #E6E6E6;
 margin-top:20px;
@@ -78,7 +79,14 @@ min-height:440px;
 width:260px;
 }
 
-#colonne_max {width:400px;margin-right:10px;}
+
+.contenu_min {margin-left: 420px !important;}
+.colonne_max {width:400px !important;}
+
+
+
+
+
 
 #header {
 background:url(commun/back_header.png) repeat-x #000;
@@ -102,17 +110,8 @@ height:40px;
 #menu ul li a:hover {text-decoration:none;color:#fff;}
 
 
-#info_blog {
-border-top:0;
-padding:10px 0 10px 10px;
-overflow:auto;
-/*margin-bottom:10px;*/
-/*border-bottom:1px solid #E6E6E6;*/
-}
 
-.blog_titre {float:left;}
-.blog_titre p {font-weight:bold;font-size:110%;color:#878787;margin:4px 0 0 0;}
-.blog_titre p img {width:16px;margin-right:4px;position:relative;top:4px;}
+
 
 
 .blog_option {width:300px;float:right;}
@@ -133,48 +132,81 @@ font-weight:normal;
 .blog_option ul li a.option:hover {background:url(commun/fleche_bas.png) right no-repeat #F8F8F8;}
 
 
-#info_billet {
+/* bloc Blog */
+
+.info_blog h2 img {
+width:16px;
+padding:0;
+margin-right:4px;
+float:left;
+}
+
+
+/* liste billet */
+
+.liste_billet {
+clear:left;
+min-height:64px;
+border-bottom:1px solid #E6E6E6;
+padding:0 0 0 0;
+line-height:0.8em;
+}
+
+.liste_billet:hover {
+background:#F5FAFF;
+border-bottom:1px solid #D3EAFF;
+}
+
+.liste_billet .img {
+float:left;
+width:64;
+max-height:90px;
+}
+
+.liste_billet .info {
+margin-left:70px;
+}
+
+.liste_billet .info .lien a {font-weight:bold;color:#2C71B3;}
+.liste_billet .info .lien a:hover {color:#0E86F6;}
+.liste_billet .info .extrait {color:#959595} 
+.liste_billet .info .date {font-size:80%;}
+
+
+/* Page Billet */
+
+.info_billet, .navigation_billet  {
 background-color:#F8F8F8;
 border:1px solid #E6E6E6;
-padding:0px 20px 0 10px;
+padding:0px 10px 6px 10px;
 overflow:auto;
 }
 
-#info_billet hr {
-clear:both;
-margin:4px 0 4px 0;
+.info_billet {
+margin-top:-2px;
 }
 
-.billet_titre {float:left;margin-bottom:4px;}
-.billet_titre h1 {margin:8px 0 0 0;color:#023C76;}
+.info_billet hr, .navigation_billet hr {clear:both;margin:4px 0 4px 0;}
+
+.billet_titre {float:left;}
 .billet_titre span {font-size:90%;color:#B0B0B0;margin-left:4px;}
 
 
-.billet_option {float:right;margin-bottom:8px;}
-.billet_option ul {float:right;margin-top:10px;}
-.billet_option ul li {float:left;}
-.billet_option ul li a {
-min-width:70px;
-text-align:center;
-display:block;
-background: url(commun/btn.png) repeat-x transparent;
-border: 1px solid #B3B2B2;
-color: #545454;
-margin-bottom: 1px;
-padding: 6px 10px 5px 10px;
-text-transform: uppercase;
-cursor:pointer;
-font-size:80%;
-margin:4px 0 4px 8px;
+.billet_option {}
+.billet_option ul {}
+.billet_option ul li {float:left;margin-left:10px;}
+
+.info_billet .billet_option {float:right}
+.info_billet .billet_option ul {margin-top:8px}
+
+.billet {text-align:justify;line-height:1.6em;font-family:verdana, arial, helvetica, sans-serif;}
+
+.navigation_billet {
+padding:8px 10px 10px 10px;
 }
 
 
 
-.billet {
-width:600px;
-text-align:justify;
-line-height:1.6em;
-}
 
 
 /* footer */
@@ -196,27 +228,15 @@ padding:10px;
 
 .box {margin-bottom:10px;}
 
-#colonne .box h2 {
-color:#959595;
-border-bottom:1px solid #E6E6E6;
-padding:8px;
-background:#F8F8F8;
-}
-
-#colonne .box ul.ul {
-margin:6px 0 14px 0;
-}
-
-#colonne .box ul.ul li a {
-display:block;
-padding:6px 0 6px 0;
-border:1px solid #fff;
-}
-
-#colonne .box ul.ul li a:hover {padding-left:2px;}
-
 
 #contenu .box {padding:10px 10px 10px 0;}
+
+#colonne .box {clear:both;}
+#colonne .box h2 {color:#959595;border-bottom:1px solid #E6E6E6;padding:8px;background:#F8F8F8;}
+#colonne .box ul.ul {margin:6px 0 14px 0;}
+#colonne .box ul.ul li a {display:block;padding:6px 0 6px 0;border:1px solid #fff;}
+#colonne .box ul.ul li a:hover {padding-left:2px;}
+
 
 
 
@@ -249,9 +269,6 @@ font-size:86%;
 .site_list li a:hover {text-decoration:none;}
 
 
-#billet_list {white-space: nowrap;margin-top:4px;background:#fff;/*position:absolute;*/}
-#billet_list td.lecture {width:16px;}
-
 /*
 .bloc_off {
 width:220px;
@@ -267,7 +284,9 @@ padding:10px;
 }
 */
 
+/*
 #billet_list_table {overflow: hidden;}
+*/
 
 
 
@@ -295,9 +314,8 @@ width:246px;
 position:absolute;
 background-color:#fff;
 border:1px solid red;
-top:76px;
-right:144px;
 height:200px;
+top:150px;
 width:246px;
 padding:10px;
 }
@@ -326,11 +344,13 @@ padding:10px;
 width:600px;
 }
 
+/*
 form.ff p {
 margin:0 6px 0 6px;
 padding:6px 0 6px 240px;
 }
-
+*/
+/*
 form.ff label {
 float: left;
 margin-left: -240px;
@@ -341,13 +361,12 @@ padding-top:4px;
 form.ff label.case {
 
 }
+*/
 
-
-form.ff input[type="text"], form.ff input[type="password"], form.ff textarea {width:90%;border:1px solid #E6E6E6;}
-
+form.ff input[type="text"], form.ff input[type="password"] form.ff textarea, .input_file {width:50%;border:1px solid #E6E6E6;}
 form.ff input[type="checkbox"] {border:1px solid red;margin:10px 0;}
 
-form.ff select {width:94%;border:1px solid #E6E6E6;}
+form.ff select {width:48%;border:1px solid #E6E6E6;}
 form.ff textarea {height:150px;}
 form.ff option {padding:3px;}
 

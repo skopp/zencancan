@@ -17,20 +17,14 @@
 	<?php $this->Connexion->displayTokenField(); ?>
 	<input type='hidden' name='path_info' value='/Param/doPassword' />
 	
-	<p>
-	<label for="oldpassword">Votre ancien mot de passe</label>
-	<input type='password' name='oldpassword'/>
-	</p>
+	<p><label for="oldpassword">Votre ancien mot de passe</label></p>
+	<p><input type='password' name='oldpassword'/></p>
 	
-	<p>
-	<label for="password">Nouveau mot de passe</label>
-	<input type='password' name='password'/>
-	</p>
+	<p><label for="password">Nouveau mot de passe</label></p>
+	<p><input type='password' name='password'/></p>
 	
-	<p>
-	<label for="password2">Nouveau mot de passe (v&eacute;rification)</label>
-	<input type='password' name='password2'/><br/>
-	</p>
+	<p><label for="password2">Nouveau mot de passe (v&eacute;rification)</label></p>
+	<p><input type='password' name='password2'/></p>
 	
 	
 	<input type='submit' class='submit' value='Modifier'/>

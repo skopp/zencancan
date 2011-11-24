@@ -1,7 +1,7 @@
 <div id="colonne">
 	<div class="box">
-		<h2>Mes étiquettes</h2>
-		<ul>
+		<h2>Mes &eacute;tiquettes</h2>
+		<ul class="ul">
 			<li><a href='<?php $this->Path->path("/Feed/list")?>' title='Tous'>
 							Tous
 				</a></li>
@@ -15,14 +15,6 @@
 			<?php endforeach; ?>
 		</ul>
 	</div>
-	<!-- <div class="box">
-		<h2>Mes sites</h2>
-		<ul class="site_list">
-			<?php for ( $i=1; $i < 10 ; $i++ ) : ?>
-			<li><a href="#"><img src="img/commun/favicon_001.png" alt="" />Zagaz blog</a></li>
-			<?php endfor; ?>
-		</ul>
-	</div> -->
 </div>
 
 <div id="contenu">
@@ -41,7 +33,7 @@
 <table>
 <?php foreach($allFlux as $i => $flux) : ?>
 	<tr>
-		<td class="favicon"><img src="img/commun/favicon_001.png" alt="" /></td>
+		<td class="favicon"><img src="<?php $this->Path->echoRessourcePath("/img/commun/favicon_001.png") ?>" alt="" /></td>
 		<td class='blog'><?php hecho(wrap($flux['title'],25,1))?></td>
 		<td >
 			<a href='<?php $this->Path->path("/Feed/read/{$flux['id_f']}/0") ?>' title='<?php  echo get_link_title($flux['item_content']) ?>'>
