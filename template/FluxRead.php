@@ -77,16 +77,17 @@
 			<div class="liste_billet">
 				<div class="img">
 					<!-- <img src="<?php $this->Path->echoRessourcePath("/img/commun/image_001.png") ?>" alt="" />  --> 
-					<img width='64px;' style='max-height: 64px;' src='<?php echo $this->ImageFinder->getFirst($itemInfo['content']) ?>' alt=''/> 
+					<img src='<?php echo $this->ImageFinder->getFirst($itemInfo['content']) ?>' alt=''/> 
 				</div>
 				<div class="info">
+					<p class="date"><?php echo $this->FancyDate->get($itemInfo['pubDate'])?></p>
 					<p class="lien">
 					<a href='<?php $this->Path->path("/Feed/read/$id_f/$i")?>'  >
 							<?php hecho(strip_tags($itemInfo['title'])) ?>
 					</a>
 					</p>
 					<p class="extrait"><?php  hecho($itemInfo['description']); ?></p>
-					<p class="date"><?php echo $this->FancyDate->get($itemInfo['pubDate'])?></p>
+					
 				</div>
 			</div>
 			<?php endforeach; ?>
@@ -132,16 +133,12 @@
 	<div class="box">
 	<div class="billet">
 
+		<div class="date">publi&eacute; : Mettre date du billet ici</div>
+		<p>
 		
-			<div class='item_content width_min'>
-				<?php echo $content_html;?>
-			</div>
-		
-			<br/><br/>
 			
-			<div class="width_min align_center">
-
-			</div>
+				<?php echo $content_html;?>
+		</p>
 			
 			
 			

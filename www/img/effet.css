@@ -68,7 +68,7 @@ box-shadow:2px 2px 5px #888;
 
 .ff .submit, .a_btn, .blog_option ul li a, .billet_option  ul li a, #addflux input.btn_go, form.ff,
 form.ff input[type="text"], form.ff input[type="password"], form.ff textarea, form.ff select, #tooltip,
-.blog_option ul li form .submit:hover, .navigation_billet  {
+.blog_option ul li form .submit:hover, .navigation_billet, .box_error, .box_alert, .box_confirm, .box_info {
 border-radius:3px;
 -moz-border-radius:3px;
 -webkit-border-radius: 3px;
