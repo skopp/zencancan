@@ -67,7 +67,7 @@ overflow:auto;
 
 
 #contenu {
-margin-left: 280px;
+margin-left: 220px;
 }
 
 #colonne {
@@ -76,7 +76,7 @@ border-right:1px solid #E6E6E6;
 margin-top:20px;
 padding-right:10px;
 min-height:440px;
-width:260px;
+width:200px;
 }
 
 
@@ -161,11 +161,6 @@ border-bottom:1px solid #D3EAFF;
 width:128px;
 text-align:right;
 float:left;
-}
-
-.liste_billet .img img {
-max-width:128px;
-max-height:80px;
 }
 
 .liste_billet .info {
@@ -347,8 +342,8 @@ tr:hover {background:#F8F8F8;}
 td.favicon {width:16px;padding-left:0;}
 td.blog {width:160px;}
 td.tag {width:140px;}
-td.date {width:20px;color:#2D72B4;font-size:90%;}
-
+td.date {max-width:120px;color:#4D4D4D;font-size:85%;font-weight:bold;}
+td.lien {min-width:400px;}
 
 
 

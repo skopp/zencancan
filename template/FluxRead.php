@@ -76,8 +76,8 @@
 			<?php foreach($rssInfo['item'] as $i => $itemInfo) : ?>
 			<div class="liste_billet">
 				<div class="img">
-					<!-- <img src="<?php $this->Path->echoRessourcePath("/img/commun/image_001.png") ?>" alt="" />  --> 
-					<img src='<?php echo $this->ImageFinder->getFirst($itemInfo['content']) ?>' alt=''/> 
+
+					<img class='ilu_billet' src='<?php echo $this->ImageFinder->getFirst($itemInfo['content']) ?>' alt=''/> 
 				</div>
 				<div class="info">
 					<p class="date"><?php echo $this->FancyDate->get($itemInfo['pubDate'])?></p>

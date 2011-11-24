@@ -32,36 +32,6 @@ $(document).ready(function() {
 		/* tooltip */
 		tooltip();
 
-		/* bloc faq */
-	  $(".faq_reponse").hide();
-	  $(".faq_question").click(function()
-	  {
-	    $(this).next(".faq_reponse").slideToggle(600);
-	  });
-
-		//$("#contenu").addClass('cont_min');
-		//$("#colonne").addClass('col_max');
-		
-		
-	  /* tableau des billets */
-		
-		/*
-		$('#billet_list').addClass("bloc_off"); 	
-		$('#contenu').addClass("cont_max");
-		$('#colonne').addClass("col_min");
-		
-		$("#billet_list_table").hover(
-	        function() {
-	            //$(this).switchClass('bloc_off','bloc_on',500);
-				$("#contenu").addClass('cont_min');
-				$("#colonne").addClass('col_max');
-	        }, 
-	        function() {   
-	            //$(this).switchClass('bloc_on','bloc_off',500);
-	        	$("#contenu").addClass('cont_max');
-				$("#colonne").addClass('col_min');	        }
-		);
-*/
 
 	  /* menu options */
 	    $("#option_menu").hide();
@@ -80,11 +50,19 @@ $(document).ready(function() {
 		$('#tags_btn').click(function(){
 	    	$('#tags_menu').slideToggle();
 	    });
-		/*
-	    $("body").mouseup(function(){ 
-			$('#tags_menu').slideUp();
-	    });
-		*/
+   
+   	/* gestion des images */
+	
+	var max_width = 128;
+	$('.ilu_billet').each(function () {
+
+		if ( $(this).width() > max_width ) {
+			$(this).css("width", "128px");
+			$(this).css("max-height", "80px");
+		}
+	});
+	
+   
    
 });
 
