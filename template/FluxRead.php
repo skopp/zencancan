@@ -1,33 +1,94 @@
 <div id="colonne">
-	<div class="breadcrumbs">
-		<a class='a_btn_nav' href='<?php $this->Path->path() ?>'>&laquo; Revenir &agrave; la liste des sites</a>
-	</div>
-	<div class="box">
-		<div class="haut"><h2>
-		<a href='<?php $this->Path->path("/Feed/detail/$id_f");?>' >		
-		<?php hecho($rssInfo['title']) ?></a></h2></div>
-		<div class="cont">
-			<ul class="ul_liste_article">
+
+<div class="box">
+		<h2>Derniers articles</h2>
+		
+		<div id="billet_list">
+			<div class="">
+				<table>
 				<?php foreach($rssInfo['item'] as $i => $itemInfo) : ?>
-					<li>
-						<p><?php echo $this->FancyDate->get($itemInfo['pubDate'])?></p>
-						<a href='<?php $this->Path->path("/Feed/read/$id_f/$i")?>'  
+				<tr>
+				<?php
+				$img = "non_lu.png";
+				//if ( rand(0,1) == 1 ) $img = "lu.png";
+				
+				?>
+				<td class="lecture"><img src="img/commun/<?php echo $img; ?>" alt="" /></td>
+				<td><a href='<?php $this->Path->path("/Feed/read/$id_f/$i")?>'  
 							title='<?php  hecho($itemInfo['description']); ?>'>
 							<?php hecho(strip_tags($itemInfo['title'])) ?>
-						</a>
-					</li>
+						</a></td>
+				<td class="date"><?php echo $this->FancyDate->get($itemInfo['pubDate'])?></td>
+				</tr>
 				<?php endforeach; ?>
-			</ul>
-			<div class="clear"></div>
+				</table>
+			</div>
 		</div>
-		<div class="bas"></div>				
-	</div>
-	<?php $this->render("FluxGestion"); ?>
+	</div>			
 </div>
 
 
 <div id="contenu">
+
+
+<div id="info_blog">
+	<div class="blog_titre">
+		<p class="titre"><img src="img/commun/favicon_001.png" alt="" /><?php hecho($rssInfo['title']) ?></p>
+	</div>
+	
+	<div class="blog_option">
+		<ul>
+		<li>
+		<?php if ($isAdmin) : ?>
+			<a  class="a_btn" href='<?php $this->Path->path("/Feed/forceReload/$id_f")?>'>Actualiser</a>
+			
+		<?php endif;?>
+		</li>
+		
+			<li>
+	<form  action='<?php $this->Path->path() ?>' method='post'>
+			<?php $this->Connexion->displayTokenField(); ?>
+			<input type='hidden' name='path_info' value='/Feed/doDelete' />
+			
+			<input class='submit' type='submit' value='Ne plus suivre'/>
+		
+			<input type='hidden' name='id_f' value='<?php echo $id_f ?>'/>
+		</form>
+
+	</li>
+			<li><a href="#" class="option" id="tags_btn">Gérer les étiquettes</a></li>
+		</ul>
+			<?php if ($tag) : ?>
+		&Eacute;tiquettes : 
+			<?php foreach($tag as $one_tag): ?>
+			<a href='<?php $this->Path->path("/Feed/list/0/$one_tag") ?>'><?php hecho($one_tag) ?></a>
+			&nbsp;<a href='<?php $this->Path->path("/Tag/del/$id_f/$one_tag") ?>' title='supprimer'>X</a>
+			<?php endforeach;?>
+		<?php endif;?>
+		
+		
+		<form action='<?php $this->Path->path() ?>' method='post'>
+			<?php $this->Connexion->displayTokenField(); ?>
+			<input type='hidden' name='path_info' value='/Tag/doAdd' />
+			<input type='hidden' name='id_f' value='<?php echo $id_f ?>'/>
+			
+			<p >
+			<span>Ajouter une &eacute;tiquette: </span>
+			<input type='text' name='tag' value='' />
+			<br/>
+			<input class='a_btn' type='submit' value='Ajouter'/>
+			</p>
+		</form>
+		
+		
+	</div>
+</div>
+
+
 <?php $this->LastMessage->display()?>
+
+
+
 
 <?php $this->render("FluxLink"); ?>
 
@@ -39,8 +100,6 @@
 		</div>
 		
 		<div class="cont">
-		
-			
 			<div class='item_content width_min'>
 				<?php echo $content_html;?>
 			</div>
