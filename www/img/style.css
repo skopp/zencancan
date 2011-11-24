@@ -10,7 +10,7 @@ abbr,acronym {border:0;font-variant:normal;}
 sup {vertical-align:text-top;}
 sub {vertical-align:text-bottom;}
 input,textarea,select{font-size:inherit;font-weight:inherit;}
-input,textarea,select{font-size:90%;font-family:verdana,arial, helvetica, sans-serif;}
+input,textarea,select,.a_btn{font-size:90%;font-family:verdana,arial, helvetica, sans-serif;}
 legend{color:#000;}
 
 
@@ -205,6 +205,19 @@ padding:8px;
 background:#F8F8F8;
 }
 
+#colonne .box ul.ul {
+margin:6px 0 14px 0;
+}
+
+#colonne .box ul.ul li a {
+display:block;
+padding:6px 0 6px 0;
+border:1px solid #fff;
+}
+
+#colonne .box ul.ul li a:hover {padding-left:2px;}
+
+
 #contenu .box {padding:10px 10px 10px 0;}
 
 
@@ -318,15 +331,14 @@ width:600px;
 
 form.ff p {
 margin:0 6px 0 6px;
-padding:6px 0 6px 200px;
+padding:6px 0 6px 240px;
 }
 
 form.ff label {
 float: left;
-margin-left: -200px;
-width: 190px;
-line-height:2.5em;
-
+margin-left: -240px;
+width: 230px;
+padding-top:4px;
 }
 
 form.ff label.case {
@@ -366,11 +378,13 @@ border: 1px solid #B3B2B2;
 color: #545454;
 margin-bottom: 1px;
 padding: 3px 10px 5px 10px;
-text-transform: uppercase;
+font-weight:bold;
 cursor:pointer;
-font-size:80%;
+font-size:86%;
 margin:4px 0 4px 0;
 }
+
+.a_btn {padding: 4px 10px 6px 10px;}
 
 .ff .submit {margin-right:26px;}
 
@@ -380,7 +394,19 @@ color:#000;
 text-decoration:none;
 }
 
+/* box_info */
 
+.box_info {
+border:1px solid blue;
+margin:10px 0 10px 0;
+padding:10px;
+}
+
+.box_alert {
+border:1px solid orange;
+margin:10px 0 10px 0;
+padding:10px;
+}
 
 /* element std */
 

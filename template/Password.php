@@ -1,30 +1,41 @@
 <?php $this->render("Menu");?>
 <div id="contenu">
 
-<a href='<?php $this->Path->path("/Param/index")?>'>&laquo; Revenir aux param&egrave;tres du compte </a>
-
+<h1>Modifier de votre mot de passe</h1>
 
 <div class="box">
-			<div class="haut">
-<h2>Modifier de votre mot de passe</h2>
-	</div>
-<div class="cont">
+
+
 
 <?php $this->LastMessage->display(); ?>
 <form class='ff' action='<?php $this->Path->path() ?>' method='post'>
+
+	<a href='<?php $this->Path->path("/Param/index")?>'>&laquo; Revenir aux param&egrave;tres du compte </a>
+
+	<hr/>
+	
 	<?php $this->Connexion->displayTokenField(); ?>
 	<input type='hidden' name='path_info' value='/Param/doPassword' />
+	
+	<p>
 	<label for="oldpassword">Votre ancien mot de passe</label>
 	<input type='password' name='oldpassword'/>
-	<hr/>
+	</p>
+	
+	<p>
 	<label for="password">Nouveau mot de passe</label>
 	<input type='password' name='password'/>
-	<hr/>
+	</p>
+	
+	<p>
 	<label for="password2">Nouveau mot de passe (v&eacute;rification)</label>
 	<input type='password' name='password2'/><br/>
-	<hr/>
+	</p>
+	
+	
 	<input type='submit' class='submit' value='Modifier'/>
 </form>
-</div>
-</div>
-</div>
+
+</div><!-- fin box -->
+
+</div><!-- fin contenu -->

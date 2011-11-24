@@ -3,7 +3,7 @@
 		<h2>Derniers articles</h2>
 		
 		<div id="billet_list">
-			<div class="">
+			<div class="ul_col_menu">
 				<table width="100%">
 				<?php for ( $i=1; $i < 10 ; $i++ ) : ?>
 				<tr>

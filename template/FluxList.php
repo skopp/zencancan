@@ -49,6 +49,8 @@
 </tr>
 <?php endfor; ?>
 </table>
+
+
 <table>
 <?php foreach($allFlux as $i => $flux) : ?>
 	<tr>

@@ -26,7 +26,7 @@
 				<a href='<?php $this->Path->path("/Feed/read/$id_f/$i") ?>' title='<?php hecho($flux['description']); ?>'>
 					<?php hecho(strip_tags($flux['title'])) ?>
 				</a>
-				<a href='<?php hecho($flux['link'])?>' target='_blank' title="Ouvrir l'article original">
+				<a href='<?php hecho($flux['link'])?>' target='_blank' title="Ouvrir l'article original (nouvelle fenêtre)">
 					&raquo;
 				</a>
 			<br/>
