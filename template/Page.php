@@ -12,7 +12,7 @@
 		<link rel="Shortcut Icon" href="<?php $this->Path->echoRessourcePath("/favicon.ico") ?>" type="image/x-icon" />
 		<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.5/jquery.min.js"></script>
 		<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8/jquery-ui.min.js"></script>
-		<script type="text/javascript" src="<?php $this->Path->echoRessourcePath("/js/code.js") ?>""></script>
+		<script type="text/javascript" src="<?php $this->Path->echoRessourcePath("/js/code.js") ?>"></script>
 		
 	</head>
 	<body>
@@ -60,27 +60,33 @@
 					</div>
 				</div>
 				<?php else: ?>
-					<a  href='<?php echo $this->Path->getPathWithUsername();?>'>Accueil</a>
-					<a  href='<?php $this->Path->path('/Connexion/login');?>'>Se connecter</a>
-					<a href='<?php echo $this->Path->getPathWithUsername("",'/Account/create');?>'>Cr&eacute;er un compte</a>
+					<ul>
+					<li><a href='<?php echo $this->Path->getPathWithUsername();?>'>Accueil</a></li>
+					<li><a href='<?php $this->Path->path('/Connexion/login');?>'>Se connecter</a></li>
+					<li><a href='<?php echo $this->Path->getPathWithUsername("",'/Account/create');?>'>Cr&eacute;er un compte</a></li>
+					</ul>
 				<?php endif;?>				
 			</div>
 		</div><!-- header -->
 
+		
 		<div id="global_main" class="wrap">
 			<div id="main">
 				<?php $this->render($template_milieu);?>
-			</div>
+			</div><!-- fin main -->
+			
+			
+			
+			
 			<div id="footer">
 				<p class="align_right">
 					Page g&eacute;n&eacute;r&eacute;e par zenCancan r&eacute;vision <?php echo $revision_number ?> en <?php echo round((microtime(true) - $debut) * 10000) / 10 ?>ms
 					- <a href='<?php $this->Path->path("/Param/legal") ?>'>Mentions l&eacute;gales
 					</a>
 				</p>
-			</div>
-		</div>
+			</div><!-- fin footer -->
+		</div><!-- fin global_main -->
 	
 	</div><!-- fin container -->
 </body>
 </html>
-	
