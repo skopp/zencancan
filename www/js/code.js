@@ -55,7 +55,6 @@ $(document).ready(function() {
 	
 	var max_width = 128;
 	$('.ilu_billet').each(function () {
-
 		if ( $(this).width() > max_width ) {
 			$(this).css("width", "128px");
 			$(this).css("max-height", "80px");

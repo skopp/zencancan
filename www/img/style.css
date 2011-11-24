@@ -145,7 +145,6 @@ float:left;
 /* liste billet */
 
 .liste_billet {
-
 border-bottom:1px solid #E6E6E6;
 padding:6px 0 6px 0;
 line-height:0.8em;
@@ -175,6 +174,14 @@ margin:0;
 .liste_billet .info .lien a:hover {color:#0E86F6;}
 .liste_billet .info .extrait {color:#959595;font-size:85%;text-align:justify;} 
 .liste_billet .info .date {font-size:85%;font-weight:bold;}
+
+
+.billet_actif, .billet_actif:hover {background:url(commun/back_billet_actif.png) top right no-repeat #000;padding:6px;}
+.billet_actif .info .lien a {color:#A9CBEB;}
+.billet_actif .info .lien a:hover {color:#0E86F6;}
+.billet_actif .info .extrait {color:#959595;} 
+.billet_actif .info .date {color:#fff;}
+
 
 
 /* Page Billet */

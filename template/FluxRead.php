@@ -72,13 +72,24 @@
 <div class="box">
 
 		<h2>Derniers articles</h2>
-		
+			<?php 
+			$cpt = 0;
+			$article_actif = "";
+			?>
+				
 			<?php foreach($rssInfo['item'] as $i => $itemInfo) : ?>
-			<div class="liste_billet">
+			<?php 
+				$cpt++;	
+				if ($cpt == 3) $article_actif = " billet_actif";
+				else $article_actif = "";
+			?>
+
+			<div class="liste_billet<?php echo $article_actif ?>">
 				<div class="img">
 
 					<img class='ilu_billet' src='<?php echo $this->ImageFinder->getFirst($itemInfo['content']) ?>' alt=''/> 
 				</div>
+
 				<div class="info">
 					<p class="date"><?php echo $this->FancyDate->get($itemInfo['pubDate'])?></p>
 					<p class="lien">
