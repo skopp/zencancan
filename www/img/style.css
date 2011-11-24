@@ -158,16 +158,18 @@ border-bottom:1px solid #D3EAFF;
 }
 
 .liste_billet .img {
+width:128px;
+text-align:right;
 float:left;
 }
 
 .liste_billet .img img {
-width:128px;
+max-width:128px;
 max-height:80px;
 }
 
 .liste_billet .info {
-margin-left:132px;
+margin-left:134px;
 }
 
 .liste_billet .info p {
@@ -243,7 +245,7 @@ padding:10px;
 #colonne .box h2 {color:#959595;border-bottom:1px solid #E6E6E6;padding:8px;background:#F8F8F8;}
 #colonne .box ul.ul {margin:6px 0 14px 0;}
 #colonne .box ul.ul li a {display:block;padding:6px 0 6px 0;border:1px solid #fff;}
-#colonne .box ul.ul li a:hover {padding-left:2px;}
+#colonne .box ul.ul li a:hover {}
 
 
 /* Definition des boites de type messages */
