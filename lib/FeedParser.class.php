@@ -79,7 +79,7 @@ class FeedParser {
 	}
 	
 	private function shorten($text){
-		$result =  trim(wrap(strip_tags($text),400,1));
+		$result =  trim(wrap(strip_tags($text),100,1));
 		$result = preg_replace("#&nbsp;#"," ",$result);
 		return $result;
 		
@@ -87,7 +87,7 @@ class FeedParser {
 
 	private function parse(SimpleXMLElement $xml){		
 		$documentType = strtolower($xml->getName());
-		
+		 
 		switch($documentType){
 			case 'rss': return $this->parseRSS($xml);
 			case 'rdf' : return $this->parseRDF($xml);

@@ -73,21 +73,19 @@
 
 		<h2>Derniers articles</h2>
 		
-		
-			
 			<?php foreach($rssInfo['item'] as $i => $itemInfo) : ?>
 			<div class="liste_billet">
 				<div class="img">
-					<img src="<?php $this->Path->echoRessourcePath("/img/commun/image_001.png") ?>" alt="" />
+					<!-- <img src="<?php $this->Path->echoRessourcePath("/img/commun/image_001.png") ?>" alt="" />  --> 
+					<img width='64px;' style='max-height: 64px;' src='<?php echo $this->ImageFinder->getFirst($itemInfo['content']) ?>' alt=''/> 
 				</div>
 				<div class="info">
 					<p class="lien">
-					<a href='<?php $this->Path->path("/Feed/read/$id_f/$i")?>'  
-							title='<?php  hecho($itemInfo['description']); ?>'>
+					<a href='<?php $this->Path->path("/Feed/read/$id_f/$i")?>'  >
 							<?php hecho(strip_tags($itemInfo['title'])) ?>
 					</a>
 					</p>
-					<p class="extrait">jksqldlhskjdh qlskj sqj lhdkq ldhqlsj hsqlkjdhqsj qhsdlqksdqksjd </p>
+					<p class="extrait"><?php  hecho($itemInfo['description']); ?></p>
 					<p class="date"><?php echo $this->FancyDate->get($itemInfo['pubDate'])?></p>
 				</div>
 			</div>
@@ -131,16 +129,9 @@
 	
 </div>
 
-
-
-
 	<div class="box">
 	<div class="billet">
-		<h2>
-		- <a href='<?php hecho($rssInfo['link']) ?>'><?php hecho($rssInfo['title']) ?></a>
-		</h2>
-		
-		
+
 		
 			<div class='item_content width_min'>
 				<?php echo $content_html;?>
