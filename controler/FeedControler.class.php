@@ -27,6 +27,8 @@ class FeedControler extends ZenCancanControler {
 		}
 		$id_u = $this->verifConnected();
 		
+		$this->Gabarit->all_tag = $this->TagSQL->getAllTag($id_u);
+		
 		$this->Gabarit->allFlux = $this->AbonnementSQL->get($id_u,$tag,$offset);
 		$this->Gabarit->nbFlux = $this->AbonnementSQL->getNbFlux($id_u,$tag);		
 		$this->SuivantPrecedent->setParameter($offset,

@@ -1,7 +1,7 @@
-<?php header("Content-type: text/html; charset=ISO-8859-1");?> 
-<?php session_start(); ?>
-<?php
-?>
+<?php header("Content-type: text/html; charset=ISO-8859-1");
+
+session_start(); ?>
+
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="fr" lang="fr">
 
@@ -61,10 +61,10 @@
 					
 					<div id="option_menu">
 						<ul>
-						<li><a href="#">Paramètre de mon compte</a><hr/></li>
+						<li><a href="#">Paramï¿½tre de mon compte</a><hr/></li>
 						<li><a href="#">Importer mes flux</a><hr/></li>
 						<li><a href="#">Aide</a><hr/></li>
-						<li><a href="#">Déconnexion</a></li>
+						<li><a href="#">Dï¿½connexion</a></li>
 						</ul>
 					</div>
 				</div>

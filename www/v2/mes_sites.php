@@ -1,9 +1,7 @@
 <?php
 $page = "mes_sites";
 $titre_h1 = "Titre de niveau H1";
-?>
-
-<?php include('_haut.php'); ?>
+include('_haut.php'); ?>
 
 <h1><?php echo $titre_h1 ?></h1>
 

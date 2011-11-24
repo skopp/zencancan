@@ -1,0 +1,80 @@
+/*
+box-shadow:inset 0px 1px 2px #bbb;
+-moz-box-shadow:inset 0px 1px 2px #bbb;
+-webkit-box-shadow:inset 0px 1px 2px #bbb;
+
+border-radius:3px;
+-moz-border-radius:3px;
+-webkit-border-radius: 3px;
+
+
+-webkit-border-top-left-radius: 3px;
+-webkit-border-top-right-radius: 3px;
+-moz-border-radius-topleft: 3px;
+-moz-border-radius-topright: 3px;
+border-top-left-radius: 3px;
+border-top-right-radius: 3px;
+
+
+-webkit-border-top-left-radius: 3px;
+-webkit-border-bottom-left-radius: 3px;
+-moz-border-radius-topleft: 3px;
+-moz-border-radius-bottomleft: 3px;
+border-top-left-radius: 3px;
+border-bottom-left-radius: 3px;
+
+
+-webkit-border-bottom-right-radius: 3px;
+-webkit-border-top-right-radius: 3px;
+-moz-border-radius-bottomright: 3px;
+-moz-border-radius-topright: 3px;
+border-bottom-right-radius: 3px;
+border-top-right-radius: 3px;
+
+-webkit-border-bottom-right-radius: 3px;
+-webkit-border-bottom-left-radius: 3px;
+-moz-border-radius-bottomright: 3px;
+-moz-border-radius-bottomleft: 3px;
+border-bottom-right-radius: 3px;
+border-bottom-left-radius: 3px;
+*/
+
+.bloc_on, #option_menu {
+box-shadow:0px 2px 2px #bbb;
+-moz-box-shadow:0px 2px 2px  #bbb;
+-webkit-box-shadow:0px 2px 2px #bbb;
+
+border-radius:3px;
+-moz-border-radius:3px;
+-webkit-border-radius: 3px;
+
+}
+
+#tooltip {
+box-shadow:2px 2px 5px #888;
+-moz-box-shadow:2px 2px 5px #888;
+-webkit-box-shadow:2px 2px 5px #888;
+}
+
+.ff .submit, .a_btn, .blog_option ul li a, .billet_option  ul li a, #addflux input.btn_go, form.ff,
+form.ff input[type="text"], form.ff input[type="password"], form.ff textarea, form.ff select, #tooltip  {
+border-radius:3px;
+-moz-border-radius:3px;
+-webkit-border-radius: 3px;
+}
+
+
+form.ff input[type="text"]:focus, form.ff input[type="password"]:focus, form.ff textarea:focus, form.ff select:focus {
+box-shadow:inset 0px 1px 2px #bbb;
+-moz-box-shadow:inset 0px 1px 2px #bbb;
+-webkit-box-shadow:inset 0px 1px 2px #bbb;
+background:#FFFEF1;
+}
+
+
+
+#addflux input.recherche {
+border-radius:2px;
+-moz-border-radius:2px;
+-webkit-border-radius: 2px;
+}

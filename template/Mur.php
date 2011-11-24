@@ -33,7 +33,7 @@
 					<h3><?php hecho($item['title'])?></h3>
 				<?php endif;?>
 					<?php if($item['img']): ?>
-						<img alt='' width='150' style='float:left; padding: 0px 10px; ' src='<?php echo $item['img']?>' title='<?php hecho($item['title'])?>'/>
+						<img alt='' style='width:80px; max-height: 80px;  float:left; padding: 0px 10px; ' src='<?php echo $item['img']?>' title='<?php hecho($item['title'])?>'/>
 					<?php endif;?>
 					<?php echo $item['description']; ?>
 					<a href='<?php hecho($item['link'])?>' target='_blank'>Lire la suite</a>

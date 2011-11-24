@@ -16,6 +16,16 @@ class TagSQL extends SQL {
 		$this->query($sql,$id_u,$id_f,$tag);
 	}
 	
+	public function getAllTag($id_u){
+		$sql = "SELECT tag FROM tag WHERE id_u=? ORDER BY tag";
+		$result = array();
+		foreach($this->query($sql,$id_u) as $row){
+			$result[] = $row['tag'];
+		}
+		return $result;
+		
+	}
+	
 	public function getAll($id_u,$id_f){
 		$sql = "SELECT tag FROM tag WHERE id_u=? AND id_f=?";
 		$result = array();
