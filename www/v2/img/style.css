@@ -260,7 +260,8 @@ border:1px solid transparent;
 width:460px;
 overflow: auto;
 border:1px solid #E6E6E6;
-padding:0 10px 0 10px;
+padding:10px;
+
 }
 
 #option_menu {
@@ -271,6 +272,7 @@ top:34px;
 right:0;
 width:246px;
 }
+
 
 #option_menu ul {}
 #option_menu ul li {float:none;padding:0;margin:0;}

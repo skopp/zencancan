@@ -4,7 +4,7 @@
 		
 		<div id="billet_list">
 			<div class="">
-				<table>
+				<table width="100%">
 				<?php for ( $i=1; $i < 10 ; $i++ ) : ?>
 				<tr>
 				<?php

@@ -53,16 +53,45 @@ $(document).ready(function() {
 
 
 	  /* menu options */
+	  	var menu_ouvert = false;
+		var body_clic = false;
+		
 	    $("#option_menu").hide();
+
+//		alert('body_clic = '+body_clic+'\n\nmenu_ouvert = '+menu_ouvert);
 		
-		$('#option_btn').click(function(){
-	    	$('#option_menu').slideDown();
-	    });
-		
-	    $("body").mouseup(function(){ 
-			$('#option_menu').slideUp();
+		$('#option_btn').click(
+		function(){
+			
+			if ( body_clic == false ) {
+				if ( menu_ouvert == false ) {
+					menu_ouvert = true;
+			    	$('#option_menu').slideDown();
+				}else{
+					menu_ouvert = false;
+		    		$('#option_menu').slideUp();
+				}
+			} else {
+				
+				body_clic = false;
+				menu_ouvert = false;
+			}
 	    });
 
+		
+	    $("body").mouseup(function(){ 
+			if ( menu_ouvert ) {
+				
+				body_clic = true;
+				$('#option_menu').slideUp();
+			}
+	    });
+		
+
+	
+		
+		
+		
 	  /* menu tags */
 	    $("#tags_menu").hide();
 		
