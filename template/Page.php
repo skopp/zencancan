@@ -43,7 +43,7 @@
 					<ul>
 						<li><a class='actif' href='<?php $this->Path->path("/Feed/list")?>'>Mes sites</a></li>
 						<li><a href='<?php $this->Path->path("/Mur/index")?>'>Mon mur</a></li>
-						<li><a href="<?php $this->Path->path("/Feed/new")?>">Nouveau site</a></li>
+						<!-- <li><a href="<?php $this->Path->path("/Feed/new")?>">Nouveau site</a></li> -->
 						<li><a href="#" class="option" id="option_btn">Options</a></li>
 						<?php if ($isAdmin) : ?>
 							<li><a href='<?php $this->Path->path("/Admin/flux")?>'>Admin</a></li> 

@@ -88,13 +88,50 @@
 <?php $this->LastMessage->display()?>
 
 
+<div id="info_billet">
+	<div class="billet_titre">
+		<h1><?php hecho($resultItem['title'])?></h1>
+		
+	</div>
+	<div class="billet_option">
+		<ul>
+			<li>			 <form class='force_center' action='<?php $this->Path->path() ?>' method='post'>
+				<?php $this->Connexion->displayTokenField(); ?>
+				<input type='hidden' name='path_info' value='/Feed/doAddMur' />
+				<input type='hidden' name='id_f' value='<?php hecho($id_f)?>' />				
+				<input type='hidden' name='num_feed' value='<?php hecho($num_feed)?>' />
+				<input type='submit' value='Publier sur mon mur' class="submit " />
+			</form></li>
+		</ul>
+		<div id="tags_menu">
+			<p>
+			blablablbal
+			</p>
+		</div>
+	</div>
+	
+	<hr/>
+	
+	<div class="box_suiv_prec">
+		<div class="prec"><?php if ($num_feed > 0) : ?>
+		<a href='<?php $this->Path->path("/Feed/read/$id_f/".($num_feed-1)); ?>'>Article pr&eacute;c&eacute;dent</a>
+	<?php endif;?></div>
+		<div class="milieu"></div>
+		<div class="suiv"><?php if ($num_feed < count($rssInfo['item']) - 1) : ?>
+		<a href='<?php $this->Path->path("/Feed/read/$id_f/".($num_feed+1)); ?>'>Article suivant</a>
+	<?php endif;?></div>
+	
+	</div>
+	
+	
+</div>
 
 
-<?php $this->render("FluxLink"); ?>
+
 
 	<div class="box">
 		<div class="haut">
-		<h2><?php hecho($resultItem['title'])?>
+		<h2>
 		- <a href='<?php hecho($rssInfo['link']) ?>'><?php hecho($rssInfo['title']) ?></a>
 		</h2>
 		</div>
@@ -107,17 +144,10 @@
 			<br/><br/>
 			
 			<div class="width_min align_center">
-			 <form class='force_center' action='<?php $this->Path->path() ?>' method='post'>
-				<?php $this->Connexion->displayTokenField(); ?>
-				<input type='hidden' name='path_info' value='/Feed/doAddMur' />
-				<input type='hidden' name='id_f' value='<?php hecho($id_f)?>' />				
-				<input type='hidden' name='num_feed' value='<?php hecho($num_feed)?>' />
-				<input type='submit' value='Publier sur mon mur' class="submit " />
-			</form>
+
 			</div>
 			
 			
-			<?php $this->render("FluxLink"); ?>
 			
 			
 				<?php 
