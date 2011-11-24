@@ -24,28 +24,21 @@
 				<?php $this->Connexion->displayTokenField(); ?>
 				<input type='hidden' name='path_info' value='/Contact/doContact' />							
 				
-				<p>
-				<label for="sujet">Sujet</label>
-				<input type="text" name="sujet" id="sujet" size='40' value='<?php echo $this->LastMessage->getLastInput('sujet') ?>'/>
-				</p>
+				<p><label for="sujet">Sujet</label></p>
+				<p><input type="text" name="sujet" id="sujet" value='<?php echo $this->LastMessage->getLastInput('sujet') ?>'/></p>
 				
-				<p>
-				<label for="email">Votre email</label>
-				<input type="text" name="email" id="email" size='40'  value='<?php echo $this->LastMessage->getLastInput('email') ?>'/>
-				</p>
+				<p><label for="email">Votre email</label></p>
+				<p><input type="text" name="email" id="email" value='<?php echo $this->LastMessage->getLastInput('email') ?>'/></p>
 				
-				<p>
-				<label for="question">Votre question</label>
-				<textarea name="question" id="question" cols='60' rows='25'><?php echo $this->LastMessage->getLastInput('question') ?></textarea>
-				</p>
+				<p><label for="question">Votre question</label></p>
+				<p><textarea name="question" id="question" cols='60' rows='25'><?php echo $this->LastMessage->getLastInput('question') ?></textarea></p>
 				
 				<input type="submit" class="submit" />
 				
 				
 				</form>
 			
-			</div>
-			<div class="bas"></div>				
+	
 		</div>
 		
 	

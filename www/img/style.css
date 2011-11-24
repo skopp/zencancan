@@ -67,7 +67,7 @@ overflow:auto;
 
 
 #contenu {
-margin-left: 220px;
+margin-left: 200px;
 }
 
 #colonne {
@@ -76,7 +76,7 @@ border-right:1px solid #E6E6E6;
 margin-top:20px;
 padding-right:10px;
 min-height:440px;
-width:200px;
+width:180px;
 }
 
 
@@ -247,7 +247,7 @@ padding:10px;
 #colonne .box h2 {color:#959595;border-bottom:1px solid #E6E6E6;padding:8px;background:#F8F8F8;}
 #colonne .box ul.ul {margin:6px 0 14px 0;}
 #colonne .box ul.ul li a {display:block;padding:6px 0 6px 0;border:1px solid #fff;}
-#colonne .box ul.ul li a:hover {}
+#colonne .box ul.ul li a:hover {font-weight:bold;}
 
 
 /* Definition des boites de type messages */
@@ -257,7 +257,6 @@ min-height:18px;
 margin:8px 0 8px 0;
 padding:8px 8px 8px 28px;
 border:1px solid;
-max-width:586px;
 }
 
 .box_error {background:url(commun/ilu_error.png) left no-repeat #FFAF99;border-color:#F38567;}
@@ -343,54 +342,36 @@ padding:10px;
 
 /* table */
 
-table {border:0;width:100%;margin:4px 0 4px 0;}
+table, .box table {width:100%;margin:4px 0 4px 0;}
 th, td {padding:8px 4px;border-bottom:1px solid #E6E6E6;}
 tr:hover {background:#F8F8F8;}
 td.favicon {width:16px;padding-left:0;}
-td.blog {width:160px;}
-td.tag {width:140px;}
-td.date {max-width:120px;color:#4D4D4D;font-size:85%;font-weight:bold;}
-td.lien {min-width:400px;}
-
+td.blog, .box td.blog {width:160px;}
+td.tag, .box td.tag {}
+td.date, .box td.date {color:#4D4D4D;font-size:85%;font-weight:bold;}
+td.lien, .box td.lien {}
 
 
 /* FORM */
 form {}
 
-form.ff {
+form.ff, .box_gris {
 background:#F8F8F8;
 border:1px solid #E6E6E6;
 padding:10px;
 width:600px;
+margin-bottom:18px;
 }
 
-/*
-form.ff p {
-margin:0 6px 0 6px;
-padding:6px 0 6px 240px;
-}
-*/
-/*
-form.ff label {
-float: left;
-margin-left: -240px;
-width: 230px;
-padding-top:4px;
-}
+.box_gris p {margin:10px 0 6px 0;}
 
-form.ff label.case {
-
-}
-*/
-
-form.ff input[type="text"], form.ff input[type="password"] form.ff textarea, .input_file {width:50%;border:1px solid #E6E6E6;}
-form.ff input[type="checkbox"] {border:1px solid red;margin:10px 0;}
+form.ff input, form.ff textarea, .input_file {width:50%;border:1px solid #E6E6E6;}
 
 form.ff select {width:48%;border:1px solid #E6E6E6;}
 form.ff textarea {height:150px;}
 form.ff option {padding:3px;}
 
-form.ff h2 {
+form.ff h2, .box_gris h2 {
 font-weight:bold;
 }
 
@@ -418,6 +399,7 @@ font-weight:bold;
 cursor:pointer;
 font-size:86%;
 margin:4px 0 4px 0;
+max-width:160px;
 }
 
 .a_btn {padding: 4px 10px 6px 10px;}
@@ -437,6 +419,7 @@ text-decoration:none;
 
 .clear {clear:both;}
 .w200 {width:200px;}
+.w600 {width:622px;}
 .discret {color:#959595;}
 
 .a_deco {text-decoration:underline;}

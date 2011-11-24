@@ -1,4 +1,5 @@
-<?php $this->render("Menu");?>
+
+
 <div id="contenu">
 
 <h1>Modifier de votre mot de passe</h1>
@@ -6,8 +7,12 @@
 <div class="box">
 
 
+	<div class="w600">
+	<?php $this->LastMessage->display(); ?>
+	</div>
 
-<?php $this->LastMessage->display(); ?>
+
+
 <form class='ff' action='<?php $this->Path->path() ?>' method='post'>
 
 	<a href='<?php $this->Path->path("/Param/index")?>'>&laquo; Revenir aux param&egrave;tres du compte </a>

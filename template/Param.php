@@ -2,16 +2,25 @@
 <div id="contenu">
 
 
-<?php $this->LastMessage->display(); ?>
+
 
 <h1>Param&egrave;tres</h1>
 
 <div class="box">
+	<div class="w600">
+	<?php $this->LastMessage->display(); ?>
+	</div>
+	
+	<div class="box_gris">
+	<h2>Mot de passe</h2>
+	<hr/>
+	<p>
 	<a class='a_btn' href="<?php $this->Path->path("/Param/password")?>">Modifier mon mot de passe</a>
-</div>
+	</p>
+	</div>
+	
 
-
-<div class="box">
+	
 	<form class='ff' action='<?php $this->Path->path() ?>' method='post' enctype='multipart/form-data'>
 	<h2>Mes donn&eacute;es</h2>
 	<hr/>
@@ -34,14 +43,7 @@
 		
 	</form>
 
-</div>
 
-
-
-
-
-
-<div class="box">
 
 	<form class='ff' action='<?php $this->Path->path() ?>' method='post' >
 	<h2>Supprimer mon compte</h2>
@@ -57,7 +59,7 @@
 	<p><input type='text' name='code' id='lab_1' value=''/></p>
 	
 	<p><label for="lab_2">Veuillez saisir votre mot de passe</label></p>
-	<p><input type='text' name='password' id='lab_2' type='password' value=''/></p>
+	<p><input type='password' name='password' id='lab_2'value=''/></p>
 		
 	<input type='submit' value='D&eacute;truire' class='submit'/>
 
