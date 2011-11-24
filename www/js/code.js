@@ -42,12 +42,19 @@ $(document).ready(function() {
 
 	  /* tableau des billets */
 		$('#billet_list').addClass("bloc_off"); 	
-		$("#billet_list").hover(
+		$('#contenu').addClass("cont_max");
+		$('#colonne').addClass("col_min");
+		
+		$("#billet_list_table").hover(
 	        function() {
-	            $(this).switchClass('bloc_off','bloc_on',500);
+	            //$(this).switchClass('bloc_off','bloc_on',500);
+				$("#contenu").switchClass('cont_max','cont_min',500);
+				$("#colonne").switchClass('col_min','col_max',500);
 	        }, 
 	        function() {   
-	            $(this).switchClass('bloc_on','bloc_off',500);
+	            //$(this).switchClass('bloc_on','bloc_off',500);
+				$("#contenu").switchClass('cont_min','cont_max',500);
+				$("#colonne").switchClass('col_max','col_min',500);
 	        }
 		);
 

@@ -17,7 +17,7 @@ legend{color:#000;}
 html  { font-size: 100%; }
 
 body {
-font-family:arial, helvetica, sans-serif;
+font-family:verdana, arial, helvetica, sans-serif;
 font-size:0.80em;
 color:#4D4D4D;
 background-color:#FFF;
@@ -29,6 +29,9 @@ background-color:#FFF;
 }
 
 p {line-height:1.4em;margin:4px 0 4px 0;}
+
+h1, h2, h3 {font-family:arial, helvetica, sans-serif;}
+
 h1 {font-weight:bold;font-size:140%;color:#878787;margin:16px 0 10px 0;}
 h2 {}
 h3 {}
@@ -62,19 +65,21 @@ overflow:auto;
 }
 
 
-#contenu {
-margin-left: 240px;
-}
+#contenu {}
+.cont_max {margin-left: 240px;}
+.cont_min {margin-left: 440px;}
+
 
 #colonne {
-width:220px;
 float:left;
 border-right:1px solid #E6E6E6;
 margin-top:20px;
 padding-right:10px;
 min-height:440px;
-
 }
+
+.col_min {width:220px;}
+.col_max {width:420px;margin-right:10px;}
 
 #header {
 background:url(commun/back_header.png) repeat-x #000;
@@ -114,24 +119,18 @@ overflow:auto;
 .blog_option {width:300px;float:right;}
 .blog_option ul {float:right;margin-top:2px;}
 .blog_option ul li {float:left;}
-.blog_option ul li a {
+.blog_option ul li a, .blog_option ul li form .submit  {
 color:#959595;
 display:block;
 margin-left:10px;
 padding:2px 6px 2px 6px;
 border:1px solid transparent;
+background:transparent;
+font-weight:normal;
 }
 
-.blog_option ul li a.option {
-background:url(commun/fleche_bas.png) right no-repeat transparent;padding-right:14px;
-}
-
-.blog_option ul li a:hover {
-background:#F8F8F8;
-border:1px solid #E6E6E6;
-color:#959595;
-}
-
+.blog_option ul li a.option {background:url(commun/fleche_bas.png) right no-repeat transparent;padding-right:14px;}
+.blog_option ul li a:hover, .blog_option ul li form .submit:hover {background:#F8F8F8;border:1px solid #E6E6E6;color:#959595;cursor:pointer;}
 .blog_option ul li a.option:hover {background:url(commun/fleche_bas.png) right no-repeat #F8F8F8;}
 
 
@@ -152,7 +151,7 @@ margin:4px 0 4px 0;
 .billet_titre span {font-size:90%;color:#B0B0B0;margin-left:4px;}
 
 
-.billet_option {width:300px;float:right}
+.billet_option {float:right;margin-bottom:8px;}
 .billet_option ul {float:right;margin-top:10px;}
 .billet_option ul li {float:left;}
 .billet_option ul li a {
@@ -251,31 +250,30 @@ font-size:86%;
 .site_list li a:hover {text-decoration:none;}
 
 
-#billet_list {
-white-space: nowrap;
-margin-top:4px;
-background:#fff;
-position:absolute;
-}
-
-
+#billet_list {white-space: nowrap;margin-top:4px;background:#fff;/*position:absolute;*/}
 #billet_list td.lecture {width:16px;}
 
+/*
 .bloc_off {
 width:220px;
 overflow: hidden;
 border:1px solid transparent;
-
 }
 
-
 .bloc_on {
-width:460px;
+width:300px;
 overflow: auto;
 border:1px solid #E6E6E6;
 padding:10px;
-
 }
+*/
+
+#billet_list_table {overflow: hidden;}
+
+
+
+
+
 
 #option_menu {
 position:absolute;

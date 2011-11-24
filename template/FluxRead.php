@@ -4,7 +4,7 @@
 		<h2>Derniers articles</h2>
 		
 		<div id="billet_list">
-			<div class="">
+			<div id="billet_list_table">
 				<table>
 				<?php foreach($rssInfo['item'] as $i => $itemInfo) : ?>
 				<tr>
@@ -46,39 +46,52 @@
 		</li>
 		
 			<li>
-	<form  action='<?php $this->Path->path() ?>' method='post'>
-			<?php $this->Connexion->displayTokenField(); ?>
-			<input type='hidden' name='path_info' value='/Feed/doDelete' />
-			
-			<input class='submit' type='submit' value='Ne plus suivre'/>
-		
-			<input type='hidden' name='id_f' value='<?php echo $id_f ?>'/>
-		</form>
+				<form  action='<?php $this->Path->path() ?>' method='post'>
+				<?php $this->Connexion->displayTokenField(); ?>
+				<input type='hidden' name='path_info' value='/Feed/doDelete' />
+				<input type='hidden' name='id_f' value='<?php echo $id_f ?>'/>
+				<input class='submit' type='submit' value='Ne plus suivre'/>
+				</form>
 
-	</li>
+			</li>
+			
 			<li><a href="#" class="option" id="tags_btn">Gérer les étiquettes</a></li>
 		</ul>
-			<?php if ($tag) : ?>
-		&Eacute;tiquettes : 
-			<?php foreach($tag as $one_tag): ?>
-			<a href='<?php $this->Path->path("/Feed/list/0/$one_tag") ?>'><?php hecho($one_tag) ?></a>
-			&nbsp;<a href='<?php $this->Path->path("/Tag/del/$id_f/$one_tag") ?>' title='supprimer'>X</a>
-			<?php endforeach;?>
-		<?php endif;?>
 		
 		
-		<form action='<?php $this->Path->path() ?>' method='post'>
-			<?php $this->Connexion->displayTokenField(); ?>
-			<input type='hidden' name='path_info' value='/Tag/doAdd' />
-			<input type='hidden' name='id_f' value='<?php echo $id_f ?>'/>
+		<div id="tags_menu">
+			<p>
+
+				<?php if ($tag) : ?>
+				&Eacute;tiquettes : 
+					<?php foreach($tag as $one_tag): ?>
+					<a href='<?php $this->Path->path("/Feed/list/0/$one_tag") ?>'><?php hecho($one_tag) ?></a>
+					&nbsp;<a href='<?php $this->Path->path("/Tag/del/$id_f/$one_tag") ?>' title='supprimer'>X</a>
+					<?php endforeach;?>
+				<?php endif;?>
+				
+				
+				<form action='<?php $this->Path->path() ?>' method='post'>
+					<?php $this->Connexion->displayTokenField(); ?>
+					<input type='hidden' name='path_info' value='/Tag/doAdd' />
+					<input type='hidden' name='id_f' value='<?php echo $id_f ?>'/>
+					
+					<p >
+					<span>Ajouter une &eacute;tiquette: </span>
+					<input type='text' name='tag' value='' />
+					<br/>
+					<input class='a_btn' type='submit' value='Ajouter'/>
+					</p>
+				</form>
 			
-			<p >
-			<span>Ajouter une &eacute;tiquette: </span>
-			<input type='text' name='tag' value='' />
-			<br/>
-			<input class='a_btn' type='submit' value='Ajouter'/>
+			
 			</p>
-		</form>
+		</div>
+		
+		
+		
+		
+
 		
 		
 	</div>
@@ -95,19 +108,17 @@
 	</div>
 	<div class="billet_option">
 		<ul>
-			<li>			 <form class='force_center' action='<?php $this->Path->path() ?>' method='post'>
+			<li>
+			<form action='<?php $this->Path->path() ?>' method='post'>
 				<?php $this->Connexion->displayTokenField(); ?>
 				<input type='hidden' name='path_info' value='/Feed/doAddMur' />
 				<input type='hidden' name='id_f' value='<?php hecho($id_f)?>' />				
 				<input type='hidden' name='num_feed' value='<?php hecho($num_feed)?>' />
-				<input type='submit' value='Publier sur mon mur' class="submit " />
-			</form></li>
+				<input type='submit' value='Publier sur mon mur' class="a_btn " />
+			</form>
+			</li>
 		</ul>
-		<div id="tags_menu">
-			<p>
-			blablablbal
-			</p>
-		</div>
+
 	</div>
 	
 	<hr/>
@@ -130,13 +141,13 @@
 
 
 	<div class="box">
-		<div class="haut">
+	<div class="billet">
 		<h2>
 		- <a href='<?php hecho($rssInfo['link']) ?>'><?php hecho($rssInfo['title']) ?></a>
 		</h2>
-		</div>
 		
-		<div class="cont">
+		
+		
 			<div class='item_content width_min'>
 				<?php echo $content_html;?>
 			</div>
@@ -180,10 +191,7 @@
 				<?php $this->render("PbAffichage");?>
 			
 			
-			</div>			
-			
-			
-			<div class="bas"></div>	
+
 		</div>
 	</div>
 	
