@@ -163,7 +163,17 @@ font-weight:normal;
 */
 
 /* mur */
-.item_wall {}
+
+.item_wall table td {vertical-align:top;}
+
+/*
+.item_wall {border:1px solid red;overflow:auto;}
+.wall_image {width:120px;float:left;display:block;}
+.wall_image img {width:120px;display:block;}
+.wall_contenu {float:left;border:1px solid green;max-width:440px;margin-left:4px;}
+.wall_date {float:left;text-align:right;}
+.wall_delete {width:16px;float:left;}
+*/
 
 /* liste billet */
 
