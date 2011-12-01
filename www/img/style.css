@@ -95,17 +95,17 @@ height:40px;
 
 #logo {position:relative;top:10px;float:left;width:240px;}
 #addflux {float:left;width:380px;padding-top:6px;}
-#addflux input.recherche {width:300px;padding:5px 5px 5px 28px;border:1px solid #fff;color:#9C9C9C;background:url(commun/ilu_addflux.png) 2px 1px no-repeat #fff;}
+#addflux input.recherche {width:300px;padding:5px 5px 4px 28px;border:1px solid #fff;color:#9C9C9C;background:url(commun/ilu_addflux.png) 2px 1px no-repeat #fff;}
 #addflux input.btn_go {cursor:pointer;color:#fff;background:#000;height:26px;margin:0;padding:0;border:1px solid #000;font-size:80%;}
 
 #addflux input.recherche:focus {color:#1B8BF3;}
-#addflux input.btn_go:hover {background:#1B8BF3;border:1px solid #1B8BF3;}
+#addflux input.btn_go:hover {background:#1F5485;border:1px solid #1F5485;}
 
 #menu {float:right;position:relative;}
 
 #menu ul {}
 #menu ul li {float:left;padding-top:8px;}
-#menu ul li a {color:#BFD7ED;display:block;border:0;padding:2px;margin:0 4px 0 4px;}
+#menu ul li a {color:#E3F1FF;display:block;border:0;padding:2px;margin:0 4px 0 4px;}
 #menu ul li a.option {background:url(commun/fleche_option.png) right no-repeat transparent;padding-right:14px;} 
 #menu ul li a:hover {text-decoration:none;color:#fff;}
 
@@ -388,7 +388,7 @@ th, td {padding:8px 4px;border-bottom:1px solid #E6E6E6;}
 tr:hover {background:#F8F8F8;cursor:pointer;}
 td.favicon {width:16px;padding-left:0;}
 td.blog, .box td.blog {width:160px;}
-td.tag, .box td.tag {}
+td.tag, .box td.tag {background:url(commun/ilu_tag.png) 0 8px no-repeat transparent; padding-left:20px;}
 td.date, .box td.date {color:#4D4D4D;font-size:85%;font-weight:bold;}
 td.lien, .box td.lien {}
 
