@@ -56,6 +56,10 @@ $(document).ready(function() {
 	    	$('#tags_menu').slideUp();
 	    });
 		
+		
+		$(".liste_billet").click(function() {window.location.href = $(this).find("a").attr("href"); });
+		$(".siteTR").click(function() {window.location.href = $(this).find("a").attr("href"); });
+		
    
 });
 
