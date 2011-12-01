@@ -1,55 +1,83 @@
-<div id="colonne">
+<div id="colonne" class="colonne_max">
 </div>
 
-<div id="contenu">
+<div id="contenu" class="contenu_min">
 
-	<div class="box">
-		<div class="haut">
+	
+	<div class="info_billet" style="margin-top:0;">
+		<div class="billet_titre">
 		<?php if ($this->Connexion->isConnected()) : ?>
-			<h2>Mon mur</h2>
+			<h1>Mon mur</h1>
 		<?php else : ?>
-			<h2><?php hecho($name_account) ?> - Mur </h2>
+			<h1><?php hecho($name_account) ?> - Mur </h1>
 		<?php endif;?>
 		</div>
-		<div class="cont">
 		
+	<div class="billet_option">
+		<ul>
+			<li>
 			<?php if($this->Connexion->isConnected()) : ?> 
-			<form  action='<?php $this->Path->path() ?>' method='post'>
+			<form action='<?php $this->Path->path() ?>' method='post'>
 				<?php $this->Connexion->displayTokenField(); ?>
 				<input type='hidden' name='path_info' value='/Mur/doAdd' />
-				Quoi de neuf ?  <br/>
-				<input type='text' size='50' name='content' />
+				<label for="id_quoideneuf">Quoi de neuf ?</label>
+				<input class='quoideneuf' id='id_quoideneuf' type='text' size='40' name='content' />
 				<input type='submit' value='Ajouter' class="a_btn" />
 			</form>
 		
 			<?php endif;?>
+			</li>
+		</ul>
+	</div>
+		
+	</div>	
+				
+	<div class="box">
+		
 			<?php foreach($all_item as $item) : ?>
-				<div class='item_wall width_min'>
 				
 				
-				<?php if ($item['link']) : ?>
-					<h3><a href='<?php hecho($item['link'])?>'><?php hecho($item['title'])?></a></h3>
-				<?php else : ?>
-					<h3><?php hecho($item['title'])?></h3>
-				<?php endif;?>
+				<div class="item_wall">
+				
+					<table>
+					<tr>
 					<?php if($item['img']): ?>
-						<img alt='' style='width:80px; max-height: 80px;  float:left; padding: 0px 10px; ' src='<?php echo $item['img']?>' title='<?php hecho($item['title'])?>'/>
+					<td width="80">
+						<img src='<?php echo $item['img']?>' alt='<?php hecho($item['title'])?>'/>
+					</td>
 					<?php endif;?>
-					<?php echo $item['description']; ?>
-					<a href='<?php hecho($item['link'])?>' target='_blank'>Lire la suite</a>
-						<div class="col">
-						<p class="float_left discret"><?php echo $this->FancyDate->get($item['date'])?></p>
-						<?php if ($this->Connexion->isConnected()) : ?>
-						<p class="float_right"><a class="discret" href='<?php $this->Path->path("/Mur/doDelete/{$item['id_m']}");?>'>Supprimer</a></p>
-						</div>
+					
+					<td>
+					
+						<?php if ($item['link']) : ?>
+							<h2><a href='<?php hecho($item['link'])?>'><?php hecho($item['title'])?></a></h2>
+						<?php else : ?>
+							<h2><?php hecho($item['title'])?></h2>
+						<?php endif;?>
+					
+						<?php echo $item['description']; ?>
+						<a href='<?php hecho($item['link'])?>' target='_blank'>Lire la suite</a>
+					</td>
+					
+					<td class="date">
+						<?php echo $this->FancyDate->get($item['date'])?>
+					</td>
+					
+					<?php if ($this->Connexion->isConnected()) : ?>
+					<td width="16">
+						<a class='tooltip' title='Retirer du mur' href='<?php $this->Path->path("/Mur/doDelete/{$item['id_m']}");?>'><img src="<?php $this->Path->echoRessourcePath("/img/commun/ilu_del_blog.png") ?>" alt="Supprimer" /></a>
+					</td>
 					<?php endif;?>
-
+					</tr>
+					</table>
 				</div>
+				
+				
 			<?php endforeach;?>
-			<?php $this->SuivantPrecedent->display(); ?>
-		</div>
-						
-		<div class="bas"></div>	
+		
+		<?php $this->SuivantPrecedent->display(); ?>
+
+
 	</div>
 </div>
 
