@@ -2,10 +2,6 @@
 	
 		<div class="cont">
 		
-		
-		
-	
-		
 		<form  action='<?php $this->Path->path() ?>' method='post'>
 			<?php $this->Connexion->displayTokenField(); ?>
 			<input type='hidden' name='path_info' value='/Feed/doDelete' />

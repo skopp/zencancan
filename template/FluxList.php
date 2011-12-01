@@ -30,28 +30,33 @@
 	
 
 
-<table>
+<table class='tableSite'>
 <?php foreach($allFlux as $i => $flux) : ?>
-	<tr>
-		<td class="favicon"><img src="<?php $this->Path->echoRessourcePath("/img/commun/favicon_001.png") ?>" alt="" /></td>
+	<tr class="siteTR">
+		<td class="favicon"><img width='16' height='16' src="<?php $this->Path->echoRessourcePath("/static/favicon/{$flux['favicon']}") ?>" alt="" /></td>
 		<td class='blog'><?php hecho(wrap($flux['title'],25,1))?></td>
-		<td >
-			<a href='<?php $this->Path->path("/Feed/read/{$flux['id_f']}/0") ?>' title='<?php  echo get_link_title($flux['item_content']) ?>'>
-				<?php hecho($flux['item_title']) ?>
-			</a>
-			<?php if ($flux['item_link']) : ?>
-			<a href='<?php hecho($flux['item_link'])?>' target='_blank' title="Ouvrir l'article original">
-			
-				&raquo;
-			</a>
-			<?php endif;?>
-		</td>		
+		<td>
+			<?php if ($flux['last_id_i']) : ?>
+				<a href='<?php $this->Path->path("/Feed/read/{$flux['last_id_i']}") ?>' title='<?php  hecho($flux['item_description']) ?>'>
+					<?php hecho($flux['item_title']) ?>
+				</a>
+			<?php else : ?>
+				<a href='<?php $this->Path->path("/Feed/detail/{$flux['id_f']}") ?>'>
+					Ce flux n'a pas encore été récupéré
+				</a>
+			<?php endif; ?>			
+		</td>
+				
 		<td class='tag'>
 		<?php foreach($flux['tag'] as $one_tag) : ?>
 			<?php echo $one_tag ?>
 		<?php endforeach;?>
 		</td>
-		<td class='date'><?php echo $this->FancyDate->get($flux['last_maj'])?></td>
+		<td class='date'>
+			<?php if($flux['last_id_i']) : ?>
+				<?php echo $this->FancyDate->get($flux['last_maj'])?>
+			<?php endif;?>
+		</td>
 	</tr>
 <?php endforeach;?>
 </table>
@@ -74,3 +79,14 @@
 <?php endif;?>
 
 </div>
+
+<script type="text/javascript">
+	$(document).ready(function() {
+		$(".siteTR").click( function(event){
+			window.location.href = $(this).find("a").attr("href");
+
+		});
+			
+	});
+</script>
+

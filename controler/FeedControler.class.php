@@ -19,8 +19,7 @@ class FeedControler extends ZenCancanControler {
 		parent::renderDefault();
 	}
 	
-	public function listAction($offset = 0,$tag = false){
-		
+	public function listAction($offset = 0,$tag = false){		
 		$offset = (int) $offset;
 		if ($offset<0){
 			$offset = 0;
@@ -42,27 +41,50 @@ class FeedControler extends ZenCancanControler {
 	}
 	
 	public function forceReloadAction($id_f){
-		$id = $this->verifConnected();
-		if ($this->UtilisateurSQL->isAdmin($id)){
-			$info = $this->AbonnementSQL->getInfo($id,$id_f);
-			$r = $this->FeedUpdater->forceUpdate($id_f,$info['url']);
-			$this->LastMessage->setLastMessage($r?"Flux rafraichi":"Flux non rafraichi");
+		$id_u = $this->verifConnected();
+		if ($this->UtilisateurSQL->isAdmin($id_u)){
+			$last_id = $this->FeedUpdater->forceUpdate($id_f);
+			if ($last_id){
+				$this->LastMessage->setLastMessage("Le flux a été rafraichi");
+				$this->redirect("/Feed/Read/$last_id");
+			}
 		}
-		$this->redirect("/Feed/detail/$id_f");
+		$this->LastMessage->setLastError("Le flux n'a pas été rafraichi");
+		$this->redirect("/Feed/Detail/$id_f");
 	}
 	
+	public function updateAction($id_f){
+		$id_u = $this->verifConnected();
+		$info = $this->FeedSQL->getInfo($id_f);
+		
+		if ($this->UtilisateurSQL->isAdmin($id_u)){
+			$result = $this->FeedUpdater->update($id_f);			
+			$this->LastMessage->setLastMessage("Le flux a été rafraichi ($result)");
+			$info = $this->FeedSQL->getInfo($id_f);
+		}
+		if ($info['last_id_i']){
+			$this->redirect("/Feed/Read/{$info['last_id_i']}");
+		} else {
+			$this->redirect("/Feed/detail/$id_f");
+		}
+	}
+	
+	
 	public function doAddAction(){
-		$id = $this->verifConnected();
+		$id_u = $this->verifConnected();
 		$url = $this->Recuperateur->get('url');
 		$id_f = $this->FeedUpdater->add($url);
 
 		if ($id_f){
-			$this->AbonnementSQL->add($id,$id_f);
+			$this->AbonnementSQL->add($id_u,$id_f);
 		} else {
 			$this->LastMessage->setLastError($this->FeedUpdater->getLastError(),true);
 			$this->ErrorSQL->add($url,$this->FeedUpdater->getLastError());
 		} 	
-		$this->redirect("/Feed/detail/$id_f");
+		
+		$abonnementInfo = $this->AbonnementSQL->getInfo($id_u,$id_f);
+		
+		$this->redirect("/Feed/read/{$abonnementInfo['last_id_i']}");
 	}
 	
 	private function verifAbonnement($id_u,$id_f){
@@ -71,37 +93,6 @@ class FeedControler extends ZenCancanControler {
 				$this->redirect();
 			}
 		}
-	}
-	
-	public function detailAction($id_f){
-		
-		$id_u = $this->verifConnected();
-		$this->verifAbonnement($id_u,$id_f);
-
-		$info = $this->AbonnementSQL->getInfo($id_u,$id_f);
-
-		@ $content =  file_get_contents(STATIC_PATH."/$id_f");
-		
-		if (! $content){
-			if ($this->FeedUpdater->forceUpdate($id_f,$info['url'])){
-				$content = file_get_contents(STATIC_PATH."/$id_f");
-			} 
-		}
-
-		if ($content){
-			$rssInfo = $this->FeedParser->parseXMLContent($content);
-		} else {
-			$rssInfo = array('link' => $info['link'],'title' => $info['title'],'item' => array());
-		}
-		
-		$this->addRSS($info['title'],$info['url']);
-		
-		$this->Gabarit->template_milieu = "FluxDetail";
-		$this->Gabarit->rssInfo = $rssInfo;
-		$this->Gabarit->content = $content;
-		$this->Gabarit->id_f = $id_f;
-		$this->Gabarit->info = $info;
-		$this->renderDefault($info['tag']);
 	}
 	
 	private function getFeedInfo($id_f){		
@@ -140,34 +131,37 @@ class FeedControler extends ZenCancanControler {
 		return $resultItem;
 	}
 	
-	
-	public function readAction($id_f,$i = 0){
-		if (!$i){
-			$i = 0;
-		}
+	public function detailAction($id_f){
 		$id_u = $this->verifConnected();
 		$this->verifAbonnement($id_u,$id_f);
-		
-		$info = $this->AbonnementSQL->getInfo($id_u,$id_f);
-		$this->addRSS($info['title'],$info['url']);
-		
-		$rssInfo = $this->getFeedInfo($id_f);
-		
-		
-		$resultItem = $this->getItem($rssInfo,$i);
-			
-		$this->Gabarit->rejected_tag = $this->HTMLPurifier->getRejectedTag();
-		$this->Gabarit->rejected_attributes = $this->HTMLPurifier->getRejectedAttributes();
-		$this->Gabarit->rejected_style = $this->HTMLPurifier->getRejectedStyle();
-		$this->Gabarit->content_html = $resultItem['content'];
-		$this->Gabarit->resultItem = $resultItem;
-		$this->Gabarit->selected_item = $i;
-		$this->Gabarit->rssInfo = $rssInfo;
-		$this->Gabarit->id_f = $id_f;
-		$this->Gabarit->num_feed = $i;
+		$abonnementInfo = $this->AbonnementSQL->getInfo($id_u,$id_f);
+		$this->addRSS($abonnementInfo['title'],$abonnementInfo['url']);
+		$this->Gabarit->abonnementInfo = $abonnementInfo;
+		$this->Gabarit->allItem = array();
+		$this->Gabarit->itemInfo = array();
 		$this->Gabarit->template_milieu = "FluxRead";
 		
-		$this->renderDefault($info['tag']);
+		$this->renderDefault($abonnementInfo['tag']);
+	}
+	
+	
+	public function readAction($id_i){
+		$id_u = $this->verifConnected();
+		
+		$itemInfo = $this->FeedItemSQL->getInfo($id_i);
+		$id_f = $itemInfo['id_f'];
+		$this->verifAbonnement($id_u,$id_f);
+			
+		$allItem = $this->FeedItemSQL->getAll($id_f);
+		
+		$abonnementInfo = $this->AbonnementSQL->getInfo($id_u,$id_f);
+		$this->addRSS($abonnementInfo['title'],$abonnementInfo['url']);
+		$this->Gabarit->abonnementInfo = $abonnementInfo;
+		$this->Gabarit->allItem = $allItem;
+		$this->Gabarit->itemInfo = $itemInfo;
+		$this->Gabarit->template_milieu = "FluxRead";
+		
+		$this->renderDefault($abonnementInfo['tag']);
 		
 	}
 	

@@ -52,11 +52,16 @@ if (isset($mention_legal_content)){
 	$objectInstancier->mention_legal_content = __DIR__ . "/mention_legal.txt";
 }
 
+$objectInstancier->favicon_path = __DIR__."/www/static/favicon/"; 
+$objectInstancier->img_path = __DIR__."/www/static/img/";
 
 
 if (isset($_SERVER['HTTP_ACCEPT_LANGUAGE'])){
 	$objectInstancier->GoogleSearch->setHTTPAcceptLanguage($_SERVER['HTTP_ACCEPT_LANGUAGE']);
 }
 
+
+
+require_once("util.php");
 
 

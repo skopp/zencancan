@@ -2,50 +2,24 @@
 
 class FeedParser {
 	
-	private $timeout;	
+	private $xmlPurifier;
+	private $htmlPurifier;
 	private $lastError;
-	private $lastHeader;
 	
-	public function __construct(){
+	public function __construct(XMLPurifier $xmlPurifier,HTMLPurifier $htmlPurifier,ImageFinder $imageFinder){
 		libxml_use_internal_errors(true);
+		$this->xmlPurifier = $xmlPurifier;
+		$this->htmlPurifier = $htmlPurifier;
+		$this->imageFinder = $imageFinder;
 	}
 	
 	public function getLastError(){
 		return $this->lastError;
 	}
 	
-	public function getInfo($content){
-		$feedInfo = $this->parseXMLContent($content);
-		
-		if (! $feedInfo ){
-			return false;
-		}
-		
-		if (count($feedInfo['item'])){
-			$feedInfo['pubDate'] = $feedInfo['item'][0]['pubDate'];
-			$feedInfo['id_item'] = $feedInfo['item'][0]['id_item'];
-			$feedInfo['item_title'] =  $feedInfo['item'][0]['title'];
-			$feedInfo['item_link'] =  $feedInfo['item'][0]['link'];		
-			$feedInfo['item_content'] =  $feedInfo['item'][0]['content'];
-			if (! $feedInfo['item_content']){
-				$feedInfo['item_content'] =  $feedInfo['item'][0]['description'];
-			}
-		} else {
-			$feedInfo['id_item'] = "";
-			$feedInfo['item_title'] = "";
-			$feedInfo['item_link'] =  "";		
-			$feedInfo['item_content'] = "";	
-			$feedInfo['pubDate'] = date("Y-m-d H:i:s");
-		}
-		unset($feedInfo['item']);
-		return $feedInfo;
-	}
-	
-	
 	public function parseXMLContent($content){
 		
-		$xmlPurifier = new XMLPurifier();
-		$content = $xmlPurifier->getXML($content);
+		$content = $this->xmlPurifier->getXML($content);
 		
 		$xml = simplexml_load_string($content,"SimpleXMLElement",LIBXML_NOCDATA);
 		
@@ -61,18 +35,22 @@ class FeedParser {
 			return false; 
 		}
 		
+		$this->htmlPurifier->setBaseLink($feed['link']);
+		
 		foreach($feed['item'] as $i => $item){
 			if (empty($item['content'])){
 				$feed['item'][$i]['content'] = $item['description'];
 			}
-			if (empty($item['description'])){
-				$feed['item'][$i]['description'] = $this->shorten($item['content']);
-			} else {
-				$feed['item'][$i]['description'] = $this->shorten($item['description']);
-			}
 			
-		}
-	
+			$feed['item'][$i]['content'] =  $this->htmlPurifier->purify($feed['item'][$i]['content']);
+			$feed['item'][$i]['img'] = $this->imageFinder->getFirst($feed['item'][$i]['content']);
+			if (empty($item['description'])){
+				$feed['item'][$i]['description'] = $this->shorten($feed['item'][$i]['content']);
+			} else {
+				$feed['item'][$i]['description'] =  $this->htmlPurifier->purify($feed['item'][$i]['description']);
+				$feed['item'][$i]['description'] = $this->shorten($feed['item'][$i]['description']);
+			}
+		}	
 		
 		$this->lastError = "";
 		return $feed;
@@ -138,7 +116,6 @@ class FeedParser {
 					$it['content'] = $this->normalizeText(strval(trim($content->encoded)));
 				}
 			}
-			
 						
 			if ($item->pubDate){
 				$it['pubDate'] = date("Y-m-d H:i:s",strtotime($item->pubDate));
@@ -233,6 +210,7 @@ class FeedParser {
   		$text = strtr($text,array("&#8230;" => "…"));
   		$text = strtr($text,array("&#8216;" => "‘"));
   		$text = strtr($text,array("&#39;" => "'"));
+  		$text = strtr($text,array("&#039;" => "'"));  		
   		$text = trim($text);
   		return strval($text);
   	}

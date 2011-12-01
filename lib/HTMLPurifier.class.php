@@ -47,7 +47,7 @@ class HTMLPurifier {
 		);
 		
 		
-		$this->emptyTagToSupress = array("p","span","div","pre","em","strong");
+		$this->emptyTagToSupress = array("p","span","div","pre","em","strong","h2","h3","h4","h5","h6");
 	}
 	
 	public function setBaseLink($baseLink){
@@ -153,8 +153,7 @@ class HTMLPurifier {
 		foreach($node->childNodes  as $child){
 			if ($child instanceof DOMElement){
 				$this->purifyAttribut($child);
-				$this->purifyNode($child,$domDocument);
-			
+				$this->purifyNode($child,$domDocument);			
 				if (! in_array($child->nodeName,$this->allowTag)){
 					$this->rejectedTag[$child->nodeName] = true;
 					$to_remove[] = $child;

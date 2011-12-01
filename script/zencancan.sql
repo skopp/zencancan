@@ -36,13 +36,25 @@ CREATE TABLE feed (
 	`etag` varchar(128) NOT NULL,
 	`last-modified` varchar(128) NOT NULL,
 	`lasterror` varchar(64) NOT NULL,
-	`item_title` varchar(255) NOT NULL,
-	`item_link` varchar(255) NOT NULL,
-	`item_content` text NOT NULL,
+	`last_id_i` int(11) NOT NULL,
+	`favicon` varchar(256) NOT NULL,
+	`md5` varchar(64) NOT NULL,
 	PRIMARY KEY (`id_f`),
 	UNIQUE KEY url (`url`),
 	UNIQUE KEY last_recup (`last_recup`,`id_f`),
 	KEY last_maj (`last_maj`,`id_f`)
+)  ENGINE=MyISAM  ;
+CREATE TABLE feed_item (
+	`id_i` int(11) NOT NULL AUTO_INCREMENT,
+	`id_f` int(11) NOT NULL,
+	`title` text NOT NULL,
+	`description` text NOT NULL,
+	`content` text NOT NULL,
+	`img` varchar(64) NOT NULL,
+	`link` text NOT NULL,
+	`date` datetime NOT NULL,
+	`id` varchar(256) NOT NULL,
+	PRIMARY KEY (`id_i`)
 )  ENGINE=MyISAM  ;
 CREATE TABLE mur (
 	`id_m` int(11) NOT NULL AUTO_INCREMENT,

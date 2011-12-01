@@ -31,7 +31,7 @@ class FeedFetchInfo {
 			return false;
 		}
 		
-		$feedInfo = $this->feedParser->getInfo($this->lastContent );
+		$feedInfo = $this->feedParser->parseXMLContent($this->lastContent );
 		
 		if (! $feedInfo){
 			$this->lastError = $this->feedParser->getLastError();
@@ -41,6 +41,7 @@ class FeedFetchInfo {
 		$feedInfo['url'] = $url;
 		$feedInfo['etag'] = $this->urlLoader->getHeader('etag');
 		$feedInfo['last-modified'] = $this->urlLoader->getHeader('last-modified');
+		$feedInfo['favicon'] = $this->getFavicon($url);
 		return $feedInfo;
 	}
 	
@@ -60,7 +61,7 @@ class FeedFetchInfo {
 				return false;
 			}
 		}
-		$result = $this->feedParser->getInfo($this->lastContent);
+		$result = $this->feedParser->parseXMLContent($this->lastContent);
 		
 		if ( ! $result ){
 			$new_url =  $this->findFromHTML($url,$this->lastContent);	
@@ -75,7 +76,7 @@ class FeedFetchInfo {
 					"(Page $new_url inaccessible - ".$this->urlLoader->getLastError().")";
 				return false;
 			}
-			$result = $this->feedParser->getInfo($this->lastContent);
+			$result = $this->feedParser->parseXMLContent($this->lastContent);
 			if ( ! $result ){
 				$this->lastError = "Les informations de suivi du site <a href='$url' target='_blank'>$keyword_or_url</a> ne sont pas utilisables";
 				return false;
@@ -83,11 +84,12 @@ class FeedFetchInfo {
 			$url = $new_url;
 		}
 		
-		
 		$result['url'] = $url;
 		$result['lasterror'] = "";
 		$result['etag'] = $this->urlLoader->getHeader('etag');
 		$result['last-modified'] = $this->urlLoader->getHeader('last-modified');
+		$result['favicon'] = $this->getFavicon($url);
+		
 		return $result;
 	}
 	
@@ -137,5 +139,13 @@ class FeedFetchInfo {
 		return $url;
 	}
 
+	public function getFavicon($url){
+		$parse = parse_url($url);
+		$favicon = $parse['scheme'] . "://".$parse['host']."/favicon.ico";
+		@ $content = file_get_contents($favicon);
+		return $content;
+	}
+	
+	
 	
 }
