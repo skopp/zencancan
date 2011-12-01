@@ -114,32 +114,64 @@ height:40px;
 
 
 
-.blog_option {width:300px;float:right;}
-.blog_option ul {float:right;margin-top:2px;}
-.blog_option ul li {float:left;}
-.blog_option ul li a, .blog_option ul li form .submit  {
-color:#959595;
-display:block;
-margin-left:10px;
-padding:2px 6px 2px 6px;
-border:1px solid transparent;
-background:transparent;
-font-weight:normal;
-}
-
-.blog_option ul li a.option {background:url(commun/fleche_bas.png) right no-repeat transparent;padding-right:14px;}
-.blog_option ul li a:hover, .blog_option ul li form .submit:hover {background:#F8F8F8;border:1px solid #E6E6E6;color:#959595;cursor:pointer;}
-.blog_option ul li a.option:hover {background:url(commun/fleche_bas.png) right no-repeat #F8F8F8;}
-
 
 /* bloc Blog */
+.info_blog {
+background:#fff;
+border-bottom:1px solid #E6E6E6;
+padding-bottom:8px;
+margin-bottom:8px;
+overflow:auto;
+}
+
+.info_blog h2  {
+font-weight:bold;
+float:left;
+margin-top:4px;
+}
 
 .info_blog h2 img {
 width:16px;
 padding:0;
 margin-right:4px;
 float:left;
+
 }
+
+.info_blog .btn_retour {
+float:left;
+opacity:0.7;
+}
+
+.info_blog .btn_retour:hover {
+opacity:1;
+}
+
+.info_blog .btn_submit {
+border:1px solid orange;
+padding:0;
+}
+
+.blog_option {float:right;}
+.blog_option ul {float:right;height:24px;}
+.blog_option ul li {float:left;}
+.blog_option ul li a, .blog_option ul li input {
+padding:4px;
+color:#959595;
+display:block;
+border:1px solid transparent;
+background:transparent;
+font-weight:normal;
+
+}
+
+.blog_option ul li a:hover, .blog_option ul li input:hover {background:#F8F8F8;border:1px solid #E6E6E6;color:#959595;cursor:pointer;}
+
+/*
+.blog_option ul li a.option {background:url(commun/fleche_bas.png) right no-repeat transparent;}
+.blog_option ul li a.option:hover {background:url(commun/fleche_bas.png) right no-repeat #F8F8F8;}
+*/
+
 
 
 /* liste billet */
@@ -148,19 +180,15 @@ float:left;
 border-bottom:1px solid #E6E6E6;
 padding:6px 0 6px 0;
 line-height:0.8em;
-overflow:auto;
+overflow:hidden;
+cursor:pointer;
+height:80px;
 }
 
-.liste_billet:hover {
-background:#F5FAFF;
-border-bottom:1px solid #D3EAFF;
-}
+.liste_billet:hover {background:#F5FAFF;border-bottom:1px solid #D3EAFF;}
 
-.liste_billet .img {
-width:128px;
-text-align:right;
-float:left;
-}
+.liste_billet .img {text-align:right;float:left;}
+
 
 .liste_billet .info {
 margin-left:134px;
@@ -171,16 +199,16 @@ margin:0;
 }
 
 .liste_billet .info .lien a {font-weight:bold;color:#2C71B3;line-height:1.2em;}
-.liste_billet .info .lien a:hover {color:#0E86F6;}
+
 .liste_billet .info .extrait {color:#959595;font-size:85%;text-align:justify;} 
 .liste_billet .info .date {font-size:85%;font-weight:bold;}
 
 
-.billet_actif, .billet_actif:hover {background:url(commun/back_billet_actif.png) top right no-repeat #000;padding:6px;}
-.billet_actif .info .lien a {color:#A9CBEB;}
-.billet_actif .info .lien a:hover {color:#0E86F6;}
-.billet_actif .info .extrait {color:#959595;} 
-.billet_actif .info .date {color:#fff;}
+.billet_actif, .billet_actif:hover {background:url(commun/back_billet_actif.png) top right no-repeat #F8F8F8;padding:6px 6px 6px 0;}
+
+.billet_actif .info .lien a, .billet_actif .info .lien a:hover {color:#0E86F6;}
+.billet_actif .info .extrait {color:#2C71B3;} 
+.billet_actif .info .date {color:#FF4000;}
 
 
 
@@ -245,9 +273,11 @@ padding:10px;
 
 #colonne .box {clear:both;}
 #colonne .box h2 {color:#959595;border-bottom:1px solid #E6E6E6;padding:8px;background:#F8F8F8;}
-#colonne .box ul.ul {margin:6px 0 14px 0;}
-#colonne .box ul.ul li a {display:block;padding:6px 0 6px 0;border:1px solid #fff;}
-#colonne .box ul.ul li a:hover {font-weight:bold;}
+#colonne .box ul.ul, #colonne .box ul.ul_tag  {margin:6px 0 14px 0;}
+#colonne .box ul.ul li a, #colonne .box ul.ul_tag li a {display:block;padding:6px 0 6px 0;border:1px solid #fff;}
+#colonne .box ul.ul li a:hover, #colonne .box ul.ul_tag li a:hover {font-weight:bold;}
+#colonne .box ul.ul_tag li a {background:url(commun/ilu_tag.png) 0 6px no-repeat #ffffff;padding-left:20px;}
+
 
 
 /* Definition des boites de type messages */
@@ -334,7 +364,7 @@ position:absolute;
 background-color:#fff;
 border:1px solid red;
 height:200px;
-top:150px;
+top:100px;
 width:246px;
 padding:10px;
 }
@@ -417,6 +447,9 @@ text-decoration:none;
 .align_right {text-align:right;}
 .align_center {text-align:center;}
 
+.float_right {float:right;}
+.float_left {float:left;}
+
 .clear {clear:both;}
 .w200 {width:200px;}
 .w600 {width:622px;}
@@ -425,7 +458,8 @@ text-decoration:none;
 .a_deco {text-decoration:underline;}
 .a_deco:hover {text-decoration:none;}
 
-
+.haut_de_page {background:url(commun/fleche_haut.png) right no-repeat #ffffff;padding-right:14px;}
+.haut_de_page:hover {text-decoration:underline;color:#2C71B3;} 
 
 /* tooltip */
 

@@ -1,14 +1,15 @@
 <div id="colonne">
 	<div class="box">
 		<h2>Mes &eacute;tiquettes</h2>
-		<ul class="ul">
-			<li><a href='<?php $this->Path->path("/Feed/list")?>' title='Tous'>
+		<ul class="ul_tag">
+			<li><a href="<?php $this->Path->path("/Feed/list")?>" title="Tous">
 							Tous
-				</a></li>
+				</a>
+			</li>
 			<?php foreach($all_tag as $i => $the_tag) : ?>
 				<li>
-					<a href='<?php $this->Path->path("/Feed/list/0/$the_tag")?>'  
-							title='<?php  hecho($the_tag); ?>'>
+					<a href="<?php $this->Path->path("/Feed/list/0/$the_tag")?>"  
+							title="<?php  hecho($the_tag); ?>">
 							<?php hecho($the_tag) ?>
 						</a>
 				</li>
@@ -42,7 +43,7 @@
 				</a>
 			<?php else : ?>
 				<a href='<?php $this->Path->path("/Feed/detail/{$flux['id_f']}") ?>'>
-					Ce flux n'a pas encore été récupéré
+					Ce flux n'a pas encore &eacute;t&eacute; r&eacute;cup&eacute;r&eacute;
 				</a>
 			<?php endif; ?>			
 		</td>

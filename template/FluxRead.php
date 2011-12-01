@@ -1,8 +1,12 @@
 <div id="colonne" class="colonne_max">
 
-<div class="box">
+
 	
-	<div class="info_blog">
+<div class="info_blog">
+	
+	<div>
+	<a class="btn_retour tooltip" title="Retour aux sites" href="<?php $this->Path->path()?>"><img src="<?php $this->Path->echoRessourcePath("/img/commun/ilu_retour.png") ?>" alt="retour aux sites" /></a>
+	</div>
 	
 	<h2><img src="<?php $this->Path->echoRessourcePath("/static/favicon/{$abonnementInfo['favicon']}") ?>" alt="" />
 		<a href='<?php hecho($abonnementInfo['link']) ?>' target='_blank'><?php hecho($abonnementInfo['title']) ?></a></h2>
@@ -12,23 +16,21 @@
 		<ul>
 			
 			<?php if ($isAdmin) : ?>
-				<li><a  class="a_btn" href='<?php $this->Path->path("/Feed/update/{$abonnementInfo['id_f']}")?>'>Actualiser</a></li>	
-				<li><a  class="a_btn" href='<?php $this->Path->path("/Feed/forceReload/{$abonnementInfo['id_f']}")?>'>Forcer l'actualisation</a></li>	
+				<li><a class="tooltip" title="Actualiser" href="<?php $this->Path->path("/Feed/update/{$abonnementInfo['id_f']}")?>"><img src="<?php $this->Path->echoRessourcePath("/img/commun/ilu_actualiser.png") ?>" alt="Actualiser" /></a></li>	
+				<li><a class="tooltip" title="Forcer l'actualisation" href="<?php $this->Path->path("/Feed/forceReload/{$abonnementInfo['id_f']}")?>"><img src="<?php $this->Path->echoRessourcePath("/img/commun/ilu_forcer_actualiser.png") ?>" alt="Forcer l'actualisation" /></a></li>	
 			<?php endif;?>
-			<li>
-				<a href='<?php $this->Path->path()?>' class="a_btn">Retour au site</a>
-			</li>	
+
 			<li>
 				<form  action='<?php $this->Path->path() ?>' method='post'>
 				<?php $this->Connexion->displayTokenField(); ?>
 				<input type='hidden' name='path_info' value='/Feed/doDelete' />
 				<input type='hidden' name='id_f' value='<?php echo $abonnementInfo['id_f'] ?>'/>
-				<input class='submit' type='submit' value='Ne plus suivre'/>
+				<input  class="tooltip" type='image' src='<?php $this->Path->echoRessourcePath("/img/commun/ilu_del_blog.png") ?>' title='Ne plus suivre ce blog'/>
 				</form>
 			</li>
 			<li>
 				<form action='#'>
-					<input class='submit option' id='tags_btn' type='submit' value='G&eacute;rer les &eacute;tiquettes'/>
+					<input id="tags_btn" type="image" src='<?php $this->Path->echoRessourcePath("/img/commun/ilu_tag_option.png") ?>' title="G&eacute;rer les &eacute;tiquettes" />
 				</form>
 			</li>
 		</ul>
@@ -57,10 +59,7 @@
 		</div>
 		
 	</div><!-- fin info_blog -->
-	</div><!-- fin blog_option -->
-
-
-</div><!-- fin box -->
+</div><!-- fin blog_option -->
 
 
 <div class="box">
@@ -156,10 +155,14 @@
 
 </div>
 <div>
-	<p >
-	<span>Un problème d'affichage ?
+	<p class="float_left">
+	<span>Un probl&egrave;me d'affichage ?
 	<a  href='<?php $this->Path->path("/Contact/index/{$itemInfo['id_i']}")?>'>Signaler un probl&egrave;me</a>
 	 </span>
+	</p>
+	
+	<p class="float_right">
+	<a class="haut_de_page" href="#top">haut de page</a>
 	</p>
 </div>
 
