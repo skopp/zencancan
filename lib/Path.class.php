@@ -16,8 +16,12 @@ class Path {
 		echo $this->getPath($to);
 	}
 	
+	public function getRessourcePath($absolute_path){
+		return substr( $this->getSiteIndex($this->username), 0,strrpos($this->getSiteIndex($this->username),"/")) . $absolute_path;
+	}
+	
 	public function echoRessourcePath($absolute_path){
-		echo substr( $this->getSiteIndex($this->username), 0,strrpos($this->getSiteIndex($this->username),"/")) . $absolute_path;
+		echo $this->getRessourcePath($absolute_path);
 	}
 	
 	public function getPath($to = ""){		

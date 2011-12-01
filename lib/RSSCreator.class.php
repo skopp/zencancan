@@ -34,7 +34,8 @@ class RSSCreator {
 	}
 	
 	private function addElement(DomNode $parentNode,$elementName,$content = false,array $attributes = array()) {
-		$childElement = $this->domDocument->createElement($elementName,$content);
+		
+		@ $childElement = $this->domDocument->createElement($elementName,$content);
 		foreach($attributes as $name => $value){
 			$childElement->setAttribute($name,$value);
 		}

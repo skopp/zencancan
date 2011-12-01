@@ -91,32 +91,12 @@ class FeedControler extends ZenCancanControler {
 		}
 	}
 	
-	
 	private function verifAbonnement($id_u,$id_f){
 		if ( ! $this->AbonnementSQL->isAbonner($id_u,$id_f)){
 			if (! $this->UtilisateurSQL->isAdmin($id_u)){
 				$this->redirect();
 			}
 		}
-	}
-	
-	private function getFeedInfo($id_f){		
-		$id_u = $this->verifConnected();
-		$this->verifAbonnement($id_u,$id_f);
-
-		$info = $this->AbonnementSQL->getInfo($id_u,$id_f);
-			
-		@ $content = file_get_contents(STATIC_PATH."/$id_f");
-		
-		if (! $content){
-			if ($this->FeedUpdater->forceUpdate($id_f,$info['url'])){
-				$content = file_get_contents(STATIC_PATH."/$id_f");
-			} 
-		}
-		
-		$rssInfo = $this->FeedParser->parseXMLContent($content);
-		
-		return $rssInfo;
 	}
 	
 	public function getItem($rssInfo,$i){
@@ -172,17 +152,17 @@ class FeedControler extends ZenCancanControler {
 	
 	public function doAddMurAction(){
 		$id_u = $this->verifConnected();
-		$id_f = $this->Recuperateur->getInt('id_f');
-		$num_feed = $this->Recuperateur->getInt('num_feed');
-		$rssInfo = $this->getFeedInfo($id_f);
-		$resultItem = $this->getItem($rssInfo,$num_feed);
-		$content = $resultItem['content'];
-		$description = $resultItem['description'];
-		$img = $this->ImageFinder->getFirst($resultItem['content']);
-		$this->MurSQL->add($id_u,$content,$rssInfo['title'] ." - " .$resultItem['title'],$resultItem['link'],$description,$img);
+		$id_i = $this->Recuperateur->getInt('id_i');
+		
+		$itemInfo = $this->FeedItemSQL->getInfo($id_i);
+		$id_f = $itemInfo['id_f'];
+		$this->verifAbonnement($id_u,$id_f);
+		$feedInfo = $this->FeedSQL->getInfo($id_f);
+		
+		$this->MurSQL->add($id_u,$itemInfo['content'],$feedInfo['title'] ." - " .$itemInfo['title'],$itemInfo['link'],$itemInfo['description'],$this->Path->getRessourcePath("/static/img/{$itemInfo['img']}"));
 		$mur_path = $this->Path->getPath("/Mur/index");
 		$this->LastMessage->setLastMessage("L'article a été publié sur <a href='$mur_path'>votre mur</a>",true);
-		$this->redirect("/Feed/read/$id_f/$num_feed");
+		$this->redirect("/Feed/read/$id_i");
 	}
 	
 	

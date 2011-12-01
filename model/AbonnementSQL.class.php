@@ -60,9 +60,12 @@ class AbonnementSQL extends SQL {
 	}
 	
 	public function getWithContentWithTag($id_u,$offset,$tag){
-			$sql = "SELECT * FROM abonnement " . 
-				" JOIN feed ON abonnement.id_f = feed.id_f " . 
-				" WHERE id_u=? AND abonnement.tag=?" . 
+		$sql = "SELECT `last-modified`,feed_item.content as item_content,abonnement.tag,abonnement.id_f,last_maj,last_recup,feed.favicon,feed.title,feed_item.title as item_title,feed_item.link as item_link,feed.last_id_i,feed_item.description as item_description " .
+				" FROM tag " . 
+				" JOIN feed ON tag.id_f = feed.id_f " .
+				" JOIN abonnement ON tag.id_f = abonnement.id_f AND tag.id_u=abonnement.id_u ".
+				" LEFT JOIN feed_item ON feed.last_id_i = feed_item.id_i " .
+				" WHERE tag.id_u=? AND tag.tag=?" .
 				" ORDER BY last_maj DESC".
 				" LIMIT $offset,".self::NB_DISPLAY;
 		
@@ -73,8 +76,10 @@ class AbonnementSQL extends SQL {
 		if ($tag){
 			return $this->getWithContentWithTag($id_u,$offset,$tag);
 		}
-		$sql = "SELECT * FROM abonnement " . 
+		$sql = "SELECT  `last-modified`,feed_item.content as item_content , abonnement.tag,abonnement.id_f,last_maj,last_recup,feed.favicon,feed.title,feed_item.title as item_title,feed_item.link as item_link,feed.last_id_i,feed_item.description as item_description " . 
+				" FROM abonnement " . 
 				" JOIN feed ON abonnement.id_f = feed.id_f " . 
+				" JOIN feed_item ON feed.last_id_i = feed_item.id_i " .
 				" WHERE id_u=?" . 
 				" ORDER BY last_maj DESC".
 				" LIMIT $offset,".self::NB_DISPLAY;

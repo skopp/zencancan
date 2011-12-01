@@ -205,6 +205,8 @@ class FeedParser {
   	}
   	
   	private function normalizeText($text){
+  		$text = preg_replace_callback("/(&#(\d+);)/","replace_numeric_entity",$text);
+  		return $text;
   		$text = strval($text);
   		$text = strtr($text,array("&#8217;" => "'"));
   		$text = strtr($text,array("&#8230;" => "…"));
@@ -214,5 +216,10 @@ class FeedParser {
   		$text = trim($text);
   		return strval($text);
   	}
-  	
+
 }
+
+function replace_numeric_entity($entity){
+	return html_entity_decode($entity[1],ENT_QUOTES,"UTF-8");
+}
+
