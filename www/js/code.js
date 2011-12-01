@@ -52,6 +52,10 @@ $(document).ready(function() {
 		$('#tags_btn').click(function(){
 	    	$('#tags_menu').slideToggle();
 	    });
+		$('#login_close_btn').click(function(){
+	    	$('#tags_menu').slideUp();
+	    });
+		
    
 });
 

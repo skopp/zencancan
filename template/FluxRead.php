@@ -29,13 +29,16 @@
 				</form>
 			</li>
 			<li>
-				<form action='#'>
-					<input id="tags_btn" type="image" src='<?php $this->Path->echoRessourcePath("/img/commun/ilu_tag_option.png") ?>' title="G&eacute;rer les &eacute;tiquettes" />
-				</form>
+				
+	
+					<a id="tags_btn" href="#"><img src='<?php $this->Path->echoRessourcePath("/img/commun/ilu_tag_option.png") ?>' alt="G&eacute;rer les &eacute;tiquettes" /></a>
+		
+				
 			</li>
 		</ul>
 		
 		<div id="tags_menu">
+			<span class="btn_close" title="Fermer" id="login_close_btn">&nbsp;</span>
 			<?php if ($tag) : ?>
 			&Eacute;tiquettes : 
 				<?php foreach($tag as $one_tag): ?>
