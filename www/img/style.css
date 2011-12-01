@@ -121,7 +121,7 @@ background:#fff;
 border-bottom:1px solid #E6E6E6;
 padding-bottom:8px;
 margin-bottom:8px;
-overflow:auto;
+overflow:none;
 }
 
 .info_blog h2  {
