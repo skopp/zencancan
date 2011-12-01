@@ -119,18 +119,18 @@ height:40px;
 .info_blog {
 background:#fff;
 border-bottom:1px solid #E6E6E6;
-padding-bottom:8px;
 margin-bottom:8px;
-overflow:none;
+overflow:auto;
 }
-
-
 
 
 .info_blog h2  {
 font-weight:bold;
 margin-top:4px;
-margin-left:30px;
+max-width:250px;
+padding-bottom:4px;
+float:left;
+
 }
 
 .info_blog h2 img {
@@ -144,10 +144,10 @@ float:left;
 .btn_retour:hover {opacity:1;}
 
 
-.blog_option, .blog_option_retour {float:right;}
-.blog_option ul, .blog_option_retour ul {float:right;height:24px;margin-top:-21px;}
-.blog_option ul li, .blog_option_retour ul li {float:left;}
-.blog_option ul li a, .blog_option ul li input, .blog_option_retour ul li a, .blog_option_retour ul li input {
+.blog_option {float:right;}
+.blog_option ul {height:24px;overflow:none;}
+.blog_option ul li {float:left;}
+.blog_option ul li a, .blog_option ul li input {
 padding:4px;
 color:#959595;
 display:block;
@@ -156,18 +156,8 @@ background:transparent;
 font-weight:normal;
 }
 
-.blog_option_retour {
-margin-top:12px;
-margin-bottom:8px;
-clear:both;
-}
 
-.blog_option_retour ul {
-margin-top:0;
-}
-
-.blog_option ul li a:hover, .blog_option ul li input:hover,
-.blog_option_retour ul li a:hover, .blog_option_retour ul li input:hover {background:#F8F8F8;border:1px solid #E6E6E6;color:#959595;cursor:pointer;}
+.blog_option ul li a:hover, .blog_option ul li input:hover {background:#F8F8F8;border:1px solid #E6E6E6;color:#959595;cursor:pointer;}
 
 /*
 .blog_option ul li a.option {background:url(commun/fleche_bas.png) right no-repeat transparent;}
@@ -369,10 +359,6 @@ height:200px;
 top:90px;
 width:246px;
 padding:10px;
-}
-
-.blog_option_retour #tags_menu {
-top:128px;
 }
 
 .btn_close {
