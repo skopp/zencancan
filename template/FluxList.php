@@ -34,7 +34,7 @@
 <table class='tableSite'>
 <?php foreach($allFlux as $i => $flux) : ?>
 	<tr class="siteTR">
-		<td class="favicon"><img width='16' height='16' src="<?php $this->Path->echoRessourcePath("/static/favicon/{$flux['favicon']}") ?>" alt="" /></td>
+		<td class="favicon"><img width='16' height='16' src="<?php $flux['favicon']?$this->Path->echoRessourcePath("/static/favicon/{$flux['favicon']}"):$this->Path->echoRessourcePath("/img/commun/no_favicon.png") ?>" alt="" /></td>
 		<td class='blog'><?php hecho(wrap($flux['title'],25,1))?></td>
 		<td>
 			<?php if ($flux['last_id_i']) : ?>

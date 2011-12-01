@@ -62,11 +62,7 @@ class FeedControler extends ZenCancanControler {
 			$this->LastMessage->setLastMessage("Le flux a été rafraichi ($result)");
 			$info = $this->FeedSQL->getInfo($id_f);
 		}
-		if ($info['last_id_i']){
-			$this->redirect("/Feed/Read/{$info['last_id_i']}");
-		} else {
-			$this->redirect("/Feed/detail/$id_f");
-		}
+		$this->redirect2DetailOrRead($info);
 	}
 	
 	
@@ -83,9 +79,18 @@ class FeedControler extends ZenCancanControler {
 		} 	
 		
 		$abonnementInfo = $this->AbonnementSQL->getInfo($id_u,$id_f);
+		$this->redirect2DetailOrRead($abonnementInfo);
 		
-		$this->redirect("/Feed/read/{$abonnementInfo['last_id_i']}");
 	}
+	
+	private function redirect2DetailOrRead($info){
+		if ($info['last_id_i']){
+			$this->redirect("/Feed/read/{$info['last_id_i']}");
+		} else {
+			$this->redirect("/Feed/detail/{$info['id_f']}");
+		}
+	}
+	
 	
 	private function verifAbonnement($id_u,$id_f){
 		if ( ! $this->AbonnementSQL->isAbonner($id_u,$id_f)){

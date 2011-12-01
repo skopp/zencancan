@@ -147,13 +147,17 @@ class HTMLPurifier {
 	}
 	
 	
-	private function purifyNode(DomNode $node,DomDocument $domDocument){
+	private function purifyNode(DomNode $node,DomDocument $domDocument,$level = 0){
 		$to_remove = array();		
 		$to_erase = array();
 		foreach($node->childNodes  as $child){
+			if ($level > 50){
+				$to_erase[] = $child;
+				continue;
+			}
 			if ($child instanceof DOMElement){
 				$this->purifyAttribut($child);
-				$this->purifyNode($child,$domDocument);			
+				$this->purifyNode($child,$domDocument,$level + 1);			
 				if (! in_array($child->nodeName,$this->allowTag)){
 					$this->rejectedTag[$child->nodeName] = true;
 					$to_remove[] = $child;

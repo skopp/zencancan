@@ -8,7 +8,7 @@
 	<a class="btn_retour tooltip" title="Retour aux sites" href="<?php $this->Path->path()?>"><img src="<?php $this->Path->echoRessourcePath("/img/commun/ilu_retour.png") ?>" alt="retour aux sites" /></a>
 	</div>
 	
-	<h2><img src="<?php $this->Path->echoRessourcePath("/static/favicon/{$abonnementInfo['favicon']}") ?>" alt="" />
+	<h2><img src="<?php $abonnementInfo['favicon']?$this->Path->echoRessourcePath("/static/favicon/{$abonnementInfo['favicon']}"):$this->Path->echoRessourcePath("/img/commun/no_favicon.png")  ?>" alt="" />
 		<a href='<?php hecho($abonnementInfo['link']) ?>' target='_blank'><?php hecho($abonnementInfo['title']) ?></a></h2>
 	
 	
@@ -81,7 +81,7 @@
 			<?php foreach($allItem as $i => $item) : ?>
 			<div class="liste_billet<?php echo ($item['id_i']==$itemInfo['id_i'])?" billet_actif":"" ?>">
 				<div class="img">
-					<img class='ilu_billet' src='<?php $this->Path->echoRessourcePath("/static/img/{$item['img']}") ?>' alt=''/> 
+					<img class='ilu_billet' src='<?php $item['img'] ? $this->Path->echoRessourcePath("/static/img/{$item['img']}"):$this->Path->echoRessourcePath("/img/commun/no_ilu.png")  ?>' alt=''/> 
 				</div>
 
 				<div class="info">

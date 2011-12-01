@@ -112,6 +112,7 @@ class FeedUpdater {
 		
 		$md5 = $this->getMD5($feedInfo);
 		if ($md5 == $info['md5']){
+			$this->feedSQL->udpateLastRecup($info['url'],"md5 match");
 			return "md5 match";
 		}
 		$feedInfo['md5'] = $md5;
@@ -151,7 +152,7 @@ class FeedUpdater {
 			} else {
 				file_put_contents($log_file,"Récup de {$info['url']} - ",FILE_APPEND);
 				$lastError = $this->update($id_f);
-				file_put_contents($log_file,"OK {$lastError}",FILE_APPEND);
+				file_put_contents($log_file,"OK {$lastError}\n",FILE_APPEND);
 			}
 			
 			$info = $this->feedSQL->getFirstToUpdate();

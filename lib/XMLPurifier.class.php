@@ -11,7 +11,8 @@ class XMLPurifier {
 	}
 	
 	public function getTranslateEntity($entity){
-		$transtable = array('&oelig;' => "&#156;");
+		$transtable = array('&oelig;' => "&#156;",'&nbsp;' => " ");
+		
 		if (empty($transtable[$entity])){		
 			trigger_error("Je n'ai pas trouvé de remplacant pour l'entité $entity");
 			return "";
