@@ -17,7 +17,8 @@ class TagControler extends ZenCancanControler {
 		if ($tag){
 			$this->LastMessage->setLastMessage("Ajout de l'étiquette $tag");
 		} 
-		$this->redirect("/Feed/detail/$id_f");
+		$abonnementInfo = $this->AbonnementSQL->getInfo($id_u,$id_f);
+		$this->redirect2DetailOrRead($abonnementInfo);
 		
 	}
 }

@@ -83,16 +83,6 @@ class FeedControler extends ZenCancanControler {
 		
 	}
 	
-	private function redirect2DetailOrRead($info){
-		if (! empty($info['last_id_i'])){
-			$this->redirect("/Feed/read/{$info['last_id_i']}");
-		} 
-		
-		if(! empty($info['id_f'])) {
-			$this->redirect("/Feed/detail/{$info['id_f']}");
-		} 
-		$this->redirect();
-	}
 	
 	private function verifAbonnement($id_u,$id_f){
 		if ( ! $this->AbonnementSQL->isAbonner($id_u,$id_f)){

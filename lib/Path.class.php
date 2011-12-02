@@ -29,7 +29,7 @@ class Path {
 	}
 	
 	public function getPathWithUsername($username="",$to = ""){
-		return $this->getSiteIndex($username) . "$to";
+		return $this->getSiteIndex($username) . $to;
 	}
 	
 	private function getSiteIndex($username){

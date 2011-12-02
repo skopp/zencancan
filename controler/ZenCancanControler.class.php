@@ -44,6 +44,18 @@ class ZenCancanControler extends Controler {
 		$this->redirectWithUserName($this->getAccountName(),$to);
 	}
 	
+	protected function redirect2DetailOrRead($info){
+		if (! empty($info['last_id_i'])){
+			$this->redirect("/Feed/read/{$info['last_id_i']}");
+		} 
+		
+		if(! empty($info['id_f'])) {
+			$this->redirect("/Feed/detail/{$info['id_f']}");
+		} 
+		$this->redirect();
+	}
+	
+	
 	protected function sortir($message,$to){
 		$this->LastMessage->setLastError($message);
 		$this->redirect($to);

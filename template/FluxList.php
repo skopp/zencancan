@@ -8,7 +8,7 @@
 			</li>
 			<?php foreach($all_tag as $i => $the_tag) : ?>
 				<li>
-					<a href="<?php $this->Path->path("/Feed/list/0/$the_tag")?>"  
+					<a href="<?php $this->Path->path("/Feed/list/0/" . strtr($the_tag,array(" " => "%20")) )?>"  
 							title="<?php  hecho($the_tag); ?>">
 							<?php hecho($the_tag) ?>
 						</a>
