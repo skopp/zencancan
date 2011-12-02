@@ -42,8 +42,8 @@
 					<table>
 					<tr>
 					<?php if($item['img']): ?>
-					<td width="80">
-						<img src='<?php echo $item['img']?>' alt='<?php hecho($item['title'])?>'/>
+					<td  >
+						<img width='128' height='80' src='<?php echo $item['img']?>' alt='<?php hecho($item['title'])?>'/>
 					</td>
 					<?php endif;?>
 					
