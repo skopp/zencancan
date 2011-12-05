@@ -244,10 +244,14 @@ margin-top:0;
 .billet {text-align:justify;line-height:1.6em;font-family:verdana, arial, helvetica, sans-serif;}
 .billet .date {font-size:85%;font-weight:bold;text-align:right;}
 .billet img {margin:4px 0 4px 0;}
-.navigation_billet {
-padding:8px 10px 10px 10px;
-}
+.navigation_billet {padding:8px 10px 10px 10px;}
 
+/* surcharge des billets */
+.billet h2 {font-size:140%;padding-top:8px;font-weight:bold;}
+.billet h3 {font-size:120%;padding-top:8px;font-weight:bold;}
+.billet h4 {font-size:110%;padding-top:8px;}
+.billet ul {padding:8px 0 8px 30px;}
+.billet ul li {list-style:square}
 
 
 
@@ -319,30 +323,6 @@ border:1px solid;
 .site_list li a {display:block;padding:3px 0 3px 4px;}
 .site_list li a img {position:relative;top:1px;margin-right:4px;width:16px;height:16px;}
 .site_list li a:hover {text-decoration:none;}
-
-
-/*
-.bloc_off {
-width:220px;
-overflow: hidden;
-border:1px solid transparent;
-}
-
-.bloc_on {
-width:300px;
-overflow: auto;
-border:1px solid #E6E6E6;
-padding:10px;
-}
-*/
-
-/*
-#billet_list_table {overflow: hidden;}
-*/
-
-
-
-
 
 
 #option_menu {
