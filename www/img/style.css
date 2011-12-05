@@ -241,7 +241,7 @@ margin-top:0;
 .info_billet .billet_option {float:right}
 .info_billet .billet_option ul {margin-top:8px}
 
-.billet {text-align:justify;line-height:1.6em;font-family:verdana, arial, helvetica, sans-serif;}
+.billet {text-align:justify;line-height:1.6em;font-family:verdana, arial, helvetica, sans-serif;font-size:120%;}
 .billet .date {font-size:85%;font-weight:bold;text-align:right;}
 .billet img {margin:4px 0 4px 0;}
 .navigation_billet {padding:8px 10px 10px 10px;}
