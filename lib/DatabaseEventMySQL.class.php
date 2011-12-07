@@ -15,7 +15,6 @@ class DatabaseEventMySQL implements DatabaseEvent {
 				"\n)  ENGINE={$tableDefinition['Engine']}  ;";
 	}
 	
-	
 	private function getColumnDefinition($name, array $columnDefinition,$withPrimaryKey = false){
 		$r = "`$name` ".$columnDefinition['Type'];
 		if ($columnDefinition['Null'] == 'NO'){

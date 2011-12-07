@@ -48,6 +48,7 @@ class FeedUpdater {
 		$feedInfo['pubDate'] = date("Y-m-d H:i:s");
 		$feedInfo['favicon'] = "";
 		$feedInfo['item'] = array();
+		$feedInfo['md5'] = 0;
 		$id_f= $this->feedSQL->insert($feedInfo);
 		$this->feedSQL->forceLastRecup($url);
 		return $id_f;

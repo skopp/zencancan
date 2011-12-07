@@ -40,8 +40,16 @@ class FeedSQL extends SQL {
 	}
 	
 	public function insert($feedInfo){
+		$id_item = 0;
+		$pubDate = '';
+		if (isset($feedInfo['item'][0])){
+			$id_item = $feedInfo['item'][0]['id_item'];
+			$pubDate = $feedInfo['item'][0]['pubDate'];
+		} 
+		
+		
 		$sql = "INSERT INTO feed(url,title,link,last_id,last_maj,last_recup,etag,`last-modified`,favicon,md5) VALUES (?,?,?,?,?,now(),?,?,?,?)";
-		$this->query($sql, $feedInfo['url'],$feedInfo['title'],$feedInfo['link'],$feedInfo['item'][0]['id_item'],$feedInfo['item'][0]['pubDate'],
+		$this->query($sql, $feedInfo['url'],$feedInfo['title'],$feedInfo['link'],$id_item,$pubDate,
 			$feedInfo['etag'],$feedInfo['last-modified'],
 			$feedInfo['favicon'], $feedInfo['md5']
 		);
