@@ -3,23 +3,18 @@
 class FeedUpdater {
 	
 	const MIN_TIME_BEETWEEN_LOAD = 360;
-	
-	const THUMBNAIL_WIDTH = 128;
-	const THUMBNAIL_HEIGHT = 80;
-	
+		
 	private $feedSQL;
-	private $feedItemSQL;
 	private $feedFetchInfo;
 	private $lastError;
 	private $favicon_path;
-	private $img_path;
+	private $feedItemUpdater;
 	
-	public function __construct(FeedSQL $feedSQL,FeedFetchInfo $feedFetchInfo,FeedItemSQL $feedItemSQL,$favicon_path,$img_path){
+	public function __construct(FeedSQL $feedSQL,FeedFetchInfo $feedFetchInfo,FeedItemUpdater $feedItemUpdater,$favicon_path){
 		$this->feedSQL = $feedSQL;
 		$this->feedFetchInfo = $feedFetchInfo;
-		$this->feedItemSQL = $feedItemSQL;
 		$this->favicon_path = $favicon_path;
-		$this->img_path = $img_path;
+		$this->feedItemUpdater = $feedItemUpdater;
 	}
 	
 	public function getLastError(){
@@ -54,8 +49,6 @@ class FeedUpdater {
 		return $id_f;
 	}
 	
-	
-	
 	public function add($url){
 		
 		if (! $url){
@@ -83,18 +76,25 @@ class FeedUpdater {
 		$feedInfo = $this->addImg($feedInfo);
 		$this->feedSQL->insert($feedInfo);
 		$info = $this->feedSQL->getInfoFromURL($feedInfo['url']);
+		$this->feedItemUpdater->update($info['id_f'],$feedInfo);
 		return $info['id_f'];
+	}
+	
+	public function getFavicon($url){
+		$parse = parse_url($url);
+		$favicon = $parse['scheme'] . "://".$parse['host']."/favicon.ico";
+		@ $content = file_get_contents($favicon);
+		return $content;
 	}
 	
 	
 	public function addImg($feedInfo){
-		if ($feedInfo['favicon']){
-			$favicon_md5 = md5(mt_rand()) .".ico";
-			file_put_contents($this->favicon_path . "/" . $favicon_md5,$feedInfo['favicon']);
-			$feedInfo['favicon'] = $favicon_md5;
-		}
-		foreach($feedInfo['item'] as $i => $item){
-			$feedInfo['item'][$i]['img'] = $this->recupImg($item['img']);
+		$favicon = $this->getFavicon($feedInfo['url']);
+		if ($favicon){
+			$feedInfo['favicon'] = md5(mt_rand()) .".ico";
+			file_put_contents($this->favicon_path . "/" . $feedInfo['favicon'],$favicon);
+		} else {
+			$feedInfo['favicon'] = "";
 		}
 		return $feedInfo;
 	}
@@ -102,15 +102,8 @@ class FeedUpdater {
 	public function removeImage($id_f){
 		$info = $this->feedSQL->getInfo($id_f);
 		if ($info['favicon']) {
-			unlink($this->favicon_path . "/" . $info['favicon']);
+			@ unlink($this->favicon_path . "/" . $info['favicon']);
 		}
-		$all_item = $this->feedItemSQL->getAll($id_f);
-		foreach($all_item as $item){
-			if ($item['img']){
-				unlink($this->img_path . "/" . $item['img']);
-			}
-		}
-		
 	}
 	
 	private function getMD5($feedInfo){
@@ -151,16 +144,17 @@ class FeedUpdater {
 		$this->removeImage($id_f);
 		$feedInfo['md5'] = $this->getMD5($feedInfo);
 		$feedInfo = $this->addImg($feedInfo);
-		return $this->feedSQL->update($id_f,$feedInfo);
-		//$this->feedItemUpdater->update($info['id_f'],$feedInfo);
+		
+		$this->feedSQL->update($id_f,$feedInfo);
+		
+		$this->feedItemUpdater->update($id_f,$feedInfo);
+		$info = $this->feedSQL->getInfo($id_f);
+		return $info['last_id_i'];
 	}
-	
-	
 	
 	public function updateForever(AbonnementSQL $abonnementSQL,$log_file){
 		
 		$info = $this->feedSQL->getFirstToUpdate();
-		
 		while (true) { 
 			if (! $info){
 				sleep(self::MIN_TIME_BEETWEEN_LOAD);
@@ -191,62 +185,4 @@ class FeedUpdater {
 			sleep( $timeToSleep);
 		}
 	}
-	
-	public function recupImg($img){
-		if(! $img){
-			return "";
-		}
-		$img_name = md5(mt_rand()).".png";
-		$img_src = $this->getThumbnail($img,self::THUMBNAIL_WIDTH,self::THUMBNAIL_HEIGHT);
-		if ( ! $img_src){
-			return "";
-		}
-		imagepng($img_src,$this->img_path.$img_name);		
-		return $img_name;
-	}
-	
-	private function getThumbnail($image_path,$thumbnail_width,$thumbnail_height) {
-		
-		@ $img_content = file_get_contents($image_path);
-		if (! $img_content){
-			return false;
-		}
-	    @ $myImage = imagecreatefromstring($img_content);
-	    if (! $myImage){
-	    	return false;
-	    }
-	    
-		$width_orig = imagesx($myImage);
-		$height_orig = imagesy($myImage);
-		
-		if ($width_orig<$thumbnail_width || $height_orig< $thumbnail_height){
-			return false;
-		}
-		
-	    $ratio_orig = $width_orig/$height_orig; 
-	    
-	    
-	    if ($thumbnail_width/$thumbnail_height > $ratio_orig) {
-	       $new_height = $thumbnail_width/$ratio_orig;
-	       $new_width = $thumbnail_width;
-	    } else {
-	       $new_width = $thumbnail_height*$ratio_orig;
-	       $new_height = $thumbnail_height;
-	    }
-	   
-	    $x_mid = $new_width/2;  //horizontal middle
-	    $y_mid = $new_height/2; //vertical middle
-	   
-	    $process = imagecreatetruecolor(round($new_width), round($new_height));
-	   
-	    imagecopyresampled($process, $myImage, 0, 0, 0, 0, $new_width, $new_height, $width_orig, $height_orig);
-	    $thumb = imagecreatetruecolor($thumbnail_width, $thumbnail_height);
-	    imagecopyresampled($thumb, $process, 0, 0, ($x_mid-($thumbnail_width/2)), ($y_mid-($thumbnail_height/2)), $thumbnail_width, $thumbnail_height, $thumbnail_width, $thumbnail_height);
-	
-	    imagedestroy($process);
-	    imagedestroy($myImage);
-	    return $thumb;
-	}
-	
-	
 }

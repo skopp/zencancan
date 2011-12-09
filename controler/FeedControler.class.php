@@ -83,7 +83,6 @@ class FeedControler extends ZenCancanControler {
 		
 	}
 	
-	
 	private function verifAbonnement($id_u,$id_f){
 		if ( ! $this->AbonnementSQL->isAbonner($id_u,$id_f)){
 			if (! $this->UtilisateurSQL->isAdmin($id_u)){

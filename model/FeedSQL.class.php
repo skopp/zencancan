@@ -50,16 +50,13 @@ class FeedSQL extends SQL {
 		);
 		$sql = "SELECT id_f FROM feed WHERE url=?";
 		$id_f = $this->queryOne($sql,$feedInfo['url']);
-		return $this->updateFeedItem($id_f,$feedInfo);
 	}
 	
-	private function updateFeedItem($id_f,$feedInfo){		
-		$last_id_i = $this->feedItemSQL->doUpdate($id_f,$feedInfo);
+	public function updateLastId($id_f,$last_id_i){
 		$sql = "UPDATE feed SET last_id_i = ? WHERE id_f=?";
 		$this->query($sql,$last_id_i,$id_f);
-		return $last_id_i;
 	}
-	
+
 	public function update($id_f,$feedInfo){
 		$sql = "UPDATE feed " .
 				" SET title=?, link= ?, last_id=?, last_maj=?, etag = ? ,`last-modified` = ?, last_recup=now(),lasterror='',favicon=?,md5=?" .
@@ -69,7 +66,7 @@ class FeedSQL extends SQL {
 			$feedInfo['md5'],
 			$id_f
 		);
-		return $this->updateFeedItem($id_f,$feedInfo);
+		return true;
 	}
 	
 	public function forceLastRecup($url){

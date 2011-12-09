@@ -41,7 +41,6 @@ class FeedFetchInfo {
 		$feedInfo['url'] = $url;
 		$feedInfo['etag'] = $this->urlLoader->getHeader('etag');
 		$feedInfo['last-modified'] = $this->urlLoader->getHeader('last-modified');
-		$feedInfo['favicon'] = $this->getFavicon($url);
 		return $feedInfo;
 	}
 	
@@ -88,7 +87,6 @@ class FeedFetchInfo {
 		$result['lasterror'] = "";
 		$result['etag'] = $this->urlLoader->getHeader('etag');
 		$result['last-modified'] = $this->urlLoader->getHeader('last-modified');
-		$result['favicon'] = $this->getFavicon($url);
 		
 		return $result;
 	}
@@ -138,14 +136,5 @@ class FeedFetchInfo {
 		$url = $parse["scheme"]."://".$parse['host'].$url;
 		return $url;
 	}
-
-	public function getFavicon($url){
-		$parse = parse_url($url);
-		$favicon = $parse['scheme'] . "://".$parse['host']."/favicon.ico";
-		@ $content = file_get_contents($favicon);
-		return $content;
-	}
-	
-	
 	
 }
