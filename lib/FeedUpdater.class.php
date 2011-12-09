@@ -54,6 +54,8 @@ class FeedUpdater {
 		return $id_f;
 	}
 	
+	
+	
 	public function add($url){
 		
 		if (! $url){
@@ -97,8 +99,23 @@ class FeedUpdater {
 		return $feedInfo;
 	}
 	
+	public function removeImage($id_f){
+		$info = $this->feedSQL->getInfo($id_f);
+		if ($info['favicon']) {
+			unlink($this->favicon_path . "/" . $info['favicon']);
+		}
+		$all_item = $this->feedItemSQL->getAll($id_f);
+		foreach($all_item as $item){
+			if ($item['img']){
+				unlink($this->img_path . "/" . $item['img']);
+			}
+		}
+		
+	}
+	
 	private function getMD5($feedInfo){
 		unset($feedInfo['lastBuildDate']);
+		unset($feedInfo['last-modified']);
 		return md5(serialize($feedInfo));
 	}
 	
@@ -112,13 +129,12 @@ class FeedUpdater {
 		}
 		
 		$md5 = $this->getMD5($feedInfo);
+	
 		if ($md5 == $info['md5']){
 			$this->feedSQL->udpateLastRecup($info['url'],"md5 match");
 			return "md5 match";
 		}
-		$feedInfo['md5'] = $md5;
-		$feedInfo = $this->addImg($feedInfo);
-		$this->feedSQL->doUpdate($info['id_f'] , $feedInfo);
+		$this->updateSQL($id_f,$feedInfo);
 		return $feedInfo['lasterror'];
 	}
 	
@@ -128,10 +144,18 @@ class FeedUpdater {
 		if ( ! $feedInfo){
 			return false;
 		}
+		return $this->updateSQL($id_f,$feedInfo);
+	}
+	
+	private function updateSQL($id_f,$feedInfo){
+		$this->removeImage($id_f);
 		$feedInfo['md5'] = $this->getMD5($feedInfo);
 		$feedInfo = $this->addImg($feedInfo);
-		return $this->feedSQL->doUpdate($id_f,$feedInfo);
+		return $this->feedSQL->update($id_f,$feedInfo);
+		//$this->feedItemUpdater->update($info['id_f'],$feedInfo);
 	}
+	
+	
 	
 	public function updateForever(AbonnementSQL $abonnementSQL,$log_file){
 		
@@ -181,7 +205,7 @@ class FeedUpdater {
 		return $img_name;
 	}
 	
-	function getThumbnail($image_path,$thumbnail_width,$thumbnail_height) {
+	private function getThumbnail($image_path,$thumbnail_width,$thumbnail_height) {
 		
 		@ $img_content = file_get_contents($image_path);
 		if (! $img_content){
@@ -194,6 +218,11 @@ class FeedUpdater {
 	    
 		$width_orig = imagesx($myImage);
 		$height_orig = imagesy($myImage);
+		
+		if ($width_orig<$thumbnail_width || $height_orig< $thumbnail_height){
+			return false;
+		}
+		
 	    $ratio_orig = $width_orig/$height_orig; 
 	    
 	    

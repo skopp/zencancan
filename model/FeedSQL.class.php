@@ -27,16 +27,12 @@ class FeedSQL extends SQL {
 	public function add(array $feedInfo){
 		$infoFromDB = $this->getInfo($feedInfo['url']);
 		if ($infoFromDB){
-			$this->doUpdate($infoFromDB['last_id'] , $feedInfo);
+			$this->update($infoFromDB['last_id'] , $feedInfo);
 		} else {
 			$this->insert($feedInfo);
 		}
 		$sql = "SELECT id_f FROM feed WHERE url=?";
 		return $this->queryOne($sql,$feedInfo['url']);
-	}
-	
-	public function doUpdate($id_f, $feedInfo){
-		return $this->update($id_f,$feedInfo);
 	}
 	
 	public function insert($feedInfo){
@@ -45,8 +41,7 @@ class FeedSQL extends SQL {
 		if (isset($feedInfo['item'][0])){
 			$id_item = $feedInfo['item'][0]['id_item'];
 			$pubDate = $feedInfo['item'][0]['pubDate'];
-		} 
-		
+		}
 		
 		$sql = "INSERT INTO feed(url,title,link,last_id,last_maj,last_recup,etag,`last-modified`,favicon,md5) VALUES (?,?,?,?,?,now(),?,?,?,?)";
 		$this->query($sql, $feedInfo['url'],$feedInfo['title'],$feedInfo['link'],$id_item,$pubDate,
@@ -65,7 +60,7 @@ class FeedSQL extends SQL {
 		return $last_id_i;
 	}
 	
-	private function update($id_f,$feedInfo){
+	public function update($id_f,$feedInfo){
 		$sql = "UPDATE feed " .
 				" SET title=?, link= ?, last_id=?, last_maj=?, etag = ? ,`last-modified` = ?, last_recup=now(),lasterror='',favicon=?,md5=?" .
 				"  WHERE id_f = ?";
