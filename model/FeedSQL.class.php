@@ -95,7 +95,7 @@ class FeedSQL extends SQL {
 	}
 	
 	public function feedInfo(){
-		$info =  $this->query("SELECT count(*) as nb, max(last_recup) as date FROM feed");	
+		$info =  $this->query("SELECT count(*) as nb, max(last_recup) as max_date,min(last_recup) as min_date FROM feed");	
 		return $info[0];
 	}
 	
