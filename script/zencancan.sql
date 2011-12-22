@@ -54,7 +54,9 @@ CREATE TABLE feed_item (
 	`link` text NOT NULL,
 	`date` datetime NOT NULL,
 	`id` varchar(256) NOT NULL,
-	PRIMARY KEY (`id_i`)
+	PRIMARY KEY (`id_i`),
+	KEY img (`img`),
+	KEY id_f (`id_f`,`date`)
 )  ENGINE=MyISAM  ;
 CREATE TABLE mur (
 	`id_m` int(11) NOT NULL AUTO_INCREMENT,

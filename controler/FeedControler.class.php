@@ -126,12 +126,16 @@ class FeedControler extends ZenCancanControler {
 		$id_u = $this->verifConnected();
 		
 		$itemInfo = $this->FeedItemSQL->getInfo($id_i);
+		
 		$id_f = $itemInfo['id_f'];
 		$this->verifAbonnement($id_u,$id_f);
 			
 		$allItem = $this->FeedItemSQL->getAll($id_f);
 		
+		
 		$abonnementInfo = $this->AbonnementSQL->getInfo($id_u,$id_f);
+		
+		
 		$this->addRSS($abonnementInfo['title'],$abonnementInfo['url']);
 		$this->Gabarit->abonnementInfo = $abonnementInfo;
 		$this->Gabarit->allItem = $allItem;

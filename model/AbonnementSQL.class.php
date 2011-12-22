@@ -156,7 +156,7 @@ class AbonnementSQL extends SQL {
 	}
 	
 	public function getInfo($id_u,$id_f){
-		$sql = "SELECT * FROM abonnement JOIN feed ON abonnement.id_f=feed.id_f WHERE id_u=? AND abonnement.id_f = ? ";
+		$sql = "SELECT * FROM feed JOIN abonnement ON abonnement.id_f=feed.id_f WHERE id_u=? AND abonnement.id_f = ? ";
 		$result = $this->queryOne($sql,$id_u,$id_f);
 		$result['tag'] = $this->tagList2Array($result['tag']);
 		return $result;
