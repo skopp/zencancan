@@ -41,12 +41,11 @@
 				
 					<table>
 					<tr>
-					<?php if($item['img']): ?>
+
 					<td  >
-						<img width='128' height='80' src='<?php echo $item['img']?>' alt='<?php hecho($item['title'])?>'/>
+						<img class='ilu_billet' src='<?php $item['img'] ? $this->Path->echoRessourcePath("/static/img/{$item['img']}"):$this->Path->echoRessourcePath("/img/commun/no_ilu.png")  ?>' alt=''/> 
+
 					</td>
-					<?php endif;?>
-					
 					<td>
 					
 						<?php if ($item['link']) : ?>

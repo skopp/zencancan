@@ -6,7 +6,7 @@ $description_short="zenCancan est un lecteur de flux RSS en ligne.";
 $statut = "Production";
 $description = "Voir http://zencancan.com/";
 
-$file_to_preserve = array("LocalSettings.php",'static','script/zencancan','www/static/favicon','www/static/img');
+$file_to_preserve = array("LocalSettings.php",'static','www/static/favicon','www/static/img');
 $database_definition_file = "script/zencancan.bin";
 
 

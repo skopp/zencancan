@@ -155,7 +155,13 @@ class FeedControler extends ZenCancanControler {
 		$this->verifAbonnement($id_u,$id_f);
 		$feedInfo = $this->FeedSQL->getInfo($id_f);
 		
-		$this->MurSQL->add($id_u,$itemInfo['content'],$feedInfo['title'] ." - " .$itemInfo['title'],$itemInfo['link'],$itemInfo['description'],$this->Path->getRessourcePath("/static/img/{$itemInfo['img']}"));
+		$img_name ='';
+		if ($itemInfo['img']){
+			$img_name = md5(mt_rand()).".png";
+			copy($this->img_path.$itemInfo['img'],$this->img_path.$img_name);
+		}
+		
+		$this->MurSQL->add($id_u,$itemInfo['content'],$feedInfo['title'] ." - " .$itemInfo['title'],$itemInfo['link'],$itemInfo['description'],$img_name);
 		$mur_path = $this->Path->getPath("/Mur/index");
 		$this->LastMessage->setLastMessage("L'article a été publié sur <a href='$mur_path'>votre mur</a>",true);
 		$this->redirect("/Feed/read/$id_i");

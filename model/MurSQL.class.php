@@ -38,4 +38,9 @@ class MurSQL extends SQL {
 		$this->query($sql,$nb,$id_u);
 	}
 	
+	public function getInfo($id_u,$id_m){
+		$sql  = "SELECT * FROM mur WHERE id_u=? AND id_m=?";
+		return $this->queryOne($sql,$id_u,$id_m);	
+	}
+	
 }

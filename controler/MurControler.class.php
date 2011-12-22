@@ -50,6 +50,10 @@ class MurControler extends ZenCancanControler {
 	
 	public function doDeleteAction($id_m){
 		$id_u = $this->verifConnected();
+		$info = $this->MurSQL->getInfo($id_u,$id_m);
+		if ($info['img']){
+			@ unlink($this->img_path . $info['img']);
+		}
 		$this->MurSQL->delete($id_u,$id_m);
 		$this->redirect("/Mur/index");
 	}
