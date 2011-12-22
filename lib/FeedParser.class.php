@@ -43,7 +43,7 @@ class FeedParser {
 			}
 			
 			$feed['item'][$i]['content'] =  $this->htmlPurifier->purify($feed['item'][$i]['content']);
-			$feed['item'][$i]['img'] = $this->imageFinder->getFirst($feed['item'][$i]['content']);
+			$feed['item'][$i]['all_img'] = $this->imageFinder->getAll($feed['item'][$i]['content']);
 			if (empty($item['description'])){
 				$feed['item'][$i]['description'] = $this->shorten($feed['item'][$i]['content']);
 			} else {

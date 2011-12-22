@@ -1,21 +1,21 @@
 <?php
 class ImageFinder {
-	
-	public function getFirst($xml_content){
+
+	public function getAll($xml_content){
 		if (! $xml_content){
 			return "";
 		}
 		$dom = new DomDocument();
 		$dom->loadHTML($xml_content);
 		
-		$img = $dom->getElementsByTagName('img');
-		if ($img->length == 0){
-			return false;
+		$all_image = $dom->getElementsByTagName('img');
+		$result = array();
+		foreach($all_image as $img){
+			$result[] = $img->getAttribute('src');
 		}
-		$img = $img->item(0);
-		
-		$src = $img->getAttribute('src');
-		return $src;
+		return $result;
 	}
+	
+	
 	
 }

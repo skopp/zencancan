@@ -29,7 +29,7 @@ class FeedItemUpdater {
 	}
 	
 	private function addItem($id_f,$rssInfo){
-		$rssInfo['img'] = $this->recupImg($rssInfo['img']);
+		$rssInfo['img'] = $this->recupImg($rssInfo['all_img']);
 		$this->feedItemSQL->add($id_f,$rssInfo);	
 	}
 	
@@ -65,17 +65,17 @@ class FeedItemUpdater {
 		$this->feedSQL->updateLastId($id_f,$last_id);
 	}
 	
-	public function recupImg($img){
-		if(! $img){
-			return "";
-		}
+	public function recupImg(array $all_img){
 		$img_name = md5(mt_rand()).".png";
-		$img_src = $this->getThumbnail($img,self::THUMBNAIL_WIDTH,self::THUMBNAIL_HEIGHT);
-		if ( ! $img_src){
-			return "";
+		foreach($all_img as $img){
+			$img_src = $this->getThumbnail($img,self::THUMBNAIL_WIDTH,self::THUMBNAIL_HEIGHT);
+			if ( $img_src){
+				imagepng($img_src,$this->img_path.$img_name);
+				return $img_name;
+			}
 		}
-		imagepng($img_src,$this->img_path.$img_name);		
-		return $img_name;
+		
+		return false;
 	}
 	
 	private function getThumbnail($image_path,$thumbnail_width,$thumbnail_height) {
