@@ -111,6 +111,14 @@ class FeedControler extends ZenCancanControler {
 	public function detailAction($id_f){
 		$id_u = $this->verifConnected();
 		$this->verifAbonnement($id_u,$id_f);
+		
+		$info = $this->FeedSQL->getInfo($id_f);
+			
+		if ($info && $info['last_id_i']){
+			$this->redirect("/Feed/read/{$info['last_id_i']}");
+		}
+		
+		
 		$abonnementInfo = $this->AbonnementSQL->getInfo($id_u,$id_f);
 		$this->addRSS($abonnementInfo['title'],$abonnementInfo['url']);
 		$this->Gabarit->abonnementInfo = $abonnementInfo;
@@ -126,6 +134,9 @@ class FeedControler extends ZenCancanControler {
 		$id_u = $this->verifConnected();
 		
 		$itemInfo = $this->FeedItemSQL->getInfo($id_i);
+		if (! $itemInfo){
+			$this->redirect();
+		}
 		
 		$id_f = $itemInfo['id_f'];
 		$this->verifAbonnement($id_u,$id_f);
