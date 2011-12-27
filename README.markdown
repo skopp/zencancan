@@ -29,7 +29,7 @@ la recherche via google va afficher une page HTML disposant d'une alternative RS
 
 
 ## Licence
-zenCancan est un <a href='http://fr.wikipedia.org/wiki/Logiciel_libre'>logiciel libre</a>  diffusé sous les termes de la licence zen :
+zenCancan est un [logiciel libre](http://fr.wikipedia.org/wiki/Logiciel_libre)  diffusé sous les termes de la licence zen :
 
 &copy;Sigmalis 2011 - [Sigmalis](http://www.sigmalis.com)
 vous autorise à utiliser, étudier, copier, modifier et diffuser le logiciel zenCancan 

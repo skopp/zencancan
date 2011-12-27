@@ -3,7 +3,6 @@ Procédure d'installation
 Prérequis :
 *PHP 5.3 minimum
 *Une base de données MySQL (tester avec la version 5)
-*Le programme start-stop-daemon 
 *Extension PHP : curl, dom, fileinfo, libxml, pdo, pdo_mysql, SimpleXML
 
 
