@@ -4,7 +4,7 @@
 	<head>
 		<title>zenCancan : La gestion simple du suivi de site</title>
 		<meta name="description" content='La gestion simple du suivi de site' />	
-		<link type="text/css" href="<?php $this->Path->echoRessourcePath("/img/style.css?i=1") ?>" rel="stylesheet" media="screen" />
+		<link type="text/css" href="<?php $this->Path->echoRessourcePath("/img/style.css?i=2") ?>" rel="stylesheet" media="screen" />
 		<link type="text/css" href="<?php $this->Path->echoRessourcePath("/img/effet.css?i=1") ?>" rel="stylesheet" media="screen" />
 		<?php foreach ($rss as $feed) : ?>
 			<link rel="alternate" type="application/rss+xml" title="<?php hecho($feed['title']) ?>" href="<?php hecho($feed['url']) ?>" />
@@ -79,7 +79,8 @@
 			<div id="footer">
 				<p class="align_right">
 					Page g&eacute;n&eacute;r&eacute;e par zenCancan r&eacute;vision <?php echo $revision_number ?> en <?php echo round((microtime(true) - $debut) * 10000) / 10 ?>ms
-					- <a href='<?php $this->Path->path("/Param/legal") ?>'>Mentions l&eacute;gales
+					| <a href="<?php $this->Path->path("/Param/legal") ?>" rel="nofollow">Mentions l&eacute;gales
+					| R&eacute;alisation : <a href="http://www.sigmalis.com" title="Cr&eacute;ation de site web à Lyon">Sigmalis</a>
 					</a>
 				</p>
 			</div><!-- fin footer -->

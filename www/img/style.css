@@ -264,9 +264,10 @@ background-color:#F8F8F8;
 border-top:1px solid #E6E6E6;
 margin-top:20px;
 padding:10px;
+font-size:80%;
+color:#959595;
 }
-
-
+#footer a {color:#959595;}
 
 
 /* box */
