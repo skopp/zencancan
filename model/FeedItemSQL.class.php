@@ -3,7 +3,7 @@
 class FeedItemSQL extends SQL {
 	
 	public function getAll($id_f){
-		$sql = "SELECT * FROM feed_item WHERE id_f=? ORDER BY date DESC";
+		$sql = "SELECT * FROM feed_item WHERE id_f=? ORDER BY date DESC,id_i ASC";
 		return $this->query($sql,$id_f);
 	}
 
@@ -18,7 +18,7 @@ class FeedItemSQL extends SQL {
 	}
 	
 	public function getLastId($id_f){
-		$sql = "SELECT id_i FROM feed_item WHERE id_f=? ORDER BY date DESC LIMIT 1";
+		$sql = "SELECT id_i FROM feed_item WHERE id_f=? ORDER BY date DESC,id_i ASC LIMIT 1";
 		return $this->queryOne($sql,$id_f);
 	}
 	

@@ -3,7 +3,7 @@ class ImageFinder {
 
 	public function getAll($xml_content){
 		if (! $xml_content){
-			return "";
+			return array();
 		}
 		$dom = new DomDocument();
 		$dom->loadHTML($xml_content);
