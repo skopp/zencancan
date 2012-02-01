@@ -13,17 +13,18 @@ class OPMLReader {
 			$this->lastError = "Ceci n'est pas un fichier OPML";
 			return false;
 		}
-		
+		$result = array();
 		foreach($xml->body->outline as $feed){
-			$result[] = $this->outline($feed,array());
+			$result = array_merge($result,$this->outline($feed,array()));
 		}
+		
 		return $result;
 	}
 	
 	public function outline($xmlElement,array $tag){
 
 		if ($xmlElement['xmlUrl']){
-			return array('xmlUrl'=>strval($xmlElement['xmlUrl']),"tag" => $tag);
+			return array(array('xmlUrl'=>strval($xmlElement['xmlUrl']),"tag" => $tag));
 		}
 		$tag[] = strval($xmlElement['title']);
 		$result = array();

@@ -50,6 +50,7 @@ class FeedSQL extends SQL {
 		);
 		$sql = "SELECT id_f FROM feed WHERE url=?";
 		$id_f = $this->queryOne($sql,$feedInfo['url']);
+		return $id_f;
 	}
 	
 	public function updateLastId($id_f,$last_id_i){
