@@ -20,5 +20,4 @@ $site_index = "http://localhost/workspace2/zencancan/www/index.php";
 
 //Par défaut la page d'index affiche la page de login
 #$presentation_page = "fichier contenant la page de presentation du logiciel";
-
 #$mention_legal_content = "fichier contenant les mentions légales";

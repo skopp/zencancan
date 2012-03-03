@@ -7,7 +7,7 @@ $php_path = trim($php_path);
 
 $deamon_path = __DIR__ ."/feed_deamon.php";
 
-$content = <<<"UPSTART"
+$content <<<"UPSTART"
 description "Zencancan Daemon Upstart Script"
 
 start on started mysql
@@ -20,6 +20,6 @@ exec sudo -u www-data $php_path $deamon_path
 UPSTART;
 
 
-file_put_contents("/etc/init/zencancan.conf",$content);
+file_put_contents("/etc/init.d/zencancan",$content);
 
 

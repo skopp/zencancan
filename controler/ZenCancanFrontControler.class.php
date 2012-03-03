@@ -17,14 +17,9 @@ class ZenCancanFrontControler extends FrontControler {
 				$this->UtilisateurSQL->updateLastLogin($id_u);	
 			}
 		}
-		if ($this->Authentification->getNamedAccount()){
-			if ($this->Connexion->isConnected()){	
-				$this->objectInstancier->defaultControler = "Feed";
-				$this->objectInstancier->defaultAction = "List";
-			} else {
-				$this->objectInstancier->defaultControler = "Mur";
-				$this->objectInstancier->defaultAction = "index";
-			}
+		if ($this->Connexion->isConnected()){	
+			$this->objectInstancier->defaultControler = "Feed";
+			$this->objectInstancier->defaultAction = "List";
 		} else {
 			$this->objectInstancier->defaultControler = "Aide";
 			$this->objectInstancier->defaultAction = "Presentation";

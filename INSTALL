@@ -5,7 +5,6 @@ Prérequis :
 *Une base de données MySQL (tester avec la version 5)
 *Extension PHP : curl, dom, fileinfo, libxml, pdo, pdo_mysql, SimpleXML
 
-
 1. Créer un fichier et configurer le fichier LocalSettings.php (par exemple à partir de LocalSettings-exemple.php)
 
 2. Créer une base de données MySQL à partir de info du fichier LocalSettings.php
@@ -22,10 +21,10 @@ Il faut configurer ce script, puis le copier dans /etc/init.d
 La procédure d'arret/démarrage du démon zencancan est alors :
 
 Démarrage :
-/etc/init.d/zencancan start 
+start zencancan 
 
 Arret: 
-/etc/init.d/zencancan stop
+stop zencancan
 
 5. Mettre les droit d'écriture pour le serveur web sur le répertoire static
 chown www-data static

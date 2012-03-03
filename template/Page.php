@@ -42,8 +42,6 @@
 				<?php if ($id_u) : ?>
 					<ul>
 						<li><a class='actif' href='<?php $this->Path->path("/Feed/list")?>'>Mes sites</a></li>
-						<li><a href='<?php $this->Path->path("/Mur/index")?>'>Mon mur</a></li>
-						<!-- <li><a href="<?php $this->Path->path("/Feed/new")?>">Nouveau site</a></li> -->
 						<li><a href="#" class="option" id="option_btn">Options</a></li>
 						<?php if ($isAdmin) : ?>
 							<li><a href='<?php $this->Path->path("/Admin/flux")?>'>Admin</a></li> 
@@ -80,7 +78,7 @@
 				<p class="align_right">
 					Page g&eacute;n&eacute;r&eacute;e par zenCancan r&eacute;vision <?php echo $revision_number ?> en <?php echo round((microtime(true) - $debut) * 10000) / 10 ?>ms
 					| <a href="<?php $this->Path->path("/Param/legal") ?>" rel="nofollow">Mentions l&eacute;gales
-					| R&eacute;alisation : <a href="http://www.sigmalis.com" title="Cr&eacute;ation de site web à Lyon">Sigmalis</a>
+					| R&eacute;alisation : <a href="http://www.sigmalis.com" title="Cr&eacute;ation de site web ï¿½ Lyon">Sigmalis</a>
 					</a>
 				</p>
 			</div><!-- fin footer -->

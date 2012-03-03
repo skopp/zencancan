@@ -16,7 +16,7 @@
 					
 					<?php foreach($all_user as $user) : ?>
 					<tr>
-						<td><a href='<?php echo $this->Path->getPathWithUsername($user['name'],"/Mur/index")?>'><?php echo $user['name']?></a></td>
+						<td><?php echo $user['name']?></td>
 						<td><?php echo $user['nb_abonnement']?></td>
 						<td><?php echo $user['nb_publication']?></td>
 						<td><?php echo $this->FancyDate->get($user['last_login'])?></td>

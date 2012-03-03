@@ -112,22 +112,13 @@
 		<h1>	<a href='<?php hecho($itemInfo['link']) ?>' target='_blank'><?php hecho($itemInfo['title'])?></a></h1>
 	</div>
 	<div class="billet_option">
-		<ul>
-			<li>
-			<form action='<?php $this->Path->path() ?>' method='post'>
-				<?php $this->Connexion->displayTokenField(); ?>
-				<input type='hidden' name='path_info' value='/Feed/doAddMur' />
-				<input type='hidden' name='id_i' value='<?php hecho($itemInfo['id_i'])?>' />				
-				<input type='submit' value='Publier sur mon mur' class="a_btn " />
-			</form>
-			</li>
-		</ul>
+	<div class="date">publi&eacute; : <?php echo $this->FancyDate->get($itemInfo['date'])?></div>
 	</div>
 </div>
 
 <div class="box">
 	<div class="billet">
-		<div class="date">publi&eacute; : <?php echo $this->FancyDate->get($itemInfo['date'])?></div>
+		
 		<?php echo $itemInfo['content'];?>
 	</div>
 </div>
@@ -142,20 +133,6 @@
 			<div class="suiv"></div>
 		
 	</div>
-	<hr/>
-	<div class="billet_option">
-		<ul>
-			<li>
-			<form action='<?php $this->Path->path() ?>' method='post'>
-				<?php $this->Connexion->displayTokenField(); ?>
-				<input type='hidden' name='path_info' value='/Feed/doAddMur' />
-				<input type='hidden' name='id_i' value='<?php hecho($itemInfo['id_i'])?>' />				
-				<input type='submit' value='Publier sur mon mur' class="a_btn " />
-			</form>
-			</li>			
-		</ul>
-	</div>
-
 </div>
 <div>
 	<p class="float_left">
