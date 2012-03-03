@@ -62,9 +62,9 @@ class UtilisateurSQL extends SQL {
 		return $remember;
 	}
 	
-	public function verifRemember($name,$remember){
-		$sql = "SELECT id_u FROM compte WHERE name=? AND remember=?";
-		return $this->queryOne($sql,$name,$remember);
+	public function getInfoFromRemember($remember){
+		$sql = "SELECT * FROM compte WHERE remember=?";
+		return $this->queryOne($sql,$remember);
 	}
 	
 	public function verifWithoutName($remember){

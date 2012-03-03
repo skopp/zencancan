@@ -41,27 +41,20 @@
 				<div id="menu">
 				<?php if ($id_u) : ?>
 					<ul>
-						<li><a class='actif' href='<?php $this->Path->path("/Feed/list")?>'>Mes sites</a></li>
-						<li><a href="#" class="option" id="option_btn">Options</a></li>
+						<li><a  href='<?php $this->Path->path("/Feed/list")?>'>Mes sites</a></li>
+						<li><a href='<?php $this->Path->path("/Param/index")?>'>Param&egrave;tres</a></li>
+						<li><a href='<?php $this->Path->path("/Connexion/doLogout")?>'>D&eacute;connexion</a></li> 
 						<?php if ($isAdmin) : ?>
 							<li><a href='<?php $this->Path->path("/Admin/flux")?>'>Admin</a></li> 
 						<?php endif;?>
 					</ul>
-					
-					<div id="option_menu">
-						<ul>
-						<li><a href='<?php $this->Path->path("/Param/index")?>'>Param&egrave;tres</a><hr/></li>
-						<li><a href="<?php $this->Path->path("/Param/import")?>">Importer mes flux</a><hr/></li>
-						<li><a href='<?php $this->Path->path("/Aide/index")?>'>Aide</a><hr/></li>
-						<li><a href='<?php $this->Path->path("/Connexion/doLogout")?>'>D&eacute;connexion</a></li> 
-						</ul>
 					</div>
 				</div>
 				<?php else: ?>
 					<ul>
-					<li><a href='<?php echo $this->Path->getPathWithUsername();?>'>Accueil</a></li>
+					<li><a href='<?php $this->Path->path();?>'>Accueil</a></li>
 					<li><a href='<?php $this->Path->path('/Connexion/login');?>'>Se connecter</a></li>
-					<li><a href='<?php echo $this->Path->getPathWithUsername("",'/Account/create');?>'>Cr&eacute;er un compte</a></li>
+					<li><a href='<?php $this->Path->path('/Account/create');?>'>Cr&eacute;er un compte</a></li>
 					</ul>
 				<?php endif;?>				
 			</div>
@@ -76,9 +69,9 @@
 			
 			<div id="footer">
 				<p class="align_right">
-					Page g&eacute;n&eacute;r&eacute;e par zenCancan r&eacute;vision <?php echo $revision_number ?> en <?php echo round((microtime(true) - $debut) * 10000) / 10 ?>ms
+					Page g&eacute;n&eacute;r&eacute;e par zenCancan en <?php echo round((microtime(true) - $debut) * 10000) / 10 ?>ms
 					| <a href="<?php $this->Path->path("/Param/legal") ?>" rel="nofollow">Mentions l&eacute;gales
-					| R&eacute;alisation : <a href="http://www.sigmalis.com" title="Cr&eacute;ation de site web � Lyon">Sigmalis</a>
+					| R&eacute;alisation : <a href="http://www.sigmalis.com" title="Cr&eacute;ation de site web à Lyon">Sigmalis</a>
 					</a>
 				</p>
 			</div><!-- fin footer -->

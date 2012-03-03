@@ -9,8 +9,9 @@ class LastMessage {
 	private $lastMessage;
 	
 	public function __construct(){
+		
 		$this->lastMessage =  array(false,"",array());
-		if (isset($_SESSION['last_message'])){
+		if (isset($_SESSION['last_message'])){			
 			$this->lastMessage = $_SESSION['last_message'];
 			unset($_SESSION['last_message']);
 		}

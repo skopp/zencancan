@@ -2,19 +2,16 @@
 class ZenCancanFrontControler extends FrontControler {
 	
 	public function noToken(){
-		$username = $this->Authentification->getNamedAccount();
-		$location = $this->Path->getPathWithUsername($username,"");
 		$this->LastMessage->setLastError("Ooops... un problème a été detecté sur le formulaire");
-		header("Location: $location");
-		exit;
+		$this->redirect();		
 	}
 		
 	public function go(){
-		if ($this->Authentification->getNamedAccount() && isset($_COOKIE['remember_zencancan'])) {
-			$id_u = $this->UtilisateurSQL->verifRemember($this->Authentification->getNamedAccount(),$_COOKIE['remember_zencancan']);
-			if ($id_u){
-				$this->Connexion->login($id_u);
-				$this->UtilisateurSQL->updateLastLogin($id_u);	
+		if (isset($_COOKIE['remember_zencancan'])) {
+			$info = $this->UtilisateurSQL->getInfoFromRemember($_COOKIE['remember_zencancan']);
+			if ($info){
+				$this->Connexion->login($info['id_u'],$info['name']);
+				$this->UtilisateurSQL->updateLastLogin($info['id_u']);	
 			}
 		}
 		if ($this->Connexion->isConnected()){	
@@ -25,8 +22,5 @@ class ZenCancanFrontControler extends FrontControler {
 			$this->objectInstancier->defaultAction = "Presentation";
 		}
 		parent::go();
-		
 	}
-	
-	
 }

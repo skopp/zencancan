@@ -32,19 +32,6 @@ $(document).ready(function() {
 		/* tooltip */
 		tooltip();
 
-
-	  /* menu options */
-	    $("#option_menu").hide();
-		
-		$('#option_btn').click(function(){
-	    	$('#option_menu').slideToggle();
-	    });
-		
-		/*
-	    $("body").mouseup(function(){ 
-			$('#option_menu').slideUp();
-	    });
-		*/
 		
 	  /* menu tags */
 	    $("#tags_menu").hide();

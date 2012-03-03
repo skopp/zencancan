@@ -38,7 +38,6 @@ $objectInstancier->debut = $debut;
 $objectInstancier->template_path = __DIR__ . "/template/";
 $objectInstancier->SQLQuery = $sqlQuery;
 $objectInstancier->nbSigne = 7;
-$objectInstancier->revision_number = 100;
 $objectInstancier->timeout = 10;
 $objectInstancier->staticPath = STATIC_PATH;
 if (isset($presentation_page)){

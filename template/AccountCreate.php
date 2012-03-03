@@ -11,7 +11,7 @@
 		<?php $this->Connexion->displayTokenField(); ?>
 		<input type='hidden' name='path_info' value='/Account/doCreate' />		
 		<label for="name">Nom du compte</label>
-		<input name='name' value='<?php echo $this->LastMessage->getLastInput('name')?>'/>.<?php echo DOMAIN_NAME ?>
+		<input name='name' value='<?php echo $this->LastMessage->getLastInput('name')?>'/>
 		<hr/>
 		<label for="password">Mot de passe</label>
 		<input type='password' name='password'/>

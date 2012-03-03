@@ -4,7 +4,6 @@
 class AccountControler extends ZenCancanControler {
 	
 	public function createAction(){
-		
 		$this->Gabarit->template_milieu = "AccountCreate";
 		$this->renderDefault();
 	}
@@ -12,7 +11,6 @@ class AccountControler extends ZenCancanControler {
 	protected function sortir($message){
 		parent::sortir($message,"/Account/create");
 	}
-	
 	
 	public function doCreateAction(){		
 		$name = $this->Recuperateur->get('name');
@@ -34,7 +32,7 @@ class AccountControler extends ZenCancanControler {
 			$this->sortir($this->UtilisateurSQL->getLastError());
 		}
 		
-		$this->Connexion->logout();
-		$this->redirectWithUsername($name,"/Connexion/login");
+		$this->LastMessage->setLastMessage("Votre compte a été crée. Vous pouvez à présent vous connecter.");
+		$this->redirect("/Connexion/login");
 	}
 }

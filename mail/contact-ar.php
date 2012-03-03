@@ -8,8 +8,6 @@ Merci de la confiance que vous accordez à zenCancan.
 
 Cordialement.
 
-<?php echo DOMAIN_NAME ?>
-
 
 Sujet du message reçu :  <?php echo $info['sujet'] ?>
 

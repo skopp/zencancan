@@ -2,14 +2,9 @@
 class Path {
 	
 	private $site_index;
-	private $username;
 		
 	public function __construct($site_index){
 		$this->site_index = $site_index;
-	}
-	
-	public function setUsername($username){
-		$this->username = $username;
 	}
 	
 	public function path($to = ""){
@@ -17,7 +12,7 @@ class Path {
 	}
 	
 	public function getRessourcePath($absolute_path){
-		return substr( $this->getSiteIndex($this->username), 0,strrpos($this->getSiteIndex($this->username),"/")) . $absolute_path;
+		return substr( $this->site_index, 0,strrpos($this->site_index,"/")) . $absolute_path;
 	}
 	
 	public function echoRessourcePath($absolute_path){
@@ -25,11 +20,7 @@ class Path {
 	}
 	
 	public function getPath($to = ""){		
-		return $this->getPathWithUsername($this->username,$to);
-	}
-	
-	public function getPathWithUsername($username="",$to = ""){
-		return $this->getSiteIndex($username) . $to;
+		return $this->site_index . $to;
 	}
 	
 	private function getSiteIndex($username){

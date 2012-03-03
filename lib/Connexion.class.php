@@ -2,9 +2,11 @@
 class Connexion {
 	
 	const ID_U = "zencancan_id_u";
+	const LOGIN  = "zencancan_login";
 	
-	public function login($id_u){
+	public function login($id_u,$login){
 		$_SESSION['connexion'][self::ID_U] = $id_u;
+		$_SESSION['connexion'][self::LOGIN] = $login;
 	}
 	
 	public function isConnected(){
@@ -18,8 +20,15 @@ class Connexion {
 		return $_SESSION['connexion'][self::ID_U];
 	}
 	
+	public function getLogin(){
+		if (! $this->isConnected()){
+			return false;
+		}
+		return $_SESSION['connexion'][self::LOGIN];
+	}
+	
+	
 	public function logout(){
-		
 		unset($_SESSION['connexion']);
 		session_destroy();
 	}

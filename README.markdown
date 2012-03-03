@@ -22,16 +22,15 @@ la recherche via google va afficher une page HTML disposant d'une alternative RS
 * Liste des derniers items de l'ensemble des flux configurés trié par date ;
 * Affichage de tous les flux dans un flux RSS unique
 * Liste de tous les items présent sur le flux pour un flux données ;
-* Suppresion de flux ;
+* Suppression de flux ;
 * Regroupement des flux via un mot-clé ;
 * Import/export des flux en OPML ;
-* Publication sur le "mur" de l'utilisateur de ces articles préférés
 
 
 ## Licence
 zenCancan est un [logiciel libre](http://fr.wikipedia.org/wiki/Logiciel_libre)  diffusé sous les termes de la licence zen :
 
-&copy;Sigmalis 2011 - [Sigmalis](http://www.sigmalis.com)
+&copy;Sigmalis 2011-2012 - [Sigmalis](http://www.sigmalis.com)
 vous autorise à utiliser, étudier, copier, modifier et diffuser le logiciel zenCancan 
 sans aucune restriction, ni aucune obligation.
 

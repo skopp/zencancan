@@ -11,31 +11,23 @@ class ConnexionControler extends ZenCancanControler {
 		setcookie("remember_zencancan",$remember,time()+3600*24*365,"/");
 	}
 	
-	public function doLoginAction(){
-	
+	public function doLoginAction(){	
 		$login = $this->Recuperateur->get('login');
 		$password = $this->Recuperateur->get("password");
 		$remember = $this->Recuperateur->get('remember');
-		$username = $login?:$this->getAccountName();
 		
-		$id_u = $this->UtilisateurSQL->verif($username,$password);
+		$id_u = $this->UtilisateurSQL->verif($login,$password);
 
 		if ( ! $id_u ){
 			$this->LastMessage->setLastError("Le mot de passe est incorrect");
 			$this->redirect("/Connexion/login");		
 		}	
-		if ($login){		
-			$verif_id = md5(mt_rand(0,mt_getrandmax()));
-			apc_store("verif_$id_u",$verif_id,60);
-			$this->redirectWithUsername($username,"/Connexion/autoLogin/$verif_id/$remember");
-		} else {
-			if ($remember){
-				$this->setRemember($id_u);	
-			}
-			$this->Connexion->login($id_u);		
-			$this->UtilisateurSQL->updateLastLogin($id_u);	
-			$this->redirect("/Feed/list");
-		}
+		if ($remember){
+			$this->setRemember($id_u);	
+		} 
+		$this->Connexion->login($id_u,$login);		
+		$this->UtilisateurSQL->updateLastLogin($id_u);	
+		$this->redirect("/Feed/list");
 	}
 	
 	public function doLogoutAction(){		
@@ -43,28 +35,5 @@ class ConnexionControler extends ZenCancanControler {
 		$this->Connexion->logout();
 		$this->redirect();
 	}
-	
-	public function autoLoginAction($verif_id,$remember){
-		
-		if ( ! $verif_id){
-			$this->redirect();
-		}
-
-		$username = $this->getAccountName();
-		$id_u  = $this->UtilisateurSQL->getIdFromUsername($username);
-		
-		if (apc_fetch("verif_$id_u") != $verif_id){
-			$this->redirect();
-		}
-		$this->Path->setUsername($username);
-		$this->Connexion->login($id_u);
-		$this->UtilisateurSQL->updateLastLogin($id_u);	
-		if ($remember){
-			$this->setRemember($id_u);	
-		}
-		
-		$this->redirect();
-	}
-	
 	
 }

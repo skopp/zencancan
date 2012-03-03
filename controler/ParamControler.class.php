@@ -42,7 +42,7 @@ class ParamControler extends ZenCancanControler {
 			$this->sortir("Les mots de passe ne correspondent pas");
 		}
 		
-		if ( ! $this->UtilisateurSQL->verif($this->Authentification->getNamedAccount(),$oldpassword)){
+		if ( ! $this->UtilisateurSQL->verif($this->Connexion->getLogin(),$oldpassword)){
 			$this->sortir("Votre ancien mot de passe est incorrecte");
 		}
 
@@ -102,10 +102,10 @@ class ParamControler extends ZenCancanControler {
 		}
 		
 		$this->AbonnementSQL->delCompte($id);
-		$this->UtilisateurSQL->delete($this->Authentification->getNamedAccount());
+		$this->UtilisateurSQL->delete($this->Connexion->getLogin());
 		
 		$this->Connexion->logout();
-		$this->redirectWithUsername("");
+		$this->redirect();
 		
 	}
 	

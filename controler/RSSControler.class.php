@@ -2,7 +2,7 @@
 class RSSControler extends ZenCancanControler {
 	
 	public function allAction($id,$tag=""){
-		$id_u = $this->UtilisateurSQL->getIdFromUsername($this->Authentification->getNamedAccount());
+		$id_u = $this->UtilisateurSQL->getIdFromUsername($this->Connexion->getLogin());
 		$info = $this->UtilisateurSQL->getInfo($id_u);
 		
 		if ($id != $info['id']){
