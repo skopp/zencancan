@@ -85,8 +85,8 @@ class FeedSQL extends SQL {
 		return $this->queryOne($sql,$id_f);
 	}
 	
-	public function getAllToUpdate($min_time_in_minute){
-		$sql = "SELECT id_f FROM feed WHERE last_recup < DATE_SUB(now(), INTERVAL $min_time_in_minute MINUTE) ";
+	public function getAllToUpdate($min_time){
+		$sql = "SELECT id_f FROM feed WHERE last_recup < DATE_SUB(now(), INTERVAL $min_time SECOND) ";
 		return $this->query($sql);
 	}
 	

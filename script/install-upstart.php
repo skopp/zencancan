@@ -17,11 +17,10 @@ stop on stopping mysql
 
 respawn
 
-exec sudo -u www-data $php_path $deamon_path >> $log_path
+exec sudo -u www-data $php_path $deamon_path >> $log_path 2>&1
 
 UPSTART;
 
-
-file_put_contents("/etc/init.d/zencancan.conf",$content);
+file_put_contents("/etc/init/zencancan.conf",$content);
 
 
