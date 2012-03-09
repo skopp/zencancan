@@ -9,7 +9,7 @@ $log_path = "/var/log/zencancan.log";
 
 $deamon_path = __DIR__ ."/feed_update.php";
 
-$content <<<"UPSTART"
+$content = <<<"UPSTART"
 description "Zencancan Daemon Upstart Script"
 
 start on started mysql
