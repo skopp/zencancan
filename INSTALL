@@ -7,16 +7,17 @@ Prérequis :
 
 1. Créer un fichier et configurer le fichier LocalSettings.php (par exemple à partir de LocalSettings-exemple.php)
 
-2. Créer une base de données MySQL à partir de info du fichier LocalSettings.php
+2. Créer une base de données MySQL à partir des info du fichier LocalSettings.php
 
 3. Importer la structure de la base script/zencancan.sql
 
 4. Configurer la récuperation de flux
 
 La récupération est réalisée grâce au démon zencancan. 
-Le script d'initialisation SysV est script/zencancan
+Le script d'initialisation upstart est obtenu en lancant (en tant que root):
+php script/install-upstart.php
 
-Il faut configurer ce script, puis le copier dans /etc/init.d
+Ce script créer un fichier /etc/init/zencancan.conf, ainsi qu'un fichier /etc/logrotate.d/zencancan
 
 La procédure d'arret/démarrage du démon zencancan est alors :
 

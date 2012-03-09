@@ -166,7 +166,6 @@ class FeedUpdater {
 			echo "Arret du script : $sleep";
 			sleep($sleep);
 		}
-		
 	}
 	
 	public function updateAFeed($id_f, AbonnementSQL $abonnementSQL){
@@ -178,29 +177,6 @@ class FeedUpdater {
 			echo "Récup de {$info['url']} - ";
 			$lastError = $this->update($id_f);
 			echo "OK {$lastError}\n";
-		}
-	}
-	
-	public function updateForever(AbonnementSQL $abonnementSQL,$log_file){
-		
-		$info = $this->feedSQL->getFirstToUpdate();
-		while (true) { 
-			if (! $info){
-				sleep(self::MIN_TIME_BEETWEEN_LOAD);
-				continue;
-			}
-			
-			$this->sleepIfNeeded($info['last_recup'],$log_file);
-			$this->updateFeed($info['id_f'],$abonnementSQL,$log_file);
-			$info = $this->feedSQL->getFirstToUpdate();
-		}
-	}
-	
-	private function sleepIfNeeded($lastRecup,$log_file){
-		$timeToSleep =  self::MIN_TIME_BEETWEEN_LOAD - (time() - strtotime($lastRecup));
-		if ( $timeToSleep > 0){
-			file_put_contents($log_file,"Je m'endors pendant $timeToSleep s\n",FILE_APPEND);
-			sleep( $timeToSleep);
 		}
 	}
 }

@@ -6,11 +6,10 @@ class FeedParser {
 	private $htmlPurifier;
 	private $lastError;
 	
-	public function __construct(XMLPurifier $xmlPurifier,HTMLPurifier $htmlPurifier,ImageFinder $imageFinder){
+	public function __construct(XMLPurifier $xmlPurifier,HTMLPurifier $htmlPurifier){
 		libxml_use_internal_errors(true);
 		$this->xmlPurifier = $xmlPurifier;
 		$this->htmlPurifier = $htmlPurifier;
-		$this->imageFinder = $imageFinder;
 	}
 	
 	public function getLastError(){
@@ -43,7 +42,6 @@ class FeedParser {
 			}
 			
 			$feed['item'][$i]['content'] =  $this->htmlPurifier->purify($feed['item'][$i]['content']);
-			$feed['item'][$i]['all_img'] = $this->imageFinder->getAll($feed['item'][$i]['content']);
 			if (empty($item['description'])){
 				$feed['item'][$i]['description'] = $this->shorten($feed['item'][$i]['content']);
 			} else {

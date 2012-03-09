@@ -3,7 +3,10 @@ class ZenCancanFrontControler extends FrontControler {
 	
 	public function noToken(){
 		$this->LastMessage->setLastError("Ooops... un problème a été detecté sur le formulaire");
-		$this->redirect();		
+		
+		$location = $this->Path->getPath("");
+		header("Location: $location");		
+		exit;
 	}
 		
 	public function go(){

@@ -1,0 +1,12 @@
+/var/log/zencancan.log
+{
+	rotate 7
+	daily
+	missingok
+	notifempty
+	delaycompress
+	compress
+	postrotate
+		restart zencancan >/dev/null 2>&1 || true
+	endscript
+}
