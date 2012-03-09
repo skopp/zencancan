@@ -152,6 +152,35 @@ class FeedUpdater {
 		return $info['last_id_i'];
 	}
 	
+	public function updateOnce(AbonnementSQL $abonnementSQL){
+		$start = time();
+		$all_id_f = $this->feedSQL->getAllToUpdate(self::MIN_TIME_BEETWEEN_LOAD);
+		echo "Nombre de flux à mettre à jour : " . count($all_id_f). "\n";
+		
+		foreach($all_id_f as $info){
+			$this->updateAFeed($info['id_f'],$abonnementSQL);
+		}
+		$stop = time();
+		$sleep = self::MIN_TIME_BEETWEEN_LOAD - ($stop -$start);
+		if ($sleep > 0){
+			echo "Arret du script : $sleep";
+			sleep($sleep);
+		}
+		
+	}
+	
+	public function updateAFeed($id_f, AbonnementSQL $abonnementSQL){
+		$info = $this->feedSQL->getInfo($id_f);
+		if ($abonnementSQL->getNbAbonner($id_f) == 0){
+			$this->feedSQL->del($id_f);
+			echo "Supression de {$info['url']}\n";
+		} else {
+			echo "Récup de {$info['url']} - ";
+			$lastError = $this->update($id_f);
+			echo "OK {$lastError}\n";
+		}
+	}
+	
 	public function updateForever(AbonnementSQL $abonnementSQL,$log_file){
 		
 		$info = $this->feedSQL->getFirstToUpdate();
@@ -162,18 +191,7 @@ class FeedUpdater {
 			}
 			
 			$this->sleepIfNeeded($info['last_recup'],$log_file);
-			
-			$id_f = $info['id_f'];	
-			
-			if ($abonnementSQL->getNbAbonner($id_f) == 0){
-				$this->feedSQL->del($id_f);
-				file_put_contents($log_file,"Supression de {$info['url']}\n",FILE_APPEND);
-			} else {
-				file_put_contents($log_file,"Récup de {$info['url']} - ",FILE_APPEND);
-				$lastError = $this->update($id_f);
-				file_put_contents($log_file,"OK {$lastError}\n",FILE_APPEND);
-			}
-			
+			$this->updateFeed($info['id_f'],$abonnementSQL,$log_file);
 			$info = $this->feedSQL->getFirstToUpdate();
 		}
 	}
