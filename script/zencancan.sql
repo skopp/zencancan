@@ -54,6 +54,7 @@ CREATE TABLE feed_item (
 	`link` text NOT NULL,
 	`date` datetime NOT NULL,
 	`id` varchar(256) NOT NULL,
+	`image_update` tinyint(1) NOT NULL,
 	PRIMARY KEY (`id_i`),
 	KEY img (`img`),
 	KEY id_f (`id_f`,`date`)
