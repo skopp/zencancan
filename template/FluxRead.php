@@ -25,7 +25,7 @@
 				<?php $this->Connexion->displayTokenField(); ?>
 				<input type='hidden' name='path_info' value='/Feed/doDelete' />
 				<input type='hidden' name='id_f' value='<?php echo $abonnementInfo['id_f'] ?>'/>
-				<input  class="tooltip" type='image' src='<?php $this->Path->echoRessourcePath("/img/commun/ilu_del_blog.png") ?>' title='Ne plus suivre ce blog'/>
+				<input  class="tooltip" type='image' src='<?php $this->Path->echoRessourcePath("/img/commun/ilu_del_blog.png") ?>' title='Ne plus suivre'/>
 				</form>
 			</li>
 			<li>

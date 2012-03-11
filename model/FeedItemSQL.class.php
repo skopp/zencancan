@@ -42,4 +42,17 @@ class FeedItemSQL extends SQL {
 		return $this->query($sql,$img,false,$id_i);
 	}
 	
+	public function deleteAll($id_f){
+		$sql = "DELETE FROM feed_item WHERE id_f=?";
+		$this->query($sql,$id_f);
+	}
+	
+	public function getAllImage($id_f){
+		$sql = "SELECT img FROM feed_item WHERE id_f=?";
+		$result = array();
+		foreach($this->query($sql,$id_f) as $line){
+			$result[] = $line['img'];
+		}
+		return $result;
+	}
 }

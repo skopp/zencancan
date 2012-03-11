@@ -119,13 +119,13 @@ class FeedUpdater {
 		return $info['last_id_i'];
 	}
 	
-	public function updateOnce(AbonnementSQL $abonnementSQL){
+	public function updateOnce(){
 		$start = time();
 		$all_id_f = $this->feedSQL->getAllToUpdate(self::MIN_TIME_BEETWEEN_LOAD);
 		echo "Nombre de flux à mettre à jour : " . count($all_id_f). "\n";
 		
 		foreach($all_id_f as $info){
-			$this->updateAFeed($info['id_f'],$abonnementSQL);
+			$this->updateAFeed($info['id_f']);
 		}
 		$stop = time();
 		$sleep = self::MIN_TIME_BEETWEEN_LOAD - ($stop -$start);
@@ -135,15 +135,10 @@ class FeedUpdater {
 		}
 	}
 	
-	public function updateAFeed($id_f, AbonnementSQL $abonnementSQL){
+	private function updateAFeed($id_f){
 		$info = $this->feedSQL->getInfo($id_f);
-		if ($abonnementSQL->getNbAbonner($id_f) == 0){
-			$this->feedSQL->del($id_f);
-			echo "Supression de {$info['url']}\n";
-		} else {
-			echo "Récup de {$info['url']} - ";
-			$lastError = $this->update($id_f);
-			echo "OK {$lastError}\n";
-		}
+		echo "Récup de {$info['url']} - ";
+		$lastError = $this->update($id_f);
+		echo "OK {$lastError}\n";
 	}
 }

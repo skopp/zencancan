@@ -138,4 +138,11 @@ class ImageUpdater {
 			@ unlink($this->favicon_path . "/" . $info['favicon']);
 		}
 	}
+	
+	public function removeAllImage($id_f){
+		$this->removeImage($id_f);
+		foreach($this->feedItemSQL->getAllImage($id_f) as $image){
+				@ unlink($this->img_path . "/" . $image);
+		}	
+	}
 }

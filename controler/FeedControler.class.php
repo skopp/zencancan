@@ -142,10 +142,7 @@ class FeedControler extends ZenCancanControler {
 		$this->verifAbonnement($id_u,$id_f);
 			
 		$allItem = $this->FeedItemSQL->getAll($id_f);
-		
-		
 		$abonnementInfo = $this->AbonnementSQL->getInfo($id_u,$id_f);
-		
 		
 		$this->addRSS($abonnementInfo['title'],$abonnementInfo['url']);
 		$this->Gabarit->abonnementInfo = $abonnementInfo;
@@ -161,6 +158,13 @@ class FeedControler extends ZenCancanControler {
 		$id = $this->verifConnected();
 		$id_f = $this->Recuperateur->getInt('id_f');
 		$this->AbonnementSQL->del($id,$id_f);
+		
+		if ($this->AbonnementSQL->getNbAbonner($id_f) == 0){
+			$this->ImageUpdater->removeAllImage($id_f);
+			$this->FeedItemSQL->deleteAll($id_f);
+			$this->FeedSQL->del($id_f);
+		}
+		
 		$this->LastMessage->setLastMessage("Le suivie du site à été supprimé ");
 		$this->redirect();
 	}
