@@ -95,8 +95,6 @@ class UtilisateurSQL extends SQL {
 									"name",
 									"date",
 									"nb_abonnement",
-									"nb_publication",
-									"last_publication",
 									))){
 			$tri = "last_login";
 		}

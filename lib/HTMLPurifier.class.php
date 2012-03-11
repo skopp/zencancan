@@ -200,12 +200,14 @@ class HTMLPurifier {
 			if ( ! trim($element)){
 				continue;
 			}
-			list($name,$value) = explode(":",$element);
-			$name=trim($name);
-			if (in_array($name,$this->allowStyle)){
-				$style_authorized .= "$name: $value; ";
-			} else {
-				$this->rejectedStyle[$name] = true;
+			if (strstr($element,":")){
+				list($name,$value) = explode(":",$element);
+				$name=trim($name);
+				if (in_array($name,$this->allowStyle)){
+					$style_authorized .= "$name: $value; ";
+				} else {
+					$this->rejectedStyle[$name] = true;
+				}
 			}
 		}
 		$node->setAttribute("style",$style_authorized);

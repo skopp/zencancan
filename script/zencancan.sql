@@ -14,8 +14,6 @@ CREATE TABLE compte (
 	`date` datetime NOT NULL,
 	`nb_abonnement` int(11) NOT NULL,
 	`last_login` datetime NOT NULL,
-	`nb_publication` int(11) NOT NULL,
-	`last_publication` datetime NOT NULL,
 	PRIMARY KEY (`id_u`),
 	UNIQUE KEY name (`name`),
 	UNIQUE KEY id (`id`)

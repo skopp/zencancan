@@ -92,23 +92,6 @@ class FeedControler extends ZenCancanControler {
 		}
 	}
 	
-	public function getItem($rssInfo,$i){
-		if (empty($rssInfo['item'][$i])){
-			$this->LastMessage->setLastError("Cet article n'existe pas ou plus");
-			$this->redirect();
-		}
-		$resultItem = $rssInfo['item'][$i];
-		
-		$content_html = $resultItem['content']?:$resultItem['description'];
-		
-		$this->HTMLPurifier->setBaseLink($rssInfo['link']);
-		$content_html = $this->HTMLPurifier->purify($content_html);
-		
-		$resultItem['content'] = $content_html;
-		
-		return $resultItem;
-	}
-	
 	public function detailAction($id_f){
 		$id_u = $this->verifConnected();
 		$this->verifAbonnement($id_u,$id_f);

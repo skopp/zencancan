@@ -7,7 +7,6 @@ class ImageFinder {
 		}
 		$dom = new DomDocument();
 		$dom->loadHTML($xml_content);
-		
 		$all_image = $dom->getElementsByTagName('img');
 		$result = array();
 		foreach($all_image as $img){

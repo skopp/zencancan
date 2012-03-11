@@ -40,7 +40,6 @@ class FeedParser {
 			if (empty($item['content'])){
 				$feed['item'][$i]['content'] = $item['description'];
 			}
-			
 			$feed['item'][$i]['content'] =  $this->htmlPurifier->purify($feed['item'][$i]['content']);
 			if (empty($item['description'])){
 				$feed['item'][$i]['description'] = $this->shorten($feed['item'][$i]['content']);
