@@ -56,8 +56,9 @@ class FeedControler extends ZenCancanControler {
 	public function updateAction($id_f){
 		$id_u = $this->verifConnected();
 		$info = $this->FeedSQL->getInfo($id_f);
+		$nb_second_since_last_recup = time() - strtotime($info['last_maj']);
 		
-		if ($this->UtilisateurSQL->isAdmin($id_u)){
+		if ($this->UtilisateurSQL->isAdmin($id_u) || $nb_second_since_last_recup > 360){
 			$result = $this->FeedUpdater->update($id_f);			
 			$this->LastMessage->setLastMessage("Le flux a été rafraichi ($result)");
 			$info = $this->FeedSQL->getInfo($id_f);
@@ -118,8 +119,9 @@ class FeedControler extends ZenCancanControler {
 			$this->redirect("/Feed/read/{$info['last_id_i']}");
 		}
 		
-		
 		$abonnementInfo = $this->AbonnementSQL->getInfo($id_u,$id_f);
+		$abonnementInfo["nb_second_since_last_recup"] = time() - strtotime($abonnementInfo['last_recup']);
+		
 		$this->addRSS($abonnementInfo['title'],$abonnementInfo['url']);
 		$this->Gabarit->abonnementInfo = $abonnementInfo;
 		$this->Gabarit->allItem = array();
@@ -143,6 +145,8 @@ class FeedControler extends ZenCancanControler {
 			
 		$allItem = $this->FeedItemSQL->getAll($id_f);
 		$abonnementInfo = $this->AbonnementSQL->getInfo($id_u,$id_f);
+		$abonnementInfo["nb_second_since_last_recup"] = time() - strtotime($abonnementInfo['last_recup']);
+		
 		
 		$this->addRSS($abonnementInfo['title'],$abonnementInfo['url']);
 		$this->Gabarit->abonnementInfo = $abonnementInfo;
@@ -155,20 +159,20 @@ class FeedControler extends ZenCancanControler {
 	}
 	
 	public function doDeleteAction(){
-		$id = $this->verifConnected();
+		$id_u = $this->verifConnected();
 		$id_f = $this->Recuperateur->getInt('id_f');
-		$this->AbonnementSQL->del($id,$id_f);
-		
+		$this->deleteAbonnement($id_u, $id_f);
+		$this->LastMessage->setLastMessage("Le suivie du site à été supprimé ");
+		$this->redirect();
+	}
+	
+	public function deleteAbonnement($id_u,$id_f){
+		$this->AbonnementSQL->del($id_u,$id_f);
 		if ($this->AbonnementSQL->getNbAbonner($id_f) == 0){
 			$this->ImageUpdater->removeAllImage($id_f);
 			$this->FeedItemSQL->deleteAll($id_f);
 			$this->FeedSQL->del($id_f);
 		}
-		
-		$this->LastMessage->setLastMessage("Le suivie du site à été supprimé ");
-		$this->redirect();
 	}
-
-	
 	
 }

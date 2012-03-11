@@ -78,4 +78,21 @@ class SQLQuery {
 		}
 		return $result;
 	}
+	
+	public function queryOneCol($query,$param = false){
+		if ( ! is_array($param)){
+			$param = func_get_args();
+			array_shift($param);
+    	}
+    	$result = $this->query($query,$param);
+		if (! $result){
+			return false;
+		}
+		$r = array();
+		foreach($result as $line){
+			$line = array_values($line);
+			$r[] = $line[0];
+		}
+		return $r;
+	}
 }

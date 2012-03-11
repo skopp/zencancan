@@ -125,9 +125,9 @@ class ImageUpdater {
 	}
 	
 	private function getFaviconContent($url){
-		echo "Récupération de : $url\n";
 		$parse = parse_url($url);
 		$favicon = $parse['scheme'] . "://".$parse['host']."/favicon.ico";
+		echo "Récupération de : $favicon\n";
 		@ $content = file_get_contents($favicon);
 		return $content;
 	}

@@ -16,9 +16,11 @@
 		<ul>
 			
 			<?php if ($isAdmin) : ?>
-				<li><a class="tooltip" title="Actualiser" href="<?php $this->Path->path("/Feed/update/{$abonnementInfo['id_f']}")?>"><img src="<?php $this->Path->echoRessourcePath("/img/commun/ilu_actualiser.png") ?>" alt="Actualiser" /></a></li>	
 				<li><a class="tooltip" title="Forcer l'actualisation" href="<?php $this->Path->path("/Feed/forceReload/{$abonnementInfo['id_f']}")?>"><img src="<?php $this->Path->echoRessourcePath("/img/commun/ilu_forcer_actualiser.png") ?>" alt="Forcer l'actualisation" /></a></li>	
 			<?php endif;?>
+			<?php if ($abonnementInfo['nb_second_since_last_recup']>360 || $isAdmin) : ?>
+				<li><a class="tooltip" title="Actualiser - <?php echo $abonnementInfo['nb_second_since_last_recup'] ?>" href="<?php $this->Path->path("/Feed/update/{$abonnementInfo['id_f']}")?>"><img src="<?php $this->Path->echoRessourcePath("/img/commun/ilu_actualiser.png") ?>" alt="Actualiser" /></a></li>
+			<?php endif;?>	
 
 			<li>
 				<form  action='<?php $this->Path->path() ?>' method='post'>

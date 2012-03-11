@@ -92,7 +92,7 @@ class ParamControler extends ZenCancanControler {
 	}
 	
 	public function deleteAction(){
-		$id = $this->verifConnected();
+		$id_u = $this->verifConnected();
 		
 		$id = $this->Recuperateur->get('id');
 		$code = $this->Recuperateur->get('code');
@@ -101,7 +101,11 @@ class ParamControler extends ZenCancanControler {
 			$this->sortirToParam("Veuillez saisir l'identifiant du compte ($id)");	
 		}
 		
-		$this->AbonnementSQL->delCompte($id);
+		$all_id_f = $this->AbonnementSQL->getAllId_f($id_u);
+		foreach($all_id_f as $id_f){
+			$this->FeedControler->deleteAbonnement($id_u,$id_f);
+		}
+		
 		$this->UtilisateurSQL->delete($this->Connexion->getLogin());
 		
 		$this->Connexion->logout();

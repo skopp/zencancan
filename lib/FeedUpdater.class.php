@@ -27,23 +27,8 @@ class FeedUpdater {
 		if ($info){
 			return $info['id_f'];
 		}
-		$feedInfo = array();
-		$feedInfo['lasterror'] = "";
-		$feedInfo['url'] = $url;
-		$feedInfo['etag'] = "";
-		$feedInfo['last-modified'] = date("1970-01-01");
-		$feedInfo['id_item'] = "";
-		$feedInfo['title'] = "En cours de récupération";
-		$feedInfo['link'] = $url;
-		$feedInfo['item_title'] = $url;
-		$feedInfo['item_link'] =  $url;		
-		$feedInfo['item_content'] = "";	
-		$feedInfo['pubDate'] = date("Y-m-d H:i:s");
-		$feedInfo['favicon'] = "";
-		$feedInfo['item'] = array();
-		$feedInfo['md5'] = 0;
-		$id_f= $this->feedSQL->insert($feedInfo);
-		$this->feedSQL->forceLastRecup($url);
+
+		$id_f= $this->feedSQL->insertEmpty($url);
 		return $id_f;
 	}
 	

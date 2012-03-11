@@ -34,7 +34,7 @@ class FeedSQL extends SQL {
 		$sql = "SELECT id_f FROM feed WHERE url=?";
 		return $this->queryOne($sql,$feedInfo['url']);
 	}
-	
+
 	public function insert($feedInfo){
 		$id_item = 0;
 		$pubDate = '';
@@ -51,6 +51,14 @@ class FeedSQL extends SQL {
 		$sql = "SELECT id_f FROM feed WHERE url=?";
 		$id_f = $this->queryOne($sql,$feedInfo['url']);
 		return $id_f;
+	}
+
+	public function insertEmpty($url){
+		$sql = "INSERT INTO feed(url,`last-modified`,title,link,last_maj,last_recup) " .
+				" VALUES (?,'1970-01-01',?,?,'1970-01-01','1970-01-01') ";
+		$this->query($sql,$url,$url,$url);
+		$info = $this->getInfoFromURL($url);
+		return $info['id_f'];
 	}
 	
 	public function updateLastId($id_f,$last_id_i){
@@ -69,11 +77,6 @@ class FeedSQL extends SQL {
 			$id_f
 		);
 		return true;
-	}
-	
-	public function forceLastRecup($url){
-		$sql = "UPDATE feed SET last_recup='1970-01-01' WHERE url=?";
-		$this->query($sql,$url);
 	}
 	
 	public function udpateLastRecup($url,$error = ''){

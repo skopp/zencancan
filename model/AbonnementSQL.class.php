@@ -157,10 +157,10 @@ class AbonnementSQL extends SQL {
 		$result['tag'] = $this->tagList2Array($result['tag']);
 		return $result;
 	}
-	
-	public function delCompte($id_u){
-		$sql = "DELETE FROM abonnement WHERE id_u=?";
-		$this->query($sql,$id_u);
+
+	public function getAllId_f($id_u){
+		$sql = "SELECT id_f FROM abonnement WHERE id_u=?";
+		return $this->queryOneCol($sql,$id_u);
 	}
 	
 	public function taglist2Array($tag_list){
