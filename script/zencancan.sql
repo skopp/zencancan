@@ -39,6 +39,7 @@ CREATE TABLE feed (
 	`last_id_i` int(11) NOT NULL,
 	`favicon` varchar(256) NOT NULL,
 	`md5` varchar(64) NOT NULL,
+	`favicon_update` tinyint(1) NOT NULL,
 	PRIMARY KEY (`id_f`),
 	UNIQUE KEY url (`url`),
 	UNIQUE KEY last_recup (`last_recup`,`id_f`),

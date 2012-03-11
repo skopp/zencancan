@@ -7,13 +7,11 @@ class FeedUpdater {
 	private $feedSQL;
 	private $feedFetchInfo;
 	private $lastError;
-	private $favicon_path;
 	private $feedItemUpdater;
 	
-	public function __construct(FeedSQL $feedSQL,FeedFetchInfo $feedFetchInfo,FeedItemUpdater $feedItemUpdater,$favicon_path){
+	public function __construct(FeedSQL $feedSQL,FeedFetchInfo $feedFetchInfo,FeedItemUpdater $feedItemUpdater){
 		$this->feedSQL = $feedSQL;
 		$this->feedFetchInfo = $feedFetchInfo;
-		$this->favicon_path = $favicon_path;
 		$this->feedItemUpdater = $feedItemUpdater;
 	}
 	
@@ -73,37 +71,10 @@ class FeedUpdater {
 		}
 		
 		$feedInfo['md5'] = $this->getMD5($feedInfo);
-		$feedInfo = $this->addImg($feedInfo);
 		$this->feedSQL->insert($feedInfo);
 		$info = $this->feedSQL->getInfoFromURL($feedInfo['url']);
 		$this->feedItemUpdater->update($info['id_f'],$feedInfo);
 		return $info['id_f'];
-	}
-	
-	public function getFavicon($url){
-		$parse = parse_url($url);
-		$favicon = $parse['scheme'] . "://".$parse['host']."/favicon.ico";
-		@ $content = file_get_contents($favicon);
-		return $content;
-	}
-	
-	
-	public function addImg($feedInfo){
-		$favicon = $this->getFavicon($feedInfo['url']);
-		if ($favicon){
-			$feedInfo['favicon'] = md5(mt_rand()) .".ico";
-			file_put_contents($this->favicon_path . "/" . $feedInfo['favicon'],$favicon);
-		} else {
-			$feedInfo['favicon'] = "";
-		}
-		return $feedInfo;
-	}
-	
-	public function removeImage($id_f){
-		$info = $this->feedSQL->getInfo($id_f);
-		if ($info['favicon']) {
-			@ unlink($this->favicon_path . "/" . $info['favicon']);
-		}
 	}
 	
 	private function getMD5($feedInfo){
@@ -141,12 +112,8 @@ class FeedUpdater {
 	}
 	
 	private function updateSQL($id_f,$feedInfo){
-		$this->removeImage($id_f);
-		$feedInfo['md5'] = $this->getMD5($feedInfo);
-		$feedInfo = $this->addImg($feedInfo);
-		
+		$feedInfo['md5'] = $this->getMD5($feedInfo);		
 		$this->feedSQL->update($id_f,$feedInfo);
-		
 		$this->feedItemUpdater->update($id_f,$feedInfo);
 		$info = $this->feedSQL->getInfo($id_f);
 		return $info['last_id_i'];

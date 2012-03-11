@@ -12,10 +12,6 @@ class AbonnementSQL extends SQL {
 		$this->tagSQL = $tagSQL;
 	}
 	
-	public function getNbAbo(){
-		return $this->queryOne("SELECT count(distinct id_u) FROM abonnement ");
-	}
-	
 	public function isAbonner($id_u,$id_f){
 		$sql = "SELECT count(*) FROM abonnement WHERE id_u=? AND id_f = ? ";
 		return $this->queryOne($sql,$id_u,$id_f);

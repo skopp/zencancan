@@ -1,5 +1,4 @@
 <?php 
-
 class ImageUpdater {
 	
 	const THUMBNAIL_WIDTH = 128;
@@ -7,28 +6,24 @@ class ImageUpdater {
 	
 	const MIN_TIME_BEETWEEN_LOAD = 60;
 	
-	
 	private $feedItemSQL;
 	private $img_path;
+	private $favicon_path;
 	private $imageFinder;
+	private $feedSQL;
 	
-	public function __construct(FeedItemSQL $feedItemSQL,ImageFinder $imageFinder,$img_path){
+	public function __construct(FeedSQL $feedSQL,FeedItemSQL $feedItemSQL,ImageFinder $imageFinder,$img_path,$favicon_path){
 		$this->feedItemSQL = $feedItemSQL;
 		$this->imageFinder = $imageFinder;
 		$this->img_path = $img_path;
+		$this->feedSQL = $feedSQL;
+		$this->favicon_path = $favicon_path;
 	}
 	
 	public function updateAll(){
 		$start = time();
-		
-		$all_item = $this->feedItemSQL->getAllImageUpdate();
-		echo "Nombre d'image à mettre à jour : ". count($all_item) ."\n";
-		foreach($all_item as $item){
-			$info = $this->feedItemSQL->getInfo($item['id_i']);
-			$all_image = $this->imageFinder->getAll($info['content']);
-			$img = $this->recupImg($all_image);
-			$this->feedItemSQL->updateImage($item['id_i'],$img);
-		}
+		$this->updateThumbnail();
+		$this->updateFavicon();
 		$stop = time();
 		$sleep = self::MIN_TIME_BEETWEEN_LOAD - ($stop -$start);
 		if ($sleep > 0){
@@ -37,6 +32,28 @@ class ImageUpdater {
 		}
 	}
 
+	private function updateThumbnail(){
+		$all_item = $this->feedItemSQL->getAllImageUpdate();
+		echo "Nombre d'image à mettre à jour : ". count($all_item) ."\n";
+		foreach($all_item as $item){
+			$info = $this->feedItemSQL->getInfo($item['id_i']);
+			$all_image = $this->imageFinder->getAll($info['content']);
+			$img = $this->recupImg($all_image);
+			$this->feedItemSQL->updateImage($item['id_i'],$img);
+		}
+	}
+	
+	private function updateFavicon(){
+		$all_favicon = $this->feedSQL->getAllFaviconToUpdate();
+		echo "Nombre de favicon à mettre à jour : " . count($all_favicon) . "\n";
+		foreach($all_favicon as $item){
+			$info = $this->feedSQL->getInfo($item['id_f']);
+			$favicon = $this->getFavicon($info);
+			$this->feedSQL->updateFavicon($item['id_f'],$favicon);
+		}
+	}
+	
+	
 	private function recupImg(array $all_img){
 		$img_name = md5(mt_rand()).".png";
 		foreach($all_img as $img){
@@ -91,4 +108,34 @@ class ImageUpdater {
 	    return $thumb;
 	}
 	
+	private function getFavicon($feedInfo){
+		
+		if ($feedInfo['favicon']){
+			$this->removeImage($feedInfo['id_f']);
+		}
+		
+		$faviconContent = $this->getFaviconContent($feedInfo['url']);
+		if (! $faviconContent ){
+			return false;
+		}
+		
+		$favicon_name = md5(mt_rand()) .".ico";
+		file_put_contents($this->favicon_path . "/$favicon_name",$faviconContent);
+		return $favicon_name;
+	}
+	
+	private function getFaviconContent($url){
+		echo "Récupération de : $url\n";
+		$parse = parse_url($url);
+		$favicon = $parse['scheme'] . "://".$parse['host']."/favicon.ico";
+		@ $content = file_get_contents($favicon);
+		return $content;
+	}
+	
+	private function removeImage($id_f){
+		$info = $this->feedSQL->getInfo($id_f);
+		if ($info['favicon']) {
+			@ unlink($this->favicon_path . "/" . $info['favicon']);
+		}
+	}
 }
