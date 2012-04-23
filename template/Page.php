@@ -48,8 +48,7 @@
 							<li><a href='<?php $this->Path->path("/Admin/flux")?>'>Admin</a></li> 
 						<?php endif;?>
 					</ul>
-					</div>
-				</div>
+
 				<?php else: ?>
 					<ul>
 					<li><a href='<?php $this->Path->path();?>'>Accueil</a></li>
@@ -57,6 +56,7 @@
 					<li><a href='<?php $this->Path->path('/Account/create');?>'>Cr&eacute;er un compte</a></li>
 					</ul>
 				<?php endif;?>				
+				</div>
 			</div>
 		</div><!-- header -->
 
@@ -70,9 +70,8 @@
 			<div id="footer">
 				<p class="align_right">
 					Page g&eacute;n&eacute;r&eacute;e par zenCancan en <?php echo round((microtime(true) - $debut) * 10000) / 10 ?>ms
-					| <a href="<?php $this->Path->path("/Param/legal") ?>" rel="nofollow">Mentions l&eacute;gales
+					| <a href="<?php $this->Path->path("/Param/legal") ?>" rel="nofollow">Mentions l&eacute;gales</a>
 					| R&eacute;alisation : <a href="http://www.sigmalis.com" title="Cr&eacute;ation de site web à Lyon">Sigmalis</a>
-					</a>
 				</p>
 			</div><!-- fin footer -->
 		</div><!-- fin global_main -->

@@ -20,7 +20,7 @@
 
 <div id="contenu">
 
-<h1><?php echo $tag ?></h1>
+<h1><?php hecho($tag) ?></h1>
 
 
 <?php $this->LastMessage->display(); ?>

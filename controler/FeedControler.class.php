@@ -1,6 +1,4 @@
 <?php
-
-
 class FeedControler extends ZenCancanControler {
 	
 	public function renderDefault($tag=""){
@@ -97,20 +95,15 @@ class FeedControler extends ZenCancanControler {
 		$this->verifAbonnement($id_u,$id_f);
 		
 		$info = $this->FeedSQL->getInfo($id_f);
-			
-		if ($info && $info['last_id_i']){
-			$this->redirect("/Feed/read/{$info['last_id_i']}");
-		}
 		
 		$abonnementInfo = $this->AbonnementSQL->getInfo($id_u,$id_f);
 		$abonnementInfo["nb_second_since_last_recup"] = time() - strtotime($abonnementInfo['last_recup']);
 		
 		$this->addRSS($abonnementInfo['title'],$abonnementInfo['url']);
 		$this->Gabarit->abonnementInfo = $abonnementInfo;
-		$this->Gabarit->allItem = array();
-		$this->Gabarit->itemInfo = array();
-		$this->Gabarit->template_milieu = "FluxRead";
+		$this->Gabarit->allItem = $this->FeedItemSQL->getAll($id_f);
 		
+		$this->Gabarit->template_milieu = "FluxDetail";
 		$this->renderDefault($abonnementInfo['tag']);
 	}
 	

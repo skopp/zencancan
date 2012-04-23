@@ -1,6 +1,4 @@
 <?php
-
-
 class TagControler extends ZenCancanControler {
 
 	public function delAction($id_f,$tag){

@@ -9,7 +9,4 @@ class AdminControler extends ZenCancanControler {
 		$this->Gabarit->template_milieu = "Admin";
 		$this->renderDefault();
 	}
-	
-	
-	
 }

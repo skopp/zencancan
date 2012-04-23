@@ -1,8 +1,6 @@
 <?php
 class ContactControler extends ZenCancanControler {
 	
-	
-	
 	public function indexAction($id_f = false){
 		if ($id_f){
 			$this->LastMessage->setInput("sujet","Problème sur le flux #$id_f");
@@ -17,7 +15,6 @@ class ContactControler extends ZenCancanControler {
 		$info['message']  = $this->Recuperateur->get("question");
 		$email = $this->Recuperateur->get("email");
 
-		
 		if (! $email){
 			$this->LastMessage->setLastError("Vous devez indiqué un email");
 			$this->redirect("/Contact/index");
