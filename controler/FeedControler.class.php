@@ -138,7 +138,7 @@ class FeedControler extends ZenCancanControler {
 		$id_u = $this->verifConnected();
 		$id_f = $this->Recuperateur->getInt('id_f');
 		$this->deleteAbonnement($id_u, $id_f);
-		$this->LastMessage->setLastMessage("Le suivie du site à été supprimé ");
+		$this->LastMessage->setLastMessage("Le suivi du site a été supprimé ");
 		$this->redirect();
 	}
 	
