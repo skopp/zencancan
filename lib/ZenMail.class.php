@@ -4,7 +4,6 @@ class ZenMail{
 	
 	const DEFAULT_CHARSET = 'UTF-8';
 	
-	private $zLog;
 	
 	private $destinataire;
 	private $sujet;
